@@ -5,3 +5,6 @@ Thumbs.db
 *.log
 node_modules/
 .vscode/
+scripts/.env
+scripts/.ingest_queue.json
+
