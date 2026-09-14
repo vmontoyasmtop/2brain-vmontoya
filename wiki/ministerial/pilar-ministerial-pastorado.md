@@ -24,5 +24,8 @@ Página principal de la **Labor Pastoral y Ministerial**.
 ## 🔗 Subagente de Apoyo
 - [[Subagente Pastoral Assistant|agents/pastoral_assistant.md]]
 
-## 📌 Entidades Relacionadas
+## 📌 Entidades & Sistemas Relacionados
 - [[Iglesia Local]]
+- [[Sistema de Productividad del Pastor-Ingeniero|ministerial/sistema-productividad-pastor-ingeniero.md]]
+- [[Resumen: Manual Maestro|summaries/manual-maestro-pastor-ingeniero.md]]
+

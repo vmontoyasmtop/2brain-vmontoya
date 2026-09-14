@@ -49,6 +49,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### ⛪ 4. Ministerial (Pastorado & Teología)
 - [[Área Ministerial - Pastorado|ministerial/pilar-ministerial-pastorado.md]]: Índice principal del área pastoral.
+- [[Sistema de Productividad del Pastor-Ingeniero|ministerial/sistema-productividad-pastor-ingeniero.md]]: Sistema 24/7 OS de alta densidad para la gestión del pastor-ingeniero.
 - [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|ministerial/serie-discipulado-caminando-juntos.md]]: Propuesta completa de 4 sermones para motivar al discipulado congregacional.
 - [[Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa|ministerial/sermon-1-de-la-multitud-a-la-mesa-estudio.md]]: Estudio bíblico exhaustivo y bosquejo para el Sermón 1.
 
@@ -74,3 +75,5 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 | :--- | :--- | :--- | :--- |
 | LLM Wiki Pattern por Andrej Karpathy | [`wiki/summaries/karpathy-llm-wiki-gist.md`](summaries/karpathy-llm-wiki-gist.md) | Programación | `#llm` `#wiki` `#second-brain` |
 | Tutorial de Antigravity CLI por Fazt Code | [`wiki/summaries/google-lanzo-antigravity-cli.md`](summaries/google-lanzo-antigravity-cli.md) | Programación | `#antigravity-cli` `#google` |
+| Manual Maestro: Sistema Operativo de Productividad | [`wiki/summaries/manual-maestro-pastor-ingeniero.md`](summaries/manual-maestro-pastor-ingeniero.md) | Ministerial / IT | `#productividad` `#pastor-ingeniero` `#life-os` |
+

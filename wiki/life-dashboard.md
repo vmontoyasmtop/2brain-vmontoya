@@ -36,6 +36,7 @@ flowchart LR
 ### ⛪ 1. Area Ministerial (Pastorado)
 - [x] Diseñar estructura de la nueva serie de discipulado: [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|ministerial/serie-discipulado-caminando-juntos.md]]
 - [x] Estudio exegético del Sermón 1: [[Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa|ministerial/sermon-1-de-la-multitud-a-la-mesa-estudio.md]]
+- [x] Ingestar e integrar el [[Sistema de Productividad del Pastor-Ingeniero|ministerial/sistema-productividad-pastor-ingeniero.md]] ([Resumen Exec|summaries/manual-maestro-pastor-ingeniero.md]).
 - [ ] **En Progreso**: Armar la predicación final del Sermón 1 para el domingo.
 - [ ] **Próximo**: Preparar la guía de preguntas para grupos pequeños/células.
 
@@ -49,12 +50,14 @@ flowchart LR
   - [[Proyecto: Brotapp|proyectos/brotapp.md]] — Pruebas en emulador Android/iOS.
   - [[Proyecto: Meniox|proyectos/meniox.md]] — Integración de RabbitMQ en ventas.
   - [[Proyecto: CRM-MG|proyectos/crm-mg.md]] — Pruebas de endpoints NestJS + OpenAI.
+  - **Masterhub (A1 Deep Work)** — Desarrollo en Madrugada Protegida.
 
 ### 💰 4. Area Finanzas (Gestión Económica)
 - [ ] Actualizar hoja de presupuesto mensual (ingresos Xetux + proyectos freelance).
 - [ ] Asignación de diezmos/ofrendas y fondo de ahorro familiar en [[Área Finanzas - Gestión Económica|finanzas/pilar-finanzas-personales.md]].
 
 ### 🏡 5. Area Familiar & Vida Personal
+- [x] Establecer protocolo de **Madrugada Protegida** y **Desconexión Sagrada 18:30 - 20:30** (Cero pantallas).
 - [ ] Bloqueo de tiempo de calidad familiar en la agenda semanal.
 - [ ] Hábito de salud, ejercicio y descanso espiritual.
 

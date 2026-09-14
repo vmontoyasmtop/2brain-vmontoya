@@ -2,6 +2,17 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-14] ingest | Manual Maestro: Sistema Operativo de Productividad para el Pastor-Ingeniero
+- **Fuente**: `raw/ministerial/manual-maestro-pastor-ingeniero.md` (extraído de Google Doc / Downloads)
+- **Agente Responsable**: 📥 **Subagente Ingestor de Documentos** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Guardado archivo raw en `raw/ministerial/manual-maestro-pastor-ingeniero.md`.
+  - Creado documento de resumen ejecutivo en `wiki/summaries/manual-maestro-pastor-ingeniero.md`.
+  - Creada nota conceptual del sistema 24/7 OS en `wiki/ministerial/sistema-productividad-pastor-ingeniero.md` (Buffer Zeigarnik, Matriz Eisenhower personalizada, Madrugada Protegida, Deep Work A1/A2, Mínimos Viables Kaizen y Copiloto IA n8n).
+  - Actualizados `wiki/life-dashboard.md`, `wiki/ministerial/pilar-ministerial-pastorado.md`, `wiki/index.md` y `wiki/log.md`.
+
+---
+
 ## [2026-09-13] ingest | Plan de Organización y Priorización Laboral para Analista de IT
 - **Fuente**: `raw/trabajo/plan-organizacion-trabajo-it.md` (extraído de `Downloads/plan-organizacion-trabajo-it.md`)
 - **Agente Responsable**: 📥 **Subagente Ingestor** & 🤵 **ALFRED**
