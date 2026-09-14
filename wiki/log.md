@@ -2,6 +2,16 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-14] setup/protocol | Creación del Protocolo de Entrega y Toma de Turno de ALFRED
+- **Área**: 💻 `programacion`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Definidos los flujos `ENTREGA_TURNO` y `TOMA_TURNO` en `AGENTS.md`.
+  - Creado documento de concepto en `wiki/concepts/protocolo-entrega-toma-turno-alfred.md`.
+  - Actualizados `wiki/index.md` y `wiki/log.md`.
+
+---
+
 ## [2026-09-14] setup/package | Empaquetado y Script de Despliegue Automatizado ALFRED & 2brain
 - **Área**: 💻 `programacion`
 - **Agente Responsable**: 🤵 **ALFRED**

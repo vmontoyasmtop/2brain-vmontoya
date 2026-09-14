@@ -33,6 +33,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 ### 💻 2. Programación (Conocimiento Técnico)
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.
 - [[Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain en Cualquier PC|programacion/guia-despliegue-empaquetado-alfred-2brain.md]]: Script powershell y pasos de clonación rápida en 1 comando.
+- [[Protocolo de Entrega y Toma de Turno de ALFRED (Sincronización Multi-PC)|concepts/protocolo-entrega-toma-turno-alfred.md]]: Sincronización automática de contexto entre equipos vía Git y MCP.
 - [[LLM Wiki Pattern]]: Modelo de wiki persistente compilada por IA.
 - [[Antigravity Commands and Shortcuts]]: Guía de comandos slash y atajos.
 - [[Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)|programacion/diagnostico-mcp-google-calendar-gmail.md]]: Diagnóstico técnico y pasos de reparación de MCPs.

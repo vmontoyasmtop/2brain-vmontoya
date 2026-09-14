@@ -92,7 +92,22 @@ Cuando el usuario añade un archivo a `raw/<area>/` y pide ingerirlo:
 1. Buscar dentro de la carpeta del área correspondiente en `wiki/<area>/` o en `wiki/index.md`.
 2. Ofrecer síntesis accionables. Si la consulta genera un conocimiento duradero, guardarlo en `wiki/<area>/`.
 
+### 3. `ENTREGA_TURNO` (Cierre de Jornada / Sincronización Multi-PC)
+Cuando el usuario pida *"ALFRED, entrega de turno"* o *"Cierra la jornada"*:
+1. Registrar resumen de logros y actividades del día en `wiki/log.md`.
+2. Actualizar prioridades en `wiki/life-dashboard.md`.
+3. Ejecutar automáticamente: `git add .`, `git commit -m "chore(handover): cierre de turno [YYYY-MM-DD]"`, `git push origin master`.
+4. Presentar un informe ejecutivo corto de despedida.
+
+### 4. `TOMA_TURNO` (Inicio de Jornada / Sincronización Multi-PC)
+Cuando el usuario pida *"ALFRED, toma de turno"* o *"Inicia la jornada"*:
+1. Ejecutar automáticamente: `git pull origin master`.
+2. Leer las entradas más recientes de `wiki/log.md` y `wiki/life-dashboard.md`.
+3. Consultar la agenda en Google Calendar y tareas activas en ClickUp.
+4. Dar la bienvenida al usuario con el informe de situación actual y el primer bloque de trabajo recomendado.
+
 ---
+
 
 ## 📝 Estándar YAML Frontmatter
 
