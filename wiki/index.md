@@ -8,6 +8,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ## 🚀 Centro de Control Proactivo (Life OS)
 - 📊 [[Dashboard de Vida & Centro de Control|life-dashboard.md]]: Cuadro de mando unificado con prioridades semanales, tareas activas por área y sprints de proyectos.
+- 🗺️ [[Roadmap de Evolución: ALFRED & Sistema 2brain 2026|roadmap-alfred-2brain-2026.md]]: Plan de trabajo estratégico para la automatización, sincronización multiequipo y evolución de ALFRED.
 
 ---
 
