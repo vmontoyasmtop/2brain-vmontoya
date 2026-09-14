@@ -1,0 +1,7 @@
+# 2brain System GitIgnore
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+node_modules/
+.vscode/

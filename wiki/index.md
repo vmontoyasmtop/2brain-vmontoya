@@ -1,0 +1,75 @@
+# 🗺️ Índice Maestro del Segundo Cerebro (Wiki Index)
+
+*Última actualización: 2026-09-12*
+
+Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado físicamente por las **6 Áreas Principales**.
+
+---
+
+## 🚀 Centro de Control Proactivo (Life OS)
+- 📊 [[Dashboard de Vida & Centro de Control|life-dashboard.md]]: Cuadro de mando unificado con prioridades semanales, tareas activas por área y sprints de proyectos.
+
+---
+
+## 🤖 Subagentes del Sistema (`agents/`)
+- 📥 [`agents/ingestor.md`](../agents/ingestor.md): Lectura e ingesta de fuentes crudas.
+- 🔍 [`agents/synthesizer.md`](../agents/synthesizer.md): Consulta profunda y síntesis cruzada.
+- 🧹 [`agents/gardener.md`](../agents/gardener.md): Auditoría de salud, enlaces y linter de carpetas.
+- 🎨 [`agents/frontend_ui_expert.md`](../agents/frontend_ui_expert.md): Especialista en Frontend, UI/UX, React y CSS.
+- ⚙️ [`agents/backend_js_expert.md`](../agents/backend_js_expert.md): Especialista en Backend Node.js, TypeScript y APIs.
+- ⛪ [`agents/pastoral_assistant.md`](../agents/pastoral_assistant.md): Asistente Pastoral, Sermones y Exégesis Teológica.
+- 🛠️ [`agents/it_support_expert.md`](../agents/it_support_expert.md): Especialista en Soporte IT, Xetux y Análisis de Sistemas.
+- 💰 [`agents/finance_manager.md`](../agents/finance_manager.md): Gestor de Finanzas, Presupuesto y Proyectos.
+
+---
+
+## 📂 Navegación por Áreas (`wiki/<area>/`)
+
+### 🏢 1. Trabajo (Analista IT & Soporte Xetux)
+- [[Área Trabajo - Analista IT y Soporte Xetux|trabajo/pilar-trabajo-xetux.md]]: Índice y guía principal de Trabajo IT.
+- [[Plan de Organización y Priorización Laboral para Analista de IT|trabajo/plan-organizacion-priorizacion-it.md]]: Sistema de bloques temáticos, Matriz de Eisenhower y automatizaciones n8n.
+
+### 💻 2. Programación (Conocimiento Técnico)
+- [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.
+- [[LLM Wiki Pattern]]: Modelo de wiki persistente compilada por IA.
+- [[Antigravity Commands and Shortcuts]]: Guía de comandos slash y atajos.
+- [[Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)|programacion/diagnostico-mcp-google-calendar-gmail.md]]: Diagnóstico técnico y pasos de reparación de MCPs.
+- [[Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail Multicuenta)|programacion/guia-configuracion-mcp-google-calendar-gmail.md]]: Guía paso a paso para configurar MCPs en nuevos equipos.
+
+### 🚀 3. Proyectos (Software Independiente)
+- [[Área Proyectos - Software Independiente|proyectos/pilar-proyectos.md]]: Índice general de proyectos.
+- [[Proyecto: Brotapp|proyectos/brotapp.md]]: App móvil en React Native & Expo SDK 57.
+- [[Proyecto: CRM-MG|proyectos/crm-mg.md]]: CRM monorepo con NestJS 11, Prisma y OpenAI.
+- [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]: Plataforma empresarial de microservicios.
+- [[Proyecto: Meniox|proyectos/meniox.md]]: Sistema POS & franquicias con RabbitMQ y Next.js 15.
+- [[Proyecto: WebCastro|proyectos/webcastro.md]]: Sitio web con Payload CMS 3 & Next.js 16.
+- [[Proyecto: SmartOps VE|proyectos/smartops-ve.md]]: Portal corporativo en Next.js 15 & Firebase.
+- [[Proyecto: API Gateway Core|proyectos/api-gateway.md]]: Microservicio Gateway NestJS & AWS S3.
+
+### ⛪ 4. Ministerial (Pastorado & Teología)
+- [[Área Ministerial - Pastorado|ministerial/pilar-ministerial-pastorado.md]]: Índice principal del área pastoral.
+- [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|ministerial/serie-discipulado-caminando-juntos.md]]: Propuesta completa de 4 sermones para motivar al discipulado congregacional.
+- [[Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa|ministerial/sermon-1-de-la-multitud-a-la-mesa-estudio.md]]: Estudio bíblico exhaustivo y bosquejo para el Sermón 1.
+
+### 🏡 5. Familiar (Vida Personal & Bienestar)
+- [[Área Familiar - Vida Personal|familiar/pilar-familiar.md]]: Índice de metas familiares y bienestar personal.
+
+### 💰 6. Finanzas (Gestión Económica)
+- [[Área Finanzas - Gestión Económica|finanzas/pilar-finanzas-personales.md]]: Índice de presupuesto, ahorro e ingresos.
+
+---
+
+## 👤 Entidades y Herramientas (`wiki/entities/`)
+- [[Xetux]]: Plataforma y entorno laboral de soporte e IT.
+- [[Iglesia Local]]: Entidad ministerial y comunidad pastoral.
+- [[Andrej Karpathy]]: Creador del patrón LLM Wiki.
+- [[Antigravity CLI]]: Agente de IA de consola desarrollado por Google.
+- [[Foam (VS Code Extension)]]: Extensión para VS Code y visualización de grafo.
+
+---
+
+## 📚 Resúmenes de Fuentes (`wiki/summaries/`)
+| Título / Fuente | Archivo Resumen | Área | Tags |
+| :--- | :--- | :--- | :--- |
+| LLM Wiki Pattern por Andrej Karpathy | [`wiki/summaries/karpathy-llm-wiki-gist.md`](summaries/karpathy-llm-wiki-gist.md) | Programación | `#llm` `#wiki` `#second-brain` |
+| Tutorial de Antigravity CLI por Fazt Code | [`wiki/summaries/google-lanzo-antigravity-cli.md`](summaries/google-lanzo-antigravity-cli.md) | Programación | `#antigravity-cli` `#google` |
