@@ -134,16 +134,53 @@ def process_message(config, message):
     if not text and "document" not in message:
         return
 
+    # Comando /ticket o /helpdesk
+    if text.startswith("/ticket") or text.startswith("/helpdesk"):
+        parts = text.split(maxsplit=1)
+        subcommand = parts[1] if len(parts) > 1 else ""
+        
+        if subcommand.startswith("create"):
+            # /ticket create Título del ticket | Descripción
+            ticket_data = subcommand.replace("create", "", 1).strip()
+            title = ticket_data
+            desc = "Registrado desde Telegram por " + sender
+            if "|" in ticket_data:
+                title, desc = ticket_data.split("|", 1)
+                
+            from masterhub_helpdesk import create_ticket
+            create_ticket(title.strip(), desc.strip())
+            reply = f"🛠️ *Ticket de Helpdesk Creado*, Señor:\n📌 *Título*: {title.strip()}\n📝 *Descripción*: {desc.strip()}"
+            telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": reply, "parse_mode": "Markdown"})
+            return
+        else:
+            # Listar o consultar por defecto
+            from masterhub_helpdesk import make_request
+            res = make_request("tickets?limit=5")
+            if res and isinstance(res, list):
+                ticket_lines = [f"• *[{t.get('status')}]* #{t.get('id')[:6]}: {t.get('title')}" for t in res[:5]]
+                reply = "🛠️ *Últimos Tickets en MasterHub Helpdesk*:\n\n" + "\n".join(ticket_lines)
+            elif res and isinstance(res, dict) and "items" in res:
+                ticket_lines = [f"• *[{t.get('status')}]* #{t.get('id')[:6]}: {t.get('title')}" for t in res.get("items", [])[:5]]
+                reply = "🛠️ *Últimos Tickets en MasterHub Helpdesk*:\n\n" + "\n".join(ticket_lines)
+            else:
+                reply = "🛠️ *MasterHub Helpdesk*: Servidor local no detectado en `http://localhost:3000`. Inicie el proyecto en `Desktop/MasterHub` para consultar tickets."
+                
+            telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": reply, "parse_mode": "Markdown"})
+            return
+
     # Comando /start o /help
     if text.startswith("/start") or text.startswith("/help"):
         help_msg = (
             "🎩 *ALFRED — Mayordomo Ejecutivo 2brain*\n\n"
-            "¡A sus órdenes, Señor! Estoy listo para asistirlo. Puede utilizarme de dos maneras:\n\n"
+            "¡A sus órdenes, Señor! Estoy listo para asistirlo. Puede utilizarme de las siguientes maneras:\n\n"
             "💬 *1. Conversación y Consultas*:\n"
-            "Simplemente escríbame cualquier pregunta, duda de su agenda, sermones o tareas y responderé como su asistente ejecutivo.\n\n"
-            "📥 *2. Ingesta a 2brain*:\n"
+            "Simplemente escríbame cualquier pregunta, duda de su agenda, sermones o tareas.\n\n"
+            "🛠️ *2. Gestión de Tickets Helpdesk*:\n"
+            "• `/ticket` — Ver últimos tickets de MasterHub.\n"
+            "• `/ticket create Título | Descripción` — Crear nuevo ticket en Helpdesk.\n\n"
+            "📥 *3. Ingesta a 2brain*:\n"
             "• Envíeme cualquier enlace (YouTube, NotebookLM, artículos) o archivo.\n"
-            "• Use el comando `/ingest <texto o url>` para forzar el guardado directo en su base de conocimiento."
+            "• Use el comando `/ingest <texto o url>` para guardado directo."
         )
         telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": help_msg, "parse_mode": "Markdown"})
         return
