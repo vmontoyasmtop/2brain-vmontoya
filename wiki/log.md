@@ -2,6 +2,17 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-14] ingest | Planificación de Menú Semanal & Recetas Saludables
+- **Fuente**: `raw/familiar/recetas-menu-semanal-fuentes.md` (14 videos de recetas de YouTube)
+- **Agente Responsable**: 📥 **Subagente Ingestor** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Guardados enlaces de origen en `raw/familiar/recetas-menu-semanal-fuentes.md`.
+  - Creado resumen ejecutivo en `wiki/summaries/recetas-menu-semanal.md`.
+  - Elaborado el Plan de Menú Semanal Completo (7 Días: Desayunos, Almuerzos, Cenas), Lista de Compras por Pasillos/Categorías y consejos Meal Prep en `wiki/familiar/menu-semanal-recetas-saludables.md`.
+  - Actualizados `wiki/familiar/pilar-familiar.md`, `wiki/life-dashboard.md`, `wiki/index.md` y `wiki/log.md`.
+
+---
+
 ## [2026-09-14] ingest | Manual Maestro: Sistema Operativo de Productividad para el Pastor-Ingeniero
 - **Fuente**: `raw/ministerial/manual-maestro-pastor-ingeniero.md` (extraído de Google Doc / Downloads)
 - **Agente Responsable**: 📥 **Subagente Ingestor de Documentos** & 🤵 **ALFRED**

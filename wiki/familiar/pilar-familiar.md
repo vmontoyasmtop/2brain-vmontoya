@@ -20,5 +20,10 @@ Página principal del área **Familiar y Personal**.
 - Dar seguimiento al bienestar físico, espiritual, descanso y salud.
 - Mantener el balance entre trabajo, ministerio y vida familiar.
 
+## 🥗 Nutrición & Planificación del Hogar
+- [[Menú Semanal Nutritivo & Lista de Compras|menu-semanal-recetas-saludables.md]]
+- [[Resumen Exec: Recetas y Planificación|../summaries/recetas-menu-semanal.md]]
+
 ## 🔗 Relación con otras áreas
-- Presupuesto del hogar: [[Área Finanzas - Gestión Económica|wiki/finanzas/pilar-finanzas-personales.md]]
+- Presupuesto del hogar: [[Área Finanzas - Gestión Económica|../finanzas/pilar-finanzas-personales.md]]
+

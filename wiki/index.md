@@ -56,6 +56,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### 🏡 5. Familiar (Vida Personal & Bienestar)
 - [[Área Familiar - Vida Personal|familiar/pilar-familiar.md]]: Índice de metas familiares y bienestar personal.
+- [[Menú Semanal Nutritivo & Lista de Compras|familiar/menu-semanal-recetas-saludables.md]]: Planificación de 7 días (desayunos, almuerzos, cenas) y lista de compras.
 
 ### 💰 6. Finanzas (Gestión Económica)
 - [[Área Finanzas - Gestión Económica|finanzas/pilar-finanzas-personales.md]]: Índice de presupuesto, ahorro e ingresos.
@@ -77,4 +78,6 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 | LLM Wiki Pattern por Andrej Karpathy | [`wiki/summaries/karpathy-llm-wiki-gist.md`](summaries/karpathy-llm-wiki-gist.md) | Programación | `#llm` `#wiki` `#second-brain` |
 | Tutorial de Antigravity CLI por Fazt Code | [`wiki/summaries/google-lanzo-antigravity-cli.md`](summaries/google-lanzo-antigravity-cli.md) | Programación | `#antigravity-cli` `#google` |
 | Manual Maestro: Sistema Operativo de Productividad | [`wiki/summaries/manual-maestro-pastor-ingeniero.md`](summaries/manual-maestro-pastor-ingeniero.md) | Ministerial / IT | `#productividad` `#pastor-ingeniero` `#life-os` |
+| Planificación de Recetas & Menú Semanal | [`wiki/summaries/recetas-menu-semanal.md`](summaries/recetas-menu-semanal.md) | Familiar / Salud | `#nutricion` `#menu-semanal` `#meal-prep` |
+
 

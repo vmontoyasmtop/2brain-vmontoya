@@ -58,6 +58,7 @@ flowchart LR
 
 ### 🏡 5. Area Familiar & Vida Personal
 - [x] Establecer protocolo de **Madrugada Protegida** y **Desconexión Sagrada 18:30 - 20:30** (Cero pantallas).
+- [x] Diseñar el [[Menú Semanal Nutritivo & Lista de Compras|familiar/menu-semanal-recetas-saludables.md]] ([Resumen Exec|summaries/recetas-menu-semanal.md]).
 - [ ] Bloqueo de tiempo de calidad familiar en la agenda semanal.
 - [ ] Hábito de salud, ejercicio y descanso espiritual.
 
