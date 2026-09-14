@@ -1,6 +1,6 @@
 # 🗺️ Índice Maestro del Segundo Cerebro (Wiki Index)
 
-*Última actualización: 2026-09-12*
+*Última actualización: 2026-09-14*
 
 Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado físicamente por las **6 Áreas Principales**.
 
@@ -32,6 +32,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### 💻 2. Programación (Conocimiento Técnico)
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.
+- [[Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain en Cualquier PC|programacion/guia-despliegue-empaquetado-alfred-2brain.md]]: Script powershell y pasos de clonación rápida en 1 comando.
 - [[LLM Wiki Pattern]]: Modelo de wiki persistente compilada por IA.
 - [[Antigravity Commands and Shortcuts]]: Guía de comandos slash y atajos.
 - [[Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)|programacion/diagnostico-mcp-google-calendar-gmail.md]]: Diagnóstico técnico y pasos de reparación de MCPs.
@@ -50,6 +51,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### ⛪ 4. Ministerial (Pastorado & Teología)
 - [[Área Ministerial - Pastorado|ministerial/pilar-ministerial-pastorado.md]]: Índice principal del área pastoral.
+- [[Actitud Espiritual y Mental ante el Estrés y la Presión (Filipenses 4:6-7)|ministerial/estudio-actitud-ante-el-estres-filipenses-4.md]]: Estudio exegético, antídoto triple y aplicación práctica para momentos de alta presión.
 - [[Sistema de Productividad del Pastor-Ingeniero|ministerial/sistema-productividad-pastor-ingeniero.md]]: Sistema 24/7 OS de alta densidad para la gestión del pastor-ingeniero.
 - [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|ministerial/serie-discipulado-caminando-juntos.md]]: Propuesta completa de 4 sermones para motivar al discipulado congregacional.
 - [[Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa|ministerial/sermon-1-de-la-multitud-a-la-mesa-estudio.md]]: Estudio bíblico exhaustivo y bosquejo para el Sermón 1.

@@ -2,6 +2,27 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-14] setup/package | Empaquetado y Script de Despliegue Automatizado ALFRED & 2brain
+- **Área**: 💻 `programacion`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Creado script PowerShell automatizado `scripts/setup-alfred-2brain.ps1` para clonación e instalación en 1 solo comando.
+  - Creada guía conceptual en `wiki/programacion/guia-despliegue-empaquetado-alfred-2brain.md`.
+  - Empaquetadas las reglas globales de ALFRED, tokens de ClickUp Personal/Trabajo y servidores MCP en `mcp_config.json`.
+  - Actualizados `wiki/index.md` y `wiki/log.md`.
+
+---
+
+## [2026-09-14] ingest | Estudio Teológico: Actitud Espiritual y Mental ante el Estrés (Filipenses 4:6-7)
+- **Área**: ⛪ `ministerial`
+- **Agentes Responsables**: ⛪ **Subagente Pastoral Assistant** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Creada fuente cruda en `raw/ministerial/estudio-actitud-ante-el-estres-filipenses-4.md`.
+  - Creada página conceptual procesada en `wiki/ministerial/estudio-actitud-ante-el-estres-filipenses-4.md` (con exégesis de *Merimnaō*, *Phrourēsei*, antídoto triple y tabla de aplicación práctica).
+  - Actualizados `wiki/ministerial/pilar-ministerial-pastorado.md`, `wiki/index.md` y `wiki/log.md`.
+
+---
+
 ## [2026-09-14] ingest | Planificación de Menú Semanal & Recetas Saludables
 - **Fuente**: `raw/familiar/recetas-menu-semanal-fuentes.md` (14 videos de recetas de YouTube)
 - **Agente Responsable**: 📥 **Subagente Ingestor** & 🤵 **ALFRED**

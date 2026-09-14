@@ -24,8 +24,9 @@ Página principal de la **Labor Pastoral y Ministerial**.
 ## 🔗 Subagente de Apoyo
 - [[Subagente Pastoral Assistant|agents/pastoral_assistant.md]]
 
-## 📌 Entidades & Sistemas Relacionados
+## 📌 Entidades, Estudios & Sistemas Relacionados
 - [[Iglesia Local]]
+- [[Actitud Espiritual y Mental ante el Estrés y la Presión (Filipenses 4:6-7)|ministerial/estudio-actitud-ante-el-estres-filipenses-4.md]]
 - [[Sistema de Productividad del Pastor-Ingeniero|ministerial/sistema-productividad-pastor-ingeniero.md]]
 - [[Resumen: Manual Maestro|summaries/manual-maestro-pastor-ingeniero.md]]
 

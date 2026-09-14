@@ -5,6 +5,19 @@ Thumbs.db
 *.log
 node_modules/
 .vscode/
+
+# Secrets, API Keys & Credentials (NEVER COMMIT)
+*.env
+.env
+.env.local
+credentials.json
+token.json
+tokens.json
+*_token.txt
 scripts/.env
+scripts/.env.local
 scripts/.ingest_queue.json
 
+# Allow env template
+!.env.template
+!scripts/.env.template
