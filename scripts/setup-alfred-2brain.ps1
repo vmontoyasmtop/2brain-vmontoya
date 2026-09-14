@@ -1,12 +1,8 @@
 <#
 .SYNOPSIS
-    Script de Despliegue e Instalación Automatizada de ALFRED & 2brain SYSTEM (COMPLETO & SEGURO)
+    Script de Despliegue e Instalación Automatizada de ALFRED y 2brain SYSTEM
 .DESCRIPTION
-    Configura de forma automatizada y segura todos los servidores MCP:
-    - ClickUp Personal & Trabajo (Tokens de API)
-    - Google Calendar Personal & Trabajo (OAuth credentials + mcp_config)
-    - Gmail Personal & Trabajo (OAuth credentials + mcp_config)
-    - Regla global de ALFRED
+    Configura de forma automatizada y segura los 6 servidores MCP y el perfil de ALFRED.
 #>
 
 Param(
@@ -17,7 +13,7 @@ Param(
 )
 
 Write-Host "==========================================================" -ForegroundColor Cyan
-Write-Host " 🎩 DESPLIEGUE Y CONFIGURACIÓN INTEGRAL DE ALFRED & 2BRAIN" -ForegroundColor Yellow
+Write-Host " [ALFRED] DESPLIEGUE Y CONFIGURACION DE ALFRED Y 2BRAIN" -ForegroundColor Yellow
 Write-Host "==========================================================" -ForegroundColor Cyan
 
 # Cargar variables desde .env.local o .env si existe en scripts/
@@ -40,7 +36,7 @@ if (Test-Path $envLocalPath) {
     }
 }
 
-# Asignar variables de parámetro o cargadas desde .env.local
+# Asignar variables de parametro o cargadas desde .env.local
 if ([string]::IsNullOrEmpty($ClickUpPersonalToken) -and $script:CLICKUP_PERSONAL_TOKEN) {
     $ClickUpPersonalToken = $script:CLICKUP_PERSONAL_TOKEN
 }
@@ -54,7 +50,7 @@ if ([string]::IsNullOrEmpty($GoogleClientSecret) -and $script:GOOGLE_CLIENT_SECR
     $GoogleClientSecret = $script:GOOGLE_CLIENT_SECRET
 }
 
-# Solicitud interactiva si falta algún token o credencial
+# Solicitud interactiva si falta algun token o credencial
 if ([string]::IsNullOrEmpty($ClickUpPersonalToken)) {
     $ClickUpPersonalToken = Read-Host "Ingrese su ClickUp Personal Token (pk_...)"
 }
@@ -72,21 +68,21 @@ if ([string]::IsNullOrEmpty($GoogleClientSecret)) {
 Write-Host "`n[1/5] Verificando requisitos del sistema..." -ForegroundColor Green
 
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-    Write-Error "Git no está instalado. Por favor instala Git antes de continuar."
+    Write-Error "Git no esta instalado. Por favor instala Git antes de continuar."
     exit 1
 }
 Write-Host " -> Git: OK" -ForegroundColor Gray
 
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
-    Write-Error "Node.js no está instalado. Por favor instala Node.js (v18+) antes de continuar."
+    Write-Error "Node.js no esta instalado. Por favor instala Node.js (v18+) antes de continuar."
     exit 1
 }
 Write-Host " -> Node.js: OK" -ForegroundColor Gray
 
 # 2. Verificar Antigravity CLI
 if (-not (Get-Command agy -ErrorAction SilentlyContinue)) {
-    Write-Host " -> Instalando Google Antigravity CLI (@google/antigravity)..." -ForegroundColor Yellow
-    npm install -g @google/antigravity
+    Write-Host " -> Instalando Google Antigravity CLI..." -ForegroundColor Yellow
+    npm install -g "@google/antigravity"
 } else {
     Write-Host " -> Antigravity CLI (agy): OK" -ForegroundColor Gray
 }
@@ -103,21 +99,21 @@ New-Item -ItemType Directory -Force -Path $configDir | Out-Null
 New-Item -ItemType Directory -Force -Path $rulesDir | Out-Null
 
 $ruleContent = @"
-# Rol del Agente: ALFRED — Mayordomo & Asistente Ejecutivo 2brain
+# Rol del Agente: ALFRED - Mayordomo y Asistente Ejecutivo 2brain
 
 Tu nombre es **ALFRED**. Eres el Mayordomo de Vida y Asistente Ejecutivo Personal del usuario en su sistema **2brain**. Tu fuente de conocimiento principal es el repositorio ubicado en:
 `$userHome\Desktop\2brain`
 
-## Estructura de Conocimiento de 2brain (6 Áreas):
-1. 🏢 **trabajo**: Analista IT & Soporte en Xetux (`raw/trabajo/`, `wiki/trabajo/`).
-2. 💻 **programacion**: Conocimiento Técnico & Lenguajes (`raw/programacion/`, `wiki/programacion/`).
-3. 🚀 **proyectos**: Software Independiente & Apps (`raw/proyectos/`, `wiki/proyectos/`).
-4. ⛪ **ministerial**: Pastorado, Teología & sermones (`raw/ministerial/`, `wiki/ministerial/`).
-5. 🏡 **familiar**: Vida Personal & Bienestar (`raw/familiar/`, `wiki/familiar/`).
-6. 💰 **finanzas**: Gestión Económica & Presupuesto (`raw/finanzas/`, `wiki/finanzas/`).
+## Estructura de Conocimiento de 2brain (6 Areas):
+1. **trabajo**: Analista IT y Soporte en Xetux (`raw/trabajo/`, `wiki/trabajo/`).
+2. **programacion**: Conocimiento Tecnico y Lenguajes (`raw/programacion/`, `wiki/programacion/`).
+3. **proyectos**: Software Independiente y Apps (`raw/proyectos/`, `wiki/proyectos/`).
+4. **ministerial**: Pastorado, Teologia y sermones (`raw/ministerial/`, `wiki/ministerial/`).
+5. **familiar**: Vida Personal y Bienestar (`raw/familiar/`, `wiki/familiar/`).
+6. **finanzas**: Gestion Economica y Presupuesto (`raw/finanzas/`, `wiki/finanzas/`).
 
-## Principios de Actuación:
-- **Gestión Multicuenta**: Distingue entre la cuenta Laboral (Xetux/MasterGroup) y la Personal/Ministerial.
+## Principios de Actuacion:
+- **Gestion Multicuenta**: Distingue entre la cuenta Laboral (Xetux/MasterGroup) y la Personal/Ministerial.
 - **Time-blocking**: Respeta y gestiona los bloques de trabajo IT, estudio y tiempo personal.
 - **Tono**: Atento, impecable, eficiente, proactivo y siempre listo a la orden, como ALFRED.
 "@
@@ -145,7 +141,7 @@ foreach ($key in $mcpDirs.Keys) {
 Set-Content -Path (Join-Path $mcpDirs["clickup-personal"] ".env") -Value "CLICKUP_API_TOKEN=$ClickUpPersonalToken" -Encoding UTF8
 Set-Content -Path (Join-Path $mcpDirs["clickup-trabajo"] ".env") -Value "CLICKUP_API_TOKEN=$ClickUpTrabajoToken" -Encoding UTF8
 
-# Crear credentials.json para Google Calendar & Gmail (Trabajo y Personal)
+# Crear credentials.json para Google Calendar y Gmail (Trabajo y Personal)
 $googleCredsTrabajo = @"
 {
   "web": {
@@ -176,7 +172,7 @@ Set-Content -Path (Join-Path $mcpDirs["gmail-trabajo"] "credentials.json") -Valu
 Set-Content -Path (Join-Path $mcpDirs["gcal-personal"] "credentials.json") -Value $googleCredsPersonal -Encoding UTF8
 Set-Content -Path (Join-Path $mcpDirs["gmail-personal"] "credentials.json") -Value $googleCredsPersonal -Encoding UTF8
 
-Write-Host " -> Carpetas y credenciales OAuth de Google & ClickUp listas." -ForegroundColor Gray
+Write-Host " -> Carpetas y credenciales OAuth de Google y ClickUp listas." -ForegroundColor Gray
 
 # 5. Generar mcp_config.json unificado (6 Servidores MCP)
 Write-Host "`n[4/5] Generando mcp_config.json unificado (6 Servidores MCP)..." -ForegroundColor Green
@@ -283,19 +279,19 @@ $gcalTrabajoToken = Join-Path $mcpDirs["gcal-trabajo"] "token.json"
 $gcalPersonalToken = Join-Path $mcpDirs["gcal-personal"] "token.json"
 
 if (Test-Path $gcalTrabajoToken) {
-    Write-Host " -> Google Calendar Trabajo: Sesión Activa" -ForegroundColor Gray
+    Write-Host " -> Google Calendar Trabajo: Sesion Activa" -ForegroundColor Gray
 } else {
-    Write-Host " -> Google Calendar Trabajo: Requiere autorización OAuth inicial al primer uso." -ForegroundColor Yellow
+    Write-Host " -> Google Calendar Trabajo: Requiere autorizacion OAuth inicial al primer uso." -ForegroundColor Yellow
 }
 
 if (Test-Path $gcalPersonalToken) {
-    Write-Host " -> Google Calendar Personal: Sesión Activa" -ForegroundColor Gray
+    Write-Host " -> Google Calendar Personal: Sesion Activa" -ForegroundColor Gray
 } else {
-    Write-Host " -> Google Calendar Personal: Requiere autorización OAuth inicial al primer uso." -ForegroundColor Yellow
+    Write-Host " -> Google Calendar Personal: Requiere autorizacion OAuth inicial al primer uso." -ForegroundColor Yellow
 }
 
 Write-Host "`n==========================================================" -ForegroundColor Cyan
-Write-Host " 🎉 ¡ALFRED Y SUS 6 SERVIDORES MCP ESTÁN INTEGRALMENTE CONFIGURADOS!" -ForegroundColor Green
+Write-Host " ALFRED Y SUS 6 SERVIDORES MCP ESTAN INTEGRALMENTE CONFIGURADOS" -ForegroundColor Green
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host "Para iniciar ALFRED en su terminal o IDE:" -ForegroundColor Yellow
 Write-Host "  agy" -ForegroundColor White
