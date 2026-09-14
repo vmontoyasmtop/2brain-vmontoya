@@ -1,28 +1,23 @@
-# Fuentes y Recetas: Planificación de Menú Semanal (YouTube)
+# Fuentes y Recetas: Planificación de Menú Semanal Criollo Venezolano
 
 **Fecha de Ingestión**: 2026-09-14  
-**Origen**: Enlaces de YouTube proporcionados por el usuario  
-**Área**: 🏡 `familiar` & Bienestar / Nutrición  
+**Origen**: Adaptación Nutricional Criolla Venezolana  
+**Área**: 🏡 `familiar` & Bienestar / Nutrición Criolla  
 
 ---
 
-### 🎥 Enlaces de Video Fuentes Registrados
+### 🇻🇪 Gastronomía Criolla Venezolana Saludable
 
-1. [https://www.youtube.com/watch?v=Vde9O58gZJ4](https://www.youtube.com/watch?v=Vde9O58gZJ4) — Ideas de Desayunos Saludables y Rápidos
-2. [https://www.youtube.com/watch?v=1hnILCzFhtM](https://www.youtube.com/watch?v=1hnILCzFhtM) — Almuerzos Nutritivos en Lotes (Meal Prep)
-3. [https://www.youtube.com/watch?v=F5NL-HD__30](https://www.youtube.com/watch?v=F5NL-HD__30) — Cenas Ligeras y Digestivas para la Noche
-4. [https://www.youtube.com/watch?v=ZKfxgsOyFSI](https://www.youtube.com/watch?v=ZKfxgsOyFSI) — Proteínas Saludables y Acompañamientos
-5. [https://www.youtube.com/watch?v=EDxzWT01heo](https://www.youtube.com/watch?v=EDxzWT01heo) — Ensaladas de Alta Densidad Nutricional
-6. [https://www.youtube.com/watch?v=9n-wx_vJJMU](https://www.youtube.com/watch?v=9n-wx_vJJMU) — Opciones de Desayunos con Avena y Huevos
-7. [https://www.youtube.com/watch?v=qHAtOYC40pI](https://www.youtube.com/watch?v=qHAtOYC40pI) — Lista de Reproducción de Cocina Familiar Eficiente
-8. [https://www.youtube.com/watch?v=weff4Zhc8IY](https://www.youtube.com/watch?v=weff4Zhc8IY) — Batidos Energéticos & Snacks Saludables
-9. [https://www.youtube.com/watch?v=25goTWgCWOk](https://www.youtube.com/watch?v=25goTWgCWOk) — Preparaciones de Pollo y Carnes Magras
-10. [https://www.youtube.com/watch?v=ZRhhBScVjEY](https://www.youtube.com/watch?v=ZRhhBScVjEY) — Guisados Saludables y Cremas de Verduras
-11. [https://www.youtube.com/watch?v=sgx2X4o63lM](https://www.youtube.com/watch?v=sgx2X4o63lM) — Recetas Exprés de 15 Minutos para Cenas
-12. [https://www.youtube.com/watch?v=A3gERp5FU7o](https://www.youtube.com/watch?v=A3gERp5FU7o) — Pescados, Vegetales al Horno y Granos
-13. [https://www.youtube.com/watch?v=nqZYvPrgZRs](https://www.youtube.com/watch?v=nqZYvPrgZRs) — Planificación de Meal Prep Semanal
+Este plan adapta los platos más icónicos de la cocina venezolana a una versión equilibrada, nutritiva y de alto rendimiento energético para la familia:
 
----
-
-> [!NOTE]
-> Ingerido por ALFRED para la estructuración del Menú Semanal de Desayunos, Almuerzos y Cenas, junto con la Lista de Compras Consolidada en `wiki/familiar/menu-semanal-recetas-saludables.md`.
+1. **Arepas Criollas Nutritivas**: Arepas de maíz precocida mezcladas con auyama, afrecho, chía o plátano. Rellenos: Perico criollo, Reina Pepiada fit (pollo, aguacate y yogur griego/mayonesa ligera), Carne Mechada magra, Queso blanco paisa/telita/carora.
+2. **Platos Fuertes Criollos**:
+   - **Pabellón Criollo Fit**: Carne mechada guisada con aliño criollo (pimentón, cebolla, ajo, ají dulce), caraotas negras guisadas con comino, arroz y tajadas de plátano horneadas (sin freír).
+   - **Asado Negro Magro**: Muchacho redondo sellado y guisado en salsa de papelón y ají dulce con puré de batata o yuca al vapor.
+   - **Pollo Guisado Criollo**: Pollo con papas, zanahorias y sofrito criollo.
+   - **Pescado Margarita / Costero**: Pescado horneado o en Airfryer con tostones de plátano verde al horno y ensalada rallada (repollo y zanahoria con aderezo ligero).
+   - **Pisca Andina**: Caldo andino reconfortante con huevo pochado, cilantro, papa y queso fresco.
+3. **Cenas & Meriendas Criollas**:
+   - Cachapas de maíz tierno al budare con queso de mano/telita bajo en sal.
+   - Empanadas horneadas de cazón o pollo.
+   - Arepitas de auyama con queso fresco y aguacate.
