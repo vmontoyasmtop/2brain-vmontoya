@@ -27,10 +27,15 @@ tags:
 - **`api-gateway`**: Gateway centralizador de peticiones HTTP/RPC.
 - **`auth-ms`**: Servicio de autenticación, JWT e identidades.
 - **`hr-ms`**: Servicio de gestión de Recursos Humanos (Human Resources).
-- **`helpdesk-sm`**: Servicio de mesas de ayuda y soporte.
+- **`helpdesk-sm`**: Servicio de mesas de ayuda y soporte. Ver [[Guía de Operación y API Helpdesk|masterhub-helpdesk-api.md]].
 - **`inventory-sm`**: Servicio de inventario y stock.
 - **`wiki-sm`**: Servicio de base de conocimiento interna.
 - **`frontend-ui-dashboard`**: Dashboard administrativo principal en Next.js.
+
+---
+
+## 📖 Documentación Interna Relacionada
+- [[MasterHub Helpdesk - Guía de Operación y API|masterhub-helpdesk-api.md]]
 
 ---
 
