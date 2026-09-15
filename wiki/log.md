@@ -9,9 +9,10 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - Reestructurado el flujo operativo del módulo de Reclutamiento & Onboarding (`OnboardingDashboard.tsx`).
   - Creada e integrada la sección de **Bandeja de Entrada de Solicitudes de Vacantes (`📥 Solicitudes de Vacantes Recibidas de Sedes`)** directamente en el Dashboard de Onboarding.
   - Habilitada la interacción directa "Postular Candidato" que abre el `CandidateCreateModal` precargando de forma automática el Cargo y la Sede (BU) correspondientes a la vacante seleccionada.
-  - Implementada la gestión de estados (`PENDING` -> `IN_PROGRESS` -> `CLOSED`) desde la bandeja de Onboarding y en la tarjeta de solicitudes de los gerentes (`vacancy-requests-client.tsx`).
+  - Creado el modal `VacancyRequestModal` para permitir la emisión directa de nuevas solicitudes de vacantes por parte de Gerentes de Sede directamente dentro de la página de Onboarding (`/dashboard/hr/onboarding`).
+  - Añadido el botón `+ Solicitar Vacante` tanto en la cabecera principal como en la sección de vacantes activas.
   - Verificada la compilación limpia del proyecto (`npm run build`).
-  - Realizado el commit `9adfce4` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
+  - Realizados los commits `9adfce4` y `565c64c` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
 
 ---
 
