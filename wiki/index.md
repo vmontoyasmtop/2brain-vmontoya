@@ -48,6 +48,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]: Plataforma empresarial de microservicios.
   - [[Desglose Presupuestario y Cotización: Módulo de Finanzas (finance-ms)|proyectos/desglose-presupuesto-cotizacion-finance-ms.md]]: Documento comercial de cotización ($5/h, 4 Hitos de $150 USD, Total $600 USD).
   - [[Propuesta Metodológica Scrum: Módulo de Finanzas (finance-ms)|proyectos/propuesta-scrum-modulo-finanzas.md]]: Propuesta formal Scrum basada en sprints de 30h sin fechas fijas.
+  - [[Propuesta de Colaboración Técnica (Dev Co-Piloto)|proyectos/propuesta-desarrollador-modulo-finanzas.md]]: Propuesta financiera y técnica para el desarrollador colaborador (Modalidad A $720 USD / Modalidad B $1,800 USD).
   - [[Módulo de Finanzas: Especificación Técnica (finance-ms)|proyectos/masterhub-modulo-finanzas.md]]: PRD, arquitectura NestJS/Prisma, motor de retenciones SENIAT, CxP, CxC y archivos TXT.
   - [[MasterHub Helpdesk API & Gestión de Tickets|proyectos/masterhub-helpdesk-api.md]]: Documentación de endpoints REST, modelo Prisma y Matriz Eisenhower.
 - [[Proyecto: Meniox|proyectos/meniox.md]]: Sistema POS & franquicias con RabbitMQ y Next.js 15.
