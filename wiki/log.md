@@ -2,6 +2,17 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-15] feat/ms-hr | Desarrollo de Task 2.1 (Solicitud y Gestión de Vacantes - Fase 2)
+- **Área**: 💻 `programacion` & 🚀 `proyectos`
+- **Agentes Responsables**: 🎨 **Frontend UI Expert** & ⚙️ **Backend JS Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Implementada la interfaz completa de **Solicitud y Gestión de Vacantes (`vacancy-requests-client.tsx`)**.
+  - Conectadas las llamadas dinámicas a sedes reales (`listSites`) y departamentos reales (`listDepartments`).
+  - Añadidos contadores de métricas en tiempo real (Vacantes Activas vs Cerradas), botón interactivo de alta `+ Nueva Vacante`, filtro multifactor y control de estados (`PENDING` -> `IN_PROGRESS` -> `CLOSED`).
+  - Realizado commit `7c4ee74` y desplegado en GitHub (`MasterGroupVE/MG-HUB` rama `master`).
+
+---
+
 ## [2026-09-15] fix/ms-hr | Corrección y Despliegue de Departamentos, Cargos y Generación de Códigos
 - **Área**: 💻 `programacion` & 🚀 `proyectos`
 - **Agentes Responsables**: ⚙️ **Backend JS Expert** & 🎨 **Frontend UI Expert** & 🤵 **ALFRED**
