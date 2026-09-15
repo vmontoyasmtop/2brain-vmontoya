@@ -137,3 +137,26 @@ Agrupa los tickets activos en los 4 cuadrantes según `urgency` e `importance`:
    npm run start:all
    ```
 3. **API Gateway URL**: `http://localhost:3000/helpdesk`
+
+---
+
+## ⚡ Inserción Directa en DB Aiven Cloud via Script Python
+
+Para registrar tickets de soporte al vuelo desde cualquier equipo sin necesidad de levantar Docker o el frontend local:
+
+### 1. Requisito en la PC:
+```bash
+pip install psycopg2-binary
+```
+
+### 2. Script Reutilizable en `2brain`:
+El script está alojado en [`scripts/create-masterhub-tickets.py`](file:///C:/Users/vmontoyaMG/Desktop/2brain/scripts/create-masterhub-tickets.py).
+
+### 3. Comando de Ejecución (PowerShell):
+```powershell
+cd C:\Users\vmontoyaMG\Desktop\2brain
+$env:DATABASE_URL="postgres://avnadmin:...@pg-masterhub-masterhub.j.aivencloud.com:28688/helpdesk_db?sslmode=require"
+python scripts/create-masterhub-tickets.py
+```
+
+**Beneficio**: El script se conecta directamente a la base de datos de producción/nube `helpdesk_db` en **Aiven Cloud**, calcula automáticamente el cuadrante de la **Matriz de Eisenhower** (`urgency`/`importance`), genera IDs únicos tipo CUID y confirma el resultado en la consola.
