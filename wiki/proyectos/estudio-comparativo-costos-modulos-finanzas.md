@@ -8,15 +8,15 @@
 
 ## 1. Resumen Ejecutivo Comparativo
 
-| Criterio | Profit Plus (Corporativo/Prof.) | Odoo Enterprise | Saint Enterprise | **MasterHub Finance MS (Custom)** |
-| :--- | :--- | :--- | :--- | :--- |
-| **Tipo de Solución** | ERP Tradicional On-Premise | ERP Modular Cloud/Hybrid | Sistema Tradicional Desktop | **Microservicio Headless/Web Native** |
-| **Costo Licencia Base** | $3,500 – $5,750 USD | $87 – $142 USD / usuario / año | $190 – $370 USD | **$0 USD (Código Propio)** |
-| **Costo Implementación** | $1,500 – $4,000 USD | $5,000 – $15,000 USD | $500 – $1,500 USD | **$2,400 USD (120h a $20/h)** |
-| **Mantenimiento Anual** | $500 – $1,200 USD (SMA) | Recurrente por usuario | Opcional / Por horas | **$0 USD (Mantenimiento interno)** |
-| **Costo Total Año 1** | **$5,000 – $10,000+ USD** | **$6,000 – $20,000+ USD** | **$700 – $1,800 USD** | **$2,400 USD (Inversión Fija)** |
-| **Integración con MasterHub** | Rígida / Requiere middleware ($) | Vía API Odoo (Compleja/Lenta) | Muy Limitada / Archivos planos | **100% Nativa (TypeScript / Prisma)** |
-| **Escalabilidad y Flexibilidad** | Baja (Estructura rígida) | Media-Alta (Requiere Partners) | Baja | **Máxima (Ajustada al modelo SaaS)** |
+| Criterio | Profit Plus (Corporativo) | Odoo Enterprise | Saint Enterprise | **MasterHub Opción A (1 Dev)** | 🚀 **MasterHub Opción B (2 Devs)** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Tipo de Solución** | ERP Tradicional On-Premise | ERP Modular Cloud/Hybrid | Sistema Tradicional Desktop | **Microservicio Headless Custom** | **Microservicio Enterprise Custom** |
+| **Costo Licencia Base** | $3,500 – $5,750 USD | $87 – $142 USD / usu / año | $190 – $370 USD | **$0 USD (Código Propio)** | **$0 USD (Código Propio)** |
+| **Costo Implementación** | $1,500 – $4,000 USD | $5,000 – $15,000 USD | $500 – $1,500 USD | **$2,400 USD (120h a $20/h)** | **$6,000 USD (240h a $25/h)** |
+| **Mantenimiento Anual** | $500 – $1,200 USD (SMA) | Recurrente por usuario | Opcional / Por horas | **$0 USD (Interno)** | **$0 USD (Interno)** |
+| **Costo Total Año 1** | **$5,000 – $10,000+ USD** | **$6,000 – $20,000+ USD** | **$700 – $1,800 USD** | **$2,400 USD (Inversión Fija)** | **$6,000 USD (Inversión Fija)** |
+| **Integración con MasterHub** | Rígida / Middleware ($) | Vía API Odoo (Compleja) | Muy Limitada | **100% Nativa (TypeScript)** | **100% Nativa + QA Dual + IA** |
+| **Time-to-Market / Vel.** | Lenta (Meses) | Media (Meses) | Rápida (Limitada) | **Estándar (1 Dev / 15h/sem)** | **Acelerado (2 Devs / Doble Vel.)** |
 
 ---
 
