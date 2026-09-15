@@ -13,8 +13,9 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - Añadido el botón `+ Solicitar Vacante` tanto en la cabecera principal como en la sección de vacantes activas.
   - Delegada la tarea al subagente `frontend_developer` para transformar el campo libre 'Cargo Solicitado' en un selector desplegable dinámico (`<select>`) alimentado por `listJobPositions`.
   - Implementada la auto-selección de departamento al elegir un cargo del catálogo y la opción de especificación manual ('Otro cargo...').
+  - Delegada la tarea al subagente `frontend_developer` para migrar la consulta del selector de Sede/BU a la API oficial del módulo de Inventario (`@/lib/inventory-api`).
   - Verificada la compilación limpia del proyecto (`npm run build`).
-  - Realizados los commits `9adfce4`, `565c64c` y `83240c7` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
+  - Realizados los commits `9adfce4`, `565c64c`, `83240c7` y `914e3a0` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
 
 ---
 
