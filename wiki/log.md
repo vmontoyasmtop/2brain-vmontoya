@@ -2,6 +2,19 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-15] feat/ms-hr | Integración de Solicitudes de Vacantes con la Bandeja de Onboarding (Task 2.1)
+- **Área**: 💻 `programacion` & 🚀 `proyectos`
+- **Agentes Responsables**: 🎨 **Frontend UI Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Reestructurado el flujo operativo del módulo de Reclutamiento & Onboarding (`OnboardingDashboard.tsx`).
+  - Creada e integrada la sección de **Bandeja de Entrada de Solicitudes de Vacantes (`📥 Solicitudes de Vacantes Recibidas de Sedes`)** directamente en el Dashboard de Onboarding.
+  - Habilitada la interacción directa "Postular Candidato" que abre el `CandidateCreateModal` precargando de forma automática el Cargo y la Sede (BU) correspondientes a la vacante seleccionada.
+  - Implementada la gestión de estados (`PENDING` -> `IN_PROGRESS` -> `CLOSED`) desde la bandeja de Onboarding y en la tarjeta de solicitudes de los gerentes (`vacancy-requests-client.tsx`).
+  - Verificada la compilación limpia del proyecto (`npm run build`).
+  - Realizado el commit `9adfce4` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
+
+---
+
 ## [2026-09-15] feat/ms-hr | Desarrollo de Task 2.1 (Solicitud y Gestión de Vacantes - Fase 2)
 - **Área**: 💻 `programacion` & 🚀 `proyectos`
 - **Agentes Responsables**: 🎨 **Frontend UI Expert** & ⚙️ **Backend JS Expert** & 🤵 **ALFRED**
