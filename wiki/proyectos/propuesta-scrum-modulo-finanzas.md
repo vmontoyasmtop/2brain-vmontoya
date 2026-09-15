@@ -26,7 +26,9 @@ Propuesta de desarrollo ágil basada en la metodología **Scrum**, con sprints i
 
 * **Metodología**: Scrum (Desarrollo incremental por Sprints con entregables funcionales en cada hito).
 * **Timeframe Relativo**: Sprints de **2 Semanas** contadas a partir de la aprobación oficial ($T_0$).
-* **Capacidad Estimada por Sprint**: **30 Horas Efectivas de Desarrollo** (10h en semanas laborales: 2h/día Lun-Vie + 5h fin de semana).
+* **Capacidad Estimada por Sprint**: **30 Horas Efectivas de Desarrollo** (10h en semanas laborales: 2h/día Lun-Vie + 5h fin de weekend).
+* **Valoración Económica**: **$20.00 USD / hora** | **$600.00 USD / Sprint** (Total Proyecto 120h: **$2,400.00 USD**).
+* **Referencia de Mercado (Anclaje)**: Valoración Agencia $5,400 USD (Ahorro del +55% sin licencias recurrentes).
 
 ---
 

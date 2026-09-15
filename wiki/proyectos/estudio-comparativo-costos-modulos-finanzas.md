@@ -12,9 +12,9 @@
 | :--- | :--- | :--- | :--- | :--- |
 | **Tipo de Solución** | ERP Tradicional On-Premise | ERP Modular Cloud/Hybrid | Sistema Tradicional Desktop | **Microservicio Headless/Web Native** |
 | **Costo Licencia Base** | $3,500 – $5,750 USD | $87 – $142 USD / usuario / año | $190 – $370 USD | **$0 USD (Código Propio)** |
-| **Costo Implementación** | $1,500 – $4,000 USD | $5,000 – $15,000 USD | $500 – $1,500 USD | **$1,200 USD (120h a $10/h)** |
+| **Costo Implementación** | $1,500 – $4,000 USD | $5,000 – $15,000 USD | $500 – $1,500 USD | **$2,400 USD (120h a $20/h)** |
 | **Mantenimiento Anual** | $500 – $1,200 USD (SMA) | Recurrente por usuario | Opcional / Por horas | **$0 USD (Mantenimiento interno)** |
-| **Costo Total Año 1** | **$5,000 – $10,000+ USD** | **$6,000 – $20,000+ USD** | **$700 – $1,800 USD** | **$1,200 USD (Inversión Fija)** |
+| **Costo Total Año 1** | **$5,000 – $10,000+ USD** | **$6,000 – $20,000+ USD** | **$700 – $1,800 USD** | **$2,400 USD (Inversión Fija)** |
 | **Integración con MasterHub** | Rígida / Requiere middleware ($) | Vía API Odoo (Compleja/Lenta) | Muy Limitada / Archivos planos | **100% Nativa (TypeScript / Prisma)** |
 | **Escalabilidad y Flexibilidad** | Baja (Estructura rígida) | Media-Alta (Requiere Partners) | Baja | **Máxima (Ajustada al modelo SaaS)** |
 
@@ -58,11 +58,11 @@ Solución contable tradicional de entrada muy utilizada por pequeñas empresas y
 
 ## 3. Justificación y Argumentación Comercial para el Cliente
 
-Al presentar la cotización de **$1,200 USD** por el desarrollo a medida del módulo `Finance MS` para MasterHub, se pueden destacar los siguientes puntos estratégicos frente a la Gerencia / Jefatura de Finanzas:
+Al presentar la cotización de **$2,400 USD** por el desarrollo a medida del módulo `Finance MS` para MasterHub, se pueden destacar los siguientes puntos estratégicos frente a la Gerencia / Jefatura de Finanzas:
 
 1. **Ahorro de Costos a Mediano y Largo Plazo**:
    * Adquirir e implementar un ERP comercial como Profit Plus u Odoo implicaría un gasto inicial de **$5,000 a $10,000 USD**, más cánones anuales por licencia y soporte.
-   * El módulo a medida requiere **únicamente $1,200 USD** de inversión en desarrollo, sin cargos recurrentes por licencia por usuario.
+   * El módulo a medida requiere **únicamente $2,400 USD** de inversión en desarrollo, sin cargos recurrentes por licencia por usuario.
 
 2. **Integración Nativa 100% e Ininterrumpida**:
    * Ningún software comercial se conecta de forma transparente con la base de datos y la arquitectura técnica de MasterHub sin costosos conectores a medida.
@@ -72,7 +72,7 @@ Al presentar la cotización de **$1,200 USD** por el desarrollo a medida del mó
    * La empresa adquiere la propiedad total del desarrollo. No depende de aumentos de tarifas de licencias de terceros ni de renovaciones de soporte obligatorio.
 
 4. **Retorno de Inversión (ROI) Inmediato**:
-   * Con una tarifa sumamente competitiva de **$10 USD / hora** (tarifa de mercado de desarrollo especializado es de $30–$50 USD/h), la empresa obtiene una solución equivalente a sistemas de alta gama a una fracción de su valor comercial real.
+   * Con una tarifa sumamente competitiva de **$20 USD / hora** (tarifa de mercado de desarrollo de agencia especializada es de $45–$75 USD/h), la empresa obtiene una solución equivalente a sistemas de alta gama ahorrando un 55%+ en inversión inicial.
 
 ---
 *Documento registrado en 2brain para soporte en negociaciones comerciales.*
