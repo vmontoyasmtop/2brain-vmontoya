@@ -44,6 +44,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Proyecto: Brotapp|proyectos/brotapp.md]]: App móvil en React Native & Expo SDK 57.
 - [[Proyecto: CRM-MG|proyectos/crm-mg.md]]: CRM monorepo con NestJS 11, Prisma y OpenAI.
 - [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]: Plataforma empresarial de microservicios.
+  - [[Propuesta Metodológica Scrum: Módulo de Finanzas (finance-ms)|proyectos/propuesta-scrum-modulo-finanzas.md]]: Propuesta formal Scrum basada en sprints de 30h sin fechas fijas.
   - [[Módulo de Finanzas: Especificación Técnica (finance-ms)|proyectos/masterhub-modulo-finanzas.md]]: PRD, arquitectura NestJS/Prisma, motor de retenciones SENIAT, CxP, CxC y archivos TXT.
   - [[MasterHub Helpdesk API & Gestión de Tickets|proyectos/masterhub-helpdesk-api.md]]: Documentación de endpoints REST, modelo Prisma y Matriz Eisenhower.
 - [[Proyecto: Meniox|proyectos/meniox.md]]: Sistema POS & franquicias con RabbitMQ y Next.js 15.

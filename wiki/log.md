@@ -2,6 +2,17 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-14] setup/scrum | Propuesta Metodológica Scrum & Estructura de Sprints (finance-ms)
+- **Área**: 🚀 `proyectos` & 💰 `finanzas`
+- **Agentes Responsables**: 👔 **Agile Coach / Scrum Master** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Instalada e integrada la skill `agile-coach` para mejores prácticas Scrum.
+  - Creado documento de propuesta formal sin fechas fijas en `wiki/proyectos/propuesta-scrum-modulo-finanzas.md` (4 Sprints de 30h timeboxed, User Stories con Story Points y entregables de valor).
+  - Actualizada la estructura de ClickUp en tiempo real (`MasterHub` -> `MS-FINANZAS`) renombrando tareas a Sprint 1..4 con estimados de tiempo y puntos de historia.
+  - Actualizados `wiki/index.md` y `wiki/log.md`.
+
+---
+
 ## [2026-09-14] ingest | Módulo de Finanzas (finance-ms) — MasterHub PRD
 - **Fuente**: `raw/finanzas/requerimiento-modulo-finanzas.md` (extraído de `Downloads/requerimiento-modulo-finanzas.md`)
 - **Área**: 🚀 `proyectos` & 💰 `finanzas`
