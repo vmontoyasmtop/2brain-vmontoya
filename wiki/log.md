@@ -2,6 +2,18 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-15] setup/calendar | Reestructuración de Calendario Laboral (Eisenhower, Focus Time & Micro-tareas)
+- **Área**: 🏢 `trabajo` & 💻 `programacion`
+- **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Implementada la nomenclatura basada en la Matriz de Eisenhower (`[Q1]`, `[Q2]`, `[Q3]`) para los bloques de calendario de trabajo (`soporte@mastergroupve.com`).
+  - Creado documento de estándar operativo en `wiki/trabajo/estandar-organizacion-google-calendar-tasks.md`.
+  - Agendado el bloque de **Focus Time de la tarde (13:30 - 15:30)** asignado al microservicio **MS-HR** (*Fase 1: Core del Expediente* y *Fase 2: Reclutamiento & Onboarding*).
+  - Creados los tickets reactivos de soporte en calendario: `Tailin (Bug colores laptop)`, `Oska (Impresora)` y `Retiro de equipos Hikvision en control de acceso Master`.
+  - Actualizados `wiki/index.md` y `wiki/log.md`.
+
+---
+
 ## [2026-09-14] setup/quote | Documento de Cotización Comercial ($5/h) y Concepto Story Points
 - **Área**: 🚀 `proyectos` & 💰 `finanzas`
 - **Agentes Responsables**: 💰 **Finance Manager** & 🤵 **ALFRED**
