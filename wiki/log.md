@@ -13,9 +13,9 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - Añadido el botón `+ Solicitar Vacante` tanto en la cabecera principal como en la sección de vacantes activas.
   - Delegada la tarea al subagente `frontend_developer` para transformar el campo libre 'Cargo Solicitado' en un selector desplegable dinámico (`<select>`) alimentado por `listJobPositions`.
   - Implementada la auto-selección de departamento al elegir un cargo del catálogo y la opción de especificación manual ('Otro cargo...').
-  - Delegada la tarea al subagente `backend_developer` para implementar el `VacancyRequestGatewayController` en `apps/api-gateway` solucionando el error `Cannot POST /api/hr/vacancy-requests` y mapeando los métodos HTTP REST (`POST`, `GET`, `PATCH`, `DELETE`) hacia `hr-ms` por NATS TCP.
-  - Verificada la compilación limpia de `apps/api-gateway` y `apps/hr-ms`.
-  - Realizados los commits `9adfce4`, `565c64c`, `83240c7`, `914e3a0` y `5188f57` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
+  - Delegada la tarea a los subagentes `backend_developer` y `frontend_developer` para optimizar y solucionar el filtrado end-to-end de Cargos y Departamentos por término de búsqueda (insensible a mayúsculas/minúsculas sobre nombre y código), Sede (por ID y código de Sede/BU), Departamento y Estado activo.
+  - Verificada la compilación limpia de los proyectos (`npm run build`).
+  - Realizados los commits `9adfce4`, `565c64c`, `83240c7`, `914e3a0`, `5188f57` y `f836d9e` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
 
 ---
 
