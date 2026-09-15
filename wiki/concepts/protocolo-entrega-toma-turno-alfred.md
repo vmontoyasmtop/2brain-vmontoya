@@ -26,15 +26,16 @@ Mecanismo oficial de **ALFRED** para mantener continuidad absoluta de contexto, 
 **Comando del Usuario**: `"ALFRED, entrega de turno"` o `"Cierra la jornada"`
 
 ### Secuencia de Ejecución de ALFRED:
-1. **Registro de Log**: Escribir en [`wiki/log.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/log.md) un resumen ejecutivo de lo completado en el día (tareas de ClickUp cerradas, eventos atendidos, código desarrollado o sermones avanzados).
-2. **Actualización de Dashboard**: Actualizar [`wiki/life-dashboard.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/life-dashboard.md) moviendo tareas activas y fijando los focos pendientes para la siguiente jornada.
-3. **Persistencia Git**:
+1. **Revisión de Cierre**: Consultar la bandeja de correos (Personal y Trabajo), reuniones concretadas y ClickUp para asegurar que nada quede suelto.
+2. **Registro de Log**: Escribir en [`wiki/log.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/log.md) un resumen ejecutivo de lo completado en el día.
+3. **Actualización de Dashboard**: Actualizar [`wiki/life-dashboard.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/life-dashboard.md) ajustando los focos pendientes para la siguiente jornada.
+4. **Persistencia Git Autónoma**:
    ```bash
    git add .
    git commit -m "chore(handover): cierre de turno [YYYY-MM-DD]"
    git push origin master
    ```
-4. **Despedida**: Presentar un resumen conciso de 3 puntos del estado final.
+5. **Informe de Despedida**: Presentar un resumen conciso del estado final sin requerir confirmación previa para guardar.
 
 ---
 
@@ -43,16 +44,26 @@ Mecanismo oficial de **ALFRED** para mantener continuidad absoluta de contexto, 
 **Comando del Usuario**: `"ALFRED, toma de turno"` o `"Inicia la jornada"`
 
 ### Secuencia de Ejecución de ALFRED:
-1. **Sincronización Git**:
+1. **Sincronización Git Autónoma**:
    ```bash
    git pull origin master
    ```
 2. **Lectura de Memoria**: Leer las últimas entradas de [`wiki/log.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/log.md) y [`wiki/life-dashboard.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/life-dashboard.md).
-3. **Consulta de Nube**: Consultar Google Calendar (eventos de hoy) y ClickUp (sprints activos).
-4. **Informe de Bienvenida**:
+3. **Consulta Multicuenta de Nube**:
+   - Google Calendar (eventos de hoy en cuentas **Personal** y **Laboral**).
+   - Gmail (bandejas personal y de trabajo para detectar correos importantes).
+   - ClickUp (sprints y tareas activas).
+4. **Informe de Bienvenida Ejecutiva**:
    * *Resumen de dónde quedamos en el último turno.*
-   * *Agenda del día actual.*
+   * *Agenda y eventos del día (Personal + Trabajo).*
+   * *Alertas o avisos relevantes de correo.*
    * *Próximo bloque de enfoque recomendado.*
+
+---
+
+## 3. 🛡️ Política de Autonomía de ALFRED
+- **Sin preguntas para lectura / sincronización / consultas**: ALFRED ejecuta de inmediato y sin pedir permisos todos los comandos de lectura, consulta a herramientas y sincronización (`git pull`, lectura de archivos, MCP APIs).
+- **Confirmación previa solo si es destructivo**: ALFRED solicitará autorización únicamente cuando una orden implique borrar, sobrescribir datos sensibles o ejecutar cambios riesgosos.
 
 ---
 

@@ -94,17 +94,32 @@ Cuando el usuario añade un archivo a `raw/<area>/` y pide ingerirlo:
 
 ### 3. `ENTREGA_TURNO` (Cierre de Jornada / Sincronización Multi-PC)
 Cuando el usuario pida *"ALFRED, entrega de turno"* o *"Cierra la jornada"*:
-1. Registrar resumen de logros y actividades del día en `wiki/log.md`.
-2. Actualizar prioridades en `wiki/life-dashboard.md`.
-3. Ejecutar automáticamente: `git add .`, `git commit -m "chore(handover): cierre de turno [YYYY-MM-DD]"`, `git push origin master`.
-4. Presentar un informe ejecutivo corto de despedida.
+1. **Revisión de Cierre**: Verificar estado final de tareas del día, pendientes en correos/calendarios y logros.
+2. **Registro de Log**: Registrar resumen de logros y actividades del día en `wiki/log.md`.
+3. **Actualizar Dashboard**: Actualizar prioridades en `wiki/life-dashboard.md`.
+4. **Persistencia Git**: Ejecutar directamente y de forma autónoma: `git add .`, `git commit -m "chore(handover): cierre de turno [YYYY-MM-DD]"`, `git push origin master`.
+5. **Informe de Despedida**: Presentar un informe ejecutivo corto con el balance del día y pendientes clave para mañana.
 
 ### 4. `TOMA_TURNO` (Inicio de Jornada / Sincronización Multi-PC)
 Cuando el usuario pida *"ALFRED, toma de turno"* o *"Inicia la jornada"*:
-1. Ejecutar automáticamente: `git pull origin master`.
-2. Leer las entradas más recientes de `wiki/log.md` y `wiki/life-dashboard.md`.
-3. Consultar la agenda en Google Calendar y tareas activas en ClickUp.
-4. Dar la bienvenida al usuario con el informe de situación actual y el primer bloque de trabajo recomendado.
+1. **Sincronización Git**: Ejecutar directamente y de forma autónoma: `git pull origin master`.
+2. **Lectura de Memoria**: Leer entradas recientes de `wiki/log.md` y `wiki/life-dashboard.md`.
+3. **Consulta Multicuenta de Nube (Calendar, Gmail & ClickUp)**:
+   - **Google Calendar**: Consultar todos los eventos programados para hoy en las cuentas **Personal** (`google-calendar-personal`) y **Laboral** (`google-calendar-trabajo`).
+   - **Gmail**: Consultar correos o avisos recientes en las bandejas personal y laboral.
+   - **ClickUp**: Consultar sprints y tareas activas.
+4. **Informe de Bienvenida Ejecutiva**:
+   - *Resumen de en qué quedamos en el último turno.*
+   - *Detalle completo de eventos/reuniones del día (Personal + Trabajo).*
+   - *Alertas de correos o comunicaciones clave.*
+   - *Primer bloque de trabajo de enfoque recomendado.*
+
+---
+
+## 🤖 Directrices de Autonomía Operativa de ALFRED
+
+- **Ejecución Directa e Inmediata (Lectura, Sync y Consultas)**: ALFRED ejecuta directamente y sin pedir confirmación previa cualquier comando de lectura, consulta de APIs, sincronización (`git pull`, `git status`), búsqueda o creación/modificación de archivos routine dentro de `2brain`. NO se debe preguntar al usuario *"¿Desea que ejecute el comando X?"*.
+- **Confirmación Previa Requerida (Solo Acciones Sensibles)**: ALFRED SOLO solicitará confirmación previa explícita si una acción implica **eliminar datos/archivos**, realizar escrituras o cambios destructivos o efectuar modificaciones irreversibles en entornos de producción.
 
 ---
 
