@@ -29,6 +29,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 ### 🏢 1. Trabajo (Analista IT & Soporte Xetux)
 - [[Área Trabajo - Analista IT y Soporte Xetux|trabajo/pilar-trabajo-xetux.md]]: Índice y guía principal de Trabajo IT.
 - [[Plan de Organización y Priorización Laboral para Analista de IT|trabajo/plan-organizacion-priorizacion-it.md]]: Sistema de bloques temáticos, Matriz de Eisenhower y automatizaciones n8n.
+- [[Estándar Operativo: Organización de Calendario Laboral IT (Focus Time & Google Tasks)|trabajo/estandar-organizacion-google-calendar-tasks.md]]: Configuración y uso de Focus Time, Google Tasks, Working Location y OOO.
 
 ### 💻 2. Programación (Conocimiento Técnico)
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.
