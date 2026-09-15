@@ -11,8 +11,10 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - Habilitada la interacción directa "Postular Candidato" que abre el `CandidateCreateModal` precargando de forma automática el Cargo y la Sede (BU) correspondientes a la vacante seleccionada.
   - Creado el modal `VacancyRequestModal` para permitir la emisión directa de nuevas solicitudes de vacantes por parte de Gerentes de Sede directamente dentro de la página de Onboarding (`/dashboard/hr/onboarding`).
   - Añadido el botón `+ Solicitar Vacante` tanto en la cabecera principal como en la sección de vacantes activas.
+  - Delegada la tarea al subagente `frontend_developer` para transformar el campo libre 'Cargo Solicitado' en un selector desplegable dinámico (`<select>`) alimentado por `listJobPositions`.
+  - Implementada la auto-selección de departamento al elegir un cargo del catálogo y la opción de especificación manual ('Otro cargo...').
   - Verificada la compilación limpia del proyecto (`npm run build`).
-  - Realizados los commits `9adfce4` y `565c64c` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
+  - Realizados los commits `9adfce4`, `565c64c` y `83240c7` subiendo los cambios consolidados a GitHub (`MasterGroupVE/MG-HUB` rama `master`).
 
 ---
 
