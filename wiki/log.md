@@ -2,6 +2,18 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-14] ingest | Módulo de Finanzas (finance-ms) — MasterHub PRD
+- **Fuente**: `raw/finanzas/requerimiento-modulo-finanzas.md` (extraído de `Downloads/requerimiento-modulo-finanzas.md`)
+- **Área**: 🚀 `proyectos` & 💰 `finanzas`
+- **Agentes Responsables**: 📥 **Subagente Ingestor** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Ingerido PRD completo en `raw/finanzas/requerimiento-modulo-finanzas.md`.
+  - Creado resumen en `wiki/summaries/requerimiento-modulo-finanzas.md`.
+  - Creada especificación técnica de arquitectura y roadmap en `wiki/proyectos/masterhub-modulo-finanzas.md`.
+  - Actualizados `wiki/proyectos/masterhub-mg-hub.md`, `wiki/index.md` y `wiki/log.md`.
+
+---
+
 ## [2026-09-14] setup/protocol | Creación del Protocolo de Entrega y Toma de Turno de ALFRED
 - **Área**: 💻 `programacion`
 - **Agente Responsable**: 🤵 **ALFRED**
