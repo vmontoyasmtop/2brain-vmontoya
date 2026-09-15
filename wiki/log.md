@@ -8,7 +8,9 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
 - **Acciones realizadas**:
   - Implementada la nomenclatura basada en la Matriz de Eisenhower (`[Q1]`, `[Q2]`, `[Q3]`) para los bloques de calendario de trabajo (`soporte@mastergroupve.com`).
   - Creado documento de estándar operativo en `wiki/trabajo/estandar-organizacion-google-calendar-tasks.md`.
-  - Agendado el bloque de **Focus Time de la tarde (13:30 - 15:30)** asignado al microservicio **MS-HR** (*Fase 1: Core del Expediente* y *Fase 2: Reclutamiento & Onboarding*).
+  - Agendado y extendido el bloque de **Focus Time de la tarde (13:30 - 16:00)** asignado a **MS-HR**, dividido en 2 tareas claves:
+    1. **13:30 - 14:45**: Resolución definitiva del Bug de la Fase 1 (Departamentos y Cargos / `departments` y `job-positions`).
+    2. **14:45 - 16:00**: Desarrollo de Solicitudes de Vacantes (`vacancy-requests` - Fase 2 Reclutamiento & Onboarding).
   - Creados los tickets reactivos de soporte en calendario: `Tailin (Bug colores laptop)`, `Oska (Impresora)` y `Retiro de equipos Hikvision en control de acceso Master`.
   - Actualizados `wiki/index.md` y `wiki/log.md`.
 
