@@ -51,6 +51,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
   - [[Propuesta de Colaboración Técnica (Dev Co-Piloto)|proyectos/propuesta-desarrollador-modulo-finanzas.md]]: Propuesta financiera y técnica para el desarrollador colaborador (Modalidad A $720 USD / Modalidad B $1,800 USD).
   - [[Propuesta de Colaboración Funcional & QA (Jessica - Finanzas)|proyectos/propuesta-consultora-finanzas-jessica.md]]: Propuesta de levantamiento operativo de Sheets, reglas SENIAT y pruebas UAT (Modalidad A $360 USD / Modalidad B $900 USD).
   - [[Módulo de Finanzas: Especificación Técnica (finance-ms)|proyectos/masterhub-modulo-finanzas.md]]: PRD, arquitectura NestJS/Prisma, motor de retenciones SENIAT, CxP, CxC y archivos TXT.
+  - [[Estudio Comparativo de Infraestructura Cloud para MasterHub (MGH)|proyectos/masterhub-estudio-nube-hosting-comparativa.md]]: Análisis comparativo de precios y funcionalidad entre Hetzner, Railway+Aiven, DigitalOcean y AWS.
   - [[MasterHub Helpdesk API & Gestión de Tickets|proyectos/masterhub-helpdesk-api.md]]: Documentación de endpoints REST, modelo Prisma y Matriz Eisenhower.
 - [[Proyecto: Meniox|proyectos/meniox.md]]: Sistema POS & franquicias con RabbitMQ y Next.js 15.
 - [[Proyecto: WebCastro|proyectos/webcastro.md]]: Sitio web con Payload CMS 3 & Next.js 16.
