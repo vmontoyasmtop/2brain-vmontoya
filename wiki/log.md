@@ -2,6 +2,17 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-14] setup/quote | Documento de Cotización Comercial ($5/h) y Concepto Story Points
+- **Área**: 🚀 `proyectos` & 💰 `finanzas`
+- **Agentes Responsables**: 💰 **Finance Manager** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Creada nota conceptual en `wiki/concepts/story-points-y-estimacion-scrum.md`.
+  - Creada fuente cruda comercial en `raw/finanzas/cotizacion-modulo-finanzas.md`.
+  - Creado documento comercial de cotización por horas a tarifa de $5/h en `wiki/proyectos/desglose-presupuesto-cotizacion-finance-ms.md` (4 Hitos de $150.00 USD, Total: $600.00 USD / 120h).
+  - Actualizados `wiki/index.md` y `wiki/log.md`.
+
+---
+
 ## [2026-09-14] setup/scrum | Propuesta Metodológica Scrum & Estructura de Sprints (finance-ms)
 - **Área**: 🚀 `proyectos` & 💰 `finanzas`
 - **Agentes Responsables**: 👔 **Agile Coach / Scrum Master** & 🤵 **ALFRED**

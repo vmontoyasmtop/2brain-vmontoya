@@ -34,6 +34,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.
 - [[Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain en Cualquier PC|programacion/guia-despliegue-empaquetado-alfred-2brain.md]]: Script powershell y pasos de clonación rápida en 1 comando.
 - [[Protocolo de Entrega y Toma de Turno de ALFRED (Sincronización Multi-PC)|concepts/protocolo-entrega-toma-turno-alfred.md]]: Sincronización automática de contexto entre equipos vía Git y MCP.
+- [[Concepto: Story Points (SP) y Estimación de Esfuerzo en Scrum|concepts/story-points-y-estimacion-scrum.md]]: Explicación detallada de Story Points, escala de Fibonacci y medición de complejidad.
 - [[LLM Wiki Pattern]]: Modelo de wiki persistente compilada por IA.
 - [[Antigravity Commands and Shortcuts]]: Guía de comandos slash y atajos.
 - [[Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)|programacion/diagnostico-mcp-google-calendar-gmail.md]]: Diagnóstico técnico y pasos de reparación de MCPs.
@@ -44,6 +45,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Proyecto: Brotapp|proyectos/brotapp.md]]: App móvil en React Native & Expo SDK 57.
 - [[Proyecto: CRM-MG|proyectos/crm-mg.md]]: CRM monorepo con NestJS 11, Prisma y OpenAI.
 - [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]: Plataforma empresarial de microservicios.
+  - [[Desglose Presupuestario y Cotización: Módulo de Finanzas (finance-ms)|proyectos/desglose-presupuesto-cotizacion-finance-ms.md]]: Documento comercial de cotización ($5/h, 4 Hitos de $150 USD, Total $600 USD).
   - [[Propuesta Metodológica Scrum: Módulo de Finanzas (finance-ms)|proyectos/propuesta-scrum-modulo-finanzas.md]]: Propuesta formal Scrum basada en sprints de 30h sin fechas fijas.
   - [[Módulo de Finanzas: Especificación Técnica (finance-ms)|proyectos/masterhub-modulo-finanzas.md]]: PRD, arquitectura NestJS/Prisma, motor de retenciones SENIAT, CxP, CxC y archivos TXT.
   - [[MasterHub Helpdesk API & Gestión de Tickets|proyectos/masterhub-helpdesk-api.md]]: Documentación de endpoints REST, modelo Prisma y Matriz Eisenhower.
