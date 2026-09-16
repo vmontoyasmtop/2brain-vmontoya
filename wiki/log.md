@@ -33,7 +33,7 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
 
 ---
 
-## [2026-09-16] feat/ms-hr | Desarrollo, Pruebas y Entrega de Task 2.2 (Control de Entrevistas, Candidatos y CVs)
+### [2026-09-16] feat/ms-hr | Desarrollo, Pruebas y Entrega de Task 2.2 (Control de Entrevistas, Candidatos y CVs)
 - **Área**: 💻 `programacion` & 🚀 `proyectos`
 - **Agentes Responsables**: ⚙️ **Backend JS Expert** & 🎨 **Frontend UI Expert** & 🤵 **ALFRED**
 - **Acciones realizadas**:
@@ -41,7 +41,7 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - Desarrollados los endpoints REST en `api-gateway` y TCP en `hr-ms` para consulta, filtrado, cambio de estatus, programación de entrevistas y subida de CVs en formato PDF hacia la infraestructura MinIO (S3).
   - Creada la interfaz de usuario en Next.js App Router (`frontend-ui-dashboard` en `/dashboard/hr/candidates`) con KPIs, filtros multifactor, modal con Dropzone para carga de CVs y modal de detalle con visor/descarga.
   - Ejecutadas las suites de pruebas unitarias (36/36 pasadas en `hr-ms`) y verificadas las compilaciones sin errores.
-  - Realizados los commits y pushes a GitHub: `d90e562` en `hr-ms` (rama `onboarding-employee`), `732b15b` en `api-gateway` (rama `main`) y `a5dbc25` en `frontend-ui-dashboard` (rama `main`).
+  - Realizado el commit consolidado `aaa437d` y subido a GitHub en el monorrepositorio oficial **`MasterGroupVE/MG-HUB`** (rama `master`), así como en los submódulos independientes.
   - Actualizada la tarjeta [TASK 2.2](https://app.clickup.com/t/86bbe5m6z) a **Complete (Done)** en el workspace de ClickUp.
 
 ---
