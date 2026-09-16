@@ -41,6 +41,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Antigravity Commands and Shortcuts]]: Guía de comandos slash y atajos.
 - [[Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)|programacion/diagnostico-mcp-google-calendar-gmail.md]]: Diagnóstico técnico y pasos de reparación de MCPs.
 - [[Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail Multicuenta)|programacion/guia-configuracion-mcp-google-calendar-gmail.md]]: Guía paso a paso para configurar MCPs en nuevos equipos.
+- [[Guía de Instalación y Configuración del Servidor MCP para Google Docs (Trabajo y Personal)|programacion/guia-configuracion-mcp-google-docs.md]]: Configuración multicuenta de Google Docs MCP.
 
 ### 🚀 3. Proyectos (Software Independiente)
 - [[Área Proyectos - Software Independiente|proyectos/pilar-proyectos.md]]: Índice general de proyectos.

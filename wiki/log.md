@@ -2,6 +2,28 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-16] setup/mcp-gdocs | Configuración de Servidores MCP para Google Docs (Trabajo y Personal)
+- **Área**: 💻 `programacion` & 🏢 `trabajo`
+- **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Creados los directorios de credenciales OAuth `C:\Users\Animación MKT\.gdocs-trabajo-mcp` y `C:\Users\Animación MKT\.gdocs-personal-mcp`.
+  - Registrados los servidores MCP `google-docs-trabajo` y `google-docs-personal` en `C:\Users\Animación MKT\.gemini\config\mcp_config.json` empleando el paquete `@node2flow/google-docs-mcp`.
+  - Documentada la arquitectura en `wiki/programacion/guia-configuracion-mcp-google-docs.md`.
+
+---
+
+## [2026-09-16] feat/ms-hr | Desarrollo, Pruebas y Entrega de Task 2.2 (Control de Entrevistas, Candidatos y CVs)
+- **Área**: 💻 `programacion` & 🚀 `proyectos`
+- **Agentes Responsables**: ⚙️ **Backend JS Expert** & 🎨 **Frontend UI Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Implementado el modelo Prisma `Candidate` e `Interview` en `hr-ms` con correlativo automático (`candidatoNum`), borrado lógico (*soft delete*) y estados de selección (`ENTREVISTADO`, `EN_PROCESO`, `PRUEBA_TECNICA`, `ELEGIBLE`, `CONTRATADO`).
+  - Desarrollados los endpoints REST en `api-gateway` y TCP en `hr-ms` para consulta, filtrado, cambio de estatus, programación de entrevistas y subida de CVs en formato PDF hacia la infraestructura MinIO (S3).
+  - Creada la interfaz de usuario en Next.js App Router (`frontend-ui-dashboard` en `/dashboard/hr/candidates`) con KPIs, filtros multifactor, modal con Dropzone para carga de CVs y modal de detalle con visor/descarga.
+  - Ejecutadas las suites de pruebas unitarias (36/36 pasadas en `hr-ms`) y verificadas las compilaciones sin errores.
+  - Actualizada la tarjeta [TASK 2.2](https://app.clickup.com/t/86bbe5m6z) a **Complete (Done)** en el workspace de ClickUp.
+
+---
+
 ## [2026-09-15] build/pos-gustoflow | Compilación Exitosa de APK Release GustFlow POS (Meniox)
 - **Área**: 💻 `programacion` & 🚀 `proyectos`
 - **Agentes Responsables**: ⚙️ **Backend JS Expert** & 🎨 **Frontend UI Expert** & 🤵 **ALFRED**
