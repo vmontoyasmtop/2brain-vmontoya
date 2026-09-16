@@ -42,5 +42,14 @@ tags:
 
 ---
 
+## 🚀 Estado de Componentes de Contacto (Septiembre 2026)
+
+- [x] **Botón de WhatsApp en Header**: Actualizado a verde `#25D366` con texto *"Escríbenos"* y enlace directo a chat en [CastroHeader.tsx](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/Header/CastroHeader.tsx).
+- [x] **Botón Flotante de WhatsApp**: Componente [WhatsAppFloatingButton.tsx](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/components/landing/WhatsAppFloatingButton.tsx) integrado en el layout principal con menú desplegable para seleccionar números de atención (`+58 412 964-3616` y `+58 414 390-4751`).
+- [x] **Plantilla de Correo HTML con Respuesta WhatsApp**: Controlador REST en [route.ts](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/app/api/contact/route.ts) con plantilla HTML de alta conversión y botón directo para responder por WhatsApp al cliente.
+- [ ] **Pendiente (Configuración de Gmail SMTP)**: Colocar las credenciales reales en `.env` cuando el cliente o usuario disponga de la Contraseña de Aplicación de 16 caracteres (`SMTP_USER`, `SMTP_PASS`, `CONTACT_EMAIL_RECEIVER`).
+
+---
+
 ## 🔗 Relación en 2brain
 - [[Área Programación - Conocimiento Técnico|../programacion/pilar-programacion.md]]
