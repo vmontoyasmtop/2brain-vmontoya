@@ -41,6 +41,8 @@ flowchart LR
 - [ ] **Próximo**: Preparar la guía de preguntas para grupos pequeños/células.
 
 ### 🏢 2. Area Trabajo (Analista IT & Soporte Xetux)
+- [x] **Agendado Evento 6:00 AM - 7:00 AM**: Informe de reunión con el jefe (`soporte@mastergroupve.com`).
+- [x] **Registrada Task**: `[Xetux] Cambio de Tasa de Xetux` en ClickUp ([Ver Tarea](https://app.clickup.com/t/86bc1cxgv)).
 - [ ] Revisión de tickets críticos de soporte en Xetux.
 - [ ] Documentar SOPs (Procedimientos Operativos) de incidencias frecuentes en [[Área Trabajo - Analista IT y Soporte Xetux|trabajo/pilar-trabajo-xetux.md]].
 
