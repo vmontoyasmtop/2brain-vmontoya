@@ -41,20 +41,20 @@ flowchart LR
 - [ ] **Próximo**: Preparar la guía de preguntas para grupos pequeños/células.
 
 ### 🏢 2. Area Trabajo (Analista IT & Soporte Xetux)
-- [x] **Agendado Evento 6:00 AM - 7:00 AM**: Informe de reunión con el jefe (`soporte@mastergroupve.com`).
-- [x] **COMPLETADO (7:00 AM)**: `[TASK] Cambio de Tasa de Xetux` ejecutado y verificado.
-- [ ] **Agendada Reunión (Jueves 17-Sep 1:00 PM - 2:00 PM)**: 🤝 Reunión Ejecutiva con Sr. Emiliano (`ebond@mastergroupve.com`).
-- [ ] Revisión de tickets críticos de soporte en Xetux.
-- [ ] Documentar SOPs (Procedimientos Operativos) de incidencias frecuentes en [[Área Trabajo - Analista IT y Soporte Xetux|trabajo/pilar-trabajo-xetux.md]].
+- [x] **Reunión de Dirección Ejecutiva**: Presentación aprobada por el Sr. Emiliano.
+  - [x] Aprobada la contratación del **Soporte Técnico IT Jr. (Nivel 1)**.
+  - [x] Aprobada la ejecución del **Módulo de Finanzas (`finance-ms`)**.
+- [x] **Perfil de Cargo IT Jr.**: Creado y publicado en Google Docs corporativo con la plantilla *"Documento con Banner"*.
+- [x] **Google Docs MCP**: Servidores MCP multicuenta (`google-docs-trabajo` y `google-docs-personal`) configurados y autenticados.
+- [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (CxP & Motor SENIAT).
 
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
-- [x] Auditoría y documentación de 7 proyectos en el Escritorio: [[Área Proyectos - Software Independiente|proyectos/pilar-proyectos.md]]
-- [ ] **Sprints Pendientes**:
-  - [x] [[Proyecto: Meniox|proyectos/meniox.md]] — Compilación exitosa del APK Release Android de GustFlow POS (`app-release.apk` 70.16 MB).
-  - [ ] [[Proyecto: WebCastro|proyectos/webcastro.md]] — Botón de WhatsApp flotante, integración de correo y Optimización SEO / Metadatos completados.
-  - [ ] [[Proyecto: Brotapp|proyectos/brotapp.md]] — Pruebas en emulador Android/iOS.
-  - [ ] [[Proyecto: CRM-MG|proyectos/crm-mg.md]] — Pruebas de endpoints NestJS + OpenAI.
-  - [x] **Masterhub (MS-HR)** — Completada Fase 2 Reclutamiento & Onboarding (Solicitudes de Vacantes) y librería `@masterhub/google-integration`.
+- [x] **MasterHub (MS-HR)** — **TASK 2.2 Entregada (100%)**:
+  - [x] Modelos Prisma `Candidate` & `Interview` en `hr-ms` con correlativo `candidatoNum` y *soft delete*.
+  - [x] Endpoints REST en `api-gateway` y TCP en `hr-ms` con subida de CVs en PDF a MinIO (S3).
+  - [x] Dashboard UI Next.js en `/dashboard/hr/candidates` con KPIs, filtros y Dropzone de CVs.
+  - [x] Pruebas unitarias 36/36 pasadas y tarjeta actualizada a **Complete (Done)** en ClickUp.
+- [x] **Regla de Autonomía de Subagentes**: Incorporada en `AGENTS.md` de MasterHub y `2brain`.
 
 ### 💰 4. Area Finanzas (Gestión Económica)
 - [ ] Actualizar hoja de presupuesto mensual (ingresos Xetux + proyectos freelance).
