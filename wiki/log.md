@@ -2,6 +2,18 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-16] feat/telegram-bot | Despliegue y Conexión en Vivo del Bot de Telegram ALFRED VM (@AlfredVM_bot)
+- **Área**: 💻 `programacion` & 🚀 `proyectos`
+- **Agentes Responsables**: 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Configurado el Token del bot de Telegram (`@AlfredVM_bot`) y la clave API de Gemini en `scripts/.env`.
+  - Actualizado el motor de IA en `scripts/telegram_bot.py` al modelo `gemini-3.6-flash`.
+  - Verificada la respuesta del bot en vivo con inyección automática del contexto de `wiki/life-dashboard.md`.
+  - Documentada la integración completa en [[Bot de Telegram: ALFRED VM (@AlfredVM_bot)|concepts/bot-telegram-alfred.md]].
+  - Iniciado el servicio en segundo plano escuchando comandos (`/start`, `/ticket`, `/ingest`) e ingesta directa de archivos y enlaces a `raw/inbox/`.
+
+---
+
 ## [2026-09-16] setup/mcp-gdocs | Configuración de Servidores MCP para Google Docs (Trabajo y Personal)
 - **Área**: 💻 `programacion` & 🏢 `trabajo`
 - **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**

@@ -77,7 +77,7 @@ def read_dashboard_summary():
     return "Dashboard de Vida disponible en el sistema 2brain."
 
 def call_gemini_alfred(gemini_key, user_text):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key={gemini_key}"
     
     dashboard_ctx = read_dashboard_summary()
     system_prompt = f"""Tu nombre es ALFRED. Eres el Mayordomo de Vida y Asistente Ejecutivo Personal del usuario en su sistema 2brain.

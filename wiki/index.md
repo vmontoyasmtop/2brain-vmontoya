@@ -39,6 +39,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Concepto: Story Points (SP) y Estimación de Esfuerzo en Scrum|concepts/story-points-y-estimacion-scrum.md]]: Explicación detallada de Story Points, escala de Fibonacci y medición de complejidad.
 - [[LLM Wiki Pattern]]: Modelo de wiki persistente compilada por IA.
 - [[Antigravity Commands and Shortcuts]]: Guía de comandos slash y atajos.
+- [[Bot de Telegram: ALFRED VM (@AlfredVM_bot)|concepts/bot-telegram-alfred.md]]: Interfaz de chat 24/7, ingesta a 2brain y tickets Helpdesk vía Telegram (Gemini 3.6 Flash).
 - [[Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)|programacion/diagnostico-mcp-google-calendar-gmail.md]]: Diagnóstico técnico y pasos de reparación de MCPs.
 - [[Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail Multicuenta)|programacion/guia-configuracion-mcp-google-calendar-gmail.md]]: Guía paso a paso para configurar MCPs en nuevos equipos.
 - [[Guía de Instalación y Configuración del Servidor MCP para Google Docs (Trabajo y Personal)|programacion/guia-configuracion-mcp-google-docs.md]]: Configuración multicuenta de Google Docs MCP.
