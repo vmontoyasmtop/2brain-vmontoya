@@ -19,7 +19,7 @@ Presentar el informe de gestión de soporte técnico IT, reportar de forma trans
 flowchart TD
     A["🤝 Reunión de Dirección (Sr. Emiliano)"] --> B1["1. Avances MasterHub & Módulo Finanzas"]
     A --> B2["2. Métricas de Soporte Helpdesk & Xetux"]
-    A --> B3["3. Reporte del Bug de Inventario & Plan de Recuperación"]
+    A --> B3["3. Incidencia por Comando en Inventario & Levantamiento Semanal"]
     A --> B4["4. Justificación de Contratación: Soporte IT Jr."]
     A --> B5["5. Visión Cloud & Automatización de Pagos"]
 ```
@@ -50,17 +50,19 @@ flowchart TD
 
 ---
 
-### 🔴 PUNTO 3: Incidencia en Inventario (Bug de Eliminación) & Plan de Acción Imparable
+### 🔴 PUNTO 3: Incidencia en Inventario (Error por Comando) & Plan de Levantamiento Semanal
 
 #### A. Diagnóstico Transparente del Problema
-- Se detectó una falla en la lógica de supresión del módulo de inventario que causó la eliminación accidental de registros de equipos de cómputo en la base de datos.
+- Se detectó una pérdida accidental de registros de equipos de cómputo en la base de datos producida por la **ejecución errónea de un comando**.
 
-#### B. Plan de Acción Inmediato para Recuperar y Prevenir (3 Pasos):
-1. **Recuperación de Datos**: Reconstrucción de la información a partir de backups de base de datos, logs de auditoría y levantamiento de inventarios físicos recientes.
-2. **Implementación de Soft Delete (Borrado Lógico)**:
-   - Modificación del esquema de Prisma ORM en `inventory-sm` agregando la propiedad `deletedAt DateTime?`.
+#### B. Plan de Acción Inmediato & Estrategia de Prevención (5 Pasos):
+1. **Plan de Levantamiento Semanal Programado**: Se agendarán jornadas semanales periódicas para realizar la toma física e inventariado recurrente de equipos en sedes, asegurando información auditada y 100% al día.
+2. **Desarrollo del Módulo de Backup Local de DB**: Se construyó un módulo de respaldo automatizado de la base de datos para generar y almacenar copias de seguridad locales continuas de toda la data de MasterHub.
+3. **Recuperación de Datos**: Reconstrucción progresiva de la información a partir de respaldos de base de datos, trazabilidad de entregas y los levantamientos semanales agendados.
+4. **Implementación de Soft Delete (Borrado Lógico)**:
+   - Modificación del esquema en Prisma ORM (`inventory-sm`) agregando la propiedad `deletedAt DateTime?`.
    - **Garantía**: NINGÚN registro se borrará físicamente de la base de datos (`DELETE`); únicamente se ocultará de la interfaz visual (`deletedAt = NOW()`), permitiendo restauración con un solo clic.
-3. **Audit Trail (Trazabilidad Total)**: Registro obligatorio de usuario, fecha, hora e IP de cualquier modificación o baja de activo.
+5. **Audit Trail & Control de Comandos**: Registro de auditoría (usuario, fecha, hora e IP) y bloqueo de comandos directos sin respaldo previo.
 
 ---
 
@@ -92,6 +94,6 @@ flowchart TD
 >
 > *Primero, en MasterHub tenemos listos los avances de RRHH y la propuesta del Módulo de Finanzas para eliminar de una vez por todas los Excel sueltos y automatizar las retenciones del SENIAT.*
 >
-> *Segundo, sobre la falla en inventario: identificamos un bug en la opción de borrar registros. Transparente y responsablemente le informo que ya iniciamos el plan de recuperación de datos y estamos aplicando 'Soft Delete' en el código para que nunca más un registro se elimine físicamente.*
+> *Segundo, sobre la incidencia en inventario: le informo con total transparencia que se produjo una eliminación accidental de registros debido a un error en la ejecución de un comando en la base de datos. Para solventar esto y dejar el sistema blindado, hemos diseñado un plan de levantamiento físico semanal para mantener la información al día, además de implementar 'Soft Delete' en el código y haber desarrollado un módulo de respaldo automatizado de la base de datos para contar con copias de seguridad locales continuas de toda la data de MasterHub.*
 >
 > *Tercero, para que MasterHub avance al doble de velocidad y no sufra retrasos, le propongo incorporar un Soporte Técnico Jr. que atienda los tickets básicos de impresoras y sucursales, permitiéndome a mí enfocarme 100% en programar los sistemas de la empresa."*
