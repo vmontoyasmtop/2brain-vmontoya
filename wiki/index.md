@@ -31,6 +31,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Plan de Organización y Priorización Laboral para Analista de IT|trabajo/plan-organizacion-priorizacion-it.md]]: Sistema de bloques temáticos, Matriz de Eisenhower y automatizaciones n8n.
 - [[Estándar Operativo: Organización de Calendario Laboral IT (Focus Time & Google Tasks)|trabajo/estandar-organizacion-google-calendar-tasks.md]]: Configuración y uso de Focus Time, Google Tasks, Working Location y OOO.
 - [[Agenda Ejecutiva & Minuta de Reporte (Reunión con Emiliano)|trabajo/agenda-reunion-ejecutiva-emiliano.md]]: Agenda de 5 puntos para informe de gestión IT, plan del bug de inventario, contratación Soporte Jr. y Módulo de Finanzas.
+- [[Perfil y Modelo de Cargo: Soporte Técnico IT Jr. (Nivel 1)|trabajo/perfil-cargo-soporte-it-jr.md]]: Perfil formal de cargo, funciones, requisitos y KPIs del nuevo soporte informático.
 
 ### 💻 2. Programación (Conocimiento Técnico)
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.

@@ -2,6 +2,15 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-16] docs/hr-it-profile | Creación del Modelo de Cargo "Soporte Técnico IT Jr. (Nivel 1)" & Reglas de Autonomía de Subagentes
+- **Área**: 🏢 `trabajo` & 🚀 `proyectos`
+- **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Incorporada la regla formal de **Autonomía Absoluta de Subagentes** en `AGENTS.md` de MasterHub y `2brain` (ejecución autónoma de edición, build y pruebas sin requerir confirmaciones previas, salvaguardando operaciones destructivas).
+  - Diseñado y creado el perfil formal de cargo [perfil-cargo-soporte-it-jr.md](file:///C:/Users/Animaci%C3%B3n%20MKT/Desktop/2brain-vmontoya/wiki/trabajo/perfil-cargo-soporte-it-jr.md) incluyendo organigrama, funciones Nivel 1, soporte Xetux, levantamiento de inventario semanal, requisitos de contratación y KPIs.
+
+---
+
 ## [2026-09-16] feat/telegram-bot | Despliegue y Conexión en Vivo del Bot de Telegram ALFRED VM (@AlfredVM_bot)
 - **Área**: 💻 `programacion` & 🚀 `proyectos`
 - **Agentes Responsables**: 🤵 **ALFRED**
