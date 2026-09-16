@@ -25,8 +25,9 @@ El **Bot de Telegram ALFRED VM** ([@AlfredVM_bot](https://t.me/AlfredVM_bot)) pe
 
 ### Características Principales:
 1. **💬 Conversación en Vivo 24/7**: Respuestas ejecutivas con la personalidad de ALFRED, alimentadas por la API de `gemini-3.6-flash` y el contexto actualizado del `life-dashboard.md`.
-2. **📥 Ingesta Directa a 2brain**: Guardado automático de enlaces (YouTube, NotebookLM, artículos) y archivos adjuntos (PDFs, notas de voz, imágenes) en `raw/inbox/`.
-3. **🛠️ Gestión de Helpdesk**: Consulta y creación de tickets de soporte técnico en **MasterHub** mediante comandos reducidos.
+2. **🎙️ Procesamiento Nativo de Notas de Voz & Audio Multimodal**: ALFRED escucha directamente notas de voz enviadas por Telegram (`voice`/`audio`), guarda un respaldo en `raw/inbox/voice_YYYYMMDD_HHMMSS.ogg` y responde procesando el audio en tiempo real con Gemini 3.6 Flash.
+3. **📥 Ingesta Directa a 2brain**: Guardado automático de enlaces (YouTube, NotebookLM, artículos) y archivos adjuntos (PDFs, notas de voz, imágenes) en `raw/inbox/`.
+4. **🛠️ Gestión de Helpdesk**: Consulta y creación de tickets de soporte técnico en **MasterHub** mediante comandos reducidos.
 
 ---
 

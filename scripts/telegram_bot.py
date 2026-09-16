@@ -76,7 +76,7 @@ def read_dashboard_summary():
             pass
     return "Dashboard de Vida disponible en el sistema 2brain."
 
-def call_gemini_alfred(gemini_key, user_text):
+def call_gemini_alfred(gemini_key, user_text, audio_bytes=None, mime_type="audio/ogg"):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key={gemini_key}"
     
     dashboard_ctx = read_dashboard_summary()
@@ -88,6 +88,20 @@ Conocimiento del 2brain del usuario (Resumen Dashboard):
 
 Responde de forma concisa, profesional y formal en español, como el fiel mayordomo ALFRED."""
 
+    parts = []
+    if audio_bytes:
+        import base64
+        b64_data = base64.b64encode(audio_bytes).decode("utf-8")
+        parts.append({
+            "inline_data": {
+                "mime_type": mime_type,
+                "data": b64_data
+            }
+        })
+    
+    prompt_text = user_text if user_text else "Escucha con atención la nota de voz enviada por el Señor y responde a su solicitud o consulta con total elegancia y eficiencia."
+    parts.append({"text": prompt_text})
+
     payload = {
         "system_instruction": {
             "parts": [{"text": system_prompt}]
@@ -95,7 +109,7 @@ Responde de forma concisa, profesional y formal en español, como el fiel mayord
         "contents": [
             {
                 "role": "user",
-                "parts": [{"text": user_text}]
+                "parts": parts
             }
         ]
     }
@@ -106,16 +120,16 @@ Responde de forma concisa, profesional y formal en español, como el fiel mayord
             data=json.dumps(payload).encode("utf-8"),
             headers={"Content-Type": "application/json"}
         )
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=45) as resp:
             res = json.loads(resp.read().decode("utf-8"))
             candidates = res.get("candidates", [])
             if candidates:
-                parts = candidates[0].get("content", {}).get("parts", [])
-                if parts:
-                    return parts[0].get("text", "A su servicio, Señor.")
+                res_parts = candidates[0].get("content", {}).get("parts", [])
+                if res_parts:
+                    return res_parts[0].get("text", "A su servicio, Señor.")
     except Exception as e:
         print(f"⚠️ Error al llamar a Gemini API: {e}")
-        return f"Disculpe la molestia, Señor. Ocurrió una incidencia técnica conectando con el motor Gemini: {e}"
+        return f"Disculpe la molestia, Señor. Ocurrió una incidencia técnica procesando la consulta con el motor Gemini: {e}"
         
     return "A la orden, Señor. ¿En qué más puedo asistirle?"
 
@@ -131,8 +145,43 @@ def process_message(config, message):
     timestamp_str = datetime.datetime.fromtimestamp(date).strftime("%Y-%m-%d %H:%M:%S") if date else datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     file_timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     
-    if not text and "document" not in message:
+    has_voice = "voice" in message
+    has_audio = "audio" in message
+
+    if not text and "document" not in message and not has_voice and not has_audio:
         return
+
+    # Procesamiento de Notas de Voz / Audio con Gemini Multimodal
+    if (has_voice or has_audio) and gemini_key and gemini_key != "TU_GEMINI_KEY_AQUI":
+        audio_item = message.get("voice") or message.get("audio")
+        file_id = audio_item.get("file_id")
+        mime_type = audio_item.get("mime_type", "audio/ogg" if has_voice else "audio/mp3")
+        caption = message.get("caption", "").strip()
+        
+        telegram_api(token, "sendChatAction", {"chat_id": chat_id, "action": "record_voice"})
+        
+        file_info = telegram_api(token, "getFile", {"file_id": file_id})
+        if file_info and file_info.get("ok"):
+            file_path_tg = file_info["result"].get("file_path")
+            download_url = f"https://api.telegram.org/file/bot{token}/{file_path_tg}"
+            try:
+                req_down = urllib.request.Request(download_url)
+                with urllib.request.urlopen(req_down, timeout=30) as resp_down:
+                    raw_audio = resp_down.read()
+                
+                # Archivar copia de respaldo en raw/inbox
+                ext = ".ogg" if has_voice else ".mp3"
+                audio_filename = f"voice_{file_timestamp}{ext}"
+                with open(os.path.join(INBOX_DIR, audio_filename), "wb") as f_aud:
+                    f_aud.write(raw_audio)
+                
+                # Procesar directamente con Gemini 3.6 Flash
+                response = call_gemini_alfred(gemini_key, caption, audio_bytes=raw_audio, mime_type=mime_type)
+                telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": response})
+                return
+            except Exception as ex:
+                telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": f"❌ Disculpe Señor, ocurrió una incidencia al procesar la nota de voz: {ex}"})
+                return
 
     # Comando /ticket o /helpdesk
     if text.startswith("/ticket") or text.startswith("/helpdesk"):
@@ -173,8 +222,9 @@ def process_message(config, message):
         help_msg = (
             "🎩 *ALFRED — Mayordomo Ejecutivo 2brain*\n\n"
             "¡A sus órdenes, Señor! Estoy listo para asistirlo. Puede utilizarme de las siguientes maneras:\n\n"
-            "💬 *1. Conversación y Consultas*:\n"
-            "Simplemente escríbame cualquier pregunta, duda de su agenda, sermones o tareas.\n\n"
+            "💬 *1. Conversación y Notas de Voz*:\n"
+            "• Escríbame cualquier mensaje de texto o **envíeme notas de voz directamente**.\n"
+            "• Escucharé y responderé sus solicitudes de voz en tiempo real.\n\n"
             "🛠️ *2. Gestión de Tickets Helpdesk*:\n"
             "• `/ticket` — Ver últimos tickets de MasterHub.\n"
             "• `/ticket create Título | Descripción` — Crear nuevo ticket en Helpdesk.\n\n"
