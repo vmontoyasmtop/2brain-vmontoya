@@ -77,8 +77,6 @@ def read_dashboard_summary():
     return "Dashboard de Vida disponible en el sistema 2brain."
 
 def call_gemini_alfred(gemini_key, user_text, audio_bytes=None, mime_type="audio/ogg"):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key={gemini_key}"
-    
     dashboard_ctx = read_dashboard_summary()
     system_prompt = f"""Tu nombre es ALFRED. Eres el Mayordomo de Vida y Asistente Ejecutivo Personal del usuario en su sistema 2brain.
 Te diriges al usuario con el trato de 'Señor', actuando con máxima cortesía, profesionalismo, elegancia y eficiencia.
@@ -114,24 +112,32 @@ Responde de forma concisa, profesional y formal en español, como el fiel mayord
         ]
     }
 
-    try:
-        req = urllib.request.Request(
-            url,
-            data=json.dumps(payload).encode("utf-8"),
-            headers={"Content-Type": "application/json"}
-        )
-        with urllib.request.urlopen(req, timeout=45) as resp:
-            res = json.loads(resp.read().decode("utf-8"))
-            candidates = res.get("candidates", [])
-            if candidates:
-                res_parts = candidates[0].get("content", {}).get("parts", [])
-                if res_parts:
-                    return res_parts[0].get("text", "A su servicio, Señor.")
-    except Exception as e:
-        print(f"⚠️ Error al llamar a Gemini API: {e}")
-        return f"Disculpe la molestia, Señor. Ocurrió una incidencia técnica procesando la consulta con el motor Gemini: {e}"
+    # Modelos candidatas con reintentos para resiliencia ante errores 500/501/503
+    candidate_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash"]
+    last_error = None
+
+    for model_name in candidate_models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={gemini_key}"
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(
+                    url,
+                    data=json.dumps(payload).encode("utf-8"),
+                    headers={"Content-Type": "application/json"}
+                )
+                with urllib.request.urlopen(req, timeout=45) as resp:
+                    res = json.loads(resp.read().decode("utf-8"))
+                    candidates = res.get("candidates", [])
+                    if candidates:
+                        res_parts = candidates[0].get("content", {}).get("parts", [])
+                        if res_parts:
+                            return res_parts[0].get("text", "A su servicio, Señor.")
+            except Exception as e:
+                last_error = e
+                print(f"⚠️ Reintento {attempt+1}/3 con modelo {model_name} debido a: {e}")
+                time.sleep(1.5)
         
-    return "A la orden, Señor. ¿En qué más puedo asistirle?"
+    return f"Disculpe la molestia, Señor. Ocurrió una saturación temporal en los servidores de Google Gemini: {last_error}"
 
 def process_message(config, message):
     token = config.get("TELEGRAM_BOT_TOKEN")
