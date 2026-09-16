@@ -3,7 +3,7 @@ title: "Dashboard de Vida & Centro de Control (Life OS)"
 type: "concept"
 area: "dashboard"
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-15
 tags:
   - dashboard
   - life-os
@@ -47,11 +47,11 @@ flowchart LR
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
 - [x] Auditoría y documentación de 7 proyectos en el Escritorio: [[Área Proyectos - Software Independiente|proyectos/pilar-proyectos.md]]
 - [ ] **Sprints Pendientes**:
-  - [[Proyecto: WebCastro|proyectos/webcastro.md]] — Botón de WhatsApp flotante + Header "Escríbenos" e integración de correo con modal completados.
-  - [[Proyecto: Brotapp|proyectos/brotapp.md]] — Pruebas en emulador Android/iOS.
-  - [[Proyecto: Meniox|proyectos/meniox.md]] — Integración de RabbitMQ en ventas.
-  - [[Proyecto: CRM-MG|proyectos/crm-mg.md]] — Pruebas de endpoints NestJS + OpenAI.
-  - **Masterhub (A1 Deep Work)** — Desarrollo en Madrugada Protegida.
+  - [x] [[Proyecto: Meniox|proyectos/meniox.md]] — Compilación exitosa del APK Release Android de GustFlow POS (`app-release.apk` 70.16 MB).
+  - [ ] [[Proyecto: WebCastro|proyectos/webcastro.md]] — Botón de WhatsApp flotante, integración de correo y Optimización SEO / Metadatos completados.
+  - [ ] [[Proyecto: Brotapp|proyectos/brotapp.md]] — Pruebas en emulador Android/iOS.
+  - [ ] [[Proyecto: CRM-MG|proyectos/crm-mg.md]] — Pruebas de endpoints NestJS + OpenAI.
+  - [x] **Masterhub (MS-HR)** — Completada Fase 2 Reclutamiento & Onboarding (Solicitudes de Vacantes) y librería `@masterhub/google-integration`.
 
 ### 💰 4. Area Finanzas (Gestión Económica)
 - [ ] Actualizar hoja de presupuesto mensual (ingresos Xetux + proyectos freelance).
