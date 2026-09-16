@@ -47,6 +47,7 @@ flowchart LR
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
 - [x] Auditoría y documentación de 7 proyectos en el Escritorio: [[Área Proyectos - Software Independiente|proyectos/pilar-proyectos.md]]
 - [ ] **Sprints Pendientes**:
+  - [[Proyecto: WebCastro|proyectos/webcastro.md]] — Botón de WhatsApp flotante + Header "Escríbenos" e integración de correo con modal completados.
   - [[Proyecto: Brotapp|proyectos/brotapp.md]] — Pruebas en emulador Android/iOS.
   - [[Proyecto: Meniox|proyectos/meniox.md]] — Integración de RabbitMQ en ventas.
   - [[Proyecto: CRM-MG|proyectos/crm-mg.md]] — Pruebas de endpoints NestJS + OpenAI.
