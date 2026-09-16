@@ -1,0 +1,7 @@
+name = "alfred-2brain-bot"
+main = "worker.js"
+compatibility_date = "2024-09-01"
+
+[vars]
+# Las variables sensibles (TELEGRAM_BOT_TOKEN, GEMINI_API_KEY, GH_TOKEN) 
+# se pueden definir vía wrangler secret put o en el panel de Cloudflare.
