@@ -14,9 +14,12 @@ import os
 import sys
 import time
 import json
+import socket
 import urllib.request
 import urllib.parse
 import datetime
+
+socket.setdefaulttimeout(60)
 
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
@@ -58,7 +61,7 @@ def telegram_api(token, method, data=None):
         else:
             req = urllib.request.Request(url)
             
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with urllib.request.urlopen(req, timeout=60) as resp:
             result = json.loads(resp.read().decode("utf-8"))
             return result
     except Exception as e:
@@ -112,7 +115,7 @@ Responde de forma concisa, profesional y formal en español, como el fiel mayord
         ]
     }
 
-    # Modelos candidatas con reintentos para resiliencia ante errores 500/501/503
+    # Modelos candidatas con reintentos para resiliencia ante errores 500/501/503 o Socket Timeout
     candidate_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash"]
     last_error = None
 
@@ -125,7 +128,7 @@ Responde de forma concisa, profesional y formal en español, como el fiel mayord
                     data=json.dumps(payload).encode("utf-8"),
                     headers={"Content-Type": "application/json"}
                 )
-                with urllib.request.urlopen(req, timeout=45) as resp:
+                with urllib.request.urlopen(req, timeout=60) as resp:
                     res = json.loads(resp.read().decode("utf-8"))
                     candidates = res.get("candidates", [])
                     if candidates:
@@ -170,11 +173,23 @@ def process_message(config, message):
         if file_info and file_info.get("ok"):
             file_path_tg = file_info["result"].get("file_path")
             download_url = f"https://api.telegram.org/file/bot{token}/{file_path_tg}"
+            
+            raw_audio = None
+            for dl_attempt in range(3):
+                try:
+                    req_down = urllib.request.Request(download_url)
+                    with urllib.request.urlopen(req_down, timeout=60) as resp_down:
+                        raw_audio = resp_down.read()
+                    break
+                except Exception as dl_err:
+                    print(f"⚠️ Reintento descarga de audio {dl_attempt+1}/3 debido a: {dl_err}")
+                    time.sleep(1.5)
+            
+            if not raw_audio:
+                telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": "❌ Disculpe Señor, ocurrió un tiempo de espera agotado al descargar el audio de Telegram. Por favor intente reenviarlo."})
+                return
+
             try:
-                req_down = urllib.request.Request(download_url)
-                with urllib.request.urlopen(req_down, timeout=30) as resp_down:
-                    raw_audio = resp_down.read()
-                
                 # Archivar copia de respaldo en raw/inbox
                 ext = ".ogg" if has_voice else ".mp3"
                 audio_filename = f"voice_{file_timestamp}{ext}"
