@@ -33,6 +33,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Estándar Operativo: Organización de Calendario Laboral IT (Focus Time & Google Tasks)|trabajo/estandar-organizacion-google-calendar-tasks.md]]: Configuración y uso de Focus Time, Google Tasks, Working Location y OOO.
 - [[Agenda Ejecutiva & Minuta de Reporte (Reunión con Emiliano)|trabajo/agenda-reunion-ejecutiva-emiliano.md]]: Agenda de 5 puntos para informe de gestión IT, plan del bug de inventario, contratación Soporte Jr. y Módulo de Finanzas.
 - [[Perfil y Modelo de Cargo: Soporte Técnico IT Jr. (Nivel 1)|trabajo/perfil-cargo-soporte-it-jr.md]]: Perfil formal de cargo, funciones, requisitos y KPIs del nuevo soporte informático.
+- [[Análisis Integral de Servicios de Hetzner Online|trabajo/analisis-servicios-hetzner-cloud-dedicados.md]]: Evaluación técnica y de precios de Hetzner Cloud, Dedicated Servers, Storage Box y redes.
 
 ### 💻 2. Programación (Conocimiento Técnico)
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.
@@ -61,7 +62,8 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
   - [[Estudio Comparativo de Infraestructura Cloud para MasterHub (MGH)|proyectos/masterhub-estudio-nube-hosting-comparativa.md]]: Análisis comparativo de precios y funcionalidad entre Hetzner, Railway+Aiven, DigitalOcean y AWS.
   - [[MasterHub Helpdesk API & Gestión de Tickets|proyectos/masterhub-helpdesk-api.md]]: Documentación de endpoints REST, modelo Prisma y Matriz Eisenhower.
 - [[Proyecto: Meniox|proyectos/meniox.md]]: Sistema POS & franquicias con RabbitMQ y Next.js 15.
-- [[Proyecto: WebCastro|proyectos/webcastro.md]]: Sitio web con Payload CMS 3 & Next.js 16.
+- [[Proyecto: WebCastro|proyectos/webcastro.md]]: Plataforma Web y CMS Payload 3.x con PostgreSQL.
+- [[Análisis Técnico y Despliegue de Plane|proyectos/analisis-plane-gestion-proyectos.md]]: Evaluación de Plane (Jira/ClickUp open-source) y despliegue en Hetzner via Coolify o Docker Compose.
 - [[Proyecto: SmartOps VE|proyectos/smartops-ve.md]]: Portal corporativo en Next.js 15 & Firebase.
 - [[Proyecto: API Gateway Core|proyectos/api-gateway.md]]: Microservicio Gateway NestJS & AWS S3.
 

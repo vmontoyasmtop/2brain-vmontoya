@@ -2,6 +2,34 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-17] fix/hr-ms | Resolución de 75 Errores TypeScript en Build Docker de `hr-ms`
+- **Área**: 💻 `programacion` & 🚀 `proyectos`
+- **Agentes Responsables**: ⚙️ **Backend JS Expert** (`backend_developer`) & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Actualizado `prisma/schema.prisma` en `MGH/apps/hr-ms` agregando los modelos faltantes `JobPosition`, `VacancyRequest`, `CandidateHistory`, `DepartmentSite` y enum `CandidateStage`.
+  - Agregados campos de auditoría, relaciones y uniformes (`Department.description`, `Department.isActive`, `Employee.uniformShirtSize`, `Candidate.stage`, `discardedAt`, `hiredAt`, `interviews`).
+  - Ejecutado `npx prisma generate` y `nest build` logrando 0 errores de compilación (`tsc --noEmit`).
+
+---
+
+## [2026-09-17] query/infra | Análisis Integral de Servicios Hetzner Online (`hetzner.com`)
+- **Área**: 🏢 `trabajo` & 🚀 `proyectos`
+- **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Documentado análisis de líneas de servicio de Hetzner Online en [[Análisis Integral de Servicios de Hetzner Online|trabajo/analisis-servicios-hetzner-cloud-dedicados.md]] (Hetzner Cloud ARM/x86/Dedicated vCPU, Bare Metal AX/EX/PX, Storage Box BX, Subasta y Datacenters EU/US/APAC).
+  - Estrategia formulada para la infraestructura de MasterGroup y SmartOps.
+
+---
+
+## [2026-09-17] query/setup | Análisis Técnico y Guía de Despliegue de Plane (`makeplane/plane`)
+- **Área**: 🚀 `proyectos`
+- **Agentes Responsables**: ⚙️ **Backend JS Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Guardado documento de evaluación y guía de despliegue en [[Análisis Técnico y Despliegue de Plane|proyectos/analisis-plane-gestion-proyectos.md]].
+  - Estructurado roadmap de despliegue vía Coolify 1-Click y Docker Compose CLI para posterior generación de Google Doc corporativo.
+
+---
+
 ## [2026-09-16] docs/hr-it-profile | Creación del Modelo de Cargo "Soporte Técnico IT Jr. (Nivel 1)" & Reglas de Autonomía de Subagentes
 - **Área**: 🏢 `trabajo` & 🚀 `proyectos`
 - **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
