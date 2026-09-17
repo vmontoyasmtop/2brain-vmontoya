@@ -21,6 +21,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - ⛪ [`agents/pastoral_assistant.md`](../agents/pastoral_assistant.md): Asistente Pastoral, Sermones y Exégesis Teológica.
 - 🛠️ [`agents/it_support_expert.md`](../agents/it_support_expert.md): Especialista en Soporte IT, Xetux y Análisis de Sistemas.
 - 💰 [`agents/finance_manager.md`](../agents/finance_manager.md): Gestor de Finanzas, Presupuesto y Proyectos.
+- 👔 [`agents/project_manager.md`](../agents/project_manager.md): Project Manager & Agile Coach (Scrum, SP, Epics, Tasks, ClickUp).
 
 ---
 
