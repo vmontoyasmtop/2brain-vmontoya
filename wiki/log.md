@@ -337,6 +337,6 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
 - **Acciones realizadas**:
   - Elaborado el análisis comparativo completo de servidores nube para MasterHub (Hetzner Cloud + Coolify PaaS por ~$20.00 USD/mes) y estudio de tarifas de modelos de Inteligencia Artificial (Google Gemini 3.6 Flash por ~$0.00 USD/mes).
   - Autenticada exitosamente la integración de Google Docs para `soporte@mastergroupve.com`.
-  - Creado y publicado el documento corporativo clonando directamente la plantilla oficial con banner en Google Docs: [📋 PROPUESTA EMPRESARIAL: Presupuesto de Servidores MasterHub y Planes de IA](https://docs.google.com/document/d/1hmRTdJlQ5Eb9jJ8Hqj6fRddKPv6wfP2y9zVA70BsPdw/edit).
+  - Creado y publicado el documento corporativo clonando directamente la plantilla oficial con banner en Google Docs: [📋 PROPUESTA EMPRESARIAL: Presupuesto de Servidores MasterHub y Planes de IA](https://docs.google.com/document/d/1Qw3Ag_e6kuqYAUEgN1R61Vr3uY8Rt_9n27AfLvqQSQI/edit).
   - Creada la versión en Markdown en [propuesta-empresarial-servidores-e-ia-masterhub.md](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/trabajo/propuesta-empresarial-servidores-e-ia-masterhub.md).
 
