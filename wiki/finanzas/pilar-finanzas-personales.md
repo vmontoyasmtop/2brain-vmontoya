@@ -17,9 +17,10 @@ tags:
 Página principal de **Gestión Financiera y Presupuesto**.
 
 ## 🎯 Objetivos de esta área
-- Controlar el presupuesto mensual (ingresos Xetux + proyectos freelance).
-- Asignar recursos a gastos fijos, ahorro, inversión, diezmos y ofrendas.
-- Evaluar la viabilidad y precios de cotización para nuevos proyectos de software.
+- Controlar el presupuesto mensual operativo basado exclusivamente en ingresos reales actuales (**$620.00 USD/mes** = $500 Xetux + $120 pastoral).
+- Ejecutar el plan conservador de saneamiento gradual de deudas (**$408.07 USD**) asignando la capacidad mensual de abono real (**$120.00 USD/mes**).
+- Garantizar el ahorro mínimo intocable del 10% en USDT (**$62.00 USD/mes**) y el diezmo fiel.
+- Clasificar ingresos por proyectos (como los **$6,000.00 USD de finance-ms**) como *Proyección de Ingreso Extraordinario Futuro por Cobrar (Hitos Pendientes)*, manteniéndolos fuera de la caja operativa diaria.
 
 ## 📄 Documentos Clave
 - [[Informe Financiero Auditado: Gastos Reales del Cuaderno & Estrategia de Saneamiento|analisis-gastos-reales-cuaderno.md]]

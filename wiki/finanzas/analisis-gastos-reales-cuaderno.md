@@ -155,60 +155,72 @@ flowchart TD
 
 ### **B. Inventario de Pasivos y Compromisos Pendientes**
 
-| Deuda / Pasivo | Monto Original / Estado | Monto Pendiente Estimado | Criticidad |
+| Deuda / Pasivo | Monto Original / Estado | Monto Pendiente Exacto | Criticidad |
 | :--- | :--- | :---: | :---: |
 | **Pasivo con Nelly** | Préstamo personal acumulado | **$258.25 USD** | 🔴 ALTA |
-| **Cashea (Cuotas Activas)** | Financiamiento de artículos/gustos | **$41.00 USD + $27.70 USD** | 🟠 MEDIA |
-| **Lentes (Saldo pendiente)** | Inicial 16.815 Bs., Abono 11.344 Bs. | **~$15.00 USD** | 🟡 BAJA |
-| **Préstamo Beijing** | Abono 24.785 Bs. realizado | **~$10.00 - $15.00 USD** | 🟡 BAJA |
+| **Cashea (Cuotas Activas)** | Financiamiento de artículos/gustos | **$68.70 USD** | 🟠 MEDIA |
 | **Franelas** | Adquisición pendiente por pagar | **$45.00 USD** | 🟡 BAJA |
-| **Correa Secadora** | Repuesto para electrodoméstico | **~$15.00 - $20.00 USD** | 🟡 BAJA |
-| **TOTAL PASIVOS PENDIENTES** | | **~$411.95 USD** | |
+| **Préstamo Beijing** | Saldo pendiente post-abono | **$24.78 USD** | 🟡 BAJA |
+| **Lentes** | Saldo pendiente post-abono | **$11.34 USD** | 🟡 BAJA |
+| **TOTAL PASIVOS PENDIENTES** | | **$408.07 USD** | |
 
 ### **C. Efectividad de Cobertura**
-- **Cobertura Operativa Fija**: El sueldo regular ($620 USD) cubre holgadamente los gastos fijos teóricos ($438 USD).
-- **Vulnerabilidad ante Gastos de Salud Infantil**: La aparición de gastos de salud no presupuestados (Vacuna Neumococo $65 USD + Cita Pediatra $30 USD = $95 USD en una sola quincena) absorbe casi el 40% del flujo en Bolívares, obligando a fragmentar el pago de la comida o a diferir alquileres y diezmos.
+- **Cobertura Operativa Fija**: El sueldo regular ($620 USD = $500 Xetux + $120 pastoral) cubre holgadamente los gastos fijos teóricos ($438 USD).
+- **Margen Libre Operativo Real**: $620.00 - $438.00 = **$182.00 USD/mes** ($62.00 USD ahorro 10% + $120.00 USD capacidad real de abono / deseos).
+- **Vulnerabilidad ante Gastos de Salud Infantil**: La aparición de gastos de salud no presupuestados (Vacuna Neumococo $65 USD + Cita Pediatra $30 USD = $95 USD en una sola quincena) absorbe casi el 40% del flujo en Bolívares, por lo que los abonos deben programarse con rigurosa disciplina.
 
 ---
 
-## 🚀 4. Estrategia de Optimización & Plan de Liquidación (Plan B Exprés)
+## 🚀 4. Estrategia de Saneamiento Gradual Conservador & Proyección de Ingresos Extraordinarios
 
-Con la llegada de los **4 cobros por Hitos del proyecto `finance-ms` ($1,500.00 USD / Sprint = $6,000.00 USD Total)**, se implementará una estrategia de saneamiento acelerado y máxima capitalización en USDT.
+> [!IMPORTANT]
+> **Aclaración Financiera Crítica**: Los **$6,000.00 USD** del proyecto `finance-ms` (Plan B Exprés) fueron APROBADOS por dirección pero **AÚN NO HAN SIDO COBRADOS NI PAGADOS**. Por estricta prudencia financiera conservadora, **NO se incluyen en el flujo de caja presente** ni se cuenta con ellos para liquidar deudas actuales. El plan de saneamiento se ejecuta **exclusivamente con el margen libre real de $182 USD/mes** ($62 ahorro 10% + $120 capacidad de abono/deseos).
 
 ```mermaid
-flowchart LR
-    A["💰 Entrada $1,500 USD (Sprint 1 finance-ms - 27 Sep)"] --> B["🧹 Liquidación Total Deudas ($411.95 USD)"]
-    A --> C["🛡️ Asignación Ahorro USDT Binance ($1,088.05 USD)"]
+flowchart TD
+    A["💵 Ingreso Real Disponible: $620.00 USD/mes"] --> B["🏡 Gastos Fijos & Diezmo: $438.00 USD"]
+    A --> C["📊 Margen Libre Real: $182.00 USD"]
     
-    D["💰 Sprints 2, 3 y 4 ($4,500 USD Total)"] --> E["⛪ Diezmo/Ofrenda Proyecto ($450 USD)"]
-    D --> F["🛡️ Ahorro USDT Neto ($4,050 USD)"]
+    C --> D["🛡️ Ahorro Mínimo 10% USDT: $62.00 USD/mes"]
+    C --> E["🎯 Capacidad Real de Abono a Deudas: $120.00 USD/mes"]
     
-    C & F --> G["🏆 Fondo de Reserva Final: > $5,138 USD en USDT"]
+    E --> F["🗓️ Oct-2026: Cashea ($68.70) + Lentes ($11.34) + Beijing ($24.78) + Nelly ($15.18)"]
+    E --> G["🗓️ Nov-2026: Franelas ($45.00) + Nelly ($75.00)"]
+    E --> H["🗓️ Dic-2026: Nelly ($120.00)"]
+    E --> I["🗓️ Ene-2027: Nelly ($48.07) ➔ 🎉 ZERO DEUDAS"]
+
+    J["💼 Proyección finance-ms: $6,000 USD (Pendiente Cobro)"] -.-> K["🚀 Acelerador Futuro (Ahorro USDT / Saneamiento Rápido si se liquida)"]
 ```
 
 ---
 
-### **A. Plan de Liquidación de Deudas en 1 Solo Paso (Sprint 1 - 27 de Septiembre)**
+### **A. Plan de Amortización Gradual de Deudas (Octubre 2026 – Enero 2027)**
 
-Apenas se perciba la primera entrega de **$1,500.00 USD** del proyecto `finance-ms` el **27/09/2026**:
+Utilizando la capacidad real de abono de **$120.00 USD/mes** bajo el método de bola de nieve (liquidando primero las micro-deudas y cuotas para liberar liquidez quincenal):
 
-1. **Saldar Pasivo Completo con Nelly**: **$258.25 USD** (Finiquito al 100%).
-2. **Liquidar Cuotas de Cashea**: **$68.70 USD** (Cierre definitivo de cuentas activas).
-3. **Liquidar Remanente Lentes, Beijing, Franelas y Repuesto Correa**: **~$85.00 USD**.
-4. **Impacto Inmediato**: **Cero deudas en 24 horas**. Liberación del 100% de la quincena laboral para caja corriente a partir del 1 de octubre.
+| Mes / Período | Capacidad Abono | Deudas / Pasivos Objeto de Pago | Monto Aplicado | Saldo Restante Pasivos | Estado al Cierre |
+| :---: | :---: | :--- | :---: | :---: | :---: |
+| **Octubre 2026** | $120.00 USD | 1. Liquidadas cuotas **Cashea** ($68.70)<br>2. Liquidado saldo **Lentes** ($11.34)<br>3. Liquidado **Préstamo Beijing** ($24.78)<br>4. Abono inicial a **Nelly** ($15.18) | $120.00 USD | $288.07 USD | 3 deudas liquidadas al 100%. Quedan solo Nelly y Franelas. |
+| **Noviembre 2026** | $120.00 USD | 1. Liquidado compromiso **Franelas** ($45.00)<br>2. Abono a **Nelly** ($75.00) | $120.00 USD | $168.07 USD | Franelas canceladas al 100%. Queda únicamente Nelly. |
+| **Diciembre 2026** | $120.00 USD | 1. Abono principal a **Nelly** ($120.00) | $120.00 USD | $48.07 USD | Saldo Nelly reducido a la mínima expresión. |
+| **Enero 2027** | $120.00 USD | 1. Finiquito final pasivo **Nelly** ($48.07)<br>2. Remanente liberado a Ahorro/Deseos ($71.93) | $48.07 USD | **$0.00 USD** | **¡100% LIBRE DE DEUDAS!** Saneamiento total completado. |
 
 ---
 
-### **B. Proyección de Capitalización y Ahorro en USDT ($6,000.00 USD)**
+### **B. Clasificación de los $6,000.00 USD de `finance-ms`**
 
-| Fecha Hito | Fuente (`finance-ms`) | Monto Entrante | Asignación Deudas / Gastos | Asignación Diezmo | **Ahorro USDT Neto** | **Ahorro Acumulado** |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: |
-| **27-Sep-2026** | Sprint 1 (CxP/SENIAT) | $1,500.00 USD | $411.95 USD (Deudas) | $150.00 USD | **$938.05 USD** | **$938.05 USD** |
-| **08-Oct-2026** | Sprint 2 (Egresos/TXT) | $1,500.00 USD | $0.00 USD | $150.00 USD | **$1,350.00 USD** | **$2,288.05 USD** |
-| **19-Oct-2026** | Sprint 3 (CxC/CSV) | $1,500.00 USD | $0.00 USD | $150.00 USD | **$1,350.00 USD** | **$3,638.05 USD** |
-| **30-Oct-2026** | Sprint 4 (Release/Prod) | $1,500.00 USD | $0.00 USD | $150.00 USD | **$1,350.00 USD** | **$4,988.05 USD** |
+- **Clasificación Contable**: **Proyección de Ingreso Extraordinario Futuro por Cobrar (Hitos Pendientes)**.
+- **Mapeo de Hitos (Condicionado a Entregas y Pagos Efectivos)**:
 
-*Nota: Sumando los ahorros quincenales ordinarios en USDT ($25 a $50/quincena), la meta de **$5,200.00+ USDT** se alcanzará holgadamente antes del 15 de noviembre de 2026.*
+| Hito / Sprint | Entregable Clave | Monto Proyectado | Condición de Entrada a Caja | Destino Proyectado (Si se liquida) |
+| :---: | :--- | :---: | :---: | :--- |
+| **Sprint 1** | MVP CxP & Motor SENIAT | $1,500.00 USD | Aprobación & Pago de Dirección | $150 Diezmo + $408.07 Liquidación Inmediata Deudas + $941.93 Fondo USDT |
+| **Sprint 2** | Egresos & TXT Bancarios | $1,500.00 USD | Aprobación & Pago de Dirección | $150 Diezmo + $1,350 Fondo de Ahorro USDT |
+| **Sprint 3** | CxC & Conciliación CSV | $1,500.00 USD | Aprobación & Pago de Dirección | $150 Diezmo + $1,350 Fondo de Ahorro USDT |
+| **Sprint 4** | Release Staging/Prod | $1,500.00 USD | Aprobación & Pago de Dirección | $150 Diezmo + $1,350 Fondo de Ahorro USDT |
+
+> [!NOTE]
+> En caso de percibirse alguno de estos pagos extraordinarios, se aplicará el monto prioritariamente a **cancelar de golpe el remanente de deudas de ese momento**, acelerando el cronograma de 4 meses a 1 solo pago y transfiriendo el 100% del saldo remanente al **Fondo de Reserva USDT en Binance**.
 
 ---
 

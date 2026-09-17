@@ -78,8 +78,8 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### 💰 6. Finanzas (Gestión Económica)
 - [[Área Finanzas - Gestión Económica|finanzas/pilar-finanzas-personales.md]]: Índice de presupuesto, ahorro e ingresos.
-- [[Informe Financiero Auditado: Gastos Reales del Cuaderno & Estrategia de Saneamiento|finanzas/analisis-gastos-reales-cuaderno.md]]: Consolidación de ingresos y egresos en Bs./USD, fugas de dinero, liquidación de pasivos ($411.95 USD) y estrategia de aceleración de ahorro en USDT.
-- [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|finanzas/plan-financiero-2026.md]]: Plan financiero unificado 2026 (Regla 50/20/20/10, flujo de caja por hitos de $6,000 USD de `finance-ms` y control de compras en Bs.).
+- [[Informe Financiero Auditado: Gastos Reales del Cuaderno & Estrategia de Saneamiento|finanzas/analisis-gastos-reales-cuaderno.md]]: Consolidación de ingresos/egresos en Bs./USD, saneamiento gradual de pasivos ($408.07 USD) con $120 USD/mes libre y proyección futura por cobrar de $6,000 USD (`finance-ms`).
+- [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|finanzas/plan-financiero-2026.md]]: Plan financiero unificado 2026 (Presupuesto basado en $620 USD/mes reales, amortización gradual de deudas y proyección extraordinaria por cobrar de `finance-ms`).
 
 ---
 

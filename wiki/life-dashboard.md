@@ -65,11 +65,11 @@ flowchart LR
 - [x] **Regla de Autonomía de Subagentes**: Incorporada en `AGENTS.md` de MasterHub y `2brain`.
 
 ### 💰 4. Area Finanzas (Gestión Económica)
-- [x] **Análisis de Gastos Reales del Cuaderno & Plan de Saneamiento**: [[Informe Financiero Auditado: Gastos Reales del Cuaderno|finanzas/analisis-gastos-reales-cuaderno.md]] (Auditoría de 4 imágenes, saneamiento de pasivos $411.95 USD y proyección de ahorro $5,000+ USDT).
-- [x] **Plan Financiero Estratégico 2026 elaborado con Subagente Finance Manager**: [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|finanzas/plan-financiero-2026.md]].
-- [x] **Planificación Hitos $6,000.00 USD `finance-ms`**: [[Sprints & Backlog Scrum finance-ms|proyectos/sprints-modulo-finanzas.md]].
+- [x] **Análisis de Gastos Reales del Cuaderno & Plan Conservador**: [[Informe Financiero Auditado: Gastos Reales del Cuaderno|finanzas/analisis-gastos-reales-cuaderno.md]] (Auditoría de gastos, plan de amortización gradual de deudas $408.07 USD en 4 meses con $120 USD/mes).
+- [x] **Plan Financiero Estratégico 2026 elaborado con Subagente Finance Manager**: [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|finanzas/plan-financiero-2026.md]] (Presupuesto operativo basado en $620 USD/mes reales).
+- [x] **Clasificación de Ingresos `finance-ms` ($6,000.00 USD)**: [[Sprints & Backlog Scrum finance-ms|proyectos/sprints-modulo-finanzas.md]] (Registrado como *Proyección de Ingreso Extraordinario Futuro por Cobrar - Hitos Pendientes*).
 - [x] **Balance & Reestructuración de Compras (Presupuesto 29,000 Bs.)**: Ingestado y categorizado en A/B/C ([voice_20260916_221908.md](file:///C:/Users/vmontoyaMG/Desktop/2brain/raw/inbox/voice_20260916_221908.md)).
-- [ ] Control continuo de diezmos/ofrendas (10%) y fondo de ahorro de emergencia ($1,500/Sprint).
+- [ ] Control continuo de diezmos/ofrendas (10%), ahorro intocable ($62 USD/mes) y abono mensual de deudas ($120 USD/mes).
 
 ### 🏡 5. Area Familiar & Vida Personal
 - [x] Establecer protocolo de **Madrugada Protegida** y **Desconexión Sagrada 18:30 - 20:30** (Cero pantallas).
