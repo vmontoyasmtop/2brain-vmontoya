@@ -77,6 +77,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### 💰 6. Finanzas (Gestión Económica)
 - [[Área Finanzas - Gestión Económica|finanzas/pilar-finanzas-personales.md]]: Índice de presupuesto, ahorro e ingresos.
+- [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|finanzas/plan-financiero-2026.md]]: Plan financiero unificado 2026 (Regla 50/20/20/10, flujo de caja por hitos de $6,000 USD de `finance-ms` y control de compras en Bs.).
 
 ---
 

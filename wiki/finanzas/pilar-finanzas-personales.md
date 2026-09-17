@@ -21,5 +21,9 @@ Página principal de **Gestión Financiera y Presupuesto**.
 - Asignar recursos a gastos fijos, ahorro, inversión, diezmos y ofrendas.
 - Evaluar la viabilidad y precios de cotización para nuevos proyectos de software.
 
+## 📄 Documentos Clave
+- [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|plan-financiero-2026.md]]
+- [[Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (finance-ms)|../proyectos/sprints-modulo-finanzas.md]]
+
 ## 🔗 Subagente de Apoyo
-- [[Subagente Finance Manager|agents/finance_manager.md]]
+- [[Subagente Finance Manager|../../agents/finance_manager.md]]

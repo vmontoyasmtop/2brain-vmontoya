@@ -59,8 +59,10 @@ flowchart LR
 - [x] **Regla de Autonomía de Subagentes**: Incorporada en `AGENTS.md` de MasterHub y `2brain`.
 
 ### 💰 4. Area Finanzas (Gestión Económica)
-- [ ] Actualizar hoja de presupuesto mensual (ingresos Xetux + proyectos freelance).
-- [ ] Asignación de diezmos/ofrendas y fondo de ahorro familiar en [[Área Finanzas - Gestión Económica|finanzas/pilar-finanzas-personales.md]].
+- [x] **Plan Financiero Estratégico 2026 elaborado con Subagente Finance Manager**: [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|finanzas/plan-financiero-2026.md]].
+- [x] **Planificación Hitos $6,000.00 USD `finance-ms`**: [[Sprints & Backlog Scrum finance-ms|proyectos/sprints-modulo-finanzas.md]].
+- [x] **Balance & Reestructuración de Compras (Presupuesto 29,000 Bs.)**: Ingestado y categorizado en A/B/C ([voice_20260916_221908.md](file:///C:/Users/vmontoyaMG/Desktop/2brain/raw/inbox/voice_20260916_221908.md)).
+- [ ] Control continuo de diezmos/ofrendas (10%) y fondo de ahorro de emergencia ($1,500/Sprint).
 
 ### 🏡 5. Area Familiar & Vida Personal
 - [x] Establecer protocolo de **Madrugada Protegida** y **Desconexión Sagrada 18:30 - 20:30** (Cero pantallas).

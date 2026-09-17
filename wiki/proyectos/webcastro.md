@@ -17,9 +17,18 @@ tags:
 **WebCastro** es un sitio web corporativo de alto rendimiento construido con **Payload CMS 3.88**, **Next.js 16**, **React 19** y almacenamiento en la nube.
 
 **Área**: [[Área Proyectos - Software Independiente|pilar-proyectos.md]]  
-**Subagentes Evaluadores**: [[Subagente Frontend UI Expert|../../agents/frontend_ui_expert.md]] & [[Subagente Backend JS Expert|../../agents/backend_js_expert.md]]
+**Subagentes Asignados**: [[Subagente Frontend UI Expert|../../agents/frontend_ui_expert.md]] & [[Subagente Backend JS Expert|../../agents/backend_js_expert.md]]
 
 ---
+
+## 👥 Matriz de Delegación a Subagentes
+
+Para garantizar la mantenibilidad y evolución sin fricciones de **WebCastro**, las responsabilidades quedan delegadas formalmente de la siguiente manera:
+
+| Dominio / Componente | Subagente Responsable | Tareas Delegadas |
+| :--- | :--- | :--- |
+| **Frontend, UI & UX** | 🎨 [[Subagente Frontend UI Expert\|../../agents/frontend_ui_expert.md]] | - Mantenimiento y estilizado en Tailwind CSS `4.1` & Radix UI primitives.<br>- Botón flotante y de header para WhatsApp ([CastroHeader.tsx](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/Header/CastroHeader.tsx), [WhatsAppFloatingButton.tsx](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/components/landing/WhatsAppFloatingButton.tsx)).<br>- Optimización SEO dinámico, OpenGraph, `robots.txt` y rendición visual en React 19.<br>- Formulario de contacto interactivo en cliente. |
+| **Backend, CMS & Infra** | ⚙️ [[Subagente Backend JS Expert\|../../agents/backend_js_expert.md]] | - Configuración Payload CMS `3.88` y esquemas de Lexical Rich Text.<br>- Base de Datos PostgreSQL, soporte `@payloadcms/db-postgres` y migraciones DB.<br>- Almacenamiento Vercel Blob (`@payloadcms/storage-vercel-blob`).<br>- Script de prebuild/limpieza de migraciones dev (`scripts/clean-dev-migrations.mjs`).<br>- Configuración de proveedor SMTP de Gmail (`CONTACT_EMAIL_RECEIVER`, `SMTP_USER`, `SMTP_PASS`) en el controlador [route.ts](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/app/api/contact/route.ts). |
 
 ## 🛠️ Stack Tecnológico
 
