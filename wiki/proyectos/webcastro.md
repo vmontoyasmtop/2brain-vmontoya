@@ -59,7 +59,7 @@ Para garantizar la mantenibilidad y evolución sin fricciones de **WebCastro**, 
 - [x] **Botón Flotante de WhatsApp**: Componente integrado en layout principal con desplegable multi-número (`+58 412 964-3616` y `+58 414 390-4751`).
 - [x] **Plantilla de Correo HTML con Respuesta WhatsApp**: Controlador REST en [route.ts](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/app/api/contact/route.ts) con plantilla HTML de alta conversión.
 - [x] **Optimización SEO, Metadatos & Sitemap**: Metadatos globales, OpenGraph, Twitter Cards, `robots.txt` y `sitemap.xml` dinámico.
-- [x] **Corrección de Build en Vercel (Migraciones Dev batch = -1)**: Creado script autoejecutable `scripts/clean-dev-migrations.mjs` en hook `prebuild` de `package.json` y `push: false` en `payload.config.ts`.
+- [x] **Solución a Fallo Vercel Build (`enum_pages_blocks_cta_button_action already exists`)**: Convertidas las declaraciones de tipos ENUM, tablas, claves foráneas e índices en la migración [20260912_022810.ts](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/migrations/20260912_022810.ts) a bloques PL/pgSQL totalmente **idempotentes** con `DO $$ BEGIN ... EXCEPTION WHEN duplicate_object THEN null; END $$;` e `IF NOT EXISTS`. Subido a `origin/main` para desbloquear la compilación automática en Vercel.
 - [ ] **Pendiente Único (Configuración de Gmail SMTP)**: Colocar las credenciales reales en `.env` cuando se disponga de la Contraseña de Aplicación de 16 caracteres (`SMTP_USER`, `SMTP_PASS`, `CONTACT_EMAIL_RECEIVER`).
 
 ---
