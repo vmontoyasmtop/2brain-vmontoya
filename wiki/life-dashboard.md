@@ -44,11 +44,11 @@ flowchart LR
 ### 🏢 2. Area Trabajo (Analista IT & Soporte Xetux)
 - [x] **Reunión de Dirección Ejecutiva**: Presentación aprobada por el Sr. Emiliano.
   - [x] Aprobada la contratación del **Soporte Técnico IT Jr. (Nivel 1)**.
-  - [x] Aprobada la ejecución del **Módulo de Finanzas (`finance-ms`)**.
+  - [x] Aprobada la ejecución del **Módulo de Finanzas (`finance-ms`)** bajo **Plan B Exprés ($6,000 USD / 6 sem)**.
 - [x] **Perfil de Cargo IT Jr.**: Creado y publicado en Google Docs corporativo con la plantilla *"Documento con Banner"*.
 - [x] **Google Docs & Tasks MCP**: Servidores MCP multicuenta y Google Tasks API configurados y autenticados.
 - [x] **Google Task Agendada para Mañana (17-Sep)**: `[Q1] Verificar y Auditar TASK 2.2 de RRHH en ClickUp (Candidatos & CVs)` registrada en Google Tasks.
-- [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (CxP & Motor SENIAT).
+- [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (21/09 – 01/10 | CxP & Motor SENIAT).
 
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
 - [x] **MasterHub (MS-HR)** — **TASK 2.2 Entregada (100%)**:

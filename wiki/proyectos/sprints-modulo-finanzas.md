@@ -16,25 +16,25 @@ tags:
   - gherkin
 ---
 
-# 📋 Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (`finance-ms`)
+# 📋 Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (`finance-ms`) [Plan B Exprés]
 
-*Plan de trabajo ágil estructurado en 4 Sprints Timeboxed para 1 único desarrollador (Ing. Víctor Montoya).*
+*Plan de trabajo ágil acelerado (Plan B Exprés por Premura) estructurado en 4 Sprints Timeboxed para 1 único desarrollador (Ing. Víctor Montoya).*
 
 ---
 
 ## 📌 1. Resumen Ejecutivo & Cronograma de Desarrollo
 
-* **Desarrollador Único**: Ing. Víctor Montoya
-* **Capacidad por Sprint**: 30 Horas Timeboxed (15h/semana: 2h/día Lun-Vie + 5h fin de semana)
-* **Duración por Sprint**: 2 Semanas
-* **Total Proyecto**: 4 Sprints | 120 Horas | 67 Story Points | $2,400.00 USD ($600.00 USD / Sprint)
+* **Desarrollador Único**: Ing. Víctor Montoya (Dedicación Prioritaria Fast-Track)
+* **Modalidad**: Plan B Exprés por Premura ($6,000.00 USD)
+* **Duración por Sprint**: 1.5 Semanas (Fast-Track)
+* **Total Proyecto**: 4 Sprints | 6 Semanas | 67 Story Points | $6,000.00 USD ($1,500.00 USD / Sprint)
 
-| Sprint | Fechas de Ejecución | Horas Timebox | Story Points | Entregable Clave | Hito Financiero |
+| Sprint | Fechas de Ejecución | Duración | Story Points | Entregable Clave | Hito Financiero |
 | :--- | :---: | :---: | :---: | :--- | :---: |
-| **Sprint 1** | 21/09/2026 – 04/10/2026 | 30 h | 21 SP | MVP CxP, Motor Fiscal SENIAT, Tasa BCV & Propuesta de Pago PDF | $600.00 USD |
-| **Sprint 2** | 05/10/2026 – 18/10/2026 | 30 h | 18 SP | Egresos, Enrutamiento Bancario (BNC/Provincial), TXT & MinIO S3 | $600.00 USD |
-| **Sprint 3** | 19/10/2026 – 01/11/2026 | 30 h | 15 SP | CxC, Conciliación Masiva CSV & Calculadora Comisiones POS | $600.00 USD |
-| **Sprint 4** | 02/11/2026 – 15/11/2026 | 30 h | 13 SP | Caja Chica, Cuota Marketing 4%, Audit Logs SENIAT & Release Staging/Prod | $600.00 USD |
+| **Sprint 1** | 21/09/2026 – 01/10/2026 | 1.5 sem | 21 SP | MVP CxP, Motor Fiscal SENIAT, Tasa BCV & Propuesta de Pago PDF | $1,500.00 USD |
+| **Sprint 2** | 02/10/2026 – 12/10/2026 | 1.5 sem | 18 SP | Egresos, Enrutamiento Bancario (BNC/Provincial), TXT & MinIO S3 | $1,500.00 USD |
+| **Sprint 3** | 13/10/2026 – 23/10/2026 | 1.5 sem | 15 SP | CxC, Conciliación Masiva CSV & Calculadora Comisiones POS | $1,500.00 USD |
+| **Sprint 4** | 24/10/2026 – 02/11/2026 | 1.5 sem | 13 SP | Caja Chica, Cuota Marketing 4%, Audit Logs SENIAT & Release Staging/Prod | $1,500.00 USD |
 
 ---
 
@@ -52,7 +52,7 @@ Se han creado e integrado las subtareas hijas bajo la tarea principal **`MS-FINA
 ## 🏃 3. Desglose Detallado por Sprints & Historias de Usuario
 
 ### 🏆 SPRINT 1: MVP Cuentas por Pagar (CxP) & Motor Fiscal SENIAT
-- **Duración**: 21/09/2026 – 04/10/2026 (30h | 21 SP)
+- **Duración**: 21/09/2026 – 01/10/2026 (1.5 Semanas | 21 SP | Hito: $1,500.00 USD)
 - **Goal**: Automatizar la recepción de facturas, cálculo fiscal SENIAT y generación del PDF de propuesta de pago los martes a las 5:00 PM.
 
 #### Historias de Usuario:
@@ -74,7 +74,7 @@ Se han creado e integrado las subtareas hijas bajo la tarea principal **`MS-FINA
 ---
 
 ### 📦 SPRINT 2: Egresos, Enrutamiento Bancario & Archivos TXT
-- **Duración**: 05/10/2026 – 18/10/2026 (30h | 18 SP)
+- **Duración**: 02/10/2026 – 12/10/2026 (1.5 Semanas | 18 SP | Hito: $1,500.00 USD)
 - **Goal**: Automatizar la emisión de pagos masivos mediante enrutamiento inteligente de cuentas (BNC / Provincial) y generación de lotes TXT.
 
 #### Historias de Usuario:
@@ -90,7 +90,7 @@ Se han creado e integrado las subtareas hijas bajo la tarea principal **`MS-FINA
 ---
 
 ### 📊 SPRINT 3: Cuentas por Cobrar (CxC) & Conciliación Masiva CSV
-- **Duración**: 19/10/2026 – 01/11/2026 (30h | 15 SP)
+- **Duración**: 13/10/2026 – 23/10/2026 (1.5 Semanas | 15 SP | Hito: $1,500.00 USD)
 - **Goal**: Cruzar automáticamente los extractos bancarios CSV con las ventas registradas en Xetux y calcular comisiones POS e ISLR TC.
 
 #### Historias de Usuario:
@@ -104,7 +104,7 @@ Se han creado e integrado las subtareas hijas bajo la tarea principal **`MS-FINA
 ---
 
 ### 💼 SPRINT 4: Caja Chica, Cuota Marketing (4%), Audit Logs & Release
-- **Duración**: 02/11/2026 – 15/11/2026 (30h | 13 SP)
+- **Duración**: 24/10/2026 – 02/11/2026 (1.5 Semanas | 13 SP | Hito: $1,500.00 USD)
 - **Goal**: Arqueo de caja chica por sucursal, automatización de cuota de marketing (4%), trazabilidad SENIAT y despliegue final.
 
 #### Historias de Usuario:
