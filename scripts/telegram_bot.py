@@ -6,10 +6,12 @@ Permite:
 2. Guardar archivos, enlaces de YouTube/NotebookLM, notas y NOTAS DE VOZ directamente en raw/inbox/.
 3. Procesamiento avanzado de audio: validación MIME, detección de magic bytes, resguardo binario y sidecar Markdown.
 4. Alta resiliencia con fallbacks de modelo (gemini-3.6-flash, gemini-3.5-flash, gemini-2.5-flash, gemini-1.5-flash) y reintentos ante timeouts de socket.
+5. Módulo ligero de Notificaciones Push Proactivas (Notification Worker): captura persistente de TELEGRAM_CHAT_ID, resumen matutino 07:30 AM y alertas 15 min antes de eventos agendados en life-dashboard.md.
 
 Configuración (.env):
 TELEGRAM_BOT_TOKEN=123456789:ABCdef...
 GEMINI_API_KEY=AIzaSy... (Obtenla gratis en https://aistudio.google.com)
+TELEGRAM_CHAT_ID=... (Capturado automáticamente)
 """
 
 import os
@@ -21,6 +23,8 @@ import urllib.request
 import urllib.parse
 import urllib.error
 import datetime
+import re
+import threading
 
 # Timeout por defecto para sockets globales (60 segundos)
 socket.setdefaulttimeout(60)
@@ -38,6 +42,9 @@ ENV_FILE = os.path.join(BASE_DIR, "scripts", ".env")
 
 os.makedirs(INBOX_DIR, exist_ok=True)
 
+# Lock para escrituras seguras en .env desde hilos
+env_lock = threading.Lock()
+
 # MIME types de audio soportados oficialmente por Gemini API
 ALLOWED_AUDIO_MIMES = {
     "audio/ogg": ".ogg",
@@ -49,6 +56,21 @@ ALLOWED_AUDIO_MIMES = {
     "audio/m4a": ".m4a",
     "audio/opus": ".ogg",
     "audio/webm": ".webm"
+}
+
+MONTH_MAP = {
+    "ene": 1, "jan": 1,
+    "feb": 2,
+    "mar": 3,
+    "abr": 4, "apr": 4,
+    "may": 5,
+    "jun": 6,
+    "jul": 7,
+    "ago": 8, "aug": 8,
+    "sep": 9,
+    "oct": 10,
+    "nov": 11,
+    "dic": 12, "dec": 12
 }
 
 def load_env():
@@ -66,8 +88,49 @@ def load_env():
         config["TELEGRAM_BOT_TOKEN"] = os.environ.get("TELEGRAM_BOT_TOKEN")
     if os.environ.get("GEMINI_API_KEY"):
         config["GEMINI_API_KEY"] = os.environ.get("GEMINI_API_KEY")
+    if os.environ.get("TELEGRAM_CHAT_ID"):
+        config["TELEGRAM_CHAT_ID"] = os.environ.get("TELEGRAM_CHAT_ID")
         
     return config
+
+def save_chat_id(chat_id, config):
+    """
+    Captura y guarda de forma persistente el TELEGRAM_CHAT_ID en .env al recibir cualquier mensaje o nota de voz.
+    """
+    if not chat_id:
+        return
+    str_chat_id = str(chat_id)
+    if config.get("TELEGRAM_CHAT_ID") == str_chat_id:
+        return
+        
+    config["TELEGRAM_CHAT_ID"] = str_chat_id
+    
+    with env_lock:
+        lines = []
+        found = False
+        if os.path.exists(ENV_FILE):
+            with open(ENV_FILE, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+                
+        new_lines = []
+        for line in lines:
+            if line.strip().startswith("TELEGRAM_CHAT_ID="):
+                new_lines.append(f"TELEGRAM_CHAT_ID={str_chat_id}\n")
+                found = True
+            else:
+                new_lines.append(line)
+                
+        if not found:
+            if new_lines and not new_lines[-1].endswith("\n"):
+                new_lines.append("\n")
+            new_lines.append(f"# ID de chat capturado automáticamente para notificaciones push\nTELEGRAM_CHAT_ID={str_chat_id}\n")
+            
+        try:
+            with open(ENV_FILE, "w", encoding="utf-8") as f:
+                f.writelines(new_lines)
+            print(f"✅ TELEGRAM_CHAT_ID={str_chat_id} capturado y guardado de forma persistente en {ENV_FILE}")
+        except Exception as e:
+            print(f"⚠️ Error al guardar TELEGRAM_CHAT_ID en .env: {e}")
 
 def telegram_api(token, method, data=None):
     url = f"https://api.telegram.org/bot{token}/{method}"
@@ -133,6 +196,220 @@ def read_dashboard_summary():
         except Exception:
             pass
     return "Dashboard de Vida disponible en el sistema 2brain."
+
+def parse_upcoming_events_from_dashboard():
+    """
+    Parsea prioridades y eventos agendados con horario desde life-dashboard.md.
+    """
+    dash_path = os.path.join(WIKI_DIR, "life-dashboard.md")
+    if not os.path.exists(dash_path):
+        return []
+        
+    events = []
+    now = datetime.datetime.now()
+    current_year = now.year
+    
+    try:
+        with open(dash_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+            
+        current_section = "General"
+        for line in lines:
+            line_str = line.strip()
+            if line_str.startswith("### "):
+                current_section = line_str.replace("### ", "").strip()
+                continue
+                
+            if not line_str or line_str.startswith("---") or line_str.startswith("```"):
+                continue
+
+            # Evento con fecha específica: ej. 17-Sep 12:30 – 13:30 PM o 17-Sep 09:00 AM
+            m_date = re.search(r'(\d{1,2})-(Ene|Feb|Mar|Abr|May|Jun|Jul|Ago|Sep|Oct|Nov|Dic|Jan|Apr|Aug|Dec)\s+(\d{1,2}):(\d{2})(?:\s*(?:–|-|a)\s*\d{1,2}:\d{2})?\s*(AM|PM)?', line_str, re.IGNORECASE)
+            if m_date:
+                day = int(m_date.group(1))
+                mon_str = m_date.group(2).lower()
+                month = MONTH_MAP.get(mon_str, now.month)
+                hour = int(m_date.group(3))
+                minute = int(m_date.group(4))
+                ampm = m_date.group(5)
+                
+                if ampm:
+                    ampm_upper = ampm.upper()
+                    if ampm_upper == "PM" and hour < 12:
+                        hour += 12
+                    elif ampm_upper == "AM" and hour == 12:
+                        hour = 0
+                
+                try:
+                    event_dt = datetime.datetime(current_year, month, day, hour, minute)
+                    clean_title = re.sub(r'^-?\s*\[[ xX]\]\s*', '', line_str)
+                    clean_title = clean_title.replace("**", "").replace("[[", "").replace("]]", "")
+                    
+                    event_id = f"{event_dt.strftime('%Y%m%d_%H%M')}_{abs(hash(clean_title[:30]))}"
+                    events.append({
+                        "id": event_id,
+                        "title": clean_title,
+                        "datetime": event_dt,
+                        "raw_time": f"{hour:02d}:{minute:02d}",
+                        "section": current_section
+                    })
+                except ValueError:
+                    pass
+                continue
+
+            # Bloque de tiempo recurrente (ej. 18:30 - 20:30 o 08:30 PM)
+            m_time = re.search(r'(\d{1,2}):(\d{2})\s*(AM|PM)?', line_str, re.IGNORECASE)
+            if m_time and any(k in line_str.lower() for k in ["desconexión", "deep work", "lunes a viernes", "sábados y domingos"]):
+                hour = int(m_time.group(1))
+                minute = int(m_time.group(2))
+                ampm = m_time.group(3)
+                if ampm:
+                    ampm_upper = ampm.upper()
+                    if ampm_upper == "PM" and hour < 12:
+                        hour += 12
+                    elif ampm_upper == "AM" and hour == 12:
+                        hour = 0
+                
+                if "lunes a viernes" in line_str.lower() and now.weekday() >= 5:
+                    continue
+                if "sábados y domingos" in line_str.lower() and now.weekday() < 5:
+                    continue
+
+                event_dt = datetime.datetime(now.year, now.month, now.day, hour, minute)
+                clean_title = re.sub(r'^-?\s*\[[ xX]\]\s*', '', line_str)
+                clean_title = clean_title.replace("**", "").replace("[[", "").replace("]]", "")
+                
+                event_id = f"{event_dt.strftime('%Y%m%d_%H%M')}_{abs(hash(clean_title[:30]))}"
+                events.append({
+                    "id": event_id,
+                    "title": clean_title,
+                    "datetime": event_dt,
+                    "raw_time": f"{hour:02d}:{minute:02d}",
+                    "section": current_section
+                })
+
+    except Exception as e:
+        print(f"⚠️ Error al parsear eventos de life-dashboard.md: {e}")
+
+    return events
+
+def build_daily_morning_summary():
+    """
+    Construye el resumen ejecutivo diario de las 07:30 AM a partir de life-dashboard.md.
+    """
+    dash_path = os.path.join(WIKI_DIR, "life-dashboard.md")
+    if not os.path.exists(dash_path):
+        return "🎩 *ALFRED*: Buenos días, Señor. Hoy no se encontró el archivo Dashboard de Vida."
+
+    sections = {}
+    current_sec = "General"
+
+    try:
+        with open(dash_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line_str = line.strip()
+                if line_str.startswith("### "):
+                    current_sec = line_str.replace("### ", "").strip()
+                    if current_sec not in sections:
+                        sections[current_sec] = []
+                    continue
+                    
+                if line_str.startswith("- [ ]") or line_str.startswith("- [x]"):
+                    is_pending = line_str.startswith("- [ ]")
+                    clean_item = line_str[5:].strip()
+                    clean_item = re.sub(r'\[\[([^\|\]]+\|)?([^\]]+)\]\]', r'\2', clean_item)
+                    clean_item = clean_item.replace("**", "")
+                    
+                    if is_pending:
+                        if current_sec not in sections:
+                            sections[current_sec] = []
+                        sections[current_sec].append(clean_item)
+
+        msg_lines = [
+            "🎩 *ALFRED — Resumen de Prioridades del Día (07:30 AM)*\n",
+            "¡Buenos días, Señor! A sus órdenes. Presento su agenda y prioridades activas para hoy:\n"
+        ]
+
+        total_pending = 0
+        for sec_name, items in sections.items():
+            if items:
+                msg_lines.append(f"📌 *{sec_name}*:")
+                for item in items[:4]:
+                    msg_lines.append(f"• {item}")
+                msg_lines.append("")
+                total_pending += len(items)
+
+        if total_pending == 0:
+            msg_lines.append("🎉 *Todas las prioridades del dashboard se encuentran al día.*")
+
+        msg_lines.append("✨ *Que tenga una jornada de máxima excelencia y productividad, Señor.*")
+        return "\n".join(msg_lines)
+
+    except Exception as e:
+        print(f"⚠️ Error construyendo resumen matutino: {e}")
+        return "🎩 *ALFRED*: Buenos días, Señor. Ocurrió un inconveniente al generar el resumen de prioridades."
+
+def notification_worker(config):
+    """
+    Hilo recurrente (Notification Worker) para notificaciones proactivas Push vía Telegram.
+    Revisa a las 07:30 AM el resumen matutino y 15 minutos antes los eventos agendados en life-dashboard.md.
+    """
+    sent_daily = set()
+    sent_events = set()
+
+    print("🔔 Notification Worker activo en segundo plano.")
+
+    while True:
+        try:
+            latest_config = load_env()
+            token = latest_config.get("TELEGRAM_BOT_TOKEN")
+            chat_id = latest_config.get("TELEGRAM_CHAT_ID") or config.get("TELEGRAM_CHAT_ID")
+
+            if token and chat_id:
+                now = datetime.datetime.now()
+                today_str = now.strftime("%Y-%m-%d")
+
+                # 1. Notificación matutina a las 07:30 AM
+                if now.hour == 7 and now.minute == 30 and today_str not in sent_daily:
+                    summary_text = build_daily_morning_summary()
+                    res = telegram_api(token, "sendMessage", {
+                        "chat_id": chat_id,
+                        "text": summary_text,
+                        "parse_mode": "Markdown"
+                    })
+                    if res and res.get("ok"):
+                        sent_daily.add(today_str)
+                        print(f"🔔 Notificación Push matutina (07:30 AM) enviada con éxito a Chat ID: {chat_id}")
+
+                # 2. Notificaciones 15 minutos antes de eventos clave
+                events = parse_upcoming_events_from_dashboard()
+                for event in events:
+                    event_dt = event["datetime"]
+                    diff_seconds = (event_dt - now).total_seconds()
+
+                    # Si el evento ocurre en los próximos 15 minutos (0 <= diff <= 900) y no se ha notificado
+                    if 0 <= diff_seconds <= 900 and event["id"] not in sent_events:
+                        mins_left = max(1, int(diff_seconds // 60))
+                        event_text = (
+                            f"⏰ *RECORDATORIO DE EVENTO PRÓXIMO* (en {mins_left} min)\n\n"
+                            f"📌 *Compromiso*: {event['title']}\n"
+                            f"🕒 *Horario*: `{event['raw_time']}`\n"
+                            f"📂 *Sección*: {event['section']}\n\n"
+                            f"🎩 *ALFRED*: A sus órdenes, Señor. Le recuerdo estar preparado para esta actividad."
+                        )
+                        res = telegram_api(token, "sendMessage", {
+                            "chat_id": chat_id,
+                            "text": event_text,
+                            "parse_mode": "Markdown"
+                        })
+                        if res and res.get("ok"):
+                            sent_events.add(event["id"])
+                            print(f"🔔 Notificación Push de evento enviada ({event['title']}) a Chat ID: {chat_id}")
+
+        except Exception as e:
+            print(f"⚠️ Error en Notification Worker: {e}")
+
+        time.sleep(30)
 
 def call_gemini_alfred(gemini_key, user_text, audio_bytes=None, mime_type="audio/ogg"):
     dashboard_ctx = read_dashboard_summary()
@@ -204,7 +481,6 @@ Instrucciones para Notas de Voz y Audio:
                 last_error = f"HTTP {http_err.code}: {http_err.reason}"
                 print(f"⚠️ Reintento {attempt+1}/3 con modelo {model_name} debido a error HTTP ({http_err.code})")
                 if http_err.code in (429, 404):
-                    # Salta al siguiente modelo si es 429 (quota limit) o 404 (modelo no encontrado)
                     break
                 time.sleep(1.5 * (attempt + 1))
             except (socket.timeout, urllib.error.URLError) as net_err:
@@ -223,6 +499,9 @@ def process_message(config, message):
     gemini_key = config.get("GEMINI_API_KEY")
     
     chat_id = message.get("chat", {}).get("id")
+    if chat_id:
+        save_chat_id(chat_id, config)
+
     text = message.get("text", "").strip()
     date = message.get("date")
     sender = message.get("from", {}).get("first_name", "Señor")
@@ -324,7 +603,6 @@ status: "processed"
         subcommand = parts[1] if len(parts) > 1 else ""
         
         if subcommand.startswith("create"):
-            # /ticket create Título del ticket | Descripción
             ticket_data = subcommand.replace("create", "", 1).strip()
             title = ticket_data
             desc = "Registrado desde Telegram por " + sender
@@ -337,7 +615,6 @@ status: "processed"
             telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": reply, "parse_mode": "Markdown"})
             return
         else:
-            # Listar o consultar por defecto
             from masterhub_helpdesk import make_request
             res = make_request("tickets?limit=5")
             if res and isinstance(res, list):
@@ -360,10 +637,14 @@ status: "processed"
             "💬 *1. Conversación y Notas de Voz*:\n"
             "• Escríbame cualquier mensaje de texto o **envíeme notas de voz directamente**.\n"
             "• Escucharé y responderé sus solicitudes de voz en tiempo real con resguardo automático en `raw/inbox/`.\n\n"
-            "🛠️ *2. Gestión de Tickets Helpdesk*:\n"
+            "🔔 *2. Notificaciones Push Proactivas*:\n"
+            "• Captura automática de su `TELEGRAM_CHAT_ID`.\n"
+            "• Resumen diario de prioridades a las 07:30 AM.\n"
+            "• Alertas 15 minutos antes de eventos clave de `life-dashboard.md`.\n\n"
+            "🛠️ *3. Gestión de Tickets Helpdesk*:\n"
             "• `/ticket` — Ver últimos tickets de MasterHub.\n"
             "• `/ticket create Título | Descripción` — Crear nuevo ticket en Helpdesk.\n\n"
-            "📥 *3. Ingesta a 2brain*:\n"
+            "📥 *4. Ingesta a 2brain*:\n"
             "• Envíeme cualquier enlace (YouTube, NotebookLM, artículos) o archivo.\n"
             "• Use el comando `/ingest <texto o url>` para guardado directo."
         )
@@ -424,12 +705,10 @@ status: "pending_synthesis"
 
     # De lo contrario -> MODO CONVERSACIÓN CON ALFRED (GEMINI API)
     if gemini_key and gemini_key != "TU_GEMINI_KEY_AQUI":
-        # Indicar que ALFRED está escribiendo...
         telegram_api(token, "sendChatAction", {"chat_id": chat_id, "action": "typing"})
         response = call_gemini_alfred(gemini_key, text)
         telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": response})
     else:
-        # Fallback sin Gemini API Key
         reply = (
             f"A sus órdenes, Señor {sender}. He recibido su mensaje:\n\n"
             f"'{text}'\n\n"
@@ -439,7 +718,7 @@ status: "pending_synthesis"
 
 def main():
     print("========================================================")
-    print("   ALFRED 2brain - Bot de Telegram (Chat & Ingesta)")
+    print("   ALFRED 2brain - Bot de Telegram (Chat & Push Worker)")
     print("========================================================")
     
     config = load_env()
@@ -457,6 +736,11 @@ def main():
     else:
         print("ℹ️ Integración con Gemini API: Pendiente (Agregue GEMINI_API_KEY en .env)")
         
+    # Iniciar Hilo Recurrente de Notificaciones Push (Notification Worker)
+    worker_thread = threading.Thread(target=notification_worker, args=(config,), daemon=True)
+    worker_thread.start()
+    print("🔔 Módulo de Notificaciones Push en segundo plano (Notification Worker): ACTIVADO")
+
     print("📡 Escuchando mensajes entrantes en tiempo real... (Ctrl+C para salir)\n")
     
     offset = None

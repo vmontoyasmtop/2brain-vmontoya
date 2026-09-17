@@ -307,4 +307,16 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - Documentadas las reglas de envoltorios PL/pgSQL (`DO $$ BEGIN ... EXCEPTION WHEN duplicate_object THEN null; END $$;`), `IF NOT EXISTS` y script `clean-dev-migrations.mjs` para prevenir fallos de compilación en Vercel.
   - Actualizados `wiki/programacion/pilar-programacion.md`, `wiki/index.md` y `wiki/log.md`.
 
+---
+
+## [2026-09-16] feat/telegram | Módulo de Notificaciones Push Proactivas (Matutinas & 15min Event Alerts)
+- **Área**: 💻 `programacion`
+- **Agentes Responsables**: ⚙️ **Subagente Backend JS Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Implementado `Notification Worker` en `scripts/telegram_bot.py` ejecutándose en un hilo secundario (`threading.Thread`).
+  - Incorporada captura persistente de `TELEGRAM_CHAT_ID` en `scripts/.env`.
+  - Agregado resumen diario matutino a las 07:30 AM (extraído de `life-dashboard.md`) y notificaciones push 15 minutos antes de los eventos del día.
+  - Bot de Telegram reiniciado en segundo plano de forma aislada.
+
+
 
