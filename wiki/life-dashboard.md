@@ -45,6 +45,7 @@ flowchart LR
 ### 🏢 2. Area Trabajo (Analista IT & Soporte Xetux)
 - [x] **Actualización de Tasa de Bs en Xetux (17-Sep)**: Tasa oficial actualizada correctamente a primera hora.
 - [ ] **Agendado en Google Calendar Trabajo (17-Sep 09:00 – 09:30 AM)**: 📋 `[Q1] Pasar presupuesto de servidor MasterHub y costos de planes de IA` (Elaboración y entrega a las 09:00 AM).
+- [ ] **Agendado en Google Calendar Trabajo (17-Sep 02:30 – 03:30 PM)**: 🔧 `[Q2] Configuración de Server NAS Marketing` (Pruebas de red, almacenamiento y accesos).
 - [ ] **Agendado en Google Calendar Trabajo (17-Sep 03:30 – 04:00 PM)**: 📧 `[Q1] Enviar correo: Presupuesto de Redes y Movimiento de Rack` (Antes de las 5:00 PM).
 - [ ] **Agendado en Google Calendar Trabajo (17-Sep 04:00 – 04:30 PM)**: 📧 `[Q1] Enviar correo: Presupuesto de Servidores MasterHub y Planes de IA` (Con enlace a Google Docs PROP-MGH-2026-004, antes de las 5:00 PM).
 - [x] **Reunión de Dirección Ejecutiva**: Presentación aprobada por el Sr. Emiliano.
