@@ -53,6 +53,9 @@ flowchart LR
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
 - [x] **WebCastro**: Auditoría de subagentes completada, migración Vercel corregida.
 - [ ] **Agendado en Google Calendar Personal (17-Sep 09:00 – 11:00 AM)**: [[Proyecto: WebCastro|proyectos/webcastro.md]] — Configuración final de credenciales SMTP de Gmail en `.env` e integración.
+- [x] **Time-blocking Deep Work Agendado en Google Calendar (`finance-ms`)**:
+  - **Lunes a Viernes**: 08:30 PM – 10:30 PM (2 horas de trabajo enfocado nocturno).
+  - **Sábados y Domingos**: 06:00 PM – 08:30 PM (2.5 horas de desarrollo intensivo).
 - [x] **MasterHub (MS-HR)** — **TASK 2.2 Entregada (100%)**:
   - [x] Modelos Prisma `Candidate` & `Interview` en `hr-ms` con correlativo `candidatoNum` y *soft delete*.
   - [x] Endpoints REST en `api-gateway` y TCP en `hr-ms` con subida de CVs en PDF a MinIO (S3).
