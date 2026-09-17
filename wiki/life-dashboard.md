@@ -51,6 +51,8 @@ flowchart LR
 - [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (17/09 – 27/09 | CxP & Motor SENIAT).
 
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
+- [x] **WebCastro**: Auditoría de subagentes completada, migración Vercel corregida.
+- [ ] **Agendado en Google Calendar Personal (17-Sep 09:00 – 11:00 AM)**: [[Proyecto: WebCastro|proyectos/webcastro.md]] — Configuración final de credenciales SMTP de Gmail en `.env` e integración.
 - [x] **MasterHub (MS-HR)** — **TASK 2.2 Entregada (100%)**:
   - [x] Modelos Prisma `Candidate` & `Interview` en `hr-ms` con correlativo `candidatoNum` y *soft delete*.
   - [x] Endpoints REST en `api-gateway` y TCP en `hr-ms` con subida de CVs en PDF a MinIO (S3).
