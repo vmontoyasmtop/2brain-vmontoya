@@ -37,6 +37,7 @@ flowchart LR
 - [x] Diseñar estructura de la nueva serie de discipulado: [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|ministerial/serie-discipulado-caminando-juntos.md]]
 - [x] Estudio exegético del Sermón 1: [[Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa|ministerial/sermon-1-de-la-multitud-a-la-mesa-estudio.md]]
 - [x] Estudio exegético del Sermón 2: [[Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro|ministerial/sermon-2-el-modelo-del-maestro-estudio.md]]
+- [ ] **Agendado en Google Calendar Personal (17-Sep 12:30 – 13:30 PM)**: Lectura y meditación del [[Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro|ministerial/sermon-2-el-modelo-del-maestro-estudio.md]] durante el almuerzo.
 - [x] Ingestar e integrar el [[Sistema de Productividad del Pastor-Ingeniero|ministerial/sistema-productividad-pastor-ingeniero.md]] ([Resumen Exec|summaries/manual-maestro-pastor-ingeniero.md]).
 - [ ] **En Progreso**: Armar la predicación final del Sermón 1 para el domingo.
 - [ ] **Próximo**: Preparar la guía de preguntas para grupos pequeños/células.
