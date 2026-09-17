@@ -48,7 +48,7 @@ flowchart LR
 - [x] **Perfil de Cargo IT Jr.**: Creado y publicado en Google Docs corporativo con la plantilla *"Documento con Banner"*.
 - [x] **Google Docs & Tasks MCP**: Servidores MCP multicuenta y Google Tasks API configurados y autenticados.
 - [x] **Google Task Agendada para Mañana (17-Sep)**: `[Q1] Verificar y Auditar TASK 2.2 de RRHH en ClickUp (Candidatos & CVs)` registrada en Google Tasks.
-- [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (21/09 – 01/10 | CxP & Motor SENIAT).
+- [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (17/09 – 27/09 | CxP & Motor SENIAT).
 
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
 - [x] **MasterHub (MS-HR)** — **TASK 2.2 Entregada (100%)**:
