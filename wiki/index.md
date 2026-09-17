@@ -34,6 +34,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Agenda Ejecutiva & Minuta de Reporte (Reunión con Emiliano)|trabajo/agenda-reunion-ejecutiva-emiliano.md]]: Agenda de 5 puntos para informe de gestión IT, plan del bug de inventario, contratación Soporte Jr. y Módulo de Finanzas.
 - [[Perfil y Modelo de Cargo: Soporte Técnico IT Jr. (Nivel 1)|trabajo/perfil-cargo-soporte-it-jr.md]]: Perfil formal de cargo, funciones, requisitos y KPIs del nuevo soporte informático.
 - [[Análisis Integral de Servicios de Hetzner Online|trabajo/analisis-servicios-hetzner-cloud-dedicados.md]]: Evaluación técnica y de precios de Hetzner Cloud, Dedicated Servers, Storage Box y redes.
+- [[Arquitectura y Configuración Óptima en Hetzner para MasterHub y Plane|trabajo/arquitectura-recomendada-hetzner-masterhub-plane.md]]: Propuesta dimensionada de servidor CPX41/CAX41 (16GB RAM, 8 vCPU) + Storage Box 1TB con Coolify.
 
 ### 💻 2. Programación (Conocimiento Técnico)
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.

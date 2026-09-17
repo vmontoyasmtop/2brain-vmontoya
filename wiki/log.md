@@ -2,6 +2,15 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-17] query/infra | Propuesta de Arquitectura y Dimensionamiento Hetzner para MasterHub & Plane
+- **Área**: 🏢 `trabajo` & 🚀 `proyectos`
+- **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Creada nota de arquitectura recomendada en [[Arquitectura y Configuración Óptima en Hetzner para MasterHub y Plane|trabajo/arquitectura-recomendada-hetzner-masterhub-plane.md]].
+  - Definido el dimensionamiento óptimo de servidor Hetzner Cloud `CPX41` / `CAX41` (8 vCPU, 16GB RAM, 240GB NVMe) + `Storage Box BX11` (1TB Backup) con orquestación en **Coolify** por ~$30-$38 USD/mes.
+
+---
+
 ## [2026-09-17] fix/hr-ms | Resolución de 75 Errores TypeScript en Build Docker de `hr-ms`
 - **Área**: 💻 `programacion` & 🚀 `proyectos`
 - **Agentes Responsables**: ⚙️ **Backend JS Expert** (`backend_developer`) & 🤵 **ALFRED**
