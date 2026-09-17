@@ -97,21 +97,24 @@ Cuando el usuario pida *"ALFRED, entrega de turno"* o *"Cierra la jornada"*:
 1. **Revisión de Cierre**: Verificar estado final de tareas del día, pendientes en correos/calendarios y logros.
 2. **Registro de Log**: Registrar resumen de logros y actividades del día en `wiki/log.md`.
 3. **Actualizar Dashboard**: Actualizar prioridades en `wiki/life-dashboard.md`.
-4. **Persistencia Git**: Ejecutar directamente y de forma autónoma: `git add .`, `git commit -m "chore(handover): cierre de turno [YYYY-MM-DD]"`, `git push origin master`.
-5. **Informe de Despedida**: Presentar un informe ejecutivo corto con el balance del día y pendientes clave para mañana.
+4. **Cierre de Servicios (Bot de Telegram)**: Verificar y apagar limpiamente cualquier proceso activo del bot de Telegram (`python scripts/telegram_bot.py`) para evitar conflictos multi-instancia.
+5. **Persistencia Git**: Ejecutar directamente y de forma autónoma: `git add .`, `git commit -m "chore(handover): cierre de turno [YYYY-MM-DD]"`, `git push origin master`.
+6. **Informe de Despedida**: Presentar un informe ejecutivo corto con el balance del día y pendientes clave para mañana.
 
 ### 4. `TOMA_TURNO` (Inicio de Jornada / Sincronización Multi-PC)
 Cuando el usuario pida *"ALFRED, toma de turno"* o *"Inicia la jornada"*:
 1. **Sincronización Git**: Ejecutar directamente y de forma autónoma: `git pull origin master`.
 2. **Lectura de Memoria**: Leer entradas recientes de `wiki/log.md` y `wiki/life-dashboard.md`.
-3. **Consulta Multicuenta de Nube (Calendar, Gmail & ClickUp)**:
+3. **Inicio de Servicios (Bot de Telegram)**: Verificar el estado de `scripts/telegram_bot.py` e iniciar una instancia única en segundo plano (`python scripts/telegram_bot.py`).
+4. **Consulta Multicuenta de Nube (Calendar, Gmail & ClickUp)**:
    - **Google Calendar**: Consultar todos los eventos programados para hoy en las cuentas **Personal** (`google-calendar-personal`) y **Laboral** (`google-calendar-trabajo`).
    - **Gmail**: Consultar correos o avisos recientes en las bandejas personal y laboral.
    - **ClickUp**: Consultar sprints y tareas activas.
-4. **Informe de Bienvenida Ejecutiva**:
+5. **Informe de Bienvenida Ejecutiva**:
    - *Resumen de en qué quedamos en el último turno.*
    - *Detalle completo de eventos/reuniones del día (Personal + Trabajo).*
    - *Alertas de correos o comunicaciones clave.*
+   - *Confirmación de Bot de Telegram activo en segundo plano.*
    - *Primer bloque de trabajo de enfoque recomendado.*
 
 ---
