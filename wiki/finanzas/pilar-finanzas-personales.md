@@ -3,7 +3,7 @@ title: "Área Finanzas - Gestión Económica"
 type: "concept"
 pillar: "finanzas"
 created: 2026-09-11
-updated: 2026-09-11
+updated: 2026-09-16
 tags:
   - finanzas
   - presupuesto
@@ -22,6 +22,7 @@ Página principal de **Gestión Financiera y Presupuesto**.
 - Evaluar la viabilidad y precios de cotización para nuevos proyectos de software.
 
 ## 📄 Documentos Clave
+- [[Informe Financiero Auditado: Gastos Reales del Cuaderno & Estrategia de Saneamiento|analisis-gastos-reales-cuaderno.md]]
 - [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|plan-financiero-2026.md]]
 - [[Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (finance-ms)|../proyectos/sprints-modulo-finanzas.md]]
 
