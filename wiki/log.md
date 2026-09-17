@@ -2,6 +2,15 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-17] query/infra | Estudio Comparativo de Servidores Nube en EE. UU. (Latencia LATAM / VZLA)
+- **Área**: 🏢 `trabajo` & 🚀 `proyectos`
+- **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Creada nota comparativa en [[Estudio Comparativo de Proveedores Cloud en EE. UU.|trabajo/estudio-comparativo-servidores-usa-latam.md]].
+  - Analizados datacenters en EE. UU.: **Hetzner US (Ashburn, Virginia)**, **Vultr (Miami, Florida)**, **Linode/Akamai (Miami, FL)** y **DigitalOcean (Atlanta/NYC)** con estimaciones de latencia (35-45 ms) y costos.
+
+---
+
 ## [2026-09-17] query/infra | Propuesta de Arquitectura y Dimensionamiento Hetzner para MasterHub & Plane
 - **Área**: 🏢 `trabajo` & 🚀 `proyectos`
 - **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
