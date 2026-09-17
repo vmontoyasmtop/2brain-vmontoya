@@ -3,7 +3,9 @@
 Bot de Telegram ALFRED 2brain (Chat & Ingesta - Costo $0)
 Permite:
 1. Conversar con ALFRED en vivo desde Telegram usando la API de Gemini (gratuita).
-2. Guardar archivos, enlaces de YouTube/NotebookLM y notas directamente en raw/inbox/.
+2. Guardar archivos, enlaces de YouTube/NotebookLM, notas y NOTAS DE VOZ directamente en raw/inbox/.
+3. Procesamiento avanzado de audio: validación MIME, detección de magic bytes, resguardo binario y sidecar Markdown.
+4. Alta resiliencia con fallbacks de modelo (gemini-3.6-flash, gemini-3.5-flash, gemini-2.5-flash, gemini-1.5-flash) y reintentos ante timeouts de socket.
 
 Configuración (.env):
 TELEGRAM_BOT_TOKEN=123456789:ABCdef...
@@ -17,8 +19,10 @@ import json
 import socket
 import urllib.request
 import urllib.parse
+import urllib.error
 import datetime
 
+# Timeout por defecto para sockets globales (60 segundos)
 socket.setdefaulttimeout(60)
 
 if hasattr(sys.stdout, 'reconfigure'):
@@ -33,6 +37,19 @@ WIKI_DIR = os.path.join(BASE_DIR, "wiki")
 ENV_FILE = os.path.join(BASE_DIR, "scripts", ".env")
 
 os.makedirs(INBOX_DIR, exist_ok=True)
+
+# MIME types de audio soportados oficialmente por Gemini API
+ALLOWED_AUDIO_MIMES = {
+    "audio/ogg": ".ogg",
+    "audio/mp3": ".mp3",
+    "audio/mpeg": ".mp3",
+    "audio/wav": ".wav",
+    "audio/aac": ".aac",
+    "audio/flac": ".flac",
+    "audio/m4a": ".m4a",
+    "audio/opus": ".ogg",
+    "audio/webm": ".webm"
+}
 
 def load_env():
     config = {}
@@ -68,6 +85,44 @@ def telegram_api(token, method, data=None):
         print(f"⚠️ Error en llamada API Telegram ({method}): {e}")
         return None
 
+def detect_audio_format(raw_bytes, default_mime="audio/ogg"):
+    """
+    Inspecciona magic bytes del buffer de audio para validar y normalizar MIME type y extensión.
+    """
+    if not raw_bytes or len(raw_bytes) < 4:
+        return default_mime, ".ogg"
+
+    # Magic byte matching
+    if raw_bytes.startswith(b"OggS"):
+        return "audio/ogg", ".ogg"
+    elif raw_bytes.startswith(b"RIFF") and raw_bytes[8:12] == b"WAVE":
+        return "audio/wav", ".wav"
+    elif raw_bytes.startswith(b"ID3") or raw_bytes[:2] in (b"\xff\xfb", b"\xff\xf3", b"\xff\xf2"):
+        return "audio/mp3", ".mp3"
+    elif raw_bytes.startswith(b"fLaC"):
+        return "audio/flac", ".flac"
+    elif raw_bytes[4:8] == b"ftyp" or raw_bytes.startswith(b"\xff\xf1") or raw_bytes.startswith(b"\xff\xf9"):
+        return "audio/m4a", ".m4a"
+
+    # Fallback normalizando default_mime
+    clean_mime = default_mime.split(";")[0].strip().lower() if default_mime else "audio/ogg"
+    
+    mime_mapping = {
+        "audio/oga": ("audio/ogg", ".ogg"),
+        "audio/opus": ("audio/ogg", ".ogg"),
+        "audio/mpeg": ("audio/mp3", ".mp3"),
+        "audio/x-wav": ("audio/wav", ".wav"),
+        "audio/wave": ("audio/wav", ".wav"),
+        "audio/mp4": ("audio/m4a", ".m4a"),
+        "audio/x-m4a": ("audio/m4a", ".m4a"),
+    }
+    
+    if clean_mime in mime_mapping:
+        return mime_mapping[clean_mime]
+        
+    ext = ALLOWED_AUDIO_MIMES.get(clean_mime, ".ogg")
+    return clean_mime if clean_mime in ALLOWED_AUDIO_MIMES else "audio/ogg", ext
+
 def read_dashboard_summary():
     dash_path = os.path.join(WIKI_DIR, "life-dashboard.md")
     if os.path.exists(dash_path):
@@ -87,7 +142,10 @@ Te diriges al usuario con el trato de 'Señor', actuando con máxima cortesía, 
 Conocimiento del 2brain del usuario (Resumen Dashboard):
 {dashboard_ctx}
 
-Responde de forma concisa, profesional y formal en español, como el fiel mayordomo ALFRED."""
+Instrucciones para Notas de Voz y Audio:
+- Si el mensaje contiene un archivo de audio o nota de voz, realiza una comprensión auditiva integral.
+- Si el Señor solicita registrar una tarea, recordatorio o idea, confirma los detalles recibidos con total claridad.
+- Mantén tus respuestas estructuradas, concisas y elegantes en español formal."""
 
     parts = []
     if audio_bytes:
@@ -100,7 +158,14 @@ Responde de forma concisa, profesional y formal en español, como el fiel mayord
             }
         })
     
-    prompt_text = user_text if user_text else "Escucha con atención la nota de voz enviada por el Señor y responde a su solicitud o consulta con total elegancia y eficiencia."
+    if audio_bytes:
+        if user_text:
+            prompt_text = f"El Señor ha enviado una nota de voz acompañada del siguiente mensaje: '{user_text}'. Escuche el audio atentamente y responda a su solicitud con total elegancia y eficiencia."
+        else:
+            prompt_text = "Escuche con atención la nota de voz enviada por el Señor, identifique su consulta, orden o pensamiento, y responda con máxima cortesía y precisión como su fiel mayordomo ALFRED."
+    else:
+        prompt_text = user_text if user_text else "A sus órdenes, Señor."
+        
     parts.append({"text": prompt_text})
 
     payload = {
@@ -115,8 +180,8 @@ Responde de forma concisa, profesional y formal en español, como el fiel mayord
         ]
     }
 
-    # Modelos candidatas con reintentos para resiliencia ante errores 500/501/503 o Socket Timeout
-    candidate_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash"]
+    # Modelos candidatos con fallback progresivo y reintentos resiliencia ante errores 500/503/429 y Socket Timeout
+    candidate_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash", "gemini-1.5-flash"]
     last_error = None
 
     for model_name in candidate_models:
@@ -128,19 +193,30 @@ Responde de forma concisa, profesional y formal en español, como el fiel mayord
                     data=json.dumps(payload).encode("utf-8"),
                     headers={"Content-Type": "application/json"}
                 )
-                with urllib.request.urlopen(req, timeout=60) as resp:
+                with urllib.request.urlopen(req, timeout=45) as resp:
                     res = json.loads(resp.read().decode("utf-8"))
                     candidates = res.get("candidates", [])
                     if candidates:
                         res_parts = candidates[0].get("content", {}).get("parts", [])
                         if res_parts:
                             return res_parts[0].get("text", "A su servicio, Señor.")
+            except urllib.error.HTTPError as http_err:
+                last_error = f"HTTP {http_err.code}: {http_err.reason}"
+                print(f"⚠️ Reintento {attempt+1}/3 con modelo {model_name} debido a error HTTP ({http_err.code})")
+                if http_err.code in (429, 404):
+                    # Salta al siguiente modelo si es 429 (quota limit) o 404 (modelo no encontrado)
+                    break
+                time.sleep(1.5 * (attempt + 1))
+            except (socket.timeout, urllib.error.URLError) as net_err:
+                last_error = f"Timeout/Red: {net_err}"
+                print(f"⚠️ Reintento {attempt+1}/3 con modelo {model_name} por socket timeout o problema de red")
+                time.sleep(2.0 * (attempt + 1))
             except Exception as e:
-                last_error = e
+                last_error = str(e)
                 print(f"⚠️ Reintento {attempt+1}/3 con modelo {model_name} debido a: {e}")
-                time.sleep(1.5)
+                time.sleep(1.5 * (attempt + 1))
         
-    return f"Disculpe la molestia, Señor. Ocurrió una saturación temporal en los servidores de Google Gemini: {last_error}"
+    return f"Disculpe la molestia, Señor. Ocurrió una saturación o inconformidad temporal en las llamadas a los modelos de Google Gemini: {last_error}"
 
 def process_message(config, message):
     token = config.get("TELEGRAM_BOT_TOKEN")
@@ -164,7 +240,8 @@ def process_message(config, message):
     if (has_voice or has_audio) and gemini_key and gemini_key != "TU_GEMINI_KEY_AQUI":
         audio_item = message.get("voice") or message.get("audio")
         file_id = audio_item.get("file_id")
-        mime_type = audio_item.get("mime_type", "audio/ogg" if has_voice else "audio/mp3")
+        raw_mime = audio_item.get("mime_type", "audio/ogg" if has_voice else "audio/mp3")
+        duration = audio_item.get("duration", 0)
         caption = message.get("caption", "").strip()
         
         telegram_api(token, "sendChatAction", {"chat_id": chat_id, "action": "record_voice"})
@@ -183,21 +260,58 @@ def process_message(config, message):
                     break
                 except Exception as dl_err:
                     print(f"⚠️ Reintento descarga de audio {dl_attempt+1}/3 debido a: {dl_err}")
-                    time.sleep(1.5)
+                    time.sleep(1.5 * (dl_attempt + 1))
             
-            if not raw_audio:
-                telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": "❌ Disculpe Señor, ocurrió un tiempo de espera agotado al descargar el audio de Telegram. Por favor intente reenviarlo."})
+            if not raw_audio or len(raw_audio) == 0:
+                telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": "❌ Disculpe Señor, el archivo de audio recibido está vacío o expiró el tiempo de espera al descargarlo de Telegram."})
                 return
 
+            # Validar y normalizar MIME type y extensión con inspección de Magic Bytes
+            clean_mime, file_ext = detect_audio_format(raw_audio, default_mime=raw_mime)
+            
             try:
-                # Archivar copia de respaldo en raw/inbox
-                ext = ".ogg" if has_voice else ".mp3"
-                audio_filename = f"voice_{file_timestamp}{ext}"
-                with open(os.path.join(INBOX_DIR, audio_filename), "wb") as f_aud:
+                # 1. Resguardo de archivo binario en raw/inbox
+                prefix = "voice" if has_voice else "audio"
+                audio_filename = f"{prefix}_{file_timestamp}{file_ext}"
+                audio_full_path = os.path.join(INBOX_DIR, audio_filename)
+                with open(audio_full_path, "wb") as f_aud:
                     f_aud.write(raw_audio)
                 
-                # Procesar directamente con Gemini 3.6 Flash
-                response = call_gemini_alfred(gemini_key, caption, audio_bytes=raw_audio, mime_type=mime_type)
+                # 2. Procesar respuesta con Gemini Multimodal
+                response = call_gemini_alfred(gemini_key, caption, audio_bytes=raw_audio, mime_type=clean_mime)
+                
+                # 3. Guardar nota sidecar de ingesta en raw/inbox
+                markdown_filename = f"{prefix}_{file_timestamp}.md"
+                markdown_full_path = os.path.join(INBOX_DIR, markdown_filename)
+                sidecar_content = f"""---
+title: "Nota de Voz ({sender})"
+source: "Telegram (@Alfred_2brain_bot)"
+sender: "{sender}"
+created: "{timestamp_str}"
+audio_file: "{audio_filename}"
+mime_type: "{clean_mime}"
+file_size_bytes: {len(raw_audio)}
+duration_seconds: {duration}
+status: "processed"
+---
+
+# Nota de Voz / Audio Ingestada
+
+**Fecha**: {timestamp_str}  
+**Remitente**: {sender}  
+**Archivo**: `{audio_filename}` ({len(raw_audio)} bytes, {duration}s)  
+**MIME Type**: `{clean_mime}`  
+
+### Texto / Comentario Adjunto:
+{caption if caption else "*(Sin comentario adjunto)*"}
+
+### Respuesta de ALFRED:
+{response}
+"""
+                with open(markdown_full_path, "w", encoding="utf-8") as f_md:
+                    f_md.write(sidecar_content)
+
+                # 4. Enviar respuesta al usuario por Telegram
                 telegram_api(token, "sendMessage", {"chat_id": chat_id, "text": response})
                 return
             except Exception as ex:
@@ -245,7 +359,7 @@ def process_message(config, message):
             "¡A sus órdenes, Señor! Estoy listo para asistirlo. Puede utilizarme de las siguientes maneras:\n\n"
             "💬 *1. Conversación y Notas de Voz*:\n"
             "• Escríbame cualquier mensaje de texto o **envíeme notas de voz directamente**.\n"
-            "• Escucharé y responderé sus solicitudes de voz en tiempo real.\n\n"
+            "• Escucharé y responderé sus solicitudes de voz en tiempo real con resguardo automático en `raw/inbox/`.\n\n"
             "🛠️ *2. Gestión de Tickets Helpdesk*:\n"
             "• `/ticket` — Ver últimos tickets de MasterHub.\n"
             "• `/ticket create Título | Descripción` — Crear nuevo ticket en Helpdesk.\n\n"
