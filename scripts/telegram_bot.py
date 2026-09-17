@@ -293,9 +293,44 @@ def parse_upcoming_events_from_dashboard():
 
     return events
 
+def read_latest_handover_from_log():
+    """
+    Lee el último registro de cierre/handover o la sección de actividad más reciente en wiki/log.md.
+    """
+    log_path = os.path.join(WIKI_DIR, "log.md")
+    if not os.path.exists(log_path):
+        return None
+    try:
+        with open(log_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        sections = content.split("\n## ")
+        if len(sections) > 1:
+            for sec in reversed(sections[1:]):
+                sec_lower = sec.lower()
+                if "handover" in sec_lower or "cierre" in sec_lower or "resumen de logros" in sec_lower or "acciones realizadas" in sec_lower:
+                    lines = sec.strip().split("\n")
+                    header = lines[0].strip()
+                    points = []
+                    for l in lines[1:]:
+                        l_str = l.strip()
+                        if (l_str.startswith("- ") or l_str.startswith("* ")) and not l_str.startswith("- **Área"):
+                            clean_l = re.sub(r'^[-\*\s]+', '', l_str)
+                            clean_l = re.sub(r'\[\[([^\|\]]+\|)?([^\]]+)\]\]', r'\2', clean_l)
+                            clean_l = clean_l.replace("**", "").strip()
+                            if clean_l and not clean_l.startswith("Agentes Responsables"):
+                                points.append(clean_l)
+                        if len(points) >= 5:
+                            break
+                    if points:
+                        return header, points
+    except Exception as e:
+        print(f"⚠️ Error leyendo cierre desde log.md: {e}")
+    return None
+
 def build_daily_morning_summary():
     """
-    Construye el resumen ejecutivo diario de las 07:30 AM a partir de life-dashboard.md.
+    Construye el resumen ejecutivo diario de las 07:30 AM integrando el cierre anterior (log.md) y la agenda/prioridades (life-dashboard.md).
     """
     dash_path = os.path.join(WIKI_DIR, "life-dashboard.md")
     if not os.path.exists(dash_path):
@@ -326,10 +361,21 @@ def build_daily_morning_summary():
                         sections[current_sec].append(clean_item)
 
         msg_lines = [
-            "🎩 *ALFRED — Resumen de Prioridades del Día (07:30 AM)*\n",
-            "¡Buenos días, Señor! A sus órdenes. Presento su agenda y prioridades activas para hoy:\n"
+            "🎩 *ALFRED — Informe Matutino Ejecutivos (07:30 AM)*\n",
+            "¡Buenos días, Señor! A sus órdenes. Le presento la síntesis de apertura de jornada:\n"
         ]
 
+        # 1. Cierre de la Jornada Anterior
+        handover_data = read_latest_handover_from_log()
+        if handover_data:
+            header, points = handover_data
+            msg_lines.append(f"🌙 *Resumen del Cierre Anterior ({header})*:")
+            for p in points:
+                msg_lines.append(f"• {p}")
+            msg_lines.append("")
+
+        # 2. Agenda y Prioridades de Hoy
+        msg_lines.append("☀️ *Agenda & Prioridades Activas para Hoy*:")
         total_pending = 0
         for sec_name, items in sections.items():
             if items:

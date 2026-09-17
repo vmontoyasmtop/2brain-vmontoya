@@ -3,7 +3,7 @@ title: "Dashboard de Vida & Centro de Control (Life OS)"
 type: "concept"
 area: "dashboard"
 created: 2026-09-12
-updated: 2026-09-16
+updated: 2026-09-17
 tags:
   - dashboard
   - life-os
@@ -43,6 +43,8 @@ flowchart LR
 - [ ] **Próximo**: Preparar la guía de preguntas para grupos pequeños/células.
 
 ### 🏢 2. Area Trabajo (Analista IT & Soporte Xetux)
+- [x] **Actualización de Tasa de Bs en Xetux (17-Sep)**: Tasa oficial actualizada correctamente a primera hora.
+- [ ] **Agendado en Google Calendar Trabajo (17-Sep 09:00 – 09:30 AM)**: 📋 `[Q1] Pasar presupuesto de servidor MasterHub y costos de planes de IA` (Elaboración y entrega a las 09:00 AM).
 - [x] **Reunión de Dirección Ejecutiva**: Presentación aprobada por el Sr. Emiliano.
   - [x] Aprobada la contratación del **Soporte Técnico IT Jr. (Nivel 1)**.
   - [x] Aprobada la ejecución del **Módulo de Finanzas (`finance-ms`)** bajo **Plan B Exprés ($6,000 USD / 6 sem)**.

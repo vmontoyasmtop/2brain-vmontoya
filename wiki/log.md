@@ -328,3 +328,15 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - **Automatización & Notificaciones**: Configurado Cronjob matutino (07:30 AM via `schedule`) e implementado `Notification Worker` en Telegram Bot con alertas Push matutinas y 15 min antes de eventos.
   - **Time-blocking & Calendar**: Agendados en Google Calendar Personal: Configuración SMTP WebCastro (17-Sep 09:00 AM), Lectura Sermón 2 (17-Sep 12:30 PM) y bloques recurrentes de Deep Work nocturno y fines de semana para `finance-ms`.
   - **Cierre de Servicios**: Procesos de Telegram Bot apagados limpiamente para el traspaso de turno.
+
+---
+
+## [2026-09-17] docs/proposal | Creación de Propuesta Empresarial en Google Docs con Membrete MasterGroup (PROP-MGH-2026-004)
+- **Área**: 🏢 `trabajo` & 🚀 `proyectos`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Elaborado el análisis comparativo completo de servidores nube para MasterHub (Hetzner Cloud + Coolify PaaS por ~$20.00 USD/mes) y estudio de tarifas de modelos de Inteligencia Artificial (Google Gemini 3.6 Flash por ~$0.00 USD/mes).
+  - Autenticada exitosamente la integración de Google Docs para `soporte@mastergroupve.com`.
+  - Creado y publicado el documento corporativo clonando directamente la plantilla oficial con banner en Google Docs: [📋 PROPUESTA EMPRESARIAL: Presupuesto de Servidores MasterHub y Planes de IA](https://docs.google.com/document/d/1hmRTdJlQ5Eb9jJ8Hqj6fRddKPv6wfP2y9zVA70BsPdw/edit).
+  - Creada la versión en Markdown en [propuesta-empresarial-servidores-e-ia-masterhub.md](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/trabajo/propuesta-empresarial-servidores-e-ia-masterhub.md).
+
