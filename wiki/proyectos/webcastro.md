@@ -3,7 +3,7 @@ title: "Proyecto: WebCastro"
 type: "concept"
 area: "proyectos"
 created: 2026-09-12
-updated: 2026-09-15
+updated: 2026-09-16
 tags:
   - proyectos
   - payload-cms
@@ -53,12 +53,14 @@ Para garantizar la mantenibilidad y evolución sin fricciones de **WebCastro**, 
 
 ## 🚀 Estado del Proyecto (Septiembre 2026)
 
-- [x] **Botón de WhatsApp en Header**: Actualizado a verde `#25D366` con texto *"Escríbenos"* y enlace directo a chat en [CastroHeader.tsx](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/Header/CastroHeader.tsx).
-- [x] **Botón Flotante de WhatsApp**: Componente [WhatsAppFloatingButton.tsx](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/components/landing/WhatsAppFloatingButton.tsx) integrado en el layout principal con menú desplegable para seleccionar números de atención (`+58 412 964-3616` y `+58 414 390-4751`).
-- [x] **Plantilla de Correo HTML con Respuesta WhatsApp**: Controlador REST en [route.ts](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/app/api/contact/route.ts) con plantilla HTML de alta conversión y botón directo para responder por WhatsApp al cliente.
-- [x] **Optimización SEO, Metadatos & Sitemap**: Metadatos globales, OpenGraph, Twitter Cards, `robots.txt` y `sitemap.xml` dinámico configurados e integrados.
-- [x] **Corrección de Build en Vercel (Migraciones Dev batch = -1)**: Creado script autoejecutable `scripts/clean-dev-migrations.mjs` en hook `prebuild` de `package.json` y `push: false` en `payload.config.ts` para eliminar automáticamente registros de desarrollo en PostgreSQL antes de la compilación en Vercel.
-- [ ] **Pendiente (Configuración de Gmail SMTP)**: Colocar las credenciales reales en `.env` cuando el cliente o usuario disponga de la Contraseña de Aplicación de 16 caracteres (`SMTP_USER`, `SMTP_PASS`, `CONTACT_EMAIL_RECEIVER`).
+- [x] **Auditoría Frontend Completa (Subagente Frontend UI Expert)**: Verificados [CastroHeader.tsx](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/Header/CastroHeader.tsx), [WhatsAppFloatingButton.tsx](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/components/landing/WhatsAppFloatingButton.tsx), `layout.tsx` y SEO metadatos. TypeScript Check 0 errores.
+- [x] **Auditoría Backend & CMS Completa (Subagente Backend JS Expert)**: Payload 3.88 en orden con Neon Postgres, Vercel Blob Storage activo y script `npm run prebuild` verificado contra DB.
+- [x] **Botón de WhatsApp en Header**: Actualizado a verde `#25D366` con texto *"Escríbenos"* y enlace directo a chat.
+- [x] **Botón Flotante de WhatsApp**: Componente integrado en layout principal con desplegable multi-número (`+58 412 964-3616` y `+58 414 390-4751`).
+- [x] **Plantilla de Correo HTML con Respuesta WhatsApp**: Controlador REST en [route.ts](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/app/api/contact/route.ts) con plantilla HTML de alta conversión.
+- [x] **Optimización SEO, Metadatos & Sitemap**: Metadatos globales, OpenGraph, Twitter Cards, `robots.txt` y `sitemap.xml` dinámico.
+- [x] **Corrección de Build en Vercel (Migraciones Dev batch = -1)**: Creado script autoejecutable `scripts/clean-dev-migrations.mjs` en hook `prebuild` de `package.json` y `push: false` en `payload.config.ts`.
+- [ ] **Pendiente Único (Configuración de Gmail SMTP)**: Colocar las credenciales reales en `.env` cuando se disponga de la Contraseña de Aplicación de 16 caracteres (`SMTP_USER`, `SMTP_PASS`, `CONTACT_EMAIL_RECEIVER`).
 
 ---
 
