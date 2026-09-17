@@ -299,11 +299,12 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
 
 ---
 
-## [2026-09-16] setup/plan | Delegación WebCastro y Plan Financiero Estratégico 2026
-- **Áreas**: 🚀 `proyectos` & 💰 `finanzas`
-- **Agentes Responsables**: 💰 **Subagente Finance Manager**, 🎨 **Frontend UI Expert**, ⚙️ **Backend JS Expert** & 🤵 **ALFRED**
+## [2026-09-16] docs/solution | Documentación de Patrón de Migraciones Idempotentes Payload/PostgreSQL
+- **Área**: 💻 `programacion` & 🚀 `proyectos`
+- **Agentes Responsables**: ⚙️ **Subagente Backend JS Expert** & 🤵 **ALFRED**
 - **Acciones realizadas**:
-  - Delegadas las responsabilidades de **WebCastro** formalmente entre 🎨 **Frontend UI Expert** (UI/UX, Tailwind, WhatsApp floating, SEO) y ⚙️ **Backend JS Expert** (Payload CMS 3.88, PostgreSQL, Vercel Blob, SMTP Gmail & prebuild scripts) en `wiki/proyectos/webcastro.md`.
-  - Elaborado el **Plan Financiero Estratégico & Gestión de Presupuesto 2026** con el subagente **Finance Manager** en `wiki/finanzas/plan-financiero-2026.md` (Regla 50/20/20/10, flujo de caja por hitos de $6,000 USD de `finance-ms`, 10% diezmos/ofrendas, reserva en USD y categorización de saldo 29,000 Bs.).
-  - Actualizados `wiki/finanzas/pilar-finanzas-personales.md`, `wiki/life-dashboard.md`, `wiki/index.md` y `wiki/log.md`.
+  - Creado documento de concepto técnico [Patrón de Migraciones Idempotentes en Payload CMS 3.x con PostgreSQL (Vercel Build Fix)](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/programacion/solucion-migraciones-idempotentes-payload-postgres.md).
+  - Documentadas las reglas de envoltorios PL/pgSQL (`DO $$ BEGIN ... EXCEPTION WHEN duplicate_object THEN null; END $$;`), `IF NOT EXISTS` y script `clean-dev-migrations.mjs` para prevenir fallos de compilación en Vercel.
+  - Actualizados `wiki/programacion/pilar-programacion.md`, `wiki/index.md` y `wiki/log.md`.
+
 

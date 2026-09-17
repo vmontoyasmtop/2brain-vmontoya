@@ -28,5 +28,6 @@ Página principal de **Conocimiento de Programación y Desarrollo de Software**.
 ## 📝 Conceptos Destacados
 - [[LLM Wiki Pattern]]
 - [[Antigravity Commands and Shortcuts]]
+- [[Patrón de Migraciones Idempotentes en Payload CMS 3.x con PostgreSQL (Vercel Build Fix)|programacion/solucion-migraciones-idempotentes-payload-postgres.md]]
 - [[Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail Multicuenta)|programacion/guia-configuracion-mcp-google-calendar-gmail.md]]
 - [[Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)|programacion/diagnostico-mcp-google-calendar-gmail.md]]
