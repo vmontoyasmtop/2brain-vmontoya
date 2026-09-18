@@ -25,6 +25,7 @@ Página principal para el seguimiento de **Proyectos de Programación e Iniciati
 ### 🏢 Plataformas Empresariales & CRM
 - [[Proyecto: CRM-MG|crm-mg.md]]: Sistema CRM monorepo con IA (NestJS 11, Prisma ORM, WebSockets, OpenAI).
 - [[Proyecto: MasterHub (MG-HUB)|masterhub-mg-hub.md]]: Plataforma de microservicios (NestJS, Next.js dashboard, Docker Compose, Nx).
+- [[Proyecto: Plane|plane-gestion-proyectos.md]]: Suite open-source de gestión de proyectos, Sprints, backlog e incidencias (Next.js, Django, PostgreSQL).
 
 ### 🛒 Puntos de Venta & Franquicias
 - [[Proyecto: Meniox|meniox.md]]: Ecosistema POS y administración de franquicias (NestJS, PostgreSQL, RabbitMQ, Next.js 15, POS Mobile).
