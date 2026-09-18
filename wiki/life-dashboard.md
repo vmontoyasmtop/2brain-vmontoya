@@ -53,7 +53,8 @@ flowchart LR
   - [x] Aprobada la ejecución del **Módulo de Finanzas (`finance-ms`)** bajo **Plan B Exprés ($6,000 USD / 6 sem)**.
 - [x] **Perfil de Cargo IT Jr.**: Creado y publicado en Google Docs corporativo con la plantilla *"Documento con Banner"*.
 - [x] **Google Docs & Tasks MCP**: Servidores MCP multicuenta y Google Tasks API configurados y autenticados.
-- [x] **Google Task Agendada para Mañana (17-Sep)**: `[Q1] Verificar y Auditar TASK 2.2 de RRHH en ClickUp (Candidatos & CVs)` registrada en Google Tasks.
+- [ ] **Agendado en Google Calendar Trabajo (18-Sep 11:30 AM – 12:30 PM)**: 🧪 `[Q1] QA Audit & Testing de TASK 2.2 y TASK 2.3 en MasterHub (Candidatos, CVs en S3 y Puente Candidato ➔ Empleado con 30 días de prueba)` (Ver informe en [[Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)|trabajo/informe-entrega-task-2.2-2.3-ms-hr.md]]).
+- [x] **MasterHub (MS-HR) — TASK 2.2 & TASK 2.3 Entregadas (100%)**: Backend, Frontend, MinIO S3, REST APIs y modal UI probados y listos para QA.
 - [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (17/09 – 27/09 | CxP & Motor SENIAT).
 
 ### 💻 3. Area Programación & 🚀 Proyectos de Software

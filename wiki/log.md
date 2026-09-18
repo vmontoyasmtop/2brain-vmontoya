@@ -2,6 +2,18 @@
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-18] feat/ms-hr | Desarrollo, Pruebas y Entrega de Task 2.2 y Task 2.3 (Candidatos, CVs S3 y Puente Onboarding)
+- **Área**: 💻 `programacion` & 🏢 `trabajo`
+- **Agentes Responsables**: ⚙️ **Backend Developer** & 🎨 **Frontend Developer** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Implementada la **TASK 2.2** (Control de candidatos, entrevistas y subida de CVs en formato PDF a la infraestructura MinIO/S3).
+  - Implementada la **TASK 2.3** (`Puente de Onboarding: Candidato ➔ Empleado`), permitiendo la generación automática de la Ficha de Trabajador (`Employee`) con 30 días en período de prueba y cambio de estado a `CONTRATADO`.
+  - Creado el componente modal [`HireCandidateModal.tsx`](file:///C:/Users/Animación%20MKT/Desktop/MasterHub/frontend-ui-dashboard/src/components/dashboard/hr/candidates/HireCandidateModal.tsx) y expuesto el endpoint REST `POST /hr/candidates/:id/hire`.
+  - Elaborado el informe técnico completo en [[Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)|trabajo/informe-entrega-task-2.2-2.3-ms-hr.md]].
+  - Agendada la tarea de QA en Google Calendar Trabajo (18-Sep 11:30 AM – 12:30 PM).
+
+---
+
 ## [2026-09-17] query/infra | Estudio Comparativo de Servidores Nube en EE. UU. (Latencia LATAM / VZLA)
 - **Área**: 🏢 `trabajo` & 🚀 `proyectos`
 - **Agentes Responsables**: 🛠️ **IT Support Expert** & 🤵 **ALFRED**
