@@ -1,18 +1,11 @@
 ---
 title: "Plan Nutricional Quincenal Familiar (14 Días) & Alimentación Complementaria (Caleb)"
-type: "concept"
+type: "guide"
 area: "familiar"
 created: 2026-09-16
-updated: 2026-09-16
-sources:
-  - "raw/familiar/recetas-menu-semanal-fuentes.md"
+updated: 2026-09-18
 tags:
-  - familiar
-  - nutricion
-  - menu-quincenal
-  - blw
-  - caleb
-  - energia
+  - 
 ---
 
 # 🇻🇪 Plan Nutricional Quincenal Familiar (14 Días) & Alimentación Complementaria (Caleb)
@@ -76,5 +69,5 @@ tags:
 ---
 
 ## 🔗 Enlaces Relacionados
-- [[Pilar Familiar & Bienestar|pilar-familiar.md]]
-- [[Dashboard de Vida & Centro de Control|../life-dashboard.md]]
+- [[pilar-familiar|Pilar Familiar & Bienestar]]
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]

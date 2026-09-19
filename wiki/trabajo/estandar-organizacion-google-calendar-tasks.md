@@ -1,17 +1,12 @@
 ---
 title: "Estándar de Organización de Calendario Laboral (Focus Time & Google Tasks)"
-type: "concept"
+type: "guide"
 area: "trabajo"
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-18
 sources: []
 tags:
-  - calendar
-  - google-tasks
-  - focus-time
-  - productividad
-  - xetux
-  - mastergroup
+  - 
 ---
 
 # 📅 Estándar Operativo: Organización de Calendario Laboral IT (Xetux / MasterGroup)

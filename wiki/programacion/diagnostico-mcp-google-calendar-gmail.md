@@ -1,17 +1,12 @@
 ---
 title: "Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)"
-type: "concept"
+type: "guide"
 area: "programacion"
 created: 2026-09-12
-updated: 2026-09-13
-status: "resolved"
+updated: 2026-09-18
 sources: []
 tags:
-  - mcp
-  - google-calendar
-  - gmail
-  - antigravity
-  - configuracion
+  - 
 ---
 
 # 🛠️ Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)

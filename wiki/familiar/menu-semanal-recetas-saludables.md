@@ -1,3 +1,15 @@
+---
+title: "🇻🇪 Menú Semanal Criollo Venezolano & Lista de Compras (Planificación Saludable)"
+type: "guide"
+area: "familiar"
+created: 2026-09-11
+updated: 2026-09-18
+tags:
+  - familiar
+  - guide
+  - menu_semanal_recetas_saludables
+---
+
 # 🇻🇪 Menú Semanal Criollo Venezolano & Lista de Compras (Planificación Saludable)
 
 **Área**: 🏡 Familiar & Bienestar Criollo  

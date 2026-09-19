@@ -1,24 +1,19 @@
 ---
 title: "Resumen: Google Lanzó Antigravity CLI y Es Brutal (por Fazt Code)"
-type: summary
+type: "summary"
+area: "programacion"
 created: 2026-09-11
-updated: 2026-09-11
-sources:
-  - "raw/Google Lanzó Antigravity CLI y Es Brutal.md"
+updated: 2026-09-18
 tags:
-  - antigravity-cli
-  - ai-agent
-  - google
-  - tutorial
-  - productivity
+  - 
 ---
 
 # 📄 Resumen: Google Lanzó Antigravity CLI y Es Brutal
 
 - **Fuente Original**: `raw/Google Lanzó Antigravity CLI y Es Brutal.md`
-- **Autor / Creador**: [[Fazt Code]]
-- **Herramienta Evaluada**: [[Antigravity CLI]]
-- **Concepto Relacionado**: [[Antigravity Commands and Shortcuts]]
+- **Autor / Creador**: [[fazt-code|Fazt Code]]
+- **Herramienta Evaluada**: [[antigravity-cli|Antigravity CLI]]
+- **Concepto Relacionado**: [[antigravity-commands-and-shortcuts|Antigravity Commands and Shortcuts]]
 
 ---
 

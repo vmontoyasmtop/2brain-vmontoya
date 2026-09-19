@@ -3,16 +3,9 @@ title: "Resumen: Módulo de Finanzas (finance-ms) - MasterHub"
 type: "summary"
 area: "finanzas"
 created: 2026-09-14
-updated: 2026-09-14
-sources:
-  - "raw/finanzas/requerimiento-modulo-finanzas.md"
+updated: 2026-09-18
 tags:
-  - finanzas
-  - masterhub
-  - prd
-  - seniat
-  - cxp
-  - cxc
+  - 
 ---
 
 # 📄 Resumen: Módulo de Finanzas (`finance-ms`) — MasterHub
@@ -33,6 +26,6 @@ Resumen ejecutivo del documento de requerimientos (PRD) levantado para el micros
 ---
 
 ## 🔗 Referencias Cruzadas
-- [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]
-- [[Módulo de Finanzas: Especificación Técnica (finance-ms)|proyectos/masterhub-modulo-finanzas.md]]
-- [[Área Finanzas - Gestión Económica|finanzas/pilar-finanzas-personales.md]]
+- [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]
+- [[masterhub-modulo-finanzas|Módulo de Finanzas: Especificación Técnica (finance-ms)]]
+- [[pilar-finanzas-personales|Área Finanzas - Gestión Económica]]

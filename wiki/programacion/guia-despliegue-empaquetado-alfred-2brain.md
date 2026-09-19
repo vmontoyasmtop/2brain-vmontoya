@@ -1,20 +1,11 @@
 ---
 title: "Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain en Cualquier PC"
-type: "concept"
+type: "guide"
 area: "programacion"
 created: 2026-09-14
-updated: 2026-09-14
-sources:
-  - "scripts/setup-alfred-2brain.ps1"
-  - "scripts/.env.template"
+updated: 2026-09-18
 tags:
-  - alfred
-  - 2brain
-  - automatizacion
-  - mcp
-  - seguridad
-  - powershell
-  - deployment
+  - 
 ---
 
 # 📦 Guía de Empaquetado y Despliegue Rápido y Seguro: ALFRED & 2brain
@@ -71,6 +62,6 @@ powershell -ExecutionPolicy Bypass -File .\scripts\setup-alfred-2brain.ps1
 ---
 
 ## 🔗 Referencias Cruzadas
-- [[Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail Multicuenta)|programacion/guia-configuracion-mcp-google-calendar-gmail.md]]
-- [[LLM Wiki Pattern]]: Modelo de wiki persistente.
-- [[Dashboard de Vida & Centro de Control|life-dashboard.md]]
+- [[guia-configuracion-mcp-google-calendar-gmail|Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail Multicuenta)]]
+- [[llm-wiki-pattern|LLM Wiki Pattern]]: Modelo de wiki persistente.
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]

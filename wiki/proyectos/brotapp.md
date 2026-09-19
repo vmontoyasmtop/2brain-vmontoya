@@ -1,23 +1,19 @@
 ---
 title: "Proyecto: Brotapp"
-type: "concept"
+type: "project"
 area: "proyectos"
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-18
 tags:
-  - proyectos
-  - mobile
-  - react-native
-  - expo
-  - typescript
+  - 
 ---
 
 # 📱 Proyecto: Brotapp
 
 **Brotapp** es una aplicación móvil multiplataforma (Android, iOS y Web) construida con tecnologías modernas de desarrollo híbrido.
 
-**Área**: [[Área Proyectos - Software Independiente|pilar-proyectos.md]]  
-**Subagente Evaluador**: [[Subagente Frontend UI Expert|../../agents/frontend_ui_expert.md]]
+**Área**: [[pilar-proyectos|Área Proyectos - Software Independiente]]  
+**Subagente Evaluador**: [Subagente Frontend UI Expert](../../agents/frontend_ui_expert.md)
 
 ---
 
@@ -43,4 +39,4 @@ tags:
 ---
 
 ## 🔗 Relación en 2brain
-- [[Área Programación - Conocimiento Técnico|../programacion/pilar-programacion.md]]
+- [[pilar-programacion|Área Programación - Conocimiento Técnico]]

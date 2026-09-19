@@ -1,19 +1,11 @@
 ---
 title: "Informe Técnico: Desarrollo y Entrega de Tasks 2.2 y 2.3 (MS-HR)"
-type: "report"
+type: "guide"
 area: "trabajo"
-project: "MasterHub"
-module: "MS-HR"
 created: 2026-09-18
-author: "ALFRED (Mayordomo & Copiloto Ejecutivo)"
-status: "completed"
+updated: 2026-09-18
 tags:
-  - ms-hr
-  - rrhh
-  - masterhub
-  - onboarding
-  - candidatos
-  - empleados
+  - 
 ---
 
 # 📋 Informe Técnico: Entrega de Tasks 2.2 y 2.3 (Módulo MS-HR)

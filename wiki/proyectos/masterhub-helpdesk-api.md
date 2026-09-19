@@ -1,3 +1,15 @@
+---
+title: "🛠️ MasterHub Helpdesk — Guía de Operación y API (Gestión de Tickets)"
+type: "project"
+area: "proyectos"
+created: 2026-09-11
+updated: 2026-09-18
+tags:
+  - proyectos
+  - project
+  - masterhub_helpdesk_api
+---
+
 # 🛠️ MasterHub Helpdesk — Guía de Operación y API (Gestión de Tickets)
 
 **Proyecto**: [masterhub-mg-hub.md](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/proyectos/masterhub-mg-hub.md)  

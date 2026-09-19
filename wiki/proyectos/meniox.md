@@ -1,26 +1,19 @@
 ---
 title: "Proyecto: Meniox"
-type: "concept"
+type: "project"
 area: "proyectos"
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-18
 tags:
-  - proyectos
-  - pos
-  - franquicias
-  - microservicios
-  - rabbitmq
-  - postgresql
-  - nextjs
-  - tailwind
+  - 
 ---
 
 # 🛒 Proyecto: Meniox
 
 **Meniox** es un sistema integral de **Point of Sale (POS)** y **Administración de Franquicias**, diseñado con microservicios escalables, cola de mensajes Asíncrona (RabbitMQ) y apps cliente (Next.js + App Móvil POS).
 
-**Área**: [[Área Proyectos - Software Independiente|pilar-proyectos.md]]  
-**Subagentes Evaluadores**: [[Subagente Backend JS Expert|../../agents/backend_js_expert.md]] & [[Subagente Frontend UI Expert|../../agents/frontend_ui_expert.md]]
+**Área**: [[pilar-proyectos|Área Proyectos - Software Independiente]]  
+**Subagentes Evaluadores**: [Subagente Backend JS Expert](../../agents/backend_js_expert.md) & [Subagente Frontend UI Expert](../../agents/frontend_ui_expert.md)
 
 ---
 
@@ -56,5 +49,5 @@ tags:
 ---
 
 ## 🔗 Relación en 2brain
-- [[Área Programación - Conocimiento Técnico|../programacion/pilar-programacion.md]]
-- [[Área Finanzas - Gestión Económica|../finanzas/pilar-finanzas-personales.md]]
+- [[pilar-programacion|Área Programación - Conocimiento Técnico]]
+- [[pilar-finanzas-personales|Área Finanzas - Gestión Económica]]

@@ -1,16 +1,11 @@
 ---
 title: "Entidad: Foam (VS Code Extension)"
-type: entity
+type: "entity"
+area: "programacion"
 created: 2026-09-11
-updated: 2026-09-11
-sources:
-  - "raw/karpathy-llm-wiki-gist.md"
+updated: 2026-09-18
 tags:
-  - entity
-  - tool
-  - vscode
-  - foam
-  - pkm
+  - 
 ---
 
 # 🛠️ Foam (VS Code Extension)

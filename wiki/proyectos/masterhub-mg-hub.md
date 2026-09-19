@@ -1,24 +1,19 @@
 ---
 title: "Proyecto: MasterHub (MG-HUB)"
-type: "concept"
+type: "project"
 area: "proyectos"
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-18
 tags:
-  - proyectos
-  - microservicios
-  - nestjs
-  - nextjs
-  - docker
-  - nx
+  - 
 ---
 
 # 💼 Proyecto: MasterHub (MG-HUB)
 
 **MasterHub** es una plataforma de software empresarial basada en una arquitectura distribuida de **Microservicios NestJS** unificada con un frontend Next.js mediante **npm workspaces** y **Nx Monorepo**.
 
-**Área**: [[Área Proyectos - Software Independiente|pilar-proyectos.md]]  
-**Subagentes Evaluadores**: [[Subagente Backend JS Expert|../../agents/backend_js_expert.md]] & [[Subagente Frontend UI Expert|../../agents/frontend_ui_expert.md]]
+**Área**: [[pilar-proyectos|Área Proyectos - Software Independiente]]  
+**Subagentes Evaluadores**: [Subagente Backend JS Expert](../../agents/backend_js_expert.md) & [Subagente Frontend UI Expert](../../agents/frontend_ui_expert.md)
 
 ---
 
@@ -27,8 +22,8 @@ tags:
 - **`api-gateway`**: Gateway centralizador de peticiones HTTP/RPC.
 - **`auth-ms`**: Servicio de autenticación, JWT e identidades.
 - **`hr-ms`**: Servicio de gestión de Recursos Humanos (Human Resources).
-- **`finance-ms`**: Servicio de gestión de Cuentas por Pagar (CxP), Egresos, Fiscal SENIAT, CxC y Caja Chica. Ver [[Módulo de Finanzas: Especificación Técnica (finance-ms)|masterhub-modulo-finanzas.md]].
-- **`helpdesk-sm`**: Servicio de mesas de ayuda y soporte. Ver [[Guía de Operación y API Helpdesk|masterhub-helpdesk-api.md]].
+- **`finance-ms`**: Servicio de gestión de Cuentas por Pagar (CxP), Egresos, Fiscal SENIAT, CxC y Caja Chica. Ver [[masterhub-modulo-finanzas|Módulo de Finanzas: Especificación Técnica (finance-ms)]].
+- **`helpdesk-sm`**: Servicio de mesas de ayuda y soporte. Ver [[masterhub-helpdesk-api|Guía de Operación y API Helpdesk]].
 - **`inventory-sm`**: Servicio de inventario y stock.
 - **`wiki-sm`**: Servicio de base de conocimiento interna.
 - **`frontend-ui-dashboard`**: Dashboard administrativo principal en Next.js.
@@ -36,8 +31,8 @@ tags:
 ---
 
 ## 📖 Documentación Interna Relacionada
-- [[Módulo de Finanzas: Especificación Técnica (finance-ms)|masterhub-modulo-finanzas.md]]
-- [[MasterHub Helpdesk - Guía de Operación y API|masterhub-helpdesk-api.md]]
+- [[masterhub-modulo-finanzas|Módulo de Finanzas: Especificación Técnica (finance-ms)]]
+- [[masterhub-helpdesk-api|MasterHub Helpdesk - Guía de Operación y API]]
 
 
 ---
@@ -59,4 +54,4 @@ tags:
 ---
 
 ## 🔗 Relación en 2brain
-- [[Área Programación - Conocimiento Técnico|../programacion/pilar-programacion.md]]
+- [[pilar-programacion|Área Programación - Conocimiento Técnico]]

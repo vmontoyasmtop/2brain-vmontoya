@@ -1,18 +1,14 @@
 ---
 title: "Concepto: Guía Completa de Comandos y Atajos de Antigravity CLI"
-type: concept
+type: "concept"
+area: "programacion"
 created: 2026-09-11
-updated: 2026-09-11
-sources:
-  - "raw/Google Lanzó Antigravity CLI y Es Brutal.md"
+updated: 2026-09-18
 tags:
-  - concept
-  - antigravity-cli
-  - cheatsheet
-  - productivity
+  - 
 ---
 
-# ⚡ Guía Completa de Comandos y Atajos de [[Antigravity CLI]]
+# ⚡ Guía Completa de Comandos y Atajos de [[antigravity-cli|Antigravity CLI]]
 
 Esta guía reúne las características avanzadas, comandos slash y mejores prácticas para maximizar el uso de **Antigravity CLI** (`agi`).
 

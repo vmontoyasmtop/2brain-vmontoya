@@ -1,22 +1,11 @@
 ---
 title: "Informe Financiero Auditado: Gastos Reales del Cuaderno & Estrategia de Saneamiento"
-type: "concept"
+type: "guide"
 area: "finanzas"
 created: 2026-09-16
-updated: 2026-09-16
-sources:
-  - "raw/4997157817579933185_121.jpg"
-  - "raw/4997157817579933186_121.jpg"
-  - "raw/4997157817579933187_121.jpg"
-  - "raw/4997157817579933188_121.jpg"
+updated: 2026-09-18
 tags:
-  - finanzas
-  - gastos-reales
-  - presupuesto
-  - cashea
-  - pasivos
-  - ahorro-usdt
-  - plan-b-expres
+  - 
 ---
 
 # 📊 Informe Financiero Auditado: Gastos Reales del Cuaderno & Estrategia de Saneamiento
@@ -237,8 +226,8 @@ Utilizando la capacidad real de abono de **$120.00 USD/mes** bajo el método de 
 
 ## 🔗 Documentos Relacionados en la Wiki
 
-- [[Área Finanzas - Gestión Económica|pilar-finanzas-personales.md]]
-- [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|plan-financiero-2026.md]]
-- [[Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (finance-ms)|../proyectos/sprints-modulo-finanzas.md]]
-- [[Dashboard de Vida & Centro de Control (Life OS)|../life-dashboard.md]]
-- [[Subagente Finance Manager|../../agents/finance_manager.md]]
+- [[pilar-finanzas-personales|Área Finanzas - Gestión Económica]]
+- [[plan-financiero-2026|Plan Financiero Estratégico & Gestión de Presupuesto 2026]]
+- [[sprints-modulo-finanzas|Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (finance-ms)]]
+- [[life-dashboard|Dashboard de Vida & Centro de Control (Life OS)]]
+- [Subagente Finance Manager](../../agents/finance_manager.md)

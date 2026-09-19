@@ -1,26 +1,16 @@
 ---
 title: "Plan Financiero Estratégico & Gestión de Presupuesto 2026"
-type: "concept"
+type: "guide"
 area: "finanzas"
 created: 2026-09-16
-updated: 2026-09-16
-sources:
-  - "wiki/finanzas/pilar-finanzas-personales.md"
-  - "wiki/proyectos/sprints-modulo-finanzas.md"
-  - "raw/inbox/voice_20260916_221908.md"
+updated: 2026-09-18
 tags:
-  - finanzas
-  - presupuesto
-  - ahorro
-  - diezmo
-  - ingresos
-  - plan-b-expres
-  - finance-ms
+  - 
 ---
 
 # 💰 Plan Financiero Estratégico & Gestión de Presupuesto 2026
 
-*Plan de salud financiera unificado (Life OS & Proyectos) elaborado por ALFRED y el [[Subagente Finance Manager|../../agents/finance_manager.md]] para la gestión eficiente del flujo de caja, diezmos/ofrendas, gastos familiares y proyectos de desarrollo.*
+*Plan de salud financiera unificado (Life OS & Proyectos) elaborado por ALFRED y el [Subagente Finance Manager](../../agents/finance_manager.md) para la gestión eficiente del flujo de caja, diezmos/ofrendas, gastos familiares y proyectos de desarrollo.*
 
 ---
 
@@ -127,7 +117,7 @@ Utilizando exclusivamente los **$120.00 USD/mes** de capacidad real de abono:
 ---
 
 ## 🔗 Enlaces Relacionados (Wikilinks)
-- [[Área Finanzas - Gestión Económica|pilar-finanzas-personales.md]]
-- [[Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (finance-ms)|../proyectos/sprints-modulo-finanzas.md]]
-- [[Subagente Finance Manager|../../agents/finance_manager.md]]
-- [[Dashboard de Vida & Centro de Control|../life-dashboard.md]]
+- [[pilar-finanzas-personales|Área Finanzas - Gestión Económica]]
+- [[sprints-modulo-finanzas|Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (finance-ms)]]
+- [Subagente Finance Manager](../../agents/finance_manager.md)
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]

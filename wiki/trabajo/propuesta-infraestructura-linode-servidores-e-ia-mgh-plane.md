@@ -1,21 +1,11 @@
 ---
 title: "Propuesta Técnica y Financiera: Infraestructura Linode y Planes de IA (MGH & Plane.so)"
-type: "proposal"
+type: "guide"
 area: "trabajo"
-project: "MasterHub"
 created: 2026-09-18
 updated: 2026-09-18
-drive_doc_id: "1NHxfBLv0ZtdD0C8e_KZXvcyx_yst0MF9UmDjJghFvvU"
 tags:
-  - linode
-  - akamai-cloud
-  - masterhub
-  - plane
-  - ia
-  - cursor
-  - copilot
-  - claude
-  - gemini
+  - 
 ---
 
 # 📋 Documento Técnico y Financiero: Infraestructura Linode & Planes de IA

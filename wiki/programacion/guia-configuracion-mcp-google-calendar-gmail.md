@@ -1,18 +1,12 @@
 ---
 title: "Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail Multicuenta)"
-type: "concept"
+type: "guide"
 area: "programacion"
 created: 2026-09-13
-updated: 2026-09-13
+updated: 2026-09-18
 sources: []
 tags:
-  - mcp
-  - google-calendar
-  - gmail
-  - antigravity
-  - configuracion
-  - guia
-  - oauth
+  - 
 ---
 
 # 📖 Guía Completa: Configuración de Servidores MCP para Google Calendar y Gmail (Multicuenta)

@@ -3,14 +3,9 @@ title: "Bot de Telegram: ALFRED VM (@AlfredVM_bot)"
 type: "concept"
 area: "programacion"
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-18
 tags:
-  - alfred
-  - telegram
-  - bot
-  - gemini-api
-  - 2brain
-  - automatizacion
+  - 
 ---
 
 # 🤖 Bot de Telegram: ALFRED VM (@AlfredVM_bot)
@@ -70,6 +65,6 @@ python scripts/telegram_bot.py
 ---
 
 ## 🔗 Enlaces Relacionados
-- [[Dashboard de Vida & Centro de Control|../life-dashboard.md]]
-- [[Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain|../programacion/guia-despliegue-empaquetado-alfred-2brain.md]]
-- [[MasterHub Helpdesk API & Gestión de Tickets|../proyectos/masterhub-helpdesk-api.md]]
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]
+- [[guia-despliegue-empaquetado-alfred-2brain|Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain]]
+- [[masterhub-helpdesk-api|MasterHub Helpdesk API & Gestión de Tickets]]

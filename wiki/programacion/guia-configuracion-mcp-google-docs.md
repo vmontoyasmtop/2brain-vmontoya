@@ -1,17 +1,12 @@
 ---
 title: "Guía de Instalación y Configuración del Servidor MCP para Google Docs (Trabajo y Personal)"
-type: "concept"
+type: "guide"
 area: "programacion"
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-18
 sources: []
 tags:
-  - mcp
-  - google-docs
-  - antigravity
-  - configuracion
-  - guia
-  - oauth
+  - 
 ---
 
 # 📖 Guía de Configuración del Servidor MCP para Google Docs (Multicuenta)

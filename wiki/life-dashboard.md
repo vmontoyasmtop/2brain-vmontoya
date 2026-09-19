@@ -1,15 +1,11 @@
 ---
 title: "Dashboard de Vida & Centro de Control (Life OS)"
-type: "concept"
+type: "dashboard"
 area: "dashboard"
 created: 2026-09-12
-updated: 2026-09-17
+updated: 2026-09-18
 tags:
-  - dashboard
-  - life-os
-  - gtd
-  - prioridades
-  - tareas
+  - 
 ---
 
 # 🚀 Dashboard de Vida & Centro de Control (Life OS)
@@ -34,11 +30,11 @@ flowchart LR
 ## 🎯 Prioridades Activas por Área
 
 ### ⛪ 1. Area Ministerial (Pastorado)
-- [x] Diseñar estructura de la nueva serie de discipulado: [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|ministerial/serie-discipulado-caminando-juntos.md]]
-- [x] Estudio exegético del Sermón 1: [[Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa|ministerial/sermon-1-de-la-multitud-a-la-mesa-estudio.md]]
-- [x] Estudio exegético del Sermón 2: [[Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro|ministerial/sermon-2-el-modelo-del-maestro-estudio.md]]
-- [ ] **Agendado en Google Calendar Personal (17-Sep 12:30 – 13:30 PM)**: Lectura y meditación del [[Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro|ministerial/sermon-2-el-modelo-del-maestro-estudio.md]] durante el almuerzo.
-- [x] Ingestar e integrar el [[Sistema de Productividad del Pastor-Ingeniero|ministerial/sistema-productividad-pastor-ingeniero.md]] ([Resumen Exec|summaries/manual-maestro-pastor-ingeniero.md]).
+- [x] Diseñar estructura de la nueva serie de discipulado: [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]
+- [x] Estudio exegético del Sermón 1: [[sermon-1-de-la-multitud-a-la-mesa-estudio|Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa]]
+- [x] Estudio exegético del Sermón 2: [[sermon-2-el-modelo-del-maestro-estudio|Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro]]
+- [ ] **Agendado en Google Calendar Personal (17-Sep 12:30 – 13:30 PM)**: Lectura y meditación del [[sermon-2-el-modelo-del-maestro-estudio|Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro]] durante el almuerzo.
+- [x] Ingestar e integrar el [[sistema-productividad-pastor-ingeniero|Sistema de Productividad del Pastor-Ingeniero]] ([Resumen Exec|summaries/manual-maestro-pastor-ingeniero.md]).
 - [ ] **En Progreso**: Armar la predicación final del Sermón 1 para el domingo.
 - [ ] **Próximo**: Preparar la guía de preguntas para grupos pequeños/células.
 
@@ -54,13 +50,13 @@ flowchart LR
 - [x] **Perfil de Cargo IT Jr.**: Creado y publicado en Google Docs corporativo con la plantilla *"Documento con Banner"*.
 - [x] **Google Docs & Tasks MCP**: Servidores MCP multicuenta y Google Tasks API configurados y autenticados.
 - [ ] **Agendado en Google Calendar Trabajo (18-Sep 03:00 PM – 04:00 PM)**: 🔧 `[Q2] Reunión con CEO Simón León — Servidor de Marketing` (Revisión de configuración, accesos y almacenamiento del servidor NAS/MKT).
-- [ ] **Agendado en Google Calendar Trabajo (18-Sep 04:00 PM – 05:00 PM)**: 🧪 `[Q1] QA Audit & Testing de TASK 2.2 y TASK 2.3 en MasterHub (Candidatos, CVs en S3 y Puente Candidato ➔ Empleado con 30 días de prueba)` (Ver informe en [[Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)|trabajo/informe-entrega-task-2.2-2.3-ms-hr.md]]).
+- [ ] **Agendado en Google Calendar Trabajo (18-Sep 04:00 PM – 05:00 PM)**: 🧪 `[Q1] QA Audit & Testing de TASK 2.2 y TASK 2.3 en MasterHub (Candidatos, CVs en S3 y Puente Candidato ➔ Empleado con 30 días de prueba)` (Ver informe en [[informe-entrega-task-2.2-2.3-ms-hr|Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)]]).
 - [x] **MasterHub (MS-HR) — TASK 2.2 & TASK 2.3 Entregadas (100%)**: Backend, Frontend, MinIO S3, REST APIs y modal UI probados y listos para QA.
 - [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (17/09 – 27/09 | CxP & Motor SENIAT).
 
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
 - [x] **WebCastro**: Auditoría de subagentes completada, migración Vercel corregida.
-- [ ] **Agendado en Google Calendar Personal (17-Sep 09:00 – 11:00 AM)**: [[Proyecto: WebCastro|proyectos/webcastro.md]] — Configuración final de credenciales SMTP de Gmail en `.env` e integración.
+- [ ] **Agendado en Google Calendar Personal (17-Sep 09:00 – 11:00 AM)**: [[webcastro|Proyecto: WebCastro]] — Configuración final de credenciales SMTP de Gmail en `.env` e integración.
 - [x] **Time-blocking Deep Work Agendado en Google Calendar (`finance-ms`)**:
   - **Lunes a Viernes**: 08:30 PM – 10:30 PM (2 horas de trabajo enfocado nocturno).
   - **Sábados y Domingos**: 06:00 PM – 08:30 PM (2.5 horas de desarrollo intensivo).
@@ -72,15 +68,15 @@ flowchart LR
 - [x] **Regla de Autonomía de Subagentes**: Incorporada en `AGENTS.md` de MasterHub y `2brain`.
 
 ### 💰 4. Area Finanzas (Gestión Económica)
-- [x] **Análisis de Gastos Reales del Cuaderno & Plan Conservador**: [[Informe Financiero Auditado: Gastos Reales del Cuaderno|finanzas/analisis-gastos-reales-cuaderno.md]] (Auditoría de gastos, plan de amortización gradual de deudas $408.07 USD en 4 meses con $120 USD/mes).
-- [x] **Plan Financiero Estratégico 2026 elaborado con Subagente Finance Manager**: [[Plan Financiero Estratégico & Gestión de Presupuesto 2026|finanzas/plan-financiero-2026.md]] (Presupuesto operativo basado en $620 USD/mes reales).
-- [x] **Clasificación de Ingresos `finance-ms` ($6,000.00 USD)**: [[Sprints & Backlog Scrum finance-ms|proyectos/sprints-modulo-finanzas.md]] (Registrado como *Proyección de Ingreso Extraordinario Futuro por Cobrar - Hitos Pendientes*).
+- [x] **Análisis de Gastos Reales del Cuaderno & Plan Conservador**: [[analisis-gastos-reales-cuaderno|Informe Financiero Auditado: Gastos Reales del Cuaderno]] (Auditoría de gastos, plan de amortización gradual de deudas $408.07 USD en 4 meses con $120 USD/mes).
+- [x] **Plan Financiero Estratégico 2026 elaborado con Subagente Finance Manager**: [[plan-financiero-2026|Plan Financiero Estratégico & Gestión de Presupuesto 2026]] (Presupuesto operativo basado en $620 USD/mes reales).
+- [x] **Clasificación de Ingresos `finance-ms` ($6,000.00 USD)**: [[sprints-modulo-finanzas|Sprints & Backlog Scrum finance-ms]] (Registrado como *Proyección de Ingreso Extraordinario Futuro por Cobrar - Hitos Pendientes*).
 - [x] **Balance & Reestructuración de Compras (Presupuesto 29,000 Bs.)**: Ingestado y categorizado en A/B/C ([voice_20260916_221908.md](file:///C:/Users/vmontoyaMG/Desktop/2brain/raw/inbox/voice_20260916_221908.md)).
 - [ ] Control continuo de diezmos/ofrendas (10%), ahorro intocable ($62 USD/mes) y abono mensual de deudas ($120 USD/mes).
 
 ### 🏡 5. Area Familiar & Vida Personal
 - [x] Establecer protocolo de **Madrugada Protegida** y **Desconexión Sagrada 18:30 - 20:30** (Cero pantallas).
-- [x] Diseñar el [[Menú Semanal Nutritivo & Lista de Compras|familiar/menu-semanal-recetas-saludables.md]] ([Resumen Exec|summaries/recetas-menu-semanal.md]).
+- [x] Diseñar el [[menu-semanal-recetas-saludables|Menú Semanal Nutritivo & Lista de Compras]] ([Resumen Exec|summaries/recetas-menu-semanal.md]).
 - [ ] Bloqueo de tiempo de calidad familiar en la agenda semanal.
 - [ ] Hábito de salud, ejercicio y descanso espiritual.
 
@@ -96,5 +92,5 @@ flowchart LR
 ---
 
 ## 🔗 Accesos Rápidos a la Wiki
-- [[Índice Maestro|index.md]]
-- [[Registro de Actividades|log.md]]
+- [[index|Índice Maestro]]
+- [[log|Registro de Actividades]]

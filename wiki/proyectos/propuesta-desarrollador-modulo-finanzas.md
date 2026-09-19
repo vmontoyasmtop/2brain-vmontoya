@@ -1,3 +1,15 @@
+---
+title: "🤝 Propuesta de Colaboración Técnica: Módulo de Finanzas (`Finance MS`) — MasterHub"
+type: "project"
+area: "proyectos"
+created: 2026-09-11
+updated: 2026-09-18
+tags:
+  - proyectos
+  - project
+  - propuesta_desarrollador_modulo_finanzas
+---
+
 # 🤝 Propuesta de Colaboración Técnica: Módulo de Finanzas (`Finance MS`) — MasterHub
 
 **Proyecto**: MasterHub — Módulo de Finanzas, Facturación & Conciliación  

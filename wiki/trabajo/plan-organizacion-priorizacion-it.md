@@ -1,24 +1,16 @@
 ---
 title: "Plan de Organización y Priorización Laboral para Analista de IT"
-type: "concept"
+type: "guide"
 area: "trabajo"
 created: 2026-09-13
-updated: 2026-09-13
-sources:
-  - "raw/trabajo/plan-organizacion-trabajo-it.md"
+updated: 2026-09-18
 tags:
-  - organizacion
-  - productividad
-  - eisenhower
-  - deep-work
-  - time-blocking
-  - soporte
-  - desarrollo
+  - 
 ---
 
 # 🧠 Plan de Organización y Priorización Laboral para Analista de IT (Enfoque Dividido)
 
-Metodología de alto rendimiento para gestionar la dualidad entre el trabajo proactivo de desarrollo de software ([[MasterHub]]) y el trabajo reactivo de soporte operativo ([[Xetux]] y redes).
+Metodología de alto rendimiento para gestionar la dualidad entre el trabajo proactivo de desarrollo de software ([[masterhub-mg-hub|MasterHub]]) y el trabajo reactivo de soporte operativo ([[xetux|Xetux]] y redes).
 
 ---
 
@@ -78,6 +70,6 @@ quadrantChart
 ---
 
 ## 🔗 Referencias Cruzadas
-- [[Área Trabajo - Analista IT y Soporte Xetux|trabajo/pilar-trabajo-xetux.md]]
-- [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]
-- [[Dashboard de Vida & Centro de Control|life-dashboard.md]]
+- [[pilar-trabajo-xetux|Área Trabajo - Analista IT y Soporte Xetux]]
+- [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]

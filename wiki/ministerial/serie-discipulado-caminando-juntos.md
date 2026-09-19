@@ -1,24 +1,20 @@
 ---
 title: "Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos"
-type: "concept"
+type: "guide"
 area: "ministerial"
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-18
 tags:
-  - ministerio
-  - sermon
-  - discipulado
-  - teologia
-  - liderazgo
+  - 
 ---
 
 # ⛪ Serie de Sermones: "Caminando Juntos: De Creyentes a Discípulos"
 
 **Propósito de la Serie**: Motivar e inspirar a cada miembro de la congregación a dar el paso de ser un mero asistente o espectador a ser un **discípulo activo, enseñable y dispuesto a ser mentoreado**, para luego multiplicarse en otros.
 
-**Área**: [[Área Ministerial - Pastorado|pilar-ministerial-pastorado.md]]  
-**Entidad**: [[Iglesia Local|../entities/iglesia.md]]  
-**Subagente Guía**: [[Subagente Pastoral Assistant|../../agents/pastoral_assistant.md]]
+**Área**: [[pilar-ministerial-pastorado|Área Ministerial - Pastorado]]  
+**Entidad**: [[iglesia|Iglesia Local]]  
+**Subagente Guía**: [Subagente Pastoral Assistant](../../agents/pastoral_assistant.md)
 
 ---
 

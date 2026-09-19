@@ -3,16 +3,9 @@ title: "Protocolo de Entrega y Toma de Turno de ALFRED (Sincronización Multi-PC
 type: "concept"
 area: "programacion"
 created: 2026-09-14
-updated: 2026-09-14
-sources:
-  - "AGENTS.md"
+updated: 2026-09-18
 tags:
-  - alfred
-  - 2brain
-  - handover
-  - git
-  - sync
-  - multi-pc
+  - 
 ---
 
 # 🔄 Protocolo de Entrega y Toma de Turno (Multi-PC Context Sync)
@@ -72,6 +65,6 @@ Mecanismo oficial de **ALFRED** para mantener continuidad absoluta de contexto, 
 ---
 
 ## 🔗 Referencias Cruzadas
-- [[Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain en Cualquier PC|programacion/guia-despliegue-empaquetado-alfred-2brain.md]]
-- [[Dashboard de Vida & Centro de Control|life-dashboard.md]]
+- [[guia-despliegue-empaquetado-alfred-2brain|Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain en Cualquier PC]]
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]
 - [[AGENTS.md|../AGENTS.md]]

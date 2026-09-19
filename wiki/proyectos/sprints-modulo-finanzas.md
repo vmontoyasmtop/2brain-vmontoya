@@ -1,19 +1,11 @@
 ---
 title: "Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (finance-ms)"
-type: "concept"
+type: "project"
 area: "proyectos"
 created: 2026-09-16
-updated: 2026-09-16
-sources:
-  - "wiki/proyectos/masterhub-modulo-finanzas.md"
-  - "wiki/proyectos/propuesta-scrum-modulo-finanzas.md"
+updated: 2026-09-18
 tags:
-  - scrum
-  - finanzas
-  - masterhub
-  - clickup
-  - sprints
-  - gherkin
+  - 
 ---
 
 # 📋 Planificación de Sprints & Backlog Scrum: Módulo de Finanzas (`finance-ms`) [Plan B Exprés]
@@ -120,7 +112,7 @@ Se han creado e integrado las subtareas hijas bajo la tarea principal **`MS-FINA
 ---
 
 ## 🔗 Enlaces Relacionados (Wikilinks)
-- [[Módulo de Finanzas: Especificación Técnica (finance-ms)|masterhub-modulo-finanzas.md]]
-- [[Propuesta Metodológica Scrum: Módulo de Finanzas (finance-ms)|propuesta-scrum-modulo-finanzas.md]]
-- [[Proyecto: MasterHub (MG-HUB)|masterhub-mg-hub.md]]
-- [[Dashboard de Vida & Centro de Control|../life-dashboard.md]]
+- [[masterhub-modulo-finanzas|Módulo de Finanzas: Especificación Técnica (finance-ms)]]
+- [[propuesta-scrum-modulo-finanzas|Propuesta Metodológica Scrum: Módulo de Finanzas (finance-ms)]]
+- [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]

@@ -1,3 +1,15 @@
+---
+title: "💼 Propuesta de Colaboración Funcional & QA: Módulo de Finanzas (`Finance MS`) — MasterHub"
+type: "project"
+area: "proyectos"
+created: 2026-09-11
+updated: 2026-09-18
+tags:
+  - proyectos
+  - project
+  - propuesta_consultora_finanzas_jessica
+---
+
 # 💼 Propuesta de Colaboración Funcional & QA: Módulo de Finanzas (`Finance MS`) — MasterHub
 
 **Proyecto**: MasterHub — Módulo de Finanzas, Facturación & Conciliación  

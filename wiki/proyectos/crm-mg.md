@@ -1,25 +1,19 @@
 ---
 title: "Proyecto: CRM-MG"
-type: "concept"
+type: "project"
 area: "proyectos"
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-18
 tags:
-  - proyectos
-  - crm
-  - nestjs
-  - prisma
-  - openai
-  - websockets
-  - nx
+  - 
 ---
 
 # 🏢 Proyecto: CRM-MG
 
 **CRM-MG** es un sistema monorepo empresarial de Customer Relationship Management (CRM) potenciado con Inteligencia Artificial (OpenAI) y comunicación en tiempo real.
 
-**Área**: [[Área Proyectos - Software Independiente|pilar-proyectos.md]]  
-**Subagentes Evaluadores**: [[Subagente Backend JS Expert|../../agents/backend_js_expert.md]] & [[Subagente Frontend UI Expert|../../agents/frontend_ui_expert.md]]
+**Área**: [[pilar-proyectos|Área Proyectos - Software Independiente]]  
+**Subagentes Evaluadores**: [Subagente Backend JS Expert](../../agents/backend_js_expert.md) & [Subagente Frontend UI Expert](../../agents/frontend_ui_expert.md)
 
 ---
 
@@ -50,5 +44,5 @@ tags:
 ---
 
 ## 🔗 Relación en 2brain
-- [[Área Programación - Conocimiento Técnico|../programacion/pilar-programacion.md]]
-- [[Área Finanzas - Gestión Económica|../finanzas/pilar-finanzas-personales.md]]
+- [[pilar-programacion|Área Programación - Conocimiento Técnico]]
+- [[pilar-finanzas-personales|Área Finanzas - Gestión Económica]]

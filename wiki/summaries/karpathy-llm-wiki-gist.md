@@ -1,22 +1,18 @@
 ---
 title: "Resumen: LLM Wiki Pattern por Andrej Karpathy"
-type: summary
+type: "summary"
+area: "programacion"
 created: 2026-09-11
-updated: 2026-09-11
-sources:
-  - "raw/karpathy-llm-wiki-gist.md"
+updated: 2026-09-18
 tags:
-  - llm
-  - second-brain
-  - architecture
-  - karpathy
+  - 
 ---
 
 # 📄 Resumen: LLM Wiki Pattern por Andrej Karpathy
 
 - **Fuente**: `raw/karpathy-llm-wiki-gist.md`
-- **Autor original**: [[Andrej Karpathy]]
-- **Concepto clave**: [[LLM Wiki Pattern]]
+- **Autor original**: [[andrej-karpathy|Andrej Karpathy]]
+- **Concepto clave**: [[llm-wiki-pattern|LLM Wiki Pattern]]
 
 ## 💡 Puntos Clave
 
@@ -25,7 +21,7 @@ tags:
 3. **Roles**:
    - **Humano**: Curaduría de fuentes en `raw/`, dirección de investigación y formulación de preguntas.
    - **LLM**: Mantenimiento, resúmenes, referencias cruzadas, linting y actualización de páginas.
-   - **[[Obsidian]]**: Interfaz IDE para visualizar la wiki y la vista de grafo.
+   - **[[obsidian|Obsidian]]**: Interfaz IDE para visualizar la wiki y la vista de grafo.
 4. **3 Capas de Arquitectura**:
    - `raw/` (Fuentes inmutables).
    - `wiki/` (Páginas de entidades, conceptos, resúmenes e índices mantenidas por el LLM).

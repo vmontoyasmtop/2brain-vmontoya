@@ -1,24 +1,16 @@
 ---
 title: "Módulo de Finanzas: Especificación Técnica (finance-ms)"
-type: "concept"
+type: "project"
 area: "proyectos"
 created: 2026-09-14
-updated: 2026-09-14
-sources:
-  - "raw/finanzas/requerimiento-modulo-finanzas.md"
+updated: 2026-09-18
 tags:
-  - masterhub
-  - finanzas
-  - nestjs
-  - prisma
-  - seniat
-  - cxp
-  - cxc
+  - 
 ---
 
 # 💰 MasterHub: Módulo de Finanzas (`finance-ms`)
 
-Especificación de arquitectura, modelo de datos y roadmap de desarrollo del microservicio de finanzas para la plataforma empresarial [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]].
+Especificación de arquitectura, modelo de datos y roadmap de desarrollo del microservicio de finanzas para la plataforma empresarial [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]].
 
 ---
 
@@ -70,6 +62,6 @@ flowchart TD
 ---
 
 ## 🔗 Referencias Cruzadas
-- [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]
-- [[Resumen: Módulo de Finanzas (finance-ms)|summaries/requerimiento-modulo-finanzas.md]]
-- [[Área Finanzas - Gestión Económica|finanzas/pilar-finanzas-personales.md]]
+- [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]
+- [[requerimiento-modulo-finanzas|Resumen: Módulo de Finanzas (finance-ms)]]
+- [[pilar-finanzas-personales|Área Finanzas - Gestión Económica]]

@@ -1,18 +1,11 @@
 ---
 title: "Patrón de Migraciones Idempotentes en Payload CMS 3.x con PostgreSQL (Vercel Build Fix)"
-type: "concept"
+type: "guide"
 area: "programacion"
 created: 2026-09-16
-updated: 2026-09-16
-sources:
-  - "wiki/proyectos/webcastro.md"
+updated: 2026-09-18
 tags:
-  - postgresql
-  - payload-cms
-  - vercel
-  - migraciones
-  - nextjs
-  - typescript
+  - 
 ---
 
 # 🛠️ Patrón de Migraciones Idempotentes en Payload CMS 3.x con PostgreSQL (Vercel Build Fix)
@@ -141,6 +134,6 @@ cleanDevMigrations()
 ---
 
 ## 🔗 Enlaces Relacionados
-- [[Proyecto: WebCastro|../proyectos/webcastro.md]]
-- [[Subagente Backend JS Expert|../../agents/backend_js_expert.md]]
-- [[Área Programación - Conocimiento Técnico|pilar-programacion.md]]
+- [[webcastro|Proyecto: WebCastro]]
+- [Subagente Backend JS Expert](../../agents/backend_js_expert.md)
+- [[pilar-programacion|Área Programación - Conocimiento Técnico]]

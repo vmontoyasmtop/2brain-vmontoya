@@ -1,16 +1,11 @@
 ---
 title: "Entidad: Antigravity CLI"
-type: entity
+type: "entity"
+area: "programacion"
 created: 2026-09-11
-updated: 2026-09-11
-sources:
-  - "raw/Google Lanzó Antigravity CLI y Es Brutal.md"
+updated: 2026-09-18
 tags:
-  - entity
-  - tool
-  - ai-agent
-  - google
-  - cli
+  - 
 ---
 
 # 🛠️ Antigravity CLI (`agi`)
@@ -30,5 +25,5 @@ tags:
 
 ## 🔗 Enlaces y Páginas Relacionadas
 - Resumen del video de Fazt Code: `wiki/summaries/google-lanzo-antigravity-cli.md`
-- Comandos y Atajos: [[Antigravity Commands and Shortcuts]]
-- Creador / Reviewer: [[Fazt Code]]
+- Comandos y Atajos: [[antigravity-commands-and-shortcuts|Antigravity Commands and Shortcuts]]
+- Creador / Reviewer: [[fazt-code|Fazt Code]]

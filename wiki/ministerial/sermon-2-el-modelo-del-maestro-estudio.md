@@ -1,24 +1,20 @@
 ---
 title: "Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro"
-type: "concept"
+type: "guide"
 area: "ministerial"
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-18
 tags:
-  - ministerio
-  - sermon
-  - discipulado
-  - exegesis
-  - hermeneutica
+  - 
 ---
 
 # 📖 Estudio Exegético & Homilético — Sermón 2: "El Modelo del Maestro (¿Qué Significa Ser Discipulado?)"
 
 **Pasajes Clave**: Hechos 2:42-47 | Juan 13:12-15 | 2 Timoteo 2:1-2  
 **Idea Central**: El discipulado es vida compartida en comunidad, donde la verdad se aprende y la vida se modela.  
-**Área**: [[Área Ministerial - Pastorado|pilar-ministerial-pastorado.md]]  
-**Serie**: [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|serie-discipulado-caminando-juntos.md]]  
-**Subagente**: [[Subagente Pastoral Assistant|../../agents/pastoral_assistant.md]]
+**Área**: [[pilar-ministerial-pastorado|Área Ministerial - Pastorado]]  
+**Serie**: [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]  
+**Subagente**: [Subagente Pastoral Assistant](../../agents/pastoral_assistant.md)
 
 ---
 
@@ -114,6 +110,6 @@ tags:
 ---
 
 ## 🔗 IV. Enlaces Relacionados (Wikilinks)
-- Serie Completa: [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|serie-discipulado-caminando-juntos.md]]
-- Pilar Ministerial: [[Área Ministerial - Pastorado|pilar-ministerial-pastorado.md]]
-- Sermón Anterior: [[Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa|sermon-1-de-la-multitud-a-la-mesa-estudio.md]]
+- Serie Completa: [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]
+- Pilar Ministerial: [[pilar-ministerial-pastorado|Área Ministerial - Pastorado]]
+- Sermón Anterior: [[sermon-1-de-la-multitud-a-la-mesa-estudio|Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa]]

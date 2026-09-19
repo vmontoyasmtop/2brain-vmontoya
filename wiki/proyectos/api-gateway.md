@@ -1,23 +1,19 @@
 ---
 title: "Proyecto: API Gateway Core"
-type: "concept"
+type: "project"
 area: "proyectos"
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-18
 tags:
-  - proyectos
-  - api-gateway
-  - nestjs
-  - aws-s3
-  - microservicios
+  - 
 ---
 
 # 🛠️ Proyecto: API Gateway Core
 
 **API Gateway Core** es un microservicio base e infraestructura de ruteo para proyectos construidos con NestJS y almacenamiento AWS.
 
-**Área**: [[Área Proyectos - Software Independiente|pilar-proyectos.md]]  
-**Subagente Evaluador**: [[Subagente Backend JS Expert|../../agents/backend_js_expert.md]]
+**Área**: [[pilar-proyectos|Área Proyectos - Software Independiente]]  
+**Subagente Evaluador**: [Subagente Backend JS Expert](../../agents/backend_js_expert.md)
 
 ---
 
@@ -40,4 +36,4 @@ tags:
 ---
 
 ## 🔗 Relación en 2brain
-- [[Área Programación - Conocimiento Técnico|../programacion/pilar-programacion.md]]
+- [[pilar-programacion|Área Programación - Conocimiento Técnico]]

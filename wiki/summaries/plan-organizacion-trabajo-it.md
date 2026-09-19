@@ -3,17 +3,9 @@ title: "Resumen: Plan de Organización y Priorización Laboral para Analista de 
 type: "summary"
 area: "trabajo"
 created: 2026-09-13
-updated: 2026-09-13
-sources:
-  - "raw/trabajo/plan-organizacion-trabajo-it.md"
+updated: 2026-09-18
 tags:
-  - organizacion
-  - productividad
-  - eisenhower
-  - deep-work
-  - time-blocking
-  - n8n
-  - xetux
+  - 
 ---
 
 # 📚 Resumen: Plan de Organización y Priorización Laboral para Analista de IT
@@ -42,6 +34,6 @@ Resumen sintético del método de Enfoque Dividido diseñado para balancear los 
 ---
 
 ## 🔗 Páginas Relacionadas
-- [[Plan de Organización y Priorización IT|trabajo/plan-organizacion-priorizacion-it.md]]
-- [[Área Trabajo - Analista IT y Soporte Xetux|trabajo/pilar-trabajo-xetux.md]]
-- [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]
+- [[plan-organizacion-priorizacion-it|Plan de Organización y Priorización IT]]
+- [[pilar-trabajo-xetux|Área Trabajo - Analista IT y Soporte Xetux]]
+- [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]

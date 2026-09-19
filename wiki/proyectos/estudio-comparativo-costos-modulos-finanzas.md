@@ -1,3 +1,15 @@
+---
+title: "📊 Estudio Comparativo de Mercado: Módulo de Finanzas / ERP (MasterHub vs. Odoo, Profit Plus, Saint)"
+type: "project"
+area: "proyectos"
+created: 2026-09-11
+updated: 2026-09-18
+tags:
+  - proyectos
+  - project
+  - estudio_comparativo_costos_modulos_finanzas
+---
+
 # 📊 Estudio Comparativo de Mercado: Módulo de Finanzas / ERP (MasterHub vs. Odoo, Profit Plus, Saint)
 
 **Fecha**: 14 de Septiembre, 2026  

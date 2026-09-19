@@ -1,24 +1,16 @@
 ---
 title: "Actitud Espiritual y Mental ante el Estrés y la Presión (Filipenses 4:6-7)"
-type: "concept"
+type: "guide"
 area: "ministerial"
 created: 2026-09-14
-updated: 2026-09-14
-sources:
-  - "raw/ministerial/estudio-actitud-ante-el-estres-filipenses-4.md"
+updated: 2026-09-18
 tags:
-  - ministerial
-  - pastorado
-  - teologia
-  - exegesis
-  - filipenses
-  - estres
-  - paz-de-dios
+  - 
 ---
 
 # ⛪ Actitud Espiritual y Mental ante el Estrés y la Presión Laboral
 
-Estudio exegético y práctico desarrollado por el [[Subagente Pastoral Assistant|agents/pastoral_assistant.md]] para el abordaje espiritual del estrés, la ansiedad laboral y la alta demanda cognitiva en el rol del pastor-ingeniero.
+Estudio exegético y práctico desarrollado por el [Subagente Pastoral Assistant](../agents/pastoral_assistant.md) para el abordaje espiritual del estrés, la ansiedad laboral y la alta demanda cognitiva en el rol del pastor-ingeniero.
 
 ---
 
@@ -77,7 +69,7 @@ Estudio exegético y práctico desarrollado por el [[Subagente Pastoral Assistan
 ---
 
 ## 🔗 Referencias Cruzadas en 2brain
-- [[Área Ministerial - Pastorado|ministerial/pilar-ministerial-pastorado.md]]
-- [[Sistema de Productividad del Pastor-Ingeniero|ministerial/sistema-productividad-pastor-ingeniero.md]]
-- [[Subagente Pastoral Assistant|agents/pastoral_assistant.md]]
-- [[Dashboard de Vida & Centro de Control|life-dashboard.md]]
+- [[pilar-ministerial-pastorado|Área Ministerial - Pastorado]]
+- [[sistema-productividad-pastor-ingeniero|Sistema de Productividad del Pastor-Ingeniero]]
+- [Subagente Pastoral Assistant](../agents/pastoral_assistant.md)
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]

@@ -1,17 +1,11 @@
 ---
 title: "Perfil y Modelo de Cargo: Soporte Técnico IT Jr. (Nivel 1)"
-type: "concept"
+type: "guide"
 area: "trabajo"
 created: 2026-09-16
-updated: 2026-09-16
-sources:
-  - "Master Group VE - Departamento IT"
+updated: 2026-09-18
 tags:
-  - perfil-cargo
-  - soporte-it
-  - rrhh
-  - reclutamiento
-  - master-group
+  - 
 ---
 
 # 📋 Perfil de Cargo: Soporte Técnico IT Jr. (Nivel 1)

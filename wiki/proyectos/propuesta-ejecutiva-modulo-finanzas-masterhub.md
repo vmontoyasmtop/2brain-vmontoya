@@ -1,8 +1,20 @@
+---
+title: "📄 Propuesta Ejecutiva: Módulo de Finanzas MasterHub (`Finance MS`)"
+type: "project"
+area: "proyectos"
+created: 2026-09-11
+updated: 2026-09-18
+tags:
+  - proyectos
+  - project
+  - propuesta_ejecutiva_modulo_finanzas_masterhub
+---
+
 # 📄 Propuesta Ejecutiva: Módulo de Finanzas MasterHub (`Finance MS`)
 
 **Proyecto**: MasterHub — Microservicio Financiero Nativo  
 **Fecha de Emisión**: 14 de Septiembre, 2026  
-**Documento Principal (Cliente)**: [[raw/finanzas/propuesta-ejecutiva-modulo-finanzas-masterhub.md]]
+**Documento Principal (Cliente)**: [[propuesta-ejecutiva-modulo-finanzas-masterhub|propuesta-ejecutiva-modulo-finanzas-masterhub]]
 
 ---
 
@@ -28,6 +40,6 @@
 ---
 
 ## 🔗 Enlaces Cruzados
-- [[Documento Propuesta Ejecutiva Cliente|raw/finanzas/propuesta-ejecutiva-modulo-finanzas-masterhub.md]]
-- [[Estudio Comparativo de Mercado|wiki/proyectos/estudio-comparativo-costos-modulos-finanzas.md]]
-- [[Propuesta Scrum Sprints|wiki/proyectos/propuesta-scrum-modulo-finanzas.md]]
+- [[propuesta-ejecutiva-modulo-finanzas-masterhub|Documento Propuesta Ejecutiva Cliente]]
+- [[estudio-comparativo-costos-modulos-finanzas|Estudio Comparativo de Mercado]]
+- [[propuesta-scrum-modulo-finanzas|Propuesta Scrum Sprints]]

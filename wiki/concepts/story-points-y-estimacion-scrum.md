@@ -3,15 +3,9 @@ title: "Concepto: Story Points (SP) y Estimación de Esfuerzo en Scrum"
 type: "concept"
 area: "programacion"
 created: 2026-09-14
-updated: 2026-09-14
-sources:
-  - "wiki/proyectos/propuesta-scrum-modulo-finanzas.md"
+updated: 2026-09-18
 tags:
-  - scrum
-  - story-points
-  - estimacion
-  - agile
-  - pm
+  - 
 ---
 
 # 💡 Concepto: Story Points (SP) y Estimación Ágil
@@ -43,5 +37,5 @@ En estimación Scrum se utiliza tradicionalmente la secuencia modificada de Fibo
 ---
 
 ## 🔗 Referencias Cruzadas
-- [[Propuesta Metodológica Scrum: Módulo de Finanzas (finance-ms)|proyectos/propuesta-scrum-modulo-finanzas.md]]
-- [[Desglose Presupuestario y Cotización: Módulo de Finanzas|proyectos/desglose-presupuesto-cotizacion-finance-ms.md]]
+- [[propuesta-scrum-modulo-finanzas|Propuesta Metodológica Scrum: Módulo de Finanzas (finance-ms)]]
+- [[desglose-presupuesto-cotizacion-finance-ms|Desglose Presupuestario y Cotización: Módulo de Finanzas]]

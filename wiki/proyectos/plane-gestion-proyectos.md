@@ -1,17 +1,11 @@
 ---
 title: "Proyecto: Plane - Plataforma de Gestión de Proyectos"
 type: "project"
-pillar: "proyectos"
+area: "proyectos"
 created: 2026-09-17
-updated: 2026-09-17
-status: "activo"
+updated: 2026-09-18
 tags:
-  - plane
-  - gestion-proyectos
-  - jira-alternative
-  - self-hosted
-  - docker
-  - coolify
+  - 
 ---
 
 # 📋 Proyecto: Plane — Plataforma de Gestión de Proyectos (`makeplane/plane`)
@@ -92,5 +86,5 @@ nano plane-app/plane.env
 ---
 
 ## 🔗 Enlaces Relacionados
-- [[Pilar Proyectos|pilar-proyectos.md]]
-- [[Proyecto: MasterHub (MG-HUB)|masterhub-mg-hub.md]]
+- [[pilar-proyectos|Pilar Proyectos]]
+- [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]

@@ -1,19 +1,11 @@
 ---
 title: "Propuesta Metodológica Scrum: Módulo de Finanzas (finance-ms)"
-type: "concept"
+type: "project"
 area: "proyectos"
 created: 2026-09-14
-updated: 2026-09-14
-sources:
-  - "raw/finanzas/requerimiento-modulo-finanzas.md"
-  - "wiki/proyectos/masterhub-modulo-finanzas.md"
+updated: 2026-09-18
 tags:
-  - scrum
-  - finanzas
-  - masterhub
-  - sprint-planning
-  - agile
-  - propuesta
+  - 
 ---
 
 # 🚀 Propuesta Metodológica Scrum — Módulo de Finanzas (`finance-ms`)
@@ -89,6 +81,6 @@ Propuesta de desarrollo ágil basada en la metodología **Scrum**, con sprints i
 ---
 
 ## 🔗 Referencias Cruzadas
-- [[Módulo de Finanzas: Especificación Técnica (finance-ms)|proyectos/masterhub-modulo-finanzas.md]]
-- [[Proyecto: MasterHub (MG-HUB)|proyectos/masterhub-mg-hub.md]]
-- [[Dashboard de Vida & Centro de Control|life-dashboard.md]]
+- [[masterhub-modulo-finanzas|Módulo de Finanzas: Especificación Técnica (finance-ms)]]
+- [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]
+- [[life-dashboard|Dashboard de Vida & Centro de Control]]

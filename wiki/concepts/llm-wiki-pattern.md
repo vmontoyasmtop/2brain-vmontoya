@@ -1,19 +1,16 @@
 ---
 title: "Concepto: LLM Wiki Pattern"
-type: concept
+type: "concept"
+area: "programacion"
 created: 2026-09-11
-updated: 2026-09-11
-sources:
-  - "raw/karpathy-llm-wiki-gist.md"
+updated: 2026-09-18
 tags:
-  - concept
-  - llm-wiki
-  - knowledge-management
+  - 
 ---
 
 # 🧠 LLM Wiki Pattern
 
-El **LLM Wiki Pattern** es un paradigma de gestión del conocimiento personal ideado por [[Andrej Karpathy]]. Propone la creación de un **Segundo Cerebro compilado de forma incremental por un LLM**.
+El **LLM Wiki Pattern** es un paradigma de gestión del conocimiento personal ideado por [[andrej-karpathy|Andrej Karpathy]]. Propone la creación de un **Segundo Cerebro compilado de forma incremental por un LLM**.
 
 ## 🔄 RAG vs LLM Wiki
 
@@ -36,5 +33,5 @@ El **LLM Wiki Pattern** es un paradigma de gestión del conocimiento personal id
 
 ## 🛠️ Herramientas de Apoyo
 
-- [[Obsidian]]: Visualizador e IDE para explorar enlaces y grafos.
+- [[obsidian|Obsidian]]: Visualizador e IDE para explorar enlaces y grafos.
 - **Dataview / Marp**: Plugins para generar tablas dinámicas y diapositivas.

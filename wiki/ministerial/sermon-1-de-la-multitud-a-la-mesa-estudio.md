@@ -1,24 +1,20 @@
 ---
 title: "Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa"
-type: "concept"
+type: "guide"
 area: "ministerial"
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-09-18
 tags:
-  - ministerio
-  - sermon
-  - discipulado
-  - exegesis
-  - hermeneutica
+  - 
 ---
 
 # 📖 Estudio Exegético & Homilético — Sermón 1: "De la Multitud a la Mesa"
 
 **Pasaje Central**: Marcos 1:16-20 | Lucas 9:23-25 | Mateo 28:18-20  
 **Tema Homilético**: El llamado personal de Jesús a pasar de espectador a discípulo comprometido.  
-**Área**: [[Área Ministerial - Pastorado|pilar-ministerial-pastorado.md]]  
-**Serie**: [[Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos|serie-discipulado-caminando-juntos.md]]  
-**Subagente**: [[Subagente Pastoral Assistant|../../agents/pastoral_assistant.md]]
+**Área**: [[pilar-ministerial-pastorado|Área Ministerial - Pastorado]]  
+**Serie**: [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]  
+**Subagente**: [Subagente Pastoral Assistant](../../agents/pastoral_assistant.md)
 
 ---
 

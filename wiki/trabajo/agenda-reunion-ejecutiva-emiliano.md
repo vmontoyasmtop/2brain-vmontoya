@@ -1,3 +1,15 @@
+---
+title: "📋 Agenda Ejecutiva & Minuta de Reporte: Reunión con Dirección (Sr. Emiliano)"
+type: "guide"
+area: "trabajo"
+created: 2026-09-11
+updated: 2026-09-18
+tags:
+  - trabajo
+  - guide
+  - agenda_reunion_ejecutiva_emiliano
+---
+
 # 📋 Agenda Ejecutiva & Minuta de Reporte: Reunión con Dirección (Sr. Emiliano)
 
 **Fecha de la Reunión**: Miércoles 16 de Septiembre, 2026  
