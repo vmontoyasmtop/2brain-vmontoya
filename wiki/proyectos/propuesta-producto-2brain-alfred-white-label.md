@@ -1,16 +1,11 @@
 ---
 title: "Propuesta de Producto: 2brain Enterprise & ALFRED White-Label Edition"
-type: "proposal"
+type: "project"
 area: "proyectos"
-project: "2brain-product"
 created: 2026-09-18
 updated: 2026-09-18
 tags:
-  - 2brain-product
-  - alfred-white-label
-  - empaquetado
-  - modelo-negocio
-  - saas-template
+  - 
 ---
 
 # 🚀 Arquitectura de Producto: 2brain Enterprise & ALFRED White-Label
@@ -79,7 +74,6 @@ flowchart TD
 
 ---
 
-## 💰 4. Estrategia de Monetización
+## 💰 4. Estrategia de Monetización & Paquetes
 
-1. **Venta de Licencia / Template (Digital Product)**: $97.00 USD – $197.00 USD (Pago Único).
-2. **Servicio VIP Setup & Onboarding**: $300.00 USD – $1,000.00 USD (Incluye configuración guiada de subagentes y adaptación a los flujos de su empresa).
+- **Manual Comercial & Estrategia de Venta**: Ver [[manual-comercializacion-2brain-enterprise|Manual de Comercialización: 2brain Enterprise & Rol del Fundador]] para la definición completa de Tiers ($97, $297 y $997 USD) y el rol ejecutivo de Señor Víctor Montoya.

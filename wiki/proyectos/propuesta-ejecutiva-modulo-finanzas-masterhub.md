@@ -5,9 +5,7 @@ area: "proyectos"
 created: 2026-09-11
 updated: 2026-09-18
 tags:
-  - proyectos
-  - project
-  - propuesta_ejecutiva_modulo_finanzas_masterhub
+  - 
 ---
 
 # 📄 Propuesta Ejecutiva: Módulo de Finanzas MasterHub (`Finance MS`)

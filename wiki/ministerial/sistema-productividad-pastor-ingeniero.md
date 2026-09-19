@@ -5,9 +5,7 @@ area: "ministerial"
 created: 2026-09-11
 updated: 2026-09-18
 tags:
-  - ministerial
-  - guide
-  - sistema_productividad_pastor_ingeniero
+  - 
 ---
 
 # Sistema de Productividad del Pastor-Ingeniero (24/7 Life OS)

@@ -5,9 +5,7 @@ area: "proyectos"
 created: 2026-09-11
 updated: 2026-09-18
 tags:
-  - proyectos
-  - project
-  - desglose_presupuesto_cotizacion_finance_ms
+  - 
 ---
 
 # 💰 Desglose de Presupuesto y Cotización: Módulo de Finanzas (Finance MS)

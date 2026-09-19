@@ -5,9 +5,7 @@ area: "ministerial"
 created: 2026-09-11
 updated: 2026-09-18
 tags:
-  - ministerial
-  - summary
-  - manual_maestro_pastor_ingeniero
+  - 
 ---
 
 # Resumen Ejecutivo: Manual Maestro (Sistema Operativo del Pastor-Ingeniero)

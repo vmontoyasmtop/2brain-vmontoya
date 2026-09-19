@@ -5,9 +5,7 @@ area: "familiar"
 created: 2026-09-11
 updated: 2026-09-18
 tags:
-  - familiar
-  - summary
-  - recetas_menu_semanal
+  - 
 ---
 
 # Resumen Ejecutivo: Planificación Nutricional & Menú Semanal Criollo Venezolano

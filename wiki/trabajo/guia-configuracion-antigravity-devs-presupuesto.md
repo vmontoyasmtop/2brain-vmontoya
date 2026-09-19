@@ -2,16 +2,10 @@
 title: "Estándar Oficial: Cuentas Antigravity Pro y Grupo Familiar ($4.99 USD/mes)"
 type: "guide"
 area: "trabajo"
-project: "MasterGroup"
 created: 2026-09-18
 updated: 2026-09-18
 tags:
-  - antigravity
-  - plan-devs
-  - google-family-group
-  - presupuesto
-  - victor-montoya
-  - vladimir-jerez
+  - 
 ---
 
 # 📋 Estándar Oficial: Cuentas Antigravity Pro y Grupo Familiar ($4.99 USD/mes)
