@@ -34,6 +34,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Agenda Ejecutiva & Minuta de Reporte (Reunión con Emiliano)|trabajo/agenda-reunion-ejecutiva-emiliano.md]]: Agenda de 5 puntos para informe de gestión IT, plan del bug de inventario, contratación Soporte Jr. y Módulo de Finanzas.
 - [[Perfil y Modelo de Cargo: Soporte Técnico IT Jr. (Nivel 1)|trabajo/perfil-cargo-soporte-it-jr.md]]: Perfil formal de cargo, funciones, requisitos y KPIs del nuevo soporte informático.
 - [[Propuesta Técnica y Financiera: Infraestructura Linode y Planes de IA|trabajo/propuesta-infraestructura-linode-servidores-e-ia-mgh-plane.md]]: Análisis de presupuesto Linode VPS Shared 16GB ($96 USD/mes) para MGH & Plane.so y comparativa de asistentes de IA (Cursor, Claude, Copilot, Antigravity).
+- [[Manual Operativo: Configuración de Antigravity para Equipos ($4.99 USD/dev)|trabajo/guia-configuracion-antigravity-devs-presupuesto.md]]: Paso a paso para onboarding de devs con presupuesto estricto de $4.99/mes, uso simultáneo de CLI + IDE y panel de control unificado.
 
 ### 💻 2. Programación (Conocimiento Técnico)
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.
