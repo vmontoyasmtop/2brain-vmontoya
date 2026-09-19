@@ -33,6 +33,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[Estándar Operativo: Organización de Calendario Laboral IT (Focus Time & Google Tasks)|trabajo/estandar-organizacion-google-calendar-tasks.md]]: Configuración y uso de Focus Time, Google Tasks, Working Location y OOO.
 - [[Agenda Ejecutiva & Minuta de Reporte (Reunión con Emiliano)|trabajo/agenda-reunion-ejecutiva-emiliano.md]]: Agenda de 5 puntos para informe de gestión IT, plan del bug de inventario, contratación Soporte Jr. y Módulo de Finanzas.
 - [[Perfil y Modelo de Cargo: Soporte Técnico IT Jr. (Nivel 1)|trabajo/perfil-cargo-soporte-it-jr.md]]: Perfil formal de cargo, funciones, requisitos y KPIs del nuevo soporte informático.
+- [[Propuesta Técnica y Financiera: Infraestructura Linode y Planes de IA|trabajo/propuesta-infraestructura-linode-servidores-e-ia-mgh-plane.md]]: Análisis de presupuesto Linode VPS Shared 16GB ($96 USD/mes) para MGH & Plane.so y comparativa de asistentes de IA (Cursor, Claude, Copilot, Antigravity).
 
 ### 💻 2. Programación (Conocimiento Técnico)
 - [[Área Programación - Conocimiento Técnico|programacion/pilar-programacion.md]]: Índice de lenguajes, frameworks y patrones.
