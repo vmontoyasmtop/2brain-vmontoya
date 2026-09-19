@@ -81,6 +81,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[webcastro|Proyecto: WebCastro]]: Plataforma Web y CMS Payload 3.x con PostgreSQL.
 - [[plane-gestion-proyectos|Proyecto: Plane]]: Suite open-source de gestión de proyectos, Sprints e incidencias.
 - [[propuesta-producto-2brain-alfred-white-label|Propuesta de Producto: 2brain Enterprise & ALFRED White-Label Edition]]: Especificación técnica y kit de comercialización ($0 costo infra).
+- [[manual-comercializacion-2brain-enterprise|Manual de Comercialización: 2brain Enterprise & Rol del Fundador]]: Estrategia comercial, paquetes ($97, $297, $997 USD) y definición del rol ejecutivo del Señor Víctor Montoya.
 - [[smartops-ve|Proyecto: SmartOps VE]]: Portal corporativo en Next.js 15 & Firebase.
 - [[api-gateway|Proyecto: API Gateway Core]]: Microservicio Gateway NestJS & AWS S3.
 
