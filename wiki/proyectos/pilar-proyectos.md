@@ -36,6 +36,7 @@ Página principal para el seguimiento de **Proyectos de Programación e Iniciati
   - [[propuesta-ejecutiva-modulo-finanzas-masterhub|Propuesta Ejecutiva: Módulo de Finanzas MasterHub]]: Documento ejecutivo resumido.
   - [[masterhub-helpdesk-api|MasterHub Helpdesk API & Gestión de Tickets]]: Endpoints REST, modelo Prisma y Matriz Eisenhower.
 - [[plane-gestion-proyectos|Proyecto: Plane]]: Suite open-source de gestión de proyectos, Sprints e incidencias.
+- [[propuesta-producto-2brain-alfred-white-label|Proyecto Producto: 2brain Enterprise & ALFRED White-Label Edition]]: Especificación técnica y arquitectura de empaquetado para comercializar el sistema de mayordomo agéntico como producto reutilizable ($0 costo de infra).
 
 ### 🛒 Puntos de Venta & Franquicias
 - [[meniox|Proyecto: Meniox]]: Ecosistema POS y administración de franquicias (NestJS, PostgreSQL, RabbitMQ, Next.js 15).

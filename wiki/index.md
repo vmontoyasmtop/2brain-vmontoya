@@ -80,6 +80,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[meniox|Proyecto: Meniox]]: Sistema POS & franquicias con RabbitMQ y Next.js 15.
 - [[webcastro|Proyecto: WebCastro]]: Plataforma Web y CMS Payload 3.x con PostgreSQL.
 - [[plane-gestion-proyectos|Proyecto: Plane]]: Suite open-source de gestión de proyectos, Sprints e incidencias.
+- [[propuesta-producto-2brain-alfred-white-label|Proyecto Producto: 2brain Enterprise & ALFRED White-Label Edition]]: Especificación técnica y arquitectura de empaquetado para comercializar el sistema de mayordomo agéntico como producto reutilizable ($0 costo de infra).
 - [[smartops-ve|Proyecto: SmartOps VE]]: Portal corporativo en Next.js 15 & Firebase.
 - [[api-gateway|Proyecto: API Gateway Core]]: Microservicio Gateway NestJS & AWS S3.
 
