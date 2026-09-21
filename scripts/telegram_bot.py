@@ -503,8 +503,8 @@ Instrucciones para Notas de Voz y Audio:
         ]
     }
 
-    # Modelos candidatos con fallback progresivo y reintentos resiliencia ante errores 500/503/429 y Socket Timeout
-    candidate_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-2.5-flash", "gemini-1.5-flash"]
+    # Modelos candidatos Pro de alta gama con fallback progresivo y reintentos ante saturación HTTP 503/429
+    candidate_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.1-pro-preview", "gemini-3.5-flash-lite"]
     last_error = None
 
     for model_name in candidate_models:
@@ -526,9 +526,9 @@ Instrucciones para Notas de Voz y Audio:
             except urllib.error.HTTPError as http_err:
                 last_error = f"HTTP {http_err.code}: {http_err.reason}"
                 print(f"⚠️ Reintento {attempt+1}/3 con modelo {model_name} debido a error HTTP ({http_err.code})")
-                if http_err.code in (429, 404):
+                if http_err.code == 404:
                     break
-                time.sleep(1.5 * (attempt + 1))
+                time.sleep(2.0 * (attempt + 1))
             except (socket.timeout, urllib.error.URLError) as net_err:
                 last_error = f"Timeout/Red: {net_err}"
                 print(f"⚠️ Reintento {attempt+1}/3 con modelo {model_name} por socket timeout o problema de red")

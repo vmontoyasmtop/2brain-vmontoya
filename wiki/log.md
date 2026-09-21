@@ -12,7 +12,23 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 ---
----
+## [2026-09-21] feat/sop | Creación del Protocolo Oficial de Creación de Tickets en MasterHub Helpdesk
+- **Área**: 🏢 `trabajo`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Elaborado el protocolo estándar inalterable (SOP) para la ingesta y registro directo de tickets de soporte técnico en la base de datos de producción de **MasterHub (`helpdesk_db`) en Aiven Cloud**.
+  - Documentados los mapeos de campos Prisma (`TicketType`, `TicketSource`, `TicketStatus`, `TicketPriority`, `siteId`, `requesterName`, etc.) y el flujo de ejecución nativa en `Desktop/MasterHub/helpdesk-sm`.
+  - Guardada la guía en [[sop-creacion-tickets-masterhub|SOP: Protocolo Oficial de Creación de Tickets en MasterHub Helpdesk]].
+  - Enlazada la guía en el [[index|Índice Maestro de 2brain]].
+
+## [2026-09-19] feat/mcp | Registro y Documentación del Servidor MCP para GitHub (GitHub Personal)
+- **Área**: 💻 `programacion` & 🚀 `proyectos`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Registrado el servidor MCP oficial de GitHub (`@modelcontextprotocol/server-github`) en `mcp_config.json` con el Personal Access Token (PAT) del usuario (`vmontoya.smartopsve@gmail.com`).
+  - Habilitadas herramientas de inspección remota, lectura/escritura de repositorios y gestión de PRs/Issues para ALFRED y subagentes.
+  - Creada guía de referencia en [[guia-configuracion-mcp-github|Guía de Instalación y Configuración del Servidor MCP para GitHub]].
+  - Enlazada la nueva guía en el pilar [[pilar-programacion|Área Programación]] y en el [[index|Índice Maestro]].
 
 ## [2026-09-18] maintenance/gardening | Jornada de Saneamiento Automatizado de la Wiki (ALFRED Gardener)
 - **Áreas**: All 6 Áreas (`trabajo`, `programacion`, `proyectos`, `ministerial`, `familiar`, `finanzas`)

@@ -48,6 +48,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[propuesta-infraestructura-linode-servidores-e-ia-mgh-plane|Propuesta Técnica y Financiera: Infraestructura Linode y Planes de IA]]: Análisis de presupuesto Linode VPS Shared y asistentes IA.
 - [[guia-configuracion-antigravity-devs-presupuesto|Manual Operativo: Configuración de Antigravity para Equipos]]: Paso a paso para onboarding de devs con presupuesto de $4.99/mes.
 - [[informe-entrega-task-2.2-2.3-ms-hr|Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)]]: Documentación técnica de candidatos, CVs S3 y puente onboarding.
+- [[sop-creacion-tickets-masterhub|SOP: Protocolo Oficial de Creación de Tickets en MasterHub Helpdesk]]: Procedimiento inalterable para la ingesta y registro directo de tickets en Aiven Cloud.
 
 ### 💻 2. Programación (Conocimiento Técnico & Lenguajes)
 - [[pilar-programacion|Área Programación - Conocimiento Técnico]]: Índice de lenguajes, frameworks y patrones.
@@ -61,6 +62,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[diagnostico-mcp-google-calendar-gmail|Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)]]: Diagnóstico técnico y pasos de reparación.
 - [[guia-configuracion-mcp-google-calendar-gmail|Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail)]]: Guía paso a paso multicuenta.
 - [[guia-configuracion-mcp-google-docs|Guía de Instalación y Configuración del Servidor MCP para Google Docs]]: Configuración multicuenta de Google Docs MCP.
+- [[guia-configuracion-mcp-github|Guía de Instalación y Configuración del Servidor MCP para GitHub]]: Registro del servidor oficial GitHub MCP (`github-personal`).
 
 ### 🚀 3. Proyectos (Software Independiente)
 - [[pilar-proyectos|Área Proyectos - Software Independiente]]: Índice general de proyectos.

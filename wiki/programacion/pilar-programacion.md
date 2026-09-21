@@ -32,6 +32,7 @@ Página principal de **Conocimiento de Programación y Desarrollo de Software**.
 - [[guia-configuracion-mcp-google-calendar-gmail|Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail)]]: Configuración multicuenta.
 - [[diagnostico-mcp-google-calendar-gmail|Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)]]: Reparación técnica.
 - [[guia-configuracion-mcp-google-docs|Guía de Instalación y Configuración del Servidor MCP para Google Docs]]: Configuración multicuenta de Google Docs MCP.
+- [[guia-configuracion-mcp-github|Guía de Instalación y Configuración del Servidor MCP para GitHub]]: Registro del servidor oficial GitHub MCP (`github-personal`).
 
 ## 💡 Conceptos Clave
 - [[llm-wiki-pattern|Concepto: LLM Wiki Pattern]]: Modelo de wiki persistente compilada por IA.
