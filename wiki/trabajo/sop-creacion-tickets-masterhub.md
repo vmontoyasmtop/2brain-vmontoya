@@ -55,23 +55,47 @@ Al recibir un reporte (audio de Telegram en `raw/inbox/` o texto en el chat), AL
 
 ---
 
-## ⚡ 3. Flujo Paso a Paso de Ejecución para ALFRED
+## ⚡ 3. Herramienta Estandarizada Única (`create-masterhub-tickets.py`)
+
+Para evitar crear scripts temporales o dispersos en diferentes computadoras, **ALFRED** cuenta con la herramienta CLI portable ubicada en la raíz de **2brain**:
+
+📍 `C:\Users\vmontoyaMG\Desktop\2brain\scripts\create-masterhub-tickets.py`
+
+### 💻 Comando Estandarizado 1: Creación de Usuarios (Shortcut)
+Para solicitudes de creación de usuarios de nuevo ingreso en cualquier sede:
+```powershell
+python scripts/create-masterhub-tickets.py --user-creation --name "Nombre Apellido" --ci "12345678" --cargo "Cargo" --site "Nombre Sede"
+```
+
+### 💻 Comando Estandarizado 2: Ticket Genérico (Incidencia / Requerimiento)
+Para fallas de soporte o requerimientos técnicos generales:
+```powershell
+python scripts/create-masterhub-tickets.py --title "Falla de Impresora Fiscal" --desc "No emite reportes Z" --site "Barquisimeto" --priority HIGH --type INCIDENT
+```
+
+### 📋 Comando 3: Consultar / Listar Tickets Recientes
+```powershell
+python scripts/create-masterhub-tickets.py --list
+```
+
+---
+
+## 🔄 4. Flujo Paso a Paso de Ejecución para ALFRED
 
 ```mermaid
 flowchart TD
-    A["🎙️ Reporte Recibido (Telegram Inbox / Chat)"] --> B["🔍 Extraer Sucursal, Solicitante y Falla"]
-    B --> C["📝 Formatear Campos según Estándar Prisma"]
-    C --> D["⚡ Ejecutar Script Nativo TSX en helpdesk-sm"]
+    A["🎙️ Reporte Recibido (Telegram Inbox / Chat)"] --> B["🔍 Extraer Sucursal, Solicitante y Detalle"]
+    B --> C["📝 Determinar Modo: User-Creation o Ticket Genérico"]
+    C --> D["⚡ Ejecutar python scripts/create-masterhub-tickets.py"]
     D --> E["☁️ Confirmar Registro en Aiven Cloud helpdesk_db"]
     E --> F["✅ Entregar Confirmación Ejecutiva con ID al Señor"]
 ```
 
 1. **Captura e Ingesta**:
-   - Si proviene de Telegram: Leer el archivo sidecar `.md` generado en `raw/inbox/`.
-   - Si proviene de dictado directo: Extraer la sucursal, el usuario afectado y la falla.
-2. **Ejecución en MasterHub**:
-   - Navegar a `C:\Users\vmontoyaMG\Desktop\MasterHub\helpdesk-sm`.
-   - Incorporar o ejecutar la inserción con `npx tsx prisma/create-today-tickets.ts`.
+   - Extraer la sucursal, el usuario afectado, C.I., cargo y la falla/requerimiento.
+2. **Ejecución Directa mediante CLI Centralizado**:
+   - Ejecutar la herramienta `python scripts/create-masterhub-tickets.py` con los parámetros correspondientes.
+   - Sin crear archivos `.ts` ni scripts temporales.
 3. **Verificación & Informe**:
    - Confirmar el retorno exitoso de `id`, `status` y `createdAt`.
    - Presentar un informe ejecutivo claro con el ID único asignado.
