@@ -15,7 +15,18 @@ tags:
 **Ubicación Local en Escritorio**: `C:\Users\vmontoyaMG\Desktop\MG-HUB`  
 **Área**: [[pilar-proyectos|Área Proyectos - Software Independiente]]  
 **Repositorio Git (`team`)**: `git@github.com:vmontoyamg-png/MG-HUB.git`  
-**Subagentes Evaluadores**: [Subagente Backend JS Expert](../../agents/backend_js_expert.md) & [Subagente Frontend UI Expert](../../agents/frontend_ui_expert.md)
+**Agente Líder Orquestador**: 🧙‍♂️ **Grandalf** (`C:\Users\vmontoyaMG\Desktop\2brain-MG\agents\grandalf.md`)  
+**Equipo de Subagentes Especializados**:
+- ⚔️ **Aragorn** (`aragorn_pm.md`): PM & Scrum Master
+- ⛏️ **Gimli** (`gimli_backend.md`): Backend NestJS & APIs
+- 🏹 **Legolas** (`legolas_ui.md`): Frontend Next.js & UI/UX
+- 🔮 **Galadriel** (`galadriel_db.md`): PostgreSQL & Prisma ORM
+- 💍 **Frodo** (`frodo_devops.md`): Docker Compose & Nx Monorepo
+- 👑 **Elrond** (`elrond_code.md`): Arquitectura Fullstack
+- 🏛️ **Boromir** (`boromir_finance.md`): Módulo `finance-ms`
+- 🛡️ **Samwise** (`samwise_it.md`): Operaciones IT & Helpdesk
+- 📜 **Merry** (`merry_docs.md`): Documentación Técnica
+- 🖋️ **Pippin** (`pippin_writer.md`): Contenido Ejecutivo
 
 ---
 
