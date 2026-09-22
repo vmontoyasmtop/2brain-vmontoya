@@ -13,6 +13,7 @@ tags:
 **MasterHub** es una plataforma de software empresarial basada en una arquitectura distribuida de **Microservicios NestJS** unificada con un frontend Next.js mediante **npm workspaces** y **Nx Monorepo**.
 
 **Área**: [[pilar-proyectos|Área Proyectos - Software Independiente]]  
+**Repositorio Git (`team`)**: `git@github.com:vmontoyamg-png/MG-HUB.git`  
 **Subagentes Evaluadores**: [Subagente Backend JS Expert](../../agents/backend_js_expert.md) & [Subagente Frontend UI Expert](../../agents/frontend_ui_expert.md)
 
 ---
