@@ -12,6 +12,26 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 ---
+## [2026-09-22] feat/mg-hub | Despliegue Paralelo de la Comunidad del Anillo: Vacantes Correlativas VAC & Matriz Head Count 2026
+- **Área**: 🏢 `trabajo` & 💻 `programacion` & 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf**, 🔮 **Galadriel**, ⛏️ **Gimli**, 🏹 **Legolas** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - **🔮 Galadriel (DB & Prisma)**:
+    - Enriquecido el modelo `VacancyRequest` en `apps/hr-ms/prisma/schema.prisma` con `code @unique` (`VAC-XXX`), `source`, `hiredDate`.
+    - Creada la entidad `HeadCountPosition` (`siteCode`, `positionName`, `approved`, `installed`, `needed`, `year`).
+    - Sincronizada `hr_db` en Aiven Cloud (`npx prisma db push`) con 0% pérdida de datos.
+    - Ejecutado el seed masivo [`seed-vacancies.js`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/hr-ms/prisma/seed-vacancies.js), insertando **114 vacantes reales** y **255 posiciones de Head Count** para 15 sedes.
+  - **⛏️ Gimli (Backend NestJS)**:
+    - Desarrollado el módulo [`HeadcountModule`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/hr-ms/src/headcount/headcount.module.ts) con 8 patrones TCP y endpoints REST en `api-gateway`.
+    - Implementada la regla de negocio de Head Count en `VacancyRequestService`: si `needed <= 0` en solicitud por `CRECIMIENTO`, el estado pasa a `REQUIRES_SPECIAL_APPROVAL`.
+    - Generador automático de correlativo `VAC-XXX`.
+    - Verificada compilación con 0 errores y 28 tests unitarios pasados.
+  - **🏹 Legolas (Frontend UI Next.js)**:
+    - Diseñada la vista de Vacantes ([`/dashboard/hr/vacancies`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/app/dashboard/hr/vacancies/page.tsx)) con badges dorados `VAC-XXX`, filtros por BU y KPIs.
+    - Implementada la **Matriz Interactiva de Head Count 2026** ([`/dashboard/hr/headcount`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/app/dashboard/hr/headcount/page.tsx)) con semáforo dinámico de déficit (rojo), equilibrio (verde) y sobrecupo (amarillo/azul), drill-down de colaboradores instalados y botón `+ Abrir Vacante`.
+  - **Sincronización Git**: Cambios integrados y comiteados en `MG-HUB` (Commit `69c2a75`).
+
+---
 ## [2026-09-22] feat/rrhh | Ingesta, Auditoría y Mapeo del Sistema de Reclutamiento de RRHH (Master Group)
 - **Área**: 🏢 `trabajo`
 - **Agente Responsable**: 🤵 **ALFRED**
