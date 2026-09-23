@@ -38,21 +38,17 @@ flowchart LR
 - [ ] **En Progreso**: Armar la predicación final del Sermón 1 para el domingo.
 - [ ] **Próximo**: Preparar la guía de preguntas para grupos pequeños/células.
 
-### 🏢 2. Area Trabajo (Analista IT & Soporte Xetux)
-- [x] **Actualización de Tasa de Bs en Xetux (17-Sep)**: Tasa oficial actualizada correctamente a primera hora.
-- [ ] **Agendado en Google Calendar Trabajo (17-Sep 09:00 – 09:30 AM)**: 📋 `[Q1] Pasar presupuesto de servidor MasterHub y costos de planes de IA` (Elaboración y entrega a las 09:00 AM).
-- [ ] **Agendado en Google Calendar Trabajo (17-Sep 02:30 – 03:30 PM)**: 🔧 `[Q2] Configuración de Server NAS Marketing` (Pruebas de red, almacenamiento y accesos).
-- [ ] **Agendado en Google Calendar Trabajo (17-Sep 03:30 – 04:00 PM)**: 📧 `[Q1] Enviar correo: Presupuesto de Redes y Movimiento de Rack` (Antes de las 5:00 PM).
-- [x] **Agendado en Google Calendar Trabajo (17-Sep 04:00 – 04:30 PM)**: 📧 `[Q1] Enviar correo: Presupuesto de Servidores MasterHub y Planes de IA` (Con enlace a Google Docs PROP-MGH-2026-004, antes de las 5:00 PM).
-- [x] **Reunión de Dirección Ejecutiva**: Presentación aprobada por el Sr. Emiliano.
-  - [x] Aprobada la contratación del **Soporte Técnico IT Jr. (Nivel 1)**.
-  - [x] Aprobada la ejecución del **Módulo de Finanzas (`finance-ms`)** bajo **Plan B Exprés ($6,000 USD / 6 sem)**.
-- [x] **Perfil de Cargo IT Jr.**: Creado y publicado en Google Docs corporativo con la plantilla *"Documento con Banner"*.
-- [x] **Google Docs & Tasks MCP**: Servidores MCP multicuenta y Google Tasks API configurados y autenticados.
-- [ ] **Agendado en Google Calendar Trabajo (18-Sep 03:00 PM – 04:00 PM)**: 🔧 `[Q2] Reunión con CEO Simón León — Servidor de Marketing` (Revisión de configuración, accesos y almacenamiento del servidor NAS/MKT).
-- [ ] **Agendado en Google Calendar Trabajo (18-Sep 04:00 PM – 05:00 PM)**: 🧪 `[Q1] QA Audit & Testing de TASK 2.2 y TASK 2.3 en MasterHub (Candidatos, CVs en S3 y Puente Candidato ➔ Empleado con 30 días de prueba)` (Ver informe en [[informe-entrega-task-2.2-2.3-ms-hr|Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)]]).
-- [x] **MasterHub (MS-HR) — TASK 2.2 & TASK 2.3 Entregadas (100%)**: Backend, Frontend, MinIO S3, REST APIs y modal UI probados y listos para QA.
-- [ ] **Próximo (Toma de Turno)**: Iniciar el Modelado del **Sprint 1 de Finanzas (`finance-ms`)** (17/09 – 27/09 | CxP & Motor SENIAT).
+### 🏢 2. Area Trabajo (Analista IT & Soporte Xetux / MasterHub)
+- [x] **Ingesta y Auditoría de Reclutamiento RRHH**: Descargado y parseado el libro maestro de Control de Reclutamiento (1.996 entrevistas, 117 vacantes, matriz Head Count 2026).
+- [x] **Despliegue Simultáneo de la Comunidad del Anillo (Vacantes & Head Count 2026)**:
+  - [x] 🔮 **Galadriel**: Schema Prisma enriquecido (`code @unique`, `source`, `HeadCountPosition`) y seed de 114 vacantes y 255 posiciones de dotación en PostgreSQL Aiven Cloud (`hr_db`).
+  - [x] ⛏️ **Gimli**: Módulo `HeadcountModule`, 8 patrones TCP, endpoints REST en `api-gateway`, correlativo `VAC-XXX` y regla de negocio defensiva por cupo disponible (`N <= 0`).
+  - [x] 🏹 **Legolas**: Vistas `/dashboard/hr/vacancies` y `/dashboard/hr/headcount` con semáforo dinámico, modal drill-down de colaboradores instalados y botón `+ Abrir Vacante`.
+  - [x] 💍 **Frodo**: Construcción y recreación de contenedores Docker en `localhost:3000` y `localhost:3001` (HTTP 200).
+- [x] **Sincronización Git**: Cambios integrados y subidos al repositorio remoto del equipo (`team/main`).
+- [ ] **Agendado en Google Calendar Trabajo (23-Sep 11:00 AM – 12:00 PM)**: 🧪 `[Q1] QA Test MS-HR: Tasks 2.2 y 2.3 (Candidatos, CVs S3 y Puente Onboarding)`.
+- [ ] **Agendado en Google Calendar Trabajo (23-Sep 02:00 PM – 03:00 PM)**: 🧪 `[Q1] QA Test MS-HR: Vacantes Correlativas VAC-XXX y Matriz Head Count 2026`.
+- [ ] **Próximo (Toma de Turno)**: Ejecución de las sesiones de QA agendadas y continuación con la integración de `@masterhub/google-integration` (Calendar & Gmail).
 
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
 - [x] **WebCastro**: Auditoría de subagentes completada, migración Vercel corregida.
