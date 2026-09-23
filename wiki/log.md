@@ -12,6 +12,26 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 ---
+## [2026-09-22] feat/rrhh | Ingesta, Auditoría y Mapeo del Sistema de Reclutamiento de RRHH (Master Group)
+- **Área**: 🏢 `trabajo`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Descargado e inspeccionado el libro maestro corporativo de Google Sheets de RRHH (`Control de Reclutamiento`, propiedad de Franmarys González / Eva Colmenares).
+  - Extraídas y procesadas las 5 hojas de trabajo en `raw/trabajo/recruitment_parsed/`: `Entrevistas.csv` (1.996 postulantes históricos), `Vacantes.csv` (117 registros con códigos BU), `Head Count.csv` (plantilla autorizada 2026), `Llamados no asistieron.csv` (33 registros) y `Entrevistas Area Administrativa.csv` (evaluaciones cualitativas).
+  - Elaborada la guía técnica de mapeo de datos y plan de ingesta hacia la base de datos `hr_db` (Prisma ORM) en [[analisis-sistema-reclutamiento-rrhh|Análisis Técnico: Documento Maestro de Reclutamiento y Selección RRHH]].
+  - Registrada y completada la tarea en ClickUp `86bc5jbfa` en la Fase 2 de MS-HR.
+
+---
+## [2026-09-22] docs/cms | Manual Tecnológico y Guía de Gestión de Contenido en Payload CMS (WebCastro)
+- **Área**: 🚀 `proyectos` & 💻 `programacion`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Elaborado el manual tecnológico integral para **WebCastro** ([MANUAL_TECNICO_GESTION_CONTENIDO_PAYLOAD.md](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/docs/MANUAL_TECNICO_GESTION_CONTENIDO_PAYLOAD.md)), detallando la arquitectura informativa de Payload CMS v3.
+  - Documentado el mapa para ubicar contenidos: Colecciones (`Pages`, `Proyectos`, `Posts`, `Media`, `Consultas`) y Globales (`Header`, `Footer`).
+  - Especificado el catálogo completo de los 19 bloques modulares (`Hero`, `AboutUs`, `Services`, `Process`, `Projects`, etc.) que componen el `BlocksRenderer`.
+  - Explicado el flujo de creación paso a paso de páginas, obras de portafolio, optimización de medios en Vercel Blob y revalidación ISR en tiempo real.
+  - Actualizado el estado del proyecto en [[webcastro|Proyecto: WebCastro]].
+
 ## [2026-09-22] feat/orchestration | Protocolo Obligatorio de Orquestación y Delegación a Subagentes & Categorización Helpdesk
 - **Área**: 🏢 `trabajo` & 💻 `programacion`
 - **Agente Responsable**: 🤵 **ALFRED**

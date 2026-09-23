@@ -49,6 +49,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[guia-configuracion-antigravity-devs-presupuesto|Manual Operativo: Configuración de Antigravity para Equipos]]: Paso a paso para onboarding de devs con presupuesto de $4.99/mes.
 - [[informe-entrega-task-2.2-2.3-ms-hr|Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)]]: Documentación técnica de candidatos, CVs S3 y puente onboarding.
 - [[sop-creacion-tickets-masterhub|SOP: Protocolo Oficial de Creación de Tickets en MasterHub Helpdesk]]: Procedimiento inalterable para la ingesta y registro directo de tickets en Aiven Cloud.
+- [[analisis-sistema-reclutamiento-rrhh|Análisis Técnico: Documento Maestro de Reclutamiento y Selección RRHH]]: Auditoría, esquema y mapeo de 1.996 postulantes históricos y Head Count hacia MasterHub.
 
 ### 💻 2. Programación (Conocimiento Técnico & Lenguajes)
 - [[pilar-programacion|Área Programación - Conocimiento Técnico]]: Índice de lenguajes, frameworks y patrones.

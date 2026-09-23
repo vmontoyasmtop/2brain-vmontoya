@@ -1,0 +1,251 @@
+{
+  "Entrevistas": {
+    "total_rows": 1996,
+    "csv_path": "C:\\Users\\vmontoyaMG\\Desktop\\2brain\\raw\\trabajo\\recruitment_parsed\\Entrevistas.csv",
+    "sample_rows": [
+      [
+        "",
+        "Control de Entrevistas",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "#",
+        "Nombre",
+        "Cargo Postulado",
+        "Domicilio",
+        "CV (link)",
+        "Medio de Postulación",
+        "Fecha de Entrevista",
+        "Entrevistado",
+        "Devengado actual"
+      ],
+      [
+        "",
+        "1.0",
+        "Dargelis Alexandra Ramirez",
+        "Empaquetador",
+        "",
+        "Dargelis Ramirez Cajera (10.20am).png",
+        "",
+        "45994.0",
+        "Mesa, R",
+        ""
+      ],
+      [
+        "",
+        "2.0",
+        "Daniela Alejandra Alvarado Alvis",
+        "Empaquetador",
+        "",
+        "Cajera Daniela Alvarado.jpg",
+        "",
+        "45994.0",
+        "Villarroel, A",
+        ""
+      ]
+    ]
+  },
+  "Vacantes": {
+    "total_rows": 117,
+    "csv_path": "C:\\Users\\vmontoyaMG\\Desktop\\2brain\\raw\\trabajo\\recruitment_parsed\\Vacantes.csv",
+    "sample_rows": [
+      [
+        "",
+        "Control de Vacantes",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Vacantes Activas",
+        "7"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "46287"
+      ],
+      [
+        "",
+        "ID Vacante",
+        "Cargo",
+        "Unidad de Negocio",
+        "Fecha Apertura",
+        "Mes",
+        "Año",
+        "Fecha Ingreso",
+        "Estatus",
+        "Fuente de Reclutamiento"
+      ],
+      [
+        "",
+        "VAC-001",
+        "Ayudante Integral",
+        "BU1BLT",
+        "46210.0",
+        "July",
+        "2026.0",
+        "46221.0",
+        "Cubierta",
+        ""
+      ]
+    ]
+  },
+  "Llamados no asistieron": {
+    "total_rows": 33,
+    "csv_path": "C:\\Users\\vmontoyaMG\\Desktop\\2brain\\raw\\trabajo\\recruitment_parsed\\Llamados no asistieron.csv",
+    "sample_rows": [
+      [
+        "",
+        "",
+        "Control Llamadas",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "Nombre",
+        "Cargo Postulado",
+        "CV",
+        "Fecha de Entrevista",
+        "Entrevistado",
+        "Canditado",
+        "Sede",
+        "Fecha de Ingreso"
+      ],
+      [
+        "",
+        "1.0",
+        "Will Alejandro Macero",
+        "Cocinero",
+        "si",
+        "45994.0",
+        "No Entrevistado",
+        "Si",
+        "",
+        ""
+      ],
+      [
+        "",
+        "2",
+        "Gabriela Alejandra Torres",
+        "Cajera - Vendedora",
+        "si",
+        "45994.0",
+        "No Entrevistado",
+        "Si",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Head Count": {
+    "total_rows": 28,
+    "csv_path": "C:\\Users\\vmontoyaMG\\Desktop\\2brain\\raw\\trabajo\\recruitment_parsed\\Head Count.csv",
+    "sample_rows": [
+      [
+        "",
+        "",
+        "",
+        "HEAD COUNT APROBADO 2026",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "BU1BLT",
+        "",
+        "",
+        "BU2BLB",
+        "",
+        ""
+      ],
+      [
+        "Posicion",
+        "TA",
+        "TI",
+        "TN",
+        "A",
+        "I",
+        "N",
+        "A",
+        "I",
+        "N"
+      ],
+      [
+        "Gerente",
+        "15",
+        "17",
+        "-2",
+        "1.0",
+        "1.0",
+        "0",
+        "1.0",
+        "1.0",
+        "0"
+      ]
+    ]
+  },
+  "Entrevistas Area Administrativa": {
+    "total_rows": 10,
+    "csv_path": "C:\\Users\\vmontoyaMG\\Desktop\\2brain\\raw\\trabajo\\recruitment_parsed\\Entrevistas Area Administrativa.csv",
+    "sample_rows": [
+      [
+        "ENTREVISTAS ADMINISTRATIVAS "
+      ],
+      [
+        "Contacto: ",
+        "Descripcion",
+        "Cv",
+        "Area",
+        "Cargo",
+        ""
+      ],
+      [
+        "Ezequiel Diaz: 04241839219",
+        "Trabaja En richi tortas, desde el 2025 un año y dos meses, como analista de recursos humanos, llevo el porceso de liquidacion, el calculcuo, el historico de prestaciones soociales, el intra, las declraciones gubernamentanles, control de gastos de recursos humanos, eh uniforme y otro tipo de solicuitudes de la gerente, adiconalmente eso cualquier otra solicitud, egreso, kpi. reclutamientoa a veces. control de uniformes lo cree el control de prestaciones, y de liquidaciones. no habia un sistema como tal y lo desarolle como tal, son varias empresas, esta la empresa de industria richi, llevamos todo loq ue es la aprte de parafiscal. Yo soy tsu en gerencia finaciera, mi mayor expereincia en administracion. Cajero:  3 años cajero en el banco de venezuela, anteriomente asesor de negocio, cajero integral en taquilla. apertura de cuentas, cubri tesoreria, sali por salario. los procesos se cumplian bien, los bancos tienen procesos muy establecidos. Elaboraba el libro de ventas, libro de compras auditoria de caja recaudacion de divisas, delcaracion de iva. De Salva Food  egrese porque cerraron muchas surcusales, muchas deudas y reduccion de personal. me encanta administracion, control cuentas por pagar, conciliaciones bancarias.  despues inversiones la maxima. lo mismo control admiistrativ. dure poco porque no ke gustsba las recomendaciones que yo daba, no me queria y bueno hice la carta de renuncia, darle recomendaciones por el control de los prestamos. esto si fue algo nuevo para mi, le prestaba servicio a los ministerior de obras publicas, yo llevaba la relacion de pagos, control de cuentas por pagar. control de cuentas por cobrar, y le hacia una conciliacion caja chica. petare, pareja, no hijos. edad esposo 35. farmacia sub gerente, en petare. ver peliculas leer, investigar la parte de promagracion. me gustaria estudiar pero cuando exista la posibilidad. la ubicacion esta bien. aspiracion salarial 500/600. 450. mas el bono alimneticion. ",
+        "Ashley ezequiel.pdf",
+        "Finanzas ",
+        "Integral ",
+        "Elegible"
+      ],
+      [
+        "Eylis Mota",
+        "Actualmente como cajera, ya que no conseguia nada, anteriomente ayudante de enfermeria, como cajera todo lo que va de año. Anteriomente en de panes, estaba en la parte de mercadeo, no sabia nada y mi jefa me dio la oportunidad, un año y 4 meses. me encaraba de la logistica de promocionar el pan, documentar cada parte donde ibamos, las desgutaciones, esa parte de cracion de contenido. sali por temas de salud. Anteriomente de eso en un bodegon y despues de eso un pool bunker bar, se la entregaron a la jamoneria el prado. Recbia la mercancia, le pagaba a los provedores, como 14 provedores, cuadrar la caja en la noche, en ese momento habia muchi flujo de efectivo. fue mi mejor trabajode roche mucho dinero.. anteriomente a eso en Banco occidental de descuento.  me gradue en la Unexca, pero antes de eso se llamaba francisco de Miranda, en el 2022 termine el tsu. Anteriomente habia trabajado con tres tipos de sistemas en el banco, uno el cual se trabaja con el gobierno. pero los dos ultimos he trabajado con Profit. Vivo en santa cruz del este, vivo con mi mama, y un sobrino. tengo 33 años. no hijos, no vehiculo propio. con disponibilidad horaria. trabaje en cuentas por pagar en manufacturas puro y simple. manejo  de excel 6, manejo de google drive. domingo y lunes de 6am hasta las 4pm y los otros dias es de 11am a 9pm. Misma aspiracion salarial. ",
+        "Eylis Mota",
+        "Finanzas ",
+        "Integral ",
+        "Descaratado"
+      ]
+    ]
+  }
+}

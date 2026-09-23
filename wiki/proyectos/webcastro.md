@@ -56,6 +56,7 @@ Para garantizar la mantenibilidad y evolución sin fricciones de **WebCastro**, 
 - [x] **Plantilla de Correo HTML con Respuesta WhatsApp**: Controlador REST en [route.ts](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/app/api/contact/route.ts) con plantilla HTML de alta conversión.
 - [x] **Optimización SEO, Metadatos & Sitemap**: Metadatos globales, OpenGraph, Twitter Cards, `robots.txt` y `sitemap.xml` dinámico.
 - [x] **Solución a Fallo Vercel Build (`enum_pages_blocks_cta_button_action already exists`)**: Convertidas las declaraciones de tipos ENUM, tablas, claves foráneas e índices en la migración [20260912_022810.ts](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/src/migrations/20260912_022810.ts) a bloques PL/pgSQL totalmente **idempotentes** con `DO $$ BEGIN ... EXCEPTION WHEN duplicate_object THEN null; END $$;` e `IF NOT EXISTS`. Subido a `origin/main` para desbloquear la compilación automática en Vercel.
+- [x] **Manual Tecnológico de Gestión de Contenido (Payload CMS)**: Documentación integral de arquitectura informativa, catálogo de 19 bloques modulares, gestión de colecciones/globales, live preview y revalidación ISR en [MANUAL_TECNICO_GESTION_CONTENIDO_PAYLOAD.md](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/docs/MANUAL_TECNICO_GESTION_CONTENIDO_PAYLOAD.md).
 - [ ] **Pendiente Único (Configuración de Gmail SMTP)**: Colocar las credenciales reales en `.env` cuando se disponga de la Contraseña de Aplicación de 16 caracteres (`SMTP_USER`, `SMTP_PASS`, `CONTACT_EMAIL_RECEIVER`).
 
 ---
