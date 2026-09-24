@@ -12,6 +12,17 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 ---
+## [2026-09-23] feat/plane-migration | Migración Completa de Tareas de MasterHub desde ClickUp a Plane
+- **Áreas**: 🚀 `proyectos` & 🏢 `trabajo`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Resumen de la Operación**:
+  1. **Extracción Integral de ClickUp**: Se exportaron y procesaron las 97 tareas y épicas de la lista *1er Fase* de MasterHub (`https://app.clickup.com/90141246758/v/l/li/901418749229`).
+  2. **Configuración de Módulos en Plane**: Se identificaron y mapearon los módulos en el proyecto `MasterHub` (ID: `b60ea600-1f86-4177-87df-6b6ed0063874`) del workspace `it---mg`: `Finanzas-MS` (58), `HR-MS` (20), `Helpdesk-MS` (11), `Inventario-MS` (4), `Auth-MS` (2) y creación de `MKT-MS` (1).
+  3. **Script de Migración Resiliente**: Desarrollado y ejecutado script en Node.js con autenticación por API Token (`plane_api_...`), manejo inteligente de *rate-limiting* (código 429 con *exponential backoff* dinámico según cabecera `retry-after`) y deduplicación idempotente.
+  4. **Resultado**: 100% de las tareas migradas con éxito (92 nuevas creadas + 5 preexistentes, 0 errores, total 98 en Plane). Estados (`Backlog`, `Todo`, `In Progress`, `Done`), descripciones completas en Markdown y vinculación a módulos garantizados.
+  5. **Documentación**: Actualizada la nota central en [[plane-gestion-proyectos|Proyecto: Plane - Plataforma de Gestión de Proyectos]].
+
+---
 ## [2026-09-23] feat/webcastro | Despliegue de Módulo de Consultas, Actualización de WhatsApp y Mejoras UX
 - **Áreas**: 🚀 `proyectos` & 💻 `programacion`
 - **Agente Responsable**: 🤵 **ALFRED**
