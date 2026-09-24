@@ -12,6 +12,25 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 ---
+## [2026-09-23] feat/github-actions-cicd | Pipelines de Despliegue Automatizado para Staging y Producción (MG-HUB)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED** & 💍 **Frodo** (DevOps & CI/CD Master)
+- **Resumen de la Operación**:
+  1. **Pipeline de Staging (`deploy-staging.yml`)**:
+     - Disparador: Evento `push` al fusionar un PR aprobado en la rama **`staging`**.
+     - Despliegue autónomo vía SSH conectando al servidor VPS, sincronizando `staging` y ejecutando `docker compose -f docker-compose.staging.yml up -d --build`.
+     - Resultado en vivo: **`https://dev.mastergroupve.com/`** (Puertos 3010 para API Gateway y 3011 para Frontend).
+  2. **Pipeline de Producción (`deploy-production.yml`)**:
+     - Disparador: Evento `push` al aprobar y mergear el PR desde `staging` hacia **`main`** tras la validación de QA y el Project Manager.
+     - Despliegue autónomo vía SSH al servidor de producción, sincronizando `main` y ejecutando `docker compose -f docker-compose.yml up -d --build`.
+     - Resultado en vivo: **`https://masterhub.mastergroupve.com/`** (Puertos 3001 para API Gateway y 3000 para Frontend).
+  3. **Configuraciones de Proxy Nginx**:
+     - Creado `deploy/nginx/masterhub.mastergroupve.com.conf` con terminación SSL (Certbot Let's Encrypt) y enrutamiento hacia los puertos 3000/3001.
+     - Documentada la guía técnica completa en `docs/CI_CD_WORKFLOW.md`.
+  4. **Sincronización en GitHub**:
+     - Creada rama `feature/MGH-DEVOPS-cicd-pipelines`, mergeada y publicada en `dev`, `staging` y `main` en el remoto `team` (`vmontoyamg-png/MG-HUB.git`).
+
+---
 ## [2026-09-23] chore/git-workflow | Estandarización de Flujo Git (Feature Branches & Integración en dev)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
 - **Agente Responsable**: 🤵 **ALFRED**
