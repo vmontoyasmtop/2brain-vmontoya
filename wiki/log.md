@@ -12,6 +12,20 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 ---
+## [2026-09-23] chore/git-workflow | Estandarización de Flujo Git (Feature Branches & Integración en dev)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Resumen de la Operación**:
+  1. **Alineación con Vlad & Política del Equipo**: Se acordó formalmente el estándar de desarrollo: ramas `feature/<nombre>` creadas a partir de `dev`, commits con formato *Conventional Commits* (`feat(...)`, `fix(...)`, etc.) y envío/merge de Pull Requests dirigidos hacia la rama **`dev`** (desarrollo y staging continuo).
+  2. **Actualización de WebCastro**:
+     - Sincronizada la rama `dev` con `main` vía fast-forward (`git merge main --ff-only`).
+     - Subidos a `origin/dev` todos los últimos cambios (persistencia de consultas en BD Neon, panel Payload CMS, WhatsApp flotante, checklist dinámico y fix de compilación en Vercel).
+  3. **Actualización de MasterHub (`MG-HUB`)**:
+     - Actualizadas las políticas oficiales en `BRANCHING_POLICY.md` y `DEVELOPER_GUIDE.md` para consagrar `dev` como la rama base de integración y staging continuo (`https://dev.mastergroupve.com/`).
+     - Subida la rama `feature/MGH-FINANCE-scaffold` con el andamiaje del microservicio de finanzas y scripts de despliegue SSL Nginx.
+     - Integrada la rama `feature/MGH-FINANCE-scaffold` en `dev` y publicada en el remoto `team/dev`.
+
+---
 ## [2026-09-23] feat/plane-migration | Migración Completa de Tareas de MasterHub desde ClickUp a Plane
 - **Áreas**: 🚀 `proyectos` & 🏢 `trabajo`
 - **Agente Responsable**: 🤵 **ALFRED**
