@@ -12,6 +12,28 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 ---
+## [2026-09-23] chore/handover | Cierre de Turno y Jornada Nocturna
+- **Áreas**: 🏢 `trabajo`, 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: 🤵 **ALFRED** & 💍 **Frodo** (Compañía de MG-HUB)
+- **Resumen Ejecutivo de la Jornada**:
+  1. **WebCastro (100% Entregado y en Producción)**: 
+     - Conectada persistencia de consultas web en base de datos PostgreSQL Neon y panel Payload CMS con migración idempotente.
+     - Actualizados botones de WhatsApp (`+58 422 038-7323` / `+58 412 964-3616`).
+     - Badge Sobre Nosotros reubicado, párrafos justificados y checklist dinámico en Hero "Quiénes Somos".
+     - Corrección de build en Vercel (`--webpack`) y sincronización completa de la rama `dev` con `main`.
+  2. **Migración Completa de ClickUp a Plane (MasterHub)**:
+     - Extraídas e importadas 97 tareas y sub-épicas de la lista *1er Fase* de ClickUp al workspace `it---mg` / proyecto `MasterHub` en Plane (`projects.mastergroupve.com`).
+     - Asignadas a sus 6 módulos (`Finanzas-MS`, `HR-MS`, `Helpdesk-MS`, `Inventario-MS`, `Auth-MS`, `MKT-MS`).
+     - Creado y configurado el nuevo estado y bloque de flujo `Testing` en color violeta para el Board Kanban.
+  3. **Estandarización Git & Flujo de Desarrollo (Acuerdo con Vlad)**:
+     - Consagrada la rama `dev` como base de integración y staging continuo junto a ramas `feature/*` y Conventional Commits en `BRANCHING_POLICY.md` y `DEVELOPER_GUIDE.md`.
+  4. **Pipelines CI/CD Automatizados (GitHub Actions)**:
+     - Pipeline `deploy-staging.yml` para despliegues autónomos a `https://dev.mastergroupve.com/` al mergear en `staging`.
+     - Pipeline `deploy-production.yml` para despliegues autónomos a `https://masterhub.mastergroupve.com/` al aprobar el PR hacia `main`.
+     - Proxy Nginx con SSL (`masterhub.mastergroupve.com.conf`) y guía `docs/CI_CD_WORKFLOW.md`.
+  5. **Cierre de Procesos**: Detenidas limpiamente las instancias locales del bot de Telegram (`telegram_bot.py`) para prevenir conflictos multi-instancia en el próximo inicio.
+
+---
 ## [2026-09-23] feat/github-actions-cicd | Pipelines de Despliegue Automatizado para Staging y Producción (MG-HUB)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
 - **Agentes Responsables**: 🤵 **ALFRED** & 💍 **Frodo** (DevOps & CI/CD Master)
