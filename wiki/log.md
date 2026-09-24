@@ -12,6 +12,20 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 ---
+## [2026-09-23] feat/webcastro | Despliegue de Módulo de Consultas, Actualización de WhatsApp y Mejoras UX
+- **Áreas**: 🚀 `proyectos` & 💻 `programacion`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Resumen de la Jornada**:
+  1. **Auditoría & Cierre de Sprints Anteriores en ClickUp**: Marcadas como completadas (`Complete`) 5 tareas históricas de WebCastro (`86bc5h568`, `86bc5h4x2`, `86bc5h4rn`, `86bc5h4er`, `86bbktye7`).
+  2. **Persistencia de Consultas Web en BD & Panel Payload**: Conectada la colección `Consultas` con migración idempotente `20260919_032259_add_consultas.ts` y guardado directo desde el controlador API en Neon PostgreSQL.
+  3. **Actualización de WhatsApp Flotante**: Números actualizados a Atención 1 (`+58 422 038-7323`) y Atención 2 (`+58 412 964-3616`) en `WhatsAppFloatingButton.tsx` (ClickUp: `86bc6k2ru`).
+  4. **Optimización Visual Sobre Nosotros**: Reubicado el badge flotante "100% Calidad Garantizada" a `-bottom-14 sm:-bottom-16` para evitar solapamiento con la fotografía y aplicadas clases `text-justify` y `hyphens-auto` (ClickUp: `86bc6k76n` y `86bc6kc6j`).
+  5. **Corrección de Toast en QuoteModal**: Solucionado bug asíncrono donde `e.currentTarget` se perdía tras el `await fetch`, asegurando la muestra del toast verde confirmatorio (ClickUp: `86bc6knqc`).
+  6. **Solución a Build Vercel (PostCSS/Webpack)**: Restablecido el flag `--webpack` en `package.json` y saneado `@import` redundante en `globals.css` (ClickUp: `86bc6ktz5`).
+  7. **Checklist Dinámico en Hero (Quiénes Somos)**: Implementado parseo inteligente en `Hero/Component.tsx` para convertir listas/objetivos con viñetas en tarjetas con checks dorados y párrafos justificados (ClickUp: `86bc6ky1r`).
+  8. **Despliegue a Producción**: Commits `7b5929b`, `c9ab13e`, `427371e` y `906ec9f` subidos a `origin/main` en GitHub (`MasterGroupVE/WebCastro.git`).
+
+---
 ## [2026-09-22] chore/handover | Cierre de Turno y Jornada
 - **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
 - **Agentes Responsables**: 🤵 **ALFRED** & 🧙‍♂️ **Grandalf** (con la Comunidad del Anillo)
