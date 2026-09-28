@@ -53,17 +53,34 @@ tags:
 
 ---
 
-## 📌 4. Hoja de Ruta (Roadmap de Activación)
+## 📢 4. Workspace Activo: Marketing (`marketing`) en Plane
+
+- **Instancia**: `https://projects.mastergroupve.com/marketing/`
+- **ID de Workspace**: `87bc0a43-d43d-47cb-b7ed-20895a642fd7`
+- **Proyectos Configurados y Migrados**:
+  1. 📢 `Marketing` (`MARKE`): 57 tareas (51 principales + 6 subtareas, marcas integradas).
+  2. 🎪 `Eventos` (`EVENTOS`): 5 tareas (Polar, Avavit, Canguro, etc.).
+  3. 🛡️ `ARGUS` (`ARGUS`): 4 tareas de marketing y producción audiovisual.
+  4. 👥 `Creadores In House` (`CREAINH`): 3 tareas operativas de briefs y pautas.
+  5. 📱 `Pantalla Móvil` (`PANTALLAMV`): 1 tarea de coordinación.
+- **Historial de Importación**:
+  - Migración exitosa de **70 tareas y proyectos** vía script automatizado en Node.js ([`import_marketing_to_plane.js`](file:///C:/Users/vmontoyaMG/Desktop/2brain/scripts/import_marketing_to_plane.js)).
+  - Limpieza de tareas demo predeterminadas, conservación de marcas (etiquetas) y enlaces externos.
+
+---
+
+## 📌 5. Hoja de Ruta (Roadmap de Activación)
 
 - [x] **Fase 1**: Análisis técnico de requisitos y arquitectura base.
 - [x] **Fase 2**: Despliegue de instancia en producción (`projects.mastergroupve.com`).
-- [x] **Fase 3**: Configuración de Workspace (`it---mg`), Proyecto (`MasterHub`), Módulos y Roles.
-- [x] **Fase 4**: Migración masiva de tareas activas desde ClickUp (97/97 tareas de la 1ra Fase importadas exitosamente con API REST).
+- [x] **Fase 3**: Configuración de Workspaces (`it---mg` y `marketing`), Proyectos, Módulos y Roles.
+- [x] **Fase 4**: Migración masiva de tareas activas desde ClickUp (97 tareas en MasterHub) y desde exports de Plane (70 tareas en Marketing).
 - [ ] **Fase 5**: Configuración de Webhooks y sincronizaciones automáticas (Telegram / Discord / GitHub CI).
 
 ---
 
 ## 🔗 Enlaces Relacionados
+- [[sop-importacion-migracion-tareas-plane|SOP: Protocolo y Script de Importación Masiva de Proyectos y Tareas en Plane]]
 - [[pilar-proyectos|Pilar Proyectos]]
 - [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]
 - [[webcastro|Proyecto: WebCastro (Desarrollo & Tareas)]]

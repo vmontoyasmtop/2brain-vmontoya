@@ -12,6 +12,23 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-28] feat/plane-marketing-import | Importación Masiva de 70 Tareas y 5 Proyectos a Plane (Marketing)
+- **Áreas**: 🚀 `proyectos` & 🏢 `trabajo`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Análisis y Depuración de Fuentes**:
+     - Identificado que el archivo inicial `97bf6ab9.csv` contenía 0 bytes por exportación vacía del módulo web.
+     - Analizado el archivo consolidado definitivo `mkt-mastergroupve-a364fdad-78bb-45da-a511-996cddde338c-3d0b87dd.csv` (32.8 KB) conteniendo 70 tareas activas de 5 proyectos.
+  2. **Configuración y Creación de Proyectos en Plane (`projects.mastergroupve.com`)**:
+     - Workspace: `marketing` (`87bc0a43-d43d-47cb-b7ed-20895a642fd7`).
+     - Proyectos aprovisionados: `Marketing` (`MARKE` - 57 tareas), `Eventos` (`EVENTOS` - 5 tareas), `ARGUS` (`ARGUS` - 4 tareas), `Creadores In House` (`CREAINH` - 3 tareas, saneado sin paréntesis) y `Pantalla Móvil` (`PANTALLAMV` - 1 tarea).
+  3. **Ejecución y Resiliencia del Script**:
+     - Script maestro en Node.js ([`import_marketing_to_plane.js`](scripts/import_marketing_to_plane.js)) ejecutado con manejo de rate-limiting (429 y 5900), sincronización de etiquetas de marcas, eliminación de demos y dos fases para resolver jerarquía de subtareas.
+     - Tasa de éxito: 100% (70/70 tareas creadas, 0 duplicadas, 0 errores).
+  4. **Documentación Formal**:
+     - Elaborado el SOP maestro [[sop-importacion-migracion-tareas-plane|SOP: Protocolo y Script de Importación Masiva de Proyectos y Tareas en Plane]].
+     - Actualizado [[plane-gestion-proyectos|Proyecto: Plane - Plataforma de Gestión de Proyectos]] y catálogo en [[index|Wiki Index]].
+
 ## [2026-09-28] chore/handover | Toma de Turno e Inicio de Jornada Semanal
 - **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`, ⛪ `ministerial`
 - **Agente Responsable**: 🤵 **ALFRED**
