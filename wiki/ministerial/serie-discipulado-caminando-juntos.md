@@ -29,6 +29,7 @@ tags:
 ## 📜 Estructura de la Serie (4 Sermones)
 
 ### 🎙️ Sermón 1: De la Multitud a la Mesa (El Llamado Personal)
+- **Estudio Exegético Completo**: [[sermon-1-de-la-multitud-a-la-mesa-estudio|Ver Estudio Exegético & Homilético]]
 - **Pasaje Clave**: Marcos 1:16-20 | Lucas 9:23-25 | Mateo 28:18-20
 - **Idea Central**: Jesús no busca simpatizantes en la multitud; busca seguidores comprometidos a Su mesa.
 - **Bosquejo Homilético**:
@@ -40,6 +41,7 @@ tags:
 ---
 
 ### 🎙️ Sermón 2: El Modelo del Maestro (¿Qué Significa Ser Discipulado?)
+- **Estudio Exegético Completo**: [[sermon-2-el-modelo-del-maestro-estudio|Ver Estudio Exegético & Homilético]]
 - **Pasaje Clave**: Hechos 2:42-47 | Juan 13:12-15 | 2 Timoteo 2:1-2
 - **Idea Central**: El discipulado es vida compartida en comunidad, donde la verdad se aprende y la vida se modela.
 - **Bosquejo Homilético**:
@@ -51,6 +53,8 @@ tags:
 ---
 
 ### 🎙️ Sermón 3: Un Corazón Enseñable (Venciendo los Obstáculos)
+- **Guía de Púlpito & Manuscrito**: [[sermon-3-un-corazon-ensenable-predica|Ver Prédica & Manuscrito de Púlpito]]
+- **Estudio Exegético Completo**: [[sermon-3-un-corazon-ensenable-estudio|Ver Estudio Exegético & Homilético]]
 - **Pasaje Clave**: Proverbios 12:1 | Filipenses 3:12-14 | Lucas 14:27-33
 - **Idea Central**: El mayor freno para crecer espiritualmente no es la falta de conocimiento, sino la falta de humildad para dejarse corregir y orientar.
 - **Bosquejo Homilético**:

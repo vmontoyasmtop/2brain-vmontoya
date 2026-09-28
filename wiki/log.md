@@ -11,6 +11,77 @@ tags:
 # 📜 Registro de Actividad (Log Chronological)
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
+
+## [2026-09-26] docs/sermon-3-predica-un-corazon-ensenable | Montaje de Prédica y Manuscrito Homilético de Púlpito (Sermón 3)
+- **Áreas**: ⛪ `ministerial`
+- **Agentes Responsables**: 🤵 **ALFRED** / ⛪ **Pastoral Assistant**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Generación y Adaptación del Manuscrito de Púlpito**:
+     - Creado y enriquecido [`sermon-3-un-corazon-ensenable-predica.md`](wiki/ministerial/sermon-3-un-corazon-ensenable-predica.md) a partir del estudio previo ([`sermon-3-un-corazon-ensenable-estudio.md`](wiki/ministerial/sermon-3-un-corazon-ensenable-estudio.md)).
+     - **Estilo Pastoral Venezolano**: Adaptación a lenguaje coloquial cálido y directo ("no nos caigamos a mentiras", "quedarse pegado en el aparato", "careta dominical", "el choro vs. el cirujano", "el café de la sinceridad").
+     - **Textos Comparados**: Incorporación de versiones paralelas para impacto frontal: **RVR1960**, **NVI** y **PDT** (destacando Proverbios 12:1 PDT: *"el que odia que lo corrijan es un estúpido"*, Proverbios 27:6 PDT y Filipenses 3:12 PDT).
+     - Acotaciones dinámicas de atril (`[PAUSA]`, `[VOZ CERCANA]`, `[ÉNFASIS FIRME]`, `[INTERACCIÓN]`).
+  2. **Herramientas de Púlpito & Multimedia**:
+     - Incluye **cuadro sinóptico de 1 página** para atril/tablet y **guía de 10 diapositivas** para el equipo de pantallas.
+  3. **Indexación y Enlaces**:
+     - Enlazado en [`serie-discipulado-caminando-juntos.md`](wiki/ministerial/serie-discipulado-caminando-juntos.md) y catalogado en [`index.md`](wiki/index.md).
+  4. **Publicación Oficial en Google Docs (Protocolo Docs Expert)**:
+     - Documento clonado de la plantilla oficial con banner corporativo (`1zuxw18nflYFJVw0WnZRbzVvJHNJtJF1t-WUVtu967tE`).
+     - Formato enriquecido sin markdown plano ni separadores ASCII.
+     - Permisos de edición otorgados a la cuenta personal del Pastor (`vmontoya.smartopsve@gmail.com`) y enlace directo: https://docs.google.com/document/d/1_odcEAt0dLERg5ePizpzuSKBrcfzUOo4C6Bh9zJnYOs/edit.
+
+---
+
+## [2026-09-25] docs/masterhub-ui-standard-rule | Regla Estándar de Diseño y Tokens UI/UX Frontend (MasterHub) & Armonización de Bandeja de Pagos
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`, 💰 `finanzas`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**, 🏹 **Legolas Hojaverde** (`legolas_ui`)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Armonización de Bandeja de Pagos (`cxp-payment-client.tsx`)**:
+     - Adaptada al estándar institucional de tarjetas claras con sombra suave (`rounded-xl border border-border bg-white shadow-sm`), `text-foreground` y `text-muted`.
+     - Implementados `inputClassName`, `selectClassName` y `modalInputClassName` con bordes estándar y foco `ring-accent focus:border-accent`.
+     - Badges semánticos integrados con el componente `<Badge variant="brand" size="sm" dot>`.
+     - Modales actualizados a `theme="light"` con campos consistentes y botones estandarizados.
+  2. **Creación de la Regla Oficial de UI/UX en 2brain**:
+     - Creado el documento de referencia [`regla-estandar-ui-frontend-masterhub.md`](wiki/programacion/regla-estandar-ui-frontend-masterhub.md) detallando los tokens semánticos, contrastes requeridos, estructura de tablas, modales y botones para garantizar uniformidad en todos los módulos de MasterHub.
+  3. **Certificación de Calidad**:
+     - Compilación limpia de `apps/frontend-ui-dashboard` con `next build --webpack` (34/34 rutas, 0 errores en 6.2s).
+
+---
+
+## [2026-09-24] feat/helpdesk-xetux-category | Incorporación de Categoría 'Xetux' en Helpdesk MasterHub
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
+- **Agentes Responsables**: 🏹 **Legolas Hojaverde** (`legolas_ui`), ⚔️ **Aragorn** (`aragorn_pm`), 🤵 **ALFRED**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Frontend UI & Tipado (Legolas)**:
+     - Incorporada la categoría `'Xetux'` en la constante `TICKET_CATEGORIES` dentro de [`helpdesk-api.ts`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/lib/helpdesk-api.ts).
+     - Validación reactiva en modal de creación (`helpdesk-ticket-create-modal.tsx`), modal de edición (`helpdesk-ticket-edit-modal.tsx`) y barra de filtros de tabla (`helpdesk-tickets-client.tsx`).
+     - Validación de compilación TypeScript y Next.js sin errores (`npx tsc --noEmit` & `npm run build` en 0 errores).
+  2. **Gestión Ágil y Trazabilidad en Plane (Aragorn)**:
+     - Registrada la Historia de Usuario / Tarea técnica **#106** (`[Helpdesk] Soporte a categoría de ticket 'Xetux'`) con criterios de aceptación Gherkin.
+     - Vinculada al módulo `Helpdesk-MS` (`f5ff28bd-eb53-4d10-8210-39b13067c24e`) y marcada con estado **`Done`** (`c5d187bd-26b8-4bd9-bea9-afea5d45cdac`).
+  3. **Control de Versiones**:
+     - Commiteado (`815c218`) y desplegado/pushed a la rama `dev` en `team` (`vmontoyamg-png/MG-HUB.git`).
+
+---
+## [2026-09-24] feat/helpdesk-finanzas-plane | Activación de la Comunidad del Anillo: Fix Helpdesk y Reajuste Sprint 1 Finanzas
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED**, 🏹 **Legolas**, ⛏️ **Gimli** / 🛡️ **Samwise**, 💍 **Frodo**, ⚔️ **Aragorn**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Resolución de Bugs en Helpdesk (`apps/frontend-ui-dashboard` & `apps/helpdesk-sm`)**:
+     - **UI Modal de Edición (Legolas)**: Corregido el bloqueo condicional de sede en `helpdesk-ticket-edit-modal.tsx`. Integrada la carga global de colaboradores (`listAllActiveEmployees()`) y la precarga automática e infalible de Solicitante y Responsable con soporte para guardado y persistencia en backend.
+     - **Sistema de Categorías (Legolas)**: Definidas e integradas 7 categorías oficiales (`Hardware`, `Software`, `Red / Conectividad`, `Accesos / Cuentas`, `Telefonía`, `Impresoras / Periféricos`, `Otros`) en la modal de creación (`helpdesk-ticket-create-modal.tsx`), modal de edición y la barra de filtros desplegable y reactiva de la tabla de tickets (`helpdesk-tickets-client.tsx`), con columna y badges de color.
+     - **Backend NestJS y Contratos DTO (Gimli & Samwise)**: Actualizados `create-ticket.dto.ts`, `update-ticket.dto.ts` y `list-tickets.dto.ts` con decoradores compatibles con `ValidationPipe({ whitelist: true })`. Mapeo de categorías hacia `areaName` en `helpdesk.service.ts` sin necesidad de migraciones DB. Retransmisión de filtros por TCP en API Gateway (`helpdesk-gateway.controller.ts`).
+  2. **Configuración y Reajuste del Cycle "Sprint 1 - Finanzas" en Plane (`projects.mastergroupve.com`)**:
+     - Creado el Cycle oficial `Sprint 1 - Finanzas` (ID: `e1bf6d16-a557-4155-a475-a113e34fb1c1`) para el Hito 1 ($1,500 USD | 21 SP).
+     - **Auditoría y Purgado Ágil por Aragorn**: Se retiraron 14 tarjetas de Sprints 2, 3, 4 y backlog general que sobrecargaban el ciclo. El tablero quedó blindado con **40 tarjetas** exclusivas de Cuentas por Pagar (CxP) y Motor Fiscal SENIAT (7 Historias de Usuario con 21 SP, 1 Épica, 1 Levantamiento y 31 subtareas técnicas).
+  3. **Auditoría DevOps & CI/CD (Frodo)**:
+     - Verificados pipelines de GitHub Actions (`ci.yml`, `deploy-staging.yml`, `deploy-production.yml`).
+     - Blindaje de rama `main` y confirmación del flujo `feature/finance-* -> dev`.
+     - Preparadas definiciones Docker Compose (`docker-compose.yml` y `docker-compose.staging.yml`) para el puerto 3008 de `finance-ms`.
+  4. **Gestión de Tareas en Plane**:
+     - Creadas y marcadas como `Done` las tarjetas de resolución de Helpdesk (#100, #101, #102, #103, #104) y registrada la tarjeta de Backend de Gimli.
+     - Cierre y liberación ordenada de las sesiones de los subagentes especializados.
+
 ---
 ## [2026-09-23] chore/handover | Cierre de Turno y Jornada Nocturna
 - **Áreas**: 🏢 `trabajo`, 🚀 `proyectos`, 💻 `programacion`
@@ -641,5 +712,18 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - **Limpieza de Calendario & Carga de Tareas**: Eliminados los 5 eventos duplicados en Google Calendar y creadas exitosamente las 5 tareas oficiales en **Google Tasks** (Tiempo Ministerial, Comprar comida de regreso, Buscar camisas Yuly, Dar acceso a Vlad en Finanzas, y Deep Work).
   - **Persistencia Git**: Realizado commit local inicial en `2brain-MG` (`3e5c39a`).
 
+---
 
-
+## [2026-09-25] feat/ministerial | Estudio Exegético & Homilético - Sermón 3: "Un Corazón Enseñable"
+- **Área**: ⛪ `ministerial`
+- **Agentes Responsables**: ⛪ **Subagente Pastoral Assistant** & 🤵 **ALFRED**
+- **Acciones realizadas**:
+  - Investigado y redactado el estudio exegético y homilético completo para el **Sermón 3: "Un Corazón Enseñable (Venciendo los Obstáculos)"** de la serie de discipulado *"Caminando Juntos"*.
+  - Exégesis lingüística profunda:
+    - Hebreo: *Mūsār* (instrucción/disciplina formativa), *Tōkahath* (reprensión/corrección sabia), *Bā'ar* (embrutecimiento por rechazar reprensión) en Proverbios 12:1 y Prov. 27:6 (*Fieles son las heridas del que ama*).
+    - Griego: *Teleioō* (llegar a la meta/perfección), *Epekteinomenos* (estirarse hacia la meta), *Diōkō* (perseguir con tenacidad) en Filipenses 3:12-14, y *Bastazō* / *Apotassomai* en Lucas 14:27-33 (desarmar la autosuficiencia).
+  - Bosquejo homilético completo estructurado en 3 puntos: (1) Los 3 enemigos mortales del discipulado (Orgullo, Aislamiento y Superficialidad), (2) La belleza y poder de la corrección sabia (heridas fieles del mentor vs. lisonja destructiva), (3) La postura del aprendiz permanente (la copa vacía y el apóstol en carrera).
+  - Incluidas ilustraciones contemporáneas (el entrenador del atleta de élite, el punto ciego del vehículo, el cirujano vs. enemigo, el alfarero y la burbuja de aire, la copa de té rebosante).
+  - Guía de 5 preguntas de aplicación práctica para células, grupos pequeños y parejas de discipulado.
+  - Creado archivo persistente [`wiki/ministerial/sermon-3-un-corazon-ensenable-estudio.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/ministerial/sermon-3-un-corazon-ensenable-estudio.md).
+  - Actualizados [`wiki/ministerial/serie-discipulado-caminando-juntos.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/ministerial/serie-discipulado-caminando-juntos.md) y el índice maestro [`wiki/index.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/index.md).

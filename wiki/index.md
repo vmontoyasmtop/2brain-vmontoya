@@ -96,6 +96,8 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]: Propuesta completa de 4 sermones.
 - [[sermon-1-de-la-multitud-a-la-mesa-estudio|Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa]]: Estudio bíblico exhaustivo y bosquejo.
 - [[sermon-2-el-modelo-del-maestro-estudio|Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro]]: Estudio bíblico exhaustivo y bosquejo.
+- [[sermon-3-un-corazon-ensenable-estudio|Estudio Exegético y Homilético - Sermón 3: Un Corazón Enseñable]]: Estudio bíblico exhaustivo (Hebreo/Griego), bosquejo y guía de células.
+- [[sermon-3-un-corazon-ensenable-predica|Prédica & Guía de Púlpito - Sermón 3: Un Corazón Enseñable]]: Manuscrito homilético completo (38-42 min), dinámicas de atril, ilustraciones y diapositivas.
 
 ### 🏡 5. Familiar (Vida Personal & Bienestar)
 - [[pilar-familiar|Área Familiar - Vida Personal]]: Índice de metas familiares y bienestar personal.
