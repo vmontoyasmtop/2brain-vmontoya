@@ -12,6 +12,34 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-09-30] docs/prisma-v7-standard | Estándar de Arquitectura Prisma v7 y Resolución del Efecto Péndulo en Monorepo
+- **Áreas**: 💻 `programacion`, 🚀 `proyectos`, 🏢 `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED** & 👑 **Aragorn** (Capitán de Proyectos)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Diagnóstico del Error Péndulo de Prisma (v5 vs v7)**:
+     - Identificado el conflicto entre el entorno host local Windows (Prisma CLI 5.22.0) que exigía `url = env("DATABASE_URL")` en `schema.prisma`, y los contenedores Docker Linux (Prisma CLI 7.10.0) que lo prohíben estrictamente arrojando error `P1012: The datasource property 'url' is no longer supported in schema files`.
+  2. **Estandarización y Solución Definitiva**:
+     - Removido `url` de `apps/hr-ms/prisma/schema.prisma` dejando el esquema 100% puro para Prisma 7 (`provider = "postgresql"`).
+     - Centralizada la conexión en `prisma.config.ts` para todos los microservicios.
+     - Documentada la guía técnica en el repositorio (`MG-HUB/docs/STANDARDS-PRISMA-V7.md`) y en 2brain (`wiki/programacion/estandar-prisma-v7-monorepo-masterhub.md`).
+  3. **Gestión y Trazabilidad en Plane**:
+     - Registrada tarea de QA en Plane (`projects.mastergroupve.com`) bajo el proyecto `MasterHub` en estado **`Testing`** (#117) vinculada a los módulos `HR-MS`, `Helpdesk-MS` y al `Sprint 2`.
+
+## [2026-09-30] ci/workflows-optimization | Desacoplamiento de CI y Despliegue en MG-HUB
+- **Áreas**: 🚀 `proyectos`, 🏢 `trabajo`, 💻 `programacion`
+- **Agentes Responsables**: 🤵 **ALFRED** & 💍 **Frodo** (DevOps & CI/CD)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Diagnóstico de Concurrencia y Cancelación en Actions**:
+     - Investigado el comportamiento tras el merge del PR #7 (`dev` ➔ `staging`). Se determinó que la ejecución fallida de 1s con *"The log was not found"* correspondió a la cancelación instantánea del check del PR al ser fusionado, y la coexistencia de dos pipelines en paralelo (`ci.yml` #83 y `deploy-staging.yml` #11).
+  2. **Refactorización de Triggers en `ci.yml`**:
+     - Retirados `staging` y `main` del trigger `on.push` de `ci.yml`.
+     - Configurado `ci.yml` para correr en `push` exclusivo sobre `dev`, y en `pull_request` hacia `[main, staging, dev]`, añadiendo soporte manual `workflow_dispatch`.
+     - Resultado: Al mergear PRs en `staging` o `main`, ya no se disparan pipelines duplicados, dejando vía libre y limpia a los pipelines de despliegue correspondientes (`deploy-staging.yml` y `deploy-production.yml`).
+  3. **Estandarización de Contenedores Docker a Node 22 LTS (`node:22-alpine`)**:
+     - Homogeneizados los 9 Dockerfiles del monorepo (`api-gateway`, `auth-ms`, `finance-ms`, `frontend-ui-dashboard`, `helpdesk-sm`, `hr-ms`, `inventory-sm`, `wiki-sm`, y `backup-service` promovido desde Node 18).
+     - Paridad completa alcanzada entre entorno local (Node 24), tipado TypeScript (`@types/node: ^22.0.0`), pipeline CI (`node-version: 22`) y runtime en contenedores Docker de Staging y Producción.
+     - Commit sincronizado en `dev`: `78651d0`.
+
 ## [2026-09-28] feat/plane-marketing-import | Importación Masiva de 70 Tareas y 5 Proyectos a Plane (Marketing)
 - **Áreas**: 🚀 `proyectos` & 🏢 `trabajo`
 - **Agente Responsable**: 🤵 **ALFRED**

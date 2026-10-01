@@ -28,6 +28,7 @@ Página principal de **Conocimiento de Programación y Desarrollo de Software**.
 ## 📝 Guías y Protocolos Técnicos
 - [[guia-despliegue-empaquetado-alfred-2brain|Guía de Empaquetado y Despliegue Rápido de ALFRED & 2brain]]: Script powershell y clonación rápida.
 - [[protocolo-entrega-toma-turno-alfred|Protocolo de Entrega y Toma de Turno de ALFRED (Sincronización Multi-PC)]]: Sincronización automática vía Git y MCP.
+- [[estandar-prisma-v7-monorepo-masterhub|Estándar de Arquitectura Prisma v7 en Monorepos Dockerizados]]: Solución definitiva al error pendular de datasource url y compatibilidad Docker/Host.
 - [[solucion-migraciones-idempotentes-payload-postgres|Patrón de Migraciones Idempotentes en Payload CMS 3.x con PostgreSQL]]: Estándar SQL/PL-pgSQL para Vercel.
 - [[guia-configuracion-mcp-google-calendar-gmail|Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail)]]: Configuración multicuenta.
 - [[diagnostico-mcp-google-calendar-gmail|Diagnóstico y Solución de Servidores MCP (Google Calendar & Gmail)]]: Reparación técnica.

@@ -54,8 +54,9 @@ flowchart LR
   - [x] Badge "100% Calidad Garantizada" reubicado y párrafos justificados en Sobre Nosotros.
   - [x] Checklist interactivo con viñetas y checks dorados en Hero "Quiénes Somos".
   - [x] Build en Vercel restablecido y rama `origin/dev` sincronizada con `origin/main`.
-- [x] **MasterHub (MS-FINANCE)**: Andamiaje base (`finance-ms`) desplegado y fusionado en `dev`.
-- [ ] **Próximo Turno**: Configurar Secretos de GitHub en el repositorio para activar los despliegues automáticos por SSH y continuar con los sprints de `finance-ms`.
+- [x] **MasterHub (Despliegue Staging & Node 22 LTS)**: Desplegado Staging en Linode con PR #9 (`6c5aff9`), 8 microservicios reconstruidos y activos en Node `v22.23.3` LTS, y comprobantes de retención PDF integrados.
+- [x] **Estándar Prisma v7 (Regla Crítica Monorepo)**: Resolutivo del "Efecto Péndulo" de datasource URL. Todos los microservicios deben tener `schema.prisma` SIN `url`, delegando la conexión exclusivamente a `prisma.config.ts`. Documentado en [[estandar-prisma-v7-monorepo-masterhub|Estándar de Arquitectura Prisma v7]].
+- [ ] **Próximo Turno**: Continuar con los sprints de `finance-ms` y preparar PR hacia `main` (Producción).
 
 ### 💰 4. Area Finanzas (Gestión Económica)
 - [x] **Análisis de Gastos Reales del Cuaderno & Plan Conservador**: [[analisis-gastos-reales-cuaderno|Informe Financiero Auditado: Gastos Reales del Cuaderno]] (Auditoría de gastos, plan de amortización gradual de deudas $408.07 USD en 4 meses con $120 USD/mes).
