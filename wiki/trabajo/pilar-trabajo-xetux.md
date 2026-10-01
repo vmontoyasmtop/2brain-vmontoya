@@ -27,6 +27,7 @@ Página principal del área de **Trabajo IT** en Xetux.
 - [[plan-organizacion-priorizacion-it|Plan de Organización y Priorización Laboral para Analista de IT]]: Sistema de bloques temáticos, Matriz de Eisenhower y automatizaciones con n8n.
 - [[estandar-organizacion-google-calendar-tasks|Estándar Operativo: Organización de Calendario Laboral IT (Focus Time & Google Tasks)]]: Configuración y uso de Focus Time, Google Tasks, Working Location y OOO.
 - [[agenda-reunion-ejecutiva-emiliano|Agenda Ejecutiva & Minuta de Reporte (Reunión con Emiliano)]]: Agenda de 5 puntos para informe de gestión IT.
+- [[manual-descriptivo-cargos-equipo-it|Manual Organizacional y Descriptivo de Cargos IT (Líder, Devs, QA, Soporte)]]: Estructura formal de cargos, organigrama, flujo SDLC y matriz RACI.
 - [[perfil-cargo-soporte-it-jr|Perfil y Modelo de Cargo: Soporte Técnico IT Jr. (Nivel 1)]]: Perfil formal de cargo, funciones, requisitos y KPIs.
 - [[propuesta-infraestructura-linode-servidores-e-ia-mgh-plane|Propuesta Técnica y Financiera: Infraestructura Linode y Planes de IA]]: Análisis de presupuesto Linode VPS Shared y asistentes IA.
 - [[guia-configuracion-antigravity-devs-presupuesto|Manual Operativo: Configuración de Antigravity para Equipos]]: Paso a paso para onboarding de devs con presupuesto de $4.99/mes.

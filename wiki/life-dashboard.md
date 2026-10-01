@@ -42,10 +42,9 @@ flowchart LR
 - [x] **Migración Masiva a Plane (`projects.mastergroupve.com`)**: 97/97 tareas y épicas importadas exitosamente desde ClickUp a Plane con jerarquías y módulos vinculados (`Finanzas-MS`, `HR-MS`, `Helpdesk-MS`, `Inventario-MS`, `Auth-MS`, `MKT-MS`).
 - [x] **Configuración de Board Kanban & QA**: Creado nuevo estado y bloque `Testing` en Plane.
 - [x] **Estandarización Git en Monorepo MasterHub (`MG-HUB`)**: Consagrada rama `dev` como base de integración y staging continuo junto a ramas `feature/*` y Conventional Commits.
-- [x] **Automatización CI/CD con GitHub Actions (Frodo)**:
-  - Pipeline de Staging (`deploy-staging.yml` ➔ `https://dev.mastergroupve.com/` vía SSH + Docker Compose).
-  - Pipeline de Producción (`deploy-production.yml` ➔ `https://masterhub.mastergroupve.com/`).
-  - Configuración Nginx con SSL en `deploy/nginx/` y documentación en `docs/CI_CD_WORKFLOW.md`.
+- [x] **Resolución Bug Helpdesk 500 (Linode)**: Saneamiento de sintaxis de correos en PostgreSQL Linode restableciendo creación de tickets en Staging y Producción.
+- [x] **Roles y Accesos Gerenciales (Local Docker)**: Soporte para rol `STORE_MANAGER`, actualización en Prisma v7 y seeding de 17 gerentes locales para pruebas de login/JWT.
+- [ ] **En Progreso (Plane #118)**: `[Auth-MS] Panel de Administración: Gestión de Usuarios, Roles RBAC y Permisos` (Prioridad Mañana).
 
 ### 💻 3. Area Programación & 🚀 Proyectos de Software
 - [x] **WebCastro — Sprint y Despliegue 100% Culminado**:
@@ -56,7 +55,8 @@ flowchart LR
   - [x] Build en Vercel restablecido y rama `origin/dev` sincronizada con `origin/main`.
 - [x] **MasterHub (Despliegue Staging & Node 22 LTS)**: Desplegado Staging en Linode con PR #9 (`6c5aff9`), 8 microservicios reconstruidos y activos en Node `v22.23.3` LTS, y comprobantes de retención PDF integrados.
 - [x] **Estándar Prisma v7 (Regla Crítica Monorepo)**: Resolutivo del "Efecto Péndulo" de datasource URL. Todos los microservicios deben tener `schema.prisma` SIN `url`, delegando la conexión exclusivamente a `prisma.config.ts`. Documentado en [[estandar-prisma-v7-monorepo-masterhub|Estándar de Arquitectura Prisma v7]].
-- [ ] **Próximo Turno**: Continuar con los sprints de `finance-ms` y preparar PR hacia `main` (Producción).
+- [x] **Despacho Inteligente V1 - CECOM**: Configurado en Plane (`DESP`), módulos M1 a M4 y Sprint 1 MVP (29 SP, 6 Historias de Usuario creadas).
+- [ ] **Próximo Turno**: Ejecutar Plane #118 (Auth-MS Admin Panel) y avanzar con Sprint 1 de Despacho Inteligente CECOM.
 
 ### 💰 4. Area Finanzas (Gestión Económica)
 - [x] **Análisis de Gastos Reales del Cuaderno & Plan Conservador**: [[analisis-gastos-reales-cuaderno|Informe Financiero Auditado: Gastos Reales del Cuaderno]] (Auditoría de gastos, plan de amortización gradual de deudas $408.07 USD en 4 meses con $120 USD/mes).
