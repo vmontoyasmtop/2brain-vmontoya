@@ -4,8 +4,8 @@
 - **Proyecto**: MasterHub Monorepo (`MG-HUB`)
 - **Workflow**: `.github/workflows/deploy-staging.yml`
 - **Servidor Objetivo**: `172.238.221.116` (Usuario: `root`, Puerto: `22`, Dominio: `staging.mastergroupve.com`)
-- **Fecha**: 2026-10-01 (Actualizado: 2026-10-02)
-- **Estado**: ✅ Workflows actualizados con soporte de Environment & Pre-validación SSH. authorized_keys saneado en VPS. Commits subidos a `dev`.
+- **Fecha**: 2026-10-01 (Actualizado y Resuelto: 2026-10-02)
+- **Estado**: ✅ 100% Operativo. Clave Base64 validada, conexión SSH nativa exitosa y todos los contenedores de Staging activos en VPS.
 
 ---
 
@@ -83,3 +83,11 @@ ssh -o BatchMode=yes -o ConnectTimeout=5 -i C:\Users\vmontoyaMG\.ssh\id_ed25519 
 3. **Commit de UI Finanzas & Subida a dev**:
    - Commit: `f894e54` (*feat(finance): banner y badges de modulo en desarrollo para cxc y carga inteligente ia*).
    - Ambos commits empujados exitosamente a la rama `team/dev`.
+4. **Normalización SSH con Base64 y Direct OpenSSH**:
+   - Se configuró la lectura del secret en Base64 con decodificación `base64 -di`.
+   - Se definió `DEPLOY_PATH="/var/www/mgh/staging"` y `REPO_URL` explícitamente en el script remoto (Commit: `88793fb`).
+   - La conexión SSH desde GitHub Actions hacia `172.238.221.116` autenticó y ejecutó de forma limpia.
+5. **Despliegue Completo y Validación en VPS**:
+   - Todos los microservicios (`api-gateway`, `frontend-ui-dashboard`, `auth-ms`, `finance-ms`, `hr-ms`, `wiki-sm`, `helpdesk-sm`, `inventory-sm`) se reconstruyeron con éxito en Docker.
+   - Frontend en puerto 3011 respondiendo HTTP 307 / 200 hacia `/dashboard`.
+   - Microservicios de backend en puerto 3010 operativos.
