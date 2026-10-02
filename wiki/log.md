@@ -810,3 +810,28 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - Guía de 5 preguntas de aplicación práctica para células, grupos pequeños y parejas de discipulado.
   - Creado archivo persistente [`wiki/ministerial/sermon-3-un-corazon-ensenable-estudio.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/ministerial/sermon-3-un-corazon-ensenable-estudio.md).
   - Actualizados [`wiki/ministerial/serie-discipulado-caminando-juntos.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/ministerial/serie-discipulado-caminando-juntos.md) y el índice maestro [`wiki/index.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/index.md).
+
+---
+
+## [2026-10-01] feat/system | Cierre de Turno: Sistema RBAC Granular SÍ/NO, Reubicación de Navegación y Estrategia Git Staging -> Main
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
+- **Agentes Responsables**: 🤵 **ALFRED** & 🧙 **Grandalf (Arquitecto Orquestador)**
+- **Resumen de Logros del Turno**:
+  1. **Reubicación Semántica de Administración a Sistema**:
+     - Consolidada la navegación en el sidebar: `Usuarios`, `Personal`, `Auditoría` y `Respaldos` agrupados bajo la sección unificada **«Sistema»** (`/dashboard/users`, `/dashboard/assignees`, `/dashboard/audit`, `/dashboard/backups`).
+     - Actualizadas las validaciones de acceso en [`dashboard-shell.tsx`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/components/dashboard/dashboard-shell.tsx) y [`auth-guard.tsx`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/components/auth/auth-guard.tsx).
+  2. **Módulo de Gestión Integral de Usuarios & Permisos Granulares (SÍ / NO)**:
+     - Diseñado e implementado modal 3-en-1 en [`page.tsx`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/app/dashboard/users/page.tsx):
+       - **Pestaña 1 (Roles Departamentales)**: Presets a un clic, categorías departamentales e inspector de permisos efectivos en tiempo real.
+       - **Pestaña 2 (Permisos Granulares SÍ/NO)**: Matriz interactiva de decisión individual por acción (SÍ, NO, Restablecer al Rol), con badges de procedencia (`✓ Concedido por Rol`, `⚡ Autorizado Manualmente`, `🚫 Bloqueado Manualmente`), filtros por módulo y acciones en lote.
+       - **Pestaña 3 (Perfil & Cuenta)**: Edición de nombre, correo, username y estado de activación.
+     - Persistencia de excepciones granulares mediante [`saveUserPermissionsOverride`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/lib/rbac.ts).
+  3. **Solución Departamentos & Filtros de Sedes**:
+     - Resuelto error en departamento por columna faltante `sedeCount` en base de datos PostgreSQL local (`hr_db`).
+     - Blindados los filtros de visibilidad de tickets y vacantes para usuarios con rol `STORE_MANAGER` / `MANAGER` limitados a su propia sede.
+  4. **Compilación & Despliegue en Dev**:
+     - Compilación limpia de Next.js (`npm run build`, 38/38 rutas con 0 errores).
+     - Cambios consolidados y subidos a la rama remota `dev` en GitHub (Commit [`1636422`](https://github.com/vmontoyamg-png/MG-HUB/commit/1636422)).
+  5. **Memoria Técnica & Tarea Programada para Mañana**:
+     - Creada guía de mejores prácticas en [`wiki/programacion/guia-git-promocion-selectiva-staging-main.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/programacion/guia-git-promocion-selectiva-staging-main.md).
+     - Creada tarea de recordatorio en **Google Tasks**: *"MasterHub: Promoción selectiva de Sistema/RBAC a main (Cherry-pick de dev a main)"* programada para la mañana del 2026-10-02.
