@@ -841,3 +841,19 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
      - Verificado: Clave local `C:\Users\vmontoyaMG\.ssh\id_ed25519` conecta exitosamente a `root@172.238.221.116`.
      - Documentado en [`wiki/programacion/solucion-ci-cd-ssh-key-staging-masterhub.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/programacion/solucion-ci-cd-ssh-key-staging-masterhub.md).
      - Creada tarea URGENTE en **Google Tasks** para resolverlo a primera hora: *"URGENTE: Cargar SSH_KEY en GitHub Secrets para corregir despliegue de Staging"*.
+
+## [2026-10-02] fix/cicd-staging-prisma | Resolución Integral CI/CD Staging, Error 502 y Sincronización Prisma DB
+- **Áreas**: 💻 `programacion`, 🚀 `proyectos`, 🏢 `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Blindaje de Workflows CI/CD (`MG-HUB`)**:
+     - Migrado de `appleboy/ssh-action` a OpenSSH nativo con soporte `base64 -di`. Clave de laptop codificada e inyectada en secret `SSH_KEY`.
+     - Corregidas rutas absolutas `DEPLOY_PATH="/var/www/mgh/staging"` y `REPO_URL` en scripts remotos.
+  2. **Resolución de Error 502 Bad Gateway**:
+     - 502 temporal derivado de la reconstrucción y compilación de Docker en puerto 3011. Concluida la compilación, responde `HTTP 200 OK` en `https://staging.mastergroupve.com/login` y `HTTP 307` en raíz hacia `/dashboard`.
+  3. **Sincronización Total de Bases de Datos Prisma en Staging**:
+     - `auth_db_staging`: sincronizado al 100% con roles RBAC y permisos.
+     - `finance_db_staging`: sincronizado con comprobantes SENIAT, retenciones y tasas BCV.
+     - `hr_db_staging`: resuelto bloqueo por índice `VacancyRequest_code_key`; eliminada restricción obsoleta y sincronizado con `npx prisma db push --accept-data-loss`.
+     - `helpdesk_db_staging`, `inventory_db_staging`, `wiki_db_staging`: verificados y 100% en sync.
+
