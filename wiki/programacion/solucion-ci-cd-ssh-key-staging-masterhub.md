@@ -4,8 +4,8 @@
 - **Proyecto**: MasterHub Monorepo (`MG-HUB`)
 - **Workflow**: `.github/workflows/deploy-staging.yml`
 - **Servidor Objetivo**: `172.238.221.116` (Usuario: `root`, Puerto: `22`, Dominio: `staging.mastergroupve.com`)
-- **Fecha**: 2026-10-01 (Para atención prioritaria a primera hora: 2026-10-02)
-- **Estado**: ⚠️ Diagnosticado & Solución Lista para Ejecutar
+- **Fecha**: 2026-10-01 (Actualizado: 2026-10-02)
+- **Estado**: ✅ Workflows actualizados con soporte de Environment & Pre-validación SSH. authorized_keys saneado en VPS. Commits subidos a `dev`.
 
 ---
 
@@ -67,3 +67,19 @@ ssh -o BatchMode=yes -o ConnectTimeout=5 -i C:\Users\vmontoyaMG\.ssh\id_ed25519 
    - Ir a la pestaña **Actions** en GitHub: `https://github.com/vmontoyamg-png/MG-HUB/actions`
    - Seleccionar la corrida fallida de `Deploy to Staging` y pulsar **Re-run jobs** (o hacer push/merge a `staging`).
    - El despliegue clonará/actualizará `/var/www/mgh/staging` y levantará los contenedores con `docker compose -f docker-compose.staging.yml up -d --build`.
+
+---
+
+## 5. Acciones Ejecutadas por ALFRED (2026-10-02)
+
+1. **Saneamiento en el Servidor VPS**:
+   - Se ingresó a `/root/.ssh/authorized_keys` en `172.238.221.116`.
+   - Se removió una entrada defectuosa con saltos de línea partidos (`ssh-\ned25519...`).
+   - Se establecieron permisos estrictos `600` dejando limpias las llaves legítimas.
+2. **Actualización de Workflows en MG-HUB**:
+   - Se agregó `environment: staging` en `.github/workflows/deploy-staging.yml` y `environment: production` en `.github/workflows/deploy-production.yml`.
+   - Se agregó un paso previo de diagnóstico (`Validate SSH Credentials`) para emitir alertas legibles si los secrets no estuvieran presentes.
+   - Commit: `265057d` (*ci(workflows): agregar environment y validacion previa de ssh para staging y produccion*).
+3. **Commit de UI Finanzas & Subida a dev**:
+   - Commit: `f894e54` (*feat(finance): banner y badges de modulo en desarrollo para cxc y carga inteligente ia*).
+   - Ambos commits empujados exitosamente a la rama `team/dev`.
