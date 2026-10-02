@@ -835,3 +835,9 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   5. **Memoria Técnica & Tarea Programada para Mañana**:
      - Creada guía de mejores prácticas en [`wiki/programacion/guia-git-promocion-selectiva-staging-main.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/programacion/guia-git-promocion-selectiva-staging-main.md).
      - Creada tarea de recordatorio en **Google Tasks**: *"MasterHub: Promoción selectiva de Sistema/RBAC a main (Cherry-pick de dev a main)"* programada para la mañana del 2026-10-02.
+  6. **Diagnóstico Crítico de Despliegue en Staging (GitHub Actions)**:
+     - Detectado y diagnosticado el error `can't connect without a private SSH key or password` en `.github/workflows/deploy-staging.yml`.
+     - Causa: Falta del secret `SSH_KEY` en los Secrets del repositorio GitHub.
+     - Verificado: Clave local `C:\Users\vmontoyaMG\.ssh\id_ed25519` conecta exitosamente a `root@172.238.221.116`.
+     - Documentado en [`wiki/programacion/solucion-ci-cd-ssh-key-staging-masterhub.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/programacion/solucion-ci-cd-ssh-key-staging-masterhub.md).
+     - Creada tarea URGENTE en **Google Tasks** para resolverlo a primera hora: *"URGENTE: Cargar SSH_KEY en GitHub Secrets para corregir despliegue de Staging"*.

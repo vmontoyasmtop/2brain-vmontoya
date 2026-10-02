@@ -66,6 +66,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[guia-configuracion-mcp-google-docs|Guía de Instalación y Configuración del Servidor MCP para Google Docs]]: Configuración multicuenta de Google Docs MCP.
 - [[guia-configuracion-mcp-github|Guía de Instalación y Configuración del Servidor MCP para GitHub]]: Registro del servidor oficial GitHub MCP (`github-personal`).
 - [[guia-git-promocion-selectiva-staging-main|Guía Git: Promoción Selectiva de Cambios (Staging/Dev a Main) sin Merge Masivo]]: Estrategias cherry-pick y ramas de release para MasterHub.
+- [[solucion-ci-cd-ssh-key-staging-masterhub|Diagnóstico y Solución: Error SSH en Despliegue de Staging (GitHub Actions)]]: Inyección de SSH_KEY en GitHub Secrets.
 
 ### 🚀 3. Proyectos (Software Independiente)
 - [[pilar-proyectos|Área Proyectos - Software Independiente]]: Índice general de proyectos.
