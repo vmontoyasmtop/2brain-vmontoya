@@ -12,106 +12,77 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
-## [2026-09-30] chore/handover | Cierre de Turno y Jornada
-- **Áreas**: 🏢 `trabajo`, 🚀 `proyectos`, 💻 `programacion`
-- **Agentes Responsables**: 🤵 **ALFRED** & 👑 **Aragorn** & 🧙 **Gandalf**
+## [2026-10-04] feat/hr-ms-store-manager-recruitment | Análisis RYS vs. Pizarra MGH, Portal Exclusivo de Tienda & Sincronización en Plane
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
+- **Agentes Responsables**: 🤵 **ALFRED** & ⚔️ **Aragorn PM**
 - **Resumen Ejecutivo de la Operación**:
-  1. **Resolución de Error 500 en Creación de Tickets (Helpdesk Prod & Staging)**:
-     - Diagnosticado error interno en la creación de tickets. Se identificaron erratas de sintaxis en correos de usuarios (`lyparedes,28@gmail.com` y `luis.rivero.04,07@gmail.con`) en Linode PostgreSQL (`hr_db` y `hr_db_staging`).
-     - Corregidos ambos registros a formato válido (`lyparedes.28@gmail.com` y `luis.rivero.04.07@gmail.com`), restableciendo inmediatamente el envío de notificaciones y la creación de tickets sin fallos.
-  2. **Estructuración del Proyecto "Despacho Inteligente V1 - CECOM" en Plane**:
-     - Creado el proyecto en Plane (`DESP`), 4 módulos de arquitectura y el `Sprint 1 - MVP Despacho Inteligente CECOM` (29 Story Points, 6 Historias de Usuario #1-#6).
-     - Documentada la arquitectura y especificación funcional en `2brain-MG/wiki/proyectos/despacho-inteligente-cecom.md`.
-  3. **Aprovisionamiento Local de Gerentes & Rol `STORE_MANAGER` en MasterHub**:
-     - Poblados 17 usuarios activos de tiendas con perfil gerente exclusivamente en la base de datos Docker local (`masterhub-postgres-local-1 / auth_db`).
-     - Incorporado el valor `STORE_MANAGER` al enum `RoleName` en base de datos y Prisma Schema de `apps/auth-ms`.
-     - Regenerado el cliente Prisma v7.8.0 dentro del microservicio, resolviendo la excepción `P2023` y verificando la emisión de JWTs con roles combinados (`MANAGER`, `STORE_MANAGER`).
-     - Preservada la integridad de los servidores remotos de Linode (staging y producción) manteniéndolos limpios según instrucción expresa.
-  4. **Plane MasterHub - Tarea de Panel de Administración**:
-     - Creada la tarea #118: `[Auth-MS] Panel de Administración: Gestión de Usuarios, Roles RBAC y Permisos` (5 SP) en estado `In Progress` para ejecución prioritaria.
-  5. **Cierre de Ciclo**:
-     - Detenido proceso en segundo plano del bot de Telegram.
-     - Sincronización y push general del repositorio `2brain`.
+  1. **Análisis de Reclutamiento & Selección (RYS vs. Pizarra Operativa)**:
+     - Procesados los documentos en `raw/proyectos/hr-ms/`: diagrama oficial de flujo de Reclutamiento e Ingreso (`Proceso RYS.pptx.pdf`) y boceto en pizarra de la vista de Gerente (`reclu.jpeg`).
+     - Cuadro comparativo integral de procesos: Requisición de personal (eliminando Google Forms a favor de MGH nativo), control de asistencia al día de prueba (`Asistió o No`), evaluación operativa (`Contrata / Descarta`), y carga de recaudos digitales sincronizada con Google Drive.
+  2. **Definición de Arquitectura: Página Exclusiva para Gerente de Tienda**:
+     - Decisión arquitectónica de alto impacto: En lugar de saturar la vista global de analistas de RRHH, se crea la página dedicada `/dashboard/store-recruitment` protegida para el rol `STORE_MANAGER`.
+     - Layout Master-Detail de 2 columnas fiel a la pizarra: Columna izquierda con vacantes de la sede y columna derecha con candidatos asignados por RRHH, con botonera de 1 clic para asistencia y contratación.
+  3. **Despliegue y Registro de Tareas en Plane (`projects.mastergroupve.com`)**:
+     - Creada Tarea Contenedora Padre para ejecución de mañana: `MASTERHUB-131` (Portal de Selección para Gerente de Tienda) con 4 subtareas:
+       - `MASTERHUB-132`: Enrutamiento y Guard RBAC (`STORE_MANAGER`).
+       - `MASTERHUB-133`: Interfaz Master-Detail (Vacantes vs Candidatos).
+       - `MASTERHUB-134`: Botonera de Acción Rápida (Asistencia & Decisión).
+       - `MASTERHUB-135`: Carga Digital de Recaudos (Drive Sync).
+     - Incorporadas las tareas complementarias del flujo de Fase 2 bajo la Épica `MASTERHUB-22`:
+       - `MASTERHUB-136`: Generador Automático de Formatos PDF de Ingreso (Rutograma, Confidencialidad, Manejo de Efectivo y Notificación de Riesgo).
+       - `MASTERHUB-137`: Gestión y Tracking de Exámenes Médicos Pre-Empleo & Aptitud.
+       - `MASTERHUB-138`: Bandeja Central de RRHH para Asignación de Candidatos a Tiendas.
+       - `MASTERHUB-139`: Control de Plantilla Orgánica y Cupos por Sede (Headcount Budget).
+       - `MASTERHUB-140`: Módulo de Jornadas de Reclutamiento y Entrevistas Masivas (Jornadas RRHH in-situ / Fast-Track).
+  4. **Documentación Sincronizada en los 2 Brains**:
+     - Creado y actualizado `wiki/proyectos/masterhub-hr-portal-gerente.md` y `wiki/proyectos/masterhub-hr.md`.
+     - Sincronizados los archivos crudos y wikis tanto en `2brain-MG` como en el vault central `2brain`.
 
-## [2026-09-30] docs/prisma-v7-standard | Estándar de Arquitectura Prisma v7 y Resolución del Efecto Péndulo en Monorepo
-- **Áreas**: 💻 `programacion`, 🚀 `proyectos`, 🏢 `trabajo`
-- **Agentes Responsables**: 🤵 **ALFRED** & 👑 **Aragorn** (Capitán de Proyectos)
+## [2026-10-02] fix/finance-ms-prisma-sync | Corrección de Error P2022 en Carga de Facturas CxP & Protocolo Obligatorio de Sincronización Prisma en Docker
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
+- **Agentes Responsables**: 🤵 **ALFRED** / 🧙‍♂️ **Grandalf** (Coordinación), 🏹 **Legolas Hojaverde** (Frontend), 🔮 **Galadriel de Lorien** (DB) & ⛏️ **Gimli** (Backend)
 - **Resumen Ejecutivo de la Operación**:
-  1. **Diagnóstico del Error Péndulo de Prisma (v5 vs v7)**:
-     - Identificado el conflicto entre el entorno host local Windows (Prisma CLI 5.22.0) que exigía `url = env("DATABASE_URL")` en `schema.prisma`, y los contenedores Docker Linux (Prisma CLI 7.10.0) que lo prohíben estrictamente arrojando error `P1012: The datasource property 'url' is no longer supported in schema files`.
-  2. **Estandarización y Solución Definitiva**:
-     - Removido `url` de `apps/hr-ms/prisma/schema.prisma` dejando el esquema 100% puro para Prisma 7 (`provider = "postgresql"`).
-     - Centralizada la conexión en `prisma.config.ts` para todos los microservicios.
-     - Documentada la guía técnica en el repositorio (`MG-HUB/docs/STANDARDS-PRISMA-V7.md`) y en 2brain (`wiki/programacion/estandar-prisma-v7-monorepo-masterhub.md`).
-  3. **Gestión y Trazabilidad en Plane**:
-     - Registrada tarea de QA en Plane (`projects.mastergroupve.com`) bajo el proyecto `MasterHub` en estado **`Testing`** (#117) vinculada a los módulos `HR-MS`, `Helpdesk-MS` y al `Sprint 2`.
+  1. **Modificaciones de UI en MG-HUB Frontend**:
+     - Deshabilitada la página de Cuentas por Cobrar (`/dashboard/finance/cxc`) con banner institucional *"Módulo en Desarrollo / Integración Activa"* y capa no interactiva pero visible (`pointer-events-none opacity-70`).
+     - Deshabilitado el botón de *Carga Inteligente (IA)* en CxP (`cursor-not-allowed`) con micro-animaciones activas (`Sparkles animate-pulse`, badge *"En desarrollo"* con `animate-ping`) para reflejar que la función está activamente en construcción.
+     - Añadido indicador de *"En desarrollo"* en el sidebar de navegación.
+  2. **Resolución de Incidencia Crítica en Local (Error P2022)**:
+     - Diagnóstico de caída en `finance-ms`: `PrismaClientKnownRequestError: The column AccountPayable.vatRate does not exist in the current database`.
+     - Causa: Se modificó `schema.prisma` agregando `vatRate`, pero no se aplicó el cambio a la base de datos PostgreSQL en Docker (`finance_db`).
+     - Solución ejecutada: Sincronización mediante `docker exec masterhub-finance-ms-1 npx prisma db push --schema=/app/prisma/schema.prisma`, reinicio del contenedor y validación de logs de arranque y endpoints.
+  3. **Establecimiento de Protocolo Obligatorio Anti-P2022**:
+     - Creado el estándar [[sop-sincronizacion-esquemas-prisma-docker|SOP: Protocolo Obligatorio de Sincronización de Esquemas Prisma y Docker]].
+     - Actualizadas las directrices en `AGENTS.md` y las especificaciones de subagentes en `agents/` (`grandalf.md`, `galadriel_db.md`, `gimli_backend.md`, `elrond_code.md`) para exigir la sincronización DDL en contenedor, reinicio y smoke test antes de dar por cerrada cualquier tarea con cambios de esquema.
 
-## [2026-09-30] ci/workflows-optimization | Desacoplamiento de CI y Despliegue en MG-HUB
+## [2026-09-30] feat/despacho-inteligente-cecom | Planificación e Ingesta de Requerimientos: Despacho Inteligente V1 — CECOM & Sprint 1 en Plane
+
 - **Áreas**: 🚀 `proyectos`, 🏢 `trabajo`, 💻 `programacion`
-- **Agentes Responsables**: 🤵 **ALFRED** & 💍 **Frodo** (DevOps & CI/CD)
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** (Arquitecto) & ⚔️ **Aragorn PM** (Scrum Master)
 - **Resumen Ejecutivo de la Operación**:
-  1. **Diagnóstico de Concurrencia y Cancelación en Actions**:
-     - Investigado el comportamiento tras el merge del PR #7 (`dev` ➔ `staging`). Se determinó que la ejecución fallida de 1s con *"The log was not found"* correspondió a la cancelación instantánea del check del PR al ser fusionado, y la coexistencia de dos pipelines en paralelo (`ci.yml` #83 y `deploy-staging.yml` #11).
-  2. **Refactorización de Triggers en `ci.yml`**:
-     - Retirados `staging` y `main` del trigger `on.push` de `ci.yml`.
-     - Configurado `ci.yml` para correr en `push` exclusivo sobre `dev`, y en `pull_request` hacia `[main, staging, dev]`, añadiendo soporte manual `workflow_dispatch`.
-     - Resultado: Al mergear PRs en `staging` o `main`, ya no se disparan pipelines duplicados, dejando vía libre y limpia a los pipelines de despliegue correspondientes (`deploy-staging.yml` y `deploy-production.yml`).
-  3. **Estandarización de Contenedores Docker a Node 22 LTS (`node:22-alpine`)**:
-     - Homogeneizados los 9 Dockerfiles del monorepo (`api-gateway`, `auth-ms`, `finance-ms`, `frontend-ui-dashboard`, `helpdesk-sm`, `hr-ms`, `inventory-sm`, `wiki-sm`, y `backup-service` promovido desde Node 18).
-     - Paridad completa alcanzada entre entorno local (Node 24), tipado TypeScript (`@types/node: ^22.0.0`), pipeline CI (`node-version: 22`) y runtime en contenedores Docker de Staging y Producción.
-     - Commit sincronizado en `dev`: `78651d0`.
+  1. **Ingesta de Requerimientos de Primera Reunión**:
+     - Procesadas las notas manuscritas de la reunión del 29/09/2026 (`raw/proyectos/Despacho inteligente cecom/WhatsApp Image 2026-09-30 at 20.53.03.jpeg` y `20.53.04.jpeg`).
+     - Ejes clave identificados: Ingesta Xetux ERP, Matriz central CECOM con asignación automática por cuadrantes/zonas a operadores, 3 perfiles de usuario (Supervisor, Vendedora CECOM, Operador/Rider), catálogo de motivos de rechazo/demoras y tracking en tiempo real con notificaciones al cliente vía WhatsApp.
+  2. **Configuración Integral del Proyecto en Plane (`projects.mastergroupve.com`)**:
+     - Proyecto: `Despacho Inteligente V1 CECOM` (`DESP` - `adec96dc-862d-488b-822f-3c7502faeeef`) en workspace `it---mg`.
+     - 4 Módulos creados: `M1: Ingesta & Sincronización Xetux`, `M2: Matriz de Despacho & Asignación (CECOM)`, `M3: App Operador / Rider & Tracking Realtime`, `M4: Notificaciones WhatsApp & Experiencia Cliente`.
+  3. **Planificación y Montaje del Sprint 1 (29 SP)**:
+     - Ciclo creado: `Sprint 1 - MVP Despacho Inteligente CECOM` (30-Sep al 14-Oct-2026).
+     - 6 Historias de Usuario creadas y vinculadas con sintaxis Gherkin (Dado-Cuando-Entonces), Story Points (Fibonacci) y asignación a subagentes de la Compañía (`#1` al `#6`).
+  4. **Documentación Oficial en Wiki**:
+     - Elaborado [[despacho-inteligente-cecom|Proyecto: Despacho Inteligente V1 — CECOM]] y catalogado en `wiki/index.md`.
 
-## [2026-09-28] feat/plane-marketing-import | Importación Masiva de 70 Tareas y 5 Proyectos a Plane (Marketing)
-- **Áreas**: 🚀 `proyectos` & 🏢 `trabajo`
-- **Agente Responsable**: 🤵 **ALFRED**
+## [2026-09-29] feat/beijing-interactive-menu | Especificación y Arquitectura del Proyecto Menú Interactivo Beijing 2.0 (Smart TV Android)
+- **Áreas**: 🚀 `proyectos`, 🏢 `trabajo`, 💻 `programacion`
+- **Agente Responsable**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**
 - **Resumen Ejecutivo de la Operación**:
-  1. **Análisis y Depuración de Fuentes**:
-     - Identificado que el archivo inicial `97bf6ab9.csv` contenía 0 bytes por exportación vacía del módulo web.
-     - Analizado el archivo consolidado definitivo `mkt-mastergroupve-a364fdad-78bb-45da-a511-996cddde338c-3d0b87dd.csv` (32.8 KB) conteniendo 70 tareas activas de 5 proyectos.
-  2. **Configuración y Creación de Proyectos en Plane (`projects.mastergroupve.com`)**:
-     - Workspace: `marketing` (`87bc0a43-d43d-47cb-b7ed-20895a642fd7`).
-     - Proyectos aprovisionados: `Marketing` (`MARKE` - 57 tareas), `Eventos` (`EVENTOS` - 5 tareas), `ARGUS` (`ARGUS` - 4 tareas), `Creadores In House` (`CREAINH` - 3 tareas, saneado sin paréntesis) y `Pantalla Móvil` (`PANTALLAMV` - 1 tarea).
-  3. **Ejecución y Resiliencia del Script**:
-     - Script maestro en Node.js ([`import_marketing_to_plane.js`](scripts/import_marketing_to_plane.js)) ejecutado con manejo de rate-limiting (429 y 5900), sincronización de etiquetas de marcas, eliminación de demos y dos fases para resolver jerarquía de subtareas.
-     - Tasa de éxito: 100% (70/70 tareas creadas, 0 duplicadas, 0 errores).
-  4. **Documentación Formal**:
-     - Elaborado el SOP maestro [[sop-importacion-migracion-tareas-plane|SOP: Protocolo y Script de Importación Masiva de Proyectos y Tareas en Plane]].
-     - Actualizado [[plane-gestion-proyectos|Proyecto: Plane - Plataforma de Gestión de Proyectos]] y catálogo en [[index|Wiki Index]].
-
-## [2026-09-28] chore/handover | Toma de Turno e Inicio de Jornada Semanal
-- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`, ⛪ `ministerial`
-- **Agente Responsable**: 🤵 **ALFRED**
-- **Resumen de Toma de Turno**:
-  1. **Auditoría de Actividad de Fin de Semana**:
-     - Consolidado commit `61b9bf4` en `MG-HUB` (Ingesta Xetux Compras, campos fiscales sedes RIF/Razón Social, Dockerfile `finance-ms`).
-     - Creación y respaldo de SOP de Base de Datos Local vs Linode (`sop-sincronizacion-backup-db-produccion-local.md`).
-     - Estandarización de interfaz y reglas UI frontend (`regla-estandar-ui-frontend-masterhub.md`).
-     - Culminación del Sermón 3 "Un Corazón Enseñable", manuscrito de púlpito y Google Doc institucional.
-  2. **Sincronización Git**:
-     - Repositorio `2brain` sincronizado con commit de handover y subido a GitHub (`master`).
-     - Monorepo `MG-HUB` verificado al día en rama `dev` (`team/dev`).
-  3. **Agenda & Calendario de Trabajo (`soporte@mastergroupve.com`)**:
-     - 09:00 AM – 10:00 AM: `MKT / Ventas / RRHH - Updates` (Completada).
-     - 02:00 PM – 03:00 PM: `Conversación del App de Autoservicio2.0` (Reunión clave con Simón León, Marketing y equipo en sala George W Bush / Google Meet).
-  4. **Bandeja de Correo (Gmail Trabajo)**: 0 correos no leídos / bandeja despejada.
-
-## [2026-09-26] docs/sermon-3-predica-un-corazon-ensenable | Montaje de Prédica y Manuscrito Homilético de Púlpito (Sermón 3)
-- **Áreas**: ⛪ `ministerial`
-- **Agentes Responsables**: 🤵 **ALFRED** / ⛪ **Pastoral Assistant**
-- **Resumen Ejecutivo de la Operación**:
-  1. **Generación y Adaptación del Manuscrito de Púlpito**:
-     - Creado y enriquecido [`sermon-3-un-corazon-ensenable-predica.md`](wiki/ministerial/sermon-3-un-corazon-ensenable-predica.md) a partir del estudio previo ([`sermon-3-un-corazon-ensenable-estudio.md`](wiki/ministerial/sermon-3-un-corazon-ensenable-estudio.md)).
-     - **Estilo Pastoral Venezolano**: Adaptación a lenguaje coloquial cálido y directo ("no nos caigamos a mentiras", "quedarse pegado en el aparato", "careta dominical", "el choro vs. el cirujano", "el café de la sinceridad").
-     - **Textos Comparados**: Incorporación de versiones paralelas para impacto frontal: **RVR1960**, **NVI** y **PDT** (destacando Proverbios 12:1 PDT: *"el que odia que lo corrijan es un estúpido"*, Proverbios 27:6 PDT y Filipenses 3:12 PDT).
-     - Acotaciones dinámicas de atril (`[PAUSA]`, `[VOZ CERCANA]`, `[ÉNFASIS FIRME]`, `[INTERACCIÓN]`).
-  2. **Herramientas de Púlpito & Multimedia**:
-     - Incluye **cuadro sinóptico de 1 página** para atril/tablet y **guía de 10 diapositivas** para el equipo de pantallas.
-  3. **Indexación y Enlaces**:
-     - Enlazado en [`serie-discipulado-caminando-juntos.md`](wiki/ministerial/serie-discipulado-caminando-juntos.md) y catalogado en [`index.md`](wiki/index.md).
-  4. **Publicación Oficial en Google Docs (Protocolo Docs Expert)**:
-     - Documento clonado de la plantilla oficial con banner corporativo (`1zuxw18nflYFJVw0WnZRbzVvJHNJtJF1t-WUVtu967tE`).
-     - Formato enriquecido sin markdown plano ni separadores ASCII.
-     - Permisos de edición otorgados a la cuenta personal del Pastor (`vmontoya.smartopsve@gmail.com`) y enlace directo: https://docs.google.com/document/d/1_odcEAt0dLERg5ePizpzuSKBrcfzUOo4C6Bh9zJnYOs/edit.
+  1. **Apertura de Proyecto Corporativo**: Registrado e indexado formalmente [[menu-interactivo-beijing-2-0|Proyecto: Menú Interactivo Beijing 2.0 (Smart TV Android)]] en el brain de Master Group (`2brain-MG`).
+  2. **Estrategia & Requerimientos de Smart TV Android**:
+     - Definidos los tres pilares operativos: Modo Kiosko / Auto-Boot inmersivo sin barras de sistema, resiliencia offline permanente (cache local para evitar pantallas en blanco ante caídas de internet) y rotación horaria de menú (Dayparting).
+     - Sincronización en tiempo real de precios oficiales y ocultamiento de platos agotados vía API de Xetux / MasterHub.
+  3. **Matriz de Arquitectura Tecnológica**:
+     - Evaluadas 4 opciones: React Native / Expo TV, PWA Kiosk (Next.js/Vite en Fully Kiosk), Flutter for TV y Kotlin Jetpack Compose for TV.
+     - Recomendación preliminar de Grandalf: Fase 1 MVP en Web Kiosk de rápida validación (1-2 semanas) y Fase 2 en React Native TV / Expo para control de hardware y updates OTA.
+  4. **Catálogo & Enlaces**: Enlazado en `wiki/index.md` y preparado para la sesión de análisis técnico de hoy.
 
 ---
 
@@ -128,6 +99,182 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
      - Creado el documento de referencia [`regla-estandar-ui-frontend-masterhub.md`](wiki/programacion/regla-estandar-ui-frontend-masterhub.md) detallando los tokens semánticos, contrastes requeridos, estructura de tablas, modales y botones para garantizar uniformidad en todos los módulos de MasterHub.
   3. **Certificación de Calidad**:
      - Compilación limpia de `apps/frontend-ui-dashboard` con `next build --webpack` (34/34 rutas, 0 errores en 6.2s).
+
+---
+
+## [2026-09-24] style/finance-ui-aesthetic-refinement | Refinamiento y Armonización Estética de Finanzas (Paleta Master Group)
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`, 💰 `finanzas`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**, 🏹 **Legolas Hojaverde** (`legolas_ui`)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Erradicación de Estilos No Corporativos**:
+     - Eliminados gradientes cian/azul neón, fondos púrpuras y textos saturados que desentonaban con la estética dark luxury de Master Group.
+  2. **Aplicación Rigurosa de Identidad de Marca**:
+     - Botones principales y llamadas a la acción enriquecidos con `var(--master-gold)` (`#bc9939`), fondos translúcidos `bg-[var(--master-gold)]/10` y bordes finos.
+     - Botones secundarios y enlaces normalizados a `bg-white/5 border-white/10 text-white/80`.
+     - Contenedores principales unificados bajo `bg-[var(--master-black,#0e0e12)]` y `bg-white/[0.03]` con bordes tenues `border-white/10`.
+     - Inputs y selectores estandarizados con foco dorado `ring-[var(--master-gold)] focus:border-[var(--master-gold)]`.
+     - Badges de estado discretos y atenuados en baja saturación (10% opacidad).
+     - Tipografía de montos financieros en formato monoespaciado (`font-mono text-sm font-semibold text-white` con contravalor en Bs. `font-mono text-xs text-white/50`).
+  3. **Certificación**:
+     - Compilación limpia de `apps/frontend-ui-dashboard` (34/34 rutas, 0 errores).
+     - Commit `80660a4` subido a `team dev`.
+
+---
+
+## [2026-09-24] feat/finance-cxp-fullstack-integration | Integración Completa de Finanzas y Cuentas por Pagar (Backend, Gateway y Frontend)
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`, 💰 `finanzas`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**, 💍 **Frodo Bolsón** (`frodo_gateway`), ⛏️ **Gimli** (`gimli_backend`), 🏹 **Legolas Hojaverde** (`legolas_ui`)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Análisis de Aporte Previo (Vlad)**:
+     - Auditado el commit de Vlad (`56461b4`: *"Inicio: Proceso de carga de facturas"*).
+     - Identificado el modelo de datos de CxP (`Supplier`, `BusinessUnit`, `AccountPayable`, `TaxRetention`) y el flujo de estados (`REGISTERED` ➔ `PENDING_APPROVAL` ➔ `APPROVED_FOR_PAYMENT` ➔ `IN_PAYMENT_TRAY` ➔ `PAID`).
+     - Detectadas y subsanadas tres ausencias críticas: Incompatibilidad con Prisma 7, falta de base de datos en PostgreSQL, ausencia de módulo en API Gateway y ausencia de vistas en el Dashboard Frontend.
+  2. **Microservicio Backend & Base de Datos (`apps/finance-ms`) (Gimli)**:
+     - Creada la base de datos `finance_db` en el contenedor PostgreSQL local (`masterhub-postgres-local-1`).
+     - Armonizado `schema.prisma` a Prisma 7 (cliente en `../generated/prisma`), creado `prisma.config.ts` e implementado `PrismaService` con `@prisma/adapter-pg` y pool de conexiones `pg`.
+     - Generado el cliente Prisma v7.9.1 y ejecutado `prisma:push` creando las 7 tablas del modelo financiero.
+     - Configurado `package.json` con dependencias NestJS y scripts de compilación limpia.
+  3. **Integración API Gateway (`apps/api-gateway`) (Frodo)**:
+     - Creado `FinanceGatewayModule`, `FinanceGatewayController` y `FinanceGatewayService` bajo la ruta `/api/finance/cxp`.
+     - Endpoints expuestos con `AuthGuard` y roles (`ADMIN`, `DIRECTOR`, `GERENTE`, `FINANZAS`, `ANALISTA_CXP`, `TESORERIA`):
+       - `POST /api/finance/cxp/invoices`: Carga de facturas/comprobantes.
+       - `GET /api/finance/cxp/invoices`: Listado general con filtros.
+       - `GET /api/finance/cxp/invoices/:id`: Detalle de factura.
+       - `GET /api/finance/cxp/trays/approval`: Bandeja de Aprobación para gerencia.
+       - `GET /api/finance/cxp/trays/payment`: Bandeja de Pagos para tesorería.
+       - `PATCH /api/finance/cxp/invoices/:id/status`: Transición individual de estado con motivo.
+       - `PATCH /api/finance/cxp/invoices/bulk-approve`: Aprobación masiva por lote de IDs.
+     - Compilación limpia con 0 errores en `api-gateway`.
+  4. **Frontend UI Dashboard (`apps/frontend-ui-dashboard`) (Legolas)**:
+     - Creado cliente `finance-api.ts` con tipados y llamadas al API Gateway.
+     - Incorporada la sección **Finanzas** (icono `payments`) en el menú del Sidebar con tres accesos directos.
+     - Desarrolladas tres pantallas de alto rendimiento:
+       1. `/dashboard/finance/cxp`: Dashboard con KPIs de resumen (Total USD/VES, registradas, por aprobar, listas), modal `+ Cargar Factura` con cálculo automático de IVA y tasa BCV, y tabla interactiva con filtros y badges de estado.
+       2. `/dashboard/finance/cxp/approval`: Bandeja de revisión gerencial con selección múltiple (checkboxes), barra contextual y botón de aprobación masiva en lote.
+       3. `/dashboard/finance/cxp/payment`: Bandeja de Tesorería con modal para liquidar y registrar comprobantes de pago (transferencias, pago móvil, wire, zelle, efectivo).
+     - Compilación Next.js verificada con **0 errores** (34/34 rutas optimizadas).
+  5. **DevOps & Versionamiento**:
+     - Push exitoso a `team dev` en `MG-HUB` (`5c1f980`).
+
+---
+
+## [2026-09-24] feat/hr-selects-recruitment-and-discard | Sanado de Selects Oscuros, Renombrado a Reclutamiento y Blindaje de Descarte
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**, 🏹 **Legolas Hojaverde** (`legolas_ui`), ⛏️ **Gimli** (`gimli_backend`)
+- **Resumen Ejecutivo de la Operación**:
+  1. **UI Selects & Contraste Oscuro (Legolas)**:
+     - Erradicado el problema de `<select>` con fondo blanco nativo y texto blanco.
+     - Aplicada regla universal en `globals.css` (`background-color: #171717 !important; color: #f5f5f5 !important;` para `select` y `option`).
+     - Reforzados con clases Tailwind `bg-neutral-900 border-white/10 text-white [&>option]:bg-neutral-900 [&>option]:text-white [color-scheme:dark]` en todos los modales y tablas de Vacantes y Reclutamiento.
+  2. **Renombrado a "Reclutamiento y Selección" (Legolas)**:
+     - Sidebar actualizado con label **`Reclutamiento`** e ícono `how_to_reg`.
+     - Barra de pestañas (`hr-tabs.tsx`) actualizada a **`Reclutamiento`**.
+     - Encabezado de la página principal actualizado a **`Reclutamiento y Selección`**.
+  3. **Blindaje de Descarte de Candidatos (Gimli & Legolas)**:
+     - Frontend: Reemplazado el comportamiento erróneo en `candidate-profile-modal.tsx` (que solo cambiaba de pestaña) por un modal interactivo con motivo obligatorio y confirmación.
+     - Backend: Eliminada la restricción que impedía descartar candidatos fuera de estado `ACTIVO`. Se permite descartar a cualquier candidato en proceso (`EN_PROCESO`, `ENTREVISTADO`, `PRUEBA_TECNICA`, `ELEGIBLE`).
+     - Persistencia completa en base de datos: `status: DESCARTADO`, `discardedAt`, `discardReason`, `discardedBy` y registro en `CandidateHistory`.
+     - API Gateway y HR-MS actualizados con soporte REST `POST/PATCH /api/hr/candidates/:id/discard` y alias resilientes NATS.
+  4. **DevOps & Versionamiento**:
+     - Push exitoso a `team dev` en `MG-HUB` (`eb3414a`).
+
+---
+
+## [2026-09-24] fix/hr-onboarding-nats-and-sidebar-ui | Corrección NATS Onboarding, Fix Ícono/Label Vacantes y Análisis Arquitectónico
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**, 🏹 **Legolas Hojaverde** (`legolas_ui`), ⛏️ **Gimli** (`gimli_backend`)
+- **Resumen Ejecutivo de la Operación**:
+  1. **UI Sidebar & Tipografía (Legolas)**:
+     - Diagnosticado que `'request_queue'` no es un glifo válido de Google Material Symbols Outlined, provocando que se renderizara el texto crudo en lugar del ícono.
+     - Sustituido por el glifo oficial **`person_search`** y renombrado a **`Vacantes`**.
+     - Blindado el contenedor con `truncate flex-1` y `shrink-0`, acotado el badge amarillo solo a indicadores y activado `font-feature-settings: 'liga' 1;` en `globals.css`.
+  2. **Análisis de Confusión de Pantallas Vacantes vs Onboarding (Legolas)**:
+     - Clarificado que `/dashboard/hr/onboarding` opera como un ATS de Reclutamiento y Selección (`Candidate`), no de inducción.
+     - Detectada la duplicidad donde las solicitudes de vacantes se creaban y editaban tanto en `/dashboard/hr/vacancy-requests` como en `/dashboard/hr/onboarding`.
+     - Propuesta de reordenamiento: Renombrar Onboarding a Reclutamiento, reservar Vacantes para auditoría de solicitudes y unificar candidatos.
+  3. **Backend & NATS Microservicios (Gimli & Frodo DevOps)**:
+     - Diagnosticada la causa raíz del error *"Error de conexión / Error comunicando con hr-ms"*:
+       1. Colisión de `@MessagePattern` entre `CandidatesController` y `OnboardingController`, sumado al rechazo de `ValidationPipe`.
+       2. Error SQL PostgreSQL `P2022: column Candidate.isActive does not exist` en `hr_db`.
+     - Aplicado `ALTER TABLE "Candidate" ADD COLUMN IF NOT EXISTS "isActive" BOOLEAN DEFAULT true;` en el contenedor `masterhub-postgres-local-1`.
+     - Creada y versionada la migración Prisma formal `20260925000000_add_candidate_is_active`.
+     - Actualizado `.gitignore` para permitir migraciones SQL (`!**/prisma/migrations/**/*.sql`).
+     - Desacoplados los patrones, enriquecido `CandidateQueryDto` y `CreateCandidateDto`, y creados alias resilientes en `OnboardingController` y `HrGatewayController`.
+     - Validada la suite unitaria con **37/37 tests aprobados** en `apps/hr-ms` y verificada la query de candidatos con éxito.
+  4. **DevOps & Versionamiento**:
+     - Sincronizado y pusheado a `team dev` en `MG-HUB` (`ed0c8a0`).
+
+---
+
+## [2026-09-24] feat/hr-fase2-task2.3-onboarding | Implementación de Task 2.3 Puente de Onboarding Candidato ➔ Empleado con Período de Prueba (30 Días)
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**, 💍 **Frodo**, ⛏️ **Gimli**, 🔮 **Galadriel**, 🏹 **Legolas**, 🛡️ **Samwise**, ⚔️ **Aragorn**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Auditoría de Requerimiento (Aragorn)**:
+     - Reconstruida e implementada en código la **Task 2.3 (#61)** de Plane: *"Puente de Onboarding: Candidato ➔ Empleado"*.
+     - Asegurada la regla de negocio laboral: Contrato y estado con **Período de Prueba de 30 días** antes del contrato definitivo, alerta médica/psicológica y generación de código de empleado `EMP-XXXX`.
+  2. **Microservicio Backend NestJS (`apps/hr-ms`) (Gimli & Galadriel)**:
+     - Creado DTO `HireCandidateDto` con validaciones de fechas, cargos, sedes, salarios y días de prueba.
+     - Implementado método `hire()` en `CandidatesService` ejecutando:
+       - Búsqueda o creación/actualización de `Employee` en `hr_db`.
+       - Asignación de metadata de período de prueba (`probationPeriodDays: 30`, `probationStartDate`, `probationEndDate`, `statusContratacion: 'En Periodo de Prueba'`, `requiresPsychologicalExam: true`).
+       - Generación de contrato inicial por 3 meses (`ContractType.THREE_MONTHS`) activo durante el período de prueba.
+       - Actualización de `Candidate` a `status: CONTRATADO`, `stage: CONTRATACION`, `employeeId` y registro histórico en `CandidateHistory`.
+     - MessagePattern NATS dual `['hr.candidate.hire', 'hireCandidate']` registrado en `CandidatesController`.
+  3. **API Gateway (`apps/api-gateway`) (Frodo)**:
+     - Endpoint `POST /api/hr/candidates/:id/hire` actualizado para despachar el payload completo `HireCandidateDto` hacia `hr-ms`.
+  4. **Frontend UI Dashboard (`apps/frontend-ui-dashboard`) (Legolas)**:
+     - Implementado `HireCandidateModal.tsx` con formulario guiado, cálculo automático del período de prueba de 30 días, banner informativo y redirección/enlace a `/dashboard/hr/employees`.
+     - Integración directa en la tabla de candidatos y en el modal de detalle (`candidate-detail-modal.tsx`).
+     - Compilación Next.js verificada con **0 errores** en las 31 rutas estáticas y dinámicas.
+  5. **Aseguramiento de Calidad QA (Samwise)**:
+     - Añadida prueba unitaria específica para `hire()` en `candidates.service.spec.ts`.
+     - Ejecutada la suite con **9/9 pruebas unitarias aprobadas**.
+  6. **DevOps & Versionamiento**:
+     - Commiteado y pusheado exitosamente a la rama remota `team dev` en `MG-HUB` (`23daf2f`).
+
+---
+
+## [2026-09-24] feat/hr-fase2-candidates-rescue | Rescate e Integración de Fase 2 HR (Candidatos y Entrevistas) por la Comunidad del Anillo
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**, 💍 **Frodo**, ⛏️ **Gimli**, 🔮 **Galadriel**, 🏹 **Legolas**, 🛡️ **Samwise**, ⚔️ **Aragorn**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Auditoría de Proyecto en Plane (Aragorn)**:
+     - Constatado que la **Fase 2 de HR (#22)** figuraba en estado *Testing* con **TASK 2.1 (#63)**, **TASK 2.2 (#62)** y **TASK 2.3 (#61)** marcadas como *Done*, a pesar de no estar presentes en la rama local `dev`.
+     - Identificado que la TASK 2.2 estaba atrapada en `origin/master` (`aaa437d`) debido a la bifurcación previa sin mergear.
+  2. **Ingeniería DevOps & Rescate de Código (Frodo)**:
+     - Creada rama aislada `feature/hr-fase2-candidates` y rescatadas 2,790 líneas de código de backend y frontend desde `origin/master`.
+     - Integración y merge limpio a `dev` (`19f0484`) y push exitoso a `team/dev`.
+  3. **Modelado y Armonización Relacional (Galadriel)**:
+     - Armonizado `apps/hr-ms/prisma/schema.prisma` con la base de datos real PostgreSQL (`Candidate`, `Interview`, `InterviewStatus`, `CandidateStatus`, `VacancyRequest`).
+     - Ejecutado `prisma generate` con cliente v7.9.1 actualizado.
+  4. **Backend NestJS y NATS Microservicios (Gimli)**:
+     - Integrado `CandidatesModule` en `AppModule` de `hr-ms`.
+     - Soporte dual de MessagePatterns (camelCase y dotted) en `CandidatesController` y API Gateway.
+     - Compilación limpia de `hr-ms` y `api-gateway` con 0 errores.
+  5. **Frontend UI Dashboard (Legolas)**:
+     - Activada la ruta `/dashboard/hr/candidates` con vista interactiva, modales de creación y detalle.
+     - Verificado `next build` en `apps/frontend-ui-dashboard` compilando exitosamente las 31 rutas.
+  6. **Aseguramiento de Calidad QA (Samwise)**:
+     - Ejecutada la suite `candidates.service.spec.ts` con **8/8 pruebas unitarias aprobadas**.
+
+---
+
+## [2026-09-24] feat/xetux-api-postman-integration | Generación de Colección Postman y Diagnóstico API Xetux
+- **Área**: 🏢 `trabajo` & 💻 `programacion`
+- **Agente Responsable**: 🤵 **ALFRED**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Análisis Técnico y Extracción de Endpoints**:
+     - Analizados los 20 documentos PDF de especificación oficial de Xetux en `raw/trabajo/`.
+     - Clasificados los 20 endpoints en 3 áreas: Catálogos/Maestros, Ventas/Operación y Compras/Producción/Costos.
+  2. **Diagnóstico de Conectividad en Tiempo Real**:
+     - Escaneadas las 13 sedes del Grupo Beijing.
+     - Detectada y corregida la resolución DNS en Altamira, Naranjos y Boyera (removido prefijo erróneo `Remoto`).
+     - Detectado rechazo de credencial en Beijing Tahona (`HTTP 401 Unauthorized`).
+  3. **Generación de Artefactos de Integración**:
+     - Generada la colección oficial [`Xetux_API_Extraction.postman_collection.json`](file:///C:/Users/vmontoyaMG/Desktop/2brain-MG/raw/trabajo/Xetux_API_Extraction.postman_collection.json) con cabeceras explícitas de Authorization y soporte gzip.
+     - Generados 13 archivos de entorno en [`raw/trabajo/postman_environments/`](file:///C:/Users/vmontoyaMG/Desktop/2brain-MG/raw/trabajo/postman_environments/) con variables tipo default para compatibilidad total en Postman.
+     - Documentada la guía técnica en [`wiki/trabajo/guia-integracion-api-xetux-postman.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain-MG/wiki/trabajo/guia-integracion-api-xetux-postman.md).
 
 ---
 
@@ -148,7 +295,7 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
 ---
 ## [2026-09-24] feat/helpdesk-finanzas-plane | Activación de la Comunidad del Anillo: Fix Helpdesk y Reajuste Sprint 1 Finanzas
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
-- **Agentes Responsables**: 🤵 **ALFRED**, 🏹 **Legolas**, ⛏️ **Gimli** / 🛡️ **Samwise**, 💍 **Frodo**, ⚔️ **Aragorn**
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** / 🤵 **ALFRED**, 🏹 **Legolas**, ⛏️ **Gimli** / 🛡️ **Samwise**, 💍 **Frodo**, ⚔️ **Aragorn**
 - **Resumen Ejecutivo de la Operación**:
   1. **Resolución de Bugs en Helpdesk (`apps/frontend-ui-dashboard` & `apps/helpdesk-sm`)**:
      - **UI Modal de Edición (Legolas)**: Corregido el bloqueo condicional de sede en `helpdesk-ticket-edit-modal.tsx`. Integrada la carga global de colaboradores (`listAllActiveEmployees()`) y la precarga automática e infalible de Solicitante y Responsable con soporte para guardado y persistencia en backend.
@@ -166,160 +313,6 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
      - Cierre y liberación ordenada de las sesiones de los subagentes especializados.
 
 ---
-## [2026-09-23] chore/handover | Cierre de Turno y Jornada Nocturna
-- **Áreas**: 🏢 `trabajo`, 🚀 `proyectos`, 💻 `programacion`
-- **Agentes Responsables**: 🤵 **ALFRED** & 💍 **Frodo** (Compañía de MG-HUB)
-- **Resumen Ejecutivo de la Jornada**:
-  1. **WebCastro (100% Entregado y en Producción)**: 
-     - Conectada persistencia de consultas web en base de datos PostgreSQL Neon y panel Payload CMS con migración idempotente.
-     - Actualizados botones de WhatsApp (`+58 422 038-7323` / `+58 412 964-3616`).
-     - Badge Sobre Nosotros reubicado, párrafos justificados y checklist dinámico en Hero "Quiénes Somos".
-     - Corrección de build en Vercel (`--webpack`) y sincronización completa de la rama `dev` con `main`.
-  2. **Migración Completa de ClickUp a Plane (MasterHub)**:
-     - Extraídas e importadas 97 tareas y sub-épicas de la lista *1er Fase* de ClickUp al workspace `it---mg` / proyecto `MasterHub` en Plane (`projects.mastergroupve.com`).
-     - Asignadas a sus 6 módulos (`Finanzas-MS`, `HR-MS`, `Helpdesk-MS`, `Inventario-MS`, `Auth-MS`, `MKT-MS`).
-     - Creado y configurado el nuevo estado y bloque de flujo `Testing` en color violeta para el Board Kanban.
-  3. **Estandarización Git & Flujo de Desarrollo (Acuerdo con Vlad)**:
-     - Consagrada la rama `dev` como base de integración y staging continuo junto a ramas `feature/*` y Conventional Commits en `BRANCHING_POLICY.md` y `DEVELOPER_GUIDE.md`.
-  4. **Pipelines CI/CD Automatizados (GitHub Actions)**:
-     - Pipeline `deploy-staging.yml` para despliegues autónomos a `https://dev.mastergroupve.com/` al mergear en `staging`.
-     - Pipeline `deploy-production.yml` para despliegues autónomos a `https://masterhub.mastergroupve.com/` al aprobar el PR hacia `main`.
-     - Proxy Nginx con SSL (`masterhub.mastergroupve.com.conf`) y guía `docs/CI_CD_WORKFLOW.md`.
-  5. **Cierre de Procesos**: Detenidas limpiamente las instancias locales del bot de Telegram (`telegram_bot.py`) para prevenir conflictos multi-instancia en el próximo inicio.
-
----
-## [2026-09-23] feat/github-actions-cicd | Pipelines de Despliegue Automatizado para Staging y Producción (MG-HUB)
-- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
-- **Agentes Responsables**: 🤵 **ALFRED** & 💍 **Frodo** (DevOps & CI/CD Master)
-- **Resumen de la Operación**:
-  1. **Pipeline de Staging (`deploy-staging.yml`)**:
-     - Disparador: Evento `push` al fusionar un PR aprobado en la rama **`staging`**.
-     - Despliegue autónomo vía SSH conectando al servidor VPS, sincronizando `staging` y ejecutando `docker compose -f docker-compose.staging.yml up -d --build`.
-     - Resultado en vivo: **`https://dev.mastergroupve.com/`** (Puertos 3010 para API Gateway y 3011 para Frontend).
-  2. **Pipeline de Producción (`deploy-production.yml`)**:
-     - Disparador: Evento `push` al aprobar y mergear el PR desde `staging` hacia **`main`** tras la validación de QA y el Project Manager.
-     - Despliegue autónomo vía SSH al servidor de producción, sincronizando `main` y ejecutando `docker compose -f docker-compose.yml up -d --build`.
-     - Resultado en vivo: **`https://masterhub.mastergroupve.com/`** (Puertos 3001 para API Gateway y 3000 para Frontend).
-  3. **Configuraciones de Proxy Nginx**:
-     - Creado `deploy/nginx/masterhub.mastergroupve.com.conf` con terminación SSL (Certbot Let's Encrypt) y enrutamiento hacia los puertos 3000/3001.
-     - Documentada la guía técnica completa en `docs/CI_CD_WORKFLOW.md`.
-  4. **Sincronización en GitHub**:
-     - Creada rama `feature/MGH-DEVOPS-cicd-pipelines`, mergeada y publicada en `dev`, `staging` y `main` en el remoto `team` (`vmontoyamg-png/MG-HUB.git`).
-
----
-## [2026-09-23] chore/git-workflow | Estandarización de Flujo Git (Feature Branches & Integración en dev)
-- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
-- **Agente Responsable**: 🤵 **ALFRED**
-- **Resumen de la Operación**:
-  1. **Alineación con Vlad & Política del Equipo**: Se acordó formalmente el estándar de desarrollo: ramas `feature/<nombre>` creadas a partir de `dev`, commits con formato *Conventional Commits* (`feat(...)`, `fix(...)`, etc.) y envío/merge de Pull Requests dirigidos hacia la rama **`dev`** (desarrollo y staging continuo).
-  2. **Actualización de WebCastro**:
-     - Sincronizada la rama `dev` con `main` vía fast-forward (`git merge main --ff-only`).
-     - Subidos a `origin/dev` todos los últimos cambios (persistencia de consultas en BD Neon, panel Payload CMS, WhatsApp flotante, checklist dinámico y fix de compilación en Vercel).
-  3. **Actualización de MasterHub (`MG-HUB`)**:
-     - Actualizadas las políticas oficiales en `BRANCHING_POLICY.md` y `DEVELOPER_GUIDE.md` para consagrar `dev` como la rama base de integración y staging continuo (`https://dev.mastergroupve.com/`).
-     - Subida la rama `feature/MGH-FINANCE-scaffold` con el andamiaje del microservicio de finanzas y scripts de despliegue SSL Nginx.
-     - Integrada la rama `feature/MGH-FINANCE-scaffold` en `dev` y publicada en el remoto `team/dev`.
-
----
-## [2026-09-23] feat/plane-migration | Migración Completa de Tareas de MasterHub desde ClickUp a Plane
-- **Áreas**: 🚀 `proyectos` & 🏢 `trabajo`
-- **Agente Responsable**: 🤵 **ALFRED**
-- **Resumen de la Operación**:
-  1. **Extracción Integral de ClickUp**: Se exportaron y procesaron las 97 tareas y épicas de la lista *1er Fase* de MasterHub (`https://app.clickup.com/90141246758/v/l/li/901418749229`).
-  2. **Configuración de Módulos en Plane**: Se identificaron y mapearon los módulos en el proyecto `MasterHub` (ID: `b60ea600-1f86-4177-87df-6b6ed0063874`) del workspace `it---mg`: `Finanzas-MS` (58), `HR-MS` (20), `Helpdesk-MS` (11), `Inventario-MS` (4), `Auth-MS` (2) y creación de `MKT-MS` (1).
-  3. **Script de Migración Resiliente**: Desarrollado y ejecutado script en Node.js con autenticación por API Token (`plane_api_...`), manejo inteligente de *rate-limiting* (código 429 con *exponential backoff* dinámico según cabecera `retry-after`) y deduplicación idempotente.
-  4. **Resultado**: 100% de las tareas migradas con éxito (92 nuevas creadas + 5 preexistentes, 0 errores, total 98 en Plane). Estados (`Backlog`, `Todo`, `In Progress`, `Done`), descripciones completas en Markdown y vinculación a módulos garantizados.
-  5. **Documentación**: Actualizada la nota central en [[plane-gestion-proyectos|Proyecto: Plane - Plataforma de Gestión de Proyectos]].
-
----
-## [2026-09-23] feat/webcastro | Despliegue de Módulo de Consultas, Actualización de WhatsApp y Mejoras UX
-- **Áreas**: 🚀 `proyectos` & 💻 `programacion`
-- **Agente Responsable**: 🤵 **ALFRED**
-- **Resumen de la Jornada**:
-  1. **Auditoría & Cierre de Sprints Anteriores en ClickUp**: Marcadas como completadas (`Complete`) 5 tareas históricas de WebCastro (`86bc5h568`, `86bc5h4x2`, `86bc5h4rn`, `86bc5h4er`, `86bbktye7`).
-  2. **Persistencia de Consultas Web en BD & Panel Payload**: Conectada la colección `Consultas` con migración idempotente `20260919_032259_add_consultas.ts` y guardado directo desde el controlador API en Neon PostgreSQL.
-  3. **Actualización de WhatsApp Flotante**: Números actualizados a Atención 1 (`+58 422 038-7323`) y Atención 2 (`+58 412 964-3616`) en `WhatsAppFloatingButton.tsx` (ClickUp: `86bc6k2ru`).
-  4. **Optimización Visual Sobre Nosotros**: Reubicado el badge flotante "100% Calidad Garantizada" a `-bottom-14 sm:-bottom-16` para evitar solapamiento con la fotografía y aplicadas clases `text-justify` y `hyphens-auto` (ClickUp: `86bc6k76n` y `86bc6kc6j`).
-  5. **Corrección de Toast en QuoteModal**: Solucionado bug asíncrono donde `e.currentTarget` se perdía tras el `await fetch`, asegurando la muestra del toast verde confirmatorio (ClickUp: `86bc6knqc`).
-  6. **Solución a Build Vercel (PostCSS/Webpack)**: Restablecido el flag `--webpack` en `package.json` y saneado `@import` redundante en `globals.css` (ClickUp: `86bc6ktz5`).
-  7. **Checklist Dinámico en Hero (Quiénes Somos)**: Implementado parseo inteligente en `Hero/Component.tsx` para convertir listas/objetivos con viñetas en tarjetas con checks dorados y párrafos justificados (ClickUp: `86bc6ky1r`).
-  8. **Despliegue a Producción**: Commits `7b5929b`, `c9ab13e`, `427371e` y `906ec9f` subidos a `origin/main` en GitHub (`MasterGroupVE/WebCastro.git`).
-
----
-## [2026-09-22] chore/handover | Cierre de Turno y Jornada
-- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
-- **Agentes Responsables**: 🤵 **ALFRED** & 🧙‍♂️ **Grandalf** (con la Comunidad del Anillo)
-- **Resumen Ejecutivo de la Jornada**:
-  1. **Sincronización Inicial**: `git pull` de `2brain` ejecutado con éxito, integrando el skill `gdocs-formatting` y el protocolo de orquestación.
-  2. **Auditoría Reclutamiento RRHH**: Descargado y parseado el libro maestro de Google Sheets `Control de Reclutamiento`. Extraídas 1.996 entrevistas históricas, 117 vacantes y la matriz de Head Count 2026. Documentado en [[analisis-sistema-reclutamiento-rrhh|Análisis Técnico: Documento Maestro de Reclutamiento y Selección RRHH]] y cerrada la tarea `86bc5jbfa` en ClickUp.
-  3. **Despliegue Paralelo (Vacantes & Head Count 2026)**:
-     - 🔮 **Galadriel**: Modelos Prisma `VacancyRequest` y `HeadCountPosition` sincronizados en `hr_db`. Seed de 114 vacantes reales y 255 posiciones de plantilla 2026.
-     - ⛏️ **Gimli**: `HeadcountModule` en NestJS, 8 patrones TCP, endpoints en `api-gateway`, correlativo `VAC-XXX` automático y regla de bloqueo si `needed <= 0`.
-     - 🏹 **Legolas**: Vistas Next.js `/dashboard/hr/vacancies` y `/dashboard/hr/headcount` con semáforo dinámico de déficit/equilibrio y drill-down.
-     - 💍 **Frodo**: Construcción y recreación de contenedores Docker (`frontend-ui-dashboard`, `api-gateway`, `hr-ms`) respondiendo HTTP 200 en `localhost:3000`.
-  4. **Persistencia Git**: Cambios subidos al remoto del equipo (`team/main`) en MG-HUB (`69c2a75` y `496ce8a`).
-  5. **Agenda de Mañana (Google Calendar Trabajo)**:
-     - 11:00 AM – 12:00 PM: 🧪 QA de Task 2.2 y 2.3 (Candidatos, CVs S3, Puente Onboarding).
-     - 02:00 PM – 03:00 PM: 🧪 QA de Vacantes VAC-XXX y Matriz Head Count 2026.
-
----
-## [2026-09-22] feat/mg-hub | Despliegue Paralelo de la Comunidad del Anillo: Vacantes Correlativas VAC & Matriz Head Count 2026
-- **Área**: 🏢 `trabajo` & 💻 `programacion` & 🚀 `proyectos`
-- **Agentes Responsables**: 🧙‍♂️ **Grandalf**, 🔮 **Galadriel**, ⛏️ **Gimli**, 🏹 **Legolas** & 🤵 **ALFRED**
-- **Acciones realizadas**:
-  - **🔮 Galadriel (DB & Prisma)**:
-    - Enriquecido el modelo `VacancyRequest` en `apps/hr-ms/prisma/schema.prisma` con `code @unique` (`VAC-XXX`), `source`, `hiredDate`.
-    - Creada la entidad `HeadCountPosition` (`siteCode`, `positionName`, `approved`, `installed`, `needed`, `year`).
-    - Sincronizada `hr_db` en Aiven Cloud (`npx prisma db push`) con 0% pérdida de datos.
-    - Ejecutado el seed masivo [`seed-vacancies.js`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/hr-ms/prisma/seed-vacancies.js), insertando **114 vacantes reales** y **255 posiciones de Head Count** para 15 sedes.
-  - **⛏️ Gimli (Backend NestJS)**:
-    - Desarrollado el módulo [`HeadcountModule`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/hr-ms/src/headcount/headcount.module.ts) con 8 patrones TCP y endpoints REST en `api-gateway`.
-    - Implementada la regla de negocio de Head Count en `VacancyRequestService`: si `needed <= 0` en solicitud por `CRECIMIENTO`, el estado pasa a `REQUIRES_SPECIAL_APPROVAL`.
-    - Generador automático de correlativo `VAC-XXX`.
-    - Verificada compilación con 0 errores y 28 tests unitarios pasados.
-  - **🏹 Legolas (Frontend UI Next.js)**:
-    - Diseñada la vista de Vacantes ([`/dashboard/hr/vacancies`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/app/dashboard/hr/vacancies/page.tsx)) con badges dorados `VAC-XXX`, filtros por BU y KPIs.
-    - Implementada la **Matriz Interactiva de Head Count 2026** ([`/dashboard/hr/headcount`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/app/dashboard/hr/headcount/page.tsx)) con semáforo dinámico de déficit (rojo), equilibrio (verde) y sobrecupo (amarillo/azul), drill-down de colaboradores instalados y botón `+ Abrir Vacante`.
-  - **Sincronización Git**: Cambios integrados y comiteados en `MG-HUB` (Commit `69c2a75`).
-
----
-## [2026-09-22] feat/rrhh | Ingesta, Auditoría y Mapeo del Sistema de Reclutamiento de RRHH (Master Group)
-- **Área**: 🏢 `trabajo`
-- **Agente Responsable**: 🤵 **ALFRED**
-- **Acciones realizadas**:
-  - Descargado e inspeccionado el libro maestro corporativo de Google Sheets de RRHH (`Control de Reclutamiento`, propiedad de Franmarys González / Eva Colmenares).
-  - Extraídas y procesadas las 5 hojas de trabajo en `raw/trabajo/recruitment_parsed/`: `Entrevistas.csv` (1.996 postulantes históricos), `Vacantes.csv` (117 registros con códigos BU), `Head Count.csv` (plantilla autorizada 2026), `Llamados no asistieron.csv` (33 registros) y `Entrevistas Area Administrativa.csv` (evaluaciones cualitativas).
-  - Elaborada la guía técnica de mapeo de datos y plan de ingesta hacia la base de datos `hr_db` (Prisma ORM) en [[analisis-sistema-reclutamiento-rrhh|Análisis Técnico: Documento Maestro de Reclutamiento y Selección RRHH]].
-  - Registrada y completada la tarea en ClickUp `86bc5jbfa` en la Fase 2 de MS-HR.
-
----
-## [2026-09-22] docs/cms | Manual Tecnológico y Guía de Gestión de Contenido en Payload CMS (WebCastro)
-- **Área**: 🚀 `proyectos` & 💻 `programacion`
-- **Agente Responsable**: 🤵 **ALFRED**
-- **Acciones realizadas**:
-  - Elaborado el manual tecnológico integral para **WebCastro** ([MANUAL_TECNICO_GESTION_CONTENIDO_PAYLOAD.md](file:///C:/Users/vmontoyaMG/Desktop/WebCastro/docs/MANUAL_TECNICO_GESTION_CONTENIDO_PAYLOAD.md)), detallando la arquitectura informativa de Payload CMS v3.
-  - Documentado el mapa para ubicar contenidos: Colecciones (`Pages`, `Proyectos`, `Posts`, `Media`, `Consultas`) y Globales (`Header`, `Footer`).
-  - Especificado el catálogo completo de los 19 bloques modulares (`Hero`, `AboutUs`, `Services`, `Process`, `Projects`, etc.) que componen el `BlocksRenderer`.
-  - Explicado el flujo de creación paso a paso de páginas, obras de portafolio, optimización de medios en Vercel Blob y revalidación ISR en tiempo real.
-  - Actualizado el estado del proyecto en [[webcastro|Proyecto: WebCastro]].
-
-## [2026-09-22] feat/orchestration | Protocolo Obligatorio de Orquestación y Delegación a Subagentes & Categorización Helpdesk
-- **Área**: 🏢 `trabajo` & 💻 `programacion`
-- **Agente Responsable**: 🤵 **ALFRED**
-- **Acciones realizadas**:
-  - Incorporado en `AGENTS.md` y `GEMINI.md` el **Protocolo Obligatorio de Orquestación & Delegación a Subagentes Especializados**, estableciendo que ALFRED actuará como Arquitecto Líder delegando la ejecución a subagentes (`documentation-agent`, `research`, `backend-dev`, `frontend-dev`).
-  - Creada y desplegada de forma segura (0% pérdida de datos) la **Categorización de Tickets por Tipo de Soporte** en Helpdesk (`TicketCategory` en `helpdesk-sm` y `frontend-ui-dashboard`).
-  - Creado y publicado en Google Docs el documento oficial **"Estándar de Arquitectura y Guía de Microservicios MGH (MasterHub)"** mediante clonación automática de la plantilla maestra.
-
-## [2026-09-21] feat/sop | Creación del Protocolo Oficial de Creación de Tickets en MasterHub Helpdesk
-- **Área**: 🏢 `trabajo`
-- **Agente Responsable**: 🤵 **ALFRED**
-- **Acciones realizadas**:
-  - Elaborado el protocolo estándar inalterable (SOP) para la ingesta y registro directo de tickets de soporte técnico en la base de datos de producción de **MasterHub (`helpdesk_db`) en Aiven Cloud**.
-  - Documentados los mapeos de campos Prisma (`TicketType`, `TicketSource`, `TicketStatus`, `TicketPriority`, `siteId`, `requesterName`, etc.) y el flujo de ejecución nativa en `Desktop/MasterHub/helpdesk-sm`.
-  - Guardada la guía en [[sop-creacion-tickets-masterhub|SOP: Protocolo Oficial de Creación de Tickets en MasterHub Helpdesk]].
-  - Enlazada la guía en el [[index|Índice Maestro de 2brain]].
-
 ## [2026-09-19] feat/mcp | Registro y Documentación del Servidor MCP para GitHub (GitHub Personal)
 - **Área**: 💻 `programacion` & 🚀 `proyectos`
 - **Agente Responsable**: 🤵 **ALFRED**
@@ -795,65 +788,5 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - **Limpieza de Calendario & Carga de Tareas**: Eliminados los 5 eventos duplicados en Google Calendar y creadas exitosamente las 5 tareas oficiales en **Google Tasks** (Tiempo Ministerial, Comprar comida de regreso, Buscar camisas Yuly, Dar acceso a Vlad en Finanzas, y Deep Work).
   - **Persistencia Git**: Realizado commit local inicial en `2brain-MG` (`3e5c39a`).
 
----
 
-## [2026-09-25] feat/ministerial | Estudio Exegético & Homilético - Sermón 3: "Un Corazón Enseñable"
-- **Área**: ⛪ `ministerial`
-- **Agentes Responsables**: ⛪ **Subagente Pastoral Assistant** & 🤵 **ALFRED**
-- **Acciones realizadas**:
-  - Investigado y redactado el estudio exegético y homilético completo para el **Sermón 3: "Un Corazón Enseñable (Venciendo los Obstáculos)"** de la serie de discipulado *"Caminando Juntos"*.
-  - Exégesis lingüística profunda:
-    - Hebreo: *Mūsār* (instrucción/disciplina formativa), *Tōkahath* (reprensión/corrección sabia), *Bā'ar* (embrutecimiento por rechazar reprensión) en Proverbios 12:1 y Prov. 27:6 (*Fieles son las heridas del que ama*).
-    - Griego: *Teleioō* (llegar a la meta/perfección), *Epekteinomenos* (estirarse hacia la meta), *Diōkō* (perseguir con tenacidad) en Filipenses 3:12-14, y *Bastazō* / *Apotassomai* en Lucas 14:27-33 (desarmar la autosuficiencia).
-  - Bosquejo homilético completo estructurado en 3 puntos: (1) Los 3 enemigos mortales del discipulado (Orgullo, Aislamiento y Superficialidad), (2) La belleza y poder de la corrección sabia (heridas fieles del mentor vs. lisonja destructiva), (3) La postura del aprendiz permanente (la copa vacía y el apóstol en carrera).
-  - Incluidas ilustraciones contemporáneas (el entrenador del atleta de élite, el punto ciego del vehículo, el cirujano vs. enemigo, el alfarero y la burbuja de aire, la copa de té rebosante).
-  - Guía de 5 preguntas de aplicación práctica para células, grupos pequeños y parejas de discipulado.
-  - Creado archivo persistente [`wiki/ministerial/sermon-3-un-corazon-ensenable-estudio.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/ministerial/sermon-3-un-corazon-ensenable-estudio.md).
-  - Actualizados [`wiki/ministerial/serie-discipulado-caminando-juntos.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/ministerial/serie-discipulado-caminando-juntos.md) y el índice maestro [`wiki/index.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/index.md).
-
----
-
-## [2026-10-01] feat/system | Cierre de Turno: Sistema RBAC Granular SÍ/NO, Reubicación de Navegación y Estrategia Git Staging -> Main
-- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
-- **Agentes Responsables**: 🤵 **ALFRED** & 🧙 **Grandalf (Arquitecto Orquestador)**
-- **Resumen de Logros del Turno**:
-  1. **Reubicación Semántica de Administración a Sistema**:
-     - Consolidada la navegación en el sidebar: `Usuarios`, `Personal`, `Auditoría` y `Respaldos` agrupados bajo la sección unificada **«Sistema»** (`/dashboard/users`, `/dashboard/assignees`, `/dashboard/audit`, `/dashboard/backups`).
-     - Actualizadas las validaciones de acceso en [`dashboard-shell.tsx`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/components/dashboard/dashboard-shell.tsx) y [`auth-guard.tsx`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/components/auth/auth-guard.tsx).
-  2. **Módulo de Gestión Integral de Usuarios & Permisos Granulares (SÍ / NO)**:
-     - Diseñado e implementado modal 3-en-1 en [`page.tsx`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/app/dashboard/users/page.tsx):
-       - **Pestaña 1 (Roles Departamentales)**: Presets a un clic, categorías departamentales e inspector de permisos efectivos en tiempo real.
-       - **Pestaña 2 (Permisos Granulares SÍ/NO)**: Matriz interactiva de decisión individual por acción (SÍ, NO, Restablecer al Rol), con badges de procedencia (`✓ Concedido por Rol`, `⚡ Autorizado Manualmente`, `🚫 Bloqueado Manualmente`), filtros por módulo y acciones en lote.
-       - **Pestaña 3 (Perfil & Cuenta)**: Edición de nombre, correo, username y estado de activación.
-     - Persistencia de excepciones granulares mediante [`saveUserPermissionsOverride`](file:///C:/Users/vmontoyaMG/Desktop/MG-HUB/apps/frontend-ui-dashboard/src/lib/rbac.ts).
-  3. **Solución Departamentos & Filtros de Sedes**:
-     - Resuelto error en departamento por columna faltante `sedeCount` en base de datos PostgreSQL local (`hr_db`).
-     - Blindados los filtros de visibilidad de tickets y vacantes para usuarios con rol `STORE_MANAGER` / `MANAGER` limitados a su propia sede.
-  4. **Compilación & Despliegue en Dev**:
-     - Compilación limpia de Next.js (`npm run build`, 38/38 rutas con 0 errores).
-     - Cambios consolidados y subidos a la rama remota `dev` en GitHub (Commit [`1636422`](https://github.com/vmontoyamg-png/MG-HUB/commit/1636422)).
-  5. **Memoria Técnica & Tarea Programada para Mañana**:
-     - Creada guía de mejores prácticas en [`wiki/programacion/guia-git-promocion-selectiva-staging-main.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/programacion/guia-git-promocion-selectiva-staging-main.md).
-     - Creada tarea de recordatorio en **Google Tasks**: *"MasterHub: Promoción selectiva de Sistema/RBAC a main (Cherry-pick de dev a main)"* programada para la mañana del 2026-10-02.
-  6. **Diagnóstico Crítico de Despliegue en Staging (GitHub Actions)**:
-     - Detectado y diagnosticado el error `can't connect without a private SSH key or password` en `.github/workflows/deploy-staging.yml`.
-     - Causa: Falta del secret `SSH_KEY` en los Secrets del repositorio GitHub.
-     - Verificado: Clave local `C:\Users\vmontoyaMG\.ssh\id_ed25519` conecta exitosamente a `root@172.238.221.116`.
-     - Documentado en [`wiki/programacion/solucion-ci-cd-ssh-key-staging-masterhub.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/programacion/solucion-ci-cd-ssh-key-staging-masterhub.md).
-     - Creada tarea URGENTE en **Google Tasks** para resolverlo a primera hora: *"URGENTE: Cargar SSH_KEY en GitHub Secrets para corregir despliegue de Staging"*.
-
-## [2026-10-02] fix/cicd-staging-prisma | Resolución Integral CI/CD Staging, Error 502 y Sincronización Prisma DB
-- **Áreas**: 💻 `programacion`, 🚀 `proyectos`, 🏢 `trabajo`
-- **Agentes Responsables**: 🤵 **ALFRED**
-- **Resumen Ejecutivo de la Operación**:
-  1. **Blindaje de Workflows CI/CD (`MG-HUB`)**:
-     - Migrado de `appleboy/ssh-action` a OpenSSH nativo con soporte `base64 -di`. Clave de laptop codificada e inyectada en secret `SSH_KEY`.
-     - Corregidas rutas absolutas `DEPLOY_PATH="/var/www/mgh/staging"` y `REPO_URL` en scripts remotos.
-  2. **Resolución de Error 502 Bad Gateway**:
-     - 502 temporal derivado de la reconstrucción y compilación de Docker en puerto 3011. Concluida la compilación, responde `HTTP 200 OK` en `https://staging.mastergroupve.com/login` y `HTTP 307` en raíz hacia `/dashboard`.
-  3. **Sincronización Total de Bases de Datos Prisma en Staging**:
-     - `auth_db_staging`: sincronizado al 100% con roles RBAC y permisos.
-     - `finance_db_staging`: sincronizado con comprobantes SENIAT, retenciones y tasas BCV.
-     - `hr_db_staging`: resuelto bloqueo por índice `VacancyRequest_code_key`; eliminada restricción obsoleta y sincronizado con `npx prisma db push --accept-data-loss`.
-     - `helpdesk_db_staging`, `inventory_db_staging`, `wiki_db_staging`: verificados y 100% en sync.
 

@@ -66,7 +66,9 @@ tags:
 ---
 
 ### 🎙️ Sermón 4: De Aprendiz a Multiplicador (El Ciclo de la Vida)
-- **Pasaje Clave**: 1 Corintios 11:1 | Hebreos 5:12-14 | Mateo 5:14-16
+- **Guía de Púlpito & Manuscrito**: [[sermon-4-de-aprendiz-a-multiplicador-predica|Ver Prédica & Manuscrito de Púlpito]]
+- **Estudio Exegético Completo**: [[sermon-4-de-aprendiz-a-multiplicador-estudio|Ver Estudio Exegético & Homilético]]
+- **Pasaje Clave**: 2 Timoteo 2:1-2 | Hebreos 5:11-14 | 1 Corintios 11:1 (con Mateo 28:18-20 y Mateo 5:14-16)
 - **Idea Central**: La prueba definitiva de que estás siendo discipulado es que desarrollas el deseo y la capacidad de discipular a otros.
 - **Bosquejo Homilético**:
   1. **El peligro del estancamiento espiritual**: El Mar Muerto recibe agua pero no la comparte; la fe sin fruto se marchita.

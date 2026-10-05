@@ -48,9 +48,9 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[propuesta-infraestructura-linode-servidores-e-ia-mgh-plane|Propuesta Técnica y Financiera: Infraestructura Linode y Planes de IA]]: Análisis de presupuesto Linode VPS Shared y asistentes IA.
 - [[guia-configuracion-antigravity-devs-presupuesto|Manual Operativo: Configuración de Antigravity para Equipos]]: Paso a paso para onboarding de devs con presupuesto de $4.99/mes.
 - [[informe-entrega-task-2.2-2.3-ms-hr|Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)]]: Documentación técnica de candidatos, CVs S3 y puente onboarding.
-- [[sop-creacion-tickets-masterhub|SOP: Protocolo Oficial de Creación de Tickets en MasterHub Helpdesk]]: Procedimiento inalterable para la ingesta y registro directo de tickets en Aiven Cloud.
-- [[analisis-sistema-reclutamiento-rrhh|Análisis Técnico: Documento Maestro de Reclutamiento y Selección RRHH]]: Auditoría, esquema y mapeo de 1.996 postulantes históricos y Head Count hacia MasterHub.
-- [[matriz-roles-permisos-masterhub|Matriz de Perfiles, Roles y Permisos RBAC/PBAC (MasterHub)]]: Nueva estructura departamental de seguridad (IT, RRHH, Finanzas).
+- [[sop-sincronizacion-esquemas-prisma-docker|SOP: Protocolo Obligatorio de Sincronización de Esquemas Prisma y Docker]]: Prevención de error P2022 (ColumnNotFound) y sincronización DDL en microservicios NestJS.
+- [[sop-sincronizacion-backup-db-produccion-local|SOP: Protocolo de Respaldo y Sincronización de Base de Datos (Producción ➔ Local)]]: Extracción Linode y restauración Docker.
+
 
 ### 💻 2. Programación (Conocimiento Técnico & Lenguajes)
 - [[pilar-programacion|Área Programación - Conocimiento Técnico]]: Índice de lenguajes, frameworks y patrones.
@@ -65,8 +65,6 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[guia-configuracion-mcp-google-calendar-gmail|Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail)]]: Guía paso a paso multicuenta.
 - [[guia-configuracion-mcp-google-docs|Guía de Instalación y Configuración del Servidor MCP para Google Docs]]: Configuración multicuenta de Google Docs MCP.
 - [[guia-configuracion-mcp-github|Guía de Instalación y Configuración del Servidor MCP para GitHub]]: Registro del servidor oficial GitHub MCP (`github-personal`).
-- [[guia-git-promocion-selectiva-staging-main|Guía Git: Promoción Selectiva de Cambios (Staging/Dev a Main) sin Merge Masivo]]: Estrategias cherry-pick y ramas de release para MasterHub.
-- [[solucion-ci-cd-ssh-key-staging-masterhub|Diagnóstico y Solución: Error SSH en Despliegue de Staging (GitHub Actions)]]: Inyección de SSH_KEY en GitHub Secrets.
 
 ### 🚀 3. Proyectos (Software Independiente)
 - [[pilar-proyectos|Área Proyectos - Software Independiente]]: Índice general de proyectos.
@@ -83,10 +81,13 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
   - [[propuesta-ejecutiva-modulo-finanzas-masterhub|Propuesta Ejecutiva: Módulo de Finanzas MasterHub]]: Documento ejecutivo resumido para gerencia.
   - [[masterhub-modulo-finanzas|Módulo de Finanzas: Especificación Técnica (finance-ms)]]: PRD, arquitectura NestJS/Prisma, SENIAT, CxP, CxC.
   - [[masterhub-helpdesk-api|MasterHub Helpdesk API & Gestión de Tickets]]: Documentación de endpoints REST, modelo Prisma y Matriz Eisenhower.
+  - [[masterhub-hr|Microservicio de Recursos Humanos (MS-HR)]]: Roadmap en 4 Fases, Ficha Integral y Gestión de Nómina.
+  - [[masterhub-hr-portal-gerente|MasterHub HR — Portal Exclusivo de Reclutamiento para Gerente de Tienda]]: Arquitectura Master-Detail, Jornadas de Entrevistas y Tareas Plane (MASTERHUB-131 a 140).
 - [[meniox|Proyecto: Meniox]]: Sistema POS & franquicias con RabbitMQ y Next.js 15.
+- [[menu-interactivo-beijing-2-0|Proyecto: Menú Interactivo Beijing 2.0]]: Cartelería digital interactiva (Smart TV Android) con sincronización Xetux ERP y MasterHub.
+- [[despacho-inteligente-cecom|Proyecto: Despacho Inteligente V1 — CECOM]]: Plataforma de comanda, despacho y tracking realtime enlazada a Xetux ERP y WhatsApp.
 - [[webcastro|Proyecto: WebCastro]]: Plataforma Web y CMS Payload 3.x con PostgreSQL.
 - [[plane-gestion-proyectos|Proyecto: Plane]]: Suite open-source de gestión de proyectos, Sprints e incidencias.
-  - [[sop-importacion-migracion-tareas-plane|SOP: Importación y Migración Masiva de Tareas en Plane]]: Procedimiento operativo y script para importaciones masivas por API.
 - [[propuesta-producto-2brain-alfred-white-label|Propuesta de Producto: 2brain Enterprise & ALFRED White-Label Edition]]: Especificación técnica y kit de comercialización ($0 costo infra).
 - [[manual-comercializacion-2brain-enterprise|Manual de Comercialización: 2brain Enterprise & Rol del Fundador]]: Estrategia comercial, paquetes ($97, $297, $997 USD) y definición del rol ejecutivo del Señor Víctor Montoya.
 - [[guia-prueba-piloto-agente-empresarial|Guía Operativa: Prueba Piloto del Agente Empresarial]]: Paso a paso para activar y probar el Agente Empresarial en MasterGroup.
@@ -100,8 +101,6 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]: Propuesta completa de 4 sermones.
 - [[sermon-1-de-la-multitud-a-la-mesa-estudio|Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa]]: Estudio bíblico exhaustivo y bosquejo.
 - [[sermon-2-el-modelo-del-maestro-estudio|Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro]]: Estudio bíblico exhaustivo y bosquejo.
-- [[sermon-3-un-corazon-ensenable-estudio|Estudio Exegético y Homilético - Sermón 3: Un Corazón Enseñable]]: Estudio bíblico exhaustivo (Hebreo/Griego), bosquejo y guía de células.
-- [[sermon-3-un-corazon-ensenable-predica|Prédica & Guía de Púlpito - Sermón 3: Un Corazón Enseñable]]: Manuscrito homilético completo (38-42 min), dinámicas de atril, ilustraciones y diapositivas.
 
 ### 🏡 5. Familiar (Vida Personal & Bienestar)
 - [[pilar-familiar|Área Familiar - Vida Personal]]: Índice de metas familiares y bienestar personal.

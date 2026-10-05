@@ -19,7 +19,7 @@ Mecanismo oficial de **ALFRED** para mantener continuidad absoluta de contexto, 
 **Comando del Usuario**: `"ALFRED, entrega de turno"` o `"Cierra la jornada"`
 
 ### Secuencia de Ejecución de ALFRED:
-1. **Revisión de Cierre**: Consultar la bandeja de correos (Personal y Trabajo), reuniones concretadas y ClickUp para asegurar que nada quede suelto.
+1. **Revisión de Cierre**: Consultar la bandeja de correos (Personal y Trabajo), reuniones concretadas y Plane Projects para asegurar que nada quede suelto.
 2. **Registro de Log**: Escribir en [`wiki/log.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/log.md) un resumen ejecutivo de lo completado en el día.
 3. **Actualización de Dashboard**: Actualizar [`wiki/life-dashboard.md`](file:///C:/Users/vmontoyaMG/Desktop/2brain/wiki/life-dashboard.md) ajustando los focos pendientes para la siguiente jornada.
 4. **Cierre de Servicios (Bot de Telegram)**: Ejecutar el cierre limpio de cualquier proceso activo de `python scripts/telegram_bot.py` para prevenir duplicados.
@@ -47,7 +47,7 @@ Mecanismo oficial de **ALFRED** para mantener continuidad absoluta de contexto, 
 4. **Consulta Multicuenta de Nube**:
    - Google Calendar (eventos de hoy en cuentas **Personal** y **Laboral**).
    - Gmail (bandejas personal y de trabajo para detectar correos importantes).
-   - ClickUp (sprints y tareas activas).
+   - Plane Projects (sprints y tareas activas en `projects.mastergroupve.com`).
 5. **Informe de Bienvenida Ejecutiva**:
    * *Resumen de dónde quedamos en el último turno.*
    * *Agenda y eventos del día (Personal + Trabajo).*
