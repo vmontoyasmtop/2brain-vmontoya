@@ -89,6 +89,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[webcastro|Proyecto: WebCastro]]: Plataforma Web y CMS Payload 3.x con PostgreSQL.
 - [[plane-gestion-proyectos|Proyecto: Plane]]: Suite open-source de gestión de proyectos, Sprints e incidencias.
 - [[propuesta-producto-2brain-alfred-white-label|Propuesta de Producto: 2brain Enterprise & ALFRED White-Label Edition]]: Especificación técnica y kit de comercialización ($0 costo infra).
+- [[arquitectura-alfred-cloud-vps|Arquitectura & Despliegue Cloud VPS: ALFRED 2brain 24/7]]: Docker Compose, Qdrant Vector RAG, auto-sync Git y bot de Telegram.
 - [[manual-comercializacion-2brain-enterprise|Manual de Comercialización: 2brain Enterprise & Rol del Fundador]]: Estrategia comercial, paquetes ($97, $297, $997 USD) y definición del rol ejecutivo del Señor Víctor Montoya.
 - [[guia-prueba-piloto-agente-empresarial|Guía Operativa: Prueba Piloto del Agente Empresarial]]: Paso a paso para activar y probar el Agente Empresarial en MasterGroup.
 - [[smartops-ve|Proyecto: SmartOps VE]]: Portal corporativo en Next.js 15 & Firebase.
@@ -96,6 +97,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### ⛪ 4. Ministerial (Pastorado & Teología)
 - [[pilar-ministerial-pastorado|Área Ministerial - Pastorado]]: Índice principal del área pastoral.
+- [[devocional-mente-enfocada-dios-da-la-victoria|Devocional: Mente Enfocada sin Ver Resultados — Dios Da la Victoria]]: Principio teológico de Proverbios 21:31 y 1 Corintios 15:58 sobre fidelidad y soberanía divina.
 - [[estudio-actitud-ante-el-estres-filipenses-4|Actitud Espiritual y Mental ante el Estrés y la Presión (Filipenses 4:6-7)]]: Estudio exegético, antídoto triple y aplicación práctica.
 - [[sistema-productividad-pastor-ingeniero|Sistema de Productividad del Pastor-Ingeniero]]: Sistema 24/7 OS de alta densidad para la gestión del pastor-ingeniero.
 - [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]: Propuesta completa de 4 sermones.

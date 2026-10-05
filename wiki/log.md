@@ -12,6 +12,24 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-05] feat/alfred-cloud-vps-architecture | Especificación de Arquitectura Cloud VPS 24/7, Docker Stack, Memoria Vectorial RAG & Bot de Telegram
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED** (Orquestador & Arquitecto)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Definición de Arquitectura Cloud VPS Dedicada**:
+     - Diseñado el ecosistema para desplegar a ALFRED 24/7 en un servidor Linux con Docker Compose, superando las limitaciones del modelo serverless efímero.
+     - Documentada la arquitectura completa en `wiki/proyectos/arquitectura-alfred-cloud-vps.md`.
+  2. **Componentes del Stack**:
+     - Bot de Telegram multimodal (con transcripción de audios largos vía Gemini).
+     - Persistencia local del clon Git con auto-commit/push continuo.
+     - Memoria semántica vectorial RAG con Qdrant para búsquedas contextuales en toda la wiki.
+     - Cron scheduler para briefings ejecutivos matutinos (07:00 AM) y alertas de Plane / Calendar.
+  3. **Evaluación de Proveedores**:
+     - Análisis comparativo entre Hetzner Cloud (CX22/CPX21 a €4.50-€7/mes), VPS existente de Linode en MasterGroup ($0 extra), Oracle Cloud Always Free y DigitalOcean.
+  4. **Actualización de Gobernanza y Roadmap**:
+     - Añadida la Fase 5 (*Infraestructura Cloud 24/7 & RAG Vectorial*) en `wiki/roadmap-alfred-2brain-2026.md`.
+     - Actualizado el índice maestro `wiki/index.md`.
+
 ## [2026-10-05] feat/pastoral-devocional-mente-enfocada | Creación de Devocional: Mente Enfocada sin Ver Resultados — Dios Da la Victoria
 - **Áreas**: ⛪ `ministerial`
 - **Agentes Responsables**: 🤵 **ALFRED** (Orquestador) & ⛪ **Pastoral Assistant**

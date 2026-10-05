@@ -46,14 +46,24 @@ Integrar las capacidades multiactivas de ALFRED (procesamiento de lenguaje natur
 
 ---
 
-## 📍 Fase 4: Autonomía Contextual & Mantenimiento 2brain (Semana 4+)
+## 📍 Fase 4: Autonomía Contextual & Mantenimiento 2brain (Semana 4)
 
-- [ ] **3.4. Auditoría Semanal con Jardinero**: Ejecutar al [Subagente Jardinero](./agents/gardener.md) para reparar enlaces huérfanos, validar frontmatter y mantener la wiki limpia.
-- [ ] **3.5. Dashboard de Vida Dinámico**: Actualización automática de avances semanales por las 6 áreas.
+- [ ] **4.1. Auditoría Semanal con Jardinero**: Ejecutar al [Subagente Jardinero](./agents/gardener.md) para reparar enlaces huérfanos, validar frontmatter y mantener la wiki limpia.
+- [ ] **4.2. Dashboard de Vida Dinámico**: Actualización automática de avances semanales por las 6 áreas.
+
+---
+
+## 📍 Fase 5: Infraestructura Cloud 24/7 & RAG Vectorial (Semana 5+)
+
+- [ ] **5.1. Despliegue en Servidor Cloud VPS**: Implementar el stack de Docker Compose documentado en [[arquitectura-alfred-cloud-vps|Arquitectura & Despliegue Cloud VPS: ALFRED 2brain 24/7]].
+- [ ] **5.2. Memoria Semántica con Qdrant**: Indexación de todas las notas de la wiki para búsquedas y consultas contextuales RAG en lenguaje natural vía Telegram.
+- [ ] **5.3. Bot de Telegram Multimodal Autónomo**: Daemon permanente con transcripción de voz de alta duración y guardado directo en `raw/inbox/`.
+- [ ] **5.4. Git Auto-Sync Daemon**: Ciclos automáticos de commit y push hacia el repositorio remoto `vmontoyasmtop/2brain-vmontoya`.
 
 ---
 
 ## 🔗 Páginas Relacionadas
+- [[arquitectura-alfred-cloud-vps|Arquitectura & Despliegue Cloud VPS: ALFRED 2brain 24/7 (Docker Stack & RAG)]]
 - [[life-dashboard|Dashboard de Vida & Centro de Control]]
 - [[plan-organizacion-priorizacion-it|Plan de Organización y Priorización Laboral para Analista de IT]]
 - [[guia-configuracion-mcp-google-calendar-gmail|Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail Multicuenta)]]
