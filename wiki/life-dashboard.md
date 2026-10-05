@@ -1,87 +1,31 @@
----
-title: "Dashboard de Vida & Centro de Control (Life OS)"
-type: "dashboard"
-area: "dashboard"
-created: 2026-09-12
-updated: 2026-09-19
-tags:
-  - 
----
+# 📊 Life & Executive Dashboard — Master Group
 
-# 🚀 Dashboard de Vida & Centro de Control (Life OS)
-
-*Cuadro de mando unificado para organizar, priorizar y ejecutar la vida laboral, ministerial, técnica, familiar y financiera.*
+Tablero de control ejecutivo para **Victor Montoya** en **Master Group**, concentrando el seguimiento de hitos de desarrollo, Sprints activos y visión estratégica.
 
 ---
 
-## 📅 Resumen de la Semana (Vista Ejecutiva)
+## 🎯 Objetivos Principales del Trimestre (OKRs Master Group)
 
-```mermaid
-flowchart LR
-    A["🧠 2brain Life OS"] --> B["🏢 Trabajo IT (Xetux)"]
-    A --> C["💻 Programación & Proyectos"]
-    A --> D["⛪ Ministerio Pastoral"]
-    A --> E["🏡 Familia & Bienestar"]
-    A --> F["💰 Finanzas & Presupuesto"]
-```
+| ID | Objetivo Estratégico | Pilar / Proyecto | Métrica / Resultado Clave | Estado |
+|----|----------------------|------------------|--------------------------|--------|
+| **O1** | Ejecutar Sprint 1 Fast-Track de Finanzas | 🚀 MS-FINANZAS | MVP CxP & Motor Fiscal SENIAT listos (27/09) | 🟡 En progreso |
+| **O2** | Desplegar Fase 1 del Expediente de RRHH | 🚀 MS-HR | Ficha Médica, Tallas y Expedientes en producción | 🟡 En progreso |
+| **O3** | Mantenimiento y Operación Xetux | 🏢 Trabajo | Actualización diaria de tasa Bs en Xetux | 🟢 Al día |
+| **O4** | Consolidar Arquitectura MasterHub | 🚀 Proyectos | API Gateway, PostgreSQL (`finance_db`, `hr_db`) | 🟡 En progreso |
 
 ---
 
-## 🎯 Prioridades Activas por Área
+## ⚡ Enfoque Prioritario de la Semana (05/10 – 11/10/2026)
 
-### ⛪ 1. Area Ministerial (Pastorado)
-- [x] Diseñar estructura de la nueva serie de discipulado: [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]
-- [x] Estudio exegético del Sermón 1: [[sermon-1-de-la-multitud-a-la-mesa-estudio|Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa]]
-- [x] Estudio exegético del Sermón 2: [[sermon-2-el-modelo-del-maestro-estudio|Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro]]
-- [ ] **Agendado en Google Calendar Personal (17-Sep 12:30 – 13:30 PM)**: Lectura y meditación del [[sermon-2-el-modelo-del-maestro-estudio|Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro]] durante el almuerzo.
-- [x] Ingestar e integrar el [[sistema-productividad-pastor-ingeniero|Sistema de Productividad del Pastor-Ingeniero]] ([Resumen Exec|summaries/manual-maestro-pastor-ingeniero.md]).
-- [ ] **En Progreso**: Armar la predicación final del Sermón 1 para el domingo.
-- [ ] **Próximo**: Preparar la guía de preguntas para grupos pequeños/células.
-
-### 🏢 2. Area Trabajo (Analista IT & Soporte Xetux / MasterHub)
-- [x] **Migración Masiva a Plane (`projects.mastergroupve.com`)**: 97/97 tareas y épicas importadas exitosamente desde ClickUp a Plane con jerarquías y módulos vinculados (`Finanzas-MS`, `HR-MS`, `Helpdesk-MS`, `Inventario-MS`, `Auth-MS`, `MKT-MS`).
-- [x] **Configuración de Board Kanban & QA**: Creado nuevo estado y bloque `Testing` en Plane.
-- [x] **Estandarización Git en Monorepo MasterHub (`MG-HUB`)**: Consagrada rama `dev` como base de integración y staging continuo junto a ramas `feature/*` y Conventional Commits.
-- [x] **Resolución Bug Helpdesk 500 (Linode)**: Saneamiento de sintaxis de correos en PostgreSQL Linode restableciendo creación de tickets en Staging y Producción.
-- [x] **Roles y Accesos Gerenciales (Local Docker)**: Soporte para rol `STORE_MANAGER`, actualización en Prisma v7 y seeding de 17 gerentes locales para pruebas de login/JWT.
-- [ ] **En Progreso (Plane #118)**: `[Auth-MS] Panel de Administración: Gestión de Usuarios, Roles RBAC y Permisos` (Prioridad Mañana).
-
-### 💻 3. Area Programación & 🚀 Proyectos de Software
-- [x] **WebCastro — Sprint y Despliegue 100% Culminado**:
-  - [x] Módulo de Consultas persistiendo en PostgreSQL Neon y accesible desde el panel de Payload CMS.
-  - [x] Botones flotantes de WhatsApp actualizados (`+58 422 038-7323` y `+58 412 964-3616`).
-  - [x] Badge "100% Calidad Garantizada" reubicado y párrafos justificados en Sobre Nosotros.
-  - [x] Checklist interactivo con viñetas y checks dorados en Hero "Quiénes Somos".
-  - [x] Build en Vercel restablecido y rama `origin/dev` sincronizada con `origin/main`.
-- [x] **MasterHub (Despliegue Staging & Node 22 LTS)**: Desplegado Staging en Linode con PR #9 (`6c5aff9`), 8 microservicios reconstruidos y activos en Node `v22.23.3` LTS, y comprobantes de retención PDF integrados.
-- [x] **Estándar Prisma v7 (Regla Crítica Monorepo)**: Resolutivo del "Efecto Péndulo" de datasource URL. Todos los microservicios deben tener `schema.prisma` SIN `url`, delegando la conexión exclusivamente a `prisma.config.ts`. Documentado en [[estandar-prisma-v7-monorepo-masterhub|Estándar de Arquitectura Prisma v7]].
-- [x] **Despacho Inteligente V1 - CECOM**: Configurado en Plane (`DESP`), módulos M1 a M4 y Sprint 1 MVP (29 SP, 6 Historias de Usuario creadas).
-- [ ] **Próximo Turno**: Ejecutar Plane #118 (Auth-MS Admin Panel) y avanzar con Sprint 1 de Despacho Inteligente CECOM.
-
-### 💰 4. Area Finanzas (Gestión Económica)
-- [x] **Análisis de Gastos Reales del Cuaderno & Plan Conservador**: [[analisis-gastos-reales-cuaderno|Informe Financiero Auditado: Gastos Reales del Cuaderno]] (Auditoría de gastos, plan de amortización gradual de deudas $408.07 USD en 4 meses con $120 USD/mes).
-- [x] **Plan Financiero Estratégico 2026 elaborado con Subagente Finance Manager**: [[plan-financiero-2026|Plan Financiero Estratégico & Gestión de Presupuesto 2026]] (Presupuesto operativo basado en $620 USD/mes reales).
-- [x] **Clasificación de Ingresos `finance-ms` ($6,000.00 USD)**: [[sprints-modulo-finanzas|Sprints & Backlog Scrum finance-ms]] (Registrado como *Proyección de Ingreso Extraordinario Futuro por Cobrar - Hitos Pendientes*).
-- [x] **Balance & Reestructuración de Compras (Presupuesto 29,000 Bs.)**: Ingestado y categorizado en A/B/C ([voice_20260916_221908.md](file:///C:/Users/vmontoyaMG/Desktop/2brain/raw/inbox/voice_20260916_221908.md)).
-- [ ] Control continuo de diezmos/ofrendas (10%), ahorro intocable ($62 USD/mes) y abono mensual de deudas ($120 USD/mes).
-
-### 🏡 5. Area Familiar & Vida Personal
-- [x] Establecer protocolo de **Madrugada Protegida** y **Desconexión Sagrada 18:30 - 20:30** (Cero pantallas).
-- [x] Diseñar el [[menu-semanal-recetas-saludables|Menú Semanal Nutritivo & Lista de Compras]] ([Resumen Exec|summaries/recetas-menu-semanal.md]).
-- [ ] Bloqueo de tiempo de calidad familiar en la agenda semanal.
-- [ ] Hábito de salud, ejercicio y descanso espiritual.
+1. 👥 **MS-HR (Fase 2 - Portal Gerente de Tienda)**: Implementar la vista dedicada `/dashboard/store-recruitment` ([`MASTERHUB-131`](https://projects.mastergroupve.com/it---mg/projects/b60ea600-1f86-4177-87df-6b6ed0063874/issues/acde77c6-dede-4d01-a291-bfeff7580bba)), interfaz Master-Detail y control de asistencia/decisión in-situ.
+2. 👥 **MS-HR (Formatos & Jornadas)**: Avanzar con el generador de formatos PDF automáticos ([`MASTERHUB-136`](https://projects.mastergroupve.com/it---mg/projects/b60ea600-1f86-4177-87df-6b6ed0063874/issues/617cadb8-97dc-4cda-a0ba-fd97ab5c762d)) y módulo de jornadas de reclutamiento ([`MASTERHUB-140`](https://projects.mastergroupve.com/it---mg/projects/b60ea600-1f86-4177-87df-6b6ed0063874/issues/a983817b-6479-45a8-8999-fca65a2000c2)).
+3. 💼 **MS-FINANZAS (Sprint 1 UAT & Tesorería)**: Seguimiento al protocolo de Freno de Pago en Xetux y conciliación.
+4. 🏢 **Soporte Xetux IT**: Monitoreo de tasas BCV y estabilidad operativa en tiendas.
 
 ---
 
-## 🤖 Asistentes de Ejecución (Subagentes a tu Servicio)
-
-- ⛪ Para predicas o consejería ➔ Usa **Pastoral Assistant** (`agents/pastoral_assistant.md`)
-- 🛠️ Para tickets y manuales IT ➔ Usa **IT Support Expert** (`agents/it_support_expert.md`)
-- 🎨 / ⚙️ Para avanzar proyectos de código ➔ Usa **Frontend UI Expert** o **Backend JS Expert**
-- 💰 Para ajustar presupuestos ➔ Usa **Finance Manager** (`agents/finance_manager.md`)
-
----
-
-## 🔗 Accesos Rápidos a la Wiki
-- [[index|Índice Maestro]]
-- [[log|Registro de Actividades]]
+## 📌 Enlaces Útiles
+- 🗺️ [Ecosistema de Proyectos MasterHub](proyectos/pilar-proyectos.md)
+- 💼 [Plan Fast-Track MS-FINANZAS](proyectos/masterhub-finanzas.md)
+- 👥 [Roadmap MS-HR](proyectos/masterhub-hr.md)
+- 📝 [Log de Bitácora Operativa](log.md)
