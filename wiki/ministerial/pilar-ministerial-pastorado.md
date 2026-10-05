@@ -25,6 +25,7 @@ Página principal de la **Labor Pastoral y Ministerial**.
 - [Subagente Pastoral Assistant](../agents/pastoral_assistant.md)
 
 ## 📌 Estudios Bíblicos & Sistemas de Productividad
+- [[devocional-mente-enfocada-dios-da-la-victoria|Devocional: Mente Enfocada sin Ver Resultados — Dios Da la Victoria (Proverbios 21:31 / 1 Corintios 15:58)]]: Cómo mantener el enfoque y la paz en la soberanía divina.
 - [[estudio-actitud-ante-el-estres-filipenses-4|Actitud Espiritual y Mental ante el Estrés y la Presión (Filipenses 4:6-7)]]: Estudio exegético y antídoto triple.
 - [[sistema-productividad-pastor-ingeniero|Sistema de Productividad del Pastor-Ingeniero]]: Sistema 24/7 OS de alta densidad.
 
