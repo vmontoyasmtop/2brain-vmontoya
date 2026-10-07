@@ -12,6 +12,24 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-06] feat/security-audit-mghub-rbac-hardening | Auditoría Ofensiva Red Team (Gollum), Plan de Hardening con Thorin Escudo de Roble & Sistema Dual Global ALFRED/Grandalf
+- **Áreas**: 💻 `programacion`, 🚀 `proyectos`, 🏢 `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED** / 🧙‍♂️ **Grandalf** (Coordinación), 🐟 **Gollum** (Red Team), 🛡️ **Thorin Escudo de Roble** (Blue Team) & ⚔️ **Aragorn PM**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Resolución de Conflictos & Builds de MG-HUB**:
+     - Resuelto conflicto de merge en `apps/finance-ms/prisma/schema.prisma` garantizando compilación exitosa (código 0 en `prisma:generate` y `nest build`).
+     - Corregido el evaluador de permisos en frontend ([`lib/auth.ts`](../2brain-MG)) para que las revocaciones manuales (`DENY / NO`) desactiven inmediatamente las vistas de RRHH en el sidebar y en los guards de ruta.
+     - Añadida barra flotante persistente en la Matriz RBAC y botón sticky de guardado en el modal de usuarios con recálculo automático de sesión (`refreshSession`).
+  2. **Creación e Integración de Subagentes Especializados en Ciberseguridad**:
+     - Registrados 🐟 **Gollum** (`vulnerability-assessment` / Red Team) y 🛡️ **Thorin Escudo de Roble** (`cybersecurity-defense` / Blue Team) en `2brain-MG` y globalmente en `~/.gemini/subagents/`.
+  3. **Auditoría Ofensiva sobre MG-HUB (Gollum)**:
+     - Detectadas 9 vulnerabilidades (2 Críticas, 4 Altas, 2 Medias, 1 Baja/Info) y documentado el informe completo en `wiki/programacion/seguridad/reporte-auditoria-vulnerabilidades-redteam-mghub.md`.
+     - Creada la tarea maestra en Plane ([`MASTERHUB-146`](https://projects.mastergroupve.com)) junto con los 9 tickets de bugs en estado `BUGS` para ejecución con Thorin.
+  4. **Configuración del Sistema Dual Global de Antigravity**:
+     - Actualizado `GEMINI.md` para que cualquier sesión de Antigravity en esta laptop reconozca a **ALFRED** (Vida Personal / 2brain) y a **Grandalf** (Master Group / 2brain-MG / Comunidad del Anillo).
+  5. **Programación de Agenda & Tarea para Mañana**:
+     - Creada tarea en Google Tasks y bloque en Google Calendar (`vmontoya@mastergroupve.com`) para el Miércoles 07/10/2026 a las 2:00 PM (14:00) para el sprint de remediación con Thorin.
+
 ## [2026-10-05] feat/alfred-cloud-vps-architecture | Especificación de Arquitectura Cloud VPS 24/7, Docker Stack, Memoria Vectorial RAG & Bot de Telegram
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
 - **Agentes Responsables**: 🤵 **ALFRED** (Orquestador & Arquitecto)
