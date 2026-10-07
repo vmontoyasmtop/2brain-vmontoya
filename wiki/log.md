@@ -12,6 +12,16 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-07] feat/masterhub-pgadmin-sop | SOP: Acceso a pgAdmin en Producción y Purga Quirúrgica de Facturas CxP / Retenciones SENIAT (MasterHub)
+- **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
+- **Agentes Responsables**: 🤵 **ALFRED** / 🧙‍♂️ **Grandalf** (Coordinación Técnica)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Acceso a pgAdmin Producción (Linode `172.238.221.116`)**:
+     - Documentadas credenciales (`admin@admin.com` / `admin`), puerto `5050` verificado y procedimiento de conexión segura mediante túnel SSH.
+  2. **Protocolo de Purga Controlada en `finance_db`**:
+     - Documentado script SQL atómico para vaciar tablas de facturas (`AccountPayable`) y comprobantes de retención (`TaxRetention`), reiniciando los correlativos de retención SENIAT (`SeniatVoucherCounter`) sin afectar a los proveedores ni tasas BCV.
+     - Documento creado: `wiki/trabajo/sop-administracion-pgadmin-purga-facturas-retenciones-masterhub.md`.
+
 ## [2026-10-06] feat/security-audit-mghub-rbac-hardening | Auditoría Ofensiva Red Team (Gollum), Plan de Hardening con Thorin Escudo de Roble & Sistema Dual Global ALFRED/Grandalf
 - **Áreas**: 💻 `programacion`, 🚀 `proyectos`, 🏢 `trabajo`
 - **Agentes Responsables**: 🤵 **ALFRED** / 🧙‍♂️ **Grandalf** (Coordinación), 🐟 **Gollum** (Red Team), 🛡️ **Thorin Escudo de Roble** (Blue Team) & ⚔️ **Aragorn PM**

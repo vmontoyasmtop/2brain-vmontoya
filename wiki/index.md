@@ -50,6 +50,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[informe-entrega-task-2.2-2.3-ms-hr|Informe Técnico: Entrega de Tasks 2.2 y 2.3 (MS-HR)]]: Documentación técnica de candidatos, CVs S3 y puente onboarding.
 - [[sop-sincronizacion-esquemas-prisma-docker|SOP: Protocolo Obligatorio de Sincronización de Esquemas Prisma y Docker]]: Prevención de error P2022 (ColumnNotFound) y sincronización DDL en microservicios NestJS.
 - [[sop-sincronizacion-backup-db-produccion-local|SOP: Protocolo de Respaldo y Sincronización de Base de Datos (Producción ➔ Local)]]: Extracción Linode y restauración Docker.
+- [[sop-administracion-pgadmin-purga-facturas-retenciones-masterhub|SOP: Acceso a pgAdmin en Producción y Purga Quirúrgica de Facturas y Retenciones (MasterHub)]]: Credenciales pgAdmin, conexión PostgreSQL y script SQL de limpieza.
 
 
 ### 💻 2. Programación (Conocimiento Técnico & Lenguajes)
