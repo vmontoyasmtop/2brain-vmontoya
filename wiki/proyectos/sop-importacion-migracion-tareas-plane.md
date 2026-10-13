@@ -97,6 +97,7 @@ node C:\Users\vmontoyaMG\Desktop\2brain\scripts\import_marketing_to_plane.js "C:
 | :--- | :--- | :--- | :---: | :--- |
 | **2026-09-23** | ClickUp (Lista 1er Fase MasterHub) | `it---mg` / MasterHub | **97** | 100% migradas por API con módulos (`Finance`, `HR`, `Helpdesk`, etc.). |
 | **2026-09-28** | Export Plane Web (`3d0b87dd.csv`) | `marketing` (5 Proyectos) | **70** | 100% migradas en Marketing (57), Eventos (5), ARGUS (4), Creadores (3) y Pantalla Móvil (1). Limpieza de demos completada. |
+| **2026-10-13** | Respaldo CSV (`e93d9a8a (1).csv`) | `marketing` (5 Proyectos) | **110** (39 nuevas, 71 existentes) | 100% sincronizado. 32 tareas agregadas a Marketing (30 principales, 2 subtareas) y 7 a Pantalla Móvil. Preservación estricta de jerarquías, estados y etiquetas. |
 
 ---
 

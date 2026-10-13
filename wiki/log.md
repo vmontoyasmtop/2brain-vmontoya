@@ -12,6 +12,20 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-13] feat/plane-marketing-sync | Sincronización e Ingesta Integral del Respaldo de Marketing en Plane (110 tareas)
+- **Áreas**: 🚀 `proyectos`, 🏢 `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED** / 🧙‍♂️ **Grandalf** (Orquestación Ejecutiva & Técnica)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Localización e Ingesta del Respaldo CSV**:
+     - Procesado el archivo `C:\Users\vmontoyaMG\Downloads\mkt-mastergroupve-a364fdad-78bb-45da-a511-996cddde338c-e93d9a8a (1).csv` (55,674 bytes, 110 tareas).
+  2. **Validación Idempotente y Ejecución en Plane**:
+     - Ejecutada simulación (`--dry-run`) y posterior inserción real con `scripts/import_marketing_to_plane.js`.
+     - 71 tareas reconocidas como ya existentes (omitidas de duplicación).
+     - 39 nuevas tareas importadas con éxito: 32 en `Marketing` (30 principales, 2 subtareas) y 7 en `Pantalla Móvil`.
+     - Preservación estricta de estados (`Backlog`, `Todo`, `In Progress`, `Done`), etiquetas por color, descripción HTML y enlaces adjuntos.
+  3. **Documentación & SOP**:
+     - Actualizado el historial en `wiki/proyectos/sop-importacion-migracion-tareas-plane.md`.
+
 ## [2026-10-07] feat/masterhub-pgadmin-sop | SOP: Acceso a pgAdmin en Producción y Purga Quirúrgica de Facturas CxP / Retenciones SENIAT (MasterHub)
 - **Áreas**: 🏢 `trabajo`, 💻 `programacion`, 🚀 `proyectos`
 - **Agentes Responsables**: 🤵 **ALFRED** / 🧙‍♂️ **Grandalf** (Coordinación Técnica)
