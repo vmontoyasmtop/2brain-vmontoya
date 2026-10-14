@@ -12,6 +12,24 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-14] feat/meniox-forensic-audit-and-knowledge-sync | Auditoría Forense Integral de Meniox y Registro en Segundo Cerebro
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED** (Inteligencia Ejecutiva) & 🧙‍♂️ **Grandalf** (Tech Lead)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Auditoría Forense de la Suite Meniox (`C:\Users\vmontoyaMG\Desktop\Meniox\meniox`)**:
+     - Inspección integral del monorepo (Nx, NestJS 11, Next.js 15, PostgreSQL 16 Aiven Cloud, RabbitMQ, Expo SDK 56).
+     - Validación de base de datos Aiven: 2 tenants, 14 sucursales activas (Beijing Sushi), 80 productos, 2,126 materias primas y 12 órdenes.
+  2. **Resolución de Bloqueo Técnico en `sales-service`**:
+     - Corregido conflicto de tipado TypeScript en `SalesReconciliationService` (`ReturnType<typeof setInterval>`).
+     - Suite `tests/sales-reconciliation.service.spec.ts` validada al 100% (4/4 tests verdes).
+  3. **Identificación de Deuda Técnica y Oportunidades**:
+     - Diagnosticadas 28 pruebas fallidas en `tests/inventory.integration.spec.ts` por desalineación de fixtures con nuevas reglas de subrecetas.
+     - Detectado cuello de botella en `POSTGRES_POOL_SIZE=2` ante latencia WAN de Aiven Cloud.
+     - Documentada necesidad de unificar `pos-mobile` y `pos-gustoflow`, e integrar el drawer UX de Órdenes de Compra.
+  4. **Persistencia en Segundo Cerebro (2brain)**:
+     - Actualizado artículo maestro: `wiki/proyectos/meniox.md`.
+     - Creada nota cruda: `raw/proyectos/2026-10-14-auditoria-forense-estado-meniox.md`.
+
 ## [2026-10-13] chore/plane-user-password-reset | Restablecimiento de Credenciales de Acceso para Heber Urbaneja en Plane
 - **Áreas**: 🏢 `trabajo`, 🚀 `proyectos`
 - **Agentes Responsables**: 🤵 **ALFRED** / 🧙‍♂️ **Grandalf** (Soporte de Infraestructura)
