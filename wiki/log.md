@@ -12,6 +12,28 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-14] chore/shift-handover | Cierre de Jornada y Entrega de Turno — Sincronización Integral (MG-HUB, Meniox, Beijing Kiosk & MG-SALES-ANALYTICS)
+- **Áreas**: 🏢 `trabajo`, 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: 🤵 **ALFRED** (Mayordomía Ejecutiva), 🧙‍♂️ **Grandalf** (Tech Lead), 🥷 **Kakashi Sensei** (Mobile), 🏹 **Legolas** & ⛏️ **Gimli**
+- **Resumen Ejecutivo de la Jornada**:
+  1. **MG-HUB (Facturación Xetux en Dólares USD)**:
+     - Resuelto flujo de importación de facturas de proveedores: ahora viajan por defecto en moneda USD ($) como vienen de Xetux, permitiendo edición libre de moneda si se requiere.
+     - Cambios probados y confirmados en `dev` (`1ded2be` y `fbe0a8b`).
+  2. **Meniox (Auditoría Forense & Rescate de Memoria)**:
+     - Inspección integral de arquitectura, esquemas PostgreSQL en Aiven Cloud (2 tenants, 14 sucursales, 80 productos, 2,126 materiales, 12 órdenes).
+     - Fix de tipado TypeScript en `SalesReconciliationService` (suite unitaria 100% verde).
+     - Deuda técnica catalogada y documentación consolidada en `wiki/proyectos/meniox.md` y `raw/proyectos/`.
+  3. **Beijing Restaurant Menú Kiosco (Flutter)**:
+     - Desplegado 🥷 **Kakashi Sensei** para certificar el proyecto de display táctil 32" 4K vertical (**Apolosign SW3299T**).
+     - `flutter analyze` 100% limpio (0 advertencias), `flutter test` 6/6 aprobados (100%).
+     - Probado exitosamente en navegador Chrome; dejado en reposo a la espera del nuevo mockup visual. Documentado en `wiki/proyectos/beijing_kiosk.md`.
+  4. **Lanzamiento de MG-SALES-ANALYTICS**:
+     - Construido nuevo proyecto completo e independiente en `C:\Users\vmontoyaMG\Desktop\MG-SALES-ANALYTICS`.
+     - Stack: Next.js 15, React 19, Tailwind CSS v4, Lucide React, motor de extracción en vivo contra API de Xetux ERP (`SalesFull`).
+     - Adhesión estricta al sistema de diseño Master Group (`theme-colors.css`, `theme-variables.css`, `theme-utilities.css`).
+     - Barra de búsqueda manual multicriterio (por producto/plato, sede, fechas y categorías), KPIs automáticos (USD y Bs), gráficos de ranking por sede y tabla exportable a CSV.
+     - Compilado con `next build` (0 errores) y activo en `http://localhost:3050`. Documentado en `wiki/proyectos/mg-sales-analytics.md`.
+
 ## [2026-10-14] feat/meniox-forensic-audit-and-knowledge-sync | Auditoría Forense Integral de Meniox y Registro en Segundo Cerebro
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🏢 `trabajo`
 - **Agentes Responsables**: 🤵 **ALFRED** (Inteligencia Ejecutiva) & 🧙‍♂️ **Grandalf** (Tech Lead)
