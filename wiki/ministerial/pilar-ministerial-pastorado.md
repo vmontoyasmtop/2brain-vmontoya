@@ -30,6 +30,11 @@ Página principal de la **Labor Pastoral y Ministerial**.
 - [[sistema-productividad-pastor-ingeniero|Sistema de Productividad del Pastor-Ingeniero]]: Sistema 24/7 OS de alta densidad.
 
 ## 📖 Sermones & Series Exegéticas
+- [[serie-jesus-solucion-de-todo-problema|Serie de Sermones: Jesús, Solución a Todo Problema (Filipenses 4:13)]]: Serie de 4 sermones + Sermón 0 Manifiesto.
+  - [[sermon-0-introduccion-jesus-y-la-vida-real-predica|Prédica de Púlpito - Sermón 0: Jesús y la Vida Real (El Manifiesto)]]: Manuscrito y guía de predicación.
+  - [[sermon-0-introduccion-jesus-y-la-vida-real-estudio|Estudio Exegético y Homilético - Sermón 0: Jesús y la Vida Real]]: Fundamento teológico y los 4 grandes enfoques.
+  - [[sermon-1-el-secreto-del-contentamiento-predica|Prédica de Púlpito - Sermón 1: El Secreto del Contentamiento]]: Manuscrito y guía de predicación.
+  - [[sermon-1-el-secreto-del-contentamiento-estudio|Estudio Exegético y Homilético - Sermón 1: El Secreto del Contentamiento]]: Venciendo el afán y la ansiedad en Cristo.
 - [[serie-discipulado-caminando-juntos|Serie de Sermones: Caminando Juntos - De Creyentes a Discípulos]]: Propuesta completa de 4 sermones.
 - [[sermon-1-de-la-multitud-a-la-mesa-estudio|Estudio Exegético y Homilético - Sermón 1: De la Multitud a la Mesa]]: Bosquejo y estudio exegético.
 - [[sermon-2-el-modelo-del-maestro-estudio|Estudio Exegético y Homilético - Sermón 2: El Modelo del Maestro]]: Bosquejo y estudio exegético.

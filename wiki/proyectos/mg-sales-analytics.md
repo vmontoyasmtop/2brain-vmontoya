@@ -94,10 +94,26 @@ cd C:\Users\vmontoyaMG\Desktop\MG-SALES-ANALYTICS
 # Modo Desarrollo
 npm run dev
 
-# Compilación y Arranque de Producción
+# Compilación y Arranque de Producción (Local)
 npm run build
 npm run start
+
+# Despliegue con Docker (Producción Containerizada)
+docker compose up -d --build
+
+# Verificación de logs y estado
+docker ps --filter name=mg-sales-analytics
+docker compose logs -f
 ```
+
+---
+
+## 🐳 5. Arquitectura de Dockerización
+- **Tipo**: Multi-stage Dockerfile con optimización de Next.js (`output: 'standalone'`).
+- **Base**: `node:22-alpine` con `libc6-compat`.
+- **Seguridad**: Usuario no privilegiado (`nextjs:nodejs`, uid 1001).
+- **Puerto de Escucha**: `3050:3050`.
+- **Tamaño de Imagen**: Ultra-reducida (~78 MB content size).
 
 ---
 
@@ -105,3 +121,4 @@ npm run start
 - [[pilar-proyectos|Área Proyectos - Software Independiente]]
 - [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]
 - [[pilar-trabajo-xetux|Área Trabajo - Analista IT y Soporte Xetux]]
+

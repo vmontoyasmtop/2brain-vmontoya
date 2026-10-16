@@ -12,6 +12,26 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-16] fix/hr-ms-normalization-and-employment-history | Corrección y Normalización de Fechas e Historial de Expedientes (Employee & EmployeeEmployment) (#156)
+- **Áreas**: 💻 `programacion`, 🏢 `trabajo`, 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** (Tech Lead), ⛏️ **Gimli** (`gimli_backend`), 🔮 **Galadriel** (`galadriel_db`) & ⚔️ **Aragorn** (`aragorn_pm`)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Diagnóstico y Corrección de Datos de RRHH**:
+     - Desplazamiento de columnas en el CSV maestro que contaminaba `contractType` con direcciones.
+     - Detección y purga de fórmulas Excel residuales con valores negativos (`-45139`, `-3803`) que infectaban los comentarios.
+     - Reconstrucción de la línea de tiempo laboral completa: ordenamiento cronológico de movimientos, asignación estricta de `sequence` (1..N), y cálculo dinámico de `durationDays` y `durationMonths` (dejando `null` para empleados activos).
+  2. **Ejecución y Normalización Masiva (`apps/hr-ms/scripts/normalize-hr-database.js`)**:
+     - Mapeo bidireccional y canónico de CIs para resolución de registros sin documento.
+     - Depuración de 98 registros obsoletos `NO-CI-*` y duplicados previos.
+     - Consolidación exitosa de 1.286 colaboradores únicos y 1.723 registros laborales normalizados.
+  3. **Verificación de Criterios de Aceptación (DoD)**:
+     - ✅ Duraciones negativas: 0.
+     - ✅ Comentarios corruptos por fórmulas Excel: 0.
+     - ✅ Secuencias sin asignar (NULL): 0.
+  4. **Blindaje en Microservicio (`EmployeesService.importEmployees`)**:
+     - Incorporada la lógica de cálculo cronológico, sanitización de comentarios y persistencia de `sequence`, `previousSiteName` y `previousJobTitle` para cualquier importación futura.
+     - Microservicio recompilado y reiniciado en Docker en estado saludable (`Up`).
+
 ## [2026-10-16] sec/masterhub-phase2-hardening-and-plane-sync | Hardening Perimetral Fase 2 & Cierre de Bugs en Plane (Inventario, Wiki, Auth & DTOs)
 - **Áreas**: 💻 `programacion`, 🏢 `trabajo`, 🚀 `proyectos`
 - **Agentes Responsables**: 🧙‍♂️ **Grandalf** (Tech Lead), 🛡️ **Thorin Escudo de Roble** (Blue Team), 🐟 **Gollum** (Red Team) & ⚔️ **Aragorn** (PM)
