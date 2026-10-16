@@ -12,6 +12,24 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-16] sec/masterhub-phase2-hardening-and-plane-sync | Hardening Perimetral Fase 2 & Cierre de Bugs en Plane (Inventario, Wiki, Auth & DTOs)
+- **Áreas**: 💻 `programacion`, 🏢 `trabajo`, 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** (Tech Lead), 🛡️ **Thorin Escudo de Roble** (Blue Team), 🐟 **Gollum** (Red Team) & ⚔️ **Aragorn** (PM)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Auditoría Ofensiva Red Team (Gollum)**:
+     - Identificadas 5 brechas en módulos periféricos de `MG-HUB`: Mutaciones de inventario sin RBAC (MG-SEC-10), alteración de wiki sin RBAC (MG-SEC-11), fuerza bruta en login/register sin rate limit (MG-SEC-13) y error de validación en creación administrativa de usuarios por DTO desalineado (MG-SEC-15).
+  2. **Remediación & Hardening Blue Team (Thorin)**:
+     - **RBAC en Inventario**: Incorporado `RolesGuard` en `InventoryGatewayController` y `@Roles` estricto en creación/edición/borrado de sedes, oficinas, asignaciones, productos, imágenes y endpoints de depuración.
+     - **RBAC en Wiki Corporativa**: Aplicado `RolesGuard` y `@Roles` en `WikiGatewayController` sobre creación, actualización, archivado y subida/borrado de adjuntos.
+     - **Rate Limiting Perimetral en Autenticación**: Activado `RateLimitGuard` en `AuthGatewayController`, restringiendo login a 5 intentos/minuto y registro a 3 intentos/minuto por IP. Verificado en vivo con retorno `HTTP 429 Too Many Requests`.
+     - **Creación Administrativa de Usuarios**: Implementado `CreateUserDto` tipado con soporte formal para asignación de roles bajo `forbidNonWhitelisted: true`.
+  3. **Gestión de Proyecto en Plane (Aragorn PM)**:
+     - Issues `#157` (MG-SEC-10), `#158` (MG-SEC-11), `#160` (MG-SEC-13) y `#162` (MG-SEC-15) transicionadas a **`Done`** con comentario técnico de certificación.
+  4. **Compilación & Despliegue**:
+     - `api-gateway` y `auth-ms` compilados exitosamente (0 errores).
+     - Contenedores Docker reconstruidos y en estado saludable (`Up`).
+     - Commit registrado en `MG-HUB` rama `dev`: `454341a`.
+
 ## [2026-10-15] sec/masterhub-integrations-hardening | Hardening Perimetral & Remediación Blue Team en Bóveda de Integraciones MG-HUB
 - **Áreas**: 💻 `programacion`, 🏢 `trabajo`, 🚀 `proyectos`
 - **Agentes Responsables**: 🧙‍♂️ **Grandalf** (Tech Lead), 🛡️ **Thorin Escudo de Roble** (Blue Team) & 🐟 **Gollum** (Red Team)
