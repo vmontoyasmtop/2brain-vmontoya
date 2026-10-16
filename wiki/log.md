@@ -25,9 +25,12 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
      - Depuración de 98 registros obsoletos `NO-CI-*` y duplicados previos.
      - Consolidación exitosa de 1.286 colaboradores únicos y 1.723 registros laborales normalizados.
   3. **Verificación de Criterios de Aceptación (DoD)**:
-     - ✅ Duraciones negativas: 0.
-     - ✅ Comentarios corruptos por fórmulas Excel: 0.
-     - ✅ Secuencias sin asignar (NULL): 0.
+     - ✅ **Empleados en BD**: 1.286 (Activos: 358, Inactivos/Egresados: 928).
+     - ✅ **Movimientos Laborales**: 1.723 (Activos: 360, Inactivos: 1.363).
+     - ✅ **Duraciones negativas**: 0.
+     - ✅ **Comentarios corruptos por fórmulas Excel**: 0.
+     - ✅ **Secuencias sin asignar (NULL)**: 0.
+     - 🎯 **Discriminación de Estado**: Corregido bug donde la subcadena `'act'` en `'inactivo'` clasificaba erróneamente como activo. Ahora los 928 inactivos quedan debidamente tipificados como `INACTIVE` preservando su historial.
   4. **Blindaje en Microservicio (`EmployeesService.importEmployees`)**:
      - Incorporada la lógica de cálculo cronológico, sanitización de comentarios y persistencia de `sequence`, `previousSiteName` y `previousJobTitle` para cualquier importación futura.
      - Microservicio recompilado y reiniciado en Docker en estado saludable (`Up`).
