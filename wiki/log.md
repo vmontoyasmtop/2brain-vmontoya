@@ -12,6 +12,41 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-15] sec/masterhub-integrations-hardening | Hardening Perimetral & Remediación Blue Team en Bóveda de Integraciones MG-HUB
+- **Áreas**: 💻 `programacion`, 🏢 `trabajo`, 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** (Tech Lead), 🛡️ **Thorin Escudo de Roble** (Blue Team) & 🐟 **Gollum** (Red Team)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Auditoría Ofensiva Red Team (Gollum)**:
+     - Identificadas 3 brechas tras implementación del Token Vault de Google: BOLA en `testIntegration` (MG-SEC-10), tipado laxo `dto: any` en Gateway (MG-SEC-11) y ausencia de rate limiting / riesgo DoS de cuotas Google (MG-SEC-12).
+  2. **Remediación & Hardening Defensivo Blue Team (Thorin)**:
+     - **BOLA Mitigado**: En `auth-ms/src/integrations/integrations.service.ts`, implementado chequeo estricto de roles administrativos (`canManageSystem`) para conexiones `SYSTEM_GLOBAL`.
+     - **Tipado Fuerte & Sanitización**: Creados DTOs en `api-gateway` (`ConnectIntegrationGatewayDto`, `GetAuthUrlGatewayDto`, `OAuthCallbackGatewayDto`) con validación estricta vía `class-validator` eliminando cualquier `any`.
+     - **Rate Limiting Perimetral**: Creado decorador `@RateLimit()` y guard perimetral `RateLimitGuard` con algoritmo sliding window en memoria en `api-gateway`, limitando endpoints de test (`5 req/min`) y autenticación OAuth (`10 req/min`) para proteger cuotas de Google Cloud API y mitigar ataques de agotamiento de recursos.
+  3. **Verificación & Despliegue**:
+     - Compilaciones TypeScript 100% exitosas en `api-gateway` y `auth-ms`.
+     - Contenedores Docker `masterhub-api-gateway-1` y `masterhub-auth-ms-1` reconstruidos y corriendo en estado saludable (`Up`).
+     - Commit registrado en `MG-HUB` rama `dev`: `6cc8221`.
+
+## [2026-10-15] feat/masterhub-dynamic-integrations-vault | Token Vault Cifrado AES-256 & Guardado Dinámico de Credenciales Google Workspace
+- **Áreas**: 💻 `programacion`, 🏢 `trabajo`, 🚀 `proyectos`
+- **Agentes Responsables**: 🧙‍♂️ **Grandalf** (Tech Lead), 🔮 **Galadriel** (DB), ⛏️ **Gimli** (Backend), 🏹 **Legolas** (UI/UX), 💍 **Frodo** (DevOps) & 👑 **Elrond** (QA)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Persistencia & Criptografía en Base de Datos (Galadriel & Gimli)**:
+     - Tabla `integration_connections` sincronizada en `auth_db` con cifrado AES-256-GCM para tokens (`refreshTokenEnc`, `accessTokenEnc`) y metadatos (`clientIdEnc`, `clientSecretEnc`).
+     - Siembra automatizada (`seed-integrations.ts`) con las identidades operativas de `vmontoya@mastergroupve.com` y `soporte@mastergroupve.com`.
+  2. **API Gateway & Microservicios (Gimli)**:
+     - Controlador `SystemIntegrationsGatewayController` expuesto en `/api/system/integrations` (`GET`, `POST /connect`, `POST /:id/test`, `DELETE /:id`).
+     - Mensajería TCP en `auth-ms` con resolución y refresco en caliente de tokens para microservicios consumidores (`getValidTokenForService`).
+  3. **Frontend UI & Bóveda Interactiva (Legolas & Elrond)**:
+     - Creado cliente API `lib/integrations-api.ts` y cableada la interfaz `dashboard/system/integrations`.
+     - Modal dinámico de configuración para añadir credenciales personalizadas con prueba instantánea de conectividad contra Google UserInfo API.
+  4. **Despliegue y Cierre de Tarea (Frodo)**:
+     - Reconstruidos y levantados contenedores Docker en caliente (`auth-ms`, `api-gateway`, `frontend-ui-dashboard`). Todos en estado `Up` y respondiendo `200 OK`.
+     - Tarea de Google Tasks `SEZrdk5VaTRia1JFNmdkVg` formalmente completada y cerrada.
+  5. **Hotfix Criptográfico & Validación Universal (Gimli & Elrond)**:
+     - Resuelto error OpenSSL `Unsupported state or unable to authenticate data` implementando fallback multicapa de claves de derivación en `crypto.util.ts` y manejo seguro de excepciones sin colapsar el microservicio RPC.
+     - Migrado el healthcheck de Google de `userinfo` (restringido a scopes de perfil) a `https://oauth2.googleapis.com/tokeninfo`, validando exitosamente en vivo tanto `vmontoya@mastergroupve.com` como `soporte@mastergroupve.com`. Commit `046dce7`.
+
 ## [2026-10-14] chore/shift-handover | Cierre de Jornada y Entrega de Turno — Sincronización Integral (MG-HUB, Meniox, Beijing Kiosk & MG-SALES-ANALYTICS)
 - **Áreas**: 🏢 `trabajo`, 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: 🤵 **ALFRED** (Mayordomía Ejecutiva), 🧙‍♂️ **Grandalf** (Tech Lead), 🥷 **Kakashi Sensei** (Mobile), 🏹 **Legolas** & ⛏️ **Gimli**
