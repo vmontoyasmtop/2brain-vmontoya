@@ -76,6 +76,8 @@ tags:
 ### 🎙️ Sermón 2: La Paz en Medio de la Tormenta
 *Cómo enfrentar las crisis, el dolor y las presiones sin quebrarse*
 
+- **Guía de Púlpito & Manuscrito**: [[sermon-2-la-paz-en-medio-de-la-tormenta-predica|Ver Prédica & Manuscrito de Púlpito]]
+- **Estudio Exegético Completo**: [[sermon-2-la-paz-en-medio-de-la-tormenta-estudio|Ver Estudio Exegético & Homilético Detallado]]
 - **Pasaje Base**: Marcos 4:35-41 | Juan 14:27 | Filipenses 4:6-7 | Filipenses 4:13
 - **Idea Central**: La paz de Jesús no es la ausencia de tormentas a nuestro alrededor, sino la presencia viva del Rey gobernando en nuestra barca.
 - **El Problema Humano**: El miedo, el pánico ante lo desconocido, el desgaste por enfermedades, pérdidas o conflictos imprevistos.
