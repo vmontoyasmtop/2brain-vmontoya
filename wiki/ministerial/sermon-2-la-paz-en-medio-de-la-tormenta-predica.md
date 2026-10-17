@@ -21,6 +21,7 @@ tags:
 ### *Cómo enfrentar las crisis, el dolor y las presiones sin quebrarse*
 
 > **Serie**: [[serie-jesus-solucion-de-todo-problema|Serie: Jesús, Solución a Todo Problema]]  
+> **Google Doc Imprimible (Personal)**: [Abrir Documento en Google Docs](https://docs.google.com/document/d/1R9z-9bxhUvODddsMq4lj7racjSsQ7_I-PfkT41ePYU4/edit)  
 > **Estudio Exegético de Respaldo**: [[sermon-2-la-paz-en-medio-de-la-tormenta-estudio|Ver Estudio Exegético y Homilético Detallado]]  
 > **Área**: [[pilar-ministerial-pastorado|Área Ministerial - Pastorado]]  
 > **Subagente Guía**: Agente Pastoral / Asistente Teológico  

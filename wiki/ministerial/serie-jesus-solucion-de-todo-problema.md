@@ -76,6 +76,7 @@ tags:
 ### 🎙️ Sermón 2: La Paz en Medio de la Tormenta
 *Cómo enfrentar las crisis, el dolor y las presiones sin quebrarse*
 
+- **Google Doc Imprimible (Personal)**: [Abrir Documento en Google Docs](https://docs.google.com/document/d/1R9z-9bxhUvODddsMq4lj7racjSsQ7_I-PfkT41ePYU4/edit)
 - **Guía de Púlpito & Manuscrito**: [[sermon-2-la-paz-en-medio-de-la-tormenta-predica|Ver Prédica & Manuscrito de Púlpito]]
 - **Estudio Exegético Completo**: [[sermon-2-la-paz-en-medio-de-la-tormenta-estudio|Ver Estudio Exegético & Homilético Detallado]]
 - **Pasaje Base**: Marcos 4:35-41 | Juan 14:27 | Filipenses 4:6-7 | Filipenses 4:13
