@@ -36,32 +36,31 @@ Su misión fundamental es **sustituir el cuaderno manual de papel y lápiz** por
 
 ---
 
-## 🏗️ 2. Arquitectura de Producto (Apalancamiento Técnico)
+## 🏗️ 2. Arquitectura de Producto (Local-First On-Premise & LAN)
 
-Apalancándose en los componentes ya probados de **Meniox** (core transaccional), **Xetux** (lógica de caja bimonetaria) y **MasterHub** (diseño UI limpio y reactivo):
+Apalancándose en los componentes ya probados de **Meniox** (core transaccional), **Xetux** (lógica de caja bimonetaria) y **MasterHub** (diseño UI limpio y reactivo), el sistema opera con arquitectura **Local-First On-Premise**:
 
 ```mermaid
 flowchart TD
-    subgraph TIENDA["🏪 Terminal de Caja en Tienda (Cualquier PC / Laptop / Tablet)"]
-        UI["💻 Meniox Market UI (Next.js / PWA)\n• Táctil / Teclado Numérico\n• Malla Visual Frutas/Verduras\n• Buscador Víveres / Scanner"]
+    subgraph TIENDA["🏪 Red Local de la Tienda (LAN / Wi-Fi)"]
+        HOST["🖥️ Servidor Local / PC Caja Principal\n• Core Standalone Meniox Market\n• Base de Datos Local Embebida\n• Operación 100% Offline (Zero Downtime)"]
+        
+        TERM2["📱 Terminal 2 / Tablet Pesaje"]
+        BAL["⚖️ Balanza Mostrador"]
+        PRN["🖨️ Impresora Térmica 58/80mm (ESC/POS)"]
+        BANC["💳 Punto de Débito (Voucher)"]
+        PM["📱 Pago Móvil (QR / Ref)"]
+
+        HOST --- BAL
+        HOST --- PRN
+        TERM2 -.->|Wi-Fi Local (192.168.x.x)| HOST
     end
 
-    subgraph CLOUD["☁️ Backend & Base de Datos (Cloud)"]
-        API["⚡ Meniox Core API\n• Catálogo Bimonetario (USD/Bs.)\n• Tasa del Día (BCV/Propia)\n• Cierres de Caja & Arqueo"]
-        DB[("PostgreSQL\n• Productos & Granel\n• Ventas & Pagos Mixtos\n• Clientes & Fiados")]
+    subgraph CLOUD["☁️ Nube Opcional"]
+        CLOUD_BACKUP["🔄 Backup Automático & Sync Tasa BCV"]
     end
 
-    subgraph DISPOSITIVOS["📟 Operación Externa"]
-        BANC["💳 Punto de Venta Bancario (Débito)"]
-        PM["📱 Teléfono con Pago Móvil"]
-        BAL["⚖️ Balanza Digital"]
-    end
-
-    UI <-->|Venta & Sincronización| API
-    API <--> DB
-    BAL -.->|Ingreso Kilos| UI
-    BANC -.->|Registro Ref Voucher| UI
-    PM -.->|Registro Ref Pago Móvil| UI
+    HOST -.->|Cuando hay Conexión| CLOUD_BACKUP
 ```
 
 ---

@@ -43,21 +43,98 @@ flowchart LR
 
 ---
 
-## 🏛️ 2. Arquitectura Técnica y Entorno de Ejecución
+## 🏛️ 2. Arquitectura de Despliegue Local & Red LAN (Local-First On-Premise)
 
-Para garantizar que el software funcione sin fricción técnica para el dueño de la tienda:
+Para garantizar viabilidad técnica en tiendas donde la conectividad a internet es inestable o nula, y los equipos son de gama de entrada (Mini-PCs N100, laptops con 4-8 GB de RAM o tablets):
 
-| Componente | Elección Tecnológica | Justificación Operativa |
+```mermaid
+flowchart TD
+    subgraph TIENDA["🏪 Red Local de la Tienda (LAN / Wi-Fi Local)"]
+        HOST["🖥️ PC Central / Servidor de Caja (Localhost)\n• Single-Node App (Next.js / Express o Nest Ligero)\n• Base de Datos Local Embebida (SQLite / PostgreSQL)\n• Servicio Spooler ESC/POS / Fiscal"]
+        
+        CAJA2["📱 Terminal 2 / Pesaje / Tablet\n(http://192.168.1.X:3000)"]
+        MOVIL["📲 Teléfono del Dueño / Auditoría\n(http://192.168.1.X:3000)"]
+        
+        BAL["⚖️ Balanza Mostrador"]
+        PRN["🖨️ Impresora Térmica 58/80mm (USB/Red)"]
+        GAV["💵 Gaveta de Dinero (RJ11)"]
+
+        HOST --- BAL
+        HOST --- PRN
+        PRN --- GAV
+        CAJA2 -.->|Wi-Fi Local| HOST
+        MOVIL -.->|Wi-Fi Local| HOST
+    end
+
+    subgraph CLOUD["☁️ Servicios Cloud (Opcional & Asíncrono)"]
+        SYNC["🔄 Sincronización en Segundo Plano\n• Respaldo automático de tickets diarios\n• Actualización automática de Tasa BCV\n• Consolidación multicomercio"]
+    end
+
+    HOST -.->|Cuando hay Internet| SYNC
+```
+
+| Capa | Solución Técnica | Beneficio Operativo Real |
 | :--- | :--- | :--- |
-| **Frontend UI** | **Next.js 15 (App Router) + React 19 + Tailwind CSS** | Interfaz táctil reactiva, moderna, con atajos de teclado y compatible con modo PWA (pantalla completa sin barra de navegador). |
-| **Persistencia Local** | **IndexedDB / SQLite / PWA Cache** | Permite que si hay una micro-caída de internet en la tienda, el cajero continúe cobrando sin detener la cola. |
-| **Backend & API** | **Next.js Server Actions / NestJS Micro-API** | Arquitectura modular heredada de Meniox, ultra liviana y de bajo consumo. |
-| **Base de Datos** | **PostgreSQL (Aiven Cloud o Supabase) / SQLite local** | Esquema estructurado con soporte bimonetario nativo ($ y Bs.) e integridad transaccional. |
-| **Puesta en Marcha** | **PWA Instalable en Escritorio de Windows / Tablet** | Cero instalación de servidores en la tienda; se instala desde Chrome como un ícono de escritorio nativo. |
+| **Alojamiento Local** | **Single-Node Standalone (Next.js + SQLite/Embedded PG)** | Se ejecuta como un único servicio en Windows. No requiere levantar 6 microservicios ni Redis/RabbitMQ pesados en la tienda. |
+| **Acceso en Red LAN** | **Servidor Web Interno (`0.0.0.0:3000`)** | Cualquier otra computadora, tablet o smartphone conectado a la misma red Wi-Fi accede al instante vía navegador sin instalar nada. |
+| **Tolerancia Offline** | **100% Autónomo (Zero-Downtime)** | La tienda puede cobrar, pesar, facturar e imprimir aunque no haya internet por horas. |
+| **Sincronización Cloud** | **Background Worker Liviano** | Al detectar conexión a internet, sube la copia de seguridad cifrada a la nube y actualiza la tasa oficial del BCV. |
 
 ---
 
-## 🗓️ 3. Fases de Desarrollo (Roadmap por Sprints)
+## 🎨 3. Diseño UX/UI para Usuarios con Cero Conocimiento Tecnológico
+
+El perfil del usuario final incluye comerciantes y cajeros con nula experiencia digital, acostumbrados únicamente al cuaderno y la calculadora. **La interfaz sigue el principio "Cero Fricción / Cero Errores":**
+
+1. **Pantalla Dividida Táctil de Alta Visibilidad**:
+   - **Lado Izquierdo (Malla Visual)**: Botones gigantes con fotos e íconos de frutas y verduras (Plátano, Papa, Cebolla, Tomate). Colores contrastantes y tipografía grande legible a 1 metro de distancia.
+   - **Lado Derecho (Ticket en Vivo)**: Lista clara de lo que se lleva el cliente con botón de eliminar de un solo toque y totales gigantes en **$ (USD)** y **Bs.**.
+2. **Pesaje en 2 Toques (Sin Calculadora)**:
+   - Al tocar un producto a granel (ej. Tomate), se abre un teclado numérico grande en pantalla.
+   - Incorpora botones rápidos de atajo para pesajes comunes: `[ 1/4 Kg ]`, `[ 1/2 Kg ]`, `[ 1 Kg ]`, `[ 2 Kg ]`.
+   - El sistema calcula el subtotal instantáneamente sin que el cajero tenga que hacer matemáticas.
+3. **Buscador Predictivo con 3 Letras para Víveres**:
+   - Si no usa lector de código de barras, al escribir `"HAR"` aparecen instantáneamente las harinas en lista grande.
+   - Compatible con lectores de código de barras USB Plug & Play estándar sin configurar drivers.
+4. **Cobro Guiado en Pantalla Única**:
+   - Selector visual de formas de pago: `[ 💳 Punto ]`, `[ 📱 Pago Móvil ]`, `[ 💵 Efectivo ]`, `[ 🤝 Fiado ]`.
+   - Si pagan en efectivo, el cajero indica con cuánto pagan y la pantalla resalta en verde el **vuelto exacto** a devolver en $ o en Bs.
+
+---
+
+## ⚖️ 4. Estrategia Fiscal Venezuela: Post-Derogación de Homologación SENIAT
+
+### Contexto Legal Reciente:
+* **Providencia SNAT/2026/00084 (Gaceta Oficial N° 43.435)**: Derogó formalmente la Providencia SNAT/2024/000121, **eliminando la obligación del trámite de homologación previa de software informático administrativo ante el SENIAT**.
+* **Impacto**: Los desarrolladores y comercios ya no requieren pasar por la certificación burocrática del sistema para poder operar. Sin embargo, se mantiene el deber formal de emisión y el control de documentos fiscales.
+
+### Arquitectura de Emisión Fiscal Desacoplada en Meniox Market:
+
+```
+                            [ TICKET DE VENTA MENIOX ]
+                                        │
+                 ┌──────────────────────┼──────────────────────┐
+                 ▼                      ▼                      ▼
+        MODO 1: COMERCIO        MODO 2: CONTRIBUYENTE   MODO 3: FACTURACIÓN
+        REGULAR / NO FISCAL     OBLIGADO A FISCAL       DIGITAL
+        • Impresora Térmica     • Impresora Fiscal      • Factura Digital
+          ESC/POS 58/80mm         (HKA / Bixolon)         (Prov. SNAT/2024/0102)
+        • Nota de Entrega       • Spooler / Driver      • Control Web / QR
+        • Costo HW: ~$25        • Costo HW: ~$400-$700  • Envío WhatsApp/Email
+```
+
+1. **Modo 1: Control Interno / Nota de Entrega (Configuración Base)**:
+   - Orientado a pequeños abastos, fruterías y minimarkets que operan bajo control interno o regímenes simplificados.
+   - Imprime comprobantes en mini-impresoras térmicas genéricas USB/Bluetooth de 58mm o 80mm usando protocolo estándar **ESC/POS**.
+2. **Modo 2: Conector de Impresora Fiscal (Para Contribuyentes Obligados)**:
+   - Para clientes que por su volumen de facturación o condición tributaria tienen impresora fiscal (The Factory HKA, Bixolon, Dascom).
+   - Meniox Market se comunica mediante un **Micro-Spooler Fiscal local** que traduce los ítems al protocolo de la impresora fiscal (comandos de inicio de factura, línea de ítem con alícuota y cierre de factura).
+3. **Tratamiento Automatizado de Impuestos (Reglas Fiscales Venezuela)**:
+   - **Exentos de IVA (Tasa 0%)**: Frutas, verduras, hortalizas, tubérculos, harinas, huevos, leche y carnes sin procesar (según Ley del IVA).
+   - **Gravados con IVA (Alícuota 16%)**: Golosinas, refrescos, enlatados especiales, artículos de limpieza e higiene personal.
+   - **Soporte IGTF (3%)**: Identificación del cobro de 3% sobre pagos recibidos en divisas efectivo para comercios catalogados como Sujetos Pasivos Especiales.
+
+## 🗓️ 5. Fases de Desarrollo (Roadmap por Sprints)
 
 ### 🔹 Sprint 1: Catálogo, Pesaje y Carrito de Compra (Core POS)
 * **Objetivos**:
@@ -100,7 +177,7 @@ Para garantizar que el software funcione sin fricción técnica para el dueño d
 
 ---
 
-## 🗄️ 4. Modelo de Datos Preliminar (Prisma Schema Core)
+## 🗄️ 6. Modelo de Datos Preliminar (Prisma Schema Core)
 
 ```prisma
 // Modelo de Producto (Víveres vs Granel)
@@ -161,7 +238,7 @@ model CashShift {
 
 ---
 
-## 💰 5. Presupuesto de Inversión y Equipamiento de Hardware
+## 💰 7. Presupuesto de Inversión y Equipamiento de Hardware
 
 ### 🛠️ Lista de Equipos Necesarios para la Tienda:
 | Equipo | Función Operativa | Rango de Costo (USD) |
@@ -183,7 +260,7 @@ model CashShift {
 
 ---
 
-## 📈 6. Métricas de Éxito del Negocio
+## 📈 8. Métricas de Éxito del Negocio
 
 1. **Tiempo de Cierre de Caja**: Reducido de **60 minutos a menos de 3 minutos**.
 2. **Cero Descuadres**: Concordancia al 100% entre el reporte de lote del punto físico y lo registrado en sistema.
