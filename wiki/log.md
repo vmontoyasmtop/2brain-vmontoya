@@ -12,6 +12,24 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-18] feat/meniox-market-proposal-and-sermon2 | Formulación de Propuesta Comercial Meniox Market & Despliegue de Sermón 2
+- **Áreas**: 🚀 `proyectos`, 💰 `finanzas`, ⛪ `ministerial`, 💻 `programacion`
+- **Agentes Responsables**: 🤵 **ALFRED** (Mayordomía Ejecutiva), 🧙‍♂️ **Grandalf** (Tech Lead), ⚔️ **Aragorn** (PM), 💍 **Frodo** (DevOps), 🏹 **Legolas** (UI/UX) & 🏛️ **Boromir** (Fiscal)
+- **Resumen Ejecutivo de la Operación**:
+  1. **Pastoral & Ministerial (Día del Señor - Domingo 18/10)**:
+     - Consolidado el **Sermón 2: "La Paz en Medio de la Tormenta"** (*Marcos 4:35-41 | Flp 4:6-7, 13*) de la serie *"Jesús: Solución a Todo Problema"*.
+     - Generado documento oficial imprimible en Google Docs de la cuenta personal (`vmontoya.smartopsve@gmail.com`): [Doc Sermón 2](https://docs.google.com/document/d/1R9z-9bxhUvODddsMq4lj7racjSsQ7_I-PfkT41ePYU4/edit).
+  2. **Arquitectura Técnica Meniox Market (Local-First On-Premise & LAN)**:
+     - Diseñada la arquitectura liviana: Single-Node standalone en Next.js 15 + SQLite local con WAL mode (resistente a apagones) y servidor LAN en `0.0.0.0:3000` para multi-terminal en tablets/teléfonos por Wi-Fi.
+     - Interfaz accesible para usuarios no tecnológicos: pesaje táctil en 2 toques, botones gigantes para frutas/verduras y cálculo de vuelto en $ y Bs.
+     - Adaptación al marco fiscal SENIAT post-derogación de la Providencia 0121 (vía SNAT/2026/00084, G.O. 43.435), desacoplando emisión no fiscal en tickeras térmicas de $25 de impresoras fiscales tradicionales.
+  3. **Ingeniería Financiera & Propuesta Comercial (SmartOps VE)**:
+     - Tarifa de ingeniería fijada a **$8.00 USD / hora** sobre 75 horas de desarrollo total distribuido en 4 módulos ($600.00 USD de inversión base de software).
+     - Validación con precios reales de calle en Venezuela: periféricos de mostrador ($158) y opciones de cómputo (Dell OptiPlex SFF + Monitor a $230 vs Mini PC nueva en vitrina a $350).
+     - Diseñados 3 paquetes comerciales para el cliente final (Pack 1: $220 inicial, Pack 2: $500 inicial, Pack 3: $650 inicial) con modelo SaaS de **$15 a $20 USD / mes** de recurrencia por soporte, backup y tasa BCV.
+     - Generado documento oficial en Google Docs personal: [Doc Propuesta Meniox Market](https://docs.google.com/document/d/1Ev4Y-EbqS_7MhepIWTDQjYOHhPUUyU021Z9tHeMJzx8/edit).
+     - Siguiente paso agendado: Sesión de refinamiento y pulido de la propuesta final.
+
 ## [2026-10-16] fix/hr-ms-normalization-and-employment-history | Corrección y Normalización de Fechas e Historial de Expedientes (Employee & EmployeeEmployment) (#156)
 - **Áreas**: 💻 `programacion`, 🏢 `trabajo`, 🚀 `proyectos`
 - **Agentes Responsables**: 🧙‍♂️ **Grandalf** (Tech Lead), ⛏️ **Gimli** (`gimli_backend`), 🔮 **Galadriel** (`galadriel_db`) & ⚔️ **Aragorn** (`aragorn_pm`)

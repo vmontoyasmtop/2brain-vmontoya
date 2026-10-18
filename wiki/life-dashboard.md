@@ -28,10 +28,11 @@ Tablero de control ejecutivo para **Victor Montoya** en **Master Group**, concen
    - `DesignCanvas` calibrado para pantalla 4K vertical Apolosign SW3299T (32").
    - Estado: En reposo a la espera del nuevo mockup visual para refinar componentes de interfaz.
 
-3. 🛒 **[[meniox|Proyecto: Meniox (POS & Franquicias)]]**:
-   - Auditoría forense completa realizada. Rescatada la memoria de los 6 microservicios y base de datos Aiven Cloud (14 sedes Beijing, 2,126 materias primas).
-   - Solucionado error TypeScript en `sales-reconciliation.service.ts` (4/4 tests verdes).
-   - Deuda pendiente: Alinear fixtures en `inventory.integration.spec.ts`.
+3. 🛒 **[[meniox|Proyecto: Meniox (POS & Franquicias)]] & [[meniox-market-plan|Meniox Market]]**:
+   - **Meniox Core**: Memoria forense y esquemas Aiven rescatados (14 sedes, 2,126 materias primas). Deuda pendiente en fixtures `inventory.integration.spec.ts`.
+   - **Meniox Market (Fruterías & Víveres)**: Diseñada arquitectura Local-First unificada (Next.js + SQLite WAL mode en LAN) para equipos modestos y tolerancia 100% offline. Marco fiscal adaptado post-derogación Providencia SENIAT 0121.
+   - **Propuesta Comercial SmartOps VE**: Validados costos a $8/h ($600 USD desarrollo total) + equipamiento en Venezuela + modelo recurrente SaaS ($15-$20/mes). Documento activo en [Google Docs Personal](https://docs.google.com/document/d/1Ev4Y-EbqS_7MhepIWTDQjYOHhPUUyU021Z9tHeMJzx8/edit).
+   - **Foco Siguiente Jornada**: Sesión de refinamiento y pulido de la propuesta comercial final para presentación.
 
 4. 💼 **[[masterhub-mg-hub|MasterHub (MG-HUB)]]**:
    - Corregido flujo de facturas CxP: importación de facturas de proveedores por defecto en USD ($).
