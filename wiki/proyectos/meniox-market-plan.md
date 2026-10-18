@@ -246,34 +246,41 @@ model CashShift {
 
 Para garantizar que el cliente adquiera equipos 100% compatibles, duraderos y de bajo costo en el mercado venezolano:
 
-### 🛠️ Ficha Técnica de Hardware Recomendado:
+### 🛠️ Ficha Técnica de Hardware Recomendado (Precios Reales en Venezuela):
 
-| Componente | Modelo / Referencia Recomendada | Conectividad / Tipo | Rango Precio (USD) | Enlace de Búsqueda Directa en Venezuela |
-| :--- | :--- | :--- | :---: | :---: |
-| **Impresora Térmica 58mm (Tickera)** | **POS-5890K / Xprinter XP-58 / FRM-58** (con corte manual o automático) | USB + Puerto RJ11 para gaveta | **$22 - $35** | [Buscar Impresora Térmica 58mm en MercadoLibre](https://listado.mercadolibre.com.ve/impresora-termica-58mm) |
-| **Balanza Comercial Digital 40 Kg** | **Camry / Roccia / American Boss 40kg** (Batería recargable interna + doble display LED cliente/cajero) | Mostrador con plato inox | **$35 - $48** | [Buscar Balanza Digital 40kg en MercadoLibre](https://listado.mercadolibre.com.ve/balanza-digital-comercial-40kg) |
-| **Lector de Código de Barras USB** | **Lector Láser 1D/2D tipo pistola con base manos libres** (Plug & Play HID) | Cable USB (sin drivers) | **$20 - $32** | [Buscar Lector Código de Barras USB en MercadoLibre](https://listado.mercadolibre.com.ve/lector-codigo-de-barras-usb) |
-| **Gaveta de Dinero Metálica** | **Gaveta 4 o 5 billetes / 8 monedas** (Carcasa de acero + llave de 3 posiciones) | Conexión telefónica RJ11 a la tickera | **$45 - $60** | [Buscar Gaveta de Dinero RJ11 en MercadoLibre](https://listado.mercadolibre.com.ve/gaveta-de-dinero-rj11) |
-| **Mini-PC para Servidor de Caja** | **Intel N100 / N95 o HP/Dell Tiny Reacondicionada** (8GB RAM, 256GB SSD) | HDMI/VGA + USB + Wi-Fi/LAN | **$120 - $160** | [Buscar Mini PC Intel en MercadoLibre](https://listado.mercadolibre.com.ve/mini-pc-intel) |
-| **Monitor Económico 19" o Usado** | **Monitor LED 19" - 20"** (HDMI / VGA) | Para visualización en mostrador | **$45 - $65** | [Buscar Monitor 19 pulgadas en MercadoLibre](https://listado.mercadolibre.com.ve/monitor-19-pulgadas) |
-| **Mini-UPS para Router + Caja** | **Mini UPS DC 12V/9V (KP3 / Marsriva)** (Para mantener internet y router encendidos durante apagones) | Batería Litio respaldo 4-6h | **$25 - $35** | [Buscar Mini UPS Router en MercadoLibre](https://listado.mercadolibre.com.ve/mini-ups-router) |
+| Componente | Opción / Referencia de Mercado | Rango Precio Real (USD en VE) | Enlace de Búsqueda Directa en Venezuela |
+| :--- | :--- | :---: | :---: |
+| **Impresora Térmica 58mm (Tickera)** | **POS-5890K / Xprinter XP-58 / FRM-58** (USB + Puerto RJ11 para gaveta) | **$22 - $35** | [Buscar Impresora Térmica 58mm en MercadoLibre](https://listado.mercadolibre.com.ve/impresora-termica-58mm) |
+| **Balanza Comercial Digital 40 Kg** | **Camry / Roccia / American Boss 40kg** (Batería recargable interna + doble display LED cliente/cajero) | **$35 - $48** | [Buscar Balanza Digital 40kg en MercadoLibre](https://listado.mercadolibre.com.ve/balanza-digital-comercial-40kg) |
+| **Lector de Código de Barras USB** | **Láser 1D/2D tipo pistola con base manos libres** (Plug & Play USB HID) | **$20 - $32** | [Buscar Lector Código de Barras USB en MercadoLibre](https://listado.mercadolibre.com.ve/lector-codigo-de-barras-usb) |
+| **Gaveta de Dinero Metálica** | **Gaveta 4 o 5 billetes / 8 monedas** (Carcasa de acero + cable telefónico RJ11 a la tickera) | **$45 - $60** | [Buscar Gaveta de Dinero RJ11 en MercadoLibre](https://listado.mercadolibre.com.ve/gaveta-de-dinero-rj11) |
+| **Computadora de Caja (Opción A - Más Común)** | **CPU Corporativo Reacondicionado SFF** (Dell OptiPlex 3020/7020/9020 o HP ProDesk, Core i3/i5, 8GB RAM, SSD 240GB) | **$120 - $180** | [Buscar CPU Dell Optiplex Caracas en MercadoLibre](https://listado.mercadolibre.com.ve/cpu-dell-optiplex-caracas) |
+| **Computadora de Caja (Opción B - Compacta)** | **Mini PC Tiny / Micro Corporativa Reacondicionada** (Dell Micro / HP Mini / Lenovo Tiny, Core i3/i5 6ta-8va gen) | **$180 - $250** | [Buscar Mini PC Reacondicionada en MercadoLibre](https://listado.mercadolibre.com.ve/mini-pc-intel) |
+| **Computadora de Caja (Opción C - Nueva Sellada)** | **Mini PC Nueva** (Intel N95 / N100 / GMKtec / Asus NUC en tienda venezolana) | **$260 - $380** | [Buscar Mini PC Nueva en MercadoLibre](https://listado.mercadolibre.com.ve/mini-pc-intel) |
+| **Monitor Económico 19" (Usado o Genérico)** | **Monitor LED 19" - 20"** (HDMI / VGA para mostrador) | **$45 - $65** | [Buscar Monitor 19 pulgadas en MercadoLibre](https://listado.mercadolibre.com.ve/monitor-19-pulgadas) |
+| **Mini-UPS para Router + Caja** | **Mini UPS DC 12V/9V (KP3 / Marsriva)** (Respaldo de 4 a 6 horas para router ante apagones) | **$25 - $35** | [Buscar Mini UPS Router en MercadoLibre](https://listado.mercadolibre.com.ve/mini-ups-router) |
 
 ---
 
 ### 🛒 Dónde Comprar en Físico en Venezuela (Alternativas a Envío):
 1. **Caracas (Centro Tecnológico City Market / Sabana Grande & La Hoyada)**:
    - Pasillo de puntos de venta y accesorios fiscales en C.C. City Market.
-   - Varias tiendas de suministros POS ofrecen combos de *Tickera 58mm + Lector + Gaveta* con descuento por paquete.
+   - Varios locales de computación venden **Combos completos de CPU Dell OptiPlex + Monitor 19" + Teclado/Mouse por ~$220 - $250 USD**.
+   - Accesorios de mostrador (*Tickera 58mm + Lector + Gaveta*) se consiguen en combo negociable entre **$90 y $110 USD**.
 2. **Tiendas Especializadas de Retail & POS**:
-   - Distribuidores autorizados de Xprinter, 3nStar y Dynapos en Caracas, Valencia y Maracay (usualmente con retiro personal y pago vía Pago Móvil a tasa BCV o divisas en efectivo).
+   - Distribuidores de Xprinter, 3nStar y balanzas comerciales en Caracas, Valencia y Maracay con retiro personal y pago vía Pago Móvil (tasa BCV) o divisas en efectivo.
 
 ---
 
-### 📊 Escenarios de Inversión del Comercio:
-* **Escenario A (Comercio que ya tiene laptop o PC en caja)**:  
-  *Tickera ($25) + Balanza ($38) + Lector ($22) = **$85 USD** de inversión total en equipos.*
-* **Escenario B (Comercio desde cero con Mini-PC y Gaveta)**:  
-  *Mini-PC ($130) + Monitor ($50) + Balanza ($38) + Tickera ($25) + Gaveta ($45) + Lector ($22) = **$310 USD** de inversión total.*
+### 📊 Escenarios de Inversión del Comercio (Valores Reales de Calle):
+* **Escenario 1 (Comercio que ya tiene PC o Laptop en el negocio)**:  
+  *Tickera ($25) + Balanza ($38) + Lector ($22) = **~$85 USD** de inversión total en equipos.*
+* **Escenario 2 (Comercio armando punto con CPU Corporativo Dell/HP SFF + Monitor)**:  
+  *Combo CPU SFF + Monitor ($230) + Balanza ($38) + Tickera ($25) + Gaveta ($45) + Lector ($22) = **~$360 USD** de inversión total.*
+* **Escenario 3 (Comercio armando punto con Mini-PC Tiny compacta + Monitor)**:  
+  *Mini PC Tiny ($200) + Monitor ($50) + Balanza ($38) + Tickera ($25) + Gaveta ($45) + Lector ($22) = **~$380 USD** de inversión total.*
+* **Escenario 4 (Comercio con Mini-PC Nueva sellada de vitrina)**:  
+  *Mini PC Nueva ($300) + Monitor ($50) + Balanza ($38) + Tickera ($25) + Gaveta ($45) + Lector ($22) = **~$480 USD** de inversión total.*
 
 ---
 
