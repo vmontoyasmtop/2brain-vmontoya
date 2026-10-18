@@ -17,7 +17,8 @@ tags:
 # 📋 Plan de Proyecto: Meniox Market (POS & Gestión de Tienda)
 
 **Proyecto:** Meniox Market — Sistema de Punto de Venta & Gestión para Fruterías, Minimarkets y Víveres  
-**Responsable Técnico:** Ing. Víctor Montoya  
+**Responsable Técnico:** Ing. Víctor Montoya (SmartOps VE)  
+**Propuesta Ejecutiva Google Docs (Personal):** [Abrir Documento en Google Docs](https://docs.google.com/document/d/1Ev4Y-EbqS_7MhepIWTDQjYOHhPUUyU021Z9tHeMJzx8/edit)  
 **Líder de Mayordomía:** ALFRED & GRANDALF  
 **Área 2brain:** `wiki/proyectos/meniox-market-plan.md`  
 **Estado:** Planificación & Aprobación de Arquitectura  
