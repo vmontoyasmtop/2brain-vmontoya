@@ -75,10 +75,14 @@ flowchart TD
 
 | Capa | Solución Técnica | Beneficio Operativo Real |
 | :--- | :--- | :--- |
-| **Alojamiento Local** | **Single-Node Standalone (Next.js + SQLite/Embedded PG)** | Se ejecuta como un único servicio en Windows. No requiere levantar 6 microservicios ni Redis/RabbitMQ pesados en la tienda. |
-| **Acceso en Red LAN** | **Servidor Web Interno (`0.0.0.0:3000`)** | Cualquier otra computadora, tablet o smartphone conectado a la misma red Wi-Fi accede al instante vía navegador sin instalar nada. |
-| **Tolerancia Offline** | **100% Autónomo (Zero-Downtime)** | La tienda puede cobrar, pesar, facturar e imprimir aunque no haya internet por horas. |
-| **Sincronización Cloud** | **Background Worker Liviano** | Al detectar conexión a internet, sube la copia de seguridad cifrada a la nube y actualiza la tasa oficial del BCV. |
+| **Lenguaje & Tipado** | **TypeScript (Strict Mode)** | Cero errores de conversión o redondeo en montos bimonetarios ($/Bs.). |
+| **Frontend UI** | **Next.js 15 (App Router) + React 19 + Tailwind CSS v4** | Malla visual táctil reactiva, atajos de teclado y tipografía grande de alto contraste. |
+| **Modo de Ejecución** | **PWA (Progressive Web App - Kiosk Mode)** | Instalable desde Chrome en 1 clic; se abre a pantalla completa sin barra de navegador. |
+| **Backend & Core** | **Next.js Standalone Server (Node.js)** | Todo el backend y frontend unificados en un solo proceso. Consume ~90 MB de RAM. |
+| **Persistencia Local** | **SQLite (vía Prisma ORM con WAL Mode)** | Archivo único (`meniox-market.db`), transacciones atómicas seguras ante apagones, cero caída de puertos. |
+| **Servidor LAN** | **HTTP Server (`0.0.0.0:3000`)** | Permite que tablets o teléfonos en la misma red Wi-Fi operen como cajas auxiliares. |
+| **Impresión & Hardware** | **Web Print API + Node ESC/POS Spooler** | Impresión instantánea en tickeras de 58/80mm y apertura de gaveta vía pulso RJ11. |
+| **Sincronización Cloud** | **Background Sync Worker Asíncrono** | Al detectar internet, envía respaldo diario cifrado y consulta la tasa oficial del BCV. |
 
 ---
 
@@ -238,25 +242,44 @@ model CashShift {
 
 ---
 
-## 💰 7. Presupuesto de Inversión y Equipamiento de Hardware
+## 💰 7. Presupuesto de Inversión y Guía de Compra de Hardware en Venezuela
 
-### 🛠️ Lista de Equipos Necesarios para la Tienda:
-| Equipo | Función Operativa | Rango de Costo (USD) |
-| :--- | :--- | :---: |
-| **Computadora / Laptop** | Mini-PC Intel (N100, 8GB, SSD) + Monitor 19" o Laptop básica | $130 - $180 |
-| **Balanza Comercial Digital** | 30 - 40 Kg con display de peso para frutas y verduras | $30 - $45 |
-| **Lector de Código de Barras USB** | Con base manos libres para víveres empacados | $20 - $30 |
-| **Impresora Térmica 58mm** | Para tickets de venta / notas de entrega al cliente | $25 - $35 |
-| **Gaveta de Dinero Metálica** | Apertura automática/manual para billetes ($ y Bs.) | $35 - $45 |
-| **Mini-UPS / Protector** | Respaldo para router de internet y caja ante bajones de luz | $25 - $35 |
+Para garantizar que el cliente adquiera equipos 100% compatibles, duraderos y de bajo costo en el mercado venezolano:
+
+### 🛠️ Ficha Técnica de Hardware Recomendado:
+
+| Componente | Modelo / Referencia Recomendada | Conectividad / Tipo | Rango Precio (USD) | Enlace de Búsqueda Directa en Venezuela |
+| :--- | :--- | :--- | :---: | :---: |
+| **Impresora Térmica 58mm (Tickera)** | **POS-5890K / Xprinter XP-58 / FRM-58** (con corte manual o automático) | USB + Puerto RJ11 para gaveta | **$22 - $35** | [Buscar Impresora Térmica 58mm en MercadoLibre](https://listado.mercadolibre.com.ve/impresora-termica-58mm) |
+| **Balanza Comercial Digital 40 Kg** | **Camry / Roccia / American Boss 40kg** (Batería recargable interna + doble display LED cliente/cajero) | Mostrador con plato inox | **$35 - $48** | [Buscar Balanza Digital 40kg en MercadoLibre](https://listado.mercadolibre.com.ve/balanza-digital-comercial-40kg) |
+| **Lector de Código de Barras USB** | **Lector Láser 1D/2D tipo pistola con base manos libres** (Plug & Play HID) | Cable USB (sin drivers) | **$20 - $32** | [Buscar Lector Código de Barras USB en MercadoLibre](https://listado.mercadolibre.com.ve/lector-codigo-de-barras-usb) |
+| **Gaveta de Dinero Metálica** | **Gaveta 4 o 5 billetes / 8 monedas** (Carcasa de acero + llave de 3 posiciones) | Conexión telefónica RJ11 a la tickera | **$45 - $60** | [Buscar Gaveta de Dinero RJ11 en MercadoLibre](https://listado.mercadolibre.com.ve/gaveta-de-dinero-rj11) |
+| **Mini-PC para Servidor de Caja** | **Intel N100 / N95 o HP/Dell Tiny Reacondicionada** (8GB RAM, 256GB SSD) | HDMI/VGA + USB + Wi-Fi/LAN | **$120 - $160** | [Buscar Mini PC Intel en MercadoLibre](https://listado.mercadolibre.com.ve/mini-pc-intel) |
+| **Monitor Económico 19" o Usado** | **Monitor LED 19" - 20"** (HDMI / VGA) | Para visualización en mostrador | **$45 - $65** | [Buscar Monitor 19 pulgadas en MercadoLibre](https://listado.mercadolibre.com.ve/monitor-19-pulgadas) |
+| **Mini-UPS para Router + Caja** | **Mini UPS DC 12V/9V (KP3 / Marsriva)** (Para mantener internet y router encendidos durante apagones) | Batería Litio respaldo 4-6h | **$25 - $35** | [Buscar Mini UPS Router en MercadoLibre](https://listado.mercadolibre.com.ve/mini-ups-router) |
+
+---
+
+### 🛒 Dónde Comprar en Físico en Venezuela (Alternativas a Envío):
+1. **Caracas (Centro Tecnológico City Market / Sabana Grande & La Hoyada)**:
+   - Pasillo de puntos de venta y accesorios fiscales en C.C. City Market.
+   - Varias tiendas de suministros POS ofrecen combos de *Tickera 58mm + Lector + Gaveta* con descuento por paquete.
+2. **Tiendas Especializadas de Retail & POS**:
+   - Distribuidores autorizados de Xprinter, 3nStar y Dynapos en Caracas, Valencia y Maracay (usualmente con retiro personal y pago vía Pago Móvil a tasa BCV o divisas en efectivo).
+
+---
 
 ### 📊 Escenarios de Inversión del Comercio:
-* **Nivel 1 (Ultra Económico - Si ya tienen PC/Laptop)**: Balanza + Lector + Impresora + Protector = **~$95 USD**.
-* **Nivel 2 (Equipamiento Completo Nuevo)**: Puesto de caja nuevo con Mini-PC, monitor, balanza, gaveta e impresora = **~$320 USD**.
+* **Escenario A (Comercio que ya tiene laptop o PC en caja)**:  
+  *Tickera ($25) + Balanza ($38) + Lector ($22) = **$85 USD** de inversión total en equipos.*
+* **Escenario B (Comercio desde cero con Mini-PC y Gaveta)**:  
+  *Mini-PC ($130) + Monitor ($50) + Balanza ($38) + Tickera ($25) + Gaveta ($45) + Lector ($22) = **$310 USD** de inversión total.*
 
-### 💼 Modelo de Comercialización de Software:
-* **Instalación y Puesta en Marcha Inicial**: $120 - $150 USD (incluye carga de catálogo y capacitación).
-* **Soporte y Respaldo Cloud**: $15 USD / mes (respaldo automático, tasa de cambio y asistencia).
+---
+
+### 💼 Modelo Comercial Sugerido para el Software:
+* **Licencia / Instalación & Puesta en Marcha**: **$120 - $150 USD** (pago único inicial: configuración del host local, red LAN en tablets, carga del catálogo base de frutas/verduras y capacitación de 45 minutos al personal).
+* **Mantenimiento, Soporte & Sincronización Cloud**: **$15 USD / mes** (incluye respaldo diario en la nube, actualización automática de tasa BCV y soporte técnico remoto por WhatsApp).
 
 ---
 
