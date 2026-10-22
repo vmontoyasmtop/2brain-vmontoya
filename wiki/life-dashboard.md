@@ -56,6 +56,20 @@ Tablero de control ejecutivo para **Victor Montoya** en **Master Group**, concen
 
 ---
 
+## ⏰ Matriz de Time-Blocking Oficial (Google Calendar: `vmontoya@mastergroupve.com`)
+
+| Día de la Semana | Bloque Matutino (09:00 - 11:30 / 12:30) | Almuerzo | Bloque Vespertino (13:30 - 16:30) |
+| :--- | :--- | :---: | :--- |
+| **Lunes** | 🧪 **TIME QA & TESTING**: Pruebas funcionales y regresión | 🍽️ 12:30-13:30 | 🧠 **DEEP WORK**: Arquitectura, modelado y diseño |
+| **Martes** | 💻 **TIME DEV**: Programación intensiva con subagentes | 🍽️ 12:30-13:30 | 💻 **TIME DEV**: Construcción de features & endpoints |
+| **Miércoles** | 🧪 **TIME QA & TESTING**: Auditoría de interfaces y cajas | 🍽️ 12:30-13:30 | 🧠 **DEEP WORK**: Foco cognitivo y PR reviews |
+| **Jueves** | 💻 **TIME DEV**: Programación intensiva con subagentes | 🍽️ 12:30-13:30 | 💻 **TIME DEV**: Mobile (Kakashi), APIs y microservicios |
+| **Viernes** | 🧪 **TIME QA & TESTING**: Certificación semanal de sprints | 🍽️ 12:30-13:30 | 🧠 **DEEP WORK**: Cierre técnico y consolidación |
+
+*(Nota: De 08:30 a 09:00 de Lunes a Viernes se mantiene la **Daily Meeting IT** con Soporte).*
+
+---
+
 ## 📌 Enlaces Útiles
 - 🗺️ [[pilar-proyectos|Ecosistema de Proyectos MasterHub]]
 - ⚖️ [[el-cuadre-pos-brand-brief-ejecutivo|EL CUADRE POS — Brand Brief]]
