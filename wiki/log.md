@@ -12,6 +12,15 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-25] fix/el-cuadre-pos-inventario-layout-and-overflow | Corrección de Overflow, Eliminación de Navbar Duplicado & Conexión de Tasa BCV Dinámica en Inventario
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: 👁️ **Itachi** (Frontend Engineer) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - Resuelto el conflicto de renderizado en `/inventario`: se eliminó el montaje duplicado de `Navbar` dentro de `src/app/inventario/page.tsx` y `src/app/page.tsx`.
+  - Desbloqueado el scroll vertical en el layout global `src/app/layout.tsx` sustituyendo `overflow-hidden` por `overflow-y-auto`.
+  - Conectado el hook oficial `useExchangeRate()` dinámico en el inventario para reflejar automáticamente los valores en Bolívares con la tasa oficial BCV.
+  - Verificado con `npm run build` (código 0, 7 rutas optimizadas). Commit `8ccba92` subido a GitHub (`main`).
+
 ## [2026-10-25] fix/el-cuadre-pos-navbar-tactical-restoration | Restauración de la Barra de Navegación Táctica Unificada (Navbar, POS, Inventario & BCV)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: 👁️ **Itachi** (Frontend Engineer) & 🤵 **ALFRED**
