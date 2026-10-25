@@ -23,6 +23,7 @@ Tablero de control ejecutivo para **Victor Montoya** en **Master Group**, concen
    - **Backend**: NestJS + SQLite WAL Mode con Prisma ORM (`elcuadre.db`), seeding con 15 productos criollos reales de mostrador. Swagger UI activo en `http://localhost:3001/api/docs`.
    - **Identidad de Marca**: Brand Book oficial de Sai (`cuadre.noche`, `cuadre.mint`, `cuadre.oro`), logotipo SVG y pack de 10 iconos criollos (`icon-tomate.svg`, etc.) empaquetados en `CriolloIcons.tsx`.
    - **Frontend**: Pantalla táctil widescreen `/pos` con grid de catálogo (filtros y buscador F3), modal de pesaje decimal para balanza con presets y función Tarar, carrito reactivo bimoneda ($/Bs a tasa BCV) y checkout rápido (F12).
+   - **Repositorio Oficial**: [GitHub (`vmontoyasmtop/el-cuadre-pos`)](https://github.com/vmontoyasmtop/el-cuadre-pos)
    - **ClickUp**: 6 User Stories en columna `TESTING` (`US-01`, `US-02`, `US-03`, `US-11`, `US-12`, `US-04`). Próximas: `US-05` (Cobro Multimoneda) y `US-08` (Tests Vitest con Hidan).
 
 2. 📊 **[[mg-sales-analytics|MG-SALES-ANALYTICS]] (Lanzamiento v1.0)**:
