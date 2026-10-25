@@ -12,6 +12,20 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-25] fix/el-cuadre-pos-navbar-tactical-restoration | Restauración de la Barra de Navegación Táctica Unificada (Navbar, POS, Inventario & BCV)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: 👁️ **Itachi** (Frontend Engineer) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - Subsanada la desaparición de los botones de navegación superiores post-integración de la tasa BCV oficial.
+  - Reconstruido y unificado [`src/components/Navbar.tsx`](file:///C:/Users/vmont/OneDrive/Desktop/el-cuadre-pos/frontend/src/components/Navbar.tsx) integrando:
+    * Selector táctil de vistas: **POS** (`/pos`), **Inventario** (`/inventario`), **Turnos & Arqueo** (`/`).
+    * Badge interactivo en tiempo real de la **Tasa BCV Oficial** (`ExchangeRateBadge`) con modal de sincronización/ajuste.
+    * Widget reactivo de estado de caja (Turno Abierto / Base Inicial en USD / Alerta de Caja Sin Abrir).
+    * Botón de acceso directo a **Arqueo Ciego**.
+    * Perfil de cajero/administrador y botón táctil de cierre de sesión (`LogOut`).
+  - Consolidado el cliente HTTP en [`src/lib/api.ts`](file:///C:/Users/vmont/OneDrive/Desktop/el-cuadre-pos/frontend/src/lib/api.ts) unificando la API de Tasa BCV con los módulos de Ventas, Productos, Sesiones y Mermas.
+  - Verificación Next.js 14: Compilación 100% exitosa (código 0, 7 rutas estáticas optimizadas). Commit `0cb1831` subido a GitHub (`main`).
+
 ## [2026-10-25] feat/el-cuadre-pos-us05-us06-us08 | Pasarela Multimoneda (US-05), Inventario Dual & Mermas (US-06) y Pruebas Unitarias de Jashin (US-08)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: ☁️ **Pain** (Scrum Master), 🖤 **Kakuzu** (Backend Architect), 👁️ **Itachi** (Frontend Engineer), 💀 **Hidan** (QA & Stress Tester) & 🤵 **ALFRED**
