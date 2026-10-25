@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="100%" height="100%" fill="none">
+  <!-- VARIACIÓN 1B: EL CUADRE CON MONEDA / PUNTO TÁCTICO (Punto Ámbar Bimonetario) -->
+  <g transform="translate(20, 18)">
+    <!-- Squircle base estilizado con fondo sutil -->
+    <rect x="6" y="6" width="74" height="74" rx="20" fill="#10B981" fill-opacity="0.08" stroke="#10B981" stroke-width="4"/>
+    
+    <!-- Check limpio geométrico -->
+    <path d="M24 42 L36 54 L58 30" stroke="#10B981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- LA MONEDA TÁCTICA / EL PUNTO DE VENTA (Acento Ámbar Oro Único) -->
+    <circle cx="62" cy="22" r="7.5" fill="#FFB95F" stroke="#051424" stroke-width="2.5"/>
+  </g>
+
+  <!-- Tipografía -->
+  <text x="130" y="66" font-family="'Inter', system-ui, sans-serif" font-size="38" font-weight="900" letter-spacing="-0.5" fill="#FFFFFF">
+    elcuadre<tspan fill="#FFB95F">.</tspan><tspan fill="#10B981" font-weight="400">pos</tspan>
+  </text>
+  <text x="132" y="92" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748B" letter-spacing="1.5">
+    CONTROL DE CAJA &amp; PESAJE LOCAL
+  </text>
+</svg>

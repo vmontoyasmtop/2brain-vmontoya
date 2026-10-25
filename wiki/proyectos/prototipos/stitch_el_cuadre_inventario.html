@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>El Cuadre POS - Inventario Híbrido & Control de Mermas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#10b981",
+            "outline-variant": "#3c4a42",
+            "on-surface": "#d4e4fa",
+            "on-primary": "#003824",
+            "on-error-container": "#ffdad6",
+            "outline": "#86948a",
+            "on-secondary-container": "#5b3800",
+            "tertiary-fixed": "#dae2fd",
+            "on-surface-variant": "#bbcabf",
+            "on-secondary-fixed-variant": "#653e00",
+            "surface-container": "#122131",
+            "surface-container-high": "#1c2b3c",
+            "tertiary": "#bec6e0",
+            "primary-fixed": "#6ffbbe",
+            "inverse-on-surface": "#233143",
+            "inverse-primary": "#006c49",
+            "secondary-container": "#ee9800",
+            "background": "#051424",
+            "surface-dim": "#051424",
+            "on-tertiary-fixed-variant": "#3f465c",
+            "on-primary-container": "#00422b",
+            "tertiary-container": "#9ba2bb",
+            "secondary": "#ffb95f",
+            "surface-tint": "#4edea3",
+            "on-background": "#d4e4fa",
+            "surface-variant": "#273647",
+            "error-container": "#93000a",
+            "on-tertiary-fixed": "#131b2e",
+            "secondary-fixed": "#ffddb8",
+            "primary-fixed-dim": "#4edea3",
+            "on-tertiary": "#283044",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-tertiary-container": "#31394d",
+            "error": "#ffb4ab",
+            "surface-container-low": "#0d1c2d",
+            "on-primary-fixed-variant": "#005236",
+            "surface-container-highest": "#273647",
+            "on-secondary-fixed": "#2a1700",
+            "on-secondary": "#472a00",
+            "on-error": "#690005",
+            "surface-container-lowest": "#010f1f",
+            "on-primary-fixed": "#002113",
+            "tertiary-fixed-dim": "#bec6e0",
+            "surface-bright": "#2c3a4c",
+            "surface": "#051424",
+            "inverse-surface": "#d4e4fa",
+            "primary": "#4edea3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-lg": ["Inter"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface-container dark:bg-surface-container-high w-full">
+<div class="flex justify-between items-center w-full px-4 md:px-8 max-w-7xl mx-auto h-16">
+<div class="flex items-center space-x-6">
+<span class="text-headline-md font-headline-md font-extrabold text-primary dark:text-inverse-primary">AbastoPOS</span>
+<div class="hidden md:flex items-center space-x-6">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary text-label-sm font-label-sm transition-all duration-200" href="#">Dashboard</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-sm font-label-sm transition-all duration-200" href="#">Inventory</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary text-label-sm font-label-sm transition-all duration-200" href="#">Reports</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary text-label-sm font-label-sm transition-all duration-200" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="bg-surface-container-low text-on-surface text-label-sm rounded-lg pl-9 pr-4 py-2 border border-outline-variant focus:outline-none focus:border-primary w-64" placeholder="Buscar producto..." type="text"/>
+</div>
+<button class="bg-primary-container text-on-primary-container px-3 py-1.5 rounded-lg text-label-sm font-label-sm font-bold flex items-center space-x-1 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>Quick Waste</span>
+</button>
+<button class="bg-surface-variant text-on-surface-variant p-2 rounded-lg hover:text-primary transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center space-x-2 pl-2 border-l border-outline-variant">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Store manager professional portrait with a warm friendly smile wearing dark uniform inside a modern grocery store." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACRkLvBJPvI9NA0srFFTr37U8ipuyeieZNB9Thpkj32xkHxpbiHiTM61jMVJwQDyC1C0Qy7h8SON8VN0_ZUfDt0gnWaAVzBNfXivQH1pbAPA5t4flTwra1f2EKR8L5LYGHd1BQiNZDnkLyqPGBuLpunjeM1c8b3T8u4GMD1aNjSjh8lePQ5CoEiweJ4XPWkaz_IY-JuLR9ZqFCIgd8d_YUp48p6KXpEdgLQ15m8d0PToux6VyENb23KegcwqEGQ8g6bFi6Cfm91iC-"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Shell Layout -->
+<div class="flex flex-1 w-full max-w-7xl mx-auto">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col justify-between h-[calc(100vh-4rem)] w-64 p-4 bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-outline-variant sticky top-16">
+<div class="flex flex-col space-y-6">
+<div class="flex items-center space-x-3 px-2 py-3 bg-surface-container-low rounded-xl">
+<img class="w-10 h-10 rounded-lg object-cover" data-alt="Abasto Central storefront exterior with bright professional signage and clean display windows showcasing fresh Venezuelan groceries." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC7iEA_Wvxaovpysc_YHE4uNT0LcPgb3EtBsV1rQCs6tRFC1JBeh1ybQE3yxVPBXl-eva3zqSP0l-LhKqMMr8JJ26E1goC2vQOsd4Ec8KSXd-R75tPyt6T5jSQv1xsWd2nmBtzgrh7z_rwQ5lcdwGhHCQTjzmpNaegkCCjWZaYRpzWwldo7giI7-kbAjAgZ_tCbBKLDFJeUeUDqqbWLfsx99l3x-3MI2u_eXUNmfY9Stq--2_mXTBNdHy9xIadvEv7Yo90okDBG11c"/>
+<div>
+<h2 class="text-label-lg font-label-lg text-on-surface">Abasto Central</h2>
+<p class="text-label-sm text-on-surface-variant">Terminal #01</p>
+</div>
+</div>
+<nav class="flex flex-col space-y-1">
+<a class="flex items-center space-x-3 px-3 py-2.5 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg text-label-sm font-label-sm transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 bg-primary-container text-on-primary-container font-bold rounded-lg text-label-sm font-label-sm transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg text-label-sm font-label-sm transition-all" href="#">
+<span class="material-symbols-outlined">delete</span>
+<span>Waste Log</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg text-label-sm font-label-sm transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Analytics</span>
+</a>
+</nav>
+</div>
+<div class="flex flex-col space-y-2 pt-4 border-t border-outline-variant">
+<button class="w-full bg-secondary-container text-on-secondary-container py-2.5 px-4 rounded-lg font-label-lg text-label-lg flex items-center justify-center space-x-2 hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined">point_of_sale</span>
+<span>New Sale</span>
+</button>
+<div class="flex flex-col space-y-1 pt-2">
+<a class="flex items-center space-x-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container rounded-lg text-label-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-error hover:bg-surface-container rounded-lg text-label-sm" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-4 md:p-8 flex flex-col space-y-6 overflow-y-auto">
+<!-- Header Banner & Summary Indicators -->
+<div class="flex flex-col space-y-4">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Inventario Híbrido & Control de Mermas Orgánicas</h1>
+<p class="text-body-md text-on-surface-variant">Gestión dual en tiempo real para unidades y peso (Kg) con conversión automática a tasa BCV.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant flex flex-col justify-between space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Valor Total Inventario</span>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-primary">$4,840.00 USD</div>
+<div class="text-label-sm text-on-surface-variant">Bs. 217,800.00 (Tasa: 45.00)</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant flex flex-col justify-between space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Mermas Registradas este Mes</span>
+<span class="material-symbols-outlined text-secondary">eco</span>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-secondary">$84.40 USD</div>
+<div class="text-label-sm text-on-surface-variant">21.5 Kg en frutas/verduras</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant flex flex-col justify-between space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Artículos con Stock Bajo</span>
+<span class="bg-error-container text-on-error-container text-xs font-bold px-2 py-0.5 rounded-full">3 Alertas</span>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-error">Atención Requerida</div>
+<div class="text-label-sm text-on-surface-variant">1 crítico, 2 por debajo del mínimo</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inventory Table Section -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden flex flex-col">
+<div class="p-4 bg-surface-container border-b border-outline-variant flex justify-between items-center">
+<div class="flex items-center space-x-3">
+<h2 class="text-label-lg font-label-lg text-on-surface">Listado de Artículos Activos</h2>
+<span class="bg-surface-variant text-on-surface-variant px-2.5 py-0.5 rounded-full text-label-sm">4 items mostrados</span>
+</div>
+<div class="flex space-x-2">
+<button class="bg-surface-variant text-on-surface px-3 py-1.5 rounded-lg text-label-sm flex items-center space-x-1 hover:bg-surface-bright">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+<span>Filtrar</span>
+</button>
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-lg text-label-sm font-bold flex items-center space-x-1 hover:opacity-90">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>Nuevo Artículo</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant text-label-sm text-on-surface-variant bg-surface-container/50">
+<th class="p-4">Producto</th>
+<th class="p-4">Modalidad</th>
+<th class="p-4">Stock Actual</th>
+<th class="p-4">Costo Unit. / Kg</th>
+<th class="p-4">Venta Unit. / Kg</th>
+<th class="p-4">Estado</th>
+<th class="p-4 text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-md">
+<!-- Item 1 -->
+<tr class="hover:bg-surface-container/40 transition-all">
+<td class="p-4 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">nutrition</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">Tomate Perita</div>
+<div class="text-xs text-on-surface-variant">SKU: TOM-001</div>
+</div>
+</td>
+<td class="p-4"><span class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded text-xs font-bold">Por Kg</span></td>
+<td class="p-4 font-bold text-on-surface">24.500 Kg</td>
+<td class="p-4">$1.10/Kg</td>
+<td class="p-4">$1.80/Kg</td>
+<td class="p-4"><span class="bg-primary-container/20 text-primary border border-primary/30 px-2.5 py-1 rounded-full text-xs font-bold">Óptimo</span></td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary p-1">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-surface-container/40 transition-all">
+<td class="p-4 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">package_2</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">Harina P.A.N. 1kg</div>
+<div class="text-xs text-on-surface-variant">SKU: HAR-002</div>
+</div>
+</td>
+<td class="p-4"><span class="bg-secondary-container/20 text-secondary border border-secondary/30 px-2 py-0.5 rounded text-xs font-bold">Unidad</span></td>
+<td class="p-4 font-bold text-on-surface">48 und</td>
+<td class="p-4">$1.05</td>
+<td class="p-4">$1.40</td>
+<td class="p-4"><span class="bg-primary-container/20 text-primary border border-primary/30 px-2.5 py-1 rounded-full text-xs font-bold">Óptimo</span></td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary p-1">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-surface-container/40 transition-all">
+<td class="p-4 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">nutrition</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">Cambur Manzano</div>
+<div class="text-xs text-on-surface-variant">SKU: FRU-009</div>
+</div>
+</td>
+<td class="p-4"><span class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded text-xs font-bold">Por Kg</span></td>
+<td class="p-4 font-bold text-on-surface">18.200 Kg</td>
+<td class="p-4">$0.90/Kg</td>
+<td class="p-4">$1.50/Kg</td>
+<td class="p-4"><span class="bg-primary-container/20 text-primary border border-primary/30 px-2.5 py-1 rounded-full text-xs font-bold">Óptimo</span></td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary p-1">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Item 4 -->
+<tr class="hover:bg-error-container/10 transition-all">
+<td class="p-4 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">oil_barrel</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">Aceite Mazeite 1L</div>
+<div class="text-xs text-on-surface-variant">SKU: ACE-044</div>
+</div>
+</td>
+<td class="p-4"><span class="bg-secondary-container/20 text-secondary border border-secondary/30 px-2 py-0.5 rounded text-xs font-bold">Unidad</span></td>
+<td class="p-4 font-bold text-error">4 und</td>
+<td class="p-4">$2.10</td>
+<td class="p-4">$2.80</td>
+<td class="p-4"><span class="bg-error text-on-error px-2.5 py-1 rounded-full text-xs font-bold animate-pulse">STOCK CRÍTICO</span></td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary p-1">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- Quick Waste / Spoilage Registration Panel Overlay -->
+<aside class="w-full md:w-96 bg-surface-container border-l border-outline-variant p-6 flex flex-col justify-between shrink-0">
+<div class="flex flex-col space-y-6">
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-error">warning</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Registrar Baja por Merma / Pudrición</h2>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col space-y-4">
+<!-- Select Product -->
+<div class="flex flex-col space-y-1.5">
+<label class="text-label-sm text-on-surface-variant">Select Product</label>
+<select class="bg-surface-container-low text-on-surface border border-outline-variant rounded-lg p-2.5 text-body-md focus:border-primary focus:outline-none">
+<option selected="">Cambur Manzano</option>
+<option>Tomate Perita</option>
+<option>Harina P.A.N. 1kg</option>
+<option>Aceite Mazeite 1L</option>
+</select>
+</div>
+<!-- Quantity Discarded -->
+<div class="flex flex-col space-y-1.5">
+<label class="text-label-sm text-on-surface-variant">Quantity Discarded</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low text-on-surface border border-outline-variant rounded-lg p-2.5 pr-12 text-body-md focus:border-primary focus:outline-none font-bold" type="text" value="3.500 Kg"/>
+<span class="absolute inset-y-0 right-0 flex items-center pr-3 text-on-surface-variant text-sm pointer-events-none">Kg</span>
+</div>
+<span class="text-xs text-on-surface-variant">Stock disponible actual: 18.200 Kg</span>
+</div>
+<!-- Reason -->
+<div class="flex flex-col space-y-1.5">
+<label class="text-label-sm text-on-surface-variant">Reason</label>
+<select class="bg-surface-container-low text-on-surface border border-outline-variant rounded-lg p-2.5 text-body-md focus:border-primary focus:outline-none">
+<option selected="">Pudrición / Maduración excesiva</option>
+<option>Dañado / Golpeado</option>
+<option>Deshidratación</option>
+</select>
+</div>
+<!-- Cost Impact Alert -->
+<div class="bg-error-container/20 border border-error/30 p-3 rounded-lg flex items-start space-x-3">
+<span class="material-symbols-outlined text-error text-lg mt-0.5">info</span>
+<div class="text-xs text-on-surface-variant">
+              Esta acción restará <span class="text-on-surface font-bold">3.500 Kg</span> del inventario físico y registrará una pérdida contable estimada en <span class="text-error font-bold">$3.15 USD</span> (Bs. 141.75).
+            </div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-6">
+<button class="w-full bg-[#EF4444] text-white py-3.5 px-4 rounded-lg font-label-lg text-label-lg font-bold flex items-center justify-center space-x-2 hover:bg-red-600 transition-all shadow-lg active:scale-98">
+<span class="material-symbols-outlined">delete_sweep</span>
+<span>DAR DE BAJA Y AJUSTAR STOCK FÍSICO</span>
+</button>
+</div>
+</aside>
+</div>
+</body></html>

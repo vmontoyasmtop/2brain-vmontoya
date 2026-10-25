@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marchante POS - Frutas y Víveres</title>
+<!-- Google Fonts: Space Grotesk, Hanken Grotesk & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with forms container-queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim matching the Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#93ccff",
+            "error-container": "#93000a",
+            "surface": "#0b1326",
+            "surface-container-lowest": "#060e20",
+            "outline": "#86948a",
+            "tertiary-fixed": "#cce5ff",
+            "on-secondary-fixed-variant": "#653e00",
+            "outline-variant": "#3c4a42",
+            "on-primary-fixed": "#002113",
+            "error": "#ffb4ab",
+            "surface-variant": "#2d3449",
+            "on-tertiary": "#003351",
+            "on-surface": "#dae2fd",
+            "on-secondary-container": "#5b3800",
+            "surface-tint": "#4edea3",
+            "on-surface-variant": "#bbcabf",
+            "surface-container-highest": "#2d3449",
+            "surface-container-high": "#222a3d",
+            "inverse-on-surface": "#283044",
+            "secondary-fixed-dim": "#ffb95f",
+            "inverse-surface": "#dae2fd",
+            "on-secondary": "#472a00",
+            "primary": "#4edea3",
+            "on-primary-fixed-variant": "#005236",
+            "on-error-container": "#ffdad6",
+            "secondary": "#ffb95f",
+            "on-error": "#690005",
+            "inverse-primary": "#006c49",
+            "surface-container-low": "#131b2e",
+            "surface-dim": "#0b1326",
+            "on-secondary-fixed": "#2a1700",
+            "tertiary-fixed-dim": "#93ccff",
+            "background": "#0b1326",
+            "on-tertiary-fixed-variant": "#004b73",
+            "secondary-container": "#ee9800",
+            "tertiary-container": "#4aaaef",
+            "on-background": "#dae2fd",
+            "secondary-fixed": "#ffddb8",
+            "on-tertiary-fixed": "#001d31",
+            "on-primary-container": "#00422b",
+            "on-tertiary-container": "#003c5e",
+            "on-primary": "#003824",
+            "primary-container": "#10b981",
+            "primary-fixed": "#6ffbbe",
+            "primary-fixed-dim": "#4edea3",
+            "surface-bright": "#31394d",
+            "surface-container": "#171f33"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "0.75rem",
+            "margin-desktop": "1.5rem",
+            "gutter-desktop": "1rem",
+            "gutter-tablet": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "0.75rem",
+            "space-xl": "1.75rem",
+            "space-md": "0.75rem",
+            "space-lg": "1.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-keypad": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "body-sm": ["Hanken Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "label-badge": ["JetBrains Mono"],
+            "display-currency-mobile": ["Space Grotesk"],
+            "label-metric": ["JetBrains Mono"],
+            "display-currency": ["Space Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "label-keypad": ["26px", { "lineHeight": "30px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "display-currency-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-metric": ["14px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-currency": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hardware touch target optimization */
+    .touch-target {
+      min-width: 48px;
+      min-height: 48px;
+    }
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b1326;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2d3449;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3c4a42;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-hidden select-none h-screen w-screen flex flex-col font-body-md text-body-md">
+<!-- TOP APP BAR (Executed from Shared Components JSON 'TopNavBar') -->
+<header class="flex justify-between items-center w-full px-4 h-16 bg-surface-container select-none border-b border-outline-variant shrink-0 z-30 shadow-none">
+<!-- Left: Brand Logo & Cashier Chip -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[24px]" data-icon="local_mall">local_mall</span>
+</div>
+<div>
+<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">Marchante POS</span>
+<div class="flex items-center gap-2">
+<span class="text-label-badge font-label-badge text-on-surface-variant">FRUTERÍA &amp; VÍVERES</span>
+</div>
+</div>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant mx-1"></div>
+<!-- Cashier Chip & Register -->
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+<div class="flex flex-col">
+<span class="text-body-sm font-body-sm text-on-surface font-semibold leading-tight">Victor M. • Caja 01</span>
+<span class="text-label-badge font-label-badge text-on-surface-variant">Turno Abierto #104</span>
+</div>
+</div>
+<!-- Live BCV Exchange Rate Indicator -->
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-secondary-container/40">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="currency_exchange">currency_exchange</span>
+<div class="flex flex-col">
+<span class="text-label-badge font-label-badge text-on-surface-variant leading-tight">TASA OFICIAL BCV</span>
+<span class="text-label-metric font-label-metric text-secondary font-bold">Bs. 45.00 / $USD</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping ml-0.5"></span>
+</div>
+</div>
+<!-- Center/Right Quick Functional Actions (Hardware Anchors) -->
+<div class="flex items-center gap-2">
+<!-- Quick Balance Tare Button -->
+<button class="touch-target flex items-center gap-2 px-3 py-2 bg-surface-container-high hover:bg-surface-bright text-tertiary-fixed rounded-lg border border-outline-variant active:translate-y-0.5 transition-all text-body-sm font-body-sm font-semibold" onclick="openWeightModal('Tomate Perita', 1.20, 54.00, '0.750')">
+<span class="material-symbols-outlined text-[20px]" data-icon="scale">scale</span>
+<span>Balanza / Tara (F2)</span>
+</button>
+<!-- Waste / Spoilage Action -->
+<button class="touch-target flex items-center gap-2 px-3 py-2 bg-surface-container-high hover:bg-surface-bright text-on-surface-variant rounded-lg border border-outline-variant active:translate-y-0.5 transition-all text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete_sweep">delete_sweep</span>
+<span>Merma</span>
+</button>
+<!-- Cash Drawer Open (CTA from JSON) -->
+<button class="touch-target flex items-center gap-2 px-3 py-2 bg-surface-container-high hover:bg-surface-bright text-on-surface-variant rounded-lg border border-outline-variant active:translate-y-0.5 transition-all text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="point_of_sale">point_of_sale</span>
+<span>Abrir Gaveta</span>
+</button>
+<!-- Arqueo / Cierre Action (trailing_secondary_action from JSON) -->
+<button class="touch-target flex items-center gap-2 px-3 py-2 bg-surface-container-high hover:bg-surface-bright text-secondary rounded-lg border border-outline-variant active:translate-y-0.5 transition-all text-body-sm font-body-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]" data-icon="sync">sync</span>
+<span>Arqueo / Cierre</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-1"></div>
+<!-- System Status and Time -->
+<div class="text-right pl-1">
+<div class="text-label-metric font-label-metric text-on-surface font-bold" id="live-clock">10:42:18 AM</div>
+<div class="text-label-badge font-label-badge text-primary flex items-center justify-end gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> RED EN LÍNEA
+        </div>
+</div>
+</div>
+</header>
+<!-- MAIN VIEWPORT: HARDWARE-ANCHORED SPLIT MATRIX -->
+<main class="flex flex-1 w-full overflow-hidden">
+<!-- ========================================== -->
+<!-- LEFT COLUMN: CATALOG & SPEED DIAL (~62%) -->
+<!-- ========================================== -->
+<section class="flex-1 w-[62%] bg-surface-container-lowest flex flex-col border-r border-outline-variant overflow-hidden">
+<!-- Continuous Search & Fast Barcode Row -->
+<div class="p-3 bg-surface-container-low border-b border-outline-variant flex items-center gap-3">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[22px]" data-icon="search">search</span>
+<input class="w-full bg-surface border border-outline-variant rounded-lg pl-11 pr-10 py-3 text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary h-12" placeholder="Buscar producto por nombre o código de barras (F3)..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px] cursor-pointer hover:text-on-surface" data-icon="barcode_scanner">barcode_scanner</span>
+</div>
+<button class="touch-target px-4 h-12 bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant rounded-lg flex items-center gap-2 font-semibold text-body-sm font-body-sm active:translate-y-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span>Escanear</span>
+</button>
+</div>
+<!-- Produce & Grocery Category Tabs (Horizontal Touch Track) -->
+<div class="bg-surface-container px-3 py-2 border-b border-outline-variant flex items-center gap-2 overflow-x-auto no-scrollbar shrink-0">
+<!-- Active Tab: Frutas y Verduras por Kg -->
+<button class="touch-target whitespace-nowrap px-4 py-2.5 rounded-lg bg-surface-container-highest text-primary border-l-4 border-primary font-bold flex items-center gap-2 text-body-sm font-body-sm shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="scale">scale</span>
+<span>Frutas y Verduras por Kg</span>
+<span class="bg-primary/20 text-primary text-label-badge font-label-badge px-1.5 py-0.5 rounded">24</span>
+</button>
+<button class="touch-target whitespace-nowrap px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant flex items-center gap-2 text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="inventory_2">inventory_2</span>
+<span>Víveres Empacados</span>
+</button>
+<button class="touch-target whitespace-nowrap px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant flex items-center gap-2 text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="liquor">liquor</span>
+<span>Bebidas y Lácteos</span>
+</button>
+<button class="touch-target whitespace-nowrap px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant flex items-center gap-2 text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="lunch_dining">lunch_dining</span>
+<span>Charcutería y Quesos</span>
+</button>
+<button class="touch-target whitespace-nowrap px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant flex items-center gap-2 text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="bakery_dining">bakery_dining</span>
+<span>Panadería y Dulces</span>
+</button>
+<button class="touch-target whitespace-nowrap px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary border border-secondary/30 flex items-center gap-2 text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="local_offer">local_offer</span>
+<span>Promociones del Día</span>
+</button>
+</div>
+<!-- Product Speed Dial Grid (High Touch Contrast Produce Cards) -->
+<div class="flex-1 overflow-y-auto p-3 grid grid-cols-3 xl:grid-cols-4 gap-2.5 auto-rows-max">
+<!-- Item 1: Tomate Perita (KG) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm" onclick="openWeightModal('Tomate Perita', 1.20, 54.00, '0.750')">
+<div class="flex items-start justify-between">
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-tertiary/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span> KG
+            </span>
+<span class="text-label-badge font-label-badge text-primary bg-primary/10 px-1.5 py-0.5 rounded">PESABLE</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Tomate Perita</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Fresco de La Grita</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$1.20<span class="text-body-sm font-body-sm font-normal text-on-surface-variant"> /Kg</span></div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 54.00</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 2: Cebolla Morada (KG) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm" onclick="openWeightModal('Cebolla Morada', 1.60, 72.00, '0.540')">
+<div class="flex items-start justify-between">
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-tertiary/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span> KG
+            </span>
+<span class="text-label-badge font-label-badge text-on-surface-variant">LOTE 82</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Cebolla Morada</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Selección Primera</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$1.60<span class="text-body-sm font-body-sm font-normal text-on-surface-variant"> /Kg</span></div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 72.00</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 3: Papa Granel (KG) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm" onclick="openWeightModal('Papa Granel', 0.90, 40.50, '1.250')">
+<div class="flex items-start justify-between">
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-tertiary/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span> KG
+            </span>
+<span class="text-label-badge font-label-badge text-primary bg-primary/10 px-1.5 py-0.5 rounded">OFERTA</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Papa Granel</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Andina Lavada</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$0.90<span class="text-body-sm font-body-sm font-normal text-on-surface-variant"> /Kg</span></div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 40.50</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 4: Plátano Maduro (KG) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm" onclick="openWeightModal('Plátano Maduro', 0.80, 36.00, '1.420')">
+<div class="flex items-start justify-between">
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-tertiary/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span> KG
+            </span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Plátano Maduro</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Sur del Lago</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$0.80<span class="text-body-sm font-body-sm font-normal text-on-surface-variant"> /Kg</span></div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 36.00</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 5: Aguacate Criollo (KG) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm" onclick="openWeightModal('Aguacate Criollo', 2.50, 112.50, '0.850')">
+<div class="flex items-start justify-between">
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-tertiary/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span> KG
+            </span>
+<span class="text-label-badge font-label-badge text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded">PREMIUM</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Aguacate Criollo</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Mantequilla Punto</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$2.50<span class="text-body-sm font-body-sm font-normal text-on-surface-variant"> /Kg</span></div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 112.50</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 6: Harina P.A.N. (UNID) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm">
+<div class="flex items-start justify-between">
+<span class="bg-surface-variant text-on-surface-variant text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="inventory_2">inventory_2</span> UNID
+            </span>
+<span class="text-label-badge font-label-badge text-on-surface font-semibold">1 Kg</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Harina P.A.N.</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Blanca Tradicional</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$1.40</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 63.00</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 7: Arroz Mary Tradicional (UNID) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm">
+<div class="flex items-start justify-between">
+<span class="bg-surface-variant text-on-surface-variant text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="inventory_2">inventory_2</span> UNID
+            </span>
+<span class="text-label-badge font-label-badge text-on-surface font-semibold">1 Kg</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Arroz Mary</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Grano Entero Tipo I</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$1.30</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 58.50</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 8: Aceite Mazeite (UNID) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm">
+<div class="flex items-start justify-between">
+<span class="bg-surface-variant text-on-surface-variant text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="inventory_2">inventory_2</span> UNID
+            </span>
+<span class="text-label-badge font-label-badge text-on-surface font-semibold">1 Litro</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Aceite Mazeite</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">100% Puro de Maíz</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$3.80</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 171.00</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 9: Queso Blanco Llanero (KG) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm" onclick="openWeightModal('Queso Blanco Llanero', 5.20, 234.00, '0.450')">
+<div class="flex items-start justify-between">
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-tertiary/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span> KG
+            </span>
+<span class="text-label-badge font-label-badge text-secondary bg-secondary/10 px-1.5 py-0.5 rounded">FRESCO</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Queso Blanco Llanero</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Punto de Sal Duro</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$5.20<span class="text-body-sm font-body-sm font-normal text-on-surface-variant"> /Kg</span></div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 234.00</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 10: Café Fama de América (UNID) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm">
+<div class="flex items-start justify-between">
+<span class="bg-surface-variant text-on-surface-variant text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="inventory_2">inventory_2</span> UNID
+            </span>
+<span class="text-label-badge font-label-badge text-on-surface font-semibold">250g</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Café Fama de América</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Molido Tostado</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$2.10</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 94.50</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 11: Pasta Primor Plumitas (UNID) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm">
+<div class="flex items-start justify-between">
+<span class="bg-surface-variant text-on-surface-variant text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="inventory_2">inventory_2</span> UNID
+            </span>
+<span class="text-label-badge font-label-badge text-on-surface font-semibold">1 Kg</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Pasta Primor</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Plumitas Calidad Sup.</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$1.45</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 65.25</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+<!-- Item 12: Melón Cantaloupe (KG) -->
+<div class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant hover:border-primary rounded-xl p-3 flex flex-col justify-between cursor-pointer active:scale-98 transition-all relative overflow-hidden group shadow-sm" onclick="openWeightModal('Melón Cantaloupe', 1.10, 49.50, '1.800')">
+<div class="flex items-start justify-between">
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-2 py-0.5 rounded flex items-center gap-1 border border-tertiary/30">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span> KG
+            </span>
+<span class="text-label-badge font-label-badge text-primary bg-primary/10 px-1.5 py-0.5 rounded">DULCE</span>
+</div>
+<div class="my-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">Melón Cantaloupe</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Importado Dulce</p>
+</div>
+<div class="pt-2 border-t border-outline-variant/60 flex items-baseline justify-between">
+<div>
+<div class="text-headline-md font-headline-md text-primary font-bold">$1.10<span class="text-body-sm font-body-sm font-normal text-on-surface-variant"> /Kg</span></div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 49.50</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest group-hover:bg-primary-container text-on-surface group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Bottom Shortcuts Bar -->
+<div class="h-12 bg-surface-container-low border-t border-outline-variant px-3 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant shrink-0">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5"><kbd class="bg-surface-container-high px-1.5 py-0.5 rounded border border-outline-variant text-[11px] font-mono text-primary">F2</kbd> Pesar</span>
+<span class="flex items-center gap-1.5"><kbd class="bg-surface-container-high px-1.5 py-0.5 rounded border border-outline-variant text-[11px] font-mono text-primary">F3</kbd> Buscar</span>
+<span class="flex items-center gap-1.5"><kbd class="bg-surface-container-high px-1.5 py-0.5 rounded border border-outline-variant text-[11px] font-mono text-primary">F8</kbd> Borrar Línea</span>
+<span class="flex items-center gap-1.5"><kbd class="bg-surface-container-high px-1.5 py-0.5 rounded border border-outline-variant text-[11px] font-mono text-primary">F12</kbd> Cobrar</span>
+</div>
+<div class="text-label-badge font-label-badge text-on-surface-variant">
+          PUERTO COM: <span class="text-primary font-bold">BALANZA TOLEDO OK</span>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- RIGHT COLUMN: ACTIVE TICKET LEDGER (~38%) -->
+<!-- ========================================== -->
+<section class="w-[38%] bg-surface-container flex flex-col justify-between overflow-hidden relative">
+<!-- Ticket Ledger Header -->
+<div class="p-3 bg-surface-container-low border-b border-outline-variant flex items-center justify-between shrink-0">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">Ticket #00482</span>
+<span class="bg-primary/20 text-primary text-label-badge font-label-badge px-2 py-0.5 rounded font-bold">ACTIVO</span>
+</div>
+<div class="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="person">person</span>
+<span class="font-medium">Consumidor Final (V-00000000)</span>
+<button class="text-primary hover:underline ml-1 text-label-badge font-label-badge">CAMBIAR</button>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<!-- Hold / Suspend Ticket -->
+<button class="touch-target w-10 h-10 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant flex items-center justify-center border border-outline-variant" title="Poner en Espera">
+<span class="material-symbols-outlined text-[20px]" data-icon="pause_circle">pause_circle</span>
+</button>
+<!-- Clear / Void Ticket -->
+<button class="touch-target w-10 h-10 rounded-lg bg-surface-container-high hover:bg-error-container text-error flex items-center justify-center border border-outline-variant hover:border-error" title="Vaciar Ticket">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete_sweep">delete_sweep</span>
+</button>
+</div>
+</div>
+<!-- Ledger Column Titles -->
+<div class="px-3 py-2 bg-surface-container text-label-badge font-label-badge text-on-surface-variant border-b border-outline-variant/60 grid grid-cols-12 gap-1 items-center shrink-0">
+<span class="col-span-6">PRODUCTO / DETALLE</span>
+<span class="col-span-3 text-center">CANT / PESO</span>
+<span class="col-span-3 text-right">TOTAL ($ / BS.)</span>
+</div>
+<!-- Itemized Ledger (Scrollable rows with Zebra contrast) -->
+<div class="flex-1 overflow-y-auto divide-y divide-outline-variant/40">
+<!-- Line 1: Tomate Perita -->
+<div class="px-3 py-2.5 bg-surface-container hover:bg-surface-bright/40 grid grid-cols-12 gap-1 items-center group transition-colors">
+<div class="col-span-6 pr-1">
+<div class="text-body-md font-body-md text-on-surface font-semibold flex items-center gap-1.5">
+<span>Tomate Perita</span>
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-1 py-0.2 rounded text-[10px]">KG</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-2">
+<span>$1.20/Kg</span>
+<span>•</span>
+<span class="text-secondary">Bs. 54.00</span>
+<span class="text-label-badge font-label-badge text-outline">Tara: -12g</span>
+</div>
+</div>
+<div class="col-span-3 flex items-center justify-center gap-1.5">
+<button class="px-2 py-1 bg-surface-container-high hover:bg-surface-variant border border-outline-variant rounded text-on-surface font-mono font-bold text-body-sm font-body-sm flex items-center gap-1" onclick="openWeightModal('Tomate Perita', 1.20, 54.00, '0.750')">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span>
+<span>0.750</span>
+</button>
+</div>
+<div class="col-span-3 text-right">
+<div class="text-headline-sm font-headline-sm text-primary font-bold">$0.90</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 40.50</div>
+</div>
+</div>
+<!-- Line 2: Harina P.A.N. -->
+<div class="px-3 py-2.5 bg-surface-container-low hover:bg-surface-bright/40 grid grid-cols-12 gap-1 items-center group transition-colors">
+<div class="col-span-6 pr-1">
+<div class="text-body-md font-body-md text-on-surface font-semibold flex items-center gap-1.5">
+<span>Harina P.A.N. 1 Kg</span>
+<span class="bg-surface-variant text-on-surface-variant text-label-badge font-label-badge px-1 py-0.2 rounded text-[10px]">UNID</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-2">
+<span>$1.40 c/u</span>
+<span>•</span>
+<span class="text-secondary">Bs. 63.00</span>
+</div>
+</div>
+<div class="col-span-3 flex items-center justify-center">
+<div class="flex items-center bg-surface-container-high border border-outline-variant rounded-lg overflow-hidden">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-variant active:bg-surface-container-lowest font-bold text-lg">-</button>
+<span class="w-8 text-center font-bold text-on-surface font-mono text-body-sm font-body-sm">2</span>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-variant active:bg-surface-container-lowest font-bold text-lg">+</button>
+</div>
+</div>
+<div class="col-span-3 text-right">
+<div class="text-headline-sm font-headline-sm text-primary font-bold">$2.80</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 126.00</div>
+</div>
+</div>
+<!-- Line 3: Plátano Maduro -->
+<div class="px-3 py-2.5 bg-surface-container hover:bg-surface-bright/40 grid grid-cols-12 gap-1 items-center group transition-colors">
+<div class="col-span-6 pr-1">
+<div class="text-body-md font-body-md text-on-surface font-semibold flex items-center gap-1.5">
+<span>Plátano Maduro</span>
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-1 py-0.2 rounded text-[10px]">KG</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-2">
+<span>$0.80/Kg</span>
+<span>•</span>
+<span class="text-secondary">Bs. 36.00</span>
+</div>
+</div>
+<div class="col-span-3 flex items-center justify-center gap-1.5">
+<button class="px-2 py-1 bg-surface-container-high hover:bg-surface-variant border border-outline-variant rounded text-on-surface font-mono font-bold text-body-sm font-body-sm flex items-center gap-1" onclick="openWeightModal('Plátano Maduro', 0.80, 36.00, '1.420')">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span>
+<span>1.420</span>
+</button>
+</div>
+<div class="col-span-3 text-right">
+<div class="text-headline-sm font-headline-sm text-primary font-bold">$1.14</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 51.30</div>
+</div>
+</div>
+<!-- Line 4: Aceite Mazeite 1L -->
+<div class="px-3 py-2.5 bg-surface-container-low hover:bg-surface-bright/40 grid grid-cols-12 gap-1 items-center group transition-colors">
+<div class="col-span-6 pr-1">
+<div class="text-body-md font-body-md text-on-surface font-semibold flex items-center gap-1.5">
+<span>Aceite Mazeite 1L</span>
+<span class="bg-surface-variant text-on-surface-variant text-label-badge font-label-badge px-1 py-0.2 rounded text-[10px]">UNID</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-2">
+<span>$3.80 c/u</span>
+<span>•</span>
+<span class="text-secondary">Bs. 171.00</span>
+</div>
+</div>
+<div class="col-span-3 flex items-center justify-center">
+<div class="flex items-center bg-surface-container-high border border-outline-variant rounded-lg overflow-hidden">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-variant active:bg-surface-container-lowest font-bold text-lg">-</button>
+<span class="w-8 text-center font-bold text-on-surface font-mono text-body-sm font-body-sm">1</span>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-variant active:bg-surface-container-lowest font-bold text-lg">+</button>
+</div>
+</div>
+<div class="col-span-3 text-right">
+<div class="text-headline-sm font-headline-sm text-primary font-bold">$3.80</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 171.00</div>
+</div>
+</div>
+<!-- Line 5: Cebolla Morada -->
+<div class="px-3 py-2.5 bg-surface-container hover:bg-surface-bright/40 grid grid-cols-12 gap-1 items-center group transition-colors">
+<div class="col-span-6 pr-1">
+<div class="text-body-md font-body-md text-on-surface font-semibold flex items-center gap-1.5">
+<span>Cebolla Morada</span>
+<span class="bg-tertiary-container/20 text-tertiary text-label-badge font-label-badge px-1 py-0.2 rounded text-[10px]">KG</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant flex items-center gap-2">
+<span>$1.60/Kg</span>
+<span>•</span>
+<span class="text-secondary">Bs. 72.00</span>
+</div>
+</div>
+<div class="col-span-3 flex items-center justify-center gap-1.5">
+<button class="px-2 py-1 bg-surface-container-high hover:bg-surface-variant border border-outline-variant rounded text-on-surface font-mono font-bold text-body-sm font-body-sm flex items-center gap-1" onclick="openWeightModal('Cebolla Morada', 1.60, 72.00, '0.540')">
+<span class="material-symbols-outlined text-[14px]" data-icon="scale">scale</span>
+<span>0.540</span>
+</button>
+</div>
+<div class="col-span-3 text-right">
+<div class="text-headline-sm font-headline-sm text-primary font-bold">$0.86</div>
+<div class="text-label-metric font-label-metric text-secondary font-semibold">Bs. 38.70</div>
+</div>
+</div>
+</div>
+<!-- Financial Calculation Well -->
+<div class="p-3 bg-surface-container-low border-t border-outline-variant space-y-2 shrink-0">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Subtotal de Venta</span>
+<span class="font-mono text-on-surface font-semibold">$9.50 (Bs. 427.50)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>I.V.A. / I.G.T.F. (Exento Canasta Básica)</span>
+<span class="font-mono text-on-surface">$0.00</span>
+</div>
+<div class="flex items-center justify-between text-label-badge font-label-badge text-outline border-t border-outline-variant/40 pt-1.5">
+<span>ITEMS: 5 LÍNEAS (3 BALANZA, 2 UNID)</span>
+<span>PESO NETO: 2.710 KG</span>
+</div>
+<!-- DUAL CURRENCY GRAND TOTAL BAR (Prominent Box) -->
+<div class="mt-2 p-3 rounded-xl bg-surface-container-lowest border-2 border-primary/40 relative overflow-hidden flex flex-col justify-center items-center shadow-inner">
+<div class="text-label-badge font-label-badge text-on-surface-variant tracking-wider">TOTAL A PAGAR</div>
+<!-- Primary USD Currency -->
+<div class="text-display-currency font-display-currency text-primary tracking-tight font-bold my-[-4px]">
+            $ 9.50 <span class="text-headline-md font-headline-md text-primary font-semibold">USD</span>
+</div>
+<!-- Secondary BCV Bolívares Currency -->
+<div class="text-headline-lg font-headline-lg text-secondary font-bold flex items-center gap-2">
+<span>Bs. 427.50</span>
+<span class="text-label-badge font-label-badge bg-secondary/10 px-2 py-0.5 rounded text-secondary border border-secondary/20">Tasa: 45.00</span>
+</div>
+</div>
+<!-- Touch Payment Method Presets -->
+<div class="grid grid-cols-4 gap-2 pt-1">
+<button class="touch-target py-2 px-1 rounded-lg bg-surface-container-high hover:bg-surface-bright border border-outline-variant text-on-surface flex flex-col items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="payments">payments</span>
+<span class="text-label-badge font-label-badge mt-0.5">Efectivo $</span>
+</button>
+<button class="touch-target py-2 px-1 rounded-lg bg-surface-container-high hover:bg-surface-bright border border-outline-variant text-on-surface flex flex-col items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="smartphone">smartphone</span>
+<span class="text-label-badge font-label-badge mt-0.5">Pago Móvil</span>
+</button>
+<button class="touch-target py-2 px-1 rounded-lg bg-surface-container-high hover:bg-surface-bright border border-outline-variant text-on-surface flex flex-col items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="credit_card">credit_card</span>
+<span class="text-label-badge font-label-badge mt-0.5">Punto / Biopago</span>
+</button>
+<button class="touch-target py-2 px-1 rounded-lg bg-surface-container-high hover:bg-surface-bright border border-outline-variant text-on-surface flex flex-col items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed" data-icon="account_balance">account_balance</span>
+<span class="text-label-badge font-label-badge mt-0.5">Zelle</span>
+</button>
+</div>
+<!-- GIANT CHARGE ACTION TRIGGER (Trailing Primary Action from JSON: COBRAR (F12)) -->
+<button class="touch-target w-full py-4 px-6 rounded-xl bg-primary-container hover:bg-primary-container/90 active:translate-y-1 text-on-primary-container font-headline-lg font-headline-lg flex items-center justify-between shadow-lg transition-all border-b-4 border-on-primary-container/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[32px]" data-icon="check_circle">check_circle</span>
+<span class="tracking-wide">COBRAR (F12)</span>
+</div>
+<div class="text-right">
+<span class="font-bold font-display-currency-mobile text-[26px]">$ 9.50</span>
+</div>
+</button>
+</div>
+</section>
+</main>
+<!-- ======================================================= -->
+<!-- FLOATING WEIGHT MODAL / DIALOG (Digital Scale Produce Input) -->
+<!-- ======================================================= -->
+<!-- Inline Vanilla JavaScript for Scale Simulation & POS Clock -->
+<script>
+    // Live POS Clock updating every second
+    function updateClock() {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('es-VE', { hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const clockEl = document.getElementById('live-clock');
+      if (clockEl) {
+        clockEl.textContent = timeStr.toUpperCase();
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Scale State
+    let currentItemPriceUSD = 1.20;
+    let currentWeightStr = "0.750";
+    const exchangeRate = 45.00;
+
+    function openWeightModal(name, priceUSD, priceBs, initialWeight) {
+      currentItemPriceUSD = priceUSD;
+      currentWeightStr = initialWeight || "0.000";
+      
+      document.getElementById('modal-product-name').textContent = name;
+      document.getElementById('modal-price-usd').textContent = `$${priceUSD.toFixed(2)} / Kg`;
+      document.getElementById('modal-price-bs').textContent = `Bs. ${(priceUSD * exchangeRate).toFixed(2)} / Kg`;
+      
+      updateDisplayValues();
+      const modal = document.getElementById('weight-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeWeightModal() {
+      const modal = document.getElementById('weight-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function updateDisplayValues() {
+      const weightVal = parseFloat(currentWeightStr) || 0;
+      document.getElementById('modal-weight-display').textContent = currentWeightStr;
+      
+      const totalUSD = weightVal * currentItemPriceUSD;
+      const totalBs = totalUSD * exchangeRate;
+
+      document.getElementById('modal-calc-usd').textContent = `$${totalUSD.toFixed(2)} USD`;
+      document.getElementById('modal-calc-bs').textContent = `Bs. ${totalBs.toFixed(2)}`;
+    }
+
+    function pressDigit(digit) {
+      if (currentWeightStr === "0.000" || currentWeightStr === "0") {
+        currentWeightStr = digit === "." ? "0." : digit;
+      } else {
+        if (digit === "." && currentWeightStr.includes(".")) return;
+        if (currentWeightStr.length < 6) {
+          currentWeightStr += digit;
+        }
+      }
+      updateDisplayValues();
+    }
+
+    function clearWeight() {
+      currentWeightStr = "0";
+      updateDisplayValues();
+    }
+
+    function tareScale() {
+      currentWeightStr = "0.000";
+      updateDisplayValues();
+    }
+
+    function setWeight(val) {
+      currentWeightStr = val;
+      updateDisplayValues();
+    }
+
+    function addProduceToLedger() {
+      // Visual touch feedback and close
+      closeWeightModal();
+    }
+
+    // Keyboard Shortcuts (F2, Esc, Enter)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") {
+        closeWeightModal();
+      } else if (e.key === "F2") {
+        e.preventDefault();
+        openWeightModal('Tomate Perita', 1.20, 54.00, '0.750');
+      } else if (e.key === "Enter" && !document.getElementById('weight-modal').classList.contains('hidden')) {
+        addProduceToLedger();
+      }
+    });
+  </script>
+</body></html>

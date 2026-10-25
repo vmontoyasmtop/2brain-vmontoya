@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" width="100%" height="100%" fill="none">
+  <!-- EL CUADRE POS — VERSIÓN APILADA / VERTICAL -->
+  <defs>
+    <linearGradient id="cGradStack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4EDEA3"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ISOTIPO CENTRAL -->
+  <g transform="translate(82, 16)">
+    <path d="M 64 12 L 20 12 A 16 16 0 0 0 4 28 L 4 56 A 16 16 0 0 0 20 72 L 64 72" 
+          stroke="#10B981" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M22 42 L34 54 L64 24" 
+          stroke="url(#cGradStack)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- NOMBRE PRINCIPAL -->
+  <text x="120" y="132" font-family="'Inter', -apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.5" fill="#FFFFFF" text-anchor="middle">
+    El Cuadre
+  </text>
+  
+  <!-- BADGE "POS" -->
+  <g transform="translate(93, 146)">
+    <rect x="0" y="0" width="54" height="24" rx="7" fill="#10B981"/>
+    <text x="27" y="16" font-family="'Inter', sans-serif" font-size="12" font-weight="900" fill="#003824" text-anchor="middle" letter-spacing="1">
+      POS
+    </text>
+  </g>
+
+  <!-- SUBTÍTULO -->
+  <text x="120" y="196" font-family="'Inter', -apple-system, sans-serif" font-size="9" font-weight="700" fill="#94A3B8" letter-spacing="2" text-anchor="middle">
+    SISTEMA PUNTO DE VENTA
+  </text>
+</svg>

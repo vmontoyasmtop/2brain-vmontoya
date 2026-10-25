@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="100%" height="100%" fill="none">
+  <!-- VARIACIÓN 1C: EL MONOGRAMA "C" + CHECK INTEGRADO -->
+  <defs>
+    <linearGradient id="v1cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4EDEA3"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(20, 18)">
+    <!-- Marco en forma de "C" cuadrada con esquinas suaves (C de Cuadre) -->
+    <path d="M 68 12 L 24 12 A 16 16 0 0 0 8 28 L 8 56 A 16 16 0 0 0 24 72 L 68 72" 
+          stroke="#10B981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Check central que complementa la 'C' formando el cierre del cuadre -->
+    <path d="M26 42 L38 54 L68 24" 
+          stroke="url(#v1cGrad)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Tipografía -->
+  <text x="125" y="66" font-family="'Inter', system-ui, sans-serif" font-size="38" font-weight="900" letter-spacing="-0.5" fill="#FFFFFF">
+    El Cuadre
+  </text>
+  <g transform="translate(345, 38)">
+    <rect x="0" y="0" width="58" height="28" rx="8" fill="#10B981"/>
+    <text x="29" y="19" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#003824" text-anchor="middle">
+      POS
+    </text>
+  </g>
+  <text x="127" y="92" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600" fill="#94A3B8" letter-spacing="1.5">
+    SISTEMA DE GAVETA &amp; FIADOS DIGITAL
+  </text>
+</svg>

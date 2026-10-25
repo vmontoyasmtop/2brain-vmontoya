@@ -21,3 +21,6 @@ scripts/.ingest_queue.json
 # Allow env template
 !.env.template
 !scripts/.env.template
+
+# External Tools & Cloned Repositories
+tools/

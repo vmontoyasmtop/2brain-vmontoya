@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EL CUADRE POS - POS Terminal</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "tertiary": "#bec6e0",
+              "surface-container-high": "#1c2b3c",
+              "on-primary": "#003824",
+              "on-primary-fixed-variant": "#005236",
+              "on-secondary": "#472a00",
+              "surface-container-lowest": "#010f1f",
+              "on-tertiary": "#283044",
+              "outline": "#86948a",
+              "secondary-fixed": "#ffddb8",
+              "outline-variant": "#3c4a42",
+              "primary": "#4edea3",
+              "tertiary-container": "#9ba2bb",
+              "secondary-container": "#ee9800",
+              "on-primary-container": "#00422b",
+              "inverse-surface": "#d4e4fa",
+              "surface-tint": "#4edea3",
+              "inverse-on-surface": "#233143",
+              "on-surface": "#d4e4fa",
+              "secondary": "#ffb95f",
+              "on-secondary-fixed-variant": "#653e00",
+              "tertiary-fixed-dim": "#bec6e0",
+              "surface-container": "#122131",
+              "on-surface-variant": "#bbcabf",
+              "on-error": "#690005",
+              "surface-variant": "#273647",
+              "error-container": "#93000a",
+              "primary-container": "#10b981",
+              "on-error-container": "#ffdad6",
+              "surface": "#051424",
+              "on-secondary-container": "#5b3800",
+              "secondary-fixed-dim": "#ffb95f",
+              "on-tertiary-fixed": "#131b2e",
+              "background": "#051424",
+              "on-tertiary-container": "#31394d",
+              "surface-dim": "#051424",
+              "surface-bright": "#2c3a4c",
+              "error": "#ffb4ab",
+              "primary-fixed": "#6ffbbe",
+              "on-background": "#d4e4fa",
+              "surface-container-low": "#0d1c2d",
+              "on-tertiary-fixed-variant": "#3f465c",
+              "on-primary-fixed": "#002113",
+              "on-secondary-fixed": "#2a1700",
+              "inverse-primary": "#006c49",
+              "tertiary-fixed": "#dae2fd",
+              "primary-fixed-dim": "#4edea3",
+              "surface-container-highest": "#273647"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "margin": "1rem",
+              "gutter": "1rem",
+              "space-xl": "2rem",
+              "space-xs": "0.25rem",
+              "space-sm": "0.5rem",
+              "space-md": "1rem",
+              "space-lg": "1.5rem"
+            },
+            "fontFamily": {
+              "body-md": ["Inter"],
+              "headline-xl": ["Inter"],
+              "headline-md": ["Inter"],
+              "label-lg": ["Inter"],
+              "body-lg": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+              "body-md": ["15px", { "lineHeight": "20px", "fontWeight": "400" }],
+              "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+              "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+              "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+              "body-lg": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+              "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+              "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center w-full px-4 h-16 max-w-full z-20 shrink-0">
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-3xl">point_of_sale</span>
+<span class="text-headline-md font-headline-md text-primary tracking-tight">EL CUADRE POS - Caja, Viveres y Abasto Criollo</span>
+</div>
+<div class="hidden lg:flex items-center bg-surface-variant px-3 py-1.5 rounded-lg border border-outline-variant text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container mr-2 animate-pulse"></span>
+                Caja 01 - Turno Abierto - Cajero: Victor M.
+            </div>
+</div>
+<div class="flex items-center space-x-3">
+<!-- Live BCV Exchange Rate Pill -->
+<div class="flex items-center bg-secondary-container/20 border border-secondary/40 px-3 py-1.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg mr-1.5" style="font-variation-settings: 'FILL' 1;">currency_exchange</span>
+<span class="text-label-sm font-label-lg text-secondary">Tasa Oficial BCV: Bs. 45.00 / $</span>
+</div>
+<!-- Quick Action Pills -->
+<button class="hidden md:flex items-center space-x-1 bg-surface-variant hover:bg-surface-bright text-on-surface text-label-sm px-3 py-2 rounded-lg border border-outline-variant transition-all">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span>Merma / Baja</span>
+</button>
+<button class="hidden md:flex items-center space-x-1 bg-surface-variant hover:bg-surface-bright text-on-surface text-label-sm px-3 py-2 rounded-lg border border-outline-variant transition-all"><span class="material-symbols-outlined text-base">receipt_long</span><span class="hidden sm:inline">Arqueo de Turno</span></button>
+<button class="flex items-center space-x-1 bg-surface-variant hover:bg-surface-bright text-on-surface text-label-sm px-3 py-2 rounded-lg border border-outline-variant transition-all">
+<span class="material-symbols-outlined text-base">receipt_long</span>
+<span class="hidden sm:inline">Arqueo / Cierre</span>
+</button>
+</div>
+</header>
+<!-- Main Content Workspace (60% Catalog, 40% Ledger Ticket) -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left 60% Column: Catalog & Search -->
+<section class="w-full lg:w-[60%] flex flex-col bg-surface border-r border-outline-variant p-4 overflow-y-auto">
+<!-- Quick Barcode Search Bar -->
+<div class="relative mb-4">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant">barcode_scanner</span>
+</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl pl-11 pr-24 py-3 text-body-md text-on-surface placeholder-on-surface-variant focus:outline-none focus:border-primary transition-all" placeholder="Escanear código de barra o buscar producto (F3)..." type="text"/>
+<div class="absolute inset-y-0 right-1 flex items-center pr-2">
+<span class="bg-surface-variant px-2.5 py-1 rounded-lg text-label-sm text-on-surface-variant border border-outline-variant">ESC: Limpiar</span>
+</div>
+</div>
+<!-- Category Filter Tabs -->
+<div class="flex items-center space-x-2 overflow-x-auto pb-3 mb-2 shrink-0 no-scrollbar">
+<button class="bg-primary text-on-primary font-label-lg px-4 py-2 rounded-xl text-label-lg whitespace-nowrap shadow-sm transition-all">Todos</button>
+<button class="bg-surface-container hover:bg-surface-variant text-on-surface font-label-lg px-4 py-2 rounded-xl text-label-lg whitespace-nowrap border border-outline-variant transition-all">Frutas &amp; Verduras (Kg)</button>
+<button class="bg-surface-container hover:bg-surface-variant text-on-surface font-label-lg px-4 py-2 rounded-xl text-label-lg whitespace-nowrap border border-outline-variant transition-all">Viveres Empacados</button>
+<button class="bg-surface-container hover:bg-surface-variant text-on-surface font-label-lg px-4 py-2 rounded-xl text-label-lg whitespace-nowrap border border-outline-variant transition-all">Charcuteria</button>
+<button class="bg-surface-container hover:bg-surface-variant text-on-surface font-label-lg px-4 py-2 rounded-xl text-label-lg whitespace-nowrap border border-outline-variant transition-all">Bebidas</button>
+</div>
+<!-- Touch Grid of Products -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 pb-4">
+<!-- Product Card 1 -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all active:scale-95 group relative shadow-sm">
+<div class="absolute top-2.5 right-2.5 bg-secondary-container/20 text-secondary border border-secondary/30 text-label-sm px-2 py-0.5 rounded font-bold">Por Kg</div>
+<div class="w-full h-24 mb-2 rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A vibrant macro photograph of fresh perita tomatoes, featuring smooth glossy red skins and rich texture, arranged neatly on a dark slate background with warm ambient grocery lighting highlighting their freshness and natural curves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0pC6qU8XovfXJy6YlrGkN9RdWc5iefQAr659sCF0eRK0c2RHEjxKB9tMEI9SEnyYn_wIRRepcjWpEJkYltdM3VHEMXE5gEmgxW26eNzeLeXu_QYOJYzeUtR4j3_bxpYSEMU5o1D0BOp4KKGJ6V8eHvKFRGRlYSbifh2pauXV53f-vU88Tc64ckRlG_B3K7eMsCfUBsicws-DHTxaDkhGCeKzHzw7BmCLdRuMFV8R5BIye5ncWXvBrHzWeOPDTi9tYX1ouPJL4tR_V"/>
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface line-clamp-1">Tomate Perita</h3>
+<p class="text-label-sm text-on-surface-variant">Fresca / Nacional</p>
+</div>
+<div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-baseline justify-between">
+<span class="text-body-lg font-headline-md text-primary">$1.20 <span class="text-xs font-normal">/kg</span></span>
+<span class="text-label-sm font-label-lg text-secondary">Bs. 54.00</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all active:scale-95 group relative shadow-sm">
+<div class="absolute top-2.5 right-2.5 bg-secondary-container/20 text-secondary border border-secondary/30 text-label-sm px-2 py-0.5 rounded font-bold">Por Kg</div>
+<div class="w-full h-24 mb-2 rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A close-up shot of fresh purple onions with papery outer skins and sliced cross-sections revealing rich purple and white rings, placed on a dark industrial countertop with soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzYFD6yig7YqS7XkdlKOae18SqfQE6Rt6Ngk9tN5xAOdLRTGbv9CNRyeke9X_se9AlpxQc__9iCZQd5wYYBuHyEYk3M6Xre2MmQeozMjaHobe3E4AUBYVEQiRMRJtQOXtAPQfwTX8iac6PQJ3Dq2mwvxPH432rCWW4m9j4kiK-498PX93YiUngSe4K4R9aWNycF-zWb3LHZXPVcstw4OfCcxlcnrwWptDswYt-vMcly1-kZVxFLMwD21Kpwpo1RVs4t9ozPSkbpRR8"/>
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface line-clamp-1">Cebolla Morada</h3>
+<p class="text-label-sm text-on-surface-variant">Seleccionada</p>
+</div>
+<div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-baseline justify-between">
+<span class="text-body-lg font-headline-md text-primary">$1.50 <span class="text-xs font-normal">/kg</span></span>
+<span class="text-label-sm font-label-lg text-secondary">Bs. 67.50</span>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all active:scale-95 group relative shadow-sm">
+<div class="absolute top-2.5 right-2.5 bg-secondary-container/20 text-secondary border border-secondary/30 text-label-sm px-2 py-0.5 rounded font-bold">Por Kg</div>
+<div class="w-full h-24 mb-2 rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Fresh raw potatoes stacked in a rustic wooden crate, earthy brown skins with soft illumination that accentuates their organic agricultural texture in a Venezuelan grocery market." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkKpCda6obtH7GG3uvW3yKh3EfvN0d0lRHHNAT0e7e_EKNukSzyOkI7Jdg-JPJ8Cupc6GJSvdhqZVUNrFmis0QX2tCEC2E627dIlgEMIdchCeFVc933syb1_XvTMW79RE-gFNPg74gNLi40dIGX2bi662z8bq0pIZlzOb3Anb1k0B4TdPkz84xJKKps6OC6fjD4gK1PZ7kBzl_JEgPSrBOx_5xLTD2lbfcrK_hm1MwgKp16x3ihqEgub3ByB7ZrZyecN_J7fC0T500"/>
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface line-clamp-1">Papa Granel</h3>
+<p class="text-label-sm text-on-surface-variant">Andina</p>
+</div>
+<div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-baseline justify-between">
+<span class="text-body-lg font-headline-md text-primary">$1.10 <span class="text-xs font-normal">/kg</span></span>
+<span class="text-label-sm font-label-lg text-secondary">Bs. 49.50</span>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all active:scale-95 group relative shadow-sm">
+<div class="absolute top-2.5 right-2.5 bg-secondary-container/20 text-secondary border border-secondary/30 text-label-sm px-2 py-0.5 rounded font-bold">Por Kg</div>
+<div class="w-full h-24 mb-2 rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Ripe yellow plantains with sweet dark spots on their skin, arranged gracefully on a dark slate surface with professional retail grocery accent lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbNYwR0Fwcnb-mr5H3nqMH28HApjxnnYEw7-kqmEFFFIyS5ULueFn8DODqtwnLnT9emx7_Z-tMcG6d0dUZy7y0nqxTeA7woKYgzR8j6gZd1L_nDKCu9byl0V5Lt8eMj__Fr_5CJMaD3Qmn-_tDqcFyX3bGawPJJl6Ws3N70UZ-7JWebxZsZC_ilLK9UF8h22i3LHahhGWCCtanwqvMexdvC6Z_y93DUzklf06WPhw1N7KHvW9wh8bldvGPokhGBjxi5c12CZMiv8E-"/>
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface line-clamp-1">Platano Maduro</h3>
+<p class="text-label-sm text-on-surface-variant">Primera calidad</p>
+</div>
+<div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-baseline justify-between">
+<span class="text-body-lg font-headline-md text-primary">$0.90 <span class="text-xs font-normal">/kg</span></span>
+<span class="text-label-sm font-label-lg text-secondary">Bs. 40.50</span>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all active:scale-95 group relative shadow-sm">
+<div class="absolute top-2.5 right-2.5 bg-secondary-container/20 text-secondary border border-secondary/30 text-label-sm px-2 py-0.5 rounded font-bold">Por Kg</div>
+<div class="w-full h-24 mb-2 rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Fresh green avocados cut in half revealing creamy golden flesh and large seed, styled professionally on a dark moody grocery market display counter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrwBXcpY79BtSUIp-0qq_VuPvKZr-Qfi-WVN6bFYSe1SRUNiKbP9Ta4a8dGscA4eYmQu_OniS5WJ5poCEUgb6H4E4Ce33gpc-I0UVBABcNYrvhe7dcsT_oLz8BtuuLhTnA6h1mQdfmb_z-a1acE81Q9Y8cYl1wAGBmXIx_s3AFRF7_i_DLN--0BD5CB3snvM_unJcmlqTmph5BkVKhTRUNrQW0JxPhaw7Cta6vLzCD7tKT2sAhzH5shUOLr8HKpCPSYMkoRDPaxLwE"/>
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface line-clamp-1">Aguacate Criollo</h3>
+<p class="text-label-sm text-on-surface-variant">Mantequilla</p>
+</div>
+<div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-baseline justify-between">
+<span class="text-body-lg font-headline-md text-primary">$2.50 <span class="text-xs font-normal">/kg</span></span>
+<span class="text-label-sm font-label-lg text-secondary">Bs. 112.50</span>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all active:scale-95 group relative shadow-sm">
+<div class="absolute top-2.5 right-2.5 bg-primary-container/20 text-primary border border-primary/30 text-label-sm px-2 py-0.5 rounded font-bold">Unidad</div>
+<div class="w-full h-24 mb-2 rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A classic blue and white package of Harina P.A.N. corn flour standing upright on a modern dark retail checkout counter with crisp commercial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeyXQZGvAXcqh6rdhH-rcST6fplFyM33uVn5JPMrIzyZ08iZt5QQzbfu80HFmuzA63I-RsiHZIIORgwOtbpOxaf9riA7FILrty3FuEz9eh_c_sUWPVTOuiz16ksH_kKvhg78yjVJFmvqD6TlWrdWLhZumk_NmTybj0DHhBp9mOJuWNpftx6ZYlEszwdMBMVnseq3-WcHj0g40j94zVhF2TTvd2IiUXuMK_3uAiMHUaOuYb6U-YkxfOgg3I3jYqI9aU2cAj_LG5-fDr"/>
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface line-clamp-1">Harina P.A.N.</h3>
+<p class="text-label-sm text-on-surface-variant">Blanca 1kg</p>
+</div>
+<div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-baseline justify-between">
+<span class="text-body-lg font-headline-md text-primary">$1.35</span>
+<span class="text-label-sm font-label-lg text-secondary">Bs. 60.75</span>
+</div>
+</div>
+<!-- Product Card 7 -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all active:scale-95 group relative shadow-sm">
+<div class="absolute top-2.5 right-2.5 bg-primary-container/20 text-primary border border-primary/30 text-label-sm px-2 py-0.5 rounded font-bold">Unidad</div>
+<div class="w-full h-24 mb-2 rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A clear bag of Arroz Mary premium white rice neatly packaged, displayed against a dark slate background with sharp focus and professional retail lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgpstn5bL_I_dxXfayikPDfZVnvY_13rW2fY0knPwKGwwCberZVN55MRPK3dDYxwM6049RiKwW_JuCMaN4ciqzR5e4m_DsK9ZT74YX3Ps6dg4eFgqJhTCzzuCHR_XXKE3hegUr6no3OH3r9S2MdegzhUfMJyu_pNJii-mM3VwiyEmK_dnSYU3k7aP4AIKmSX7kTbSqoKiuSHy9ohnhdQ5d6CfrZcd2FjNl0J8MvvgnLwawcBbNwMIi-DJP7-NvnzX0l5y0Y29U8EMS"/>
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface line-clamp-1">Arroz Mary</h3>
+<p class="text-label-sm text-on-surface-variant">Tipo 1 1kg</p>
+</div>
+<div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-baseline justify-between">
+<span class="text-body-lg font-headline-md text-primary">$1.25</span>
+<span class="text-label-sm font-label-lg text-secondary">Bs. 56.25</span>
+</div>
+</div>
+<!-- Product Card 8 -->
+<div class="bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all active:scale-95 group relative shadow-sm">
+<div class="absolute top-2.5 right-2.5 bg-primary-container/20 text-primary border border-primary/30 text-label-sm px-2 py-0.5 rounded font-bold">Unidad</div>
+<div class="w-full h-24 mb-2 rounded-lg overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A plastic bottle of Mazeite corn cooking oil with golden liquid inside, positioned on a dark shelf with elegant backlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpuGrf1JQVa2F1CpawIBneYTjqgCTgkp3X3M4D8T9_TDwZ8gVY0hQo7SeTtZLGncPt4S-jMihPhHMNn93Fr4zGucWnY0rFfOTKiowizqMtNno7WITwhHPxyJmCyWJLt9ZrMaWRd3pXWpYgyEM6xhTj4HHSCT_DNSsP2IwjzuwrKaf4tcVOrzAB9VDJPzeFhg3Wq84Q-VI5E4Fq0_GPcZf4sMcKgzAv85I5ptwCh1ovaEmDh02Iq3CpBFi7SkpLxq3qMoYdoXm1jR3j"/>
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface line-clamp-1">Aceite Mazeite</h3>
+<p class="text-label-sm text-on-surface-variant">1 Litro</p>
+</div>
+<div class="mt-3 pt-2 border-t border-outline-variant/50 flex items-baseline justify-between">
+<span class="text-body-lg font-headline-md text-primary">$2.80</span>
+<span class="text-label-sm font-label-lg text-secondary">Bs. 126.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right 40% Column: Active Ledger Ticket -->
+<section class="w-full lg:w-[40%] flex flex-col bg-surface-container-lowest border-l border-outline-variant h-full shadow-2xl">
+<!-- Ticket Header -->
+<div class="p-4 bg-surface-container border-b border-outline-variant flex items-center justify-between">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Ticket de Venta #CUADRE-1042</h2>
+<p class="text-label-sm text-on-surface-variant">Cliente: Venta al Detal (General)</p>
+</div>
+<button class="bg-error/20 hover:bg-error/30 text-error p-2 rounded-lg border border-error/30 transition-all">
+<span class="material-symbols-outlined text-base">delete_sweep</span>
+</button>
+</div>
+<!-- Itemized List -->
+<div class="flex-1 overflow-y-auto p-4 space-y-3">
+<!-- Ticket Row 1 (Weighed item) -->
+<div class="bg-surface-container-low hover:bg-surface-container border border-outline-variant/60 rounded-xl p-3 flex items-center justify-between transition-all">
+<div class="flex-1 pr-3">
+<div class="flex items-center justify-between mb-1">
+<span class="text-body-md font-bold text-on-surface">Tomate Perita</span>
+<span class="text-primary font-bold">$0.90</span>
+</div>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant">
+<span>0.750 Kg @ $1.20/kg</span>
+<span class="text-secondary">Bs. 40.50</span>
+</div>
+</div>
+<div class="flex items-center space-x-1 border-l border-outline-variant pl-3">
+<button class="w-7 h-7 bg-surface-variant hover:bg-surface-bright rounded flex items-center justify-center text-on-surface">-</button>
+<span class="w-8 text-center text-label-sm font-bold">0.75</span>
+<button class="w-7 h-7 bg-surface-variant hover:bg-surface-bright rounded flex items-center justify-center text-on-surface">+</button>
+</div>
+</div>
+<!-- Ticket Row 2 (Unit item) -->
+<div class="bg-surface-container-low hover:bg-surface-container border border-outline-variant/60 rounded-xl p-3 flex items-center justify-between transition-all">
+<div class="flex-1 pr-3">
+<div class="flex items-center justify-between mb-1">
+<span class="text-body-md font-bold text-on-surface">Harina P.A.N.</span>
+<span class="text-primary font-bold">$2.70</span>
+</div>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant">
+<span>2 Unid. @ $1.35 c/u</span>
+<span class="text-secondary">Bs. 121.50</span>
+</div>
+</div>
+<div class="flex items-center space-x-1 border-l border-outline-variant pl-3">
+<button class="w-7 h-7 bg-surface-variant hover:bg-surface-bright rounded flex items-center justify-center text-on-surface">-</button>
+<span class="w-8 text-center text-label-sm font-bold">2</span>
+<button class="w-7 h-7 bg-surface-variant hover:bg-surface-bright rounded flex items-center justify-center text-on-surface">+</button>
+</div>
+</div>
+<!-- Ticket Row 3 (Unit item) -->
+<div class="bg-surface-container-low hover:bg-surface-container border border-outline-variant/60 rounded-xl p-3 flex items-center justify-between transition-all">
+<div class="flex-1 pr-3">
+<div class="flex items-center justify-between mb-1">
+<span class="text-body-md font-bold text-on-surface">Arroz Mary</span>
+<span class="text-primary font-bold">$1.25</span>
+</div>
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant">
+<span>1 Unid. @ $1.25 c/u</span>
+<span class="text-secondary">Bs. 56.25</span>
+</div>
+</div>
+<div class="flex items-center space-x-1 border-l border-outline-variant pl-3">
+<button class="w-7 h-7 bg-surface-variant hover:bg-surface-bright rounded flex items-center justify-center text-on-surface">-</button>
+<span class="w-8 text-center text-label-sm font-bold">1</span>
+<button class="w-7 h-7 bg-surface-variant hover:bg-surface-bright rounded flex items-center justify-center text-on-surface">+</button>
+</div>
+</div>
+</div>
+<!-- Grand Total & Action Footer -->
+<div class="p-4 bg-surface-container border-t border-outline-variant space-y-3">
+<div class="space-y-1.5">
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Subtotal Base:</span>
+<span>$4.85</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>IVA (16%):</span>
+<span>$0.00 (Exento)</span>
+</div>
+<div class="pt-2 border-t border-outline-variant flex items-baseline justify-between">
+<span class="text-headline-md font-headline-md text-on-surface">TOTAL A PAGAR:</span>
+<div class="text-right">
+<div class="text-headline-lg font-headline-lg text-primary">$4.85</div>
+<div class="text-body-lg font-headline-md text-secondary">Bs. 218.25</div>
+</div>
+</div>
+</div>
+<!-- Giant Action Button -->
+<button class="w-full bg-primary-container hover:bg-emerald-600 text-on-primary font-headline-md py-4 rounded-xl flex items-center justify-center space-x-2 shadow-lg transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-2xl font-bold">payments</span>
+<span class="text-headline-md font-bold">COBRAR VENTA (F12)</span>
+</button>
+</div>
+</section>
+</main>
+</body></html>

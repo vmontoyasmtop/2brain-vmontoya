@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EL CUADRE POS - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#bec6e0",
+            "surface-bright": "#2c3a4c",
+            "on-error": "#690005",
+            "inverse-primary": "#006c49",
+            "on-secondary-fixed": "#2a1700",
+            "tertiary-fixed-dim": "#bec6e0",
+            "surface-container-lowest": "#010f1f",
+            "outline-variant": "#3c4a42",
+            "on-surface-variant": "#bbcabf",
+            "error-container": "#93000a",
+            "on-secondary-container": "#5b3800",
+            "tertiary-fixed": "#dae2fd",
+            "primary-fixed": "#6ffbbe",
+            "on-primary-container": "#00422b",
+            "on-primary": "#003824",
+            "on-tertiary-fixed": "#131b2e",
+            "surface-tint": "#4edea3",
+            "on-surface": "#d4e4fa",
+            "surface-container-low": "#0d1c2d",
+            "tertiary-container": "#9ba2bb",
+            "on-tertiary-container": "#31394d",
+            "inverse-on-surface": "#233143",
+            "error": "#ffb4ab",
+            "surface-container-highest": "#273647",
+            "inverse-surface": "#d4e4fa",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-background": "#d4e4fa",
+            "surface-dim": "#051424",
+            "primary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed-variant": "#3f465c",
+            "surface-container-high": "#1c2b3c",
+            "secondary-container": "#ee9800",
+            "on-tertiary": "#283044",
+            "on-secondary": "#472a00",
+            "surface-container": "#122131",
+            "secondary": "#ffb95f",
+            "background": "#051424",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-error-container": "#ffdad6",
+            "outline": "#86948a",
+            "primary": "#4edea3",
+            "primary-container": "#10b981",
+            "on-primary-fixed": "#002113",
+            "surface-variant": "#273647",
+            "surface": "#051424",
+            "on-primary-fixed-variant": "#005236",
+            "secondary-fixed": "#ffddb8"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-xl": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar JSON mapping -->
+<header class="bg-surface dark:bg-surface-container-lowest text-primary dark:text-primary-fixed border-b border-outline-variant flex justify-between items-center w-full px-4 h-16 max-w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl">point_of_sale</span>
+<span class="text-headline-md font-headline-md">POS Terminal - Register #04</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<div class="flex items-center gap-1 bg-surface-container-high px-3 py-1.5 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-lg">currency_exchange</span>
+<span class="text-label-lg text-on-surface">BCV: <strong class="text-secondary">Bs. 45.00 / $</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary">wifi</span>
+<span class="text-label-sm">Online</span>
+</div>
+</div>
+</header>
+<!-- Main POS Screen Backdrop (Background UI) -->
+<main class="flex-1 p-space-lg grid grid-cols-12 gap-gutter opacity-40 pointer-events-none select-none">
+<div class="col-span-8 bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between border border-outline-variant">
+<div class="flex justify-between items-center mb-space-md">
+<h2 class="text-headline-lg">Catálogo de Productos - Abasto Criollo</h2>
+<div class="bg-surface-container-high px-4 py-2 rounded-lg text-label-lg">F1-F8 Categorías</div>
+</div>
+<div class="grid grid-cols-3 gap-space-md">
+<div class="bg-surface-container p-space-md rounded-xl border border-outline-variant flex flex-col justify-between h-36">
+<span class="text-body-lg font-bold">Harina Pan 1kg</span>
+<div>
+<div class="text-headline-md text-primary">$1.20 USD</div>
+<div class="text-label-sm text-secondary">Bs. 54.00</div>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl border border-outline-variant flex flex-col justify-between h-36">
+<span class="text-body-lg font-bold">Queso Blanco Duro 1kg</span>
+<div>
+<div class="text-headline-md text-primary">$5.50 USD</div>
+<div class="text-label-sm text-secondary">Bs. 247.50</div>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl border border-outline-variant flex flex-col justify-between h-36">
+<span class="text-body-lg font-bold">Café Arauco 500g</span>
+<div>
+<div class="text-headline-md text-primary">$5.80 USD</div>
+<div class="text-label-sm text-secondary">Bs. 261.00</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-4 bg-surface-container-low rounded-xl p-space-lg border border-outline-variant flex flex-col justify-between">
+<div>
+<h3 class="text-headline-md mb-space-md">Ticket Actual</h3>
+<div class="space-y-space-sm">
+<div class="flex justify-between text-body-md"><span>1x Harina Pan</span><span>$1.20</span></div>
+<div class="flex justify-between text-body-md"><span>2x Queso Blanco</span><span>$11.30</span></div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-space-md">
+<div class="flex justify-between text-headline-lg text-primary font-bold">
+<span>TOTAL:</span>
+<span>$12.50</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 bg-surface-dim/80 backdrop-blur-sm z-50 flex items-center justify-center p-space-md">
+<!-- Checkout Modal Container -->
+<div class="bg-surface-container-low border border-outline-variant w-full max-w-4xl rounded-xl shadow-2xl flex flex-col overflow-hidden">
+<!-- Modal Header -->
+<div class="bg-surface-container-high px-space-xl py-space-md flex justify-between items-center border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">receipt_long</span>
+<h2 class="text-headline-md text-on-surface">Cobro de Ticket #CUADRE-1042</h2>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body Content -->
+<div class="p-space-xl flex flex-col gap-space-lg">
+<!-- Total to Pay Summary Card -->
+<div class="bg-surface-container p-space-lg rounded-xl border border-outline-variant flex items-center justify-between">
+<div>
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Monto Total a Pagar</span>
+<div class="flex items-baseline gap-3 mt-1">
+<span class="text-headline-xl text-primary font-bold">$12.50 USD</span>
+<span class="text-headline-md text-secondary">Bs. 562.50</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-label-sm text-on-surface-variant block">Tasa BCV Oficial</span>
+<span class="text-label-lg font-bold text-secondary">Bs. 45.00 / $</span>
+</div>
+</div>
+<!-- Payment Method Selection Tabs -->
+<div class="flex gap-2 overflow-x-auto pb-1 border-b border-outline-variant">
+<button class="flex items-center gap-2 px-4 py-3 rounded-lg bg-primary-container text-on-primary-container text-label-lg font-semibold transition-all">
+<span class="material-symbols-outlined">payments</span>
+            Efectivo $ / Bs.
+          </button>
+<button class="flex items-center gap-2 px-4 py-3 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-variant text-label-lg font-semibold transition-all">
+<span class="material-symbols-outlined">smartphone</span>
+            Pago Móvil
+          </button>
+<button class="flex items-center gap-2 px-4 py-3 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-variant text-label-lg font-semibold transition-all">
+<span class="material-symbols-outlined">credit_card</span>
+            Punto de Venta Bancario
+          </button>
+<button class="flex items-center gap-2 px-4 py-3 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-variant text-label-lg font-semibold transition-all">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+            Fiado / Cuenta Pendiente
+          </button>
+</div>
+<!-- Tab Content Area: Efectivo $ / Bs. & Cash Change Calculator -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg items-center">
+<!-- Input Section -->
+<div class="flex flex-col gap-space-md">
+<label class="text-label-lg text-on-surface flex flex-col gap-2">
+              Monto Recibido ($ o Bs.)
+              <div class="relative">
+<span class="absolute inset-y-0 left-0 pl-4 flex items-center text-primary font-bold text-lg">$</span>
+<input class="w-full pl-8 pr-16 py-3 bg-surface-container-highest border border-outline-variant rounded-lg text-headline-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="20.00"/>
+<span class="absolute inset-y-0 right-0 pr-4 flex items-center text-secondary text-label-sm">Bs. 900.00</span>
+</div>
+</label>
+<div class="grid grid-cols-4 gap-2">
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface py-2 rounded-lg text-label-lg border border-outline-variant">$5.00</button>
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface py-2 rounded-lg text-label-lg border border-outline-variant">$10.00</button>
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface py-2 rounded-lg text-label-lg border border-outline-variant">$20.00</button>
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface py-2 rounded-lg text-label-lg border border-outline-variant">Exacto</button>
+</div>
+</div>
+<!-- Auto-calculated Change / Vuelto Callout -->
+<div class="bg-surface-container p-space-lg rounded-xl border border-primary-fixed-dim/30 flex flex-col justify-center h-full relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-10">
+<span class="material-symbols-outlined text-6xl text-primary">nest_eco_leaf</span>
+</div>
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Vuelto a Entregar</span>
+<div class="text-headline-xl text-primary font-bold mb-1">$7.50 USD</div>
+<div class="text-headline-md text-secondary font-semibold">Bs. 337.50</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer / Bottom Action -->
+<div class="bg-surface-container-high px-space-xl py-space-md border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant">Presione <strong class="text-on-surface">ESC</strong> para cancelar</span>
+<button class="bg-primary-container text-on-primary-container font-headline-md text-label-lg px-8 py-4 rounded-xl hover:brightness-110 active:scale-98 transition-all duration-200 flex items-center gap-3 shadow-lg">
+<span class="material-symbols-outlined">print</span>
+          CONFIRMAR PAGO Y ABRIR GAVETA (F12)
+        </button>
+</div>
+</div>
+</div>
+</body></html>

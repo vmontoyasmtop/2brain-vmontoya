@@ -34,6 +34,19 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - 🛠️ [`agents/it_support_expert.md`](../agents/it_support_expert.md): Especialista en Soporte IT, Xetux y Análisis de Sistemas.
 - 💰 [`agents/finance_manager.md`](../agents/finance_manager.md): Gestor de Finanzas, Presupuesto y Proyectos.
 - 👔 [`agents/project_manager.md`](../agents/project_manager.md): Project Manager & Agile Coach (Scrum, SP, Epics, Tasks, ClickUp).
+- ☁️ [`agents/akatsuki.md`](../agents/akatsuki.md): Suite Akatsuki de Ingeniería de Software & Gestión Integral.
+  - ☁️ [`agents/pain_pm.md`](../agents/pain_pm.md): Pain — Project Manager, Scrum Master & Reingeniería Inversa REA (`morluto/rea`).
+  - 🐍 [`agents/orochimaru_arch_devops.md`](../agents/orochimaru_arch_devops.md): Orochimaru — Chief Software Architect & Cloud DevOps (Clean Arch, DDD, Docker, K8s, CI/CD).
+  - 🦋 [`agents/konan_uiux.md`](../agents/konan_uiux.md): Konan — UI/UX Designer & Prototipado con Stitch y Design Tokens.
+  - 👁️ [`agents/itachi_frontend.md`](../agents/itachi_frontend.md): Itachi — Frontend Web Engineer (Next.js App Router, React, Tailwind).
+  - 🖤 [`agents/kakuzu_backend.md`](../agents/kakuzu_backend.md): Kakuzu — Backend & DB Architect (NestJS, PostgreSQL, SQLite, Prisma ORM).
+  - 🦈 [`agents/kisame_mobile.md`](../agents/kisame_mobile.md): Kisame — Mobile Engineer (Flutter & Dart, Clean Architecture, BLoC).
+  - 💀 [`agents/hidan_qa.md`](../agents/hidan_qa.md): Hidan — QA & Stress Testing Engineer (Pruebas Unitarias Jest/Flutter Test >85%).
+  - 💣 [`agents/deidara_pentest.md`](../agents/deidara_pentest.md): Deidara — Ethical Hacker & Pentesting Ofensivo Red Team (OWASP Top 10 & CVSS).
+  - 🦂 [`agents/sasori_defense.md`](../agents/sasori_defense.md): Sasori — Defensive Security & Remediación IT Blue Team (Hardening & Parches de Código).
+  - 🌿 [`agents/zetsu_docs.md`](../agents/zetsu_docs.md): Zetsu — Documentación Técnica OpenAPI & Manual de Usuario Final.
+  - 🎭 [`agents/tobi_marketing.md`](../agents/tobi_marketing.md): Tobi / Obito — CMO, Growth Hacker, Embudos Kamui, Copywriting Tsukuyomi & Ofertas $100M.
+  - 🎨 [`agents/sai_designer.md`](../agents/sai_designer.md): Sai — Chief Graphic Designer, SVG puro, Brand Books, Banners & Arte Chōjū Giga.
 
 ---
 
@@ -66,6 +79,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[guia-configuracion-mcp-google-calendar-gmail|Guía de Instalación y Configuración de Servidores MCP (Google Calendar & Gmail)]]: Guía paso a paso multicuenta.
 - [[guia-configuracion-mcp-google-docs|Guía de Instalación y Configuración del Servidor MCP para Google Docs]]: Configuración multicuenta de Google Docs MCP.
 - [[guia-configuracion-mcp-github|Guía de Instalación y Configuración del Servidor MCP para GitHub]]: Registro del servidor oficial GitHub MCP (`github-personal`).
+- [[solucion-bug-nestjs-swagger-tsx-decorator-metadata|Solución: TypeError en NestJS Swagger con tsx / esbuild]]: Causa raíz de falta de `emitDecoratorMetadata` y resolución con `@nestjs/cli` y `nest start --watch`.
 
 ### 🚀 3. Proyectos (Software Independiente)
 - [[pilar-proyectos|Área Proyectos - Software Independiente]]: Índice general de proyectos.
@@ -85,6 +99,13 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
   - [[masterhub-hr|Microservicio de Recursos Humanos (MS-HR)]]: Roadmap en 4 Fases, Ficha Integral y Gestión de Nómina.
   - [[masterhub-hr-portal-gerente|MasterHub HR — Portal Exclusivo de Reclutamiento para Gerente de Tienda]]: Arquitectura Master-Detail, Jornadas de Entrevistas y Tareas Plane (MASTERHUB-131 a 140).
 - [[meniox|Proyecto: Meniox]]: Sistema POS & franquicias con RabbitMQ y Next.js 15.
+  - [[meniox-market|Meniox Market]]: Cloud/Local POS & Gestión para Fruterías, Minimarkets y Víveres.
+  - [[benchmark-pos-kiosko-rea|Informe REA: Arquitectura y Benchmark POS Kiosko de Víveres y Frutería]]: Análisis basado en evidencias, esquema Prisma SQLite y Backlog Akatsuki.
+  - [[diseno-ui-el-cuadre-pos|Especificación UI/UX El Cuadre POS]]: Tokens de diseño Stitch, layout bimonetario y guía de terminal táctil generada en Google Stitch.
+  - [[el-cuadre-pos-arquitectura-tecnica|Arquitectura Técnica & Blueprint: El Cuadre POS]]: Monolito Hexagonal Local Edge + LAN (NestJS, SQLite WAL, Next.js, Flutter) por Pain, Orochimaru y Zetsu.
+  - [[el-cuadre-pos-guia-testing-swagger|Guía de Testing Interactivo Swagger UI: El Cuadre POS]]: Documentación OpenAPI, flujo de pruebas y endpoints interactivos por Kakuzu.
+  - [[el-cuadre-pos-plan-marketing-gtm|Plan de Marketing GTM & Embudos Kamui: El Cuadre POS]]: Oferta $100M Hormozi, embudo de captación, copywriting Tsukuyomi y lanzamiento por Tobi / Obito.
+  - [[el-cuadre-pos-brand-book|Manual de Identidad Visual & Brand Book: El Cuadre POS]]: Logotipo e isotipo vectorial SVG, tokens WCAG, tipografía y piezas publicitarias por Sai & Konan.
 - [[menu-interactivo-beijing-2-0|Proyecto: Menú Interactivo Beijing 2.0]]: Cartelería digital interactiva (Smart TV Android) con sincronización Xetux ERP y MasterHub.
 - [[despacho-inteligente-cecom|Proyecto: Despacho Inteligente V1 — CECOM]]: Plataforma de comanda, despacho y tracking realtime enlazada a Xetux ERP y WhatsApp.
 - [[webcastro|Proyecto: WebCastro]]: Plataforma Web y CMS Payload 3.x con PostgreSQL.

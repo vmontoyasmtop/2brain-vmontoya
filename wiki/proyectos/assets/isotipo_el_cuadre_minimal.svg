@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" fill="none">
+  <!-- SQUIRCLE MINIMALISTA (Basado en Lucide Square-Check / Licencia Libre MIT) -->
+  <rect x="8" y="8" width="84" height="84" rx="24" fill="#051424" stroke="#10B981" stroke-width="6"/>
+  <!-- Check Geométrico Puro -->
+  <path d="M30 50 L44 64 L70 36" stroke="#10B981" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

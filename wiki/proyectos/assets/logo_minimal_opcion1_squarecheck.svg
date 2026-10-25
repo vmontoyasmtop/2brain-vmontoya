@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="100%" height="100%" fill="none">
+  <!-- OPCIÓN 1: EL CUADRE TÁCTICO (Basado en Lucide Square-Check / MIT License) -->
+  <g transform="translate(20, 20)">
+    <!-- Squircle / Cuadrado Minimalista -->
+    <rect x="0" y="0" width="80" height="80" rx="20" fill="#10B981" fill-opacity="0.12" stroke="#10B981" stroke-width="4"/>
+    <!-- Check Geométrico Puro Lucide -->
+    <path d="M26 40 L36 50 L56 28" stroke="#10B981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Tipografía Minimalista -->
+  <text x="125" y="68" font-family="'Inter', -apple-system, sans-serif" font-size="38" font-weight="800" letter-spacing="-0.5" fill="#FFFFFF">
+    elcuadre
+  </text>
+  <!-- Dot / Badge POS -->
+  <text x="315" y="68" font-family="'Inter', -apple-system, sans-serif" font-size="38" font-weight="400" fill="#10B981">
+    pos
+  </text>
+
+  <!-- Subtítulo limpio -->
+  <text x="127" y="94" font-family="'Inter', -apple-system, sans-serif" font-size="12" font-weight="500" fill="#94A3B8" letter-spacing="1.5">
+    SISTEMA DE PUNTO DE VENTA OFFLINE
+  </text>
+</svg>

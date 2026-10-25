@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>POS Terminal - Register #04</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#3c4a42",
+            "inverse-on-surface": "#233143",
+            "primary-fixed": "#6ffbbe",
+            "on-tertiary": "#283044",
+            "surface-dim": "#051424",
+            "secondary-container": "#ee9800",
+            "inverse-surface": "#d4e4fa",
+            "surface-container": "#122131",
+            "on-surface-variant": "#bbcabf",
+            "on-secondary-container": "#5b3800",
+            "primary-fixed-dim": "#4edea3",
+            "on-primary-container": "#00422b",
+            "on-background": "#d4e4fa",
+            "on-tertiary-fixed-variant": "#3f465c",
+            "on-tertiary-fixed": "#131b2e",
+            "on-secondary-fixed": "#2a1700",
+            "on-primary-fixed-variant": "#005236",
+            "surface-container-low": "#0d1c2d",
+            "tertiary": "#bec6e0",
+            "secondary-fixed": "#ffddb8",
+            "error": "#ffb4ab",
+            "surface-container-highest": "#273647",
+            "outline": "#86948a",
+            "on-secondary-fixed-variant": "#653e00",
+            "background": "#051424",
+            "on-primary-fixed": "#002113",
+            "secondary": "#ffb95f",
+            "primary": "#4edea3",
+            "on-secondary": "#472a00",
+            "surface-tint": "#4edea3",
+            "inverse-primary": "#006c49",
+            "tertiary-container": "#9ba2bb",
+            "on-primary": "#003824",
+            "surface-container-lowest": "#010f1f",
+            "on-surface": "#d4e4fa",
+            "on-error-container": "#ffdad6",
+            "surface-variant": "#273647",
+            "on-error": "#690005",
+            "secondary-fixed-dim": "#ffb95f",
+            "tertiary-fixed": "#dae2fd",
+            "on-tertiary-container": "#31394d",
+            "primary-container": "#10b981",
+            "error-container": "#93000a",
+            "surface": "#051424",
+            "surface-container-high": "#1c2b3c",
+            "surface-bright": "#2c3a4c",
+            "tertiary-fixed-dim": "#bec6e0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xl": "2rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-md": ["Inter"],
+            "label-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+            "body-md": ["15px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center w-full px-4 h-16 max-w-full z-20">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
+<h1 class="text-headline-md font-headline-md text-primary">POS Terminal - Register #04</h1>
+</div>
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2 bg-surface-container px-3 py-1.5 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">currency_exchange</span>
+<span class="text-label-lg font-label-lg text-secondary">BCV: 45.00 Bs/$</span>
+</div>
+<div class="flex items-center space-x-2 bg-surface-container px-3 py-1.5 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-lg font-label-lg text-on-surface">Cajero: Juan P.</span>
+</div>
+</div>
+</header>
+<!-- Main POS Canvas / Background State -->
+<main class="flex-1 p-space-md grid grid-cols-1 md:grid-cols-12 gap-space-md max-w-[1600px] mx-auto w-full opacity-40 pointer-events-none select-none">
+<!-- Product Grid mockup -->
+<div class="md:col-span-8 grid grid-cols-3 gap-space-md">
+<div class="bg-surface-container p-space-md rounded-xl border border-outline-variant flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="text-label-sm bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant">Frutas y Verduras</span>
+<span class="material-symbols-outlined text-primary">eco</span>
+</div>
+<div>
+<h3 class="text-body-lg font-body-lg text-on-surface">Tomate Perita Criollo</h3>
+<p class="text-label-sm text-secondary">$1.80 / Kg</p>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl border border-outline-variant flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="text-label-sm bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant">Frutas y Verduras</span>
+<span class="material-symbols-outlined text-primary">nutrition</span>
+</div>
+<div>
+<h3 class="text-body-lg font-body-lg text-on-surface">Cebolla Blanca</h3>
+<p class="text-label-sm text-secondary">$1.20 / Kg</p>
+</div>
+</div>
+<div class="bg-surface-container p-space-md rounded-xl border border-outline-variant flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="text-label-sm bg-surface-container-highest px-2 py-0.5 rounded text-on-surface-variant">Frutas y Verduras</span>
+<span class="material-symbols-outlined text-primary">agriculture</span>
+</div>
+<div>
+<h3 class="text-body-lg font-body-lg text-on-surface">Papa Criolla</h3>
+<p class="text-label-sm text-secondary">$1.50 / Kg</p>
+</div>
+</div>
+</div>
+<!-- Checkout Drawer mockup -->
+<div class="md:col-span-4 bg-surface-container rounded-xl border border-outline-variant p-space-md flex flex-col justify-between">
+<div class="space-y-space-sm">
+<h2 class="text-headline-md font-headline-md text-on-surface">Ticket Actual (#1042)</h2>
+<div class="border-b border-outline-variant pb-2 flex justify-between text-body-md text-on-surface-variant">
+<span>Tomate Perita Criollo (1.450 kg)</span>
+<span>$2.61</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg">
+<div class="flex justify-between items-center mb-1">
+<span class="text-body-md text-on-surface-variant">Total USD</span>
+<span class="text-headline-lg text-primary">$2.61</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Total Bs. (BCV 45.00)</span>
+<span class="text-body-lg text-secondary">Bs. 117.45</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Weighing Scale Modal Overlay -->
+<div class="fixed inset-0 bg-surface-dim/80 backdrop-blur-sm z-50 flex items-center justify-center p-space-md">
+<div class="bg-surface-container-low border border-outline-variant w-full max-w-3xl rounded-xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="bg-surface-container px-space-lg py-space-md border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center space-x-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro studio photograph of fresh ripe Venezuelan perita tomatoes, showing smooth glossy red skin and natural green stems, arranged neatly on a dark slate textured surface under clean neutral studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF8CJfEzRUVOhkKZ1nrsWgH-2dwYAySgPkfHgOpbFf41rz2nX60Wme1ibPnOKmbBz3ov3_sx36DsnlY3DYBucX8-mLlIc7_eBjgxdwL2iR4hbOXYaBDgifwlF2TbW7_6Jf84NsIspbwjQpfOg89d0tueXrsyHKSwN6YeZPrG_oSefvTFt4oPvHkAy_-n2PgZVvglMYZJCwNkkbDZ_QqY_oEmCSM8caaeFEKlR3KMx5lT_SFejqY0eeIey_b8wEEvNwHZcwbbanXgCC"/>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<span class="text-label-sm bg-primary-container/20 text-primary px-2 py-0.5 rounded font-label-sm">Balanza Activa</span>
+<span class="text-label-sm text-secondary font-label-sm">SKU: 849201</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Tomate Perita Criollo</h2>
+<p class="text-label-lg font-label-lg text-secondary">Base Unit: $1.80 / Kg | Bs. 81.00 / Kg</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container-highest hover:bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-all active:scale-95">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-space-lg grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<!-- Left Column: LCD Weight & Quick Presets -->
+<div class="md:col-span-7 flex flex-col space-y-space-md">
+<!-- LCD Display Box -->
+<div class="bg-surface-container-lowest border-2 border-outline-variant rounded-xl p-space-md flex flex-col justify-between relative overflow-hidden shadow-inner">
+<div class="absolute top-2 right-3 flex items-center space-x-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label-sm text-primary uppercase font-mono">Stable</span>
+</div>
+<div class="mb-2">
+<span class="text-label-sm text-on-surface-variant uppercase tracking-wider">Peso Actual (Weight)</span>
+<div class="text-headline-xl font-headline-xl text-primary font-mono tracking-tight flex items-baseline space-x-2">
+<span id="weight-display">1.450</span>
+<span class="text-headline-md text-primary-fixed">Kg</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/50 grid grid-cols-2 gap-2">
+<div>
+<span class="text-label-sm text-on-surface-variant block">Subtotal USD</span>
+<span class="text-headline-md font-headline-md text-secondary font-mono" id="subtotal-usd-display">$2.61</span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Subtotal Bs. (45.00)</span>
+<span class="text-headline-md font-headline-md text-on-surface font-mono" id="subtotal-bs-display">Bs. 117.45</span>
+</div>
+</div>
+</div>
+<!-- Quick Weight Buttons -->
+<div>
+<span class="text-label-sm text-on-surface-variant block mb-2">Presets de Peso Rápido</span>
+<div class="grid grid-cols-4 gap-2">
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant p-3 rounded-lg text-center transition-all active:scale-98" onclick="setWeight(0.250)">
+<span class="text-label-sm block text-on-surface-variant">1/4 Kg</span>
+<span class="text-body-lg font-headline-md text-on-surface font-mono">0.250</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant p-3 rounded-lg text-center transition-all active:scale-98" onclick="setWeight(0.500)">
+<span class="text-label-sm block text-on-surface-variant">1/2 Kg</span>
+<span class="text-body-lg font-headline-md text-on-surface font-mono">0.500</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant p-3 rounded-lg text-center transition-all active:scale-98" onclick="setWeight(1.000)">
+<span class="text-label-sm block text-on-surface-variant">1 Kg</span>
+<span class="text-body-lg font-headline-md text-on-surface font-mono">1.000</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant p-3 rounded-lg text-center transition-all active:scale-98" onclick="setWeight(2.000)">
+<span class="text-label-sm block text-on-surface-variant">2 Kg</span>
+<span class="text-body-lg font-headline-md text-on-surface font-mono">2.000</span>
+</button>
+</div>
+</div>
+<!-- Tare Button -->
+<button class="w-full py-3 px-4 bg-surface-container hover:bg-surface-container-high border border-outline-variant rounded-lg flex items-center justify-center space-x-2 text-on-surface transition-all active:scale-98" onclick="tareScale()">
+<span class="material-symbols-outlined text-secondary">restart_alt</span>
+<span class="text-label-lg font-label-lg">Tare Balanza (0.000)</span>
+</button>
+</div>
+<!-- Right Column: Touch Numeric Keypad -->
+<div class="md:col-span-5 flex flex-col justify-between bg-surface-container p-space-md rounded-xl border border-outline-variant">
+<div class="mb-2">
+<span class="text-label-sm text-on-surface-variant block uppercase tracking-wider">Entrada Manual de Peso (Gramos)</span>
+</div>
+<div class="grid grid-cols-3 gap-2 flex-1 my-2">
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('7')">7</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('8')">8</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('9')">9</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('4')">4</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('5')">5</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('6')">6</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('1')">1</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('2')">2</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('3')">3</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('0')">0</button>
+<button class="bg-surface-container-high hover:bg-surface-bright border border-outline-variant rounded-lg text-headline-md font-headline-md text-on-surface py-3 transition-all active:scale-95" onclick="appendKey('.')">.</button>
+<button class="bg-error-container/40 hover:bg-error-container border border-outline-variant rounded-lg text-error flex items-center justify-center py-3 transition-all active:scale-95" onclick="deleteKey()">
+<span class="material-symbols-outlined">backspace</span>
+</button>
+</div>
+<button class="w-full py-2 bg-surface-container-highest hover:bg-surface-bright border border-outline-variant rounded-lg text-label-lg font-label-lg text-on-surface-variant transition-all active:scale-98" onclick="clearKey()">
+            Limpiar (Clear)
+          </button>
+</div>
+</div>
+<!-- Modal Footer / Primary Action -->
+<div class="bg-surface-container px-space-lg py-space-md border-t border-outline-variant flex items-center justify-between">
+<div class="text-label-sm text-on-surface-variant">
+<span>Tasa BCV oficial aplicada: </span>
+<span class="text-on-surface font-mono font-bold">45.00 Bs/$</span>
+</div>
+<button class="bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-headline-md text-body-lg px-8 py-4 rounded-xl flex items-center space-x-3 shadow-lg transition-all active:scale-98 cursor-pointer">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
+<span id="btn-action-text">AGREGAR AL TICKET (+$2.61 / Bs. 117.45)</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    let currentWeight = 1.450;
+    const unitPriceUSD = 1.80;
+    const bcvRate = 45.00;
+
+    function updateDisplay() {
+      document.getElementById('weight-display').innerText = currentWeight.toFixed(3);
+      const usdSub = currentWeight * unitPriceUSD;
+      const bsSub = usdSub * bcvRate;
+      document.getElementById('subtotal-usd-display').innerText = '$' + usdSub.toFixed(2);
+      document.getElementById('subtotal-bs-display').innerText = 'Bs. ' + bsSub.toFixed(2);
+      document.getElementById('btn-action-text').innerText = `AGREGAR AL TICKET (+$${usdSub.toFixed(2)} / Bs. ${bsSub.toFixed(2)})`;
+    }
+
+    function setWeight(val) {
+      currentWeight = val;
+      updateDisplay();
+    }
+
+    function tareScale() {
+      currentWeight = 0.000;
+      updateDisplay();
+    }
+
+    function appendKey(char) {
+      let str = currentWeight.toFixed(3);
+      if (str === '0.000' && char !== '.') {
+        str = '';
+      }
+      str += char;
+      let parsed = parseFloat(str);
+      if (!isNaN(parsed)) {
+        currentWeight = parsed;
+        updateDisplay();
+      }
+    }
+
+    function deleteKey() {
+      let str = currentWeight.toFixed(3);
+      str = str.slice(0, -1);
+      if (str === '' || str === '0.0') {
+        str = '0.000';
+      }
+      currentWeight = parseFloat(str);
+      updateDisplay();
+    }
+
+    function clearKey() {
+      currentWeight = 0.000;
+      updateDisplay();
+    }
+  </script>
+</body></html>

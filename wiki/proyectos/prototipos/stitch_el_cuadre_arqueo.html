@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>POS Terminal - Register #04 - Cierre de Turno</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ffb4ab",
+            "secondary-fixed": "#ffddb8",
+            "on-tertiary": "#283044",
+            "on-primary-container": "#00422b",
+            "tertiary-fixed": "#dae2fd",
+            "tertiary-container": "#9ba2bb",
+            "on-surface-variant": "#bbcabf",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "inverse-surface": "#d4e4fa",
+            "surface-bright": "#2c3a4c",
+            "surface": "#051424",
+            "secondary-fixed-dim": "#ffb95f",
+            "secondary-container": "#ee9800",
+            "on-primary-fixed": "#002113",
+            "surface-container-high": "#1c2b3c",
+            "surface-container-highest": "#273647",
+            "background": "#051424",
+            "surface-tint": "#4edea3",
+            "surface-container-low": "#0d1c2d",
+            "inverse-primary": "#006c49",
+            "tertiary": "#bec6e0",
+            "surface-variant": "#273647",
+            "surface-dim": "#051424",
+            "primary-fixed-dim": "#4edea3",
+            "surface-container": "#122131",
+            "on-background": "#d4e4fa",
+            "on-tertiary-fixed": "#131b2e",
+            "inverse-on-surface": "#233143",
+            "tertiary-fixed-dim": "#bec6e0",
+            "on-secondary-fixed": "#2a1700",
+            "on-surface": "#d4e4fa",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-secondary": "#472a00",
+            "primary-container": "#10b981",
+            "surface-container-lowest": "#010f1f",
+            "secondary": "#ffb95f",
+            "outline-variant": "#3c4a42",
+            "on-primary-fixed-variant": "#005236",
+            "primary-fixed": "#6ffbbe",
+            "on-tertiary-container": "#31394d",
+            "primary": "#4edea3",
+            "on-tertiary-fixed-variant": "#3f465c",
+            "on-primary": "#003824",
+            "on-secondary-container": "#5b3800",
+            "outline": "#86948a",
+            "error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+            "body-md": ["15px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-container-lowest border-b border-outline-variant w-full flex justify-between items-center px-4 h-16 sticky top-0 z-50">
+<div class="flex items-center space-x-space-sm">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="point_of_sale">point_of_sale</span>
+<h1 class="text-headline-md font-headline-md text-primary tracking-tight">POS Terminal - Register #04</h1>
+</div>
+<div class="flex items-center space-x-space-lg">
+<div class="flex items-center space-x-space-xs bg-surface-variant px-3 py-1.5 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="text-label-lg text-on-surface">24/10/2026</span>
+</div>
+<div class="flex items-center space-x-space-xs bg-surface-variant px-3 py-1.5 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="person">person</span>
+<span class="text-label-lg text-on-surface">Victor M.</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Reconciliation Sections (8 cols) -->
+<div class="lg:col-span-8 flex flex-col space-y-6">
+<!-- Subheader -->
+<div class="flex flex-col md:flex-row md:items-center justify-between bg-surface-container p-4 rounded-xl border border-outline-variant">
+<div>
+<h2 class="text-headline-lg text-on-background">Cierre de Turno & Arqueo Diario - Caja 01</h2>
+<p class="text-body-md text-on-surface-variant">Realice el conteo ciego y verificación de terminales bancarios para el cierre definitivo.</p>
+</div>
+<div class="mt-3 md:mt-0 flex items-center space-x-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-label-sm bg-primary-container text-on-primary-container font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="lock">lock</span> Ciego Activo
+          </span>
+</div>
+</div>
+<!-- 1. Punto de Venta Bancario -->
+<div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<h3 class="text-headline-md text-on-surface">Punto de Venta Bancario</h3>
+<p class="text-body-md text-on-surface-variant">Lote actual y conciliación automática</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full text-label-sm font-bold bg-primary/10 text-primary border border-primary/20">
+            CUADRADO (0 Discrepancia)
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container p-4 rounded-lg border border-outline-variant">
+<span class="text-label-sm text-on-surface-variant block mb-1">Monto en Voucher Lote</span>
+<span class="text-headline-md text-on-background font-mono">Bs. 2,450.00</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg border border-outline-variant">
+<span class="text-label-sm text-on-surface-variant block mb-1">System Recorded</span>
+<span class="text-headline-md text-primary font-mono">Bs. 2,450.00</span>
+</div>
+</div>
+</div>
+<!-- 2. Pago Móvil Bancario -->
+<div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span>
+</div>
+<div>
+<h3 class="text-headline-md text-on-surface">Pago Móvil Bancario</h3>
+<p class="text-body-md text-on-surface-variant">Verificación de mensajes y confirmaciones interbancarias</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full text-label-sm font-bold bg-primary/10 text-primary border border-primary/20">
+            CUADRADO
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container p-4 rounded-lg border border-outline-variant">
+<span class="text-label-sm text-on-surface-variant block mb-1">Bank Total</span>
+<span class="text-headline-md text-on-background font-mono">Bs. 3,825.00</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg border border-outline-variant">
+<span class="text-label-sm text-on-surface-variant block mb-1">System Recorded</span>
+<span class="text-headline-md text-secondary font-mono">Bs. 3,825.00</span>
+</div>
+</div>
+</div>
+<!-- 3. Efectivo en Gaveta -->
+<div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<div>
+<h3 class="text-headline-md text-on-surface">Efectivo en Gaveta</h3>
+<p class="text-body-md text-on-surface-variant">Blind Count Inputs for Cashier</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full text-label-sm font-bold bg-error/10 text-error border border-error/20">
+            Discrepancia Detectada
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<!-- USD Count -->
+<div class="bg-surface-container p-4 rounded-lg border border-error/40 flex flex-col justify-between space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-label-lg font-bold text-on-surface">USD ($) Efectivo</span>
+<span class="text-label-sm text-error font-bold flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="warning">warning</span> -$0.50 USD
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-sm">
+<div class="bg-surface p-2 rounded">
+<span class="block text-on-surface-variant text-xs">Counted</span>
+<span class="font-mono text-on-background font-bold">$150.00</span>
+</div>
+<div class="bg-surface p-2 rounded">
+<span class="block text-on-surface-variant text-xs">Expected</span>
+<span class="font-mono text-on-background font-bold">$150.50</span>
+</div>
+</div>
+</div>
+<!-- Bolivares Count -->
+<div class="bg-surface-container p-4 rounded-lg border border-outline-variant flex flex-col justify-between space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-label-lg font-bold text-on-surface">Bolívares (Bs.) Efectivo</span>
+<span class="text-label-sm text-primary font-bold flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="check_circle">check_circle</span> Bs. 0.00
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-sm">
+<div class="bg-surface p-2 rounded">
+<span class="block text-on-surface-variant text-xs">Counted</span>
+<span class="font-mono text-on-background font-bold">Bs. 1,200.00</span>
+</div>
+<div class="bg-surface p-2 rounded">
+<span class="block text-on-surface-variant text-xs">Expected</span>
+<span class="font-mono text-on-background font-bold">Bs. 1,200.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Gastos Menores de Caja -->
+<div class="bg-surface-container-low rounded-xl p-5 border border-outline-variant flex flex-col space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</div>
+<div>
+<h3 class="text-headline-md text-on-surface">Gastos Menores de Caja</h3>
+<p class="text-body-md text-on-surface-variant">Petty Cash Expenses</p>
+</div>
+</div>
+<span class="text-label-lg font-mono text-secondary font-bold">Total Gastos: $3.50 USD</span>
+</div>
+<div class="bg-surface-container rounded-lg border border-outline-variant overflow-hidden divide-y divide-outline-variant">
+<div class="p-3 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="fiber_manual_record">fiber_manual_record</span>
+<span class="text-body-md text-on-surface">Hielo para verduras</span>
+</div>
+<span class="font-mono text-on-background font-medium">$2.50 USD</span>
+</div>
+<div class="p-3 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="fiber_manual_record">fiber_manual_record</span>
+<span class="text-body-md text-on-surface">Bolsas plásticas</span>
+</div>
+<span class="font-mono text-on-background font-medium">$1.00 USD</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Grand Balance Summary & Action (4 cols) -->
+<div class="lg:col-span-4 flex flex-col space-y-6">
+<!-- Grand Balance Summary Card -->
+<div class="bg-surface-container-high rounded-xl p-6 border border-outline-variant shadow-lg flex flex-col space-y-6 sticky top-24">
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<h3 class="text-headline-md text-on-surface flex items-center">
+<span class="material-symbols-outlined text-primary mr-2" data-icon="summarize">summarize</span> Resumen General
+          </h3>
+<span class="text-xs uppercase tracking-wider bg-surface-variant text-on-surface-variant px-2 py-1 rounded">Turno 01</span>
+</div>
+<div class="flex flex-col space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Total Ventas Brutas</span>
+<span class="text-headline-md font-mono text-on-background">$154.00 USD</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-md text-on-surface-variant">Total Gastos Caja</span>
+<span class="text-headline-md font-mono text-error">-$3.50 USD</span>
+</div>
+<div class="border-t border-outline-variant pt-4 flex flex-col space-y-2">
+<span class="text-label-sm text-primary uppercase font-bold tracking-wider">Utilidad Neta Turno / Efectivo Final</span>
+<div class="flex items-baseline justify-between">
+<span class="text-headline-xl text-primary font-mono font-bold">$150.50</span>
+<span class="text-headline-md text-secondary font-mono">Bs. 1,200.00</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-lg border border-outline-variant space-y-2 text-sm text-on-surface-variant">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-base" data-icon="info">info</span>
+<span>El cuadre ciego finaliza operaciones para este cajero de forma irreversible.</span>
+</div>
+</div>
+<!-- Bottom Action Button -->
+<button class="w-full bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-headline-md text-label-lg py-4 px-4 rounded-xl flex items-center justify-center space-x-2 transition-all duration-200 shadow-md active:scale-98 cursor-pointer" onclick="alert('Cierre de turno procesado y reporte enviado por WhatsApp con éxito.')">
+<span class="material-symbols-outlined text-xl" data-icon="send">send</span>
+<span class="text-center font-bold">FINALIZAR CIERRE DE TURNO & ENVIAR REPORTE POR WHATSAPP</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>
