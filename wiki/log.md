@@ -12,6 +12,27 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-25] feat/el-cuadre-pos-product-images-and-fallbacks | Incorporación de Imágenes Fotográficas y Miniaturas Táctiles con Fallback SVG en POS e Inventario
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: 👁️ **Itachi** (Frontend Engineer), 🎨 **Sai** (Chief Graphic Designer), 🖤 **Kakuzu** (Backend Architect) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - Resuelto el problema de visualización de imágenes de productos reportado por El Señor en el catálogo de POS e Inventario:
+    * **POS (`src/app/pos/page.tsx`)**: Reincorporado el contenedor táctil de imagen (`w-full h-24 sm:h-28`) en cada tarjeta de producto con URLs fotográficas de alta resolución para los 10 productos de catálogo y fallback reactivo (`onError`) a iconos táctiles de Sai y emojis de modalidad (`⚖️` / `📦`).
+    * **Inventario (`src/app/inventario/page.tsx`)**: Dotadas las filas de la tabla de catálogo con avatar fotográfico de producto (`w-12 h-12`), borde temático por modalidad (verde para pesables por balanza, ámbar para unidades) y fallback reactivo si la imagen falla o está ausente.
+    * **Modal de Creación/Edición**: Incorporado el campo para URL de imagen con previsualización en vivo en el modal de productos de Inventario.
+    * **Semilla Backend (`backend/prisma/seed.ts`)**: Añadidas URLs fotográficas de alta definición a los 15 productos representativos del abasto criollo venezolano (Tomate, Cebolla, Papa, Plátano, Aguacate, Zanahoria, Harina P.A.N., Arroz, Pasta, Aceite, Atún, Queso Llanero, Malta Polar, Coca-Cola).
+  - Verificación Next.js: Compilación en producción aprobada con código 0 (`✓ Generating static pages 7/7`).
+  - Sincronización Git: Commit `0b6166b` subido a GitHub (`origin/main`).
+
+## [2026-10-25] fix/el-cuadre-pos-prisma-backend-sync | Resolución de Bug de Compilación en Backend & Promoción de US-14 a TESTING en ClickUp
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: ☁️ **Pain** (Project Manager), 🖤 **Kakuzu** (Backend Architect) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - Resuelto el error crítico `TS2339` que impedía la ejecución del backend NestJS tras la incorporación del modelo de tasa de cambio oficial.
+  - Ejecutado `npx prisma generate` y `npx prisma db push` contra `elcuadre.db` (SQLite WAL), regenerando las definiciones de `@prisma/client`.
+  - Compilación limpia con `nest build` (0 errores) y suite Jest con 26/26 pruebas aprobadas (100%).
+  - Tarea en ClickUp **[🖤 US-14: Integración API BCV Oficial, Sincronización Temporal & Resiliencia Offline-First](https://app.clickup.com/t/86bcr0my3)** promovida formalmente a estado **`testing`** con reporte técnico de Pain.
+
 ## [2026-10-25] fix/el-cuadre-pos-inventario-layout-and-overflow | Corrección de Overflow, Eliminación de Navbar Duplicado & Conexión de Tasa BCV Dinámica en Inventario
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: 👁️ **Itachi** (Frontend Engineer) & 🤵 **ALFRED**
