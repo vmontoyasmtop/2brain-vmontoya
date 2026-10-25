@@ -12,6 +12,42 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-25] feat/el-cuadre-pos-us05-us06-us08 | Pasarela Multimoneda (US-05), Inventario Dual & Mermas (US-06) y Pruebas Unitarias de Jashin (US-08)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: ☁️ **Pain** (Scrum Master), 🖤 **Kakuzu** (Backend Architect), 👁️ **Itachi** (Frontend Engineer), 💀 **Hidan** (QA & Stress Tester) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **US-05: Pasarela de Cobro Multimoneda ($ / Bs), Vueltos & Pago Móvil (5 SP)**:
+    * Transacción atómica en NestJS (`POST /api/sales`) con deducción de stock decimal y cálculo inmutable de vuelto (`changeGiven`).
+    * Pasarela táctil completa en Next.js con soporte para Efectivo USD/Bs, Pago Móvil (con QR criollo y captura de últimos 4 dígitos), Punto Débito, Libro de Fiados (`CREDIT`) y pagos combinados (`MIXED`).
+    * Emisión de ticket térmico formateado con `@media print` para rollos de 58mm/80mm y fallback offline local en `localStorage`.
+  - **US-06: Módulo de Inventario Dual & Registro de Mermas de Perecederos (5 SP)**:
+    * Backend: endpoints `POST /api/losses` para rebaja de inventario en frío sin alterar el libro de ventas ni la caja, y `GET /api/losses/summary` (total Kg desechados, costo en USD y conteo de incidencias).
+    * Frontend: Pantalla `/inventario` widescreen basada en Konan Stitch (`stitch_el_cuadre_inventario.html`) con catálogo dual (unidades vs balanza por Kg), métricas de valor de inventario en $ y Bs, modal táctil de desecho con presets (+0.25, +0.5, +1, +2, +5 Kg) y filtro de stock crítico.
+    * Integrado acceso táctil en `Navbar.tsx` con icono `Package`.
+  - **US-08: Pruebas Unitarias de Cálculos, Arqueo & Vueltos con Jest (5 SP)**:
+    * Hidan ejecutó el ritual de pruebas: **26 de 26 pruebas pasadas en verde (0 fallos)** con **100% de cobertura en líneas** en `sales.service.ts`, `cash-sessions.service.ts` y `enums.ts`.
+  - **Compilación & Git**:
+    * Verificación completa con `npm run build` en Next.js 14 (código 0, 7 rutas estáticas optimizadas).
+    * Commit `0a6269b` y push exitoso a `https://github.com/vmontoyasmtop/el-cuadre-pos.git` (rama `main`).
+
+## [2026-10-25] feat/el-cuadre-pos-bcv-api-integration | Integración API BCV Oficial, Sincronización Temporal & Resiliencia Offline-First (US-14)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: ☁️ **Pain** (Scrum Master), 🖤 **Kakuzu** (Backend Architect), 👁️ **Itachi** (Frontend Engineer) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **Planificación Ágil & ClickUp (Pain)**:
+    * Creada y formalizada la User Story en ClickUp: [`🖤 US-14 (ID: 86bcr0my3)`](https://app.clickup.com/t/86bcr0my3) con 8 Story Points y prioridad urgente.
+    * Definidos 4 escenarios Gherkin para la dinámica cambiaria venezolana: publicaciones hábiles vespertinas con fecha valor futura, retención de tasa de fin de semana (viernes noche hasta lunes comercial), tolerancia a caídas de red (Offline-First) y sobreescritura manual de contingencia.
+  - **Arquitectura Backend NestJS & SQLite WAL (Kakuzu)**:
+    * Diseñado el modelo `ExchangeRate` en Prisma con indexación para consulta $O(1)$.
+    * Implementado `ExchangeRateService` con arquitectura multi-proveedor: `ve.dolarapi.com/v1/dolares/oficial` como canal primario, `rates.dolarvzla.com/bcv/current.json` como secundario, y persistencia local en SQLite WAL como canal offline.
+    * Lógica de calendario `calculateBcvEffectiveDate` para gestionar la vigencia de viernes a lunes y feriados bancarios.
+    * Endpoints REST: `/api/exchange-rate/current`, `/api/exchange-rate/sync`, `/api/exchange-rate/override` y `/api/exchange-rate/history`.
+  - **Frontend Next.js & UI Táctil POS (Itachi)**:
+    * Desarrollado `ExchangeRateContext` con hook global `useExchangeRate` y conversores bimoneda (`toUSD`, `toVES`).
+    * Implementado `ExchangeRateBadge` en el Navbar del POS con semáforo pulsante (verde en línea, amarillo caché offline, rojo desactualizada) e indicador de vigencia contextual.
+    * Desarrollado `ExchangeRateModal` para forzar sincronización y registrar tasas manuales de emergencia por arqueo.
+    * Integrado en `/pos/page.tsx` para recálculo instantáneo de precios y subtotales sin parpadeos de hidratación.
+
 ## [2026-10-25] feat/el-cuadre-pos-tactical-pos-and-criollo-icons | Terminal POS Táctil (US-04), Pack de Iconos Criollos SVG (US-12) & Cierre de Turno
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: ☁️ **Pain** (Scrum Master), 🎨 **Sai** (Chief Graphic Designer), 👁️ **Itachi** (Frontend Engineer), 🖤 **Kakuzu** (Backend Architect), 🌿 **Zetsu** (Docs) & 🤵 **ALFRED**
