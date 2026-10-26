@@ -12,6 +12,17 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-25] feat/el-cuadre-pos-scale-modal-and-thermal-receipt | Modal Táctil de Balanza Digital, Pasarela Multimoneda Completa & Comprobante Térmico de 80mm
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: 👁️ **Itachi** (Frontend Engineer), 🎨 **Sai** (Chief Graphic Designer), ☁️ **Pain** (PM) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **Modal de Balanza / Pesaje Táctil**: Restaurada la apertura reactiva al presionar productos pesables en balanza (`WEIGHT`). Visor LCD con indicación de estabilidad, pesaje con 3 decimales (`0.000 Kg`), atajos de peso rápido (`¼ Kg`, `½ Kg`, `1 Kg`, `2 Kg`), botón de tara a cero y teclado numérico táctil de alta sensibilidad con cálculo dual en USD y Bolívares oficiales BCV.
+  - **Pasarela Multimoneda Completa**: Integrados los 4 métodos de pago criollos: Efectivo USD (con atajos de billetes de `$5, $10, $20, $50, $100` y vuelto exacto bimoneda), Efectivo Bs, Pago Móvil (bancos venezolanos y referencia) y Tarjeta de Débito (número de lote).
+  - **Comprobante Térmico Emitido (Sai Designer)**: Al confirmar la venta, se despliega el ticket de 80mm con detalle de pesaje/unidades, RIF, fecha, cajero, subtotal, tasa oficial BCV, vuelto exacto multimoneda, sello "TODO CUADRAÍTO" y acciones directas para imprimir ticket o compartir por WhatsApp.
+  - **Limpieza de Barra Superior**: Unificado el acceso de Arqueo y gestión de sesiones bajo la vista "Turnos".
+  - Verificación Next.js 14: Compilación exitosa con código 0 (`✓ Generating static pages 7/7`). Commit `d04c3b6` subido a `origin/main`.
+
+
 ## [2026-10-25] docs/smartops-informe-inversion-cliente | Informe Ejecutivo Oficial de Inversión en SmartOps VE con Logo Vectorial & Enlaces de Compra
 - **Áreas**: 🚀 `proyectos`, 💰 `finanzas`, 🏢 `trabajo`
 - **Agentes Responsables**: 🤵 **ALFRED** & 🎨 **Sai** (Chief Graphic Designer)
