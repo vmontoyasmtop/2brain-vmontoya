@@ -12,6 +12,16 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-25] chore/clickup-sprint-sync | Sincronización de Tareas en ClickUp: Promoción de US-05 y US-08 a COMPLETE
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: ☁️ **Pain** (PM & Scrum Master) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - Auditado y sincronizado el tablero oficial de Sprint en ClickUp (Lista `901422611886`):
+    * **[👁️ US-05: Pasarela de Cobro Multimoneda ($ / Bs), Vueltos & Pago Móvil](https://app.clickup.com/t/86bcqv6fm)**: Promovida a **`complete`** tras la integración definitiva del selector multimoneda, atajos de billetes, cálculo de vuelto exacto y emisión de comprobante térmico de 80mm de Sai.
+    * **[💀 US-08: Suite de Pruebas Unitarias & Validación de Cálculos Financieros](https://app.clickup.com/t/86bcqv6he)**: Promovida a **`complete`** tras la certificación de Hidan (26/26 pruebas Jest aprobadas con 100% de cobertura en ventas y turnos de caja).
+  - Estado del Sprint: 10 de 13 Historias de Usuario completadas al 100%. Repositorio de código y memoria de 2brain sincronizados sin cambios pendientes.
+
+
 ## [2026-10-25] feat/el-cuadre-pos-scale-modal-and-thermal-receipt | Modal Táctil de Balanza Digital, Pasarela Multimoneda Completa & Comprobante Térmico de 80mm
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: 👁️ **Itachi** (Frontend Engineer), 🎨 **Sai** (Chief Graphic Designer), ☁️ **Pain** (PM) & 🤵 **ALFRED**
