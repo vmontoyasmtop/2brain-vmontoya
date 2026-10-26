@@ -106,6 +106,8 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
   - [[el-cuadre-pos-guia-testing-swagger|Guía de Testing Interactivo Swagger UI: El Cuadre POS]]: Documentación OpenAPI, flujo de pruebas y endpoints interactivos por Kakuzu.
   - [[el-cuadre-pos-plan-marketing-gtm|Plan de Marketing GTM & Embudos Kamui: El Cuadre POS]]: Oferta $100M Hormozi, embudo de captación, copywriting Tsukuyomi y lanzamiento por Tobi / Obito.
   - [[el-cuadre-pos-brand-book|Manual de Identidad Visual & Brand Book: El Cuadre POS]]: Logotipo e isotipo vectorial SVG, tokens WCAG, tipografía y piezas publicitarias por Sai & Konan.
+  - [[informe-inversion-equipos-el-cuadre-pos|Informe Ejecutivo de Inversión de Equipos y Software: El Cuadre POS]]: Presupuesto detallado de hardware en Venezuela, enlaces de compra a MercadoLibre, escenarios de compra, ficha técnica y cálculo de ROI en 30-45 días.
+  - [`informe-inversion-equipos-smartops.html`](file:///C:/Users/vmont/OneDrive/Desktop/2brain-vmontoya/wiki/proyectos/informe-inversion-equipos-smartops.html): Propuesta comercial maquetada para clientes con identidad visual **SmartOps VE**, banner corporativo con logo SVG y modo de exportación PDF.
 - [[menu-interactivo-beijing-2-0|Proyecto: Menú Interactivo Beijing 2.0]]: Cartelería digital interactiva (Smart TV Android) con sincronización Xetux ERP y MasterHub.
 - [[despacho-inteligente-cecom|Proyecto: Despacho Inteligente V1 — CECOM]]: Plataforma de comanda, despacho y tracking realtime enlazada a Xetux ERP y WhatsApp.
 - [[webcastro|Proyecto: WebCastro]]: Plataforma Web y CMS Payload 3.x con PostgreSQL.
