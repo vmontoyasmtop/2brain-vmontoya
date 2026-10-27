@@ -33,6 +33,26 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
   - Verificación Next.js 14: Compilación exitosa con código 0 (`✓ Generating static pages 7/7`). Commit `d04c3b6` subido a `origin/main`.
 
 
+## [2026-10-26] feat/akatsuki-quality-harness | Creación e Implantación del Arnés de Calidad Akatsuki (Frontend Quality Gate & Anti-Regresión)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: 👁️ **Itachi** (Frontend Engineer), 💀 **Hidan** (QA & Testing), 🐍 **Orochimaru** (DevOps) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **Causa Raíz de Páginas en Blanco / Errores de UI Identificada**:
+    * **Violación de Reglas de Hooks de React**: Retornos condicionales anticipados (`if (...) return`) antes de la invocación de hooks (`useState`, `useEffect`, `useCallback`), provocando el colapso de React con error `Rendered fewer hooks than expected`.
+    * **Navbar Duplicado**: Páginas que importaban `<Navbar />` localmente cuando `app/layout.tsx` ya lo renderiza de forma global.
+    * **Auth Guards Inseguros**: Bucle de redirección infinito si `localStorage` estaba vacío durante la hidratación.
+  - **Arnés de Calidad Akatsuki (`frontend/scripts/quality-harness.js`)**:
+    * **Regla 1 (Anti-Hook-Order-Violation)**: Inspección estática del cuerpo de componentes funcionales en todo `src/` para garantizar orden inmutable de Hooks.
+    * **Regla 2 (Anti-Duplicate-Navbar)**: Prohibición absoluta de importar `<Navbar />` dentro de `src/app/**/page.tsx`.
+    * **Regla 3 (Client-Hydration-Safety)**: Validación de acceso seguro a `localStorage` y guards no bloqueantes.
+    * **Regla 4 (Compilación Estática Next.js)**: Verificación de `next build` al 100% (8/8 páginas estáticas generadas sin warnings críticos).
+  - **Suite Automatizada Unificada (`verificar-arnes.bat`)**:
+    * Script por lotes que ejecuta en un solo clic:
+      1. Backend: 26/26 pruebas Jest de Kakuzu al 100%.
+      2. Frontend: Arnés estático de calidad con 0 errores y 0 advertencias.
+      3. Next.js: Compilación y optimización de producción estática limpia.
+  - **Sincronización de Subagentes**: Notificados e instruidos formalmente Itachi Uchiha y Hidan bajo juramento de calidad.
+
 ## [2026-10-26] feat/el-cuadre-pos-us07-contabilidad-finanzas | Implementación Completa de US-07: Contabilidad Básica, Egresos de Caja Menor & Utilidad Neta Diaria
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 💰 `finanzas`
 - **Agentes Responsables**: ☁️ **Pain** (PM), 🖤 **Kakuzu** (Backend & DB), 👁️ **Itachi** (Frontend UI), 💀 **Hidan** (QA) & 🤵 **ALFRED**
