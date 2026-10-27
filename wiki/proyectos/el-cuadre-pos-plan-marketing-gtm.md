@@ -28,6 +28,20 @@ tags:
 
 ---
 
+## 🌐 1.1. Expansión Estratégica Multivertical: \"EL CUADRE MULTI-COMERCIO\"
+
+Por instrucción directa de **El Señor**, el alcance de **EL CUADRE POS** evoluciona de un nicho exclusivo de abastos hacia una **Suite Modular para todo el Comercio Minorista Venezolano**:
+
+```mermaid
+flowchart TD
+    Core["⚡ MOTOR CORE EL CUADRE POS\n(Bimoneda $/Bs + Tasa BCV + Arqueo Ciego + 100% Offline SQLite)"]
+    Core --> V1["🍏 MODO FRESCO\n(Abastos, Fruterías, Charcuterías)\n• Balanza decimal (Kg/g)\n• Control de mermas\n• Teclado táctil rápido"]
+    Core --> V2["👗 MODO ESTILO\n(Tiendas de Ropa, Calzado, Boutiques)\n• Matriz Talla & Color\n• Generador de Códigos de Barra\n• Inventario por percha/estante"]
+    Core --> V3["🔧 MODO FERRETERO\n(Ferreterías, Repuestos, Pinturas)\n• Venta fraccionada (metros, kg, galones)\n• Doble precio: Detal vs Mayorista\n• Búsqueda por código de parte"]
+```
+
+---
+
 ## 🎯 1. Radiografía del Avatar: El Comerciante Criollo
 
 ### 👤 Perfil del Comprador (Buyer Persona)
@@ -148,6 +162,36 @@ flowchart TD
 > 🏦 Banco: [Banco] | 📱 Cédula: [CI] | 📞 Teléfono: [Teléfono]  
 >  
 > ¡Gracias por tu confianza de siempre!"*
+
+---
+
+### 👗 Pieza 4: Copy de Alto Impacto para Tiendas de Ropa, Calzado & Boutiques
+
+```markdown
+# ¿Cuántos pares de zapatos y camisas se te "pierden" al mes sin que te des cuenta?
+
+### Controla tu inventario por TALLA, COLOR y MODELO. Cobra en dólares, Pago Móvil o bolívares a tasa oficial BCV SIN INTERNET y sin pagar mensualidades abusivas en dólares.
+
+✓ Control de Variantes: Tallas (36 a 44 / S, M, L, XL) y colores al instante.
+✓ Genera e imprime tus propias etiquetas de código de barras para la ropa.
+✓ Arqueo Ciego: Tus vendedores jamás sabrán cuánto dinero debe haber en caja.
+✓ 100% Offline: Sigue facturando aunque el centro comercial o la calle se quede sin luz o sin fibra.
+```
+
+---
+
+### 🔧 Pieza 5: Copy de Alto Impacto para Ferreterías, Pinturas & Auto-Repuestos
+
+```markdown
+# ¿Vendes tornillos, cables y tubos por metros y la cuenta NUNCA te cuadra?
+
+### El primer sistema de caja venezolano diseñado para el ritmo rudo de una ferretería: venta fraccionada (metros, kilos, galones o piezas), doble lista de precios (Detal vs Mayorista/Contratista) y tasa BCV al segundo.
+
+✓ Venta Fraccionada: Vende 3.5 metros de cable o 250 gramos de clavos sin enredos.
+✓ Doble Lista de Precios: Precio al detal para el cliente de paso, precio contratista para el maestro de obra.
+✓ Búsqueda por Código o Palabra Clave: Encuentra repuestos y herramientas en 0.5 segundos.
+✓ Cero Internet: Tu ferretería no se detiene jamás.
+```
 
 ---
 
