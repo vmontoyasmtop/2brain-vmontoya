@@ -13,18 +13,19 @@ Tablero de control ejecutivo para **Victor Montoya** en **Master Group**, concen
 | **O3** | Mantenimiento y Operación Xetux | 🏢 Trabajo | Actualización diaria de tasa Bs en Xetux | 🟢 Al día |
 | **O4** | Consolidar Arquitectura MasterHub | 🚀 Proyectos | API Gateway, PostgreSQL (`finance_db`, `hr_db`) | 🟡 En progreso |
 | **O5** | Cockpit Analítico Xetux en Vivo | 🚀 [[mg-sales-analytics|MG-SALES-ANALYTICS]] | Búsqueda multicriterio en 14 sedes y KPIs en vivo | 🟢 Activo (v1.0) |
-| **O6** | MVP EL CUADRE POS (Kiosko & Balanza Criolla) | 🚀 [[el-cuadre-pos-brand-brief-ejecutivo|EL CUADRE POS]] | Terminal Táctil, Balanza Criolla y Arqueo Ciego | 🟢 En Testing (6 US) |
+| **O6** | MVP EL CUADRE POS (Kiosko & Balanza Criolla) | 🚀 [[el-cuadre-pos-brand-brief-ejecutivo|EL CUADRE POS]] | Terminal Táctil, Balanza, Finanzas y Arqueo Ciego | 🟢 92.8% Completado (13/14 US) |
 
 ---
 
 ## ⚡ Estado de Proyectos y Enfoque Activo (Semana 19/10 – 25/10/2026)
 
 1. ⚖️ **[[el-cuadre-pos-brand-brief-ejecutivo|EL CUADRE POS — Kiosko, Frutería & Abasto Criollo]]**:
-   - **Backend**: NestJS + SQLite WAL Mode con Prisma ORM (`elcuadre.db`), seeding con 15 productos criollos reales de mostrador. Swagger UI activo en `http://localhost:3001/api/docs`.
-   - **Identidad de Marca**: Brand Book oficial de Sai (`cuadre.noche`, `cuadre.mint`, `cuadre.oro`), logotipo SVG y pack de 10 iconos criollos (`icon-tomate.svg`, etc.) empaquetados en `CriolloIcons.tsx`.
-   - **Frontend**: Pantalla táctil widescreen `/pos` con grid de catálogo (filtros y buscador F3), modal de pesaje decimal para balanza con presets y función Tarar, carrito reactivo bimoneda ($/Bs a tasa BCV) y checkout rápido (F12).
-   - **Repositorio Oficial**: [GitHub (`vmontoyasmtop/el-cuadre-pos`)](https://github.com/vmontoyasmtop/el-cuadre-pos)
-   - **ClickUp**: 6 User Stories en columna `TESTING` (`US-01`, `US-02`, `US-03`, `US-11`, `US-12`, `US-04`). Próximas: `US-05` (Cobro Multimoneda) y `US-08` (Tests Vitest con Hidan).
+   - **Backend & Finanzas**: NestJS + SQLite WAL Mode con Prisma ORM (`elcuadre.db`). Endpoint de finanzas, egresos de caja menor y utilidad neta (`US-07`). 26/26 pruebas unitarias aprobadas por Hidan (100%).
+   - **Frontend & Arnés de Calidad**: Next.js 14 App Router protegido por el Arnés Akatsuki (`quality-harness.js`) con 0 errores y compilación limpia (8/8 páginas estáticas).
+   - **Documentación & Manuales**: Manual del Cajero ilustrado y guías offline incorporadas en `/docs` (`US-09`).
+   - **Sprint ClickUp**: **13 de 14 User Stories completadas (92.8%)**. Única pendiente: `US-10` (Libro de Fiados Digital).
+   - **💡 Backlog Futuro & Roadmap V2**: Documentado en [[el-cuadre-pos-roadmap-v2-rea|EL CUADRE POS — Roadmap Estratégico V2 & Benchmarking REA]] (Balanzas Seriales en vivo, Impresión ESC/POS directa, Multi-Caja LAN Mesh y App Flutter para el dueño).
+   - **Repositorio Oficial**: [GitHub (`vmontoyasmtop/el-cuadre-pos`)](https://github.com/vmontoyasmtop/el-cuadre-pos) sincronizado en `origin/main`.
 
 2. 📊 **[[mg-sales-analytics|MG-SALES-ANALYTICS]] (Lanzamiento v1.0)**:
    - Dashboard analítico desacoplado en Next.js 15 + Tailwind CSS v4 con diseño idéntico a MGH.
