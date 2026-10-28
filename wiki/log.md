@@ -12,6 +12,25 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-27] feat/el-cuadre-pos-cryptographic-licensing | Motor Criptográfico de Licenciamiento Mensual Offline-First & Protección Anti-Tamper (US-16)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`
+- **Agentes Responsables**: 🖤 **Kakuzu** (Backend & DB), 🐍 **Orochimaru** (Criptografía), 👁️ **Itachi** (Frontend), ☁️ **Pain** (PM) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **ClickUp Task**: Promovida a **`complete`** la tarea **[🔒 US-16: Motor Criptográfico de Licenciamiento Mensual Offline-First (Ed25519 & Hardware Binding)](https://app.clickup.com/t/86bctkwgp)** (8 Story Points, ID: `86bctkwgp`).
+  - **Backend (Kakuzu & Orochimaru)**:
+    * **Hardware ID Único Windows**: Resuelto mediante `MachineGuid` de registro y fallback multinivel (`CUADRE-4493-0195-E7E5-ACA8`).
+    * **Criptografía Asimétrica Ed25519**: Clave pública embebida en backend para verificación 100% offline sin peticiones web. Clave privada resguardada en `backend/scripts/generate-license.js` para emisión de suscripciones mensuales.
+    * **Protección Anti-Clock Tamper**: Monitoreo de timestamp monótono en SQLite WAL (`lastMonotonicTimestamp`). Atrasos de reloj > 5 minutos disparan estado `CLOCK_TAMPERED`.
+    * **Ciclo de Vida & Guard de Ventas**: Estados `ACTIVE`, `WARNING` (≤ 7 días), `GRACE_PERIOD` (3 días de cortesía), `EXPIRED` e `INVALID_HARDWARE`. `LicenseGuard` bloquea creación de ventas en terminales no activas.
+    * **Cobertura de Pruebas**: 38 pruebas unitarias Jest aprobadas (100% PASS en `license`, `sales` y `cash-sessions`). Compilación `nest build` exitosa.
+  - **Frontend (Itachi Uchiha)**:
+    * Hook `useLicense` y `LicenseContext` con sincronización en background y soporte offline-first.
+    * `LicenseBanner`: Notificación visual preventiva a 7 días y pulso crítico en período de gracia.
+    * `LicenseLockModal`: Modal infranqueable en `z-[9999]` con copiado de Hardware ID, botón directo a WhatsApp y activación instantánea por clave.
+    * Arnés de calidad Akatsuki aprobado con 0 errores y compilación Next.js 14 exitosa (8/8 páginas estáticas).
+  - Repositorio `el-cuadre-pos`: Commit `a3673c5` subido a `origin/main`.
+
+
 ## [2026-10-25] chore/clickup-sprint-sync | Sincronización de Tareas en ClickUp: Promoción de US-05 y US-08 a COMPLETE
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: ☁️ **Pain** (PM & Scrum Master) & 🤵 **ALFRED**
