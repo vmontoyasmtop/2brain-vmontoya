@@ -12,6 +12,28 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-28] feat/el-cuadre-pos-rbac-super-admin | Panel Super Admin, Gestión de Usuarios, Matriz de Permisos Granulares (RBAC) & Desbloqueo por PIN en Mostrador (US-15)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🛡️ `ciberseguridad`
+- **Agentes Responsables**: ☁️ **Pain** (PM & Líder), 🖤 **Kakuzu** (Backend & DB), 👁️ **Itachi** (Frontend), 💀 **Hidan** (QA) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **ClickUp Task**: Promovida a **`complete`** la tarea **[👑 US-15: Panel Super Admin, Gestión de Usuarios & Matriz de Permisos Granulares (RBAC)](https://app.clickup.com/t/86bctkw7q)** (5 Story Points, ID: `86bctkw7q`).
+  - **Backend (Kakuzu)**:
+    * **Modelo User & RBAC**: Roles jerárquicos (`SUPER_ADMIN`, `ADMIN`, `CASHIER`), `pinHash` encriptado con bcrypt (4 dígitos), `permissions` (JSON) y estado `active`.
+    * **Modelo AuditLog Inmutable**: Registro estructurado de eventos críticos (`SALE_CANCELLED`, `PRICE_CHANGED`, `DISCOUNT_APPLIED`, `USER_CREATED`, `USER_UPDATED`, `USER_STATUS_CHANGED`, `PIN_AUTHORIZED`) con captura de IP y detalles JSON.
+    * **Regla Infranqueable**: Bloqueo absoluto a nivel de servicio para evitar desactivar o degradar al último `SUPER_ADMIN` activo.
+    * **Endpoint de Desbloqueo por PIN**: `POST /api/users/authorize-pin` para validación en caliente en mostrador con auditoría automática.
+    * **Guards & Roles**: `RolesGuard` y `@Roles()` protegiendo rutas sensibles.
+  - **Frontend (Itachi Uchiha)**:
+    * **Panel Táctil `/admin/usuarios`**: Vista optimizada para pantallas POS con métricas rápidas de operadores, búsqueda, filtros y tabla interactiva.
+    * **Modal `UserFormModal`**: Alta y edición de operadores con selector de rol y teclado numérico táctil en pantalla para asignación de PIN.
+    * **Modal Flotante `PinAuthModal`**: Componente de máxima prioridad para caja táctil (anulaciones, descuentos extraordinarios) con teclado touch 0-9 y soporte de teclado físico.
+    * **Control de Permisos `<Can>` & `<MaskedCost>`**: Ocultamiento estricto de costos de compra (`costPrice`) y márgenes en inventario y catálogo para cajeros.
+    * **Compilación**: 9/9 páginas estáticas generadas sin errores en Next.js 14.
+  - **Certificación de Calidad (Hidan QA)**:
+    * 57 de 57 pruebas unitarias Jest aprobadas (100% PASS) con >93% de cobertura en servicios de usuarios y auditoría.
+  - **Sincronización Git**: Commit `96dab1c` empujado a `origin/main` en `el-cuadre-pos`.
+
+
 ## [2026-10-27] sec/el-cuadre-pos-pentest-remediation | Auditoría Ofensiva (Red Team) & Remediación Criptográfica Blindada (Blue Team) en Sistema de Licencias (KATSU-01 a KATSU-05)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🛡️ `ciberseguridad`
 - **Agentes Responsables**: 💣 **Deidara** (Pentesting Red Team), 🦂 **Sasori** (Ciberseguridad Defensiva Blue Team), 🖤 **Kakuzu** (Backend & DB), 👁️ **Itachi** (Frontend) & 🤵 **ALFRED**
