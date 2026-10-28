@@ -12,6 +12,25 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-27] sec/el-cuadre-pos-pentest-remediation | Auditoría Ofensiva (Red Team) & Remediación Criptográfica Blindada (Blue Team) en Sistema de Licencias (KATSU-01 a KATSU-05)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🛡️ `ciberseguridad`
+- **Agentes Responsables**: 💣 **Deidara** (Pentesting Red Team), 🦂 **Sasori** (Ciberseguridad Defensiva Blue Team), 🖤 **Kakuzu** (Backend & DB), 👁️ **Itachi** (Frontend) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **Auditoría Ofensiva Red Team (Deidara)**:
+    * Ejecución de pentesting profundo sobre el motor de licencias offline-first y el arnés de autenticación.
+    * Identificación de 5 vulnerabilidades (CVSS hasta 9.1): KATSU-01 (Claves demo hardcodeadas en frontend y atob bypass), KATSU-02 (Spoofing de Hardware ID mono-factor MachineGuid), KATSU-03 (Bypass de operaciones financieras clave sin LicenseGuard), KATSU-04 (Manipulación offline directa de elcuadre.db sin firma de integridad HMAC), KATSU-05 (Fuerza bruta sin rate limiting y fuga de HWID en errores).
+  - **Blindaje & Remediación Defensiva Blue Team (Sasori, Kakuzu e Itachi)**:
+    * **Purga Zero-Trust en Frontend**: Eliminación total de claves demo en `useLicense.ts`. Inicialización por defecto en bloqueo (`NO_LICENSE`) y verificación criptográfica estricta delegada en el backend.
+    * **Hardware ID Multi-Factor**: Hashing SHA-256 combinando Motherboard UUID, Serial de Placa, ProcessorId, Serial de Disco físico, MachineGuid, Hostname y MAC física formateado en `CUADRE-XXXX-XXXX-XXXX-XXXX`.
+    * **Sellado de Integridad SQLite con HMAC**: Nuevo campo `integrityHash` en tabla `LicenseConfig` persistido con secreto derivado del HWID. Cualquier alteración manual externa en SQLite marca el sistema como `TAMPERED_DATABASE` bloqueando operaciones.
+    * **Cobertura Ampliada de LicenseGuard**: Protección aplicada en `openSession`, `addExpense`, `createCustomer` y `addPayment`. Operación de cierre y arqueo (`closeSession`) preservada intencionalmente para permitir cuadre contable legal de turnos aún en bloqueo.
+    * **Rate Limiting & Sanitización**: Límite de 5 intentos por minuto por IP en `POST /api/license/activate` y respuestas de error sanitizadas sin fugas de identificadores.
+  - **Certificación & Despliegue**:
+    * 38/38 pruebas unitarias Jest aprobadas (100% PASS).
+    * Compilación de Backend (`nest build`) y Frontend (`next build`) exitosas con código de salida 0.
+    * Commit `c32691d` subido y sincronizado en `origin/main` de `el-cuadre-pos`.
+
+
 ## [2026-10-27] feat/el-cuadre-pos-cryptographic-licensing | Motor Criptográfico de Licenciamiento Mensual Offline-First & Protección Anti-Tamper (US-16)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: 🖤 **Kakuzu** (Backend & DB), 🐍 **Orochimaru** (Criptografía), 👁️ **Itachi** (Frontend), ☁️ **Pain** (PM) & 🤵 **ALFRED**
