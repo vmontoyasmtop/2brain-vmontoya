@@ -12,6 +12,42 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-28] feat/smartops-uiux-stitch-redesign | Clonación de Website_smartopsve, Extracción de Tokens e Inicio de Prototipado Stitch
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🎨 `ui/ux`
+- **Agentes Responsables**: 🦋 **Konan** (UI/UX Stitch Specialist), 🎨 **Sai** (Diseño Gráfico & Arte) & 🤵 **ALFRED** (Orquestador)
+- **Resumen Ejecutivo**:
+  - **Descarga e Inspección de Repositorio**: Se realizó el clonado shallow del repositorio oficial `Website_smartopsve` (`github.com/vmontoyasmtop/Website_smartopsve`) en `raw/proyectos/repos/Website_smartopsve`.
+  - **Extracción de Identidad Visual & Tokens**:
+    - **Logo Oficial**: Isotipo hexagonal con órbita operativa y pulso en S en gradiente reactivo (`#00E5FF` a `#0072FF`) extraído de `wiki/proyectos/assets/logo_smartops_ve.svg`.
+    - **Colores Oficiales**: `#0072FF` (Azul operativo), `#3956FF` (Azul eléctrico), `#00E5FF` (Cyan neón / glow), `#00D9C3` (Cyan hover), `#0B132B` / `#1C2541` (Fondos oscuros Obsidian) y `#161F38` (Tarjetas Glassmorphism).
+    - **Tipografía**: `Montserrat` (definida en `tailwind.config.ts`), `Inter` (UI/componentes) y `Ramsha` (Display publicitario).
+  - **Entregables de Konan & Sai**:
+    - Generación de la especificación técnica de diseño en `wiki/proyectos/smartops-design-spec-stitch.md`.
+    - Maquetación y entrega del prototipo interactivo de última generación en `wiki/proyectos/prototipos/stitch_smartops_profile_booking.html` integrando: Bento Grid de perfil profesional, motor de Booking en tiempo real con selector de horarios y sincronización Google Calendar, y Agente de IA conversacional (Doble Digital) interactivo.
+
+## [2026-10-28] feat/el-cuadre-pos-pos-inventory-sync-and-users-controller | Conexión del Inventario Real al Terminal POS y Creación de UsersController en Backend
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🥷 `akatsuki`
+- **Agentes Responsables**: ☁️ **Pain** (PM & Líder), 🖤 **Kakuzu** (Backend & DB), 👁️ **Itachi** (Frontend), 💀 **Hidan** (QA) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **Incidencias Resueltas**:
+    1. *POS Desconectado de Inventario*: El terminal `/pos` usaba un arreglo estático `SAMPLE_PRODUCTS` en memoria, por lo que los productos y categorías creados o editados en `/inventario` no se reflejaban en el mostrador.
+    2. *Desincronización de Usuarios en BD y Error al Cambiar Clave/PIN de Superadmin*: Al modificar credenciales en `/admin/usuarios`, el backend no tenía `UsersController` (`/api/users`), devolviendo 404. El frontend guardaba en fallback de `localStorage`, pero la base de datos física SQLite (`prisma/elcuadre.db`) nunca se actualizaba, impidiendo iniciar sesión con las nuevas credenciales.
+  - **Misiones Ninja Ejecutadas**:
+    - 🖤 **Kakuzu (Backend & DB)**:
+      * Creación de `backend/src/users/users.controller.ts` con todos los endpoints REST: `GET /api/users`, `GET /api/users/:id`, `POST /api/users`, `PUT /api/users/:id`, `PATCH /api/users/:id`, `PATCH /api/users/:id/toggle-status`, `POST /api/users/authorize-pin`.
+      * Registro de `UsersController` en `users.module.ts`.
+      * Sincronización de credenciales de `superadmin` en SQLite (clave: `admin123`, PIN: `1234`).
+    - 👁️ **Itachi (Frontend POS)**:
+      * Conexión reactiva de `frontend/src/app/pos/page.tsx` con `api.getProducts()` mediante `loadCatalog()`.
+      * Dinamización de categorías automáticas a partir del inventario real.
+      * Soporte para escaneo directo con lectora de código de barra (tecla `Enter`).
+      * Botón táctil de sincronización rápida (`RotateCcw`) para refrescar inventario en tiempo real.
+      * Mantenimiento de `SAMPLE_PRODUCTS` como fallback de contingencia offline.
+  - **Certificación de Calidad**:
+    * 57/57 tests Jest aprobados en backend (100% PASS).
+    * Compilación Next.js (`npm run build`) 9/9 páginas estáticas con 0 errores.
+  - **Persistencia Git**: Commit `4de3c2e` empujado a `origin/main` en `el-cuadre-pos`.
+
 ## [2026-10-28] fix/el-cuadre-pos-navbar-cleanup | Eliminación de Navbar Duplicado en /admin/usuarios y Remoción de Texto Redundante en el Logo
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🎨 `ui/ux`
 - **Agentes Responsables**: 👁️ **Itachi** (Frontend Next.js), 🦋 **Konan** (UI/UX) & 🤵 **ALFRED**
