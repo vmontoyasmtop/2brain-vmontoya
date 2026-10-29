@@ -12,6 +12,22 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-28] fix/el-cuadre-pos-navbar-cleanup | Eliminación de Navbar Duplicado en /admin/usuarios y Remoción de Texto Redundante en el Logo
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🎨 `ui/ux`
+- **Agentes Responsables**: 👁️ **Itachi** (Frontend Next.js), 🦋 **Konan** (UI/UX) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **Incidencias Atendidas**:
+    1. *Navbar Duplicado*: Al navegar hacia `/admin/usuarios`, la barra de navegación superior aparecía duplicada (dos barras idénticas apiladas verticalmente).
+    2. *Texto Redundante*: El logo oficial contenía el isotipo y el nombre gráfico en el archivo SVG `/logo.svg`, pero adicionalmente se renderizaba un `<span>` con el texto `"EL CUADRE POS"` al lado, luciendo sobrecargado y redundante.
+  - **Causa Raíz Diagnosticada**:
+    - `RootLayout` (`frontend/src/app/layout.tsx`) ya renderiza `<Navbar />` de manera global para todas las vistas hijas. Sin embargo, `frontend/src/app/admin/usuarios/page.tsx` importaba y renderizaba nuevamente `<Navbar />` en su JSX interno, generando una doble barra de navegación.
+    - En `frontend/src/components/Navbar.tsx`, el `<Link href="/pos">` contenía tanto la etiqueta `<img src="/logo.svg" />` como un `<span className="... hidden xl:inline">EL CUADRE POS</span>`.
+  - **Solución Aplicada**:
+    - **`admin/usuarios/page.tsx`**: Removido `import Navbar` y la llamada redundante `<Navbar />`. Reemplazado el `<main>` interno por un `<div>` semántico que se adapta perfectamente al `<main>` del `layout.tsx`.
+    - **`Navbar.tsx`**: Removido el `<span>EL CUADRE POS</span>`. El isotipo/logo ahora brilla de forma limpia y minimalista con efecto táctil `group-hover:scale-105`.
+  - **Verificación**: Compilación de Next.js (`npm run build`) completada con éxito (9/9 páginas estáticas con 0 errores).
+  - **Persistencia Git**: Commit `30c96da` empujado a `origin/main` en `el-cuadre-pos`.
+
 ## [2026-10-28] fix/el-cuadre-pos-pin-auth-retention | Corrección de Callback y Desbloqueo Reactivo de Supervisor en Modal de PIN (/admin/usuarios)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🛡️ `ciberseguridad`
 - **Agentes Responsables**: ☁️ **Pain** (PM & Líder), 👁️ **Itachi** (Frontend), 🖤 **Kakuzu** (Backend & DB), 💀 **Hidan** (QA) & 🤵 **ALFRED**
