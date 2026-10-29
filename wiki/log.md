@@ -12,6 +12,23 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-10-28] fix/el-cuadre-pos-pin-auth-retention | Corrección de Callback y Desbloqueo Reactivo de Supervisor en Modal de PIN (/admin/usuarios)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🛡️ `ciberseguridad`
+- **Agentes Responsables**: ☁️ **Pain** (PM & Líder), 👁️ **Itachi** (Frontend), 🖤 **Kakuzu** (Backend & DB), 💀 **Hidan** (QA) & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - **Incidencia Reportada**: Al ingresar el PIN de supervisor para desbloquear `/admin/usuarios` desde una sesión de cajero, el sistema validaba el PIN pero expulsaba inmediatamente al usuario hacia `/pos` en lugar de conceder acceso a la pantalla.
+  - **Causa Raíz Diagnosticada**:
+    1. `frontend/src/components/PinAuthModal.tsx`: En `verifyPin()`, al tener éxito se llamaba `setTimeout(() => { onSuccess(res); onClose(); }, 750);`. La invocación de `onClose()` disparaba la rutina de cancelación/redirección configurada en la página padre (`router.push('/pos')`).
+    2. `frontend/src/app/admin/usuarios/page.tsx`: Inexistencia de bandera de estado de desbloqueo temporal (`isSupervisorUnlocked`). El `useEffect` reactivo de guardia detectaba `isCashier && !canManageUsers` y re-abría el modal en un bucle infinito en cada renderizado.
+    3. `backend/src/users/users.service.ts`: `authorizePin` devolvía `{ authorized: true, ... }` pero omitía `success: true` y `supervisorName`, requeridos por el tipado de `api.ts` y el modal.
+  - **Corrección & Refactor**:
+    * En `PinAuthModal.tsx`: Eliminada la llamada a `onClose()` en el flujo de éxito (se delega el control exclusivamente a `onSuccess`).
+    * En `admin/usuarios/page.tsx`: Incorporado estado `isSupervisorUnlocked`. Al autorizar con PIN, `isSupervisorUnlocked` pasa a `true`, manteniendo al operador en la vista sin disparar el reto nuevamente ni redireccionar a `/pos`.
+    * En `users.service.ts`: Respuestas unificadas con `{ success: true, authorized: true, authorizedBy, supervisorName, role, userId }`.
+    * En `users.service.spec.ts`: Actualizados los assertions unitarios (57/57 tests PASS).
+  - **Verificación**: Compilación de Next.js (`npm run build`) 9/9 páginas estáticas con 0 errores.
+  - **Persistencia Git**: Commit `0a6bc14` empujado a `origin/main` en `el-cuadre-pos`.
+
 ## [2026-10-28] feat/el-cuadre-pos-rbac-super-admin | Panel Super Admin, Gestión de Usuarios, Matriz de Permisos Granulares (RBAC) & Desbloqueo por PIN en Mostrador (US-15)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🛡️ `ciberseguridad`
 - **Agentes Responsables**: ☁️ **Pain** (PM & Líder), 🖤 **Kakuzu** (Backend & DB), 👁️ **Itachi** (Frontend), 💀 **Hidan** (QA) & 🤵 **ALFRED**
