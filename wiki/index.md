@@ -118,6 +118,16 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 - [[manual-comercializacion-2brain-enterprise|Manual de Comercialización: 2brain Enterprise & Rol del Fundador]]: Estrategia comercial, paquetes ($97, $297, $997 USD) y definición del rol ejecutivo del Señor Víctor Montoya.
 - [[guia-prueba-piloto-agente-empresarial|Guía Operativa: Prueba Piloto del Agente Empresarial]]: Paso a paso para activar y probar el Agente Empresarial en MasterGroup.
 - [[smartops-ve|Proyecto: SmartOps VE]]: Portal corporativo en Next.js 15 & Firebase.
+  - [[smartops-clickup-backlog|SmartOps VE — Backlog Oficial en ClickUp]]: 7 Historias de Usuario (44 SP) en Space `90149616220`.
+  - [[smartops-ve-ecosystem|Ecosistema SmartOps VE]]: Arquitectura de repositorios distribuidos (API, Web, Admin, Profiles).
+  - [[smartops-plan-refactor-booking-ecommerce-ai|SmartOps VE — Blueprint de Refactor]]: Booking en tiempo real, e-commerce y agentes de IA.
+  - [[smartops-design-spec-stitch|SmartOps VE — Suite Oficial en Google Stitch]]: Proyecto `projects/6994536314139933854` y tokens Obsidian Glow.
+  - [`stitch_smartops_landing_web_official.html`](file:///C:/Users/vmont/OneDrive/Desktop/2brain-vmontoya/wiki/proyectos/prototipos/stitch_smartops_landing_web_official.html): Código HTML oficial de Stitch para Landing Web Corporativa.
+  - [`stitch_smartops_profile_booking_official.html`](file:///C:/Users/vmont/OneDrive/Desktop/2brain-vmontoya/wiki/proyectos/prototipos/stitch_smartops_profile_booking_official.html): Código HTML oficial de Stitch para Perfil & Booking Storefront.
+  - [`stitch_smartops_admin_dashboard_official.html`](file:///C:/Users/vmont/OneDrive/Desktop/2brain-vmontoya/wiki/proyectos/prototipos/stitch_smartops_admin_dashboard_official.html): Código HTML oficial de Stitch para Dashboard Administrativo.
+  - 🖼️ [`stitch_smartops_landing_web.png`](file:///C:/Users/vmont/OneDrive/Desktop/2brain-vmontoya/wiki/proyectos/assets/stitch_smartops_landing_web.png): Captura 4K oficial de Google Stitch para Landing Web.
+  - 🖼️ [`stitch_smartops_profile_booking.png`](file:///C:/Users/vmont/OneDrive/Desktop/2brain-vmontoya/wiki/proyectos/assets/stitch_smartops_profile_booking.png): Captura 4K oficial de Google Stitch para Perfil y Booking.
+  - 🖼️ [`stitch_smartops_admin_dashboard.png`](file:///C:/Users/vmont/OneDrive/Desktop/2brain-vmontoya/wiki/proyectos/assets/stitch_smartops_admin_dashboard.png): Captura 4K oficial de Google Stitch para Dashboard Ejecutivo.
 - [[api-gateway|Proyecto: API Gateway Core]]: Microservicio Gateway NestJS & AWS S3.
 
 ### ⛪ 4. Ministerial (Pastorado & Teología)

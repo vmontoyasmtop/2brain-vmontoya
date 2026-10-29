@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartOps VE | Ing. Víctor Montoya — Cloud &amp; Retail Architecture</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#f3e8ff",
+            "primary-container": "#00e5ff",
+            "secondary": "#4edea3",
+            "surface-container-highest": "#2c344d",
+            "tertiary-fixed-dim": "#d2bbff",
+            "surface-bright": "#313852",
+            "on-surface": "#dbe1ff",
+            "primary-fixed": "#9cf0ff",
+            "error": "#ffb4ab",
+            "surface-tint": "#00daf3",
+            "on-surface-variant": "#bac9cc",
+            "on-tertiary": "#3f008e",
+            "surface-container-lowest": "#050d25",
+            "secondary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "inverse-surface": "#dbe1ff",
+            "on-tertiary-fixed": "#25005a",
+            "surface-container-high": "#212942",
+            "on-primary-fixed": "#001f24",
+            "secondary-container": "#00a572",
+            "on-error-container": "#ffdad6",
+            "outline": "#849396",
+            "on-tertiary-container": "#6e25de",
+            "on-secondary-fixed": "#002113",
+            "background": "#0a122a",
+            "tertiary-fixed": "#eaddff",
+            "on-error": "#690005",
+            "surface-variant": "#2c344d",
+            "inverse-on-surface": "#282f49",
+            "primary": "#c3f5ff",
+            "primary-fixed-dim": "#00daf3",
+            "surface-container": "#171e37",
+            "inverse-primary": "#006875",
+            "surface-dim": "#0a122a",
+            "surface": "#0a122a",
+            "surface-container-low": "#131a33",
+            "on-primary-container": "#00626e",
+            "on-secondary": "#003824",
+            "secondary-fixed": "#6ffbbe",
+            "tertiary-container": "#dbc7ff",
+            "on-primary-fixed-variant": "#004f58",
+            "outline-variant": "#3b494c",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary": "#00363d",
+            "on-background": "#dbe1ff",
+            "on-secondary-container": "#00311f",
+            "error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "3rem",
+            "space-2xl": "4rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Geist"],
+            "label-md": ["JetBrains Mono"],
+            "display-lg-mobile": ["Space Grotesk"],
+            "label-lg": ["JetBrains Mono"],
+            "headline-sm": ["Space Grotesk"],
+            "body-sm": ["Geist"],
+            "label-sm": ["JetBrains Mono"],
+            "body-md": ["Geist"],
+            "display-lg": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Subtle Cyber Ambient Lighting */
+    .cyan-bloom {
+      box-shadow: 0 0 24px -4px rgba(0, 229, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .cyan-bloom-active {
+      box-shadow: 0 0 32px 0 rgba(0, 229, 255, 0.35), inset 0 1px 0 rgba(0, 229, 255, 0.4);
+    }
+    .emerald-pulse {
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-surface-container-lowest relative overflow-x-hidden">
+<!-- Ambient Glow Backdrop Elements -->
+<div class="fixed top-[-10%] left-[20%] w-[600px] h-[600px] bg-primary-container/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-[10%] right-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+<div class="fixed top-[40%] right-[35%] w-[450px] h-[450px] bg-secondary/5 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+<!-- ==================== 1. TOP NAVBAR (Shared Component) ==================== -->
+<header class="docked full-width top-0 sticky z-50 bg-surface-container-high/70 dark:bg-surface-container-high/70 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_4px_24px_-4px_rgba(0,229,255,0.15)]">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+<!-- Brand & Status -->
+<div class="flex items-center gap-6">
+<a class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight flex items-center gap-2 group" href="#">
+<div class="relative flex items-center justify-center w-9 h-9 rounded bg-surface-container border border-primary-container/40 group-hover:border-primary-container transition-all">
+<span class="material-symbols-outlined text-primary-container">cloud_sync</span>
+<span class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-secondary ring-2 ring-background animate-pulse"></span>
+</div>
+<div class="flex flex-col">
+<span class="leading-none text-headline-sm font-headline-sm text-primary group-hover:text-primary-container transition-colors">SmartOps VE</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal tracking-wider">Cloud &amp; Retail Architecture</span>
+</div>
+</a>
+<!-- Live Telemetry Capsule (Desktop) -->
+<div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container-lowest/80 border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+<span class="text-secondary font-medium">LIVE</span>
+<span class="text-outline">|</span>
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Caracas / Miami (GMT-4) 15:42</span>
+</div>
+</div>
+<!-- Navigation Links (Active Intent: 'Agendar Cita') -->
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-primary-container dark:text-primary-container font-label-lg text-label-lg border-b-2 border-primary-container pb-1" href="#booking">Agendar Cita</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface transition-colors pb-1" href="#servicios">Servicios</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface transition-colors pb-1" href="#arquitectura">Arquitectura</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface transition-colors pb-1" href="#credenciales">Credenciales</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Secondary NFC Action -->
+<button class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container/60 hover:bg-surface-container-highest border border-outline-variant/40 hover:border-primary-container/40 text-on-surface font-label-md text-label-md transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-primary-container">nfc</span>
+<span>Descargar vCard</span>
+</button>
+<!-- Primary WhatsApp Action -->
+<a class="flex items-center gap-2 px-3.5 py-1.5 rounded bg-primary-container text-surface-container-lowest hover:bg-primary-fixed font-label-md text-label-md font-bold transition-all shadow-[0_0_16px_rgba(0,229,255,0.3)] active:scale-[0.98]" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">contact_phone</span>
+<span>WhatsApp Directo</span>
+</a>
+</div>
+</div>
+</header>
+<!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-24 space-y-12">
+<!-- ==================== 2. BENTO GRID HERO SECTION ==================== -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Profile Card (Span 8 Cols) -->
+<div class="lg:col-span-8 p-6 md:p-8 rounded-xl bg-surface-container/70 border border-primary-container/20 backdrop-blur-md relative overflow-hidden flex flex-col justify-between">
+<!-- Decorative Header Gradient Line -->
+<div class="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-primary-container/60 via-primary/30 to-transparent"></div>
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<!-- Profile Avatar Frame with NFC Badge -->
+<div class="relative shrink-0">
+<div class="w-24 h-24 md:w-28 md:h-28 rounded-lg overflow-hidden border-2 border-primary-container/40 p-0.5 bg-surface-container-high shadow-[0_0_20px_rgba(0,229,255,0.2)]">
+<img alt="Ing. Víctor Montoya Cloud Architect Executive Profile" class="w-full h-full object-cover rounded" data-alt="Executive portrait of Ing. Víctor Montoya, a Venezuelan Cloud Solutions Architect in his mid-30s wearing a modern tailored dark charcoal blazer over a high-tech obsidian crewneck. Set against a high-contrast dark enterprise command center background illuminated with neon cyan and cool blue ambient server status lights. Minimalist, authoritative, sharp cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ3IzgfaKu66V4Qf375sxbtxvCxENRHBqHhAnTczIFR0koCR_1cpSft5FcfE9XN3fUG89rVxpWPhwe1iXNRwO7d0zDND68WGESxF62eOf91-PzUeWqT_ozVvVW9NGMZqltSlMuaJffTIvbtModRxikgGbd3rTGC9TlNM0P9EM9YZTeOqpNCrae7d4mOA3pp5VzGR3-bvkIX1NvvFnS-E4gJjlODPlLMYdJz-kaDld-2yp0nZO3YMnicJvZiX_jLG60UYcSyAEDs1k"/>
+</div>
+<div class="absolute -bottom-2 -right-1 px-2 py-0.5 rounded bg-surface-container-lowest border border-primary-container/40 text-primary font-label-sm text-label-sm flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[12px] text-secondary">verified</span>
+<span>CERT</span>
+</div>
+</div>
+<!-- Titles & Live Status -->
+<div class="space-y-2.5 flex-1">
+<div class="flex flex-wrap items-center gap-2.5">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Ing. Víctor Montoya</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/20 border border-secondary/40 text-secondary font-label-md text-label-md emerald-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+<span>Available Today • Respuesta &lt; 15 min</span>
+</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary-fixed-dim font-medium">
+              Senior Cloud Solutions Architect &amp; Retail Systems Strategist
+            </p>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-2xl">
+              Diseño e implementación de infraestructuras cloud resilientes, orquestación de microservicios e integración de ecosistemas POS omnicanal para retail corporativo de alto tráfico en LATAM y EE.UU.
+            </p>
+</div>
+</div>
+<!-- Direct Action Bar & NFC Sync -->
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3">
+<a class="px-5 py-2.5 rounded bg-primary-container text-surface-container-lowest font-headline-sm text-headline-sm font-bold flex items-center gap-2 hover:bg-primary-fixed transition-all cyan-bloom active:scale-[0.98]" href="#booking">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span>Agendar Sesión Directa ($30)</span>
+</a>
+<a class="px-4 py-2.5 rounded bg-surface-container-high/80 border border-primary-container/30 hover:border-primary-container text-on-surface font-label-lg text-label-lg flex items-center gap-2 transition-all active:scale-[0.98]" href="https://wa.me/">
+<span class="material-symbols-outlined text-secondary">chat</span>
+<span>WhatsApp Business</span>
+</a>
+</div>
+<!-- NFC / Wallet Pass Chip -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container-lowest/90 border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary-container text-[16px]">nfc</span>
+<span>Añadir a Apple / Google Wallet</span>
+<span class="text-secondary font-bold">READY</span>
+</div>
+</div>
+</div>
+<!-- Credential & Impact Matrix (Span 4 Cols) -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-3.5">
+<!-- Metric Card 1 -->
+<div class="p-4 rounded-xl bg-surface-container/60 border border-outline-variant/30 backdrop-blur-md flex flex-col justify-between hover:border-primary-container/40 transition-colors">
+<div class="flex items-center justify-between text-primary-container">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+<span class="font-label-sm text-label-sm text-outline">EXP</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">12+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Años de Experiencia Enterprise</div>
+</div>
+</div>
+<!-- Metric Card 2 -->
+<div class="p-4 rounded-xl bg-surface-container/60 border border-outline-variant/30 backdrop-blur-md flex flex-col justify-between hover:border-primary-container/40 transition-colors">
+<div class="flex items-center justify-between text-secondary">
+<span class="material-symbols-outlined text-[24px]">speed</span>
+<span class="font-label-sm text-label-sm text-outline">UPTIME</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg font-bold text-secondary tracking-tight">99.99%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">SLA Architecture Guarantee</div>
+</div>
+</div>
+<!-- Metric Card 3 -->
+<div class="p-4 rounded-xl bg-surface-container/60 border border-outline-variant/30 backdrop-blur-md flex flex-col justify-between hover:border-primary-container/40 transition-colors">
+<div class="flex items-center justify-between text-primary-container">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+<span class="font-label-sm text-label-sm text-outline">RETAIL</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">140+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Deployments POS Optimizados</div>
+</div>
+</div>
+<!-- Metric Card 4 -->
+<div class="p-4 rounded-xl bg-surface-container/60 border border-outline-variant/30 backdrop-blur-md flex flex-col justify-between hover:border-primary-container/40 transition-colors">
+<div class="flex items-center justify-between text-primary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-outline">CERT</span>
+</div>
+<div class="mt-3">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">AWS &amp; Azure</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Solutions Architect Professional</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Architecture Blueprint & Tech Stack Pill Matrix -->
+<section class="p-4 rounded-xl bg-surface-container-low/90 border border-outline-variant/20 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-container text-[18px]">terminal</span>
+<span class="text-on-surface font-semibold">Core Stack &amp; Enterprise Tooling:</span>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant/30 text-on-surface font-label-sm text-label-sm hover:border-primary-container/60 transition-colors flex items-center gap-1.5">
+<span class="text-primary-container font-mono">+</span> AWS ECS / Lambda
+        </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant/30 text-on-surface font-label-sm text-label-sm hover:border-primary-container/60 transition-colors flex items-center gap-1.5">
+<span class="text-primary-container font-mono">+</span> Terraform IaC
+        </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant/30 text-on-surface font-label-sm text-label-sm hover:border-primary-container/60 transition-colors flex items-center gap-1.5">
+<span class="text-primary-container font-mono">+</span> Kubernetes &amp; Docker
+        </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant/30 text-on-surface font-label-sm text-label-sm hover:border-primary-container/60 transition-colors flex items-center gap-1.5">
+<span class="text-primary-container font-mono">+</span> Shopify POS Enterprise
+        </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant/30 text-on-surface font-label-sm text-label-sm hover:border-primary-container/60 transition-colors flex items-center gap-1.5">
+<span class="text-primary-container font-mono">+</span> Odoo ERP Integration
+        </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant/30 text-on-surface font-label-sm text-label-sm hover:border-primary-container/60 transition-colors flex items-center gap-1.5">
+<span class="text-primary-container font-mono">+</span> Cloudflare Zero Trust
+        </span>
+</div>
+</section>
+<!-- ==================== 3. SEGMENTED NAVIGATION CONTROL ==================== -->
+<div class="flex justify-center pt-2">
+<div class="inline-flex p-1.5 rounded-full bg-surface-container-low border border-primary-container/20 backdrop-blur-lg">
+<button class="px-6 py-2 rounded-full bg-primary-container text-surface-container-lowest font-label-lg text-label-lg font-bold flex items-center gap-2 shadow-[0_0_16px_rgba(0,229,255,0.4)]">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Agendar Cita (Booking en Tiempo Real)</span>
+</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+<span>Servicios &amp; Tienda Digital (Packs &amp; Consultoría)</span>
+</button>
+</div>
+</div>
+<!-- ==================== 4. REAL-TIME INTERACTIVE BOOKING ENGINE ==================== -->
+<section class="p-6 md:p-8 rounded-xl bg-surface-container/80 border border-primary-container/25 backdrop-blur-xl relative space-y-8" id="booking">
+<!-- Section Watermark Blueprint Accent -->
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4">
+<div>
+<div class="flex items-center gap-2 text-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>DIRECT EXECUTIVE SCHEDULING</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Motor de Reserva &amp; Diagnóstico Inmediato</h2>
+</div>
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded bg-secondary-container/15 border border-secondary/30 text-secondary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Sincronizado en tiempo real con Google Calendar</span>
+</div>
+</div>
+<!-- Step 1: Select Service Package -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center font-bold text-xs">1</span>
+            SELECCIONA EL NIVEL DE CONSULTORÍA
+          </span>
+<span class="font-label-sm text-label-sm text-outline">Duración y alcance garantizados</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card A: Selected -->
+<div class="p-5 rounded-lg bg-surface-container-high/90 border-2 border-primary-container cyan-bloom relative cursor-pointer transition-all">
+<div class="absolute -top-2.5 right-4 px-2 py-0.5 rounded bg-primary-container text-surface-container-lowest font-label-sm text-label-sm font-bold">
+              POPULAR
+            </div>
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Diagnóstico Express Cloud &amp; Retail</span>
+<span class="font-headline-md text-headline-md font-bold text-primary-container">$30 <span class="text-xs font-normal text-on-surface-variant">USD</span></span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary-container">timer</span>
+<span>30 minutos • Sesión 1-a-1 Google Meet</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+              Revisión técnica de cuellos de botella, latencia en POS y resumen de arquitectura accionable en formato PDF en 2 horas.
+            </p>
+</div>
+<!-- Card B -->
+<div class="p-5 rounded-lg bg-surface-container/50 border border-outline-variant/30 hover:border-primary-container/40 cursor-pointer transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Auditoría Resiliencia &amp; Costos</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">$85 <span class="text-xs font-normal text-on-surface-variant">USD</span></span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px] text-outline">timer</span>
+<span>60 minutos • Deep-Dive Técnico</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+              Auditoría profunda de stacks AWS/Azure, benchmarking de latencia omnicanal y roadmap de ahorro FinOps de hasta 35%.
+            </p>
+</div>
+<!-- Card C -->
+<div class="p-5 rounded-lg bg-surface-container/50 border border-outline-variant/30 hover:border-primary-container/40 cursor-pointer transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Arquitectura Omnicanal &amp; POS</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">$140 <span class="text-xs font-normal text-on-surface-variant">USD</span></span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px] text-outline">timer</span>
+<span>90 minutos • Executive Roadmap</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+              Diseño estructural de sincronización de inventario físico-digital en tiempo real, integración ERP y contingencias offline.
+            </p>
+</div>
+</div>
+</div>
+<!-- Step 2 & 3: Horizon Date & Time Selector Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
+<!-- Date Selector (Span 7 Cols) -->
+<div class="lg:col-span-7 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center font-bold text-xs">2</span>
+              SELECCIONA FECHA (HORIZONTE 5 DÍAS)
+            </span>
+<span class="font-label-sm text-label-sm text-secondary">4 horarios libres hoy</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+<!-- Day 1 -->
+<button class="p-3 rounded-lg bg-surface-container-high/40 border border-outline-variant/30 text-center hover:border-primary-container/40 transition-colors">
+<div class="font-label-sm text-label-sm text-on-surface-variant">LUN</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">24</div>
+<div class="font-label-sm text-label-sm text-outline">FEB</div>
+</button>
+<!-- Day 2 (Active/Selected) -->
+<button class="p-3 rounded-lg bg-primary-container/10 border-2 border-primary-container text-center cyan-bloom relative">
+<span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<div class="font-label-sm text-label-sm text-primary-container font-bold">MAR</div>
+<div class="font-headline-md text-headline-md font-bold text-primary-container">25</div>
+<div class="font-label-sm text-label-sm text-primary-container font-semibold">FEB</div>
+</button>
+<!-- Day 3 -->
+<button class="p-3 rounded-lg bg-surface-container-high/40 border border-outline-variant/30 text-center hover:border-primary-container/40 transition-colors">
+<div class="font-label-sm text-label-sm text-on-surface-variant">MIÉ</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">26</div>
+<div class="font-label-sm text-label-sm text-outline">FEB</div>
+</button>
+<!-- Day 4 -->
+<button class="p-3 rounded-lg bg-surface-container-high/40 border border-outline-variant/30 text-center hover:border-primary-container/40 transition-colors">
+<div class="font-label-sm text-label-sm text-on-surface-variant">JUE</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">27</div>
+<div class="font-label-sm text-label-sm text-outline">FEB</div>
+</button>
+<!-- Day 5 -->
+<button class="p-3 rounded-lg bg-surface-container-high/40 border border-outline-variant/30 text-center hover:border-primary-container/40 transition-colors col-span-2 sm:col-span-1">
+<div class="font-label-sm text-label-sm text-on-surface-variant">VIE</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface">28</div>
+<div class="font-label-sm text-label-sm text-outline">FEB</div>
+</button>
+</div>
+</div>
+<!-- Available Time Slots (Span 5 Cols) -->
+<div class="lg:col-span-5 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center font-bold text-xs">3</span>
+              HORARIOS DISPONIBLES (GMT-4)
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<button class="py-2.5 px-3 rounded bg-surface-container-high/60 border border-outline-variant/30 text-on-surface font-label-md text-label-md hover:border-primary-container/40 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>09:30 AM</span>
+</button>
+<!-- Active Slot -->
+<button class="py-2.5 px-3 rounded bg-primary-container text-surface-container-lowest font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 cyan-bloom">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>11:00 AM</span>
+</button>
+<button class="py-2.5 px-3 rounded bg-surface-container-high/60 border border-outline-variant/30 text-on-surface font-label-md text-label-md hover:border-primary-container/40 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>02:30 PM</span>
+</button>
+<button class="py-2.5 px-3 rounded bg-surface-container-high/60 border border-outline-variant/30 text-on-surface font-label-md text-label-md hover:border-primary-container/40 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>04:15 PM</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Step 4: Summary & Instant Checkout Drawer -->
+<div class="p-6 rounded-lg bg-surface-container-lowest/90 border border-primary-container/30 space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-outline-variant/30 pb-4">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider">Resumen de la Cita Confirmada</span>
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">event_available</span>
+<span>Martes 25 de Febrero, 2026 — 11:00 AM (GMT-4)</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+              Diagnóstico Express Cloud &amp; Retail (30 min) con el <strong class="text-on-surface">Ing. Víctor Montoya</strong>
+</p>
+</div>
+<div class="text-left md:text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Inversión Total</span>
+<div class="font-headline-lg text-headline-lg font-bold text-primary-container">$30.00 USD</div>
+<span class="font-label-sm text-label-sm text-secondary">Garantía de Devolución 100%</span>
+</div>
+</div>
+<!-- Payment Channels & Direct Checkout Trigger -->
+<div class="space-y-4">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MÉTODOS DE PAGO DISPONIBLES:</span>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Zelle</span>
+<span class="text-outline">/</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Binance USDT</span>
+<span class="text-outline">/</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Pago Móvil (VES)</span>
+<span class="text-outline">/</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Tarjeta Internacional</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:flex-1 py-3 px-6 rounded bg-primary-container text-surface-container-lowest font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 hover:bg-primary-fixed transition-all cyan-bloom active:scale-[0.98]">
+<span class="material-symbols-outlined text-[22px]">video_call</span>
+<span>Confirmar y Recibir Acceso Google Meet</span>
+</button>
+<a class="w-full sm:w-auto py-3 px-6 rounded bg-surface-container-high border border-outline-variant/40 hover:border-primary-container/40 text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all" href="https://wa.me/">
+<span class="material-symbols-outlined text-secondary">support_agent</span>
+<span>Consultar por WhatsApp Primero</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== 5. RETAIL & ARCHITECTURE SHOWCASE QUICK TEASER ==================== -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="p-6 rounded-xl bg-surface-container/60 border border-outline-variant/30 backdrop-blur-md space-y-3">
+<div class="w-10 h-10 rounded bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">security</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">SOC2 &amp; PCI-DSS Ready</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+          Arquitecturas cloud conformes con estándares de procesamiento transaccional bancario y resguardo seguro de llaves de pago POS en caja.
+        </p>
+</div>
+<!-- Feature 2 -->
+<div class="p-6 rounded-xl bg-surface-container/60 border border-outline-variant/30 backdrop-blur-md space-y-3">
+<div class="w-10 h-10 rounded bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">network_check</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Offline-First Retail Fallback</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+          Protocolos de tolerancia a fallas de internet en sucursales físicas: sincronización delta asíncrona inmediata al recuperar conectividad.
+        </p>
+</div>
+<!-- Feature 3 -->
+<div class="p-6 rounded-xl bg-surface-container/60 border border-outline-variant/30 backdrop-blur-md space-y-3">
+<div class="w-10 h-10 rounded bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">FinOps Cloud Cost Optimization</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+          Reingeniería de contenedores e instancias reservadas para reducir la factura mensual en AWS o Microsoft Azure sin degradar rendimiento.
+        </p>
+</div>
+</section>
+</main>
+<!-- ==================== 6. FLOATING AI EXECUTIVE COPILOT WIDGET ==================== -->
+<aside class="fixed bottom-20 md:bottom-8 right-6 z-40 max-w-sm hidden sm:block">
+<div class="p-3.5 rounded-xl bg-surface-container-high/90 border border-primary-container/40 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,229,255,0.25)] flex items-start gap-3">
+<div class="relative shrink-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest border border-primary-container/60 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">smart_toy</span>
+</div>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-high animate-ping"></span>
+</div>
+<div class="space-y-1 text-left flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary-container font-bold">SmartOps Copilot AI</span>
+<span class="font-label-sm text-label-sm text-outline">Online</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm line-clamp-2">
+          ¿Dudas sobre migración o disponibilidad inmediata? Chatea con mi IA ejecutiva entrenada en mis arquitecturas.
+        </p>
+<button class="font-label-sm text-label-sm text-primary-container hover:underline flex items-center gap-1 pt-0.5">
+<span>Abrir consulta instantánea</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- ==================== MOBILE BOTTOM NAVBAR (Shared Component) ==================== -->
+<nav class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-surface-container-high/85 dark:bg-surface-container-high/85 backdrop-blur-lg border-t border-outline-variant/40 shadow-[0_-4px_20px_rgba(0,229,255,0.1)] flex justify-around items-center px-4 py-2">
+<!-- Active Tab: Agendar -->
+<a class="flex flex-col items-center justify-center text-primary-container dark:text-primary-container bg-surface-container-highest/60 rounded-xl px-3 py-1.5 active:scale-95 transition-transform" href="#booking">
+<span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
+<span class="font-label-sm text-label-sm">Agendar</span>
+</a>
+<!-- Tab 2: Servicios -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-all" href="#servicios">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span class="font-label-sm text-label-sm">Servicios</span>
+</a>
+<!-- Tab 3: Stack -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-all" href="#arquitectura">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-label-sm text-label-sm">Stack</span>
+</a>
+<!-- Tab 4: Copilot -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-3 py-1.5 hover:text-primary active:scale-95 transition-all" href="#copilot">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+<span class="font-label-sm text-label-sm">Copilot</span>
+</a>
+</nav>
+<!-- ==================== 7. FOOTER (Shared Component) ==================== -->
+<footer class="docked full-width bottom bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 mt-12 mb-16 md:mb-0">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 max-w-7xl mx-auto gap-4">
+<!-- Brand & Copyright -->
+<div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+<span class="text-headline-sm font-headline-sm font-bold text-primary">SmartOps VE</span>
+<span class="hidden sm:inline text-outline">|</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">
+          © 2026 SmartOps VE | Ing. Víctor Montoya — Cloud Infrastructure &amp; Retail Architectural Precision. Todos los derechos reservados.
+        </span>
+</div>
+<!-- Compliance Links -->
+<div class="flex flex-wrap items-center justify-center gap-4 text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary-container transition-colors duration-200" href="#">Garantía SLA 99.99%</a>
+<a class="hover:text-primary-container transition-colors duration-200" href="#">Verificación AWS &amp; Azure</a>
+<a class="hover:text-primary-container transition-colors duration-200" href="#">Políticas de Reserva</a>
+<a class="hover:text-primary-container transition-colors duration-200" href="#">Soporte Emergencias</a>
+</div>
+</div>
+</footer>
+</body></html>

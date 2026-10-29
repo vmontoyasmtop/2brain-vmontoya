@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartOps VE — Stitch Admin Dashboard 2026</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Montserrat & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            smartops: {
+              blue: '#0072FF',
+              cyan: '#00E5FF',
+              dark: '#0B132B',
+              slate: '#1C2541',
+              card: '#161F38',
+              hover: '#00D9C3',
+            }
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 25px -5px rgba(0, 229, 255, 0.35)',
+            'glow-blue': '0 0 25px -5px rgba(0, 114, 255, 0.35)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Montserrat', 'Inter', sans-serif;
+    }
+    .glass-card {
+      background: rgba(22, 31, 56, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 229, 255, 0.12);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 229, 255, 0.3);
+    }
+    .glass-input {
+      background: rgba(11, 19, 43, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glass-input:focus {
+      border-color: #00E5FF;
+      outline: none;
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B132B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1C2541;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00E5FF;
+    }
+  </style>
+</head>
+<body class="bg-[#0B132B] text-slate-100 min-h-screen flex selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- BACKGROUND GLOW EFFECTS -->
+  <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-gradient-to-br from-cyan-500/15 to-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-gradient-to-tl from-blue-600/15 to-cyan-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <!-- SIDEBAR NAVEGACIÓN -->
+  <aside class="w-64 border-r border-cyan-500/10 bg-[#0B132B]/90 backdrop-blur-xl flex flex-col justify-between hidden md:flex shrink-0 z-30">
+    <div class="p-5 space-y-6">
+      <!-- LOGO -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1C2541] to-[#0B132B] border border-cyan-500/30 flex items-center justify-center shadow-glow-cyan">
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="font-extrabold text-lg text-white font-montserrat">SmartOps</span>
+          <span class="text-[9px] font-black px-1.5 py-0.2 rounded bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950">ADMIN</span>
+        </div>
+      </div>
+
+      <!-- BOTÓN COMMAND BAR -->
+      <button onclick="toggleCommandBar()" class="w-full glass-input text-slate-400 px-3 py-2 rounded-xl text-xs flex items-center justify-between hover:text-white transition-all">
+        <span class="flex items-center gap-2"><i data-lucide="search" class="w-3.5 h-3.5 text-cyan-400"></i> Buscar...</span>
+        <kbd class="px-1.5 py-0.5 rounded bg-slate-800 text-[10px] font-mono border border-slate-700">Ctrl+K</kbd>
+      </button>
+
+      <!-- MENÚ -->
+      <nav class="space-y-1 text-xs font-semibold">
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 shadow-glow-cyan">
+          <i data-lucide="layout-dashboard" class="w-4 h-4 text-cyan-400"></i>
+          <span>Resumen &amp; Métricas</span>
+        </a>
+        <a href="#kanban" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Kanban de Citas</span>
+          <span class="ml-auto text-[10px] bg-cyan-950 text-cyan-400 font-mono px-1.5 py-0.2 rounded border border-cyan-500/20">4 Hoy</span>
+        </a>
+        <a href="#availability" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all">
+          <i data-lucide="clock" class="w-4 h-4"></i>
+          <span>Disponibilidad &amp; Sync</span>
+        </a>
+        <a href="#ai-trainer" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all">
+          <i data-lucide="bot" class="w-4 h-4"></i>
+          <span>Agente IA (Doble Digital)</span>
+        </a>
+        <a href="#ecommerce" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>Catálogo &amp; Órdenes</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- USUARIO LOGUEADO -->
+    <div class="p-4 border-t border-cyan-500/10 flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-400 to-blue-600 p-0.5">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" class="w-full h-full object-cover rounded-[10px]">
+      </div>
+      <div class="text-xs overflow-hidden">
+        <div class="font-bold text-white truncate">Víctor Montoya</div>
+        <div class="text-[10px] text-cyan-400 truncate">Pro Tenant • Activo</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="flex-1 flex flex-col min-h-screen overflow-y-auto">
+    <!-- TOP HEADER -->
+    <header class="sticky top-0 z-20 backdrop-blur-md bg-[#0B132B]/80 border-b border-cyan-500/10 px-6 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <h2 class="font-extrabold text-base text-white">Dashboard Ejecutivo</h2>
+        <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Google Calendar Sincronizado
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="window.open('stitch_smartops_profile_booking.html', '_blank')" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-950 font-bold text-xs flex items-center gap-2 shadow-glow-cyan hover:opacity-95">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <span>Ver Perfil Público</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CUERPO DEL DASHBOARD -->
+    <main class="p-6 space-y-6 max-w-7xl">
+
+      <!-- 1. BRIEFING INTELIGENTE DE IA -->
+      <div class="glass-card rounded-3xl p-5 border border-cyan-400/30 shadow-glow-cyan relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300 shrink-0">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <h3 class="font-bold text-sm text-white">Briefing Matutino — SmartOps AI Copilot</h3>
+            <p class="text-xs text-slate-300">
+              Hoy tienes <strong>4 citas programadas</strong> (3 virtuales por Google Meet, 1 presencial). Tu agente de IA cerró <strong>2 reservas automáticas</strong> anoche y atendió <strong>7 consultas</strong> de tarifas.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <button onclick="alert('Enviando recordatorio de WhatsApp a los 4 clientes de hoy...')" class="px-3.5 py-2 rounded-xl glass-input text-xs font-semibold text-emerald-300 border-emerald-500/30 hover:bg-emerald-500/10 flex items-center gap-2">
+            <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+            <span>Confirmar Citas WhatsApp</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. BENTO GRID DE MÉTRICAS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Tarjeta 1 -->
+        <div class="glass-card rounded-2xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span>Ingresos del Mes</span>
+            <i data-lucide="dollar-sign" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <div class="text-2xl font-black text-white">$1,480.00</div>
+          <div class="text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+            <i data-lucide="trending-up" class="w-3 h-3"></i> +24% vs mes anterior
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="glass-card rounded-2xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span>Citas Completadas</span>
+            <i data-lucide="calendar-check-2" class="w-4 h-4 text-cyan-400"></i>
+          </div>
+          <div class="text-2xl font-black text-white">38 Citas</div>
+          <div class="text-[11px] text-cyan-400 font-semibold flex items-center gap-1">
+            <i data-lucide="check" class="w-3 h-3"></i> 97% tasa de asistencia
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="glass-card rounded-2xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span>Conversión Agente IA</span>
+            <i data-lucide="bot" class="w-4 h-4 text-blue-400"></i>
+          </div>
+          <div class="text-2xl font-black text-white">41.5%</div>
+          <div class="text-[11px] text-blue-300 font-semibold flex items-center gap-1">
+            <i data-lucide="zap" class="w-3 h-3"></i> 17 reservas directas por chat
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="glass-card rounded-2xl p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span>Pases Wallet / NFC</span>
+            <i data-lucide="wallet" class="w-4 h-4 text-purple-400"></i>
+          </div>
+          <div class="text-2xl font-black text-white">142 Pases</div>
+          <div class="text-[11px] text-purple-300 font-semibold flex items-center gap-1">
+            <i data-lucide="smartphone" class="w-3 h-3"></i> Guardados en Apple/Google
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. KANBAN INTERACTIVO DE CITAS -->
+      <section id="kanban" class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="space-y-1">
+            <h3 class="font-extrabold text-base text-white flex items-center gap-2">
+              <i data-lucide="columns-3" class="w-4 h-4 text-cyan-400"></i>
+              Pipeline de Citas del Día (Kanban)
+            </h3>
+            <p class="text-xs text-slate-400">Gestiona y actualiza el estado de las citas en tiempo real.</p>
+          </div>
+          <button onclick="alert('Abriendo modal para agendar cita manual...')" class="px-3 py-1.5 rounded-xl glass-input text-xs font-bold text-cyan-300 hover:border-cyan-400 flex items-center gap-1.5">
+            <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+            <span>Nueva Cita</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <!-- Columna 1: Confirmadas -->
+          <div class="glass-card rounded-2xl p-3.5 space-y-3">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-300 border-b border-slate-800 pb-2">
+              <span class="flex items-center gap-1.5 text-cyan-300">
+                <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Confirmadas (2)
+              </span>
+            </div>
+            <div class="space-y-2.5">
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="font-bold text-white">Carlos Mendoza</span>
+                  <span class="text-cyan-400 font-mono font-bold">09:30 AM</span>
+                </div>
+                <div class="text-xs text-slate-300">Consultoría Cloud &amp; POS</div>
+                <div class="flex items-center justify-between text-[10px] text-slate-400 pt-1 border-t border-slate-800/60">
+                  <span class="text-emerald-400">Google Meet</span>
+                  <button onclick="moveCard(this, 'En Curso')" class="text-cyan-300 hover:underline">Iniciar ▶</button>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="font-bold text-white">Dra. Valeria Gómez</span>
+                  <span class="text-cyan-400 font-mono font-bold">11:00 AM</span>
+                </div>
+                <div class="text-xs text-slate-300">Auditoría OWASP</div>
+                <div class="flex items-center justify-between text-[10px] text-slate-400 pt-1 border-t border-slate-800/60">
+                  <span class="text-emerald-400">Google Meet</span>
+                  <button onclick="moveCard(this, 'En Curso')" class="text-cyan-300 hover:underline">Iniciar ▶</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna 2: En Sala / Espera -->
+          <div class="glass-card rounded-2xl p-3.5 space-y-3">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-300 border-b border-slate-800 pb-2">
+              <span class="flex items-center gap-1.5 text-amber-300">
+                <span class="w-2 h-2 rounded-full bg-amber-400"></span> En Espera (1)
+              </span>
+            </div>
+            <div class="space-y-2.5">
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-amber-500/20 space-y-2">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="font-bold text-white">Ing. Luis Páez</span>
+                  <span class="text-amber-400 font-mono font-bold">02:30 PM</span>
+                </div>
+                <div class="text-xs text-slate-300">Revisión de Arquitectura DB</div>
+                <div class="flex items-center justify-between text-[10px] text-slate-400 pt-1 border-t border-slate-800/60">
+                  <span class="text-slate-400">En Sala Virtual</span>
+                  <button onclick="moveCard(this, 'En Curso')" class="text-cyan-300 hover:underline">Admitir 🚪</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna 3: En Curso -->
+          <div class="glass-card rounded-2xl p-3.5 space-y-3">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-300 border-b border-slate-800 pb-2">
+              <span class="flex items-center gap-1.5 text-emerald-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> En Curso (0)
+              </span>
+            </div>
+            <div id="colEnCurso" class="p-4 rounded-xl border border-dashed border-slate-800 text-center text-xs text-slate-500">
+              Ninguna reunión en llamada ahora.
+            </div>
+          </div>
+
+          <!-- Columna 4: Completadas -->
+          <div class="glass-card rounded-2xl p-3.5 space-y-3">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-300 border-b border-slate-800 pb-2">
+              <span class="flex items-center gap-1.5 text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-slate-400"></span> Completadas (1)
+              </span>
+            </div>
+            <div class="space-y-2.5">
+              <div class="p-3 rounded-xl bg-slate-900/30 border border-slate-800/60 opacity-80 space-y-1.5">
+                <div class="flex items-center justify-between text-[11px]">
+                  <span class="font-bold text-slate-300">Andrés Rivas</span>
+                  <span class="text-slate-500 font-mono">08:00 AM</span>
+                </div>
+                <div class="text-xs text-slate-400">Demo EL CUADRE POS</div>
+                <div class="text-[10px] text-emerald-400 font-semibold">✓ Pagado $30 USD</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CONSOLA DE CONFIGURACIÓN DEL AGENTE DE IA (DOBLE DIGITAL) -->
+      <section id="ai-trainer" class="glass-card rounded-3xl p-6 space-y-5">
+        <div class="flex items-center justify-between">
+          <div class="space-y-1">
+            <h3 class="font-extrabold text-base text-white flex items-center gap-2">
+              <i data-lucide="bot" class="w-5 h-5 text-cyan-400"></i>
+              Ajustes del Agente IA (Doble Digital)
+            </h3>
+            <p class="text-xs text-slate-400">Personaliza cómo responde y negocia tu asistente en tu perfil público y WhatsApp.</p>
+          </div>
+          <span class="text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-500/30 px-2.5 py-1 rounded-lg">
+            Modelo: Gemini 2.5 Pro / Flash
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+          <!-- Configuración de Prompt -->
+          <div class="space-y-3">
+            <div>
+              <label class="block text-slate-300 font-semibold mb-1">Instrucción Maestra del Asistente</label>
+              <textarea rows="4" class="w-full glass-input p-3 rounded-2xl text-slate-200" placeholder="Eres el asistente virtual de Víctor Montoya. Responde cordialmente, destaca su experiencia en retail y ofrece los slots de Google Calendar...">Eres el asistente de negocios del Ing. Víctor Montoya. Responde con tono profesional y resolutivo. Cuando pregunten tarifas, ofrece Consultoría Cloud ($30) y Ciberseguridad ($60), y sugiere directamente los slots disponibles en su calendario.</textarea>
+            </div>
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="font-semibold text-white">Agendamiento Autónomo</div>
+                <div class="text-[11px] text-slate-400">Permitir a la IA crear eventos en Google Calendar sin confirmación humana previa.</div>
+              </div>
+              <input type="checkbox" checked class="w-4 h-4 accent-cyan-400">
+            </div>
+          </div>
+
+          <!-- Reglas de Disponibilidad & Respuestas -->
+          <div class="space-y-3 bg-slate-900/40 p-4 rounded-2xl border border-slate-800">
+            <div class="font-bold text-white text-xs">Reglas de Negocio del Asistente:</div>
+            <div class="space-y-2 text-[11px] text-slate-300">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Anticipación mínima de reserva: <strong>2 horas antes</strong></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Generar automáticamente link de <strong>Google Meet</strong></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Enviar confirmación por WhatsApp mediante <strong>Cloud API</strong></span>
+              </div>
+            </div>
+            <button onclick="alert('Configuración del Agente de IA guardada con éxito!')" class="w-full py-2.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black text-xs transition-all shadow-glow-cyan">
+              Guardar Configuración de IA
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL DE COMMAND BAR (CTRL + K) -->
+  <div id="commandBar" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-start justify-center pt-20 p-4">
+    <div class="glass-card rounded-2xl max-w-lg w-full p-4 space-y-3 border border-cyan-400/40 shadow-glow-cyan">
+      <div class="flex items-center gap-2 pb-2 border-b border-slate-800">
+        <i data-lucide="search" class="w-4 h-4 text-cyan-400"></i>
+        <input type="text" id="cmdInput" placeholder="Escribe un comando o busca una cita..." class="w-full bg-transparent text-sm text-white focus:outline-none">
+        <kbd onclick="toggleCommandBar()" class="cursor-pointer text-slate-500 hover:text-white text-xs font-mono">ESC</kbd>
+      </div>
+      <div class="space-y-1 text-xs">
+        <div class="px-2 py-1 text-[10px] uppercase font-bold text-slate-500">Acciones Rápidas</div>
+        <button onclick="alert('Bloqueando agenda...'); toggleCommandBar()" class="w-full text-left px-3 py-2 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-300 flex items-center justify-between">
+          <span>Bloquear horario de hoy (Focus Time)</span>
+          <span class="text-slate-500 font-mono">/bloquear</span>
+        </button>
+        <button onclick="alert('Generando enlace de pago...'); toggleCommandBar()" class="w-full text-left px-3 py-2 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-300 flex items-center justify-between">
+          <span>Crear link de cobro exprés Pago Móvil / Stripe</span>
+          <span class="text-slate-500 font-mono">/cobro</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT INTERACTIVO DEL DASHBOARD -->
+  <script>
+    lucide.createIcons();
+
+    function toggleCommandBar() {
+      const modal = document.getElementById('commandBar');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        setTimeout(() => document.getElementById('cmdInput').focus(), 50);
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        toggleCommandBar();
+      }
+      if (e.key === 'Escape') {
+        document.getElementById('commandBar').classList.add('hidden');
+      }
+    });
+
+    function moveCard(btn, status) {
+      alert(`Moviendo la cita a estado: "${status}" y actualizando sala de llamada.`);
+    }
+  </script>
+</body>
+</html>

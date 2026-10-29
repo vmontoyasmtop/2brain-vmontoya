@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SmartOps VE — The All-in-One Autonomous Business Hub</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#00e5ff",
+            "on-secondary-container": "#00311f",
+            "primary-fixed": "#9cf0ff",
+            "surface-container-high": "#212942",
+            "surface-variant": "#2c344d",
+            "secondary": "#4edea3",
+            "on-tertiary-container": "#6e25de",
+            "surface-container-lowest": "#050d25",
+            "on-tertiary": "#3f008e",
+            "on-tertiary-fixed": "#25005a",
+            "error-container": "#93000a",
+            "on-error": "#690005",
+            "secondary-fixed": "#6ffbbe",
+            "primary-fixed-dim": "#00daf3",
+            "on-primary-fixed-variant": "#004f58",
+            "on-primary-fixed": "#001f24",
+            "surface-container-low": "#131a33",
+            "on-secondary": "#003824",
+            "background": "#0a122a",
+            "error": "#ffb4ab",
+            "on-primary": "#00363d",
+            "inverse-primary": "#006875",
+            "surface-tint": "#00daf3",
+            "tertiary-fixed-dim": "#d2bbff",
+            "inverse-surface": "#dbe1ff",
+            "surface-bright": "#313852",
+            "surface-container": "#171e37",
+            "on-surface-variant": "#bac9cc",
+            "surface-dim": "#0a122a",
+            "on-tertiary-fixed-variant": "#5a00c6",
+            "tertiary": "#f3e8ff",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#00626e",
+            "surface-container-highest": "#2c344d",
+            "surface": "#0a122a",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#dbe1ff",
+            "outline": "#849396",
+            "inverse-on-surface": "#282f49",
+            "tertiary-fixed": "#eaddff",
+            "secondary-fixed-dim": "#4edea3",
+            "primary": "#c3f5ff",
+            "on-secondary-fixed-variant": "#005236",
+            "secondary-container": "#00a572",
+            "tertiary-container": "#dbc7ff",
+            "outline-variant": "#3b494c",
+            "on-background": "#dbe1ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1.25rem",
+            "space-lg": "1.5rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "3rem",
+            "space-sm": "0.5rem",
+            "space-2xl": "4rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "label-lg": ["JetBrains Mono"],
+            "display-lg": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "body-sm": ["Geist"],
+            "body-lg": ["Geist"],
+            "label-md": ["JetBrains Mono"],
+            "display-lg-mobile": ["Space Grotesk"],
+            "body-md": ["Geist"],
+            "label-sm": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "body-sm": ["13px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["15px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .neon-glow-primary {
+      box-shadow: 0 0 24px -4px rgba(0, 229, 255, 0.35);
+    }
+    .neon-border-glow {
+      box-shadow: 0 0 20px -2px rgba(0, 229, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .subtle-glass {
+      background: rgba(22, 31, 56, 0.75);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(0, 229, 255, 0.15);
+    }
+    .grid-lines-bg {
+      background-image: linear-gradient(to right, rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased selection:bg-primary-container selection:text-surface-container-lowest min-h-screen relative overflow-x-hidden font-body-md text-body-md">
+<!-- Ambient Background Glows -->
+<div class="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-primary-container/10 rounded-full blur-[140px]"></div>
+<div class="absolute top-[35%] -left-32 w-[550px] h-[550px] bg-secondary-container/10 rounded-full blur-[160px]"></div>
+<div class="absolute top-[65%] -right-32 w-[600px] h-[600px] bg-primary-container/8 rounded-full blur-[180px]"></div>
+</div>
+<div class="relative z-10 grid-lines-bg">
+<!-- 1. TopNavBar (Shared Component Anchor) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface-container-high/70 dark:bg-surface-container-high/70 backdrop-blur-md shadow-[0_4px_24px_-4px_rgba(0,229,255,0.15)]">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+<!-- Logo -->
+<a class="text-headline-sm font-headline-sm font-bold text-primary tracking-tight flex items-center gap-2 group" href="#">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low border border-primary-container/40 flex items-center justify-center neon-glow-primary group-hover:border-primary-container transition-all">
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="terminal">terminal</span>
+</div>
+<span>SmartOps <span class="text-primary-container text-label-md font-label-md px-1.5 py-0.5 rounded bg-primary-container/10 border border-primary-container/30">VE</span></span>
+</a>
+<!-- Desktop Navigation Links from JSON Anchor -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary-container dark:text-primary-container font-label-lg text-label-lg border-b-2 border-primary-container pb-1" href="#agendar">Agendar Cita</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface transition-colors pb-1 hover:border-primary-container/50 hover:text-primary transition-all duration-200" href="#servicios">Servicios</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface transition-colors pb-1 hover:border-primary-container/50 hover:text-primary transition-all duration-200" href="#arquitectura">Arquitectura</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface transition-colors pb-1 hover:border-primary-container/50 hover:text-primary transition-all duration-200" href="#credenciales">Credenciales</a>
+</nav>
+<!-- Trailing Actions from JSON Anchor -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-primary-container/30 bg-surface-container-low hover:bg-surface-container-highest text-on-surface text-label-md font-label-md transition-all active:scale-[0.98]" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="contact_phone">contact_phone</span>
+<span>WhatsApp Directo</span>
+</a>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container text-on-primary-fixed font-headline-sm font-bold text-label-md hover:brightness-110 neon-glow-primary active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-base" data-icon="nfc">nfc</span>
+<span>Descargar vCard</span>
+</button>
+</div>
+</div>
+</header>
+<!-- 2. Hero Section -->
+<section class="pt-16 pb-20 px-6 max-w-7xl mx-auto" id="agendar">
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+<!-- Telemetry Status Pill -->
+<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface-container border border-primary-container/30 mb-8 backdrop-blur-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="text-label-md font-label-md text-primary tracking-wide">⚡ Nueva Era SmartOps 2026 • Agentes IA &amp; Booking Nativo</span>
+</div>
+<!-- Main Headline -->
+<h1 class="text-display-lg-mobile md:text-display-lg font-headline-lg text-primary tracking-tight mb-6">
+          Vende Más, Trabaja Menos. <br class="hidden sm:block"/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-primary-fixed to-secondary">Tu Negocio en Piloto Automático.</span>
+</h1>
+<!-- Subtitle -->
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mb-10">
+          Transforma tu presencia en un Hub Comercial autónomo: Citas en tiempo real sincronizadas con Google Calendar, Doble Digital con IA en WhatsApp, Tienda y Tarjetas Inteligentes NFC.
+        </p>
+<!-- Dual CTA Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center mb-16">
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-primary-container text-on-primary-fixed font-headline-sm font-bold text-label-lg flex items-center justify-center gap-2 neon-glow-primary hover:scale-[1.02] active:scale-[0.98] transition-all" href="#precios">
+<span>Crear Mi Hub Gratis ⚡</span>
+</a>
+<a class="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-surface-container-high/60 border border-primary-container/25 text-on-surface hover:border-primary-container hover:bg-surface-container-highest font-headline-sm font-semibold text-label-lg flex items-center justify-center gap-2 transition-all" href="#arquitectura">
+<span class="material-symbols-outlined text-primary-container text-base" data-icon="smart_toy">smart_toy</span>
+<span>Ver Demostración en Vivo ▶</span>
+</a>
+</div>
+</div>
+<!-- Hero Visual Device Mockup Composition -->
+<div class="relative w-full max-w-5xl mx-auto mt-6">
+<!-- Floating Terminal / Kanban Dashboard Mockup -->
+<div class="rounded-xl border border-primary-container/25 bg-surface-container-low/90 backdrop-blur-xl p-4 sm:p-6 shadow-[0_20px_60px_-15px_rgba(0,229,255,0.2)]">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-6">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error-container"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container/40"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="ml-3 text-label-sm font-label-sm text-outline">admin.smartops.ve/control-tower</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-secondary-container/20 text-secondary border border-secondary/30">CalDAV Activo</span>
+<span class="text-label-sm font-label-sm text-outline">v4.2-rel</span>
+</div>
+</div>
+<!-- Mockup Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+<!-- Kanban Column 1: Live Bookings -->
+<div class="md:col-span-4 p-4 rounded-lg bg-surface-container/70 border border-outline-variant/30 space-y-3">
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-md font-label-md text-primary font-bold">Citas en Espera</span>
+<span class="text-label-sm font-label-sm bg-surface-container-high px-2 py-0.5 rounded text-primary-container">4 Hoy</span>
+</div>
+<div class="p-3 rounded bg-surface-container-high/80 border-l-2 border-primary-container text-body-sm space-y-1">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-on-surface font-semibold">Arq. Carolina Mendoza</span>
+<span class="text-primary-container">14:30 VE</span>
+</div>
+<p class="text-on-surface-variant text-label-sm">Consultoría Infraestructura Cloud</p>
+<div class="flex items-center gap-1.5 text-secondary text-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="videocam">videocam</span>
+<span>Google Meet Creado</span>
+</div>
+</div>
+<div class="p-3 rounded bg-surface-container-high/80 border-l-2 border-secondary text-body-sm space-y-1">
+<div class="flex justify-between text-label-sm font-label-sm">
+<span class="text-on-surface font-semibold">Grupo Retail Caracas</span>
+<span class="text-secondary">16:00 VE</span>
+</div>
+<p class="text-on-surface-variant text-label-sm">Demo Pasarela Bi-monetaria</p>
+<div class="flex items-center gap-1.5 text-secondary text-label-sm">
+<span class="material-symbols-outlined text-xs" data-icon="verified">verified</span>
+<span>Pago Confirmado Bs.</span>
+</div>
+</div>
+</div>
+<!-- Kanban Column 2: WhatsApp IA Stream -->
+<div class="md:col-span-5 p-4 rounded-lg bg-surface-container/70 border border-outline-variant/30 space-y-3">
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-md font-label-md text-primary font-bold">Doble Digital IA WhatsApp</span>
+<span class="flex items-center gap-1 text-label-sm text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> En Línea
+                </span>
+</div>
+<div class="space-y-2 text-label-sm font-label-sm">
+<div class="bg-surface-container-highest/60 p-2.5 rounded-lg text-on-surface-variant max-w-[85%]">
+                  "Hola, ¿tienen disponibilidad para auditoría AWS este jueves?"
+                </div>
+<div class="bg-primary-container/15 text-primary p-2.5 rounded-lg ml-auto max-w-[85%] border border-primary-container/20">
+<span class="text-xs text-primary-container font-bold block mb-1">SmartOps Copilot</span>
+                  "¡Claro! Víctor tiene slots libres a las 10:00 AM y 3:30 PM. Te envié el link con sync a tu Google Calendar."
+                </div>
+</div>
+</div>
+<!-- Kanban Column 3: NFC Pass Teaser -->
+<div class="md:col-span-3 p-4 rounded-lg bg-surface-container/70 border border-outline-variant/30 flex flex-col items-center text-center">
+<div class="w-full p-4 rounded-xl bg-gradient-to-br from-surface-container-lowest to-surface-container-high border border-primary-container/30 relative mb-3 shadow-lg">
+<div class="flex justify-between items-start mb-6">
+<span class="text-label-sm font-label-sm text-primary-container font-mono">NFC PASS</span>
+<span class="material-symbols-outlined text-secondary text-base" data-icon="nfc">nfc</span>
+</div>
+<div class="text-left">
+<div class="text-label-xs font-label-sm text-on-surface-variant">CLIENT IDENTIFIER</div>
+<div class="text-label-md font-label-md text-primary font-bold">Ing. Víctor Montoya</div>
+<div class="text-label-sm font-label-sm text-secondary mt-1">SLA VIP ELITE</div>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Sincronizado con Apple Wallet &amp; Google Wallet</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Bento Grid: 4 Core Pillars (Live Interactive Features) -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-outline-variant/20" id="servicios">
+<div class="mb-12">
+<div class="text-label-lg font-label-lg text-primary-container mb-2 tracking-wider">PIEDRAS ANGULARES // 01</div>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">Arquitectura Autónoma en 4 Pilares</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2 max-w-xl">
+          Tecnología sin fricción: sincroniza tus ventas, citas presenciales o virtuales y atención al cliente en una sola plataforma.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Pillar 1: Booking & Google Meet Sync (Span 7) -->
+<div class="md:col-span-7 subtle-glass rounded-xl p-6 sm:p-8 hover:neon-border-glow transition-all">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-primary-container/30 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Booking Instantáneo &amp; Google Meet</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">CalDAV Protocol • Cero Choques Horarios</p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+            Tus clientes reservan citas basadas en tu disponibilidad real. La plataforma crea la reunión en Google Meet, envía las coordenadas por correo y despacha recordatorios SMS/WhatsApp automáticos.
+          </p>
+<!-- Interactive Slot Selector Simulation -->
+<div class="p-4 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/40">
+<div class="flex justify-between items-center mb-3">
+<span class="text-label-sm font-label-sm text-outline">SELECCIONA SLOT DISPONIBLE (CARACAS -04:00)</span>
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Auto-Sync On
+              </span>
+</div>
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+<button class="px-3 py-2 rounded bg-surface-container-high text-on-surface hover:border-primary-container border border-outline-variant/30 text-label-md font-label-md text-center transition-colors">09:00 AM</button>
+<button class="px-3 py-2 rounded bg-primary-container text-on-primary-fixed border border-primary-container text-label-md font-label-md text-center font-bold">11:30 AM</button>
+<button class="px-3 py-2 rounded bg-surface-container-high text-on-surface hover:border-primary-container border border-outline-variant/30 text-label-md font-label-md text-center transition-colors">02:00 PM</button>
+<button class="px-3 py-2 rounded bg-surface-container-high/40 text-outline border border-transparent text-label-md font-label-md text-center cursor-not-allowed line-through">04:30 PM</button>
+</div>
+</div>
+</div>
+<!-- Pillar 2: WhatsApp IA Copilot (Span 5) -->
+<div class="md:col-span-5 subtle-glass rounded-xl p-6 sm:p-8 hover:neon-border-glow transition-all">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Doble Digital IA en WhatsApp</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">Cloud API Oficial Meta • Atención 24/7</p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">
+            Entrena a tu agente con tus catálogos, servicios y políticas. Resuelve dudas y agenda cobros sin que muevas un dedo.
+          </p>
+<div class="rounded-lg bg-surface-container-lowest p-3 border border-outline-variant/30 space-y-2 text-label-sm font-label-sm">
+<div class="p-2 rounded bg-surface-container-high text-on-surface-variant">
+              &gt; "¿Aceptan Pago Móvil tasa oficial BCV?"
+            </div>
+<div class="p-2 rounded bg-secondary-container/20 text-secondary border border-secondary/20">
+              :: "Sí, procesamos tasa BCV automatizada al instante con confirmación bancaria inmediata."
+            </div>
+</div>
+</div>
+<!-- Pillar 3: Storefront & Quick Pay (Span 6) -->
+<div class="md:col-span-6 subtle-glass rounded-xl p-6 sm:p-8 hover:neon-border-glow transition-all">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-primary-container/30 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">Tienda &amp; Pago Bi-Monetario</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">USD ($) + Pago Móvil (Bs / QR C2P)</p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+            Emite órdenes y valida comprobantes de pago de forma algorítmica. Catálogo optimizado para retail ligero, sesiones de consultoría y productos descargables.
+          </p>
+<div class="p-4 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/30 flex items-center justify-between">
+<div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Checkout Activo</div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">$120.00 / Bs. 4.800,00</div>
+</div>
+<span class="px-3 py-1 rounded bg-secondary-container/20 text-secondary text-label-sm font-label-sm border border-secondary/30">
+              Validación Automática
+            </span>
+</div>
+</div>
+<!-- Pillar 4: Smart NFC Pass & Digital Wallet (Span 6) -->
+<div class="md:col-span-6 subtle-glass rounded-xl p-6 sm:p-8 hover:neon-border-glow transition-all">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low border border-primary-container/30 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="contactless">contactless</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-primary">NFC &amp; Apple / Google Wallet</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">Pases Inteligentes Sin Aplicación Adicional</p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+            Tus clientes guardan tu tarjeta en su billetera nativa del teléfono. Envía notificaciones Push geolocalizadas cuando estén cerca de tu tienda o despacho.
+          </p>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-2xl" data-icon="smartphone">smartphone</span>
+<span class="text-label-md font-label-md text-on-surface">Push Notification Update</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary-container font-mono">LATENCY: 42ms</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. ROI & Automation Metrics Counter -->
+<section class="py-16 px-6 max-w-7xl mx-auto" id="arquitectura">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+<div class="subtle-glass p-6 rounded-xl border border-primary-container/20 text-center">
+<div class="text-headline-lg font-headline-lg text-primary-container font-bold mb-1">+40%</div>
+<div class="text-label-md font-label-md text-on-surface font-semibold mb-1">Conversión de Leads</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Atención en menos de 5 segundos vía IA</p>
+</div>
+<div class="subtle-glass p-6 rounded-xl border border-secondary/20 text-center">
+<div class="text-headline-lg font-headline-lg text-secondary font-bold mb-1">-8h</div>
+<div class="text-label-md font-label-md text-on-surface font-semibold mb-1">Semanales de Trabajo</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Eliminación de agenda y cobro manual</p>
+</div>
+<div class="subtle-glass p-6 rounded-xl border border-primary-container/20 text-center">
+<div class="text-headline-lg font-headline-lg text-primary font-bold mb-1">99.8%</div>
+<div class="text-label-md font-label-md text-on-surface font-semibold mb-1">Asistencia a Citas</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Recordatorios automatizados multicanal</p>
+</div>
+<div class="subtle-glass p-6 rounded-xl border border-secondary/20 text-center">
+<div class="text-headline-lg font-headline-lg text-primary-container font-bold mb-1">100%</div>
+<div class="text-label-md font-label-md text-on-surface font-semibold mb-1">Sincronización Cloud</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">AWS Serverless &amp; Google Meet APIs</p>
+</div>
+</div>
+</section>
+<!-- 5. Interactive Pricing Tier Section -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-outline-variant/20" id="precios">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<div class="text-label-lg font-label-lg text-primary-container mb-2 tracking-wider">PLANES DE ESCALAJE // 02</div>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">Inversión Transparente, Cero Comisiones Ocultas</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+          Activa tu Hub de negocio hoy mismo. Actualiza o cancela en cualquier momento con garantía de disponibilidad SLA 99.99%.
+        </p>
+<!-- Billing Toggle Pill -->
+<div class="inline-flex items-center p-1 rounded-lg bg-surface-container border border-outline-variant/40 mt-8">
+<button class="px-4 py-1.5 rounded-md text-label-md font-label-md bg-surface-container-high text-primary-container shadow" id="btn-monthly" onclick="switchBilling('monthly')">Facturación Mensual</button>
+<button class="px-4 py-1.5 rounded-md text-label-md font-label-md text-on-surface-variant hover:text-on-surface" id="btn-annual" onclick="switchBilling('annual')">Anual (2 Meses Gratis)</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+<!-- Plan 1: Starter -->
+<div class="subtle-glass rounded-xl p-8 flex flex-col justify-between border border-outline-variant/30 hover:border-primary-container/40 transition-all">
+<div>
+<div class="text-label-lg font-label-lg text-primary mb-1">Starter</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">Para profesionales independientes y consultores de entrada.</p>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-display-lg font-headline-lg text-on-surface font-bold plan-price" data-annual="$15" data-monthly="$19">$19</span>
+<span class="text-label-md font-label-md text-on-surface-variant">/mes</span>
+</div>
+<ul class="space-y-3.5 mb-8 text-body-sm font-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>1 Calendario con Google Meet Sync</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>WhatsApp Copilot básico (300 msgs)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>Tienda de hasta 10 servicios</span>
+</li>
+<li class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
+<span>Pases NFC Apple Wallet</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-3 rounded-lg border border-primary-container/30 bg-surface-container text-on-surface hover:bg-surface-container-high text-label-md font-label-md font-bold transition-all">
+            Comenzar con Starter
+          </button>
+</div>
+<!-- Plan 2: Profesional (Glowing Featured) -->
+<div class="subtle-glass rounded-xl p-8 flex flex-col justify-between border-2 border-primary-container relative neon-glow-primary bg-surface-container/90">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 rounded bg-primary-container text-on-primary-fixed text-label-sm font-label-sm font-bold tracking-wider uppercase">
+            MÁS POPULAR • 2026
+          </div>
+<div>
+<div class="text-label-lg font-label-lg text-primary-container mb-1">Profesional</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">El estándar para marcas consolidadas y firmas de servicios.</p>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-display-lg font-headline-lg text-primary-container font-bold plan-price" data-annual="$39" data-monthly="$49">$49</span>
+<span class="text-label-md font-label-md text-on-surface-variant">/mes</span>
+</div>
+<ul class="space-y-3.5 mb-8 text-body-sm font-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>IA Doble Digital Ilimitada en WhatsApp</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>Pasarelas Bi-Moneda ($ USD + Bs. Pago Móvil)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>Pase Inteligente Apple &amp; Google Wallet</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>Sincronización multi-cuenta CalDAV</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-3.5 rounded-lg bg-primary-container text-on-primary-fixed hover:brightness-110 text-label-md font-label-md font-bold transition-all shadow-md">
+            Comenzar Prueba Gratis ⚡
+          </button>
+</div>
+<!-- Plan 3: Enterprise Retail -->
+<div class="subtle-glass rounded-xl p-8 flex flex-col justify-between border border-outline-variant/30 hover:border-primary-container/40 transition-all">
+<div>
+<div class="text-label-lg font-label-lg text-primary mb-1">Enterprise Retail</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">Para cadenas retail, franquicias y clínicas multidisciplinarias.</p>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-display-lg font-headline-lg text-on-surface font-bold plan-price" data-annual="$99" data-monthly="$119">$119</span>
+<span class="text-label-md font-label-md text-on-surface-variant">/mes</span>
+</div>
+<ul class="space-y-3.5 mb-8 text-body-sm font-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>Multi-sucursal &amp; Multi-agente ilimitado</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>Sincronización ERP Odoo &amp; SAP API</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>SLA 99.99% con Ingeniero Cloud Asignado</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="check_circle">check_circle</span>
+<span>Webhook dedicado &amp; Webhooks en tiempo real</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-3 rounded-lg border border-primary-container/30 bg-surface-container text-on-surface hover:bg-surface-container-high text-label-md font-label-md font-bold transition-all">
+            Contactar a Ventas Enterprise
+          </button>
+</div>
+</div>
+</section>
+<!-- 6. Social Proof & Trust Badges -->
+<section class="py-16 px-6 max-w-7xl mx-auto border-t border-outline-variant/20" id="credenciales">
+<div class="text-center mb-8">
+<span class="text-label-sm font-label-sm text-outline tracking-wider uppercase">Certificaciones &amp; Alianzas Cloud Oficiales</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center opacity-85">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-primary-container text-xl" data-icon="cloud">cloud</span>
+<span>AWS Partner Network</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-primary-container text-xl" data-icon="verified">verified</span>
+<span>Google Calendar Verified</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="lock">lock</span>
+<span>PCI-DSS Level 1 Ready</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="chat">chat</span>
+<span>Meta Cloud API Official</span>
+</div>
+</div>
+</section>
+<!-- 7. High-Impact Final CTA -->
+<section class="py-20 px-6 max-w-5xl mx-auto text-center">
+<div class="subtle-glass p-10 sm:p-14 rounded-2xl border border-primary-container/30 relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-container/10 rounded-full blur-[90px]"></div>
+<h2 class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-4">
+          Únete a los líderes del retail y consultoría en Venezuela y LATAM.
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8">
+          Configuración en menos de 10 minutos. Automatiza citas, respuestas con IA y pagos sin requerir código ni servidores propios.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="px-8 py-3.5 rounded-lg bg-primary-container text-on-primary-fixed font-headline-sm font-bold text-label-lg neon-glow-primary hover:brightness-110 active:scale-[0.98] transition-all" href="#precios">
+            Empezar Ahora sin Tarjeta ⚡
+          </a>
+<a class="px-6 py-3.5 rounded-lg border border-primary-container/30 bg-surface-container-high/40 text-on-surface text-label-lg font-label-lg hover:bg-surface-container-high transition-all flex items-center gap-2" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-secondary" data-icon="forum">forum</span>
+<span>Hablar con Soporte 24/7</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component Anchor) -->
+<footer class="docked full-width bottom bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 max-w-7xl mx-auto gap-4">
+<!-- Brand Copyright Text from JSON Anchor verbatim -->
+<div class="text-body-sm font-body-sm text-on-surface-variant text-center md:text-left">
+          © 2026 SmartOps VE | Ing. Víctor Montoya — Cloud Infrastructure &amp; Retail Architectural Precision. Todos los derechos reservados.
+        </div>
+<!-- Links from JSON Anchor -->
+<div class="flex flex-wrap justify-center gap-6 text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary-container transition-colors duration-200" href="#sla">Garantía SLA 99.99%</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary-container transition-colors duration-200" href="#verificacion">Verificación AWS &amp; Azure</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary-container transition-colors duration-200" href="#politicas">Políticas de Reserva</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary-container transition-colors duration-200" href="#soporte">Soporte Emergencias</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Shared Component Anchor for Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 md:hidden bg-surface-container-high/85 dark:bg-surface-container-high/85 backdrop-blur-lg shadow-[0_-4px_20px_rgba(0,229,255,0.1)] flex justify-around items-center px-4 py-2 border-t border-outline-variant/40">
+<a class="flex flex-col items-center justify-center text-primary-container dark:text-primary-container bg-surface-container-highest/60 rounded-xl px-3 py-1.5 active:scale-95 transition-transform duration-150" href="#agendar">
+<span class="material-symbols-outlined text-xl" data-icon="calendar_add_on">calendar_add_on</span>
+<span class="text-label-sm font-label-sm">Agendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-3 py-1.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#servicios">
+<span class="material-symbols-outlined text-xl" data-icon="storefront">storefront</span>
+<span class="text-label-sm font-label-sm">Servicios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-3 py-1.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#arquitectura">
+<span class="material-symbols-outlined text-xl" data-icon="verified">verified</span>
+<span class="text-label-sm font-label-sm">Stack</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-3 py-1.5 hover:text-primary transition-colors duration-150 active:scale-95" href="#servicios">
+<span class="material-symbols-outlined text-xl" data-icon="smart_toy">smart_toy</span>
+<span class="text-label-sm font-label-sm">Copilot</span>
+</a>
+</nav>
+</div>
+<!-- Inline Script for Pricing Switch & Micro-Interactions -->
+<script>
+    function switchBilling(type) {
+      const btnMonthly = document.getElementById('btn-monthly');
+      const btnAnnual = document.getElementById('btn-annual');
+      const prices = document.querySelectorAll('.plan-price');
+
+      if (type === 'annual') {
+        btnAnnual.className = 'px-4 py-1.5 rounded-md text-label-md font-label-md bg-surface-container-high text-primary-container shadow';
+        btnMonthly.className = 'px-4 py-1.5 rounded-md text-label-md font-label-md text-on-surface-variant hover:text-on-surface';
+        prices.forEach(el => {
+          el.textContent = el.getAttribute('data-annual');
+        });
+      } else {
+        btnMonthly.className = 'px-4 py-1.5 rounded-md text-label-md font-label-md bg-surface-container-high text-primary-container shadow';
+        btnAnnual.className = 'px-4 py-1.5 rounded-md text-label-md font-label-md text-on-surface-variant hover:text-on-surface';
+        prices.forEach(el => {
+          el.textContent = el.getAttribute('data-monthly');
+        });
+      }
+    }
+  </script>
+</body></html>
