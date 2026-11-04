@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EL CUADRE POS — Fashion & Footwear Edition</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              500: '#f43f5e',
+              600: '#e11d48',
+              700: '#be123c',
+            },
+            surface: {
+              canvas: '#0B0F17',
+              card: '#131D2D',
+              panel: '#182438',
+              hover: '#22324C',
+              border: '#2A3C59',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0B0F17; }
+    ::-webkit-scrollbar-thumb { background: #2A3C59; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3d557c; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(0.98); }
+    }
+    .animate-pulse-subtle { animation: pulse-subtle 3s infinite ease-in-out; }
+  </style>
+</head>
+<body class="bg-[#0B0F17] text-slate-100 font-sans h-screen flex flex-col overflow-hidden select-none">
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="h-16 bg-[#131D2D] border-b border-surface-border px-4 flex items-center justify-between shrink-0 z-30">
+    <!-- Left: Branding & Rubro Switch -->
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 via-pink-600 to-amber-500 flex items-center justify-center shadow-lg shadow-rose-950/40">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-base font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">EL CUADRE POS</span>
+            <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-md bg-rose-500/20 text-rose-300 border border-rose-500/30">FASHION & FOOTWEAR</span>
+          </div>
+          <div class="text-[11px] text-slate-400 font-medium">Boutique, Calzados & Accesorios • Caja #01 (Principal)</div>
+        </div>
+      </div>
+
+      <!-- Rubro Switcher Tag -->
+      <div class="hidden lg:flex items-center bg-[#0B0F17] border border-surface-border rounded-lg p-1 ml-3">
+        <button class="px-2.5 py-1 text-xs font-semibold rounded-md bg-rose-600 text-white shadow-sm flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+          Ropa & Calzado
+        </button>
+        <button onclick="alert('Cambiando a Rubro Víveres & Minimarkets...')" class="px-2.5 py-1 text-xs font-medium rounded-md text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          Víveres / Market
+        </button>
+      </div>
+    </div>
+
+    <!-- Center: Bimonetary BCV Ticker & Quick Actions -->
+    <div class="flex items-center gap-3">
+      <!-- BCV Rate Pill -->
+      <div class="flex items-center gap-2 bg-[#0B0F17]/90 border border-emerald-500/30 px-3 py-1.5 rounded-xl shadow-inner">
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+        <div class="text-xs font-semibold text-slate-300">
+          Tasa BCV: <span class="font-mono font-bold text-emerald-400 text-sm" id="bcv-rate-display">Bs. 44.50</span> / $
+        </div>
+        <button onclick="toggleBcvModal()" title="Ajustar Tasa" class="text-slate-400 hover:text-emerald-300 transition-colors">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </button>
+      </div>
+
+      <!-- Action: Canje / Cambio Talla -->
+      <button onclick="openExchangeModal()" class="px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95">
+        <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/></svg>
+        <span>Canje / Devolución</span>
+      </button>
+
+      <!-- Action: Thermal Label 50x30mm -->
+      <button onclick="openThermalModal(currentSelectedProduct || products[0])" class="px-3 py-1.5 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all active:scale-95">
+        <svg class="w-4 h-4 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+        <span>Etiqueta 50x30mm</span>
+      </button>
+    </div>
+
+    <!-- Right: User / Cash Status -->
+    <div class="flex items-center gap-3">
+      <div class="text-right hidden sm:block">
+        <div class="text-xs font-bold text-slate-200">Valeria Montoya</div>
+        <div class="text-[11px] text-emerald-400 flex items-center justify-end gap-1 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Cajera Autorizada
+        </div>
+      </div>
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-sm shadow-md border border-indigo-400/30">
+        VM
+      </div>
+      <button onclick="alert('Sesión de caja bloqueada. Ingrese PIN de cajero para reanudar.')" title="Bloquear Terminal" class="p-2 rounded-xl bg-surface-canvas border border-surface-border text-slate-400 hover:text-rose-400 transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= MAIN WORKSPACE (CATALOG + CART) ================= -->
+  <div class="flex-1 flex overflow-hidden">
+
+    <!-- LEFT COLUMN: CATALOG, BARCODE SCAN & VARIANTS (68%) -->
+    <main class="flex-1 flex flex-col bg-[#0B0F17] overflow-hidden border-r border-surface-border">
+      
+      <!-- Search & Barcode Scanner Strip -->
+      <div class="p-3 bg-[#131D2D]/60 border-b border-surface-border flex items-center gap-3">
+        <div class="relative flex-1">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-5 h-5 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <input 
+            type="text" 
+            id="search-input"
+            oninput="handleSearch(this.value)"
+            placeholder="Escanear pistola lectora de SKU o buscar por modelo, marca o color (ej: 'Sneaker', 'Oxford', 'Jeans')..." 
+            class="w-full bg-[#0B0F17] border border-surface-border focus:border-rose-500 text-slate-100 pl-11 pr-24 py-2.5 rounded-xl text-sm font-medium focus:outline-none transition-all placeholder:text-slate-500"
+          >
+          <div class="absolute inset-y-0 right-0 pr-2 flex items-center gap-1.5">
+            <button onclick="simulateBarcodeScan()" class="px-2 py-1 text-[11px] font-bold rounded-lg bg-surface-panel hover:bg-surface-hover text-rose-300 border border-surface-border flex items-center gap-1 transition-all active:scale-95" title="Simular lectura de escáner USB">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5v14"/><path d="M8 5v14"/><path d="M12 5v14"/><path d="M17 5v14"/><path d="M21 5v14"/></svg>
+              <span>Scan SKU</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="text-xs font-semibold text-slate-400">
+            Mostrando: <span id="product-count" class="text-slate-100 font-bold">8</span> modelos
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories & Gender Pills -->
+      <div class="px-3 py-2 bg-[#131D2D]/30 border-b border-surface-border flex items-center gap-2 overflow-x-auto no-scrollbar" id="category-pills">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Products Grid -->
+      <div class="flex-1 p-4 overflow-y-auto" id="product-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </main>
+
+    <!-- RIGHT COLUMN: CART & CHECKOUT (32%) -->
+    <aside class="w-[420px] bg-[#131D2D] flex flex-col justify-between shrink-0 shadow-2xl relative z-20">
+      
+      <!-- Cart Header -->
+      <div class="p-3.5 border-b border-surface-border flex items-center justify-between bg-[#182438]">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-100 flex items-center gap-2">
+              Ticket Activo #1042
+              <span id="cart-badge-count" class="px-2 py-0.5 text-[10px] font-extrabold rounded-full bg-rose-600 text-white">0</span>
+            </div>
+            <div class="text-[11px] text-slate-400">Venta de Mostrador • Cliente Ocasional</div>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-1">
+          <button onclick="clearCart()" title="Limpiar Carrito" class="p-1.5 rounded-lg hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Customer Bar -->
+      <div class="px-3.5 py-2 bg-[#0B0F17]/50 border-b border-surface-border flex items-center justify-between text-xs">
+        <div class="flex items-center gap-1.5 text-slate-300 font-medium">
+          <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span id="customer-name-display">Consumidor Final (V-00000000)</span>
+        </div>
+        <button onclick="promptCustomer()" class="text-[11px] font-bold text-rose-400 hover:text-rose-300 underline">
+          Cambiar / Fiado
+        </button>
+      </div>
+
+      <!-- Cart Item List -->
+      <div class="flex-1 overflow-y-auto p-3 space-y-2.5" id="cart-items-container">
+        <!-- Empty State Default -->
+        <div class="h-full flex flex-col items-center justify-center text-center p-6 text-slate-500">
+          <div class="w-14 h-14 rounded-2xl bg-surface-panel border border-surface-border flex items-center justify-center text-slate-400 mb-3">
+            <svg class="w-7 h-7 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-slate-300">Ticket Vacío</p>
+          <p class="text-xs text-slate-500 mt-1 max-w-[200px]">Seleccione prendas o calzados del catálogo o escanee el código de barras.</p>
+        </div>
+      </div>
+
+      <!-- Cart Totals & Checkout -->
+      <div class="p-3.5 bg-[#182438] border-t border-surface-border space-y-2.5">
+        <!-- Subtotals Row -->
+        <div class="space-y-1.5 text-xs text-slate-400">
+          <div class="flex justify-between">
+            <span>Subtotal Bruto:</span>
+            <span id="cart-subtotal-usd" class="font-mono font-semibold text-slate-200">$0.00</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span>Descuento Promoción:</span>
+            <span id="cart-discount-usd" class="font-mono text-emerald-400 font-semibold">-$0.00</span>
+          </div>
+          <div class="flex justify-between items-center text-[11px] text-slate-500">
+            <span>IVA (16% Incluido en Precios):</span>
+            <span id="cart-tax-usd" class="font-mono">$0.00</span>
+          </div>
+        </div>
+
+        <!-- Grand Total Dual Display -->
+        <div class="p-3 rounded-xl bg-[#0B0F17] border border-surface-border flex items-center justify-between">
+          <div>
+            <div class="text-[10px] uppercase tracking-wider font-extrabold text-slate-400">Total a Pagar</div>
+            <div class="text-2xl font-black font-mono text-white flex items-center gap-1">
+              <span class="text-rose-500 text-lg">$</span>
+              <span id="cart-total-usd">0.00</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-[10px] uppercase tracking-wider font-extrabold text-emerald-400">Contravalor BCV</div>
+            <div class="text-lg font-bold font-mono text-emerald-300">
+              <span class="text-xs">Bs.</span> <span id="cart-total-bs">0,00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Big Checkout Buttons -->
+        <div class="grid grid-cols-4 gap-2 pt-1">
+          <button onclick="pauseTicket()" class="col-span-1 py-3 bg-[#0B0F17] hover:bg-surface-hover text-slate-300 border border-surface-border rounded-xl text-xs font-bold flex flex-col items-center justify-center gap-0.5 transition-all active:scale-95">
+            <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="text-[10px]">Pausar</span>
+          </button>
+
+          <button onclick="openPaymentModal()" id="btn-cobrar" class="col-span-3 py-3 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-400 text-white font-extrabold rounded-xl shadow-lg shadow-emerald-950/50 flex items-center justify-center gap-2 transition-all active:scale-98 disabled:opacity-40 disabled:pointer-events-none">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span class="text-base tracking-wide">COBRAR TICKET</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ================= MODAL: VARIANT SELECTOR (TALLAS & COLORES) ================= -->
+  <div id="variant-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-[#131D2D] border border-surface-border rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-200">
+      
+      <!-- Modal Header -->
+      <div class="p-4 bg-[#182438] border-b border-surface-border flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img id="modal-product-img" src="" alt="Prenda" class="w-12 h-12 object-cover rounded-xl border border-surface-border bg-slate-950">
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="modal-product-category" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-rose-500/20 text-rose-300">Calzado</span>
+              <span id="modal-product-sku" class="font-mono text-xs text-slate-400">SKU-BASE</span>
+            </div>
+            <h3 id="modal-product-name" class="text-base font-bold text-white">Nombre de Producto</h3>
+          </div>
+        </div>
+        <button onclick="closeVariantModal()" class="w-8 h-8 rounded-lg bg-surface-canvas border border-surface-border flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 space-y-5 overflow-y-auto max-h-[70vh]">
+        
+        <!-- 1. Color Selector (Swatches) -->
+        <div>
+          <div class="flex items-center justify-between mb-2.5">
+            <label class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+              1. Seleccione Color: <span id="modal-selected-color-name" class="text-rose-400 font-extrabold normal-case ml-1">Negro Onix</span>
+            </label>
+          </div>
+          <div class="grid grid-cols-4 sm:grid-cols-6 gap-2.5" id="modal-color-swatches">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- 2. Size / Tallas Selector with Traffic Light Stock -->
+        <div>
+          <div class="flex items-center justify-between mb-2.5">
+            <label class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              2. Seleccione Talla Táctil: <span id="modal-selected-size-name" class="text-rose-400 font-extrabold normal-case ml-1">42</span>
+            </label>
+            <div class="flex items-center gap-3 text-[10px] text-slate-400">
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Disp.</span>
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-400"></span> Último</span>
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-slate-600"></span> Agotado</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-4 sm:grid-cols-6 gap-2" id="modal-size-buttons">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- 3. Quantity & Summary Strip -->
+        <div class="p-3.5 rounded-xl bg-[#0B0F17] border border-surface-border flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-slate-300">Cantidad:</span>
+            <div class="flex items-center bg-[#131D2D] border border-surface-border rounded-xl">
+              <button onclick="adjustVariantQty(-1)" class="w-9 h-9 flex items-center justify-center text-slate-300 hover:text-white font-bold text-lg active:scale-90">-</button>
+              <span id="modal-qty-display" class="w-10 text-center font-mono font-bold text-white text-base">1</span>
+              <button onclick="adjustVariantQty(1)" class="w-9 h-9 flex items-center justify-center text-slate-300 hover:text-white font-bold text-lg active:scale-90">+</button>
+            </div>
+          </div>
+
+          <div class="text-right">
+            <div class="text-xs text-slate-400">Precio Unitario:</div>
+            <div class="text-lg font-black font-mono text-emerald-400">
+              <span id="modal-price-usd">$0.00</span>
+              <span class="text-xs text-slate-400 font-normal">/ <span id="modal-price-bs">Bs. 0,00</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-[#182438] border-t border-surface-border flex items-center justify-between gap-3">
+        <button onclick="closeVariantModal()" class="px-5 py-2.5 rounded-xl bg-surface-canvas border border-surface-border text-slate-300 hover:text-white text-xs font-bold transition-all">
+          Cancelar
+        </button>
+        <button onclick="confirmVariantToCart()" id="btn-add-variant" class="flex-1 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm shadow-lg shadow-rose-950/50 flex items-center justify-center gap-2 transition-all active:scale-98">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          <span>Agregar al Ticket • <span id="modal-total-btn-usd">$0.00</span></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MODAL: MULTICURRENCY CHECKOUT (PAGO VENEZOLANO) ================= -->
+  <div id="payment-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-[#131D2D] border border-surface-border rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-200">
+      
+      <!-- Header -->
+      <div class="p-4 bg-[#182438] border-b border-surface-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Pasarela de Cobranza Bimonetaria</h3>
+            <p class="text-xs text-slate-400">Seleccione el método o combine pagos múltiples</p>
+          </div>
+        </div>
+        <button onclick="closePaymentModal()" class="w-8 h-8 rounded-lg bg-surface-canvas border border-surface-border flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Total banner -->
+      <div class="p-4 bg-[#0B0F17] border-b border-surface-border flex justify-between items-center">
+        <div>
+          <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">Total a Cobrar ($ USD):</span>
+          <div class="text-3xl font-black font-mono text-white" id="pay-total-usd">$0.00</div>
+        </div>
+        <div class="text-right">
+          <span class="text-xs text-emerald-400 uppercase font-bold tracking-wider">Contravalor BCV (Bs):</span>
+          <div class="text-xl font-bold font-mono text-emerald-300" id="pay-total-bs">Bs. 0,00</div>
+        </div>
+      </div>
+
+      <!-- Payment Methods Tabs -->
+      <div class="p-4 space-y-4">
+        <div class="grid grid-cols-4 gap-2">
+          <button onclick="setPaymentMethod('efectivo')" id="tab-efectivo" class="py-2.5 px-2 rounded-xl border border-rose-500 bg-rose-500/10 text-rose-300 font-bold text-xs flex flex-col items-center gap-1 transition-all">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/></svg>
+            <span>Efectivo $</span>
+          </button>
+          <button onclick="setPaymentMethod('pagomovil')" id="tab-pagomovil" class="py-2.5 px-2 rounded-xl border border-surface-border bg-surface-canvas text-slate-400 font-semibold text-xs flex flex-col items-center gap-1 transition-all">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Pago Móvil</span>
+          </button>
+          <button onclick="setPaymentMethod('punto')" id="tab-punto" class="py-2.5 px-2 rounded-xl border border-surface-border bg-surface-canvas text-slate-400 font-semibold text-xs flex flex-col items-center gap-1 transition-all">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h.01"/><path d="M12 15h.01"/></svg>
+            <span>Punto Venta</span>
+          </button>
+          <button onclick="setPaymentMethod('zelle')" id="tab-zelle" class="py-2.5 px-2 rounded-xl border border-surface-border bg-surface-canvas text-slate-400 font-semibold text-xs flex flex-col items-center gap-1 transition-all">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="m17 5-10 14h10"/></svg>
+            <span>Zelle / Biopago</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Payment Inputs -->
+        <div id="payment-method-container" class="p-4 bg-[#0B0F17] rounded-xl border border-surface-border space-y-3">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Footer Actions -->
+      <div class="p-4 bg-[#182438] border-t border-surface-border flex items-center justify-between gap-3">
+        <button onclick="closePaymentModal()" class="px-5 py-2.5 rounded-xl bg-surface-canvas border border-surface-border text-slate-300 hover:text-white text-xs font-bold">
+          Cancelar
+        </button>
+        <button onclick="completeSale()" class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-lg shadow-emerald-950/50 flex items-center justify-center gap-2 transition-all active:scale-98">
+          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>PROCESAR VENTA & ABRIR GAVETA</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CANJE / CAMBIO DE TALLA (RETAIL FASHION) ================= -->
+  <div id="exchange-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-[#131D2D] border border-surface-border rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl flex flex-col">
+      <div class="p-4 bg-[#182438] border-b border-surface-border flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/></svg>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Módulo de Canje & Cambio de Tallas</h3>
+            <p class="text-xs text-slate-400">Garantía retail de 7 días para cambios de prenda o calzado</p>
+          </div>
+        </div>
+        <button onclick="closeExchangeModal()" class="w-8 h-8 rounded-lg bg-surface-canvas border border-surface-border flex items-center justify-center text-slate-400 hover:text-white">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="p-5 space-y-4">
+        <div>
+          <label class="text-xs font-bold text-slate-300 block mb-1">Número de Ticket o Factura Original:</label>
+          <div class="flex gap-2">
+            <input type="text" value="#1038" placeholder="Ej: #1038 o escanear ticket..." class="flex-1 bg-[#0B0F17] border border-surface-border rounded-xl px-3 py-2 text-sm font-mono text-slate-100 focus:outline-none focus:border-amber-500">
+            <button class="px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold rounded-xl text-xs border border-amber-500/30">Cargar</button>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-[#0B0F17] border border-surface-border space-y-2 text-xs">
+          <div class="font-bold text-slate-200 border-b border-surface-border pb-1.5 flex justify-between">
+            <span>Prenda a Devolver (Ingreso al Inventario):</span>
+            <span class="text-emerald-400 font-mono">+$45.00</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center font-bold text-rose-400">40</div>
+            <div>
+              <div class="font-bold text-white">Sneaker Deportivo Pro V3</div>
+              <div class="text-slate-400 text-[11px]">Talla: 40 • Color: Negro Onix • Motivo: "Le quedó pequeño"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-surface-panel border border-surface-border space-y-2 text-xs">
+          <div class="font-bold text-slate-200 border-b border-surface-border pb-1.5 flex justify-between">
+            <span>Nueva Prenda Entregada:</span>
+            <span class="text-rose-400 font-mono">-$45.00</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-300">41</div>
+            <div>
+              <div class="font-bold text-white">Sneaker Deportivo Pro V3</div>
+              <div class="text-slate-400 text-[11px]">Talla: 41 • Color: Negro Onix • Stock: 4 disponibles</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center justify-between text-xs">
+          <span class="font-bold text-emerald-300">Diferencia a Cobrar / Pagar:</span>
+          <span class="font-mono font-black text-emerald-400 text-sm">$0.00 (Cambio Directo de Talla)</span>
+        </div>
+      </div>
+
+      <div class="p-4 bg-[#182438] border-t border-surface-border flex justify-between gap-3">
+        <button onclick="closeExchangeModal()" class="px-4 py-2 bg-surface-canvas border border-surface-border rounded-xl text-xs font-bold text-slate-300">Cancelar</button>
+        <button onclick="emitExchange()" class="flex-1 py-2.5 bg-amber-600 hover:bg-amber-500 text-white font-extrabold rounded-xl text-xs shadow-lg shadow-amber-950/40">
+          EMITIR COMPROBANTE DE CANJE & ACTUALIZAR KARDEX
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: ETIQUETA TERMICA 50x30mm (PREVIEW & PRINT) ================= -->
+  <div id="thermal-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-[#131D2D] border border-surface-border rounded-2xl w-full max-w-md overflow-hidden shadow-2xl flex flex-col">
+      <div class="p-4 bg-[#182438] border-b border-surface-border flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-white">Etiqueta Adhesiva Térmica (50x30mm)</h3>
+        </div>
+        <button onclick="closeThermalModal()" class="w-7 h-7 rounded-lg bg-surface-canvas border border-surface-border flex items-center justify-center text-slate-400 hover:text-white">✕</button>
+      </div>
+
+      <div class="p-6 flex flex-col items-center justify-center bg-[#0B0F17]">
+        <div class="text-[11px] text-slate-400 mb-3">Formato estándar para caja de zapato o tag de prenda:</div>
+
+        <!-- Thermal Label Real Preview (White Background, Black Mono Print) -->
+        <div class="w-[320px] h-[192px] bg-white text-black p-3 rounded shadow-2xl flex flex-col justify-between font-mono border-2 border-dashed border-slate-300 select-all">
+          <div class="flex justify-between items-start border-b border-black pb-1">
+            <div>
+              <div class="text-[11px] font-black uppercase tracking-tight">EL CUADRE BOUTIQUE</div>
+              <div class="text-[9px] font-bold text-gray-700" id="label-product-name">SNEAKER PRO V3</div>
+            </div>
+            <div class="text-right">
+              <span class="text-[8px] uppercase font-bold text-gray-600 block">TALLA</span>
+              <span class="text-xl font-black bg-black text-white px-1.5 py-0.2 rounded" id="label-size">42</span>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center text-[10px] my-1">
+            <div>COLOR: <span class="font-bold" id="label-color">NEGRO ONIX</span></div>
+            <div>DEPTO: <span class="font-bold" id="label-dept">CABALLERO</span></div>
+          </div>
+
+          <!-- Code 128 Barcode Simulation SVG -->
+          <div class="flex flex-col items-center justify-center my-0.5">
+            <svg class="w-full h-10" viewBox="0 0 200 40" preserveAspectRatio="none">
+              <!-- Barcode stripes -->
+              <rect x="10" y="0" width="3" height="35" fill="#000"/>
+              <rect x="15" y="0" width="2" height="35" fill="#000"/>
+              <rect x="20" y="0" width="4" height="35" fill="#000"/>
+              <rect x="27" y="0" width="2" height="35" fill="#000"/>
+              <rect x="31" y="0" width="5" height="35" fill="#000"/>
+              <rect x="39" y="0" width="2" height="35" fill="#000"/>
+              <rect x="44" y="0" width="4" height="35" fill="#000"/>
+              <rect x="51" y="0" width="3" height="35" fill="#000"/>
+              <rect x="57" y="0" width="2" height="35" fill="#000"/>
+              <rect x="62" y="0" width="5" height="35" fill="#000"/>
+              <rect x="70" y="0" width="3" height="35" fill="#000"/>
+              <rect x="76" y="0" width="2" height="35" fill="#000"/>
+              <rect x="81" y="0" width="4" height="35" fill="#000"/>
+              <rect x="88" y="0" width="2" height="35" fill="#000"/>
+              <rect x="93" y="0" width="5" height="35" fill="#000"/>
+              <rect x="101" y="0" width="2" height="35" fill="#000"/>
+              <rect x="106" y="0" width="4" height="35" fill="#000"/>
+              <rect x="113" y="0" width="3" height="35" fill="#000"/>
+              <rect x="119" y="0" width="2" height="35" fill="#000"/>
+              <rect x="124" y="0" width="5" height="35" fill="#000"/>
+              <rect x="132" y="0" width="3" height="35" fill="#000"/>
+              <rect x="138" y="0" width="2" height="35" fill="#000"/>
+              <rect x="143" y="0" width="4" height="35" fill="#000"/>
+              <rect x="150" y="0" width="2" height="35" fill="#000"/>
+              <rect x="155" y="0" width="5" height="35" fill="#000"/>
+              <rect x="163" y="0" width="2" height="35" fill="#000"/>
+              <rect x="168" y="0" width="4" height="35" fill="#000"/>
+              <rect x="175" y="0" width="3" height="35" fill="#000"/>
+              <rect x="181" y="0" width="4" height="35" fill="#000"/>
+            </svg>
+            <span class="text-[9px] font-bold tracking-widest" id="label-sku">SKU-SNK-42-BLK</span>
+          </div>
+
+          <div class="flex justify-between items-center border-t border-black pt-1">
+            <span class="text-[8px] text-gray-600">PVP SUGERIDO</span>
+            <div class="text-right">
+              <span class="text-xs font-black" id="label-price-usd">$45.00</span>
+              <span class="text-[9px] text-gray-700"> / <span id="label-price-bs">Bs. 2.002,50</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-[#182438] border-t border-surface-border flex justify-between gap-3">
+        <button onclick="closeThermalModal()" class="px-4 py-2 bg-surface-canvas border border-surface-border rounded-xl text-xs font-bold text-slate-300">Cerrar</button>
+        <button onclick="alert('Enviando comando ESC/POS a impresora térmica de etiquetas (50x30mm)... ¡Impresión completada!')" class="flex-1 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-indigo-950/40">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          IMPRIMIR 1 COPIA
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT STATE ENGINE ================= -->
+  <script>
+    // State Variables
+    let bcvRate = 44.50;
+    let activeCategory = 'all';
+    let searchQuery = '';
+    let cart = [];
+    let currentSelectedProduct = null;
+    let currentModalVariant = { size: '', color: '', qty: 1 };
+    let currentPaymentMethod = 'efectivo';
+
+    // Fashion & Footwear Catalog Database
+    const categories = [
+      { id: 'all', label: 'Todos los Artículos', icon: '✨' },
+      { id: 'calzado-caballero', label: 'Calzado Caballero', icon: '👞' },
+      { id: 'calzado-dama', label: 'Calzado Dama', icon: '👠' },
+      { id: 'calzado-ninos', label: 'Calzado Niños', icon: '👟' },
+      { id: 'camisas-franelas', label: 'Camisas & Franelas', icon: '👕' },
+      { id: 'pantalones-jeans', label: 'Pantalones & Jeans', icon: '👖' },
+      { id: 'vestidos-faldas', label: 'Vestidos & Faldas', icon: '👗' },
+      { id: 'accesorios-gorras', label: 'Accesorios & Gorras', icon: '🧢' },
+    ];
+
+    const products = [
+      {\n        id: 'SNK-01',
+        name: 'Sneaker Deportivo Pro V3 Running',
+        skuBase: 'SNK-PRO',
+        category: 'calzado-caballero',
+        dept: 'Caballero',
+        priceUsd: 45.00,
+        badge: 'Bestseller',
+        badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+        image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80',
+        type: 'footwear',
+        colors: [
+          { name: 'Negro Onix', hex: '#111827', code: 'BLK' },
+          { name: 'Blanco Puro', hex: '#f8fafc', code: 'WHT' },
+          { name: 'Rojo Carmesí', hex: '#dc2626', code: 'RED' }
+        ],
+        sizes: [
+          { size: '39', stock: 4 },
+          { size: '40', stock: 6 },
+          { size: '41', stock: 1 },
+          { size: '42', stock: 5 },
+          { size: '43', stock: 0 },
+          { size: '44', stock: 2 }
+        ]
+      },
+      {
+        id: 'OXF-02',
+        name: 'Zapato Oxford Cuero Genuino Glaseado',
+        skuBase: 'OXF-LUX',
+        category: 'calzado-caballero',
+        dept: 'Caballero',
+        priceUsd: 65.00,
+        badge: 'Colección Formal',
+        badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+        image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&q=80',
+        type: 'footwear',
+        colors: [
+          { name: 'Café Miel', hex: '#78350f', code: 'BRN' },
+          { name: 'Negro Charol', hex: '#0f172a', code: 'BLK' }
+        ],
+        sizes: [
+          { size: '40', stock: 3 },
+          { size: '41', stock: 4 },
+          { size: '42', stock: 2 },
+          { size: '43', stock: 1 },
+          { size: '44', stock: 0 }
+        ]
+      },
+      {
+        id: 'HEEL-03',
+        name: 'Stiletto Alto Satén Elegance 9cm',
+        skuBase: 'STL-SAT',
+        category: 'calzado-dama',
+        dept: 'Dama',
+        priceUsd: 55.00,
+        badge: 'Fiesta & Noche',
+        badgeColor: 'bg-pink-500/20 text-pink-300 border-pink-500/30',
+        image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80',
+        type: 'footwear',
+        colors: [
+          { name: 'Rojo Pasión', hex: '#e11d48', code: 'RED' },
+          { name: 'Nude Beige', hex: '#fed7aa', code: 'NUD' },
+          { name: 'Negro Noche', hex: '#020617', code: 'BLK' }
+        ],
+        sizes: [
+          { size: '36', stock: 2 },
+          { size: '37', stock: 4 },
+          { size: '38', stock: 5 },
+          { size: '39', stock: 1 },
+          { size: '40', stock: 0 }
+        ]
+      },
+      {
+        id: 'JNS-04',
+        name: 'Jeans Slim Fit Stretch Denim Indigo',
+        skuBase: 'JNS-SLM',
+        category: 'pantalones-jeans',
+        dept: 'Caballero',
+        priceUsd: 32.00,
+        badge: 'Básico Esencial',
+        badgeColor: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+        image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80',
+        type: 'apparel',
+        colors: [
+          { name: 'Azul Índigo', hex: '#1e3a8a', code: 'IND' },
+          { name: 'Negro Lavado', hex: '#1f2937', code: 'WBLK' },
+          { name: 'Azul Hielo', hex: '#60a5fa', code: 'LBLU' }
+        ],
+        sizes: [
+          { size: '28', stock: 2 },
+          { size: '30', stock: 6 },
+          { size: '32', stock: 8 },
+          { size: '34', stock: 3 },
+          { size: '36', stock: 1 },
+          { size: '38', stock: 0 }
+        ]
+      },
+      {
+        id: 'CAM-05',
+        name: 'Camisa Manga Larga Lino Italiano',
+        skuBase: 'CAM-LIN',
+        category: 'camisas-franelas',
+        dept: 'Caballero',
+        priceUsd: 38.00,
+        badge: 'Lujo Fresco',
+        badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+        image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80',
+        type: 'apparel',
+        colors: [
+          { name: 'Blanco Lino', hex: '#fdfbf7', code: 'WHT' },
+          { name: 'Azul Cielo', hex: '#93c5fd', code: 'SKY' },
+          { name: 'Verde Salvia', hex: '#84cc16', code: 'SAGE' }
+        ],
+        sizes: [
+          { size: 'S', stock: 3 },
+          { size: 'M', stock: 5 },
+          { size: 'L', stock: 4 },
+          { size: 'XL', stock: 1 },
+          { size: 'XXL', stock: 0 }
+        ]
+      },
+      {
+        id: 'VES-06',
+        name: 'Vestido Midi Bohemio Estampado Floral',
+        skuBase: 'VES-MID',
+        category: 'vestidos-faldas',
+        dept: 'Dama',
+        priceUsd: 42.00,
+        badge: 'Temporada',
+        badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+        image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80',
+        type: 'apparel',
+        colors: [
+          { name: 'Floral Rosa', hex: '#f472b6', code: 'ROSE' },
+          { name: 'Floral Azul', hex: '#38bdf8', code: 'BLUE' }
+        ],
+        sizes: [
+          { size: 'XS', stock: 2 },
+          { size: 'S', stock: 4 },
+          { size: 'M', stock: 3 },
+          { size: 'L', stock: 1 }
+        ]
+      },
+      {
+        id: 'FRA-07',
+        name: 'Franela Oversize Heavyweight Cotton 240g',
+        skuBase: 'FRA-OVR',
+        category: 'camisas-franelas',
+        dept: 'Unisex',
+        priceUsd: 18.00,
+        badge: 'Streetwear',
+        badgeColor: 'bg-zinc-500/20 text-zinc-300 border-zinc-500/30',
+        image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&q=80',
+        type: 'apparel',
+        colors: [
+          { name: 'Negro Carbón', hex: '#18181b', code: 'BLK' },
+          { name: 'Crema Crudo', hex: '#f5f5f4', code: 'CRM' },
+          { name: 'Verde Militar', hex: '#3f6212', code: 'MIL' }
+        ],
+        sizes: [
+          { size: 'S', stock: 5 },
+          { size: 'M', stock: 8 },
+          { size: 'L', stock: 6 },
+          { size: 'XL', stock: 3 }
+        ]
+      },
+      {
+        id: 'ACC-08',
+        name: 'Gorra Snapback Premium Bordado 3D',
+        skuBase: 'ACC-GOR',
+        category: 'accesorios-gorras',
+        dept: 'Accesorios',
+        priceUsd: 16.00,
+        badge: 'Top Accesorios',
+        badgeColor: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+        image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&q=80',
+        type: 'accessory',
+        colors: [
+          { name: 'Negro / Visera Roja', hex: '#0f172a', code: 'BLK' },
+          { name: 'Gris Melange', hex: '#64748b', code: 'GRY' }
+        ],
+        sizes: [
+          { size: 'Única Ajustable', stock: 12 }
+        ]
+      }
+    ];
+
+    // Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCategoryPills();
+      renderProducts();
+      renderCart();
+      updateTotals();
+    });
+
+    // Render Department Pills
+    function renderCategoryPills() {
+      const container = document.getElementById('category-pills');
+      container.innerHTML = categories.map(cat => `
+        <button 
+          onclick="selectCategory('${cat.id}')"
+          class="px-3.5 py-1.5 rounded-xl text-xs font-bold shrink-0 transition-all flex items-center gap-1.5 ${
+            activeCategory === cat.id 
+              ? 'bg-rose-600 text-white shadow-md shadow-rose-950/40 border border-rose-500' 
+              : 'bg-[#182438] hover:bg-surface-hover text-slate-300 border border-surface-border'
+          }"
+        >
+          <span>${cat.icon}</span>
+          <span>${cat.label}</span>
+        </button>
+      `).join('');
+    }
+
+    function selectCategory(catId) {
+      activeCategory = catId;
+      renderCategoryPills();
+      renderProducts();
+    }
+
+    function handleSearch(query) {
+      searchQuery = query.toLowerCase().trim();
+      renderProducts();
+    }
+
+    // Render Product Grid
+    function renderProducts() {
+      const grid = document.getElementById('product-grid');
+      const filtered = products.filter(p => {
+        const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+        const matchesSearch = !searchQuery || 
+          p.name.toLowerCase().includes(searchQuery) || 
+          p.skuBase.toLowerCase().includes(searchQuery) ||
+          p.colors.some(c => c.name.toLowerCase().includes(searchQuery));
+        return matchesCategory && matchesSearch;
+      });
+
+      document.getElementById('product-count').textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="h-64 flex flex-col items-center justify-center text-slate-500 text-center">
+            <svg class="w-10 h-10 mb-2 opacity-50 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <p class="font-bold text-slate-300">No se encontraron artículos</p>
+            <p class="text-xs text-slate-500">Pruebe con otra búsqueda o departamento</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.className = "grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3.5";
+      grid.innerHTML = filtered.map(p => {
+        const priceBs = (p.priceUsd * bcvRate).toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        const totalStock = p.sizes.reduce((acc, s) => acc + s.stock, 0);
+
+        return `
+          <div 
+            onclick="openVariantModal('${p.id}')"
+            class="group bg-[#131D2D] hover:bg-[#182438] border border-surface-border hover:border-rose-500/50 rounded-2xl p-2.5 flex flex-col justify-between cursor-pointer transition-all duration-200 shadow-lg hover:shadow-rose-950/20 active:scale-98 relative overflow-hidden"
+          >
+            <!-- Badge -->
+            <div class="absolute top-4 left-4 z-10">
+              <span class="px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider rounded-md border backdrop-blur-md ${p.badgeColor}">
+                ${p.badge}
+              </span>
+            </div>
+
+            <!-- Image Container -->
+            <div class="relative w-full h-36 rounded-xl overflow-hidden bg-slate-950 mb-2.5">
+              <img 
+                src="${p.image}" 
+                alt="${p.name}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              >
+              <div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold text-slate-200">
+                ${p.sizes.length} tallas
+              </div>
+            </div>
+
+            <!-- Info -->
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-[11px] text-slate-400 mb-0.5 font-medium">
+                  <span>${p.dept}</span>
+                  <span class="font-mono text-slate-500 text-[10px]">${p.skuBase}</span>
+                </div>
+                <h4 class="text-xs font-bold text-slate-100 group-hover:text-rose-400 transition-colors line-clamp-2 leading-snug">
+                  ${p.name}
+                </h4>
+              </div>
+
+              <!-- Price & Stock -->
+              <div class="mt-2.5 pt-2 border-t border-surface-border/60 flex items-end justify-between">
+                <div>
+                  <div class="text-base font-black font-mono text-white leading-none">
+                    $${p.priceUsd.toFixed(2)}
+                  </div>
+                  <div class="text-[10px] font-bold font-mono text-emerald-400 mt-0.5">
+                    Bs. ${priceBs}
+                  </div>
+                </div>
+
+                <div class="text-right">
+                  <div class="text-[10px] font-semibold ${totalStock > 3 ? 'text-emerald-400' : 'text-amber-400'}">
+                    ${totalStock} en stock
+                  </div>
+                  <button class="mt-1 w-7 h-7 rounded-lg bg-rose-600/20 group-hover:bg-rose-600 text-rose-300 group-hover:text-white flex items-center justify-center transition-all">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Modal: Open Variant Selector
+    function openVariantModal(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      currentSelectedProduct = product;
+
+      // Set default color & size
+      const defaultColor = product.colors[0];
+      const availableSize = product.sizes.find(s => s.stock > 0) || product.sizes[0];
+
+      currentModalVariant = {
+        size: availableSize.size,
+        color: defaultColor.name,
+        colorCode: defaultColor.code,
+        qty: 1
+      };
+
+      // Fill modal headers
+      document.getElementById('modal-product-img').src = product.image;
+      document.getElementById('modal-product-name').textContent = product.name;
+      document.getElementById('modal-product-sku').textContent = `SKU-BASE: ${product.skuBase}`;
+      document.getElementById('modal-product-category').textContent = product.dept;
+
+      updateModalView();
+      document.getElementById('variant-modal').classList.remove('hidden');
+    }
+
+    function closeVariantModal() {
+      document.getElementById('variant-modal').classList.add('hidden');
+    }
+
+    function updateModalView() {
+      const p = currentSelectedProduct;
+      document.getElementById('modal-selected-color-name').textContent = currentModalVariant.color;
+      document.getElementById('modal-selected-size-name').textContent = currentModalVariant.size;
+      document.getElementById('modal-qty-display').textContent = currentModalVariant.qty;
+
+      // Render Colors
+      const colorContainer = document.getElementById('modal-color-swatches');
+      colorContainer.innerHTML = p.colors.map(c => `
+        <button 
+          onclick="selectModalColor('${c.name}', '${c.code}')"
+          class="p-2 rounded-xl border flex flex-col items-center gap-1.5 transition-all ${
+            currentModalVariant.color === c.name 
+              ? 'bg-rose-500/20 border-rose-500 ring-2 ring-rose-500/30' 
+              : 'bg-[#0B0F17] border-surface-border hover:border-slate-500'
+          }"
+        >
+          <span class="w-6 h-6 rounded-full border border-white/20 shadow-sm" style="background-color: ${c.hex};"></span>
+          <span class="text-[10px] font-bold text-slate-200 truncate w-full text-center">${c.name}</span>
+        </button>
+      `).join('');
+
+      // Render Sizes
+      const sizeContainer = document.getElementById('modal-size-buttons');
+      sizeContainer.innerHTML = p.sizes.map(s => {
+        const isSelected = currentModalVariant.size === s.size;
+        const isOutOfStock = s.stock === 0;
+        const isLastOne = s.stock === 1;
+
+        let badgeClass = "bg-emerald-500/20 text-emerald-300 border-emerald-500/30";
+        if (isLastOne) badgeClass = "bg-amber-500/20 text-amber-300 border-amber-500/30";
+        if (isOutOfStock) badgeClass = "bg-slate-800 text-slate-600 border-slate-700";
+
+        return `
+          <button 
+            onclick="${isOutOfStock ? '' : `selectModalSize('${s.size}')`}"
+            ${isOutOfStock ? 'disabled' : ''}
+            class="py-3 px-2 rounded-xl border text-center transition-all flex flex-col items-center justify-center relative ${
+              isOutOfStock 
+                ? 'opacity-40 cursor-not-allowed bg-slate-900/40 border-slate-800 text-slate-600 line-through' 
+                : isSelected 
+                  ? 'bg-rose-600 border-rose-400 text-white shadow-lg shadow-rose-950/40 scale-102 ring-2 ring-rose-400/40' 
+                  : 'bg-[#0B0F17] border-surface-border hover:border-slate-500 text-slate-200'
+            }"
+          >
+            <span class="text-base font-extrabold tracking-tight">${s.size}</span>
+            <span class="text-[9px] font-bold mt-0.5 px-1 rounded ${badgeClass}">
+              ${isOutOfStock ? 'Agotado' : `${s.stock} disp.`}
+            </span>
+          </button>
+        `;
+      }).join('');
+
+      // Update Prices
+      const subUsd = p.priceUsd * currentModalVariant.qty;
+      document.getElementById('modal-price-usd').textContent = `$${p.priceUsd.toFixed(2)}`;
+      document.getElementById('modal-price-bs').textContent = `Bs. ${(p.priceUsd * bcvRate).toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      document.getElementById('modal-total-btn-usd').textContent = `$${subUsd.toFixed(2)}`;
+    }
+
+    function selectModalColor(name, code) {
+      currentModalVariant.color = name;
+      currentModalVariant.colorCode = code;
+      updateModalView();
+    }
+
+    function selectModalSize(size) {
+      currentModalVariant.size = size;
+      updateModalView();
+    }
+
+    function adjustVariantQty(delta) {
+      const currentSizeObj = currentSelectedProduct.sizes.find(s => s.size === currentModalVariant.size);
+      const maxStock = currentSizeObj ? currentSizeObj.stock : 99;
+      const newQty = currentModalVariant.qty + delta;
+      if (newQty >= 1 && newQty <= maxStock) {
+        currentModalVariant.qty = newQty;
+        updateModalView();
+      }
+    }
+
+    // Add to Cart
+    function confirmVariantToCart() {
+      const p = currentSelectedProduct;
+      const specificSku = `${p.skuBase}-${currentModalVariant.size}-${currentModalVariant.colorCode || 'GEN'}`;
+
+      const existingIndex = cart.findIndex(item => 
+        item.productId === p.id && 
+        item.size === currentModalVariant.size && 
+        item.color === currentModalVariant.color
+      );
+
+      if (existingIndex > -1) {
+        cart[existingIndex].qty += currentModalVariant.qty;
+      } else {
+        cart.push({
+          productId: p.id,
+          name: p.name,
+          sku: specificSku,
+          size: currentModalVariant.size,
+          color: currentModalVariant.color,
+          priceUsd: p.priceUsd,
+          qty: currentModalVariant.qty,
+          image: p.image
+        });
+      }
+
+      closeVariantModal();
+      renderCart();
+      updateTotals();
+    }
+
+    // Cart Operations
+    function renderCart() {
+      const container = document.getElementById('cart-items-container');
+      const badgeCount = document.getElementById('cart-badge-count');
+      const totalItems = cart.reduce((acc, i) => acc + i.qty, 0);
+      badgeCount.textContent = totalItems;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center p-6 text-slate-500">
+            <div class="w-14 h-14 rounded-2xl bg-surface-panel border border-surface-border flex items-center justify-center text-slate-400 mb-3">
+              <svg class="w-7 h-7 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <p class="text-sm font-semibold text-slate-300">Ticket Vacío</p>
+            <p class="text-xs text-slate-500 mt-1 max-w-[200px]">Seleccione prendas o calzados del catálogo o escanee con la pistola láser.</p>
+          </div>
+        `;
+        document.getElementById('btn-cobrar').disabled = true;
+        return;
+      }
+
+      document.getElementById('btn-cobrar').disabled = false;
+
+      container.innerHTML = cart.map((item, index) => {
+        const itemSubtotal = item.priceUsd * item.qty;
+        const itemSubtotalBs = (itemSubtotal * bcvRate).toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+        return `
+          <div class="p-2.5 rounded-xl bg-[#0B0F17] border border-surface-border flex gap-2.5 items-center relative group">
+            <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded-lg object-cover bg-slate-900 border border-surface-border shrink-0">
+            
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h5 class="text-xs font-bold text-slate-100 truncate">${item.name}</h5>
+                <button onclick="removeCartItem(${index})" class="text-slate-500 hover:text-rose-400 transition-colors ml-1">✕</button>
+              </div>
+
+              <!-- Explicit Fashion Badges: Talla & Color -->
+              <div class="flex items-center gap-1.5 mt-1">
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                  TALLA: ${item.size}
+                </span>
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-panel text-slate-300 border border-surface-border">
+                  ${item.color}
+                </span>
+                <span class="font-mono text-[9px] text-slate-500 hidden sm:inline">${item.sku}</span>
+              </div>
+
+              <!-- Stepper & Price -->
+              <div class="flex items-center justify-between mt-2 pt-1.5 border-t border-surface-border/50">
+                <div class="flex items-center bg-[#131D2D] border border-surface-border rounded-lg">
+                  <button onclick="changeCartQty(${index}, -1)" class="w-6 h-6 flex items-center justify-center text-slate-300 hover:text-white font-bold text-xs">-</button>
+                  <span class="w-6 text-center font-mono font-bold text-xs text-white">${item.qty}</span>
+                  <button onclick="changeCartQty(${index}, 1)" class="w-6 h-6 flex items-center justify-center text-slate-300 hover:text-white font-bold text-xs">+</button>
+                </div>
+
+                <div class="text-right">
+                  <span class="text-xs font-extrabold font-mono text-white">$${itemSubtotal.toFixed(2)}</span>
+                  <span class="text-[10px] text-emerald-400 font-mono block">Bs. ${itemSubtotalBs}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function changeCartQty(index, delta) {
+      if (cart[index]) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) cart.splice(index, 1);
+        renderCart();
+        updateTotals();
+      }
+    }
+
+    function removeCartItem(index) {
+      cart.splice(index, 1);
+      renderCart();
+      updateTotals();
+    }
+
+    function clearCart() {
+      if (cart.length > 0 && confirm('¿Desea vaciar el ticket activo?')) {
+        cart = [];
+        renderCart();
+        updateTotals();
+      }
+    }
+
+    function updateTotals() {
+      const subtotalUsd = cart.reduce((acc, item) => acc + (item.priceUsd * item.qty), 0);
+      const discountUsd = 0.00;
+      const totalUsd = Math.max(0, subtotalUsd - discountUsd);
+      const totalBs = totalUsd * bcvRate;
+
+      document.getElementById('cart-subtotal-usd').textContent = `$${subtotalUsd.toFixed(2)}`;
+      document.getElementById('cart-discount-usd').textContent = `-$${discountUsd.toFixed(2)}`;
+      document.getElementById('cart-tax-usd').textContent = `$${(totalUsd * 0.16).toFixed(2)}`;
+      document.getElementById('cart-total-usd').textContent = totalUsd.toFixed(2);
+      document.getElementById('cart-total-bs').textContent = totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    // Barcode Gun Simulation
+    function simulateBarcodeScan() {
+      const product = products[0];
+      const scannedSku = `${product.skuBase}-42-BLK`;
+      
+      const existing = cart.find(i => i.sku === scannedSku);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          productId: product.id,
+          name: product.name,
+          sku: scannedSku,
+          size: '42',
+          color: 'Negro Onix',
+          priceUsd: product.priceUsd,
+          qty: 1,
+          image: product.image
+        });
+      }
+
+      renderCart();
+      updateTotals();
+      
+      const input = document.getElementById('search-input');
+      input.value = scannedSku;
+      setTimeout(() => { input.value = ''; }, 1200);
+    }
+
+    // Payment Modal Functions
+    function openPaymentModal() {
+      if (cart.length === 0) return;
+      const totalUsd = cart.reduce((acc, item) => acc + (item.priceUsd * item.qty), 0);
+      const totalBs = totalUsd * bcvRate;
+
+      document.getElementById('pay-total-usd').textContent = `$${totalUsd.toFixed(2)}`;
+      document.getElementById('pay-total-bs').textContent = `Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      setPaymentMethod('efectivo');
+      document.getElementById('payment-modal').classList.remove('hidden');
+    }
+
+    function closePaymentModal() {
+      document.getElementById('payment-modal').classList.add('hidden');
+    }
+
+    function setPaymentMethod(method) {
+      currentPaymentMethod = method;
+      const tabs = ['efectivo', 'pagomovil', 'punto', 'zelle'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        if (t === method) {
+          btn.className = "py-2.5 px-2 rounded-xl border border-rose-500 bg-rose-500/10 text-rose-300 font-bold text-xs flex flex-col items-center gap-1 transition-all";
+        } else {
+          btn.className = "py-2.5 px-2 rounded-xl border border-surface-border bg-surface-canvas text-slate-400 font-semibold text-xs flex flex-col items-center gap-1 transition-all";
+        }
+      });
+
+      const totalUsd = cart.reduce((acc, item) => acc + (item.priceUsd * item.qty), 0);
+      const totalBs = totalUsd * bcvRate;
+      const container = document.getElementById('payment-method-container');
+
+      if (method === 'efectivo') {
+        container.innerHTML = `
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-300 font-bold">Monto Recibido en Dólares ($):</span>
+              <span class="text-slate-400 font-mono">Total: $${totalUsd.toFixed(2)}</span>
+            </div>
+            <div class="flex gap-2">
+              <input type="number" id="cash-received" oninput="calculateChange(this.value, ${totalUsd})" value="${Math.ceil(totalUsd / 10) * 10}" step="1" class="flex-1 bg-[#131D2D] border border-surface-border rounded-xl px-4 py-3 text-xl font-bold font-mono text-white focus:outline-none focus:border-rose-500">
+              <button onclick="document.getElementById('cash-received').value = ${totalUsd}; calculateChange(${totalUsd}, ${totalUsd});" class="px-3 bg-surface-panel hover:bg-surface-hover border border-surface-border text-xs font-bold rounded-xl text-slate-300">Exacto</button>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex justify-between items-center">
+              <span class="text-xs font-bold text-emerald-300">Vuelto a Entregar al Cliente:</span>
+              <span id="cash-change-display" class="font-mono font-black text-emerald-400 text-lg">$${(Math.ceil(totalUsd / 10) * 10 - totalUsd).toFixed(2)}</span>
+            </div>
+          </div>
+        `;
+      } else if (method === 'pagomovil') {
+        container.innerHTML = `
+          <div class="space-y-3 text-xs">
+            <div class="p-3 rounded-xl bg-[#131D2D] border border-surface-border space-y-1">
+              <div class="flex justify-between text-slate-300 font-semibold"><span>Banco Destino:</span> <span class="text-white font-bold">Banesco (0134)</span></div>
+              <div class="flex justify-between text-slate-300 font-semibold"><span>Teléfono / Pago Móvil:</span> <span class="font-mono text-white font-bold">0412-1234567</span></div>
+              <div class="flex justify-between text-slate-300 font-semibold"><span>RIF de la Boutique:</span> <span class="font-mono text-white font-bold">J-50123987-0</span></div>
+              <div class="flex justify-between text-emerald-400 font-bold pt-1 border-t border-surface-border"><span>Total a Transferir:</span> <span class="font-mono text-sm">Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span></div>
+            </div>
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Últimos 4 Dígitos de Referencia Bancaria:</label>
+              <input type="text" maxlength="6" placeholder="Ej: 8492" class="w-full bg-[#131D2D] border border-surface-border rounded-xl px-4 py-2.5 text-base font-mono font-bold text-white focus:outline-none focus:border-rose-500">
+            </div>
+          </div>
+        `;
+      } else if (method === 'punto') {
+        container.innerHTML = `
+          <div class="space-y-3 text-xs">
+            <div class="p-3 rounded-xl bg-[#131D2D] border border-surface-border flex items-center justify-between">
+              <span class="text-slate-300 font-bold">Punto de Venta Verifone (Lote #41):</span>
+              <span class="font-mono font-extrabold text-emerald-400 text-sm">Bs. ${totalBs.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Número de Aprobación / Voucher:</label>
+              <input type="text" placeholder="Ej: 004812" class="w-full bg-[#131D2D] border border-surface-border rounded-xl px-4 py-2.5 text-base font-mono font-bold text-white focus:outline-none focus:border-rose-500">
+            </div>
+          </div>
+        `;
+      } else if (method === 'zelle') {
+        container.innerHTML = `
+          <div class="space-y-3 text-xs">
+            <div class="p-3 rounded-xl bg-[#131D2D] border border-surface-border space-y-1">
+              <div class="flex justify-between text-slate-300 font-semibold"><span>Cuenta Zelle:</span> <span class="text-white font-bold">pagos@elcuadrepos.com</span></div>
+              <div class="flex justify-between text-slate-300 font-semibold"><span>Titular:</span> <span class="text-white font-bold">El Cuadre Retail C.A.</span></div>
+              <div class="flex justify-between text-rose-400 font-bold pt-1 border-t border-surface-border"><span>Total en USD:</span> <span class="font-mono text-sm">$${totalUsd.toFixed(2)}</span></div>
+            </div>
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Nombre de la cuenta que envía / Memo:</label>
+              <input type="text" placeholder="Ej: Pedro Perez Zelle" class="w-full bg-[#131D2D] border border-surface-border rounded-xl px-4 py-2.5 text-sm font-medium text-white focus:outline-none focus:border-rose-500">
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function calculateChange(val, total) {
+      const rec = parseFloat(val) || 0;
+      const change = Math.max(0, rec - total);
+      document.getElementById('cash-change-display').textContent = `$${change.toFixed(2)}`;
+    }
+
+    function completeSale() {
+      alert('¡VENTA COMPLETADA EXITOSAMENTE!\n\n1. Impulso eléctrico enviado a Gaveta RJ11 (Gaveta Abierta).\n2. Ticket fiscal / comprobante térmico impreso.\n3. Kardex rebajado por variante de talla y color.');
+      cart = [];
+      closePaymentModal();
+      renderCart();
+      updateTotals();
+    }
+
+    // Modal Canje / Cambio
+    function openExchangeModal() {
+      document.getElementById('exchange-modal').classList.remove('hidden');
+    }
+    function closeExchangeModal() {
+      document.getElementById('exchange-modal').classList.add('hidden');
+    }
+    function emitExchange() {
+      alert('¡Canje procesado!\n\n- Prenda devuelta reingresada a inventario: Talla 40 (+1).\n- Nueva prenda despachada: Talla 41 (-1).\n- Comprobante de canje impreso.');
+      closeExchangeModal();
+    }
+
+    // Modal Thermal Label
+    function openThermalModal(product) {
+      if (!product) product = products[0];
+      document.getElementById('label-product-name').textContent = product.name.toUpperCase();
+      document.getElementById('label-size').textContent = '42';
+      document.getElementById('label-color').textContent = product.colors[0].name.toUpperCase();
+      document.getElementById('label-dept').textContent = product.dept.toUpperCase();
+      document.getElementById('label-sku').textContent = `SKU-${product.skuBase}-42-${product.colors[0].code}`;
+      document.getElementById('label-price-usd').textContent = `$${product.priceUsd.toFixed(2)}`;
+      document.getElementById('label-price-bs').textContent = `Bs. ${(product.priceUsd * bcvRate).toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      document.getElementById('thermal-modal').classList.remove('hidden');
+    }
+    function closeThermalModal() {
+      document.getElementById('thermal-modal').classList.add('hidden');
+    }
+
+    function toggleBcvModal() {
+      const newRate = prompt('Ingrese nueva tasa oficial BCV (Bs/$):', bcvRate);
+      if (newRate && !isNaN(newRate)) {
+        bcvRate = parseFloat(newRate);
+        document.getElementById('bcv-rate-display').textContent = `Bs. ${bcvRate.toFixed(2)}`;
+        renderProducts();
+        updateTotals();
+      }
+    }
+
+    function promptCustomer() {
+      const name = prompt('Ingrese Cédula/RIF y Nombre del Cliente:', 'V-18492019 - Carlos Mendoza');
+      if (name) {
+        document.getElementById('customer-name-display').textContent = name;
+      }
+    }
+
+    function pauseTicket() {
+      if (cart.length === 0) return;
+      alert(`Ticket #1042 puesto en espera (${cart.length} prendas). Se libera la caja para atender el siguiente cliente.`);
+      cart = [];
+      renderCart();
+      updateTotals();
+    }
+  </script>
+</body>
+</html>

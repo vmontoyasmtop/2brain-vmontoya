@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>El Cuadre POS — Fashion &amp; Footwear Edition</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            atelier: {
+              bg: '#0B0F17',
+              surface: '#131D2D',
+              surfaceAlt: '#182438',
+              card: '#162234',
+              border: '#1E293B',
+              borderLight: '#2D3D56',
+            },
+            electric: {
+              500: '#3B82F6',
+              600: '#2563EB',
+              glow: 'rgba(59, 130, 246, 0.35)',
+            },
+            coral: '#F43F5E',
+            gold: '#F59E0B',
+            emeraldCustom: '#10B981',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F17;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3B82F6;
+    }
+  </style>
+</link></head>
+<body class="bg-[#0B0F17] text-slate-100 font-sans h-screen w-screen overflow-hidden flex flex-col select-none antialiased">
+<!-- ======================================================== -->
+<!-- TOP HEADER / NAV BAR                                     -->
+<!-- ======================================================== -->
+<header class="h-16 bg-[#131D2D] border-b border-[#1E293B] px-5 flex items-center justify-between flex-shrink-0 z-30 shadow-lg">
+<!-- Brand & Department Toggle -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined fill-1 text-2xl">loyalty</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-extrabold text-base tracking-wider text-white">EL CUADRE</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold tracking-widest bg-gradient-to-r from-blue-600 to-indigo-600 text-white uppercase">Fashion</span>
+</div>
+<p class="text-[11px] font-mono text-slate-400 tracking-tight">Atelier POS • Terminal #03</p>
+</div>
+</div>
+<div class="h-6 w-px bg-slate-800 mx-1"></div>
+<!-- Department Quick Switcher -->
+<div class="flex bg-[#0B0F17] p-1 rounded-lg border border-[#1E293B]">
+<button class="px-3 py-1 rounded-md text-xs font-semibold bg-[#1E293B] text-white shadow-sm flex items-center gap-1.5 border border-slate-700">
+<span class="material-symbols-outlined text-[16px] text-amber-400">checkroom</span>
+          Ropa y Calzado
+        </button>
+<button class="px-3 py-1 rounded-md text-xs font-medium text-slate-400 hover:text-slate-200 flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+          Víveres &amp; Market
+        </button>
+</div>
+</div>
+<!-- Center: Live BCV & Operations -->
+<div class="flex items-center gap-3">
+<!-- BCV Exchange Rate Pill -->
+<div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B0F17] border border-emeraldCustom/30 shadow-[0_0_12px_rgba(16,185,129,0.15)]">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+</span>
+<span class="text-xs font-mono text-slate-300">TASA BCV OFICIAL:</span>
+<span class="text-xs font-mono font-bold text-emerald-400">Bs. 44.50 / $</span>
+</div>
+<!-- Quick Action: Canje / Devolución -->
+<button class="px-3 py-1.5 rounded-lg bg-[#182438] hover:bg-[#1E293B] border border-[#1E293B] text-xs font-medium text-slate-200 flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-[16px] text-blue-400">sync_alt</span>
+        Canje / Devolución
+      </button>
+<!-- Quick Action: Thermal Tag Printer -->
+<button class="px-3 py-1.5 rounded-lg bg-[#182438] hover:bg-[#1E293B] border border-[#1E293B] text-xs font-medium text-slate-200 flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-[16px] text-amber-400">print</span>
+        Etiquetas 50x30mm
+      </button>
+</div>
+<!-- Right: Cashier Info & Security -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-3 bg-[#0B0F17] py-1.5 px-3 rounded-xl border border-[#1E293B]">
+<div class="w-7 h-7 rounded-full bg-gradient-to-tr from-blue-600 to-rose-500 flex items-center justify-center font-bold text-xs text-white">
+          VR
+        </div>
+<div class="text-left">
+<p class="text-xs font-semibold text-slate-200 leading-none">Valeria Rivas</p>
+<span class="text-[10px] text-emerald-400 font-mono leading-none">Turno Matutino</span>
+</div>
+</div>
+<!-- PIN / Lock Button -->
+<button class="p-2 rounded-xl bg-[#182438] hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 border border-[#1E293B] hover:border-rose-500/40 transition">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</button>
+</div>
+</header>
+<!-- ======================================================== -->
+<!-- MAIN WORKSPACE: 68% CATALOG + 32% CART                   -->
+<!-- ======================================================== -->
+<div class="flex-1 flex overflow-hidden relative">
+<!-- ====================================================== -->
+<!-- LEFT: CATALOG & PRODUCT SELECTION (68% width)         -->
+<!-- ====================================================== -->
+<main class="w-[68%] flex flex-col bg-[#0B0F17] border-r border-[#1E293B] overflow-hidden">
+<!-- Search & Barcode Scan Bar -->
+<div class="p-4 pb-2 border-b border-[#1E293B]/70 flex items-center gap-3 bg-[#0E1522]">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+<input class="w-full bg-[#131D2D] border border-[#1E293B] rounded-xl pl-11 pr-24 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition font-medium" placeholder="Buscar por prenda, zapato, código SKU o escanear código de barra (F3)..." type="text" value=""/>
+<div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2 py-1 rounded bg-[#182438] border border-slate-700 text-slate-300 text-[10px] font-mono">
+<span class="material-symbols-outlined text-[14px] text-blue-400">barcode_scanner</span>
+<span>SCAN ACTIVO</span>
+</div>
+</div>
+<button class="px-3.5 py-2.5 rounded-xl bg-[#131D2D] hover:bg-[#182438] border border-[#1E293B] text-slate-300 text-xs font-semibold flex items-center gap-2 transition">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+          Filtros
+        </button>
+</div>
+<!-- Horizontal Department Pills -->
+<div class="px-4 py-2.5 bg-[#0B0F17] border-b border-[#1E293B] flex items-center gap-2 overflow-x-auto no-scrollbar">
+<button class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white shadow-md shadow-blue-900/40 flex-shrink-0 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">apps</span>
+          Todos (48)
+        </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#131D2D] hover:bg-[#182438] text-slate-300 border border-[#1E293B] flex-shrink-0 flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-[15px] text-amber-400">steps</span>
+          Calzado Caballero (14)
+        </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#131D2D] hover:bg-[#182438] text-slate-300 border border-[#1E293B] flex-shrink-0 flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-[15px] text-rose-400">roller_skating</span>
+          Calzado Dama (16)
+        </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#131D2D] hover:bg-[#182438] text-slate-300 border border-[#1E293B] flex-shrink-0 flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-[15px] text-blue-400">styler</span>
+          Camisas &amp; Franelas (8)
+        </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#131D2D] hover:bg-[#182438] text-slate-300 border border-[#1E293B] flex-shrink-0 flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-[15px] text-indigo-400">straighten</span>
+          Pantalones Jeans (6)
+        </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#131D2D] hover:bg-[#182438] text-slate-300 border border-[#1E293B] flex-shrink-0 flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-[15px] text-emerald-400">woman</span>
+          Vestidos (4)
+        </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#131D2D] hover:bg-[#182438] text-slate-300 border border-[#1E293B] flex-shrink-0 flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-[15px] text-amber-300">watch</span>
+          Accesorios (10)
+        </button>
+</div>
+<!-- Product Cards Grid -->
+<div class="flex-1 p-4 overflow-y-auto grid grid-cols-4 gap-3.5 content-start">
+<!-- Card 1: Oxford Leather (Selected / Trigger for Variant Modal) -->
+<div class="bg-[#131D2D] rounded-2xl border-2 border-blue-500/80 p-3 flex flex-col justify-between relative group cursor-pointer shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:border-blue-400 transition">
+<div class="absolute top-2.5 left-2.5 z-10 flex gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-blue-600/90 text-white backdrop-blur-md">Calzado</span>
+</div>
+<div class="absolute top-2.5 right-2.5 z-10">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">En Stock</span>
+</div>
+<!-- Product Image container -->
+<div class="w-full h-32 rounded-xl bg-[#0B0F17] overflow-hidden relative mb-2.5 flex items-center justify-center border border-slate-800">
+<img alt="Zapato Oxford Cuero Genuino" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 via-transparent to-transparent"></div>
+<!-- Quick Size indicator on hover -->
+<div class="absolute bottom-1.5 left-2 right-2 flex justify-between items-center text-[10px] font-mono text-slate-300">
+<span>SKU: OXF-902</span>
+<span class="text-amber-400 font-semibold">Tallas 39-44</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-xs text-white leading-snug line-clamp-1">Zapato Oxford Formal Italiano</h3>
+<p class="text-[11px] text-slate-400 mb-2">Cuero Genuino • Suela Cosida</p>
+<div class="flex items-baseline justify-between pt-1 border-t border-slate-800">
+<div>
+<span class="text-base font-extrabold text-blue-400 font-mono">$65.00</span>
+<span class="text-[11px] text-slate-400 block font-mono">Bs. 2,892.50</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center shadow-md shadow-blue-700/30">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Urban Runner Sneakers -->
+<div class="bg-[#131D2D] rounded-2xl border border-[#1E293B] hover:border-slate-600 p-3 flex flex-col justify-between relative group cursor-pointer transition">
+<div class="absolute top-2.5 left-2.5 z-10 flex gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-800/90 text-slate-300 border border-slate-700">Sneakers</span>
+</div>
+<div class="absolute top-2.5 right-2.5 z-10">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">Pocas Tallas</span>
+</div>
+<div class="w-full h-32 rounded-xl bg-[#0B0F17] overflow-hidden relative mb-2.5 flex items-center justify-center border border-slate-800">
+<img alt="Sneakers Running Urban" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 left-2 right-2 flex justify-between items-center text-[10px] font-mono text-slate-300">
+<span>SKU: SNK-104</span>
+<span class="text-rose-400 font-semibold">Tallas 40, 42</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-xs text-white leading-snug line-clamp-1">Sneaker Deportivo Crimson Speed</h3>
+<p class="text-[11px] text-slate-400 mb-2">Amortiguación Air • Suela EVA</p>
+<div class="flex items-baseline justify-between pt-1 border-t border-slate-800">
+<div>
+<span class="text-base font-extrabold text-blue-400 font-mono">$52.00</span>
+<span class="text-[11px] text-slate-400 block font-mono">Bs. 2,314.00</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-[#182438] hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Stiletto Heels Dama -->
+<div class="bg-[#131D2D] rounded-2xl border border-[#1E293B] hover:border-slate-600 p-3 flex flex-col justify-between relative group cursor-pointer transition">
+<div class="absolute top-2.5 left-2.5 z-10 flex gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-rose-950/80 text-rose-300 border border-rose-800">Dama</span>
+</div>
+<div class="absolute top-2.5 right-2.5 z-10">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Completo</span>
+</div>
+<div class="w-full h-32 rounded-xl bg-[#0B0F17] overflow-hidden relative mb-2.5 flex items-center justify-center border border-slate-800">
+<img alt="Tacones Stiletto Gamuza" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 left-2 right-2 flex justify-between items-center text-[10px] font-mono text-slate-300">
+<span>SKU: STL-308</span>
+<span class="text-amber-400 font-semibold">Tallas 36-39</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-xs text-white leading-snug line-clamp-1">Zapatilla Stiletto Atelier Gamuza</h3>
+<p class="text-[11px] text-slate-400 mb-2">Tacón 9cm • Forro Ergonómico</p>
+<div class="flex items-baseline justify-between pt-1 border-t border-slate-800">
+<div>
+<span class="text-base font-extrabold text-blue-400 font-mono">$48.00</span>
+<span class="text-[11px] text-slate-400 block font-mono">Bs. 2,136.00</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-[#182438] hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Linen Shirt (Camisa Lino Premium) -->
+<div class="bg-[#131D2D] rounded-2xl border border-[#1E293B] hover:border-slate-600 p-3 flex flex-col justify-between relative group cursor-pointer transition">
+<div class="absolute top-2.5 left-2.5 z-10 flex gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-800/90 text-slate-300 border border-slate-700">Prenda</span>
+</div>
+<div class="w-full h-32 rounded-xl bg-[#0B0F17] overflow-hidden relative mb-2.5 flex items-center justify-center border border-slate-800">
+<img alt="Camisa de Lino Manga Larga" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 left-2 right-2 flex justify-between items-center text-[10px] font-mono text-slate-300">
+<span>SKU: CAM-045</span>
+<span class="text-slate-300 font-semibold">Tallas S, M, L, XL</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-xs text-white leading-snug line-clamp-1">Camisa Lino Italiano Slim Fit</h3>
+<p class="text-[11px] text-slate-400 mb-2">100% Lino • Botones Nácar</p>
+<div class="flex items-baseline justify-between pt-1 border-t border-slate-800">
+<div>
+<span class="text-base font-extrabold text-blue-400 font-mono">$38.00</span>
+<span class="text-[11px] text-slate-400 block font-mono">Bs. 1,691.00</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-[#182438] hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5: Jeans Denim Selvedge -->
+<div class="bg-[#131D2D] rounded-2xl border border-[#1E293B] hover:border-slate-600 p-3 flex flex-col justify-between relative group cursor-pointer transition">
+<div class="absolute top-2.5 left-2.5 z-10 flex gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-800/90 text-slate-300 border border-slate-700">Denim</span>
+</div>
+<div class="w-full h-32 rounded-xl bg-[#0B0F17] overflow-hidden relative mb-2.5 flex items-center justify-center border border-slate-800">
+<img alt="Pantalón Jean Denim" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 left-2 right-2 flex justify-between items-center text-[10px] font-mono text-slate-300">
+<span>SKU: JEA-880</span>
+<span class="text-slate-300 font-semibold">Tallas 30 - 38</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-xs text-white leading-snug line-clamp-1">Jean Raw Denim Selvedge 14oz</h3>
+<p class="text-[11px] text-slate-400 mb-2">Corte Recto • Costura Cobre</p>
+<div class="flex items-baseline justify-between pt-1 border-t border-slate-800">
+<div>
+<span class="text-base font-extrabold text-blue-400 font-mono">$42.00</span>
+<span class="text-[11px] text-slate-400 block font-mono">Bs. 1,869.00</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-[#182438] hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 6: Vestido Coctel Dama -->
+<div class="bg-[#131D2D] rounded-2xl border border-[#1E293B] hover:border-slate-600 p-3 flex flex-col justify-between relative group cursor-pointer transition">
+<div class="absolute top-2.5 left-2.5 z-10 flex gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-rose-950/80 text-rose-300 border border-rose-800">Vestido</span>
+</div>
+<div class="w-full h-32 rounded-xl bg-[#0B0F17] overflow-hidden relative mb-2.5 flex items-center justify-center border border-slate-800">
+<img alt="Vestido Coctel Seda" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 left-2 right-2 flex justify-between items-center text-[10px] font-mono text-slate-300">
+<span>SKU: VES-512</span>
+<span class="text-slate-300 font-semibold">Tallas XS, S, M</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-xs text-white leading-snug line-clamp-1">Vestido Noche Seda Esmeralda</h3>
+<p class="text-[11px] text-slate-400 mb-2">Escote Drapeado • Satén</p>
+<div class="flex items-baseline justify-between pt-1 border-t border-slate-800">
+<div>
+<span class="text-base font-extrabold text-blue-400 font-mono">$75.00</span>
+<span class="text-[11px] text-slate-400 block font-mono">Bs. 3,337.50</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-[#182438] hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 7: Botas Chelsea Cuero Caramelo -->
+<div class="bg-[#131D2D] rounded-2xl border border-[#1E293B] hover:border-slate-600 p-3 flex flex-col justify-between relative group cursor-pointer transition">
+<div class="absolute top-2.5 left-2.5 z-10 flex gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-amber-950/80 text-amber-300 border border-amber-800">Botas</span>
+</div>
+<div class="w-full h-32 rounded-xl bg-[#0B0F17] overflow-hidden relative mb-2.5 flex items-center justify-center border border-slate-800">
+<img alt="Bota Chelsea Cuero" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 left-2 right-2 flex justify-between items-center text-[10px] font-mono text-slate-300">
+<span>SKU: BOT-420</span>
+<span class="text-amber-400 font-semibold">Tallas 40-44</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-xs text-white leading-snug line-clamp-1">Bota Chelsea Artisan Cognac</h3>
+<p class="text-[11px] text-slate-400 mb-2">Cuero Vacuno • Elásticos Laterales</p>
+<div class="flex items-baseline justify-between pt-1 border-t border-slate-800">
+<div>
+<span class="text-base font-extrabold text-blue-400 font-mono">$85.00</span>
+<span class="text-[11px] text-slate-400 block font-mono">Bs. 3,782.50</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-[#182438] hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 8: Cinturón Cuero Reversible -->
+<div class="bg-[#131D2D] rounded-2xl border border-[#1E293B] hover:border-slate-600 p-3 flex flex-col justify-between relative group cursor-pointer transition">
+<div class="absolute top-2.5 left-2.5 z-10 flex gap-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-800/90 text-slate-300 border border-slate-700">Accesorios</span>
+</div>
+<div class="w-full h-32 rounded-xl bg-[#0B0F17] overflow-hidden relative mb-2.5 flex items-center justify-center border border-slate-800">
+<img alt="Cinturón de Cuero Genuino" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0F17]/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 left-2 right-2 flex justify-between items-center text-[10px] font-mono text-slate-300">
+<span>SKU: CIN-018</span>
+<span class="text-emerald-400 font-semibold">Talla Única</span>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-xs text-white leading-snug line-clamp-1">Cinturón Reversible Hebilla Plata</h3>
+<p class="text-[11px] text-slate-400 mb-2">Negro / Café • Cuero 100%</p>
+<div class="flex items-baseline justify-between pt-1 border-t border-slate-800">
+<div>
+<span class="text-base font-extrabold text-blue-400 font-mono">$18.00</span>
+<span class="text-[11px] text-slate-400 block font-mono">Bs. 801.00</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-[#182438] hover:bg-blue-600 text-slate-300 hover:text-white flex items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Catalog Bottom Toolbar (Shortcuts & Footwear sizing guide) -->
+<div class="h-10 bg-[#0E1522] border-t border-[#1E293B] px-4 flex items-center justify-between text-xs text-slate-400">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5 text-slate-300 font-mono text-[11px]">
+<kbd class="px-1.5 py-0.5 bg-[#182438] border border-slate-700 rounded text-slate-200">F2</kbd> Nueva Venta
+          </span>
+<span class="flex items-center gap-1.5 text-slate-300 font-mono text-[11px]">
+<kbd class="px-1.5 py-0.5 bg-[#182438] border border-slate-700 rounded text-slate-200">F4</kbd> Selector Talla
+          </span>
+<span class="flex items-center gap-1.5 text-slate-300 font-mono text-[11px]">
+<kbd class="px-1.5 py-0.5 bg-[#182438] border border-slate-700 rounded text-slate-200">F8</kbd> Descuento %
+          </span>
+<span class="flex items-center gap-1.5 text-slate-300 font-mono text-[11px]">
+<kbd class="px-1.5 py-0.5 bg-[#182438] border border-slate-700 rounded text-slate-200">ESC</kbd> Cancelar
+          </span>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 text-[11px] text-emerald-400 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+            Impresora Térmica Conectada
+          </span>
+</div>
+</div>
+</main>
+<!-- ====================================================== -->
+<!-- RIGHT: CART & CHECKOUT PANEL (32% width)              -->
+<!-- ====================================================== -->
+<aside class="w-[32%] flex flex-col bg-[#131D2D] overflow-hidden relative shadow-2xl">
+<!-- Cart Header & Customer Indicator -->
+<div class="p-3.5 bg-[#182438] border-b border-[#1E293B] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-extrabold text-sm text-white">Ticket #FASH-8831</h2>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-mono bg-blue-500/20 text-blue-300 border border-blue-500/30">3 Artículos</span>
+</div>
+<p class="text-[11px] text-slate-400">Cliente: <span class="text-slate-200 font-semibold">Consumidor Final (V-Detalle)</span></p>
+</div>
+</div>
+<!-- Clear / Action buttons -->
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400 hover:text-white transition" title="Cambiar Cliente / Añadir RIF">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 transition" title="Vaciar Carrito">
+<span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+</button>
+</div>
+</div>
+<!-- Ticket Items List (Active Cart) -->
+<div class="flex-1 overflow-y-auto p-3 space-y-2.5">
+<!-- Cart Item 1: Calzado Oxford con Talla & Color -->
+<div class="bg-[#0B0F17] rounded-xl p-3 border border-[#1E293B] relative group">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex-1">
+<h4 class="font-bold text-xs text-white leading-tight">Zapato Oxford Formal Italiano</h4>
+<!-- Talla & Color Badges -->
+<div class="flex items-center gap-1.5 mt-1.5">
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-600/30 text-blue-300 border border-blue-500/40">
+                  TALLA: 42
+                </span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-stone-900 border border-slate-500 inline-block"></span>
+                  COLOR: Negro Ónix
+                </span>
+</div>
+</div>
+<!-- Delete item -->
+<button class="text-slate-500 hover:text-rose-400 p-1 transition">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Price & Stepper Row -->
+<div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+<div>
+<span class="text-sm font-extrabold text-blue-400 font-mono">$65.00</span>
+<span class="text-[10px] text-slate-400 font-mono ml-1.5">Bs. 2,892.50</span>
+</div>
+<!-- Stepper -->
+<div class="flex items-center bg-[#131D2D] rounded-lg border border-[#1E293B]">
+<button class="w-7 h-7 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 rounded-l-lg transition">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="w-7 text-center font-mono font-bold text-xs text-white">1</span>
+<button class="w-7 h-7 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 rounded-r-lg transition">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2: Camisa Lino con Talla & Color -->
+<div class="bg-[#0B0F17] rounded-xl p-3 border border-[#1E293B] relative group">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex-1">
+<h4 class="font-bold text-xs text-white leading-tight">Camisa Lino Italiano Slim Fit</h4>
+<!-- Talla & Color Badges -->
+<div class="flex items-center gap-1.5 mt-1.5">
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-600/30 text-blue-300 border border-blue-500/40">
+                  TALLA: L
+                </span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-slate-100 border border-slate-400 inline-block"></span>
+                  COLOR: Blanco Puro
+                </span>
+</div>
+</div>
+<!-- Delete item -->
+<button class="text-slate-500 hover:text-rose-400 p-1 transition">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Price & Stepper Row -->
+<div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+<div>
+<span class="text-sm font-extrabold text-blue-400 font-mono">$38.00</span>
+<span class="text-[10px] text-slate-400 font-mono ml-1.5">Bs. 1,691.00</span>
+</div>
+<!-- Stepper -->
+<div class="flex items-center bg-[#131D2D] rounded-lg border border-[#1E293B]">
+<button class="w-7 h-7 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 rounded-l-lg transition">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="w-7 text-center font-mono font-bold text-xs text-white">1</span>
+<button class="w-7 h-7 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 rounded-r-lg transition">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 3: Cinturón Reversible -->
+<div class="bg-[#0B0F17] rounded-xl p-3 border border-[#1E293B] relative group">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex-1">
+<h4 class="font-bold text-xs text-white leading-tight">Cinturón Reversible Hebilla Plata</h4>
+<!-- Talla & Color Badges -->
+<div class="flex items-center gap-1.5 mt-1.5">
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-800 text-slate-300 border border-slate-700">
+                  TALLA: ÚNICA
+                </span>
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-800 text-slate-300 border border-slate-700 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-amber-900 border border-amber-600 inline-block"></span>
+                  COLOR: Café / Negro
+                </span>
+</div>
+</div>
+<!-- Delete item -->
+<button class="text-slate-500 hover:text-rose-400 p-1 transition">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Price & Stepper Row -->
+<div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+<div>
+<span class="text-sm font-extrabold text-blue-400 font-mono">$18.00</span>
+<span class="text-[10px] text-slate-400 font-mono ml-1.5">Bs. 801.00</span>
+</div>
+<!-- Stepper -->
+<div class="flex items-center bg-[#131D2D] rounded-lg border border-[#1E293B]">
+<button class="w-7 h-7 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 rounded-l-lg transition">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="w-7 text-center font-mono font-bold text-xs text-white">1</span>
+<button class="w-7 h-7 flex items-center justify-center text-slate-300 hover:text-white hover:bg-slate-700 rounded-r-lg transition">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Totals & Venezuelan Tax Breakdown -->
+<div class="p-3.5 bg-[#0E1522] border-t border-[#1E293B] space-y-2">
+<div class="flex justify-between items-center text-xs text-slate-400">
+<span>Subtotal Base (USD):</span>
+<span class="font-mono text-slate-200 font-medium">$121.00</span>
+</div>
+<div class="flex justify-between items-center text-xs text-slate-400">
+<span class="flex items-center gap-1">
+<span>IVA 16% SENIAT:</span>
+<span class="text-[10px] bg-slate-800 px-1 rounded text-slate-400 font-mono">SENIAT-VZLA</span>
+</span>
+<span class="font-mono text-slate-200 font-medium">$19.36</span>
+</div>
+<div class="flex justify-between items-center text-xs text-slate-400">
+<span>Equivalente IVA en Bs.:</span>
+<span class="font-mono text-slate-400">Bs. 861.52</span>
+</div>
+<!-- Grand Total Section -->
+<div class="pt-2 border-t border-[#1E293B] flex justify-between items-end">
+<div>
+<span class="text-[11px] font-bold tracking-wider uppercase text-amber-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">payments</span>
+              TOTAL A COBRAR
+            </span>
+<div class="text-xs text-slate-400 font-mono">Tasa: 44.50 Bs/$</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-black text-white font-mono leading-none tracking-tight">
+              $140.36 <span class="text-xs text-blue-400 font-sans font-bold">USD</span>
+</div>
+<div class="text-xs font-mono font-bold text-emerald-400 mt-0.5">
+              Bs. 6,246.02
+            </div>
+</div>
+</div>
+</div>
+<!-- Payment Methods & Primary Action Button -->
+<div class="p-3.5 bg-[#131D2D] border-t border-[#1E293B] space-y-2.5">
+<!-- Payment Methods Quick Select (Venezuelan specifics) -->
+<div class="grid grid-cols-4 gap-1.5">
+<button class="py-2 px-1 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/50 text-blue-300 flex flex-col items-center justify-center gap-1 transition">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="text-[10px] font-bold">Efectivo $</span>
+</button>
+<button class="py-2 px-1 rounded-xl bg-[#0B0F17] hover:bg-[#182438] border border-[#1E293B] text-slate-300 flex flex-col items-center justify-center gap-1 transition">
+<span class="material-symbols-outlined text-[18px] text-emerald-400">qr_code_2</span>
+<span class="text-[10px] font-bold">Pago Móvil</span>
+</button>
+<button class="py-2 px-1 rounded-xl bg-[#0B0F17] hover:bg-[#182438] border border-[#1E293B] text-slate-300 flex flex-col items-center justify-center gap-1 transition">
+<span class="material-symbols-outlined text-[18px] text-amber-400">credit_card</span>
+<span class="text-[10px] font-bold">Punto Venta</span>
+</button>
+<button class="py-2 px-1 rounded-xl bg-[#0B0F17] hover:bg-[#182438] border border-[#1E293B] text-slate-300 flex flex-col items-center justify-center gap-1 transition">
+<span class="material-symbols-outlined text-[18px] text-purple-400">account_balance</span>
+<span class="text-[10px] font-bold">Zelle USD</span>
+</button>
+</div>
+<!-- Main Primary Checkout CTA -->
+<button class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm tracking-wide shadow-[0_0_25px_rgba(59,130,246,0.4)] flex items-center justify-center gap-2 transition active:scale-[0.99]">
+<span class="material-symbols-outlined text-[20px]">point_of_sale</span>
+          COBRAR TICKET (F12) • $140.36
+        </button>
+</div>
+</aside>
+<!-- ======================================================== -->
+<!-- VARIANT SELECTOR MODAL (OVERLAY IN FOCUS)                -->
+<!-- Appears centered when touching a shoe/apparel card       -->
+<!-- ======================================================== -->
+<div class="absolute inset-0 bg-slate-950/75 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+<!-- Modal Box -->
+<div class="w-full max-w-xl bg-[#131D2D] rounded-3xl border border-[#2D3D56] shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Top Bar -->
+<div class="px-5 py-4 bg-[#182438] border-b border-[#1E293B] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+<span class="material-symbols-outlined text-[22px]">apparel</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-bold text-sm text-white">Zapato Oxford Formal Italiano</h3>
+<span class="px-2 py-0.2 rounded text-[10px] font-mono bg-blue-500/20 text-blue-300">OXF-902</span>
+</div>
+<p class="text-xs text-slate-400">Seleccione talla y color para agregar al ticket</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-[#0B0F17] hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 border border-[#1E293B] flex items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="p-6 space-y-5">
+<!-- Size Selector Header & Legend -->
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<label class="text-xs font-bold text-slate-200 tracking-wider uppercase flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-amber-400">straighten</span>
+                1. Talla de Calzado (EU / Mercosur)
+              </label>
+<!-- Stock Status Legend -->
+<div class="flex items-center gap-3 text-[11px] font-medium">
+<span class="flex items-center gap-1 text-emerald-400">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Stock
+                </span>
+<span class="flex items-center gap-1 text-amber-400">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> Último par
+                </span>
+<span class="flex items-center gap-1 text-slate-500">
+<span class="w-2 h-2 rounded-full bg-slate-600"></span> Agotado
+                </span>
+</div>
+</div>
+<!-- Size Buttons Grid (Touch-friendly 44x44+ min sizes) -->
+<div class="grid grid-cols-5 gap-2.5">
+<!-- 38: Agotado -->
+<button class="h-14 rounded-2xl bg-[#0B0F17]/60 border border-slate-800/80 text-slate-600 flex flex-col items-center justify-center cursor-not-allowed opacity-50 relative" disabled="">
+<span class="text-base font-extrabold font-mono leading-none line-through">38</span>
+<span class="text-[10px] text-slate-600 mt-1 font-mono">0 pares</span>
+</button>
+<!-- 39: Stock Verde -->
+<button class="h-14 rounded-2xl bg-[#0B0F17] hover:bg-[#182438] border border-emerald-500/40 text-slate-200 flex flex-col items-center justify-center relative transition group hover:border-emerald-400">
+<div class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-base font-extrabold font-mono text-white leading-none">39</span>
+<span class="text-[10px] text-emerald-400 mt-1 font-mono">3 pares</span>
+</button>
+<!-- 40: Stock Verde -->
+<button class="h-14 rounded-2xl bg-[#0B0F17] hover:bg-[#182438] border border-emerald-500/40 text-slate-200 flex flex-col items-center justify-center relative transition group hover:border-emerald-400">
+<div class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-base font-extrabold font-mono text-white leading-none">40</span>
+<span class="text-[10px] text-emerald-400 mt-1 font-mono">5 pares</span>
+</button>
+<!-- 41: Último par (Amber) -->
+<button class="h-14 rounded-2xl bg-[#0B0F17] hover:bg-[#182438] border border-amber-500/40 text-slate-200 flex flex-col items-center justify-center relative transition group hover:border-amber-400">
+<div class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+<span class="text-base font-extrabold font-mono text-white leading-none">41</span>
+<span class="text-[10px] text-amber-400 mt-1 font-mono">1 par</span>
+</button>
+<!-- 42: ACTIVA / SELECCIONADA (Azul resaltado vibrante) -->
+<button class="h-14 rounded-2xl bg-blue-600 border-2 border-blue-400 text-white flex flex-col items-center justify-center relative shadow-[0_0_15px_rgba(59,130,246,0.5)] scale-[1.03]">
+<div class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-white"></div>
+<span class="text-base font-black font-mono leading-none">42</span>
+<span class="text-[10px] text-blue-100 mt-1 font-mono font-bold">4 pares</span>
+</button>
+<!-- 43: Stock Verde -->
+<button class="h-14 rounded-2xl bg-[#0B0F17] hover:bg-[#182438] border border-emerald-500/40 text-slate-200 flex flex-col items-center justify-center relative transition group hover:border-emerald-400">
+<div class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-base font-extrabold font-mono text-white leading-none">43</span>
+<span class="text-[10px] text-emerald-400 mt-1 font-mono">2 pares</span>
+</button>
+<!-- 44: Último par (Amber) -->
+<button class="h-14 rounded-2xl bg-[#0B0F17] hover:bg-[#182438] border border-amber-500/40 text-slate-200 flex flex-col items-center justify-center relative transition group hover:border-amber-400">
+<div class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+<span class="text-base font-extrabold font-mono text-white leading-none">44</span>
+<span class="text-[10px] text-amber-400 mt-1 font-mono">1 par</span>
+</button>
+<!-- 45: Agotado -->
+<button class="h-14 rounded-2xl bg-[#0B0F17]/60 border border-slate-800/80 text-slate-600 flex flex-col items-center justify-center cursor-not-allowed opacity-50 relative" disabled="">
+<span class="text-base font-extrabold font-mono leading-none line-through">45</span>
+<span class="text-[10px] text-slate-600 mt-1 font-mono">0 pares</span>
+</button>
+<!-- 46: Agotado -->
+<button class="h-14 rounded-2xl bg-[#0B0F17]/60 border border-slate-800/80 text-slate-600 flex flex-col items-center justify-center cursor-not-allowed opacity-50 relative" disabled="">
+<span class="text-base font-extrabold font-mono leading-none line-through">46</span>
+<span class="text-[10px] text-slate-600 mt-1 font-mono">0 pares</span>
+</button>
+<!-- Ver más tallas / Almacén -->
+<button class="h-14 rounded-2xl bg-[#0B0F17] hover:bg-[#182438] border border-slate-700 text-slate-400 flex flex-col items-center justify-center transition">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="text-[9px] text-slate-400 font-mono">Depósito</span>
+</button>
+</div>
+</div>
+<!-- Color Swatches Selection -->
+<div>
+<label class="text-xs font-bold text-slate-200 tracking-wider uppercase mb-2.5 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-blue-400">palette</span>
+              2. Color / Tonalidad
+            </label>
+<div class="grid grid-cols-3 gap-3">
+<!-- Color 1: Negro Ónix (Seleccionado) -->
+<button class="p-3 rounded-2xl bg-[#0B0F17] border-2 border-blue-500 flex items-center gap-3 text-left shadow-[0_0_12px_rgba(59,130,246,0.3)]">
+<span class="w-6 h-6 rounded-full bg-black border-2 border-slate-500 shadow-inner flex-shrink-0"></span>
+<div class="leading-none">
+<span class="text-xs font-bold text-white block">Negro Ónix</span>
+<span class="text-[10px] text-emerald-400 font-mono">En stock (4)</span>
+</div>
+</button>
+<!-- Color 2: Café Cognac -->
+<button class="p-3 rounded-2xl bg-[#0B0F17] hover:bg-[#182438] border border-slate-800 flex items-center gap-3 text-left transition">
+<span class="w-6 h-6 rounded-full bg-[#78350F] border-2 border-amber-600/60 shadow-inner flex-shrink-0"></span>
+<div class="leading-none">
+<span class="text-xs font-bold text-slate-200 block">Café Cognac</span>
+<span class="text-[10px] text-amber-400 font-mono">Último par (1)</span>
+</div>
+</button>
+<!-- Color 3: Borgoña / Vino -->
+<button class="p-3 rounded-2xl bg-[#0B0F17] hover:bg-[#182438] border border-slate-800 flex items-center gap-3 text-left transition">
+<span class="w-6 h-6 rounded-full bg-[#881337] border-2 border-rose-600/60 shadow-inner flex-shrink-0"></span>
+<div class="leading-none">
+<span class="text-xs font-bold text-slate-200 block">Borgoña Real</span>
+<span class="text-[10px] text-emerald-400 font-mono">En stock (2)</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Quantity Stepper & Price in Modal -->
+<div class="bg-[#0B0F17] rounded-2xl p-4 border border-[#1E293B] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-slate-300">Cantidad:</span>
+<div class="flex items-center bg-[#131D2D] rounded-xl border border-[#1E293B] p-1">
+<button class="w-9 h-9 rounded-lg bg-[#182438] hover:bg-slate-700 text-white flex items-center justify-center font-bold text-base transition">
+                  -
+                </button>
+<span class="w-10 text-center font-mono font-black text-sm text-white">1</span>
+<button class="w-9 h-9 rounded-lg bg-[#182438] hover:bg-slate-700 text-white flex items-center justify-center font-bold text-base transition">
+                  +
+                </button>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] text-slate-400 block font-mono">Total de esta variante:</span>
+<span class="text-xl font-extrabold text-blue-400 font-mono">$65.00</span>
+<span class="text-xs text-slate-400 font-mono ml-1.5">Bs. 2,892.50</span>
+</div>
+</div>
+</div>
+<!-- Modal Footer CTA -->
+<div class="px-6 py-4 bg-[#182438] border-t border-[#1E293B] flex items-center justify-between gap-4">
+<button class="px-5 py-3 rounded-xl bg-[#0B0F17] hover:bg-[#1E293B] text-slate-300 hover:text-white border border-[#1E293B] text-xs font-bold transition">
+            Volver al Catálogo (ESC)
+          </button>
+<button class="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm tracking-wide shadow-[0_0_20px_rgba(59,130,246,0.5)] flex items-center justify-center gap-2 transition">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+            AGREGAR AL TICKET (TALLA 42 • NEGRO)
+          </button>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

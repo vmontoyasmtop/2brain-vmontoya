@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>El Cuadre POS Fashion - Matriz de Inventario por Tallas y Colores</title>
+<!-- Material Symbols Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Space Grotesk, Geist, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 Plugin Bundle -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-container": "#00a572",
+            "on-error": "#690005",
+            "on-tertiary-fixed": "#002113",
+            "surface-container-highest": "#31353e",
+            "inverse-on-surface": "#2c3039",
+            "secondary-container": "#b50036",
+            "error-container": "#93000a",
+            "surface-container-low": "#181c24",
+            "primary-fixed": "#d8e2ff",
+            "on-background": "#dfe2ee",
+            "inverse-surface": "#dfe2ee",
+            "on-secondary-fixed": "#40000d",
+            "surface-container-high": "#262a33",
+            "on-primary-fixed": "#001a42",
+            "primary-container": "#4d8eff",
+            "inverse-primary": "#005ac2",
+            "outline-variant": "#424754",
+            "on-tertiary-container": "#00311f",
+            "secondary-fixed": "#ffdadb",
+            "on-secondary": "#67001b",
+            "surface-variant": "#31353e",
+            "secondary": "#ffb2b7",
+            "on-surface": "#dfe2ee",
+            "tertiary-fixed-dim": "#4edea3",
+            "surface-container-lowest": "#0a0e16",
+            "primary": "#adc6ff",
+            "tertiary": "#4edea3",
+            "on-primary-container": "#00285d",
+            "error": "#ffb4ab",
+            "surface": "#0f131c",
+            "on-tertiary": "#003824",
+            "on-secondary-container": "#ffc2c4",
+            "on-primary": "#002e6a",
+            "on-error-container": "#ffdad6",
+            "outline": "#8c909f",
+            "on-primary-fixed-variant": "#004395",
+            "on-surface-variant": "#c2c6d6",
+            "secondary-fixed-dim": "#ffb2b7",
+            "surface-tint": "#adc6ff",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-secondary-fixed-variant": "#92002a",
+            "background": "#0f131c",
+            "surface-bright": "#353942",
+            "tertiary-fixed": "#6ffbbe",
+            "primary-fixed-dim": "#adc6ff",
+            "surface-dim": "#0f131c",
+            "surface-container": "#1c2028"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "0.75rem",
+            "gutter-tablet": "0.75rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "margin": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "price-secondary": [
+              "JetBrains Mono"
+            ],
+            "price-primary": [
+              "JetBrains Mono"
+            ],
+            "headline-xl": [
+              "Space Grotesk"
+            ],
+            "headline-lg": [
+              "Space Grotesk"
+            ],
+            "body-lg": [
+              "Geist"
+            ],
+            "body-md": [
+              "Geist"
+            ],
+            "headline-sm": [
+              "Space Grotesk"
+            ],
+            "label-lg": [
+              "JetBrains Mono"
+            ],
+            "label-md": [
+              "JetBrains Mono"
+            ],
+            "headline-xl-mobile": [
+              "Space Grotesk"
+            ],
+            "body-sm": [
+              "Geist"
+            ],
+            "headline-md": [
+              "Space Grotesk"
+            ],
+            "label-sm": [
+              "JetBrains Mono"
+            ]
+          },
+          "fontSize": {
+            "price-secondary": [
+              "15px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "500"
+              }
+            ],
+            "price-primary": [
+              "24px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "-0.03em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-xl": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-lg": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-sm": [
+              "18px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "600"
+              }
+            ],
+            "label-lg": [
+              "13px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-md": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.05em",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-xl-mobile": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-sm": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-md": [
+              "22px",
+              {
+                "lineHeight": "30px",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "10px",
+              {
+                "lineHeight": "12px",
+                "letterSpacing": "0.06em",
+                "fontWeight": "500"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Custom barcode aesthetic representation */
+    .barcode-stripes {
+      background: repeating-linear-gradient(
+        90deg,
+        #000 0px,
+        #000 2px,
+        #fff 2px,
+        #fff 4px,
+        #000 4px,
+        #000 7px,
+        #fff 7px,
+        #fff 9px,
+        #000 9px,
+        #000 13px,
+        #fff 13px,
+        #fff 14px
+      );
+    }
+    /* Custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0e16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262a33;
+      border-radius: 2px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #424754;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- ================= TOP APP BAR (From Shared Component TopNavBar) ================= -->
+<header class="w-full bg-surface-container-low border-b border-outline-variant shadow-sm z-50 flex items-center justify-between px-margin h-16 shrink-0">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-primary-container/20 border border-primary flex items-center justify-center text-primary font-headline-sm font-bold">
+<span class="material-symbols-outlined" data-icon="footprint">footprint</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight block leading-tight">El Cuadre POS • Fashion &amp; Footwear</span>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>Terminal #04 • Sambil Chacao</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links from Shared Component with exact active logic -->
+<nav class="hidden xl:flex items-center gap-1 ml-4 border-l border-outline-variant/60 pl-4 h-9">
+<a class="text-primary border-b-2 border-primary font-label-md text-label-md px-3 py-2 flex items-center gap-1.5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="grid_view">grid_view</span>
+          Inventario Matriz
+        </a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-on-surface px-3 py-2 transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="point_of_sale">point_of_sale</span>
+          Punto de Venta
+        </a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-on-surface px-3 py-2 transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="fact_check">fact_check</span>
+          Auditoría Física
+        </a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-on-surface px-3 py-2 transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="print">print</span>
+          Etiquetas Térmicas
+        </a>
+</nav>
+</div>
+<!-- Center/Right Utility and Status Badges -->
+<div class="flex items-center gap-3">
+<!-- BCV Exchange Rate Status Pill -->
+<div class="flex items-center gap-2 bg-surface-container-high border border-outline-variant px-3 py-1.5 rounded text-label-md font-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-on-surface-variant font-medium">BCV OFICIAL:</span>
+<span class="text-tertiary font-price-secondary text-price-secondary font-bold">Bs. 44.50 / $</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors text-[14px]" data-icon="sync">sync</span>
+</div>
+<!-- Action Key Shortcuts -->
+<div class="hidden 2xl:flex items-center gap-1.5 text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2.5 py-1.5 rounded border border-outline-variant/40">
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded text-primary font-mono border border-outline-variant/60">F1</span>
+<span>Ayuda</span>
+<span class="text-outline-variant mx-1">|</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded text-primary font-mono border border-outline-variant/60">F3</span>
+<span>Buscar SKU</span>
+<span class="text-outline-variant mx-1">|</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded text-primary font-mono border border-outline-variant/60">F8</span>
+<span>Lote</span>
+<span class="text-outline-variant mx-1">|</span>
+<span class="bg-surface-container-highest px-1.5 py-0.5 rounded text-primary font-mono border border-outline-variant/60">F9</span>
+<span>Imprimir</span>
+</div>
+<!-- Quick Scan Icon Action -->
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface p-2 rounded border border-outline-variant transition-transform active:scale-[0.98]" title="Escanear Código">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<!-- Cashier / Profile Avatar -->
+<div class="flex items-center gap-2.5 pl-2 border-l border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-primary flex items-center justify-center font-bold text-primary font-label-md">
+          VR
+        </div>
+<div class="text-left hidden sm:block">
+<div class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Valeria Rivas</div>
+<div class="font-label-sm text-label-sm text-tertiary">Cajera &amp; Turno Matriz</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN WORKSPACE LAYOUT (SideNav + Content + Right Drawer) ================= -->
+<div class="flex flex-1 overflow-hidden relative">
+<!-- Compact Sidebar Navigation based on Shared Component SideNavBar -->
+<aside class="w-56 bg-surface-container-lowest border-r border-outline-variant hidden lg:flex flex-col justify-between shrink-0">
+<div class="p-3">
+<!-- Subhead Branch Context -->
+<div class="bg-surface-container-low p-2.5 rounded border border-outline-variant mb-4">
+<div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Sucursal Principal</div>
+<div class="font-headline-sm text-[13px] font-bold text-on-surface truncate">Sambil Chacao Flagship</div>
+<div class="text-tertiary font-label-sm text-[10px] mt-0.5 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            Terminal #01 • Online
+          </div>
+</div>
+<!-- Tab Items -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 bg-surface-container-high text-primary border-l-2 border-primary px-3 py-2.5 rounded-none font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="grid_view">grid_view</span>
+            Matriz de Tallas
+          </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface px-3 py-2.5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="footprint">footprint</span>
+            Catálogo Calzado
+          </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface px-3 py-2.5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="inventory_2">inventory_2</span>
+            Entrada de Lotes
+          </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface px-3 py-2.5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="fact_check">fact_check</span>
+            Ajuste / Merma
+          </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface px-3 py-2.5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="print">print</span>
+            Impresión 50x30
+          </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container hover:text-on-surface px-3 py-2.5 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="point_of_sale">point_of_sale</span>
+            Cierre de Caja
+          </a>
+</nav>
+<!-- CTA from JSON -->
+<button class="mt-4 w-full flex items-center justify-center gap-2 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-primary py-2 px-3 rounded font-label-md text-label-md active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+          Escanear Código
+        </button>
+</div>
+<!-- Footer Tabs from SideNavBar -->
+<div class="p-3 border-t border-outline-variant space-y-1 bg-surface-container-lowest">
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface py-1.5 px-2 text-label-sm font-label-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="receipt_long">receipt_long</span>
+          Configuración Fiscal
+        </a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface py-1.5 px-2 text-label-sm font-label-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="help_outline">help_outline</span>
+          Soporte Técnico
+        </a>
+</div>
+</aside>
+<!-- ================= CENTRAL INVENTORY CANVAS (Split Left/Center ~70%) ================= -->
+<main class="flex-1 flex flex-col overflow-y-auto bg-surface p-space-md gap-4 min-w-0">
+<!-- SECTION 2: KPI SUMMARY BAR (Store Stock Overview) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 shrink-0">
+<!-- Metric 1: Total Pares -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-3.5 relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>STOCK TOTAL EN TIENDA</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="my-1.5">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">480</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-1">pares</span>
+</div>
+<div class="text-tertiary font-price-secondary text-price-secondary text-[12px] flex items-center justify-between pt-1 border-t border-outline-variant/30">
+<span>Val: $21,600.00 USD</span>
+<span class="text-outline">Bs. 961,200</span>
+</div>
+</div>
+<!-- Metric 2: Modelos Activos -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-3.5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>LÍNEAS ACTIVAS</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="grid_view">grid_view</span>
+</div>
+<div class="my-1.5">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">28</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-1">líneas de catálogo</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm flex items-center gap-2 pt-1 border-t border-outline-variant/30 truncate">
+<span>Cab: <strong class="text-on-surface">14</strong></span> • 
+            <span>Dama: <strong class="text-on-surface">10</strong></span> • 
+            <span>Acc: <strong class="text-on-surface">4</strong></span>
+</div>
+</div>
+<!-- Metric 3: Alertas de Stock Crítico -->
+<div class="bg-surface-container-low border border-error-container/60 rounded p-3.5 flex flex-col justify-between relative bg-gradient-to-r from-error-container/10 to-transparent">
+<div class="flex items-center justify-between text-error font-label-sm text-label-sm font-semibold">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+              STOCK CRÍTICO
+            </span>
+<span class="material-symbols-outlined text-error text-[18px]" data-icon="fact_check">fact_check</span>
+</div>
+<div class="my-1.5">
+<span class="font-headline-lg text-headline-lg font-bold text-error tracking-tight">3 Modelos</span>
+</div>
+<div class="text-error font-label-sm text-label-sm pt-1 border-t border-error-container/40 flex items-center justify-between">
+<span>Tallas agotadas (36, 44)</span>
+<span class="bg-error-container text-on-error-container px-1.5 py-0.5 rounded text-[10px] font-bold">URGENTE</span>
+</div>
+</div>
+<!-- Metric 4: Rotación Semanal -->
+<div class="bg-surface-container-low border border-outline-variant rounded p-3.5 flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>ROTACIÓN SEMANAL</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="sync">sync</span>
+</div>
+<div class="my-1.5 flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">64</span>
+<span class="font-label-md text-label-md text-on-surface-variant">pares vendidos</span>
+</div>
+<div class="text-tertiary font-label-sm text-label-sm flex items-center justify-between pt-1 border-t border-outline-variant/30">
+<span class="flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +18% vs semana ant.
+            </span>
+<span class="text-outline">Meta: 80 pares</span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: SEARCH & FILTER CONTROL BAR -->
+<section class="bg-surface-container-low border border-outline-variant rounded p-3 space-y-3">
+<div class="flex flex-col xl:flex-row gap-3 items-stretch xl:items-center justify-between">
+<!-- Laser Ready Search Field -->
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-tertiary">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+</span>
+<input class="w-full bg-surface-container-lowest border border-tertiary/40 focus:border-tertiary focus:ring-1 focus:ring-tertiary pl-10 pr-24 py-2 rounded text-on-surface font-price-secondary text-price-secondary text-sm placeholder:text-outline/70 focus:outline-none transition-all shadow-[inset_0_0_8px_rgba(78,222,163,0.08)]" placeholder="Escanear código de barra o buscar SKU (ej. OXF-902, SNK-PRO-V3)..." type="text" value="SNK-PRO-V3"/>
+<div class="absolute inset-y-0 right-0 pr-2.5 flex items-center gap-1">
+<span class="text-tertiary text-[10px] font-mono px-1.5 py-0.5 bg-tertiary/10 border border-tertiary/30 rounded uppercase font-semibold">Scanner Activo</span>
+<button class="text-outline hover:text-on-surface p-1">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Quick Primary Action Button -->
+<button class="bg-primary hover:bg-primary-container text-on-primary-container font-label-md text-label-md font-bold px-4 py-2 rounded flex items-center justify-center gap-2 shrink-0 shadow-sm transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Nueva Entrada de Mercancía (Lote)</span>
+</button>
+</div>
+<!-- Filter Department Pills & Dropdown Selectors -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-outline-variant/40">
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="px-2.5 py-1 rounded text-label-sm font-label-sm font-medium bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">Todos</button>
+<button class="px-2.5 py-1 rounded text-label-sm font-label-sm font-bold bg-primary text-on-primary-container transition-colors shadow-sm">Calzado Caballero [Activo]</button>
+<button class="px-2.5 py-1 rounded text-label-sm font-label-sm font-medium bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">Calzado Dama</button>
+<button class="px-2.5 py-1 rounded text-label-sm font-label-sm font-medium bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">Ropa &amp; Prendas</button>
+<button class="px-2.5 py-1 rounded text-label-sm font-label-sm font-medium bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">Accesorios</button>
+</div>
+<div class="flex flex-wrap items-center gap-2 font-label-sm text-label-sm">
+<!-- Marca Dropdown -->
+<div class="flex items-center gap-1 bg-surface-container-lowest border border-outline-variant px-2.5 py-1 rounded text-on-surface">
+<span class="text-outline">Marca:</span>
+<span class="font-medium text-primary">Cuadre Atelier</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</div>
+<!-- Temporada Dropdown -->
+<div class="flex items-center gap-1 bg-surface-container-lowest border border-outline-variant px-2.5 py-1 rounded text-on-surface">
+<span class="text-outline">Temporada:</span>
+<span class="font-medium text-on-surface">2025 Q1</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</div>
+<!-- Almacén Dropdown -->
+<div class="flex items-center gap-1 bg-surface-container-lowest border border-outline-variant px-2.5 py-1 rounded text-on-surface">
+<span class="text-outline">Almacén:</span>
+<span class="font-medium text-tertiary">Vitrina Central</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: MAIN INTERACTIVE MATRIX GRID -->
+<section class="bg-surface-container-low border border-outline-variant rounded p-4 flex flex-col gap-4 shadow-sm">
+<!-- Product Header Bar -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-3 border-b border-outline-variant">
+<div class="flex items-center gap-3.5">
+<!-- Product Thumbnail with required placeholder -->
+<div class="w-14 h-14 rounded bg-surface-container-lowest border border-outline-variant overflow-hidden shrink-0 flex items-center justify-center p-1">
+<img class="w-full h-full object-cover rounded" data-alt="A luxurious modern high-performance running sneaker with black engineered mesh and electric blue accents, floating against a moody dark studio background with rim lighting, exhibiting premium craftsmanship in fashion footwear retail aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByfPoQYfg6PH_44VrC_1FKIFF5yjguoi5KnMideO4Mnfu1v_0yxwNIakuYh8gyAdmQPLc6tBavuxOWBhlfEGJl4FbZYz8Rk1Mkl3wMszMW1LyAb3M7BFxX3F9HXU1CJcXA5S8iUVhNG-HaGHjCjNFh_eney8VoZdzyhU5dm5LIBKAO5csZcB9Pfu3tQppUGZHsuuS38yMR5CqgQxER4JNkCzTIWveOqXwe2yEMQgOFiNsDjy3dx5PzdUgOVzIJOq-LaxdGCh3MhQaf"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="bg-primary/20 text-primary border border-primary/40 px-2 py-0.5 rounded font-mono text-label-sm font-bold">SKU: SNK-PRO-V3</span>
+<span class="text-outline font-label-sm text-label-sm">Ref: #OXF-902</span>
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] font-label-sm px-1.5 py-0.5 rounded">Calzado Caballero</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight mt-0.5">
+                Sneaker Deportivo Pro V3 (Running Performance)
+              </h2>
+</div>
+</div>
+<!-- Commercial Metrics for the Model -->
+<div class="flex items-center gap-4 bg-surface-container-lowest border border-outline-variant p-2.5 rounded shrink-0">
+<div class="text-right border-r border-outline-variant pr-3">
+<div class="text-outline font-label-sm text-label-sm">PRECIO VENTA</div>
+<div class="font-price-primary text-headline-sm text-primary font-bold leading-tight">$45.00 <span class="text-[12px] font-normal text-on-surface-variant">USD</span></div>
+<div class="text-outline font-price-secondary text-[11px]">Bs. 2,002.50</div>
+</div>
+<div class="text-right border-r border-outline-variant pr-3">
+<div class="text-outline font-label-sm text-label-sm">COSTO MAYOR</div>
+<div class="font-price-secondary text-price-secondary text-on-surface font-semibold">$22.00 USD</div>
+<div class="text-outline font-price-secondary text-[11px]">Bs. 979.00</div>
+</div>
+<div class="text-center px-1">
+<div class="text-outline font-label-sm text-label-sm">MARGEN</div>
+<div class="text-tertiary font-price-primary text-headline-sm font-bold leading-tight">51.1%</div>
+<div class="text-tertiary text-[10px] font-bold">ALTO RETORNO</div>
+</div>
+</div>
+</div>
+<!-- Matrix Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-left min-w-[850px]">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm border-b border-outline-variant">
+<th class="py-2.5 px-3 font-semibold uppercase tracking-wider w-40">Color / Variante</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-36</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-37</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-38</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-39</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-40</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-41</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-42</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-43</th>
+<th class="py-2.5 px-2 text-center font-bold text-on-surface">T-44</th>
+<th class="py-2.5 px-3 text-center font-bold text-primary">Total Color</th>
+<th class="py-2.5 px-3 font-semibold">Estado Línea</th>
+<th class="py-2.5 px-2 text-center font-semibold">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/40 font-body-sm">
+<!-- ROW 1: Negro Ónix -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-neutral-950 border border-neutral-700 shadow-sm inline-block shrink-0"></span>
+<span class="font-semibold text-on-surface text-body-md">Negro Ónix</span>
+</div>
+<span class="text-outline font-label-sm text-[10px] block">REF: #OXF-902-BLK</span>
+</td>
+<!-- 36: 0 Agotado -->
+<td class="p-1 text-center">
+<div class="bg-error-container/20 border border-error/40 text-error py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-error-container/40 transition-colors">
+<span>0</span>
+<span class="text-[9px] uppercase font-normal">Agotado</span>
+</div>
+</td>
+<!-- 37: 1 par -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-amber-500/40 text-amber-300 py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>1</span>
+<span class="text-[9px] font-normal">par</span>
+</div>
+</td>
+<!-- 38: 3 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>3</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 39: 5 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>5</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 40: 6 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>6</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 41: 4 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>4</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 42: 8 pares [ACTIVE CELL SELECTED] -->
+<td class="p-1 text-center">
+<div class="bg-primary text-on-primary-container border-2 border-primary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center shadow-[0_0_12px_rgba(77,142,255,0.4)] ring-2 ring-primary/30">
+<span class="text-[14px]">8</span>
+<span class="text-[9px] uppercase font-bold">Activo</span>
+</div>
+</td>
+<!-- 43: 2 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-amber-500/40 text-amber-300 py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>2</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 44: 0 Agotado -->
+<td class="p-1 text-center">
+<div class="bg-error-container/20 border border-error/40 text-error py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-error-container/40 transition-colors">
+<span>0</span>
+<span class="text-[9px] uppercase font-normal">Agotado</span>
+</div>
+</td>
+<!-- Total Row 1 -->
+<td class="py-3 px-3 text-center">
+<span class="font-price-primary text-price-primary text-primary font-bold">29</span>
+<span class="text-outline font-label-sm text-[10px] block">pares</span>
+</td>
+<!-- Estado -->
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 text-amber-300 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded font-label-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    Alerta en extremos
+                  </span>
+</td>
+<!-- Acciones -->
+<td class="py-3 px-2 text-center">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Ajustar Fila">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- ROW 2: Blanco Puro -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-slate-100 border border-slate-300 inline-block shrink-0"></span>
+<span class="font-semibold text-on-surface text-body-md">Blanco Puro</span>
+</div>
+<span class="text-outline font-label-sm text-[10px] block">REF: #OXF-902-WHT</span>
+</td>
+<!-- 36: 2 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-amber-500/40 text-amber-300 py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>2</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 37: 4 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>4</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 38: 5 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>5</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 39: 6 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>6</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 40: 7 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>7</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 41: 5 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>5</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 42: 3 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>3</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 43: 1 par -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-amber-500/40 text-amber-300 py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>1</span>
+<span class="text-[9px] font-normal">par</span>
+</div>
+</td>
+<!-- 44: 1 par -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-amber-500/40 text-amber-300 py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>1</span>
+<span class="text-[9px] font-normal">par</span>
+</div>
+</td>
+<!-- Total Row 2 -->
+<td class="py-3 px-3 text-center">
+<span class="font-price-primary text-price-primary text-primary font-bold">34</span>
+<span class="text-outline font-label-sm text-[10px] block">pares</span>
+</td>
+<!-- Estado -->
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 text-tertiary bg-tertiary/10 border border-tertiary/30 px-2 py-0.5 rounded font-label-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Óptimo
+                  </span>
+</td>
+<!-- Acciones -->
+<td class="py-3 px-2 text-center">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Ajustar Fila">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</td>
+</tr>
+<!-- ROW 3: Rojo Carmesí -->
+<tr class="hover:bg-surface-container/50 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-red-600 border border-red-400 inline-block shrink-0"></span>
+<span class="font-semibold text-on-surface text-body-md">Rojo Carmesí</span>
+</div>
+<span class="text-outline font-label-sm text-[10px] block">REF: #OXF-902-RED</span>
+</td>
+<!-- 36: 0 Agotado -->
+<td class="p-1 text-center">
+<div class="bg-error-container/20 border border-error/40 text-error py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-error-container/40 transition-colors">
+<span>0</span>
+<span class="text-[9px] uppercase font-normal">Agotado</span>
+</div>
+</td>
+<!-- 37: 0 Agotado -->
+<td class="p-1 text-center">
+<div class="bg-error-container/20 border border-error/40 text-error py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-error-container/40 transition-colors">
+<span>0</span>
+<span class="text-[9px] uppercase font-normal">Agotado</span>
+</div>
+</td>
+<!-- 38: 2 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-amber-500/40 text-amber-300 py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>2</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 39: 3 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>3</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 40: 4 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-tertiary/40 text-tertiary py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>4</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 41: 2 pares -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-amber-500/40 text-amber-300 py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>2</span>
+<span class="text-[9px] font-normal">pares</span>
+</div>
+</td>
+<!-- 42: 1 par -->
+<td class="p-1 text-center">
+<div class="bg-surface-container-high border border-amber-500/40 text-amber-300 py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-highest transition-colors">
+<span>1</span>
+<span class="text-[9px] font-normal">par</span>
+</div>
+</td>
+<!-- 43: 0 Agotado -->
+<td class="p-1 text-center">
+<div class="bg-error-container/20 border border-error/40 text-error py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-error-container/40 transition-colors">
+<span>0</span>
+<span class="text-[9px] uppercase font-normal">Agotado</span>
+</div>
+</td>
+<!-- 44: 0 Agotado -->
+<td class="p-1 text-center">
+<div class="bg-error-container/20 border border-error/40 text-error py-1 px-1.5 rounded font-price-secondary text-label-sm font-bold flex flex-col items-center justify-center cursor-pointer hover:bg-error-container/40 transition-colors">
+<span>0</span>
+<span class="text-[9px] uppercase font-normal">Agotado</span>
+</div>
+</td>
+<!-- Total Row 3 -->
+<td class="py-3 px-3 text-center">
+<span class="font-price-primary text-price-primary text-primary font-bold">12</span>
+<span class="text-outline font-label-sm text-[10px] block">pares</span>
+</td>
+<!-- Estado -->
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 text-error bg-error/10 border border-error/30 px-2 py-0.5 rounded font-label-sm text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    Reposición Urgente
+                  </span>
+</td>
+<!-- Acciones -->
+<td class="py-3 px-2 text-center">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded transition-colors" title="Ajustar Fila">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</td>
+</tr>
+</tbody>
+<!-- Table Footer: Column Summaries by Size -->
+<tfoot>
+<tr class="bg-surface-container-high/80 border-t-2 border-primary/50 text-on-surface font-label-sm text-label-sm">
+<td class="py-3 px-3 font-bold uppercase text-primary">Totales x Talla:</td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-on-surface">2 <span class="text-[10px] font-normal text-outline">prs</span></td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-on-surface">5 <span class="text-[10px] font-normal text-outline">prs</span></td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-on-surface">10 <span class="text-[10px] font-normal text-outline">prs</span></td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-on-surface">14 <span class="text-[10px] font-normal text-outline">prs</span></td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-on-surface">17 <span class="text-[10px] font-normal text-outline">prs</span></td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-on-surface">11 <span class="text-[10px] font-normal text-outline">prs</span></td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-primary">12 <span class="text-[10px] font-normal text-primary/70">prs</span></td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-on-surface">3 <span class="text-[10px] font-normal text-outline">prs</span></td>
+<td class="py-2.5 px-1 text-center font-price-secondary text-price-secondary font-bold text-on-surface">1 <span class="text-[10px] font-normal text-outline">pr</span></td>
+<!-- Grand Model Total -->
+<td class="py-3 px-3 text-center bg-primary/10 border-l border-r border-primary/30">
+<span class="font-headline-sm text-headline-sm font-bold text-primary block leading-none">75</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Pares Modelo</span>
+</td>
+<td class="py-3 px-3 text-right" colspan="2">
+<span class="text-tertiary font-price-secondary text-label-sm font-semibold">Valor Stock Modelo: $3,375.00 USD</span>
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</section>
+<!-- SECONDARY PRODUCTS FOR QUICK SWITCHING -->
+<section class="bg-surface-container-low border border-outline-variant rounded p-3">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Otros Modelos en Catálogo Activo (Cambio Rápido)</span>
+<span class="text-primary font-label-sm text-label-sm cursor-pointer hover:underline">Ver catálogo completo (28)</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+<!-- Model Card 1 -->
+<div class="bg-surface-container border border-outline-variant/60 hover:border-primary p-2.5 rounded flex items-center justify-between cursor-pointer transition-colors group">
+<div class="flex items-center gap-2.5 truncate">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]" data-icon="footprint">footprint</span>
+<div class="truncate">
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Zapato Oxford Formal Italiano</div>
+<div class="font-label-sm text-[10px] text-outline">SKU: OXF-IT-401 • 3 Colores</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-price-secondary text-label-md font-bold text-on-surface">42 pares</span>
+<span class="text-tertiary text-[10px] block">$65.00</span>
+</div>
+</div>
+<!-- Model Card 2 -->
+<div class="bg-surface-container border border-outline-variant/60 hover:border-primary p-2.5 rounded flex items-center justify-between cursor-pointer transition-colors group">
+<div class="flex items-center gap-2.5 truncate">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]" data-icon="footprint">footprint</span>
+<div class="truncate">
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Mocasín Náutico Piel Vacuno</div>
+<div class="font-label-sm text-[10px] text-outline">SKU: MOC-NAU-108 • 2 Colores</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-price-secondary text-label-md font-bold text-on-surface">31 pares</span>
+<span class="text-tertiary text-[10px] block">$52.00</span>
+</div>
+</div>
+<!-- Model Card 3 -->
+<div class="bg-surface-container border border-outline-variant/60 hover:border-primary p-2.5 rounded flex items-center justify-between cursor-pointer transition-colors group">
+<div class="flex items-center gap-2.5 truncate">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]" data-icon="footprint">footprint</span>
+<div class="truncate">
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Bota Táctica Urbana Waterproof</div>
+<div class="font-label-sm text-[10px] text-outline">SKU: BOT-TAC-88 • 2 Colores</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-price-secondary text-label-md font-bold text-on-surface">19 pares</span>
+<span class="text-tertiary text-[10px] block">$78.00</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= RIGHT-HAND SIDE QUICK ACTION & STOCK DRAWER (~340px) ================= -->
+<aside class="w-[340px] bg-surface-container-low border-l border-outline-variant flex flex-col shrink-0 overflow-y-auto z-20">
+<!-- Panel Header -->
+<div class="p-3.5 border-b border-outline-variant bg-surface-container-high/60">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="tune">tune</span>
+            Ajuste Rápido de Stock
+          </h3>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary" title="Sincronizado"></span>
+</div>
+<!-- Selected Cell Context -->
+<div class="mt-2 bg-surface-container-lowest border border-primary/40 rounded p-2 flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-neutral-900 border border-neutral-700 shrink-0"></div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-bold text-primary truncate">Negro Ónix • Talla 42</div>
+<div class="font-label-sm text-[11px] text-tertiary font-semibold">8 pares disponibles en vitrina</div>
+</div>
+</div>
+</div>
+<div class="p-3.5 space-y-4 flex-1">
+<!-- SECTION A: Ajuste de Kardex Físico -->
+<div class="bg-surface-container rounded border border-outline-variant p-3 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider">Ajuste de Kardex Físico</span>
+<span class="text-outline text-[11px] font-mono">ID: KDX-889</span>
+</div>
+<!-- Mode Toggles -->
+<div class="grid grid-cols-3 gap-1 bg-surface-container-lowest p-1 rounded border border-outline-variant/60 text-center font-label-sm text-[10px]">
+<button class="bg-primary text-on-primary-container font-bold py-1.5 rounded shadow-sm">Conteo (+/-)</button>
+<button class="text-on-surface-variant hover:text-on-surface py-1.5 transition-colors">Recepción</button>
+<button class="text-on-surface-variant hover:text-on-surface py-1.5 transition-colors">Merma</button>
+</div>
+<!-- Stepper Touch Control -->
+<div>
+<label class="block text-outline font-label-sm text-label-sm mb-1.5">Conteo en Perchero / Vitrina:</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="h-12 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-on-surface font-headline-md font-bold rounded flex items-center justify-center active:scale-[0.95] transition-all">
+                -
+              </button>
+<div class="h-12 bg-surface-container-lowest border border-primary/50 text-primary font-price-primary text-price-primary flex items-center justify-center font-bold rounded">
+                8
+              </div>
+<button class="h-12 bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-on-surface font-headline-md font-bold rounded flex items-center justify-center active:scale-[0.95] transition-all">
+                +
+              </button>
+</div>
+</div>
+<!-- Motivo del ajuste Dropdown -->
+<div>
+<label class="block text-outline font-label-sm text-label-sm mb-1">Motivo del Ajuste:</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded px-2.5 py-2 text-on-surface font-label-sm text-label-sm focus:border-primary focus:outline-none appearance-none pr-8">
+<option selected="">Conteo físico en vitrina</option>
+<option>Merma por exhibición</option>
+<option>Entrada sin factura</option>
+<option>Devolución por defecto</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-outline pointer-events-none text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Primary Submit Kardex -->
+<button class="w-full bg-tertiary-container hover:bg-tertiary text-on-tertiary-container font-label-md text-label-md font-bold py-2.5 px-3 rounded flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="fact_check">fact_check</span>
+            Actualizar Kardex Inmediato
+          </button>
+</div>
+<!-- SECTION B: Recepción de Mercancía (Lote Importación) -->
+<div class="bg-surface-container rounded border border-outline-variant p-3 space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider">Recepción de Lote</span>
+<span class="bg-primary/20 text-primary px-1.5 py-0.5 rounded font-mono text-[10px] font-bold">F8</span>
+</div>
+<div class="space-y-1.5 font-label-sm text-label-sm">
+<div class="flex justify-between py-1 border-b border-outline-variant/30">
+<span class="text-outline">Proveedor:</span>
+<span class="text-on-surface font-semibold truncate max-w-[170px]">Importadora Ccs Footwear</span>
+</div>
+<div class="flex justify-between py-1 border-b border-outline-variant/30">
+<span class="text-outline">Lote:</span>
+<span class="text-primary font-mono font-bold">#LOT-2025-084</span>
+</div>
+</div>
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant text-on-surface font-label-md text-label-md py-2 px-3 rounded flex items-center justify-center gap-2 active:scale-[0.98] transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="receipt_long">receipt_long</span>
+            Ingresar Guía de Remisión (F8)
+          </button>
+</div>
+<!-- SECTION C: Generador de Etiquetas Térmicas 50x30mm -->
+<div class="bg-surface-container rounded border border-outline-variant p-3 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider">Etiquetas Térmicas 50x30</span>
+<span class="bg-primary/20 text-primary px-1.5 py-0.5 rounded font-mono text-[10px] font-bold">F9</span>
+</div>
+<!-- Realistic 50x30mm Thermal Label Preview Simulation (Dark Luxury styled) -->
+<div class="bg-white text-black p-2.5 rounded shadow-inner flex flex-col justify-between h-28 border border-neutral-400 select-none">
+<div class="flex items-center justify-between border-b border-neutral-300 pb-1">
+<span class="font-bold text-[10px] tracking-tight font-sans">EL CUADRE ATELIER</span>
+<span class="bg-black text-white font-mono text-[11px] font-bold px-1.5 py-0.2 rounded">TALLA 42</span>
+</div>
+<div class="my-0.5">
+<div class="font-mono text-[10px] font-extrabold truncate leading-tight">SNK-PRO-V3 • NEGRO</div>
+<div class="w-full h-5 barcode-stripes my-1"></div>
+<div class="text-[8px] font-mono tracking-widest text-center text-neutral-800 leading-none">*SKU-SNK-42-BLK*</div>
+</div>
+<div class="flex items-baseline justify-between border-t border-neutral-300 pt-0.5">
+<span class="font-mono text-[13px] font-bold">$45.00 USD</span>
+<span class="font-mono text-[10px] text-neutral-700">Bs. 2,002.50</span>
+</div>
+</div>
+<!-- Print Controls -->
+<div class="flex items-center justify-between gap-3 pt-1">
+<div class="flex items-center gap-1.5">
+<span class="text-outline font-label-sm text-label-sm">Copias:</span>
+<input class="w-14 bg-surface-container-lowest border border-outline-variant text-center py-1 rounded text-on-surface font-mono font-bold text-sm" max="100" min="1" type="number" value="8"/>
+</div>
+<button class="flex-1 bg-primary hover:bg-primary-container text-on-primary-container font-label-md text-label-md font-bold py-2 px-3 rounded flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[16px]" data-icon="print">print</span>
+              Imprimir (F9)
+            </button>
+</div>
+</div>
+</div>
+<!-- Drawer Bottom Status Info -->
+<div class="p-2.5 bg-surface-container-lowest border-t border-outline-variant text-center font-label-sm text-[10px] text-outline">
+        Impresora Térmica: <span class="text-tertiary font-semibold">Zebra ZD220 (USB) • En Línea</span>
+</div>
+</aside>
+</div>
+<!-- Keyboard Shortcuts & Touch Interactivity Lightweight Script -->
+<script>
+    // Visual feedback on interactive matrix cells
+    document.querySelectorAll('tbody td div').forEach(chip => {
+      chip.addEventListener('click', function() {
+        // Toggle selected styling state for touch terminal ergonomics
+        if (!this.classList.contains('cursor-not-allowed')) {
+          this.classList.add('scale-95');
+          setTimeout(() => this.classList.remove('scale-95'), 120);
+        }
+      });
+    });
+
+    // Keyboard Hotkey Simulation for POS hardware
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'F9') {
+        e.preventDefault();
+        alert('Comando F9 recibido: Enviando 8 etiquetas a Zebra ZD220...');
+      } else if (e.key === 'F8') {
+        e.preventDefault();
+        alert('Comando F8 recibido: Abriendo formulario de entrada de Lote...');
+      } else if (e.key === 'F3') {
+        e.preventDefault();
+        const search = document.querySelector('input[type="text"]');
+        if (search) {
+          search.focus();
+          search.select();
+        }
+      }
+    });
+  </script>
+</body></html>

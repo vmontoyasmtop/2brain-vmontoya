@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Cuadre POS - Pasarela de Cobranza Bimoneda y Pagos Mixtos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            surface: {
+              DEFAULT: '#0B0F17',
+              dim: '#080C13',
+              card: '#101726',
+              container: '#131D2D',
+              high: '#1A263B',
+              border: '#1E2D45',
+            },
+            brand: {
+              blue: '#3B82F6',
+              emerald: '#10B981',
+              neon: '#22c55e',
+              amber: '#F59E0B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Subtle scanline and glowing border effects */
+    .glow-emerald {
+      box-shadow: 0 0 25px -3px rgba(16, 185, 129, 0.25), 0 0 10px -2px rgba(16, 185, 129, 0.15);
+    }
+    .glow-blue {
+      box-shadow: 0 0 20px -3px rgba(59, 130, 246, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#070A0F] text-slate-100 font-sans min-h-screen flex items-center justify-center p-4 antialiased overflow-hidden select-none">
+
+  <!-- Background Dimmed Backdrop representing the 1080p POS Terminal in the background -->
+  <div class="fixed inset-0 bg-black/80 backdrop-blur-md z-0 flex items-center justify-center">
+    <!-- Subtle POS grid texture -->
+    <div class="absolute inset-0 bg-[radial-gradient(#1E2D45_1px,transparent_1px)] [background-size:24px_24px] opacity-25"></div>
+  </div>
+
+  <!-- Main Modal Container (Widescreen High-Density POS Modal) -->
+  <div class="relative z-10 w-full max-w-[1360px] bg-surface rounded-2xl border border-surface-border shadow-2xl flex flex-col overflow-hidden max-h-[96vh]">
+    
+    <!-- TOP HEADER BAR: Terminal Context & Close Key -->
+    <div class="px-7 py-3.5 bg-surface-dim border-b border-surface-border flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="w-9 h-9 rounded-lg bg-brand-blue/15 border border-brand-blue/30 flex items-center justify-center text-brand-blue">
+          <span class="material-symbols-outlined text-2xl">point_of_sale</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2.5">
+            <h1 class="text-base font-bold tracking-wider uppercase text-white font-sans">
+              EL CUADRE POS <span class="text-brand-blue font-mono font-medium text-xs px-2 py-0.5 rounded bg-brand-blue/15 border border-brand-blue/30 ml-1.5">FASHION & FOOTWEAR EDITION</span>
+            </h1>
+            <span class="inline-flex items-center gap-1.5 text-xs text-brand-emerald bg-brand-emerald/10 border border-brand-emerald/25 px-2.5 py-0.5 rounded-full font-mono font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-pulse"></span>
+              CAJA #04 ACTIVA
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 font-mono mt-0.5">
+            Ticket #CUADRE-FASH-089 • Cajera: Valeria Rivas • Tienda: Sambil Chacao
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <!-- Live BCV Parity Pill -->
+        <div class="flex items-center gap-2 bg-surface-container border border-surface-border px-3.5 py-1.5 rounded-lg">
+          <div class="w-2 h-2 rounded-full bg-brand-amber"></div>
+          <span class="text-xs font-mono uppercase tracking-wide text-slate-300">TASA BCV OFICIAL:</span>
+          <span class="text-xs font-mono font-bold text-amber-400">Bs. 44.50 / USD</span>
+          <span class="material-symbols-outlined text-slate-500 text-sm">sync</span>
+        </div>
+
+        <!-- Close / Cancel Escape Tag -->
+        <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-high hover:bg-slate-800 text-slate-300 border border-surface-border text-xs font-mono transition-colors">
+          <span>CANCELAR</span>
+          <kbd class="bg-black/40 text-[10px] px-1.5 py-0.5 rounded text-slate-400 border border-slate-700 font-mono">ESC</kbd>
+        </button>
+      </div>
+    </div>
+
+    <!-- GRAND TOTAL BANNER (Hero KPI Banner) -->
+    <div class="px-7 py-4 bg-gradient-to-r from-[#0F172A] via-[#111C2E] to-[#0F1B2B] border-b border-surface-border flex items-center justify-between">
+      <div class="flex items-center gap-5">
+        <div class="p-3 rounded-xl bg-brand-blue/15 border border-brand-blue/30 text-brand-blue flex items-center justify-center">
+          <span class="material-symbols-outlined text-3xl">payments</span>
+        </div>
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-slate-400 font-semibold block">TOTAL DE LA COMPRA (PRENDAS & CALZADO)</span>
+          <div class="flex items-baseline gap-4 mt-0.5">
+            <span class="text-4xl font-extrabold text-white font-mono tracking-tight">$171.68 <span class="text-lg font-bold text-slate-400">USD</span></span>
+            <span class="text-2xl font-bold font-mono text-cyan-400 tracking-tight">≈ Bs. 7,639.76 <span class="text-xs font-mono font-medium text-slate-400">VEF</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Balance Progress Tag -->
+      <div class="flex items-center gap-6 bg-surface-card/80 border border-surface-border/80 px-5 py-2.5 rounded-xl">
+        <div class="text-right">
+          <div class="text-[11px] font-mono uppercase text-slate-400">Estado de Liquidación</div>
+          <div class="text-sm font-bold font-mono text-brand-emerald flex items-center justify-end gap-1.5">
+            <span class="material-symbols-outlined text-base">verified</span>
+            TOTALMENTE CUBIERTO (PAGO MIXTO)
+          </div>
+        </div>
+        <div class="h-8 w-px bg-surface-border"></div>
+        <div class="text-right">
+          <div class="text-[11px] font-mono uppercase text-slate-400">Pendiente por Cobrar</div>
+          <div class="text-base font-extrabold font-mono text-white">$0.00 <span class="text-xs text-slate-400">USD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAYMENT METHOD TABS (4 Large Tactile Buttons) -->
+    <div class="px-7 pt-4 pb-2 bg-surface-dim border-b border-surface-border">
+      <div class="grid grid-cols-4 gap-3">
+        
+        <!-- Tab 1: Efectivo USD (ACTIVE & COMBINED) -->
+        <button class="relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container border-2 border-brand-blue shadow-lg text-left transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center">
+              <span class="text-2xl font-mono font-bold">$</span>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wide flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ACTIVO • MULTI-PAGO
+              </div>
+              <div class="text-sm font-bold text-white font-sans">Efectivo USD (Cash)</div>
+            </div>
+          </div>
+          <div class="text-right font-mono">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-brand-blue/20 text-blue-300 border border-brand-blue/40 font-mono">$100.00</span>
+          </div>
+          <!-- Selection indicator bar -->
+          <div class="absolute -bottom-2 left-6 right-6 h-1 bg-brand-blue rounded-full"></div>
+        </button>
+
+        <!-- Tab 2: Pago Móvil QR (ACTIVE & COMBINED) -->
+        <button class="relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container border-2 border-brand-blue shadow-lg text-left transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30 flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">qr_code_scanner</span>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wide flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> ACTIVO • P2P BCV
+              </div>
+              <div class="text-sm font-bold text-white font-sans">Pago Móvil QR</div>
+            </div>
+          </div>
+          <div class="text-right font-mono">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-brand-blue/20 text-blue-300 border border-brand-blue/40 font-mono">Bs. 3,000</span>
+          </div>
+          <!-- Selection indicator bar -->
+          <div class="absolute -bottom-2 left-6 right-6 h-1 bg-brand-blue rounded-full"></div>
+        </button>
+
+        <!-- Tab 3: Punto de Venta Bancario (INACTIVE / AVAILABLE) -->
+        <button class="flex items-center justify-between p-3.5 rounded-xl bg-surface-card hover:bg-surface-container border border-surface-border text-left opacity-75 hover:opacity-100 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">credit_card</span>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-slate-400 font-semibold uppercase">Débito / Crédito VEF</div>
+              <div class="text-sm font-semibold text-slate-200 font-sans">Punto de Venta (POS)</div>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="text-[11px] font-mono text-slate-400 bg-surface-high px-2 py-0.5 rounded border border-surface-border">Banesco / BDV</span>
+          </div>
+        </button>
+
+        <!-- Tab 4: Zelle / Biopago (INACTIVE / AVAILABLE) -->
+        <button class="flex items-center justify-between p-3.5 rounded-xl bg-surface-card hover:bg-surface-container border border-surface-border text-left opacity-75 hover:opacity-100 transition-all">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-lg bg-purple-500/15 text-purple-400 border border-purple-500/30 flex items-center justify-center">
+              <span class="material-symbols-outlined text-2xl">bolt</span>
+            </div>
+            <div>
+              <div class="text-xs font-mono text-purple-400 font-semibold uppercase">Internacional & Huella</div>
+              <div class="text-sm font-semibold text-slate-200 font-sans">Zelle / Biopago BDV</div>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="text-[11px] font-mono text-slate-400 bg-surface-high px-2 py-0.5 rounded border border-surface-border">Sin comisión</span>
+          </div>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- MAIN BODY: SPLIT VIEW FOR ACTIVE MULTI-PAYMENT CHANNELS -->
+    <div class="p-7 overflow-y-auto grid grid-cols-12 gap-6 bg-surface">
+      
+      <!-- LEFT CHANNEL (6 Cols): EFECTIVO USD Y CÁLCULO DE VUELTO EXACTO -->
+      <div class="col-span-6 bg-surface-card rounded-xl border border-surface-border p-5 flex flex-col justify-between">
+        <div>
+          <!-- Channel Header -->
+          <div class="flex items-center justify-between pb-3.5 border-b border-surface-border">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold">
+                $
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white font-sans flex items-center gap-2">
+                  1. Recepción de Efectivo Divisa
+                  <span class="text-[11px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">CUSTODIA EN GAVETA</span>
+                </h3>
+                <p class="text-xs text-slate-400 font-mono">Billetes en buen estado (Sin roturas ni sellos excesivos)</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-mono text-slate-400">Cuota asignada:</span>
+              <span class="text-sm font-bold font-mono text-white block">$71.68 USD</span>
+            </div>
+          </div>
+
+          <!-- Monto Recibido Input -->
+          <div class="mt-4">
+            <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold mb-2 flex items-center justify-between">
+              <span>Monto en Efectivo Entregado por Cliente</span>
+              <span class="text-emerald-400 text-xs font-mono">BILLETE VERIFICADO ✓</span>
+            </label>
+            <div class="relative flex items-center">
+              <div class="absolute left-4 font-mono font-bold text-2xl text-emerald-400">$</div>
+              <input type="text" value="100.00" readonly class="w-full bg-surface-container border-2 border-emerald-500/50 rounded-xl py-3 pl-12 pr-28 text-3xl font-mono font-extrabold text-white tracking-wide focus:outline-none glow-emerald">
+              <span class="absolute right-4 font-mono text-xs font-semibold px-2.5 py-1 rounded bg-surface-high border border-surface-border text-slate-300">
+                USD CASH
+              </span>
+            </div>
+          </div>
+
+          <!-- Quick Denomination Quick-Touch Bills (Botones táctiles de billetes comunes) -->
+          <div class="grid grid-cols-4 gap-2 mt-3">
+            <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-high text-xs font-mono font-bold text-slate-300 border border-surface-border transition-colors">
+              +$10
+            </button>
+            <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-high text-xs font-mono font-bold text-slate-300 border border-surface-border transition-colors">
+              +$20
+            </button>
+            <button class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-high text-xs font-mono font-bold text-slate-300 border border-surface-border transition-colors">
+              +$50
+            </button>
+            <button class="py-2 px-3 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/40 text-xs font-mono font-bold text-emerald-300 border border-emerald-500/50 transition-colors">
+              $100 (Selecc.)
+            </button>
+          </div>
+
+          <!-- HIGHLIGHTED VUELTO / CHANGE CARD (Verde Neón) -->
+          <div class="mt-5 p-4 rounded-xl bg-gradient-to-br from-emerald-950/60 to-surface-container border-2 border-emerald-500/70 shadow-lg glow-emerald">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-mono font-bold tracking-wider uppercase text-emerald-400 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-lg text-brand-neon">currency_exchange</span>
+                VUELTO EXACTO A ENTREGAR (CHANGE)
+              </span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold">
+                SALDO POSITIVO
+              </span>
+            </div>
+
+            <div class="flex items-baseline justify-between mt-1">
+              <div>
+                <div class="text-4xl font-extrabold font-mono text-emerald-300 tracking-tight">
+                  $28.32 <span class="text-lg font-bold text-emerald-400">USD</span>
+                </div>
+                <div class="text-xs font-mono text-emerald-400/90 mt-1">
+                  O equivalente en Bolívares: <span class="font-bold text-white">Bs. 1,260.24</span> (Tasa 44.50)
+                </div>
+              </div>
+
+              <!-- Currency Split Selector for Change -->
+              <div class="text-right">
+                <div class="text-[11px] font-mono text-slate-400 mb-1">Entregar vuelto en:</div>
+                <div class="inline-flex rounded-lg border border-emerald-500/40 p-0.5 bg-surface-dim">
+                  <span class="px-2.5 py-1 text-xs font-mono font-bold bg-emerald-500 text-black rounded shadow">USD ($)</span>
+                  <span class="px-2.5 py-1 text-xs font-mono text-slate-300 hover:text-white">BS (Bs.)</span>
+                  <span class="px-2.5 py-1 text-xs font-mono text-slate-300 hover:text-white">P.Móvil</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Denomination Recommendation for Cashier Drawer -->
+            <div class="mt-3 pt-2.5 border-t border-emerald-500/25 flex items-center justify-between text-xs font-mono text-slate-300">
+              <span class="flex items-center gap-1 text-slate-400">
+                <span class="material-symbols-outlined text-sm text-emerald-400">payments</span>
+                Desglose sugerido de caja:
+              </span>
+              <span class="text-emerald-300 font-semibold">1x $20 + 1x $5 + 3x $1 + $0.32 en Bs (14.24)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-surface-border flex items-center justify-between text-xs font-mono text-slate-400">
+          <span>Subtotal abonado en efectivo:</span>
+          <span class="font-bold text-white">$71.68 USD (Recepción $100.00 - Vuelto $28.32)</span>
+        </div>
+      </div>
+
+      <!-- RIGHT CHANNEL (6 Cols): PAGO MÓVIL QR & BANCO BCV -->
+      <div class="col-span-6 bg-surface-card rounded-xl border border-surface-border p-5 flex flex-col justify-between">
+        <div>
+          <!-- Channel Header -->
+          <div class="flex items-center justify-between pb-3.5 border-b border-surface-border">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-brand-blue/20 text-brand-blue flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">qr_code_scanner</span>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white font-sans flex items-center gap-2">
+                  2. Pago Móvil Interbancario (QR C2P)
+                  <span class="text-[11px] font-mono bg-brand-blue/20 text-blue-300 px-2 py-0.5 rounded border border-brand-blue/30">BCV VERIFIED</span>
+                </h3>
+                <p class="text-xs text-slate-400 font-mono">Banesco Banco Universal (0134) • Conciliación API en vivo</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-mono text-slate-400">Equivalencia USD:</span>
+              <span class="text-sm font-bold font-mono text-cyan-400 block">$67.42 USD</span>
+            </div>
+          </div>
+
+          <!-- Monto Transferido Input & QR Code Box -->
+          <div class="grid grid-cols-12 gap-4 mt-4">
+            
+            <!-- Left: Inputs and Details -->
+            <div class="col-span-7 space-y-3">
+              <div>
+                <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold mb-1.5">
+                  Monto a Transferir en Bolívares
+                </label>
+                <div class="relative flex items-center">
+                  <div class="absolute left-3.5 font-mono font-bold text-lg text-cyan-400">Bs.</div>
+                  <input type="text" value="3,000.00" readonly class="w-full bg-surface-container border border-surface-border rounded-xl py-2.5 pl-12 pr-16 text-2xl font-mono font-bold text-white tracking-wide focus:outline-none">
+                  <span class="absolute right-3 font-mono text-[11px] text-slate-400">VEF</span>
+                </div>
+              </div>
+
+              <!-- Referencia Bancaria (4 dígitos requeridos para validación de lote) -->
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <label class="block text-xs font-mono uppercase tracking-wider text-slate-300 font-semibold">
+                    Últimos 4 Dígitos de Referencia
+                  </label>
+                  <span class="text-[10px] font-mono text-brand-emerald flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-xs">check_circle</span> AUTORIZADO
+                  </span>
+                </div>
+                <div class="relative flex items-center">
+                  <span class="material-symbols-outlined absolute left-3.5 text-slate-400 text-lg">pin</span>
+                  <input type="text" value="7842" maxlength="4" class="w-full bg-surface-container border-2 border-brand-blue/60 rounded-xl py-2 pl-11 pr-20 text-xl font-mono font-extrabold text-blue-300 tracking-widest focus:outline-none glow-blue">
+                  <span class="absolute right-3 text-[11px] font-mono px-2 py-0.5 rounded bg-brand-blue/20 text-brand-blue font-semibold border border-brand-blue/30">
+                    BANESCO
+                  </span>
+                </div>
+              </div>
+
+              <!-- Datos Fiscales del Comercio para Pagar -->
+              <div class="p-2.5 rounded-lg bg-surface-container/60 border border-surface-border text-xs font-mono space-y-1">
+                <div class="flex justify-between text-slate-400">
+                  <span>Teléfono Comercio:</span>
+                  <span class="text-white font-bold">0414-234.5678</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                  <span>RIF Comercial:</span>
+                  <span class="text-white font-bold">J-40918239-1</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                  <span>Banco Destino:</span>
+                  <span class="text-slate-200">0134 Banesco</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Tactile Dynamic QR Code for Mobile Scanning -->
+            <div class="col-span-5 flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container border border-surface-border text-center">
+              <div class="text-[11px] font-mono text-slate-400 uppercase font-semibold mb-2">
+                Escaneo Dinámico
+              </div>
+              
+              <!-- Simulated Crisp QR Graphic -->
+              <div class="relative p-2.5 bg-white rounded-xl shadow-md border-2 border-brand-blue/40">
+                <svg width="124" height="124" viewBox="0 0 100 100" class="shape-rendering-crispEdges">
+                  <!-- QR Finder Pattern Top-Left -->
+                  <rect x="0" y="0" width="30" height="30" fill="#0B0F17" rx="3" />
+                  <rect x="5" y="5" width="20" height="20" fill="#ffffff" />
+                  <rect x="9" y="9" width="12" height="12" fill="#0B0F17" />
+                  
+                  <!-- QR Finder Pattern Top-Right -->
+                  <rect x="70" y="0" width="30" height="30" fill="#0B0F17" rx="3" />
+                  <rect x="75" y="5" width="20" height="20" fill="#ffffff" />
+                  <rect x="79" y="9" width="12" height="12" fill="#0B0F17" />
+
+                  <!-- QR Finder Pattern Bottom-Left -->
+                  <rect x="0" y="70" width="30" height="30" fill="#0B0F17" rx="3" />
+                  <rect x="5" y="75" width="20" height="20" fill="#ffffff" />
+                  <rect x="9" y="79" width="12" height="12" fill="#0B0F17" />
+
+                  <!-- Payload dots representation -->
+                  <rect x="36" y="8" width="6" height="6" fill="#0B0F17" />
+                  <rect x="46" y="8" width="6" height="6" fill="#0B0F17" />
+                  <rect x="56" y="14" width="6" height="6" fill="#0B0F17" />
+                  <rect x="36" y="24" width="6" height="6" fill="#0B0F17" />
+                  <rect x="50" y="28" width="6" height="6" fill="#0B0F17" />
+
+                  <rect x="8" y="38" width="6" height="6" fill="#0B0F17" />
+                  <rect x="20" y="44" width="6" height="6" fill="#0B0F17" />
+                  <rect x="36" y="40" width="8" height="8" fill="#3B82F6" />
+                  <rect x="52" y="44" width="6" height="6" fill="#0B0F17" />
+                  <rect x="68" y="38" width="6" height="6" fill="#0B0F17" />
+                  <rect x="84" y="44" width="6" height="6" fill="#0B0F17" />
+
+                  <rect x="36" y="56" width="6" height="6" fill="#0B0F17" />
+                  <rect x="48" y="60" width="6" height="6" fill="#0B0F17" />
+                  <rect x="58" y="54" width="6" height="6" fill="#0B0F17" />
+                  <rect x="76" y="58" width="6" height="6" fill="#0B0F17" />
+
+                  <rect x="38" y="76" width="6" height="6" fill="#0B0F17" />
+                  <rect x="50" y="72" width="6" height="6" fill="#0B0F17" />
+                  <rect x="64" y="80" width="6" height="6" fill="#0B0F17" />
+                  <rect x="82" y="74" width="6" height="6" fill="#0B0F17" />
+                  <rect x="76" y="86" width="6" height="6" fill="#0B0F17" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-6 h-6 rounded bg-brand-blue text-white flex items-center justify-center text-[10px] font-bold shadow">
+                    BCV
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-2 text-[10px] font-mono text-emerald-400 flex items-center gap-1 font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                MONTO PRE-CARGADO (Bs. 3,000)
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-surface-border flex items-center justify-between text-xs font-mono text-slate-400">
+          <span>Subtotal liquidado en bolívares:</span>
+          <span class="font-bold text-cyan-400">Bs. 3,000.00 ≈ $67.42 USD</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SUMMARY CONCILIATION STRIP -->
+    <div class="px-7 py-3 bg-[#0c121e] border-t border-surface-border flex items-center justify-between">
+      <div class="flex items-center gap-8 text-xs font-mono">
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400">Total Venta:</span>
+          <span class="font-bold text-white">$171.68 USD</span>
+        </div>
+        <div class="text-slate-500">•</div>
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400">Efectivo USD Aplicado:</span>
+          <span class="font-bold text-emerald-400">+$71.68 USD</span>
+          <span class="text-[10px] text-slate-400">($100 entregado - $28.32 devuelto)</span>
+        </div>
+        <div class="text-slate-500">•</div>
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400">Pago Móvil VEF Aplicado:</span>
+          <span class="font-bold text-cyan-400">+$67.42 USD</span>
+          <span class="text-[10px] text-slate-400">(Bs. 3,000.00 @ 44.50)</span>
+        </div>
+        <div class="text-slate-500">•</div>
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400">Ajuste / Saldo Restante:</span>
+          <span class="font-bold text-emerald-400 font-mono">$0.00 (CUADRADO 100%)</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+        <span class="material-symbols-outlined text-sm text-brand-emerald">cable</span>
+        <span>Impresora Térmica 80mm: <span class="text-white font-semibold">Xprinter USB Conectada</span></span>
+      </div>
+    </div>
+
+    <!-- BOTTOM ACTION DOCK: LARGE TACTILE CONFIRMATION & RJ11 DRAWER POPPER -->
+    <div class="px-7 py-4 bg-surface-dim border-t border-surface-border flex items-center justify-between gap-6">
+      
+      <!-- Left Controls: Print Toggle & Fiscal Mode -->
+      <div class="flex items-center gap-6">
+        <!-- Print Receipt Checkbox Toggle -->
+        <label class="flex items-center gap-3 cursor-pointer select-none group">
+          <div class="relative">
+            <input type="checkbox" checked class="sr-only peer">
+            <div class="w-6 h-6 bg-surface-container border-2 border-slate-600 peer-checked:border-brand-emerald peer-checked:bg-brand-emerald rounded-lg transition-all flex items-center justify-center">
+              <span class="material-symbols-outlined text-base text-black font-extrabold hidden peer-checked:block">check</span>
+            </div>
+          </div>
+          <div>
+            <span class="text-sm font-bold text-white group-hover:text-slate-200 font-sans block">
+              Imprimir Ticket Fiscal y Comprobante 80mm
+            </span>
+            <span class="text-xs font-mono text-slate-400">
+              Incluye desglose bimoneda con tasa oficial BCV y QR fiscal
+            </span>
+          </div>
+        </label>
+
+        <!-- Digital WhatsApp Receipt Option -->
+        <label class="flex items-center gap-2.5 cursor-pointer select-none">
+          <div class="w-5 h-5 bg-surface-container border border-slate-600 rounded flex items-center justify-center">
+            <span class="material-symbols-outlined text-xs text-brand-emerald">check</span>
+          </div>
+          <span class="text-xs font-mono text-slate-300">Copia digital por WhatsApp al cliente</span>
+        </label>
+      </div>
+
+      <!-- Right Buttons: Secondary Actions and Huge Touch Confirmation -->
+      <div class="flex items-center gap-4">
+        <!-- Back to Cart / Modify -->
+        <button class="px-5 py-4 rounded-xl bg-surface-container hover:bg-surface-high border border-surface-border text-slate-300 font-mono text-sm font-semibold transition-colors flex items-center gap-2">
+          <span class="material-symbols-outlined text-lg">arrow_back</span>
+          <span>Volver al Ticket (ESC)</span>
+        </button>
+
+        <!-- HUGE GREEN TACTILE CONFIRMATION BUTTON -->
+        <button class="relative group px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-sans font-extrabold text-base tracking-wide shadow-xl glow-emerald transition-all active:scale-[0.98] flex items-center gap-4 border border-emerald-300/40">
+          <!-- Tactile icon cluster -->
+          <div class="w-9 h-9 rounded-lg bg-black/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl text-slate-950">lock_open</span>
+          </div>
+          
+          <div class="text-left">
+            <div class="text-[11px] font-mono uppercase tracking-widest text-emerald-950 font-black">
+              DISPARAR IMPRESIÓN & GAVETA
+            </div>
+            <div class="text-base font-black tracking-tight leading-none text-slate-950">
+              PROCESAR VENTA & ABRIR GAVETA ELÉCTRICA RJ11
+            </div>
+          </div>
+
+          <kbd class="ml-3 px-2.5 py-1 rounded bg-black/25 text-xs font-mono font-bold text-slate-950 border border-black/20 shadow-inner">
+            F12
+          </kbd>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
