@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>EL CUADRE MARCHADOR — MARCADO BIMONEDA ($/Bs) &amp; MARGEN</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-bright": "#31394d",
+            "primary-fixed": "#6ffbbe",
+            "on-surface": "#dae2fd",
+            "outline": "#86948a",
+            "secondary-fixed-dim": "#ffb95f",
+            "surface-tint": "#4edea3",
+            "surface-container-highest": "#2d3449",
+            "on-primary-container": "#00422b",
+            "surface-container-high": "#222a3d",
+            "on-secondary": "#472a00",
+            "surface-container": "#171f33",
+            "on-secondary-fixed-variant": "#653e00",
+            "tertiary-fixed": "#c4e7ff",
+            "inverse-on-surface": "#283044",
+            "surface-dim": "#0b1326",
+            "surface-variant": "#2d3449",
+            "primary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed-variant": "#004c69",
+            "tertiary": "#7bd0ff",
+            "secondary": "#ffb95f",
+            "on-primary-fixed-variant": "#005236",
+            "on-surface-variant": "#bbcabf",
+            "primary-container": "#10b981",
+            "on-tertiary-fixed": "#001e2c",
+            "on-error-container": "#ffdad6",
+            "background": "#0b1326",
+            "secondary-container": "#ee9800",
+            "outline-variant": "#3c4a42",
+            "on-tertiary-container": "#003e55",
+            "on-secondary-container": "#5b3800",
+            "surface-container-low": "#131b2e",
+            "on-primary-fixed": "#002113",
+            "tertiary-container": "#19aee8",
+            "on-primary": "#003824",
+            "on-background": "#dae2fd",
+            "error-container": "#93000a",
+            "secondary-fixed": "#ffddb8",
+            "on-error": "#690005",
+            "inverse-surface": "#dae2fd",
+            "error": "#ffb4ab",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "on-secondary-fixed": "#2a1700",
+            "surface-container-lowest": "#060e20",
+            "on-tertiary": "#00354a",
+            "surface": "#0b1326",
+            "inverse-primary": "#006c49",
+            "primary": "#4edea3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem"
+          },
+          "fontFamily": {
+            "label-caps": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-numeric-sm": ["JetBrains Mono"],
+            "label-numeric-md": ["JetBrains Mono"],
+            "headline-sm": ["Space Grotesk"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Space Grotesk"],
+            "label-numeric-lg": ["JetBrains Mono"],
+            "headline-xl": ["Space Grotesk"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-numeric-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-numeric-md": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-numeric-lg": ["22px", { "lineHeight": "26px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Touch optimization */
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    /* Pulse rate dot */
+    @keyframes ratePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .pulse-dot {
+      animation: ratePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary selection:text-on-primary">
+<!-- Mobile Viewport Container (Flutter 390px Native Simulator) -->
+<div class="w-full max-w-[412px] min-h-screen bg-surface-container-lowest flex flex-col relative pb-32">
+<!-- Top System & Status Header -->
+<header class="sticky top-0 z-40 bg-surface-container-low/95 backdrop-blur-md px-margin py-2.5 border-b border-outline-variant flex items-center justify-between">
+<!-- Leading: Back Action -->
+<button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container text-on-surface border border-outline-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<!-- Center: Screen Identifier -->
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">MARCADO &amp; MARGEN</span>
+<!-- BCV Official Live Indicator Pill -->
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container border border-outline-variant mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary pulse-dot"></span>
+<span class="font-label-caps text-label-caps text-secondary font-bold">BCV: Bs. 45.00/$</span>
+</div>
+</div>
+<!-- Trailing: Scan Tools (Flashlight + Quick Cam) -->
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 flex items-center justify-center rounded bg-surface-container text-on-surface-variant border border-outline-variant active:bg-surface-container-high transition-colors" id="torch-btn">
+<span class="material-symbols-outlined text-[19px]">flashlight_on</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Content Canvas -->
+<main class="flex-1 px-margin pt-3 space-y-3">
+<!-- 1. Product Identity Card -->
+<section class="bg-surface-container rounded-xl p-3 border border-outline-variant flex flex-col gap-2.5 shadow-sm">
+<div class="flex items-start gap-3">
+<!-- Product Thumbnail (Mazeite 1L) -->
+<div class="relative w-20 h-24 rounded-lg bg-surface-container-lowest border border-outline-variant overflow-hidden shrink-0 flex items-center justify-center">
+<img alt="Aceite de Maíz Mazeite 1L" class="w-full h-full object-contain p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYtEl7m5hwaRmI3qYWNhQ-0MefBi20EzMkrCo1MJ8lDnWJiKlfL3TkfaD8WZVlfbLC8UnD6pO7_pQHRYHM5klpm0eQhEm7mbTzcbPSnuiYET40PoBQXctvmGBHk9oShQxJhic9ACIlrbhffY8aV2Xbg_kuX7-IbF0hlYwh8mk99rlfpl2DrDd4yHy6aAVNPIe-mfEG0xzkAvykZFbV61O5yjDIk6ndjgBd68FcU6BOqC-SNk2cWdG-pORj_8Wax__o4MQR8mGV02_u"/>
+<span class="absolute bottom-0 inset-x-0 bg-surface-container-lowest/80 backdrop-blur-xs font-label-caps text-[8px] text-center text-on-surface-variant py-0.5">
+              1 LITRO
+            </span>
+</div>
+<!-- Product Details & Tags -->
+<div class="flex-1 min-w-0 flex flex-col justify-between h-24 py-0.5">
+<div>
+<div class="flex items-center gap-1.5 mb-1 flex-wrap">
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary border border-outline-variant">
+                  Víveres Secos
+                </span>
+<span class="font-label-numeric-sm text-label-numeric-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary border border-outline-variant">
+                  Aisle #04
+                </span>
+</div>
+<h1 class="font-headline-sm text-body-lg font-bold text-on-surface truncate leading-tight">
+                Aceite de Maíz Mazeite 1L
+              </h1>
+</div>
+<!-- Barcode Pill -->
+<div class="flex items-center justify-between gap-1 mt-1">
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant">
+<span class="material-symbols-outlined text-[15px] text-tertiary">barcode</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-tertiary tracking-wide font-mono">7592009876543</span>
+</div>
+<span class="font-label-numeric-sm text-[10px] text-on-surface-variant font-mono">EAN-13</span>
+</div>
+</div>
+</div>
+<!-- System Sync State Indicator -->
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Sincronizado con Caja #01</span>
+</div>
+<span class="font-label-numeric-sm text-[10px] text-on-surface-variant">ID: MZ-0081</span>
+</div>
+</section>
+<!-- 2. Dual-Currency Margin & Pricing Engine Card -->
+<section class="bg-surface-container rounded-xl p-3 border border-outline-variant flex flex-col gap-3">
+<!-- Cost of Purchase Input Row -->
+<div class="flex items-center justify-between bg-surface-container-low p-2.5 rounded-lg border border-outline-variant">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Costo Compra Proveedor</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">$2.10</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">USD</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary ml-1">(Bs. 94.50)</span>
+</div>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1.5 rounded bg-surface-container-high text-primary border border-primary/40 active:scale-95 transition-all text-xs">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+<span class="font-label-caps text-label-caps font-bold">Editar</span>
+</button>
+</div>
+<!-- Profit Margin Selector Pills -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Margen Objetivo (% Utilidad)</label>
+<span class="font-label-caps text-label-caps text-primary font-bold">Margen Bruto: +$0.75 (+35.7%)</span>
+</div>
+<div class="grid grid-cols-5 gap-1.5">
+<!-- 20% -->
+<button class="py-2 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant font-label-numeric-sm text-label-numeric-sm active:bg-surface-container-high transition-colors">
+              +20%
+            </button>
+<!-- 30% -->
+<button class="py-2 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant font-label-numeric-sm text-label-numeric-sm active:bg-surface-container-high transition-colors">
+              +30%
+            </button>
+<!-- 35% Selected Active Pill -->
+<button class="py-2 rounded bg-primary-container text-on-primary-container border border-primary font-label-numeric-sm text-label-numeric-sm font-bold shadow-sm ring-1 ring-primary/40">
+              +35%
+            </button>
+<!-- 50% -->
+<button class="py-2 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant font-label-numeric-sm text-label-numeric-sm active:bg-surface-container-high transition-colors">
+              +50%
+            </button>
+<!-- Manual -->
+<button class="py-2 rounded bg-surface-container-low border border-outline-variant text-on-surface-variant font-label-numeric-sm text-label-numeric-sm active:bg-surface-container-high transition-colors">
+              Manual
+            </button>
+</div>
+</div>
+<!-- Prominent Dual-Currency Selling Price Display -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border-2 border-primary-container/40 flex flex-col gap-1 overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider">Precio Venta Sugerido</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-caps text-[9px] text-tertiary border border-outline-variant">
+              Exento IVA (Canasta)
+            </span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<!-- Primary USD -->
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl font-extrabold text-primary font-mono tracking-tight">$2.85</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">USD</span>
+</div>
+<!-- Live BCV Bolívares Conversion -->
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary font-mono tracking-tight">Bs. 128.25</span>
+</div>
+<span class="font-label-numeric-sm text-[10px] text-on-surface-variant">Tasa BCV: 45.00 Bs/$</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Hablador / Shelf Tag Queue Toggle Card -->
+<section class="bg-surface-container rounded-xl p-3 border border-outline-variant flex items-center justify-between">
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center shrink-0 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">label</span>
+</div>
+<div class="flex flex-col pr-2">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-body-md font-bold text-on-surface">Cola de Habladores</h2>
+<span class="font-label-caps text-[9px] px-1 rounded bg-secondary/15 text-secondary border border-secondary/30 font-bold">50x30mm</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight mt-0.5">
+              Genera etiqueta góndola automática con precio dual bimoneda
+            </p>
+</div>
+</div>
+<!-- iOS/Flutter Style Native Toggle (Active State) -->
+<button class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-primary-container" id="hablador-switch">
+<span class="sr-only">Habilitar hablador</span>
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow-md ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</section>
+<!-- 4. Tactile Fast-Adjust Numeric Keypad (Industrial Terminal Ergonomics) -->
+<section class="bg-surface-container rounded-xl p-2.5 border border-outline-variant flex flex-col gap-1.5">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Teclado Ajuste Rápido en Góndola</span>
+<span class="font-label-numeric-sm text-[10px] text-tertiary">Entrada Directa USD</span>
+</div>
+<!-- 3x4 Tactile Keypad Grid -->
+<div class="grid grid-cols-3 gap-1 font-mono">
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">1</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">2</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">3</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">4</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">5</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">6</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">7</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">8</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">9</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">.</button>
+<button class="h-10 rounded bg-surface-container-low border border-outline-variant text-on-surface font-label-numeric-md text-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center font-bold">0</button>
+<button class="h-10 rounded bg-surface-container-high border border-outline-variant text-error font-label-numeric-md active:bg-surface-container-highest active:scale-[0.98] transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">backspace</span>
+</button>
+</div>
+</section>
+</main>
+<!-- 5. Fixed Action Area & Bottom Primary Bar -->
+<div class="fixed bottom-0 max-w-[412px] w-full z-50 bg-surface-container-low/95 backdrop-blur-md p-margin border-t border-outline-variant flex flex-col gap-2">
+<!-- Main Affirmative CTA: Sync to POS Register -->
+<button class="w-full h-12 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-body-lg font-bold flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-md">
+<span class="material-symbols-outlined text-[20px]">cloud_sync</span>
+<span>Guardar y Sincronizar con Caja</span>
+</button>
+<!-- Secondary Volume Shortcut CTA -->
+<button class="w-full py-1.5 flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px] text-tertiary">qr_code_scanner</span>
+<span class="font-label-caps text-label-caps tracking-wider uppercase text-on-surface">Guardar + Siguiente Escaneo (Volumen)</span>
+</button>
+</div>
+</div>
+<script>
+    // Micro-interactions
+    const switchBtn = document.getElementById('hablador-switch');
+    if (switchBtn) {
+      let active = true;
+      switchBtn.addEventListener('click', () => {
+        active = !active;
+        const knob = switchBtn.querySelector('span:nth-child(2)');
+        if (active) {
+          switchBtn.classList.remove('bg-surface-container-high');
+          switchBtn.classList.add('bg-primary-container');
+          knob.classList.remove('translate-x-0');
+          knob.classList.add('translate-x-5');
+        } else {
+          switchBtn.classList.remove('bg-primary-container');
+          switchBtn.classList.add('bg-surface-container-high');
+          knob.classList.remove('translate-x-5');
+          knob.classList.add('translate-x-0');
+        }
+      });
+    }
+
+    const torchBtn = document.getElementById('torch-btn');
+    if (torchBtn) {
+      let torchOn = false;
+      torchBtn.addEventListener('click', () => {
+        torchOn = !torchOn;
+        if (torchOn) {
+          torchBtn.classList.add('bg-secondary', 'text-surface-container-lowest', 'border-secondary');
+        } else {
+          torchBtn.classList.remove('bg-secondary', 'text-surface-container-lowest', 'border-secondary');
+        }
+      });
+    }
+  </script>
+</body></html>

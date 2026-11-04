@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>EL CUADRE MARCHADOR — Recepción en Depósito &amp; Conteo Offline-First</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#2d3449",
+            "surface-container-low": "#131b2e",
+            "on-tertiary": "#00354a",
+            "inverse-on-surface": "#283044",
+            "secondary-container": "#ee9800",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#001e2c",
+            "on-secondary-fixed": "#2a1700",
+            "on-primary-container": "#00422b",
+            "error-container": "#93000a",
+            "outline-variant": "#3c4a42",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-primary": "#003824",
+            "tertiary-container": "#19aee8",
+            "surface-container": "#171f33",
+            "surface-container-high": "#222a3d",
+            "surface-bright": "#31394d",
+            "on-tertiary-fixed-variant": "#004c69",
+            "on-error": "#690005",
+            "primary": "#4edea3",
+            "tertiary-fixed": "#c4e7ff",
+            "on-primary-fixed-variant": "#005236",
+            "inverse-primary": "#006c49",
+            "secondary": "#ffb95f",
+            "primary-fixed": "#6ffbbe",
+            "surface-dim": "#0b1326",
+            "tertiary": "#7bd0ff",
+            "secondary-fixed-dim": "#ffb95f",
+            "outline": "#86948a",
+            "on-background": "#dae2fd",
+            "surface-container-lowest": "#060e20",
+            "secondary-fixed": "#ffddb8",
+            "on-primary-fixed": "#002113",
+            "primary-container": "#10b981",
+            "on-surface-variant": "#bbcabf",
+            "on-secondary-container": "#5b3800",
+            "primary-fixed-dim": "#4edea3",
+            "surface": "#0b1326",
+            "on-secondary": "#472a00",
+            "on-tertiary-container": "#003e55",
+            "on-surface": "#dae2fd",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "surface-tint": "#4edea3",
+            "inverse-surface": "#dae2fd",
+            "surface-variant": "#2d3449",
+            "background": "#0b1326",
+            "on-error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Space Grotesk"],
+            "label-numeric-sm": ["JetBrains Mono"],
+            "label-numeric-lg": ["JetBrains Mono"],
+            "label-caps": ["Inter"],
+            "label-numeric-md": ["JetBrains Mono"],
+            "headline-lg": ["Space Grotesk"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Space Grotesk"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-numeric-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-numeric-lg": ["22px", { "lineHeight": "26px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-numeric-md": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .barcode-lines {
+      background: repeating-linear-gradient(
+        90deg,
+        #38bdf8,
+        #38bdf8 2px,
+        transparent 2px,
+        transparent 4px,
+        #38bdf8 4px,
+        #38bdf8 7px,
+        transparent 7px,
+        transparent 9px,
+        #38bdf8 9px,
+        #38bdf8 10px
+      );
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between pb-24 select-none">
+<!-- Top Container Wrapper -->
+<div class="w-full max-w-md mx-auto flex flex-col">
+<!-- JSON Anchored Component: TopAppBar -->
+<header class="bg-surface-container text-on-surface border-b border-outline-variant flex justify-between items-center w-full px-margin h-14 sticky top-0 z-40">
+<div class="flex items-center gap-space-sm">
+<button class="text-on-surface-variant hover:bg-surface-container-high active:bg-surface-container-highest transition-colors duration-150 p-space-xs rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Depósito Marchador</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider">Terminal #03 · Zebra TC26 Android</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-label-numeric-sm font-label-numeric-sm bg-surface-container-highest text-secondary border border-secondary/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          OFFLINE
+        </span>
+<button class="text-primary hover:bg-surface-container-high active:bg-surface-container-highest transition-colors duration-150 p-space-xs rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="cloud_sync">cloud_sync</span>
+</button>
+</div>
+</header>
+<!-- High-Visibility Offline-First SQLite Banner -->
+<section class="bg-surface-container-low border-b border-secondary/40 px-margin py-2.5 flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary/15 border border-secondary/40 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="database">database</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-label-caps font-label-caps text-secondary uppercase font-bold tracking-wider">Modo Depósito SQLite</span>
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span class="text-label-numeric-sm font-label-numeric-sm text-on-surface-variant">4 pendientes</span>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant leading-tight">Sin red central · Guardando en búfer flash</span>
+</div>
+</div>
+<button class="bg-secondary text-on-secondary px-3 py-1.5 rounded-lg text-label-numeric-sm font-label-numeric-sm font-bold flex items-center gap-1 active:scale-95 transition-transform duration-100 shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync">sync</span>
+<span>Sincronizar Lote</span>
+</button>
+</section>
+<!-- Main Content Area -->
+<main class="px-margin pt-3 pb-6 flex flex-col gap-3">
+<!-- Tactile Switch: Top Segmented Tabs -->
+<nav class="bg-surface-container-low p-1 rounded-xl flex border border-outline-variant/60 gap-1">
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container-highest border border-primary/40 text-primary flex items-center justify-center gap-1.5 text-body-sm font-body-sm font-semibold transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="barcode_scanner">barcode_scanner</span>
+<span>Conteo Físico Rápido</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface flex items-center justify-center gap-1.5 text-body-sm font-body-sm font-normal transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_box">add_box</span>
+<span>Alta Exprés Nuevo</span>
+</button>
+</nav>
+<!-- Agile Warehouse Product Identity Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant/80 p-space-md flex flex-col gap-3">
+<div class="flex gap-3 items-start">
+<!-- Photo capture container with prompt data-alt -->
+<div class="relative w-20 h-20 rounded-lg overflow-hidden bg-surface-container-lowest border border-outline-variant flex flex-col items-center justify-center shrink-0 group">
+<img class="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity" data-alt="Commercial retail warehouse product packaging of Harina PAN Venezuelan precooked white cornmeal in a vibrant yellow plastic packet resting on a dark steel industrial warehouse counting counter under fluorescent lighting. The image exhibits sharp industrial product detail, crisp barcode margins, and utilitarian contrast in a dark logistics environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq7qkhFeWd-hkxMFgwQ8LaBHlPmcOZMCQOA4csqYu4dd1bHhICvUhtRstnRU6-Oh7e59YP7PTDVdMoZ3pja3khfKHW42GO57XpYHlUIcPzT7LpFVu-YjwTXHgCEU6cFHS4mMkaV3Knemq1A0ZDptu5_KRa5N4NLjjG2MXbOdbhXQg2UL6mipgZL26BqCAlhrXTu8zbPOQfevRdJap5ErtxwSveVSEuSfPhKl79Zno_ul00YySocUsKM5k86NEx7ewbtpyMk7B4oWxN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/90 via-transparent to-transparent flex flex-col justify-end items-center p-1 pointer-events-none">
+<span class="material-symbols-outlined text-[14px] text-tertiary" data-icon="photo_camera">photo_camera</span>
+<span class="text-[9px] font-label-caps text-on-surface uppercase tracking-tighter">Capturada</span>
+</div>
+</div>
+<!-- Product Details -->
+<div class="flex-1 flex flex-col min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="text-label-caps font-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded border border-tertiary/20">PASILLO 04 · SECCIÓN ALIMENTOS</span>
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="verified">verified</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold truncate mt-0.5">Harina P.A.N. Maíz Blanco 1kg</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant truncate">Alimentos Polar C.A. · Bulto 20x1kg</p>
+<!-- Code-128 Pill & Barcode Tag -->
+<div class="mt-2 flex items-center justify-between bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant/70">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="barcode">barcode</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-tertiary tracking-wider font-semibold">7591016100124</span>
+</div>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-tertiary text-label-caps font-label-caps px-1.5 py-0.5 rounded border border-tertiary/30 flex items-center gap-1 active:scale-95 transition-transform">
+<span class="w-2.5 h-2 barcode-lines inline-block"></span>
+<span>Code-128</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Unit Type Pill Selector -->
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/60">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase font-semibold">Tipo de Empaque:</span>
+<div class="flex bg-surface-container-lowest p-0.5 rounded-lg border border-outline-variant/70">
+<button class="px-3 py-1 rounded text-label-caps font-label-caps font-bold bg-primary-container text-on-primary-container shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="check_circle">check_circle</span>
+              UNIDAD (Pza)
+            </button>
+<button class="px-3 py-1 rounded text-label-caps font-label-caps text-on-surface-variant hover:text-on-surface">
+              PESO (Kg/Granel)
+            </button>
+</div>
+</div>
+</section>
+<!-- Tactile Warehouse Count Stepper (Large Touch Targets for Gloves) -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant p-space-md flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-ping"></div>
+<span class="text-label-caps font-label-caps uppercase font-bold text-on-surface-variant tracking-wider">Lectura en Andén / Paleta</span>
+</div>
+<span class="text-label-numeric-sm font-label-numeric-sm text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded">
+            Lote: #2024-B10
+          </span>
+</div>
+<!-- Giant Counter Display -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-primary/50 py-3 px-4 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">Stock Físico Contado</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-label-numeric-lg text-[48px] leading-none font-bold text-primary tracking-tight">60</span>
+<span class="font-body-md text-on-surface-variant font-medium">unidades</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-label-numeric-sm font-label-numeric-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]" data-icon="timer">timer</span>
+<span>Último escaneo: Hace 12 seg por Terminal #03</span>
+</div>
+</div>
+<!-- High-Density Quick Action Stepper Row -->
+<div class="grid grid-cols-5 gap-1.5 pt-1">
+<!-- -10 -->
+<button class="h-14 bg-surface-container-high hover:bg-surface-container-highest active:bg-surface-variant border border-outline-variant rounded-lg flex flex-col items-center justify-center text-on-surface active:scale-95 transition-all">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface-variant">-10</span>
+<span class="text-[9px] font-label-caps text-outline uppercase">Bulto</span>
+</button>
+<!-- -1 -->
+<button class="h-14 bg-surface-container-high hover:bg-surface-container-highest active:bg-surface-variant border border-outline-variant rounded-lg flex flex-col items-center justify-center text-on-surface active:scale-95 transition-all">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface-variant">-1</span>
+<span class="text-[9px] font-label-caps text-outline uppercase">Unid</span>
+</button>
+<!-- +1 -->
+<button class="h-14 bg-surface-container-highest hover:bg-surface-bright active:bg-surface-container border border-primary/50 rounded-lg flex flex-col items-center justify-center text-primary active:scale-95 transition-all">
+<span class="font-label-numeric-md text-label-numeric-md font-bold">+1</span>
+<span class="text-[9px] font-label-caps text-primary/80 uppercase">Unid</span>
+</button>
+<!-- +10 -->
+<button class="h-14 bg-surface-container-highest hover:bg-surface-bright active:bg-surface-container border border-primary/70 rounded-lg flex flex-col items-center justify-center text-primary active:scale-95 transition-all">
+<span class="font-label-numeric-md text-label-numeric-md font-bold">+10</span>
+<span class="text-[9px] font-label-caps text-primary/80 uppercase">Docena</span>
+</button>
+<!-- +Caja x24 (Wholesale Receiving Highlight) -->
+<button class="h-14 bg-primary-container text-on-primary-container rounded-lg flex flex-col items-center justify-center font-bold active:scale-95 transition-transform shadow-[0_0_12px_rgba(16,185,129,0.25)] border border-primary-fixed">
+<span class="font-label-numeric-md text-label-numeric-md font-bold leading-tight">+Caja</span>
+<span class="text-[10px] font-label-numeric-sm font-extrabold uppercase">x24 und</span>
+</button>
+</div>
+</section>
+<!-- Stock Comparison & Discrepancy Card -->
+<section class="bg-surface-container rounded-xl border border-outline-variant p-space-md flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider font-semibold">Cotejo vs Servidor Central</span>
+<span class="text-label-numeric-sm font-label-numeric-sm text-on-surface-variant">ID Sync: #SQLT-892</span>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-surface-container-lowest p-2.5 rounded-lg border border-outline-variant/60">
+<div class="flex flex-col border-r border-outline-variant/40 pr-2">
+<span class="text-[11px] font-body-sm text-on-surface-variant">Stock Sistema (Remoto):</span>
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface">36 und</span>
+<span class="text-[10px] font-body-sm text-outline">Último cierre fiscal</span>
+</div>
+<div class="flex flex-col pl-1">
+<span class="text-[11px] font-body-sm text-on-surface-variant">Stock Físico Contado:</span>
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-primary">60 und</span>
+<span class="text-[10px] font-body-sm text-primary/80 font-medium">En plataforma ahora</span>
+</div>
+</div>
+<!-- Highlighted Discrepancy Badge -->
+<div class="bg-primary/10 border border-primary/40 rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_upward">arrow_upward</span>
+</div>
+<div class="flex flex-col">
+<span class="text-body-sm font-body-sm font-bold text-primary leading-snug">+24 und Entrada de Caja detectada</span>
+<span class="text-[11px] font-body-sm text-on-surface-variant">Estado: Superávit / Recepción de Mercancía</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle">check_circle</span>
+</div>
+</section>
+<!-- Compact Cost & Bimonetary Price Strip -->
+<section class="bg-surface-container-high rounded-xl border border-outline-variant/80 p-space-md flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="currency_exchange">currency_exchange</span>
+<span class="text-label-caps font-label-caps text-secondary uppercase font-bold tracking-wider">Tasación Bimonetaria Depósito</span>
+</div>
+<span class="text-label-numeric-sm font-label-numeric-sm text-on-surface-variant bg-surface-container-lowest px-1.5 py-0.5 rounded border border-outline-variant/50">BCV: 1 USD = 45.00 Bs.</span>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1 text-center">
+<div class="bg-surface-container-lowest p-2 rounded-lg border border-outline-variant/50">
+<span class="text-[10px] font-label-caps text-on-surface-variant uppercase block">Costo Unit.</span>
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface mt-0.5 block">$0.95</span>
+<span class="text-[9px] font-label-numeric-sm text-outline">FOB Fábrica</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg border border-primary/30">
+<span class="text-[10px] font-label-caps text-primary uppercase block">Venta USD</span>
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-primary mt-0.5 block">$1.40</span>
+<span class="text-[9px] font-label-numeric-sm text-primary/80">Margen 32.1%</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg border border-secondary/30">
+<span class="text-[10px] font-label-caps text-secondary uppercase block">Venta Bs. (BCV)</span>
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-secondary mt-0.5 block">Bs. 63,00</span>
+<span class="text-[9px] font-label-numeric-sm text-secondary/80">Ref. Al Mayor</span>
+</div>
+</div>
+</section>
+<!-- Sticky Save Trigger Section -->
+<section class="mt-1 flex flex-col gap-2">
+<button class="w-full bg-primary-container hover:bg-primary-fixed active:bg-primary text-on-primary-container font-headline-sm text-body-lg font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all border-t border-white/20">
+<span class="material-symbols-outlined text-[24px]" data-icon="save">save</span>
+<span>Registrar en Lote Local (SQLite)</span>
+</button>
+<div class="flex items-center justify-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="bolt">bolt</span>
+<span class="text-label-caps font-label-caps uppercase text-outline">Guarda instantáneo sin conexión · Conteo Verificado</span>
+</div>
+</section>
+</main>
+</div>
+<!-- JSON Anchored Component: BottomNavBar -->
+<!-- Active state assigned to "Recepción" based on page intent: RECEPCIÓN EN DEPÓSITO -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter h-16 bg-surface-container-low dark:bg-surface-container-low text-primary dark:text-primary border-t border-outline-variant dark:border-outline-variant">
+<!-- Tab 1: Conteo -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-space-md py-space-xs hover:text-primary dark:hover:text-primary active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" data-icon="barcode_scanner">barcode_scanner</span>
+<span class="text-label-caps font-label-caps mt-0.5">Conteo</span>
+</button>
+<!-- Tab 2: Recepción (ACTIVE TAB based on page topic) -->
+<button class="flex flex-col items-center justify-center bg-surface-container-highest dark:bg-surface-container-highest text-primary dark:text-primary rounded-lg px-space-md py-space-xs active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="text-label-caps font-label-caps mt-0.5 font-bold">Recepción</span>
+</button>
+<!-- Tab 3: Ajustes -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-space-md py-space-xs hover:text-primary dark:hover:text-primary active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" data-icon="rule">rule</span>
+<span class="text-label-caps font-label-caps mt-0.5">Ajustes</span>
+</button>
+<!-- Tab 4: Sincro -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-space-md py-space-xs hover:text-primary dark:hover:text-primary active:scale-95 transition-transform duration-100 relative">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+<span class="text-label-caps font-label-caps mt-0.5">Sincro</span>
+<span class="absolute top-1 right-2 w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+</nav>
+</body></html>

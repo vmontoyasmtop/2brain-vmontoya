@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>El Cuadre Marchador POS — Cobro Móvil en Sitio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#7bd0ff",
+            "on-surface-variant": "#bbcabf",
+            "on-surface": "#dae2fd",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-tertiary-container": "#003e55",
+            "error-container": "#93000a",
+            "on-primary": "#003824",
+            "primary-container": "#10b981",
+            "on-secondary-container": "#5b3800",
+            "on-primary-container": "#00422b",
+            "tertiary-fixed": "#c4e7ff",
+            "secondary-fixed": "#ffddb8",
+            "inverse-on-surface": "#283044",
+            "surface-container-low": "#131b2e",
+            "surface-container-high": "#222a3d",
+            "on-primary-fixed-variant": "#005236",
+            "primary": "#4edea3",
+            "on-tertiary": "#00354a",
+            "on-background": "#dae2fd",
+            "surface-container-highest": "#2d3449",
+            "surface-bright": "#31394d",
+            "primary-fixed": "#6ffbbe",
+            "surface-dim": "#0b1326",
+            "surface-container": "#171f33",
+            "on-error": "#690005",
+            "surface-container-lowest": "#060e20",
+            "tertiary-container": "#19aee8",
+            "secondary": "#ffb95f",
+            "primary-fixed-dim": "#4edea3",
+            "on-error-container": "#ffdad6",
+            "on-secondary": "#472a00",
+            "surface-variant": "#2d3449",
+            "inverse-surface": "#dae2fd",
+            "tertiary": "#7bd0ff",
+            "inverse-primary": "#006c49",
+            "on-tertiary-fixed": "#001e2c",
+            "on-primary-fixed": "#002113",
+            "background": "#0b1326",
+            "secondary-fixed-dim": "#ffb95f",
+            "outline-variant": "#3c4a42",
+            "outline": "#86948a",
+            "on-tertiary-fixed-variant": "#004c69",
+            "secondary-container": "#ee9800",
+            "surface-tint": "#4edea3",
+            "error": "#ffb4ab",
+            "surface": "#0b1326",
+            "on-secondary-fixed": "#2a1700"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "gutter": "0.75rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "headline-xl": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "label-numeric-sm": ["JetBrains Mono"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "label-numeric-lg": ["JetBrains Mono"],
+            "headline-sm": ["Space Grotesk"],
+            "label-numeric-md": ["JetBrains Mono"],
+            "label-caps": ["Inter"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-numeric-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-numeric-lg": ["22px", { "lineHeight": "26px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-numeric-md": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Native tap highlight suppression */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    input {
+      user-select: text;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased font-body-md min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-primary-container">
+<!-- TOP APP BAR (Shared Component Execution) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-space-lg h-14 bg-surface-container border-b border-outline-variant">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary" data-icon="point_of_sale">point_of_sale</span>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight uppercase">El Cuadre Marchador</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary">ONLINE</span>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-bright p-1.5 rounded-lg transition-colors active:scale-95 duration-100" title="Sincronizar">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="w-full max-w-md mx-auto pt-16 pb-40 px-space-md flex flex-col gap-space-md">
+<!-- 1. HEADER / CONTEXT STATUS BAR -->
+<div class="flex items-center justify-between mt-space-xs">
+<button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface py-1 active:scale-95 transition-transform" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface">Ticket #0482</span>
+</button>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high border border-outline-variant px-space-sm py-1 rounded">
+          Marchador #03
+        </span>
+<div class="flex items-center gap-1 bg-surface-container-high border border-secondary px-space-sm py-1 rounded">
+<span class="font-label-caps text-label-caps text-secondary font-bold">BCV</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-bold">45.00 Bs/$</span>
+</div>
+</div>
+</div>
+<!-- 2. PROMINENT DUAL-CURRENCY TOTAL DUE HERO BANNER -->
+<section class="bg-surface-container rounded-xl p-space-md border border-outline-variant shadow-lg relative overflow-hidden">
+<!-- Glow ambient accent -->
+<div class="absolute -right-8 -top-8 w-28 h-28 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant tracking-wider uppercase">TOTAL A COBRAR</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="shopping_basket">shopping_basket</span> 3 Artículos • Pasillo 2
+        </span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">$12.40</span>
+<span class="font-label-caps text-label-caps text-primary/80">USD</span>
+</div>
+<div class="text-right">
+<div class="font-label-numeric-lg text-label-numeric-lg text-secondary font-bold">
+            Bs. 558,00
+          </div>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">Tasa 45.00 Bs/USD</span>
+</div>
+</div>
+</section>
+<!-- 3. PAYMENT METHOD SELECTOR PILLS (2x2 Grid) -->
+<section>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">MÉTODO DE COBRO</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">Bimonetario Activo</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Pill 1: Active Pago Móvil QR -->
+<button class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-high border-2 border-primary text-left active:scale-95 transition-all">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="qr_code_scanner" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-bold leading-tight">Pago Móvil QR</div>
+<div class="font-label-caps text-label-caps text-primary">SELECCIONADO</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Pill 2: Cash mixed -->
+<button class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container border border-outline-variant text-left hover:bg-surface-container-high active:scale-95 transition-all">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="payments">payments</span>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold leading-tight">Efectivo Mixto</div>
+<div class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">USD &amp; Bs.</div>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</button>
+<!-- Pill 3: POS Inalámbrico -->
+<button class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container border border-outline-variant text-left hover:bg-surface-container-high active:scale-95 transition-all">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]" data-icon="contactless">contactless</span>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold leading-tight">Punto Inalámbrico</div>
+<div class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">Tarjeta Débito</div>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</button>
+<!-- Pill 4: Fiado / Crédito -->
+<button class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container border border-outline-variant text-left hover:bg-surface-container-high active:scale-95 transition-all">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="menu_book">menu_book</span>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold leading-tight">Anotar Fiado</div>
+<div class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">Libreta Clientes</div>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</button>
+</div>
+</section>
+<!-- 4. INTERACTIVE VENEZUELAN PAGO MÓVIL DYNAMIC QR CARD -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant p-space-md flex flex-col items-center">
+<div class="w-full flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">QR DE COBRO INMEDIATO</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span> Dinámico
+        </span>
+</div>
+<!-- High contrast QR canvas simulated for seller's screen -->
+<div class="bg-white p-3 rounded-lg shadow-inner flex flex-col items-center justify-center border-2 border-primary-container">
+<!-- SVG QR Mockup with ultra high contrast -->
+<svg class="w-44 h-44 text-surface-container-lowest" fill="currentColor" viewbox="0 0 160 160">
+<!-- Finder Top Left -->
+<rect fill="#000" height="40" rx="3" width="40" x="10" y="10"></rect>
+<rect fill="#fff" height="28" width="28" x="16" y="16"></rect>
+<rect fill="#000" height="16" width="16" x="22" y="22"></rect>
+<!-- Finder Top Right -->
+<rect fill="#000" height="40" rx="3" width="40" x="110" y="10"></rect>
+<rect fill="#fff" height="28" width="28" x="116" y="16"></rect>
+<rect fill="#000" height="16" width="16" x="122" y="22"></rect>
+<!-- Finder Bottom Left -->
+<rect fill="#000" height="40" rx="3" width="40" x="10" y="110"></rect>
+<rect fill="#fff" height="28" width="28" x="16" y="116"></rect>
+<rect fill="#000" height="16" width="16" x="22" y="122"></rect>
+<!-- Data blocks -->
+<rect fill="#000" height="8" width="8" x="58" y="15"></rect>
+<rect fill="#000" height="8" width="8" x="74" y="15"></rect>
+<rect fill="#000" height="8" width="8" x="90" y="22"></rect>
+<rect fill="#000" height="8" width="8" x="58" y="32"></rect>
+<rect fill="#000" height="8" width="8" x="82" y="32"></rect>
+<rect fill="#000" height="8" width="8" x="66" y="44"></rect>
+<rect fill="#000" height="8" width="8" x="90" y="44"></rect>
+<rect fill="#000" height="8" width="8" x="18" y="60"></rect>
+<rect fill="#000" height="8" width="8" x="34" y="60"></rect>
+<rect fill="#000" height="8" width="8" x="50" y="60"></rect>
+<rect fill="#000" height="8" width="8" x="74" y="60"></rect>
+<rect fill="#000" height="8" width="8" x="98" y="60"></rect>
+<rect fill="#000" height="8" width="8" x="122" y="60"></rect>
+<rect fill="#000" height="8" width="8" x="138" y="60"></rect>
+<!-- Center bank logo pill -->
+<rect fill="#00422b" height="40" rx="6" width="40" x="60" y="60"></rect>
+<text fill="#4edea3" font-family="Space Grotesk" font-size="12" font-weight="bold" text-anchor="middle" x="80" y="85">0105</text>
+<!-- Bottom data matrix -->
+<rect fill="#000" height="8" width="8" x="58" y="110"></rect>
+<rect fill="#000" height="8" width="8" x="74" y="110"></rect>
+<rect fill="#000" height="8" width="8" x="110" y="110"></rect>
+<rect fill="#000" height="8" width="8" x="134" y="110"></rect>
+<rect fill="#000" height="8" width="8" x="66" y="126"></rect>
+<rect fill="#000" height="8" width="8" x="90" y="126"></rect>
+<rect fill="#000" height="8" width="8" x="122" y="126"></rect>
+<rect fill="#000" height="8" width="8" x="58" y="142"></rect>
+<rect fill="#000" height="8" width="8" x="82" y="142"></rect>
+<rect fill="#000" height="8" width="8" x="106" y="142"></rect>
+<rect fill="#000" height="8" width="8" x="130" y="142"></rect>
+</svg>
+</div>
+<!-- Prompt text & amount -->
+<div class="mt-space-sm text-center">
+<div class="font-body-md text-body-md text-on-surface">
+          Monto exacto codificado en QR:
+        </div>
+<div class="font-headline-lg text-headline-lg text-secondary font-bold tracking-tight">
+          Bs. 333,00 <span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">($7.40 USD)</span>
+</div>
+</div>
+<!-- Bank Details Specs Tag -->
+<div class="w-full mt-space-sm bg-surface-container p-space-sm rounded-lg border border-outline-variant flex flex-col gap-1 text-center">
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-semibold">
+          Banco Mercantil (0105) • J-41234567-8
+        </span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-tertiary">
+          Tlf: 0414-123.45.67 • "Marchador Express"
+        </span>
+</div>
+<!-- Quick Action Copy -->
+<button class="mt-space-sm w-full py-space-xs px-space-md bg-surface-container-high border border-outline hover:border-primary text-on-surface rounded-lg font-body-sm text-body-sm flex items-center justify-center gap-space-xs active:scale-95 transition-all" onclick="navigator.clipboard?.writeText('0105 04141234567 J412345678 333.00')">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="content_copy">content_copy</span>
+<span>Copiar Datos de Pago</span>
+</button>
+</section>
+<!-- 5. MIXED BIMONETARY BREAKDOWN & REFERENCE INPUT SECTION -->
+<section class="bg-surface-container rounded-xl p-space-md border border-outline-variant flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">DESGLOSE DE PAGO MIXTO</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface">Ticket Total: $12.40</span>
+</div>
+<!-- Row: Cash Received in USD with quick picks -->
+<div>
+<div class="flex justify-between items-center mb-space-xs">
+<label class="font-body-sm text-body-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="attach_money">attach_money</span>
+            Recibido en Efectivo USD:
+          </label>
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">$5.00</span>
+</div>
+<div class="grid grid-cols-4 gap-space-xs">
+<button class="py-1.5 rounded bg-surface-container-high border-2 border-primary text-on-surface font-label-numeric-sm text-label-numeric-sm font-bold active:scale-95 transition-transform text-center">
+            $5.00
+          </button>
+<button class="py-1.5 rounded bg-surface-container-high border border-outline-variant hover:border-outline text-on-surface-variant font-label-numeric-sm text-label-numeric-sm active:scale-95 transition-transform text-center">
+            $10.00
+          </button>
+<button class="py-1.5 rounded bg-surface-container-high border border-outline-variant hover:border-outline text-on-surface-variant font-label-numeric-sm text-label-numeric-sm active:scale-95 transition-transform text-center">
+            $20.00
+          </button>
+<button class="py-1.5 rounded bg-surface-container-high border border-outline-variant hover:border-outline text-on-surface-variant font-label-numeric-sm text-label-numeric-sm active:scale-95 transition-transform text-center">
+            Otro
+          </button>
+</div>
+</div>
+<!-- Restante a liquidar -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg border border-outline-variant flex items-center justify-between">
+<div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Restante por Pago Móvil:</div>
+<div class="font-label-numeric-md text-label-numeric-md text-secondary font-bold">Bs. 333,00</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Equivalente USD</div>
+<div class="font-label-numeric-md text-label-numeric-md text-primary font-bold">$7.40 USD</div>
+</div>
+</div>
+<!-- Reference validation box -->
+<div class="flex flex-col gap-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-between">
+<span>Últimos 4 dígitos de Referencia:</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+            Mercantil API
+          </span>
+</label>
+<div class="flex items-center gap-space-sm">
+<div class="flex-1 bg-surface-container-lowest border border-outline focus-within:border-primary rounded-lg flex items-center px-space-md py-2">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-widest font-bold">8 4 9 2</span>
+</div>
+<div class="px-space-md py-2 bg-primary/20 border border-primary text-primary rounded-lg font-label-caps text-label-caps font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+            VALIDADO
+          </div>
+</div>
+</div>
+</section>
+<!-- 6. AUTOMATIC CHANGE & BALANCE CALCULATOR (VUELTO) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md border border-primary/40 bg-gradient-to-r from-surface-container to-surface-container-low">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">ESTADO DE LIQUIDACIÓN</span>
+<div class="font-label-numeric-md text-label-numeric-md text-on-surface mt-0.5">
+            Vuelto a entregar: <span class="font-bold text-on-surface">$0.00 / Bs. 0.00</span>
+</div>
+</div>
+<div class="px-space-md py-1.5 rounded-full bg-primary/15 border border-primary flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="task_alt" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">CUADRE EXACTO</span>
+</div>
+</div>
+</section>
+<!-- 7. TICKET AUDIT MINI SUMMARY -->
+<section class="px-space-xs text-center text-on-surface-variant font-label-numeric-sm text-label-numeric-sm flex justify-center items-center gap-space-md">
+<span>Cajero: M. Silva</span>
+<span>•</span>
+<span>Terminal POS: POS-VET-09</span>
+<span>•</span>
+<span class="text-tertiary">Batería: 89%</span>
+</section>
+</main>
+<!-- 8. STICKY BOTTOM FLOATING CTA BAR (Hardware & POS actions) -->
+<div class="fixed bottom-14 left-0 w-full z-40 bg-surface-container border-t border-outline-variant p-space-sm max-w-md mx-auto right-0 shadow-2xl">
+<div class="flex flex-col gap-space-xs">
+<!-- Primary Emerald Button -->
+<button class="w-full h-12 bg-primary-container hover:bg-primary active:scale-[0.98] transition-all rounded-xl text-on-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-sm shadow-md border-t border-white/20">
+<span class="material-symbols-outlined text-[20px]" data-icon="print" style="font-variation-settings: 'FILL' 1;">print</span>
+<span>Completar Venta &amp; Imprimir</span>
+<span class="font-label-numeric-sm text-label-numeric-sm opacity-80">(BT 58mm)</span>
+</button>
+<!-- Secondary Quick Action Row -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-2 px-space-xs bg-surface-container-high hover:bg-surface-bright active:scale-95 transition-all rounded-lg border border-outline-variant text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="chat">chat</span>
+<span>WhatsApp (+58)</span>
+</button>
+<button class="py-2 px-space-xs bg-surface-container-high hover:bg-surface-bright active:scale-95 transition-all rounded-lg border border-outline-variant text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="receipt">receipt</span>
+<span>Factura SENIAT</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BOTTOM NAVIGATION BAR (Shared Component Execution: Active Tab 'Caja') -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-sm py-space-xs bg-surface-container border-t border-outline-variant">
+<!-- Tab 1: Caja (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-space-md py-space-xs font-bold active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-caps text-label-caps">Caja</span>
+</a>
+<!-- Tab 2: Historial (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-bright transition-colors rounded-xl px-space-md py-space-xs active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-caps text-label-caps">Historial</span>
+</a>
+<!-- Tab 3: Tasa BCV (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-bright transition-colors rounded-xl px-space-md py-space-xs active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="currency_exchange">currency_exchange</span>
+<span class="font-label-caps text-label-caps">Tasa BCV</span>
+</a>
+<!-- Tab 4: Ajustes (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-bright transition-colors rounded-xl px-space-md py-space-xs active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Ajustes</span>
+</a>
+</nav>
+</body></html>

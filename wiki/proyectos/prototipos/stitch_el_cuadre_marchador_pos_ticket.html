@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>El Cuadre Marchador POS — Ticket &amp; Marchar a Caja</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Space Grotesk, Inter, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#4edea3",
+            "primary-container": "#10b981",
+            "surface-container-high": "#222a3d",
+            "secondary": "#ffb95f",
+            "surface-tint": "#4edea3",
+            "secondary-fixed-dim": "#ffb95f",
+            "surface-container-lowest": "#060e20",
+            "surface-bright": "#31394d",
+            "on-surface": "#dae2fd",
+            "primary-fixed": "#6ffbbe",
+            "tertiary-container": "#19aee8",
+            "primary-fixed-dim": "#4edea3",
+            "inverse-on-surface": "#283044",
+            "on-primary-fixed": "#002113",
+            "inverse-surface": "#dae2fd",
+            "secondary-container": "#ee9800",
+            "on-tertiary-container": "#003e55",
+            "error-container": "#93000a",
+            "tertiary-fixed": "#c4e7ff",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "background": "#0b1326",
+            "secondary-fixed": "#ffddb8",
+            "on-primary-container": "#00422b",
+            "on-error": "#690005",
+            "on-background": "#dae2fd",
+            "on-primary-fixed-variant": "#005236",
+            "on-primary": "#003824",
+            "on-error-container": "#ffdad6",
+            "on-surface-variant": "#bbcabf",
+            "outline-variant": "#3c4a42",
+            "tertiary": "#7bd0ff",
+            "on-secondary": "#472a00",
+            "surface-container-highest": "#2d3449",
+            "on-secondary-fixed": "#2a1700",
+            "surface-variant": "#2d3449",
+            "on-tertiary": "#00354a",
+            "on-secondary-fixed-variant": "#653e00",
+            "inverse-primary": "#006c49",
+            "surface-container": "#171f33",
+            "on-tertiary-fixed": "#001e2c",
+            "error": "#ffb4ab",
+            "surface-dim": "#0b1326",
+            "surface-container-low": "#131b2e",
+            "on-secondary-container": "#5b3800",
+            "surface": "#0b1326",
+            "outline": "#86948a",
+            "on-tertiary-fixed-variant": "#004c69"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "label-numeric-md": ["JetBrains Mono"],
+            "headline-lg": ["Space Grotesk"],
+            "label-caps": ["Inter"],
+            "headline-xl": ["Space Grotesk"],
+            "label-numeric-lg": ["JetBrains Mono"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Space Grotesk"],
+            "body-lg": ["Inter"],
+            "label-numeric-sm": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-numeric-md": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-numeric-lg": ["22px", { "lineHeight": "26px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-numeric-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /* Pulsing mesh dot animation */
+    @keyframes pulse-mesh {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(1.15); }
+    }
+    .animate-pulse-mesh {
+      animation: pulse-mesh 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    /* Hide scrollbar for fluent touch feel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased select-none min-h-screen flex justify-center items-start">
+<!-- Mobile Viewport Frame (390px native canvas wrapper) -->
+<main class="w-full max-w-[390px] min-h-screen bg-surface-container-lowest flex flex-col relative pb-36 shadow-2xl">
+<!-- 1. Native Mobile App Bar & System Status -->
+<header class="sticky top-0 z-30 bg-surface-container/95 backdrop-blur-md">
+<!-- iOS/Android Native Status Bar (10:42 AM) -->
+<div class="h-6 px-margin flex justify-between items-center pt-space-xs text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+<span class="font-bold tracking-tight text-on-surface">10:42 AM</span>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<div class="flex items-center gap-0.5">
+<span class="text-[10px] font-label-numeric-sm">94%</span>
+<span class="material-symbols-outlined text-[16px]">battery_full</span>
+</div>
+</div>
+</div>
+<!-- App Header: Nav + Live Sync Banner -->
+<div class="px-margin pt-space-sm pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Volver al lector de pasillo" class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface active:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+</button>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-sm">🧾</span>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">Pedido #ORD-204</h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+              Pasillo 03 • Charcutería y Secos
+            </p>
+</div>
+</div>
+<!-- Right Tool Actions -->
+<div class="flex items-center gap-space-xs">
+<button class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant active:text-primary transition-colors" title="Guardar Borrador" type="button">
+<span class="material-symbols-outlined text-xl">bookmark_add</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-on-surface-variant active:text-on-surface" title="Menú de Ticket" type="button">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Mesh Local LAN Sync & BCV Live Ribbon -->
+<div class="px-margin pb-space-sm flex items-center justify-between gap-space-xs">
+<!-- Sync Pill with pulsing green dot -->
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high border border-primary-container/30">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse-mesh"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Sincro Caja 01 • MESH LAN</span>
+</div>
+<!-- Live BCV Rate -->
+<div class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-high border border-secondary/30">
+<span class="font-label-caps text-label-caps text-secondary font-bold">BCV</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">Bs. 45.00</span>
+<span class="text-[9px] text-on-surface-variant font-label-numeric-sm">10:30 AM</span>
+</div>
+</div>
+<!-- Customer Identification Pill / Quick Input -->
+<div class="px-margin pb-space-sm">
+<div class="w-full bg-surface-container-high/80 rounded-lg p-space-sm flex items-center justify-between border border-outline-variant/40">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 border border-secondary flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-bold text-on-surface truncate">Doña Carmen</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-label-caps bg-error-container/30 text-error border border-error/30 uppercase">Cesta #04</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span>Turno Mañana</span>
+<span>•</span>
+<span class="text-tertiary">Cliente Frecuente</span>
+</p>
+</div>
+</div>
+<button aria-label="Editar cliente" class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant active:text-primary" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+</div>
+</header>
+<!-- 2. Scrollable Order Items List (Tactile POS Cards) -->
+<section class="px-margin pt-space-xs flex flex-col gap-space-sm">
+<!-- Section Header -->
+<div class="flex items-center justify-between pt-space-xs">
+<h2 class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">format_list_bulleted</span>
+<span>Ítems Cargados (4)</span>
+</h2>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary-fixed-dim bg-surface-container-high px-2 py-0.5 rounded border border-outline-variant/30">
+          5.85 Kg eq.
+        </span>
+</div>
+<!-- Item Card 1: Queso Blanco Duro (Weighable item) -->
+<article class="bg-surface-container rounded-lg p-space-sm border border-outline-variant/30 flex flex-col gap-space-xs relative">
+<div class="flex justify-between items-start">
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-label-numeric-sm text-label-numeric-sm border border-tertiary/20">
+                #CHAR-012
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Charcutería Pesada</span>
+</div>
+<h3 class="font-body-md text-body-md font-bold text-on-surface">Queso Blanco Duro</h3>
+<p class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant mt-0.5">
+              Balanza 01 • @ $5.80 / Kg
+            </p>
+</div>
+<!-- Dual Currency Total Block -->
+<div class="text-right flex flex-col items-end">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold tracking-tight">
+              $3.77 USD
+            </span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">
+              Bs. 169.65
+            </span>
+</div>
+</div>
+<!-- Tactile Weight Adjustment Control -->
+<div class="mt-1 pt-space-xs border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">scale</span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant/40">
+              0.650 Kg
+            </span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Neto</span>
+</div>
+<button class="h-9 px-space-sm rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-center gap-1 text-on-surface active:bg-surface-bright transition-colors" type="button">
+<span class="material-symbols-outlined text-sm text-tertiary">refresh</span>
+<span class="font-label-caps text-label-caps">Re-Pesar</span>
+</button>
+</div>
+</article>
+<!-- Item Card 2: Harina P.A.N. 1Kg (Unit Stepper) -->
+<article class="bg-surface-container rounded-lg p-space-sm border border-outline-variant/30 flex flex-col gap-space-xs">
+<div class="flex justify-between items-start">
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-label-numeric-sm text-label-numeric-sm border border-tertiary/20">
+                7591000123456
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Víveres Secos</span>
+</div>
+<h3 class="font-body-md text-body-md font-bold text-on-surface">Harina P.A.N. 1Kg</h3>
+<p class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant mt-0.5">
+              Precio unitario: $1.40 c/u
+            </p>
+</div>
+<!-- Dual Currency Total Block -->
+<div class="text-right flex flex-col items-end">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold tracking-tight">
+              $4.20 USD
+            </span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">
+              Bs. 189.00
+            </span>
+</div>
+</div>
+<!-- Tactile +/- Stepper -->
+<div class="mt-1 pt-space-xs border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Unidades en Cesta</span>
+<div class="flex items-center gap-1 bg-surface-container-lowest p-0.5 rounded-lg border border-outline-variant/40">
+<button aria-label="Disminuir unidades" class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface active:bg-surface-container-highest" type="button">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<span class="w-12 text-center font-label-numeric-md text-label-numeric-md font-bold text-on-surface">
+              3 und
+            </span>
+<button aria-label="Aumentar unidades" class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary active:bg-surface-container-highest" type="button">
+<span class="material-symbols-outlined text-base font-bold">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item Card 3: Tomate Perita (Weighable Fruit & Veg) -->
+<article class="bg-surface-container rounded-lg p-space-sm border border-outline-variant/30 flex flex-col gap-space-xs">
+<div class="flex justify-between items-start">
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-label-numeric-sm text-label-numeric-sm border border-tertiary/20">
+                #VERD-088
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Frutas y Verduras</span>
+</div>
+<h3 class="font-body-md text-body-md font-bold text-on-surface">Tomate Perita</h3>
+<p class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant mt-0.5">
+              Balanza Pasillo 02 • @ $1.80 / Kg
+            </p>
+</div>
+<!-- Dual Currency Total Block -->
+<div class="text-right flex flex-col items-end">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold tracking-tight">
+              $2.16 USD
+            </span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">
+              Bs. 97.20
+            </span>
+</div>
+</div>
+<!-- Scale Verification Badge & Weight -->
+<div class="mt-1 pt-space-xs border-t border-outline-variant/20 flex items-center justify-between">
+<div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-primary-container/10 border border-primary/30">
+<span class="text-xs">⚖️</span>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">Pesaje Verificado</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-numeric-md text-label-numeric-md font-bold text-on-surface bg-surface-container-lowest px-2 py-1 rounded border border-outline-variant/40">
+              1.200 Kg
+            </span>
+</div>
+</div>
+</article>
+<!-- Item Card 4: Café Amanecer 250g (Unit Stepper) -->
+<article class="bg-surface-container rounded-lg p-space-sm border border-outline-variant/30 flex flex-col gap-space-xs">
+<div class="flex justify-between items-start">
+<div class="flex-1 pr-2">
+<div class="flex items-center gap-1.5 mb-0.5">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-label-numeric-sm text-label-numeric-sm border border-tertiary/20">
+                7592345678901
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Despensa Cafés</span>
+</div>
+<h3 class="font-body-md text-body-md font-bold text-on-surface">Café Amanecer 250g</h3>
+<p class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant mt-0.5">
+              Precio unitario: $2.27 c/u
+            </p>
+</div>
+<!-- Dual Currency Total Block -->
+<div class="text-right flex flex-col items-end">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold tracking-tight">
+              $2.27 USD
+            </span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-semibold">
+              Bs. 102.15
+            </span>
+</div>
+</div>
+<!-- Tactile +/- Stepper -->
+<div class="mt-1 pt-space-xs border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Unidades en Cesta</span>
+<div class="flex items-center gap-1 bg-surface-container-lowest p-0.5 rounded-lg border border-outline-variant/40">
+<button aria-label="Disminuir unidades" class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface active:bg-surface-container-highest" type="button">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<span class="w-12 text-center font-label-numeric-md text-label-numeric-md font-bold text-on-surface">
+              1 und
+            </span>
+<button aria-label="Aumentar unidades" class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary active:bg-surface-container-highest" type="button">
+<span class="material-symbols-outlined text-base font-bold">add</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- 3. Bi-Monetary Summary Card (High Contrast Dual-Currency) -->
+<section class="px-margin mt-space-md">
+<div class="bg-surface-container rounded-xl p-space-md border border-outline-variant/50">
+<!-- Breakdown lines -->
+<div class="flex justify-between items-center text-on-surface-variant mb-1.5">
+<span class="font-body-sm text-body-sm">Subtotal (4 ítems / 5.85 Kg eq.):</span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-semibold">$12.40 USD</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant mb-3">
+<span class="font-body-sm text-body-sm flex items-center gap-1">
+<span>Tasa Oficial BCV Hoy:</span>
+<span class="px-1 py-0.2 rounded bg-surface-container-high text-[10px] font-label-numeric-sm text-secondary border border-secondary/20">Oficial</span>
+</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-bold">Bs. 45.00 / $</span>
+</div>
+<!-- Giant Dual Totals Box -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md border border-outline-variant/60 flex flex-col gap-2">
+<!-- USD Primary -->
+<div class="flex items-baseline justify-between border-b border-outline-variant/20 pb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">TOTAL DIVISAS (USD)</span>
+</div>
+<div class="text-right">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">
+                $12.40
+              </span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary ml-1">USD</span>
+</div>
+</div>
+<!-- BCV Bolívares Secondary -->
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">TOTAL BCV (BOLÍVARES)</span>
+</div>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg text-secondary font-bold tracking-tight">
+                Bs. 558.00
+              </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. QR Pre-Ticket Preview Card (Cola-Cero Fast Pass) -->
+<section class="px-margin mt-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md border border-dashed border-outline/40 relative overflow-hidden">
+<!-- Top perforations aesthetic -->
+<div class="flex items-start gap-space-md">
+<!-- Miniature High-Contrast QR Code Vector Representation -->
+<div class="w-20 h-20 bg-white p-1 rounded-md shrink-0 flex flex-col justify-between shadow-inner">
+<svg class="w-full h-full text-black" fill="currentColor" viewbox="0 0 29 29">
+<!-- QR Corner 1 -->
+<rect height="7" width="7" x="0" y="0"></rect>
+<rect fill="white" height="5" width="5" x="1" y="1"></rect>
+<rect height="3" width="3" x="2" y="2"></rect>
+<!-- QR Corner 2 -->
+<rect height="7" width="7" x="22" y="0"></rect>
+<rect fill="white" height="5" width="5" x="23" y="1"></rect>
+<rect height="3" width="3" x="24" y="2"></rect>
+<!-- QR Corner 3 -->
+<rect height="7" width="7" x="0" y="22"></rect>
+<rect fill="white" height="5" width="5" x="1" y="23"></rect>
+<rect height="3" width="3" x="2" y="24"></rect>
+<!-- QR Data Matrix Pattern Simulation -->
+<rect height="2" width="2" x="9" y="1"></rect>
+<rect height="1" width="3" x="13" y="1"></rect>
+<rect height="2" width="2" x="18" y="1"></rect>
+<rect height="3" width="2" x="9" y="5"></rect>
+<rect height="3" width="3" x="14" y="4"></rect>
+<rect height="2" width="3" x="1" y="9"></rect>
+<rect height="3" width="2" x="5" y="10"></rect>
+<rect height="2" width="4" x="10" y="9"></rect>
+<rect height="3" width="3" x="16" y="9"></rect>
+<rect height="2" width="2" x="21" y="9"></rect>
+<rect height="1" width="3" x="25" y="9"></rect>
+<rect height="4" width="3" x="10" y="13"></rect>
+<rect height="2" width="4" x="15" y="14"></rect>
+<rect height="2" width="3" x="2" y="14"></rect>
+<rect height="3" width="2" x="6" y="16"></rect>
+<rect height="3" width="3" x="21" y="13"></rect>
+<rect height="4" width="2" x="25" y="15"></rect>
+<rect height="2" width="2" x="10" y="19"></rect>
+<rect height="3" width="3" x="14" y="18"></rect>
+<rect height="2" width="4" x="19" y="18"></rect>
+<rect height="2" width="3" x="9" y="23"></rect>
+<rect height="3" width="2" x="14" y="24"></rect>
+<rect height="3" width="3" x="18" y="23"></rect>
+<rect height="2" width="4" x="23" y="24"></rect>
+</svg>
+</div>
+<!-- Fast-pass details -->
+<div class="flex-1">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps font-bold">
+                COLA-CERO
+              </span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">#204</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface text-[15px] leading-tight">
+              Pre-Ticket Rápido de Taquilla
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-snug mt-1">
+              Escaneable en Taquilla Central para cobro exprés sin re-escaneo de productos.
+            </p>
+</div>
+</div>
+<!-- Bluetooth Printer Status Bar -->
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-sm">🖨️</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">Térmica Móvil: Conectada (58mm)</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</div>
+</div>
+</section>
+<!-- 5. Dual Bottom Sticky Action Buttons (Ergonomic Thumb Zone) -->
+<div class="fixed bottom-0 left-0 right-0 z-40 flex justify-center pointer-events-none">
+<div class="w-full max-w-[390px] p-margin bg-surface-container-lowest/95 backdrop-blur-lg border-t border-outline-variant/40 flex flex-col gap-space-xs pointer-events-auto shadow-[0_-8px_24px_rgba(2,6,23,0.8)]">
+<!-- Button 1: Primary Dominant Gold/Amber 'Marchar' Rocket -->
+<button class="w-full min-h-[54px] py-2 px-space-md rounded-xl bg-secondary hover:bg-secondary-container active:scale-[0.98] transition-all text-on-secondary-fixed flex flex-col items-center justify-center shadow-[0_0_16px_rgba(245,158,11,0.35)] border border-secondary-fixed/50" type="button">
+<div class="flex items-center gap-2">
+<span class="text-lg">🚀</span>
+<span class="font-headline-sm text-headline-sm font-extrabold tracking-tight text-[15px] text-on-secondary">
+              MARCHAR PEDIDO A CAJA PRINCIPAL
+            </span>
+</div>
+<span class="font-label-caps text-label-caps text-on-secondary/80 tracking-wide mt-0.5">
+            (Enviar a Taquilla + Imprimir Pre-Ticket 58mm)
+          </span>
+</button>
+<!-- Button 2: Secondary Emerald Direct Pay on Mobile -->
+<button class="w-full min-h-[48px] py-1.5 px-space-md rounded-xl bg-surface-container-high hover:bg-surface-bright active:scale-[0.98] transition-all text-primary border border-primary/50 flex flex-col items-center justify-center" type="button">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">credit_card</span>
+<span class="font-headline-sm text-headline-sm font-bold text-[14px]">
+              Cobrar Directo Aquí en el Móvil
+            </span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">
+            Punto Ya / Efectivo en Pasillo
+          </span>
+</button>
+</div>
+</div>
+</main>
+<script>
+    // Lightweight tactile click feedback
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (window.navigator && window.navigator.vibrate) {
+          window.navigator.vibrate(25);
+        }
+      });
+    });
+  </script>
+</body></html>

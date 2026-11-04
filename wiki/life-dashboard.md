@@ -17,9 +17,16 @@ Tablero de control ejecutivo para **Victor Montoya** en **Master Group**, concen
 
 ---
 
-## ⚡ Estado de Proyectos y Enfoque Activo (Semana 19/10 – 25/10/2026)
+## ⚡ Estado de Proyectos y Enfoque Activo (Noviembre 2026)
 
-1. ⚖️ **[[el-cuadre-pos-brand-brief-ejecutivo|EL CUADRE POS — Kiosko, Frutería & Abasto Criollo]]**:
+### 🔔 Recordatorios y Bloques Agendados (Alertas Push 15 min antes)
+- [ ] **04-Nov 08:00 PM** — 🦈 **Sesión Nocturna SmartOps / El Cuadre Marchador Mobile (US-19)** ([Evento en Google Calendar `t50op5t36grfs632jin8o46074`](https://www.google.com/calendar/event?eid=dDUwb3A1dDM2Z3JmczYzMmppbjhvNDYwNzQgdm1vbnRveWEuc21hcnRvcHN2ZUBt) | [Subtarea ClickUp `86bcxuxe1`](https://app.clickup.com/t/86bcxuxe1)): Continuar implementación de las **8 pantallas móviles generadas en Google Stitch** (4 vistas de POS Móvil: Venta en Pasillo, Pesaje Criollo *"Dame X Bs/$"*, Ticket & Marchar a Caja Principal y Cobro Móvil con Pago Móvil QR; + 4 vistas Operativas: Escáner por Cámara, Marcado Bimoneda `$/Bs`, Recepción/Conteo Offline-First SQLite y Cola de Etiquetas Bluetooth `50x30mm`) junto a **Kisame** (Flutter) y **Kakuzu** (NestJS LAN Sync).
+
+1. ⚖️ **[[el-cuadre-pos-brand-brief-ejecutivo|EL CUADRE POS — Kiosko, Frutería, Moda & Abasto Criollo]]**:
+   - **📱 App Móvil "El Cuadre Marchador" ([[diseno-ui-el-cuadre-marchador-mobile|US-19 — Suite de 8 Pantallas en Google Stitch]])**:
+     - Desplegadas por **🦋 Konan** en Google Stitch (`projects/15301442243370859300`) las **8 pantallas móviles nativas**:
+       - **Módulo POS Móvil (4 vistas)**: Venta en Pasillo (`2e54bb5383834a9a9d72b249f21476bf`), Pesaje & Modo Criollo *"Dame X Bs/$"* (`1e35c6410cf14aa3b52fa7b1e661f951`), Ticket & Marchar a Caja Principal (`37e5706cc856401b861de6454a245605`) y Cobro Móvil Bimoneda con QR en Sitio (`a1989a16f8494e88a61efdddcdcfd364`).
+       - **Módulo Operaciones de Pasillo (4 vistas)**: Escáner por Cámara `<100ms` (`56370eaa8ec241a580731bf85ca5178c`), Marcado Bimoneda `$/Bs` & Margen (`e29e95156ea348bfa6047aae92d5e4ca`), Recepción & Conteo Offline-First SQLite (`774321dd5c084074b482e287eca88c06`) y Cola de Etiquetas Bluetooth `50x30mm` (`5c47cdeb43d244fc859da0a4ba9fe7e9`).
    - **Backend & Finanzas**: NestJS + SQLite WAL Mode con Prisma ORM (`elcuadre.db`). Endpoint de finanzas, egresos de caja menor y utilidad neta (`US-07`). 26/26 pruebas unitarias aprobadas por Hidan (100%).
    - **Frontend & Arnés de Calidad**: Next.js 14 App Router protegido por el Arnés Akatsuki (`quality-harness.js`) con 0 errores y compilación limpia (8/8 páginas estáticas).
    - **Documentación & Manuales**: Manual del Cajero ilustrado y guías offline incorporadas en `/docs` (`US-09`).

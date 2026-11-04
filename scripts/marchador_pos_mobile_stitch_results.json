@@ -1,0 +1,38 @@
+[
+  {
+    "index": 1,
+    "slug": "stitch_el_cuadre_marchador_pos_catalogo",
+    "title": "EL CUADRE MARCHADOR POS — Venta en Pasillo (Mobile)",
+    "screen_id": "2e54bb5383834a9a9d72b249f21476bf",
+    "resource_name": "projects/15301442243370859300/screens/2e54bb5383834a9a9d72b249f21476bf",
+    "png_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\assets\\stitch_el_cuadre_marchador_pos_catalogo.png",
+    "html_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\prototipos\\stitch_el_cuadre_marchador_pos_catalogo.html"
+  },
+  {
+    "index": 2,
+    "slug": "stitch_el_cuadre_marchador_pos_pesaje",
+    "title": "EL CUADRE MARCHADOR POS — Pesaje en Pasillo & Charcutería (Mobile Bottom-Sheet)",
+    "screen_id": "1e35c6410cf14aa3b52fa7b1e661f951",
+    "resource_name": "projects/15301442243370859300/screens/1e35c6410cf14aa3b52fa7b1e661f951",
+    "png_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\assets\\stitch_el_cuadre_marchador_pos_pesaje.png",
+    "html_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\prototipos\\stitch_el_cuadre_marchador_pos_pesaje.html"
+  },
+  {
+    "index": 3,
+    "slug": "stitch_el_cuadre_marchador_pos_ticket",
+    "title": "EL CUADRE MARCHADOR POS — Ticket & Marchar a Caja (Mobile)",
+    "screen_id": "37e5706cc856401b861de6454a245605",
+    "resource_name": "projects/15301442243370859300/screens/37e5706cc856401b861de6454a245605",
+    "png_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\assets\\stitch_el_cuadre_marchador_pos_ticket.png",
+    "html_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\prototipos\\stitch_el_cuadre_marchador_pos_ticket.html"
+  },
+  {
+    "index": 4,
+    "slug": "stitch_el_cuadre_marchador_pos_cobro",
+    "title": "EL CUADRE MARCHADOR POS — Cobro Móvil en Sitio (Mobile)",
+    "screen_id": "a1989a16f8494e88a61efdddcdcfd364",
+    "resource_name": "projects/15301442243370859300/screens/a1989a16f8494e88a61efdddcdcfd364",
+    "png_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\assets\\stitch_el_cuadre_marchador_pos_cobro.png",
+    "html_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\prototipos\\stitch_el_cuadre_marchador_pos_cobro.html"
+  }
+]

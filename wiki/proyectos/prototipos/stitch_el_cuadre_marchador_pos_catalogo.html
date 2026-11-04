@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>EL CUADRE MARCHADOR POS — VENTA EN PASILLO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              950: '#020617',
+              900: '#0b1326',
+              850: '#0d182e',
+              800: '#0F172A',
+              700: '#1e293b',
+              600: '#334155'
+            },
+            emerald: {
+              400: '#34d399',
+              500: '#10B981',
+              600: '#059669',
+              900: '#064e3b'
+            },
+            amber: {
+              400: '#fbbf24',
+              500: '#F59E0B',
+              600: '#d97706',
+              900: '#78350f'
+            }
+          },
+          fontFamily: {
+            sans: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Hide scrollbar for category pills */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    body {
+      background-color: #020617;
+      color: #f1f5f9;
+      font-family: 'Space Grotesk', sans-serif;
+      touch-action: manipulation;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between select-none pb-28">
+
+  <!-- TOP APP HEADER (Native Flutter iOS/Android style) -->
+  <header class="sticky top-0 z-30 bg-[#0b1326]/95 backdrop-blur-md border-b border-slate-800/80 px-4 pt-3 pb-2.5 shadow-lg">
+    <!-- Top System Status / Info Pill -->
+    <div class="flex items-center justify-between gap-2 mb-2.5">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+          <span class="material-symbols-outlined text-lg fill-1">point_of_sale</span>
+        </div>
+        <div>
+          <h1 class="text-xs font-bold tracking-tight text-white uppercase flex items-center gap-1.5">
+            EL CUADRE POS MÓVIL
+            <span class="px-1.5 py-0.2 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold">MARCHADOR</span>
+          </h1>
+          <div class="flex items-center gap-1.5 text-[11px] text-slate-400">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Carlos <strong class="text-slate-300 font-medium">(Pasillo 2)</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Exchange Rate Pill -->
+      <div class="flex items-center gap-1.5 bg-slate-900 border border-amber-500/30 rounded-full px-2.5 py-1 text-right shadow-sm">
+        <span class="material-symbols-outlined text-amber-400 text-sm">currency_exchange</span>
+        <div>
+          <p class="text-[9px] uppercase tracking-wider text-slate-400 font-semibold leading-none">Tasa BCV</p>
+          <p class="text-[11px] font-mono font-bold text-amber-400 leading-tight">Bs. 45.00 <span class="text-[9px] text-slate-400">/$</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEARCH & SCANNER ROW -->
+    <div class="flex items-center gap-2">
+      <!-- Search input container -->
+      <div class="relative flex-1">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+          <span class="material-symbols-outlined text-lg">search</span>
+        </div>
+        <input 
+          type="text" 
+          placeholder="Buscar o escanear producto..." 
+          class="w-full bg-[#0F172A] border border-slate-700/80 rounded-xl pl-9 pr-9 py-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all font-sans"
+        />
+        <!-- Voice search mic button -->
+        <button class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-200 active:scale-95 transition-transform" title="Búsqueda por voz">
+          <span class="material-symbols-outlined text-base">mic</span>
+        </button>
+      </div>
+
+      <!-- Camera Barcode Scanner Action Button -->
+      <button class="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500 hover:bg-emerald-600 active:scale-95 transition-all text-slate-950 font-bold shadow-md shadow-emerald-500/20 shrink-0" title="Escanear Código de Barras">
+        <span class="material-symbols-outlined text-xl">barcode_scanner</span>
+      </button>
+    </div>
+
+    <!-- QUICK CATEGORY PILLS (Horizontal Scroll) -->
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 pb-1 -mx-4 px-4 text-xs font-medium">
+      <button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-emerald-500 text-slate-950 font-bold shrink-0 shadow-sm shadow-emerald-500/20 active:scale-95 transition-all">
+        <span>🔥 Frecuentes</span>
+      </button>
+      <button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0F172A] text-slate-300 border border-slate-700/80 hover:border-slate-600 shrink-0 active:scale-95 transition-all">
+        <span>🥑 Frutas/Verduras Kg</span>
+      </button>
+      <button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0F172A] text-slate-300 border border-slate-700/80 hover:border-slate-600 shrink-0 active:scale-95 transition-all">
+        <span>🧀 Charcutería</span>
+      </button>
+      <button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0F172A] text-slate-300 border border-slate-700/80 hover:border-slate-600 shrink-0 active:scale-95 transition-all">
+        <span>📦 Víveres</span>
+      </button>
+      <button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0F172A] text-slate-300 border border-slate-700/80 hover:border-slate-600 shrink-0 active:scale-95 transition-all">
+        <span>🥩 Carnicería</span>
+      </button>
+      <button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0F172A] text-slate-300 border border-slate-700/80 hover:border-slate-600 shrink-0 active:scale-95 transition-all">
+        <span>🧼 Limpieza</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN SCROLLABLE 2-COLUMN TOUCH PRODUCT GRID -->
+  <main class="flex-1 px-3.5 pt-3">
+    <!-- Grid Header stats & quick filter indicator -->
+    <div class="flex items-center justify-between text-[11px] text-slate-400 mb-2.5 px-0.5">
+      <span class="font-medium text-slate-300">Catálogo Rápido <span class="text-emerald-400 font-mono font-bold">(Pasillo 2)</span></span>
+      <span class="flex items-center gap-1 text-slate-400">
+        <span class="material-symbols-outlined text-xs text-emerald-400">offline_pin</span>
+        Modo Offline Activo
+      </span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 pb-8">
+
+      <!-- PRODUCT 1: Harina P.A.N. 1Kg -->
+      <article class="bg-[#0F172A] border border-slate-800/90 rounded-2xl p-2.5 flex flex-col justify-between shadow-md relative group hover:border-slate-700 transition-all">
+        <!-- Stock badge & favorite icon -->
+        <div class="flex items-center justify-between mb-1.5">
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+            Stock: 48 un
+          </span>
+          <span class="text-[10px] font-mono text-slate-400">#75910</span>
+        </div>
+
+        <!-- Product Visual / Thumbnail -->
+        <div class="w-full h-28 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center relative overflow-hidden mb-2">
+          <!-- Graphic representation of Harina PAN -->
+          <div class="flex flex-col items-center justify-center p-2 text-center">
+            <span class="material-symbols-outlined text-amber-400 text-4xl mb-0.5">grain</span>
+            <span class="text-[11px] font-bold tracking-wider text-amber-300 uppercase">HARINA P.A.N.</span>
+            <span class="text-[9px] text-slate-400">Blanca • 1 Kg</span>
+          </div>
+          <!-- Quick scan tag -->
+          <div class="absolute bottom-1 right-1 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-mono text-slate-300">
+            P-01
+          </div>
+        </div>
+
+        <!-- Product Title & Details -->
+        <div>
+          <h2 class="text-xs font-bold text-white line-clamp-1">Harina P.A.N. 1Kg</h2>
+          <p class="text-[10px] text-slate-400 mb-2">Alimentos Polar • Víveres</p>
+
+          <!-- Dual Pricing (USD emerald, BCV amber) -->
+          <div class="bg-slate-950/70 rounded-xl p-2 border border-slate-800/80 mb-2.5">
+            <div class="flex items-baseline justify-between">
+              <span class="text-[10px] font-semibold text-slate-400">USD</span>
+              <span class="text-sm font-mono font-bold text-emerald-400">$1.40</span>
+            </div>
+            <div class="flex items-baseline justify-between border-t border-slate-800/60 pt-1 mt-0.5">
+              <span class="text-[9px] font-semibold text-slate-400">BCV</span>
+              <span class="text-xs font-mono font-bold text-amber-400">Bs. 63.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Add '+' Touch Button -->
+        <button class="w-full py-2 bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-slate-950 rounded-xl font-bold text-xs flex items-center justify-center gap-1 shadow-md shadow-emerald-500/10 transition-transform">
+          <span class="material-symbols-outlined text-base font-bold">add</span>
+          <span>Agregar</span>
+        </button>
+      </article>
+
+      <!-- PRODUCT 2: Queso Blanco Duro -->
+      <article class="bg-[#0F172A] border border-slate-800/90 rounded-2xl p-2.5 flex flex-col justify-between shadow-md relative group hover:border-slate-700 transition-all">
+        <!-- Stock badge -->
+        <div class="flex items-center justify-between mb-1.5">
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+            Pesar Kg
+          </span>
+          <span class="text-[10px] font-mono text-slate-400">#20104</span>
+        </div>
+
+        <!-- Product Visual / Thumbnail -->
+        <div class="w-full h-28 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center relative overflow-hidden mb-2">
+          <div class="flex flex-col items-center justify-center p-2 text-center">
+            <span class="material-symbols-outlined text-emerald-400 text-4xl mb-0.5">scale</span>
+            <span class="text-[11px] font-bold tracking-wider text-slate-200 uppercase">QUESO DURO</span>
+            <span class="text-[9px] text-emerald-400 font-mono">Llanero Calidad 1A</span>
+          </div>
+          <div class="absolute bottom-1 right-1 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-mono text-slate-300">
+            Bal-03
+          </div>
+        </div>
+
+        <!-- Product Title & Details -->
+        <div>
+          <h2 class="text-xs font-bold text-white line-clamp-1">Queso Blanco Duro</h2>
+          <p class="text-[10px] text-slate-400 mb-2">Charcutería • Por Kilogramo</p>
+
+          <!-- Dual Pricing -->
+          <div class="bg-slate-950/70 rounded-xl p-2 border border-slate-800/80 mb-2.5">
+            <div class="flex items-baseline justify-between">
+              <span class="text-[10px] font-semibold text-slate-400">USD /Kg</span>
+              <span class="text-sm font-mono font-bold text-emerald-400">$5.80</span>
+            </div>
+            <div class="flex items-baseline justify-between border-t border-slate-800/60 pt-1 mt-0.5">
+              <span class="text-[9px] font-semibold text-slate-400">BCV /Kg</span>
+              <span class="text-xs font-mono font-bold text-amber-400">Bs. 261.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Add '+' Touch Button -->
+        <button class="w-full py-2 bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-slate-950 rounded-xl font-bold text-xs flex items-center justify-center gap-1 shadow-md shadow-emerald-500/10 transition-transform">
+          <span class="material-symbols-outlined text-base font-bold">add</span>
+          <span>Pesar / Agregar</span>
+        </button>
+      </article>
+
+      <!-- PRODUCT 3: Tomate Perita -->
+      <article class="bg-[#0F172A] border border-slate-800/90 rounded-2xl p-2.5 flex flex-col justify-between shadow-md relative group hover:border-slate-700 transition-all">
+        <!-- Stock badge -->
+        <div class="flex items-center justify-between mb-1.5">
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+            Fresco • 24 Kg
+          </span>
+          <span class="text-[10px] font-mono text-slate-400">#40112</span>
+        </div>
+
+        <!-- Product Visual / Thumbnail -->
+        <div class="w-full h-28 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center relative overflow-hidden mb-2">
+          <div class="flex flex-col items-center justify-center p-2 text-center">
+            <span class="material-symbols-outlined text-rose-500 text-4xl mb-0.5">nutrition</span>
+            <span class="text-[11px] font-bold tracking-wider text-rose-400 uppercase">TOMATE PERITA</span>
+            <span class="text-[9px] text-slate-400">Cosecha Andina</span>
+          </div>
+          <div class="absolute bottom-1 right-1 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-mono text-slate-300">
+            Bal-01
+          </div>
+        </div>
+
+        <!-- Product Title & Details -->
+        <div>
+          <h2 class="text-xs font-bold text-white line-clamp-1">Tomate Perita</h2>
+          <p class="text-[10px] text-slate-400 mb-2">Frutas/Verduras • Por Kg</p>
+
+          <!-- Dual Pricing -->
+          <div class="bg-slate-950/70 rounded-xl p-2 border border-slate-800/80 mb-2.5">
+            <div class="flex items-baseline justify-between">
+              <span class="text-[10px] font-semibold text-slate-400">USD /Kg</span>
+              <span class="text-sm font-mono font-bold text-emerald-400">$1.80</span>
+            </div>
+            <div class="flex items-baseline justify-between border-t border-slate-800/60 pt-1 mt-0.5">
+              <span class="text-[9px] font-semibold text-slate-400">BCV /Kg</span>
+              <span class="text-xs font-mono font-bold text-amber-400">Bs. 81.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Add '+' Touch Button -->
+        <button class="w-full py-2 bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-slate-950 rounded-xl font-bold text-xs flex items-center justify-center gap-1 shadow-md shadow-emerald-500/10 transition-transform">
+          <span class="material-symbols-outlined text-base font-bold">add</span>
+          <span>Pesar / Agregar</span>
+        </button>
+      </article>
+
+      <!-- PRODUCT 4: Aceite Mazeite 1L -->
+      <article class="bg-[#0F172A] border border-slate-800/90 rounded-2xl p-2.5 flex flex-col justify-between shadow-md relative group hover:border-slate-700 transition-all">
+        <!-- Stock badge -->
+        <div class="flex items-center justify-between mb-1.5">
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+            Stock: 19 un
+          </span>
+          <span class="text-[10px] font-mono text-slate-400">#75988</span>
+        </div>
+
+        <!-- Product Visual / Thumbnail -->
+        <div class="w-full h-28 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center relative overflow-hidden mb-2">
+          <div class="flex flex-col items-center justify-center p-2 text-center">
+            <span class="material-symbols-outlined text-amber-300 text-4xl mb-0.5">oil_barrel</span>
+            <span class="text-[11px] font-bold tracking-wider text-amber-200 uppercase">ACEITE MAZEITE</span>
+            <span class="text-[9px] text-slate-400">100% Puro Maíz • 1 Litro</span>
+          </div>
+          <div class="absolute bottom-1 right-1 bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-mono text-slate-300">
+            P-02
+          </div>
+        </div>
+
+        <!-- Product Title & Details -->
+        <div>
+          <h2 class="text-xs font-bold text-white line-clamp-1">Aceite Mazeite 1L</h2>
+          <p class="text-[10px] text-slate-400 mb-2">Grasas & Aceites • 1 Litro</p>
+
+          <!-- Dual Pricing -->
+          <div class="bg-slate-950/70 rounded-xl p-2 border border-slate-800/80 mb-2.5">
+            <div class="flex items-baseline justify-between">
+              <span class="text-[10px] font-semibold text-slate-400">USD</span>
+              <span class="text-sm font-mono font-bold text-emerald-400">$2.85</span>
+            </div>
+            <div class="flex items-baseline justify-between border-t border-slate-800/60 pt-1 mt-0.5">
+              <span class="text-[9px] font-semibold text-slate-400">BCV</span>
+              <span class="text-xs font-mono font-bold text-amber-400">Bs. 128.25</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Add '+' Touch Button -->
+        <button class="w-full py-2 bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-slate-950 rounded-xl font-bold text-xs flex items-center justify-center gap-1 shadow-md shadow-emerald-500/10 transition-transform">
+          <span class="material-symbols-outlined text-base font-bold">add</span>
+          <span>Agregar</span>
+        </button>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FLOATING BOTTOM STICKY CART BAR (Glassmorphic Emerald/Slate Panel) -->
+  <aside class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-gradient-to-t from-slate-950 via-slate-950/95 to-transparent pointer-events-none">
+    <div class="max-w-md mx-auto pointer-events-auto bg-[#0b1326]/95 backdrop-blur-xl border border-emerald-500/30 rounded-2xl p-3 shadow-2xl shadow-black/80 ring-1 ring-white/10">
+      
+      <!-- Cart summary row -->
+      <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800/80">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <span class="material-symbols-outlined text-base">receipt_long</span>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-white tracking-tight flex items-center gap-1">
+              Pedido #ORD-204
+              <span class="text-[10px] font-normal text-slate-400">• 5 Artículos</span>
+            </p>
+            <p class="text-[10px] text-slate-400">Cliente en Pasillo (En Espera)</p>
+          </div>
+        </div>
+
+        <!-- Grand Total in Dual Currency -->
+        <div class="text-right">
+          <div class="text-xs font-mono font-extrabold text-emerald-400">
+            $12.40 <span class="text-[10px] font-sans text-emerald-300 font-medium">USD</span>
+          </div>
+          <div class="text-[11px] font-mono font-bold text-amber-400">
+            Bs. 558.00
+          </div>
+        </div>
+      </div>
+
+      <!-- Prominent Action Buttons Side-by-Side -->
+      <div class="grid grid-cols-2 gap-2">
+        <!-- Amber button: Marchar a Caja -->
+        <button class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-amber-500/20 active:scale-[0.98] transition-all">
+          <span class="material-symbols-outlined text-base fill-1">rocket_launch</span>
+          <span class="tracking-tight">Marchar a Caja</span>
+        </button>
+
+        <!-- Emerald button: Cobrar Aquí -->
+        <button class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-400 hover:to-emerald-300 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-500/20 active:scale-[0.98] transition-all">
+          <span class="material-symbols-outlined text-base">credit_card</span>
+          <span class="tracking-tight">Cobrar Aquí</span>
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+</body>
+</html>

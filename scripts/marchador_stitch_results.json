@@ -1,0 +1,38 @@
+[
+  {
+    "index": 1,
+    "slug": "stitch_el_cuadre_marchador_escaner",
+    "title": "El Cuadre Marchador — Escáner & Pasillo (Mobile)",
+    "screen_id": "56370eaa8ec241a580731bf85ca5178c",
+    "resource_name": "projects/15301442243370859300/screens/56370eaa8ec241a580731bf85ca5178c",
+    "png_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\assets\\stitch_el_cuadre_marchador_escaner.png",
+    "html_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\prototipos\\stitch_el_cuadre_marchador_escaner.html"
+  },
+  {
+    "index": 2,
+    "slug": "stitch_el_cuadre_marchador_marcado",
+    "title": "El Cuadre Marchador — Marcado Bimoneda ($/Bs) & Margen",
+    "screen_id": "e29e95156ea348bfa6047aae92d5e4ca",
+    "resource_name": "projects/15301442243370859300/screens/e29e95156ea348bfa6047aae92d5e4ca",
+    "png_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\assets\\stitch_el_cuadre_marchador_marcado.png",
+    "html_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\prototipos\\stitch_el_cuadre_marchador_marcado.html"
+  },
+  {
+    "index": 3,
+    "slug": "stitch_el_cuadre_marchador_conteo",
+    "title": "El Cuadre Marchador — Recepción en Depósito & Conteo Offline-First",
+    "screen_id": "774321dd5c084074b482e287eca88c06",
+    "resource_name": "projects/15301442243370859300/screens/774321dd5c084074b482e287eca88c06",
+    "png_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\assets\\stitch_el_cuadre_marchador_conteo.png",
+    "html_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\prototipos\\stitch_el_cuadre_marchador_conteo.html"
+  },
+  {
+    "index": 4,
+    "slug": "stitch_el_cuadre_marchador_etiquetas",
+    "title": "El Cuadre Marchador — Cola de Habladores & Impresión Bluetooth 50x30mm",
+    "screen_id": "5c47cdeb43d244fc859da0a4ba9fe7e9",
+    "resource_name": "projects/15301442243370859300/screens/5c47cdeb43d244fc859da0a4ba9fe7e9",
+    "png_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\assets\\stitch_el_cuadre_marchador_etiquetas.png",
+    "html_path": "C:\\Users\\vmont\\OneDrive\\Desktop\\2brain-vmontoya\\wiki\\proyectos\\prototipos\\stitch_el_cuadre_marchador_etiquetas.html"
+  }
+]

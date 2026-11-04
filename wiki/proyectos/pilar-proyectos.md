@@ -40,6 +40,10 @@ Página principal para el seguimiento de **Proyectos de Programación e Iniciati
 
 ### 🛒 Puntos de Venta & Franquicias
 - [[meniox|Proyecto: Meniox]]: Ecosistema POS y administración de franquicias (NestJS, PostgreSQL, RabbitMQ, Next.js 15).
+- [[el-cuadre-pos-arquitectura-tecnica|Proyecto: El Cuadre POS (Abastos, Fruterías, Moda & Ferreterías)]]: Sistema POS táctil Bimonetario (`$/Bs` BCV), 100% Offline-First (NestJS + SQLite WAL + Next.js + Flutter).
+  - [[diseno-ui-el-cuadre-pos|Especificación UI/UX: El Cuadre POS (6 Vistas Desktop en Google Stitch)]]
+  - [[diseno-ui-el-cuadre-fashion-pos|Especificación UI/UX: El Cuadre POS Fashion & Footwear Edition (5 Vistas en Google Stitch)]]
+  - [[diseno-ui-el-cuadre-marchador-mobile|Especificación UI/UX: El Cuadre Marchador Mobile (US-19 — 8 Vistas de POS Móvil y Operaciones en Google Stitch)]]
 
 ### 🌐 Sitios Web Corporativos & Portales
 - [[webcastro|Proyecto: WebCastro]]: Sitio web con CMS Headless (Payload CMS 3, Next.js 16, PostgreSQL).
