@@ -1,0 +1,50 @@
+# Manifiesto del pack FELLOWSHIP — MasterGroup / MG-HUB
+# Única autoridad: .agents/skills/<slug>/SKILL.md
+id: fellowship
+name: "La Compañía del Anillo"
+domain: "MasterGroup: MG-HUB, MasterHub, CRM-MG y operación asociada"
+owner: "El Señor"
+
+repos:
+  root: "${MG_HUB_PATH}"
+
+tracker:
+  system: plane
+  url: "https://projects.mastergroupve.com"
+
+roles:
+  lead: grandalf
+  pm: aragorn
+  frontend: legolas
+  backend: gimli
+  database: galadriel
+  devops: frodo
+  qa: elrond
+  it_ops: samwise
+  docs: merry
+  writing: pippin
+  finance: boromir
+
+# Roles de otros packs que este pack puede convocar sin duplicar archivos
+borrowed:
+  - deidara-pentest
+  - sasori-defense
+  - konan-uiux
+
+pipeline:
+  - intake
+  - discovery
+  - plan
+  - design
+  - build
+  - verify
+  - security
+  - release
+  - operate
+
+conventions:
+  stories: "Gherkin + Story Points en Plane"
+  branches: "feat/<proyecto>-<slug> | fix/<proyecto>-<slug>"
+  coverage_min: 85
+  docs: "wiki/proyectos/<id>/"
+  db_protocol: "Anti-P2022 (Galadriel)"

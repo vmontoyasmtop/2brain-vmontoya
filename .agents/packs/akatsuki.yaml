@@ -1,0 +1,46 @@
+# Manifiesto del pack AKATSUKI — proyectos propios y freelance
+# Única autoridad: .agents/skills/<slug>/SKILL.md
+id: akatsuki
+name: "Organización Akatsuki"
+domain: "Proyectos propios, freelance y ventures (SmartOps, El Cuadre, BrotApp, WebCastro, Meniox)"
+owner: "El Señor"
+
+repos:
+  root: "${SMARTOPS_PATH}"
+
+tracker:
+  system: clickup
+  # El token vive en scripts/.env (nunca en este archivo)
+
+roles:
+  pm: pain-pm
+  architect: orochimaru-arch-devops
+  ux: konan-uiux
+  brand: sai-designer
+  frontend: itachi-frontend
+  backend: kakuzu-backend
+  mobile: kisame-mobile
+  qa: hidan-qa
+  red_team: deidara-pentest
+  blue_team: sasori-defense
+  docs: zetsu-docs
+  growth: tobi-marketing
+
+borrowed: []
+
+pipeline:
+  - intake
+  - discovery
+  - plan
+  - design
+  - build
+  - verify
+  - security
+  - release
+  - operate
+
+conventions:
+  stories: "Gherkin + Story Points en ClickUp"
+  branches: "feat/<proyecto>-<slug> | fix/<proyecto>-<slug>"
+  coverage_min: 85
+  docs: "wiki/proyectos/<id>/"

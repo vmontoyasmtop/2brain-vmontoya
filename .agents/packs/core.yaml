@@ -1,0 +1,31 @@
+# Manifiesto del núcleo — ALFRED (no es un pack de dominio)
+# Única autoridad: .agents/skills/<slug>/SKILL.md
+id: core
+name: "ALFRED — Núcleo de vida y conocimiento"
+domain: "Agenda, wiki 2brain, 6 áreas y orquestación general"
+owner: "El Señor"
+
+roles:
+  orchestrator: alfred
+  ingest: ingest
+  synthesizer: synthesizer
+  gardener: gardener
+  pastoral: pastoral
+  finanzas: finanzas
+  wellness: wellness
+  it_support: it-support
+  docs: docs-expert
+
+# El núcleo no tiene repositorio de código propio; opera sobre 2brain.
+repos:
+  root: "."
+
+tracker:
+  system: none
+
+conventions:
+  language: "es"
+  memory_files:
+    - "wiki/log.md"
+    - "wiki/life-dashboard.md"
+    - "wiki/index.md"

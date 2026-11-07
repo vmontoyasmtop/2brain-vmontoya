@@ -1,0 +1,103 @@
+# Registro de proyectos — router de packs
+# Un proyecto = una ficha. El router usa `pack` y `repo_env` para decidir.
+# `verified: false` significa que la ruta aún no se confirma en esta máquina;
+# el router debe preguntar en vez de adivinar.
+version: 1
+updated: "2026-11-07"
+
+defaults:
+  docs: "wiki/proyectos/<id>/"
+  branch: "feat/<id>-<slug>"
+  coverage_min: 85
+
+projects:
+  - id: masterhub
+    name: "MasterHub (MG-HUB)"
+    pack: fellowship
+    repo_env: MG_HUB_PATH
+    repo_subpath: "."
+    verified: false
+    tracker: { system: plane, url: "https://projects.mastergroupve.com" }
+    wiki: "wiki/proyectos/masterhub/"
+    legacy:
+      - "wiki/proyectos/api-gateway.md"
+      - "wiki/proyectos/masterhub-hr-portal-gerente.md"
+    status: activo
+
+  - id: crm-mg
+    name: "CRM MasterGroup"
+    pack: fellowship
+    repo_env: MG_HUB_PATH
+    repo_subpath: "TODO"
+    verified: false
+    tracker: { system: plane }
+    wiki: "wiki/proyectos/crm-mg/"
+    legacy: ["wiki/proyectos/crm-mg.md"]
+    status: por_confirmar
+
+  - id: smartops
+    name: "SmartOps — ecosistema de trading y arbitraje"
+    pack: akatsuki
+    repo_env: SMARTOPS_PATH
+    repo_subpath: "TODO"
+    verified: false
+    tracker: { system: clickup }
+    wiki: "wiki/proyectos/smartops/"
+    legacy: ["wiki/proyectos/ecosistema-trading-smartops.md"]
+    status: activo
+
+  - id: el-cuadre-pos
+    name: "El Cuadre POS (incluye Fashion, Marchador Mobile)"
+    pack: akatsuki
+    repo_env: SMARTOPS_PATH
+    repo_subpath: "TODO"
+    verified: false
+    tracker: { system: clickup }
+    wiki: "wiki/proyectos/el-cuadre-pos/"
+    legacy:
+      - "wiki/proyectos/el-cuadre-pos-arquitectura-tecnica.md"
+      - "wiki/proyectos/el-cuadre-pos-especificacion-multimodos.md"
+    status: activo
+
+  - id: webcastro
+    name: "WebCastro"
+    pack: akatsuki
+    repo_env: SMARTOPS_PATH
+    repo_subpath: "TODO"
+    verified: false
+    tracker: { system: clickup }
+    wiki: "wiki/proyectos/webcastro/"
+    legacy: ["wiki/proyectos/webcastro.md"]
+    status: operacion
+
+  - id: brotapp
+    name: "BrotApp"
+    pack: akatsuki
+    repo_env: SMARTOPS_PATH
+    repo_subpath: "TODO"
+    verified: false
+    tracker: { system: clickup }
+    wiki: "wiki/proyectos/brotapp/"
+    legacy: ["wiki/proyectos/brotapp.md"]
+    status: por_confirmar
+
+  - id: beijing-kiosk
+    name: "Beijing Kiosk"
+    pack: akatsuki
+    repo_env: SMARTOPS_PATH
+    repo_subpath: "TODO"
+    verified: false
+    tracker: { system: clickup }
+    wiki: "wiki/proyectos/beijing-kiosk/"
+    legacy: ["wiki/proyectos/beijing_kiosk.md"]
+    status: por_confirmar
+
+  - id: meniox
+    name: "Meniox"
+    pack: akatsuki
+    repo_env: SMARTOPS_PATH
+    repo_subpath: "TODO"
+    verified: false
+    tracker: { system: clickup }
+    wiki: "wiki/proyectos/meniox/"
+    status: propuesta

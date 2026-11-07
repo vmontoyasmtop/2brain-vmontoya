@@ -12,6 +12,22 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-11-07] feat/el-cuadre-pos-sop-licenciamiento-mensual | Auditoría Criptográfica, Soporte de Licencias Mensuales y Herramienta Automatizada para Vendor (US-16)
+- **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🛠️ `trabajo`
+- **Agentes Responsables**: 🤵 **ALFRED** & 🧙‍♂️ **Grandalf**
+- **Resumen Ejecutivo de la Operación**:
+  1. **Auditoría & Resolución de Incidencia de Licencia Local**:
+     - Se detectó que el terminal POS arrojaba `ForbiddenException` al momento del cobro debido a que `LicenseConfig` en SQLite tenía `licenseKey: null` (`NO_LICENSE`) y existía un desacople entre `isBlocked` (backend) e `isLocked` (frontend).
+     - Se corrigió el mapeador [`mapBackendLicenseToState`](file:///c:/Users/vmont/OneDrive/Desktop/el-cuadre-pos/frontend/src/lib/api.ts) y se activó el terminal con una clave anual `PRO` válida para el Hardware ID `CUADRE-689F-54E5-D39A-EF90`.
+  2. **Automatización para Emisión Mensual de Clientes**:
+     - Creado script interactivo con copiado automático al portapapeles: `generar-licencia-cliente.bat`.
+     - Actualizado `backend/scripts/generate-license.js` con el flag `--raw` para integración directa con clipboard.
+  3. **Prueba de Ciclo Completo Exitosa**:
+     - Reseteo a estado de fábrica -> Bloqueo estricto verificado -> Emisión de licencia de 30 días -> Activación local -> Desbloqueo inmediato de ventas.
+  4. **Documentación SOP**:
+     - Creado SOP operativo en: `wiki/proyectos/sop-licenciamiento-mensual-clientes-el-cuadre-pos.md` y espejo en `docs/SOP_LICENCIAMIENTO_MENSUAL_CLIENTES.md`.
+
+
 ## [2026-11-03] feat/el-cuadre-marchador-mobile-stitch-us19 | Despliegue en Google Stitch de la Suite Completa de 8 Pantallas de El Cuadre Marchador Mobile (POS Móvil & Operaciones - US-19)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`
 - **Agentes Responsables**: 🦋 **Konan** (UI/UX Stitch Designer) & 🤵 **ALFRED**
