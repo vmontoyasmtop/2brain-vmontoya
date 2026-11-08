@@ -1,4 +1,4 @@
----
+﻿---
 title: "📜 Registro de Actividad (Log Chronological)"
 type: "log"
 area: "log"
@@ -11,6 +11,56 @@ tags:
 # 📜 Registro de Actividad (Log Chronological)
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
+
+## [2026-11-08] feat/sermon-3a-profundizacion-neuroteologica | ProfundizaciÃ³n TeolÃ³gica, ClÃ­nica y NeurobiolÃ³gica en SermÃ³n 3A (La ReconciliaciÃ³n Interior)
+- **Ãreas**: â›ª ministerial
+- **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - AmpliaciÃ³n monumental del estudio para el **SermÃ³n 3A: "La ReconciliaciÃ³n Interior"** en wiki/ministerial/sermon-3a-sanando-relaciones-interior-estudio.md:
+    * **ExÃ©gesis de Choque**: ExposiciÃ³n de la paradoja teolÃ³gica del auto-perdÃ³n como soberbia encubierta (*si Dios ya me absolviÃ³ de todo Katakrima, no tengo derecho legal ni moral a seguir condenÃ¡ndome a mÃ­ mismo*), exÃ©gesis de *SuneidÄ“sis* (Heb 9:14), *Epilanthanomenos* (Flp 3:13) y *Hilasmos* (1 Jn 2:2).
+    * **Casos BÃ­blicos ClÃ­nicos**:
+      1. SimÃ³n Pedro y la reescritura sensorial del trauma (el fuego de brasas *anthrakia* de Jn 18 vs Jn 21).
+      2. El Rey David y la somatizaciÃ³n devastadora de la culpa reprimida (Salmo 32:3-4).
+      3. El profeta ElÃ­as y el colapso del ideal del yo / burnout espiritual (1 Reyes 19).
+    * **NeuroanatomÃ­a del Dolor Moral**: La Corteza Cingulada Anterior Subgenual (sgACC - Ãrea 25 de Brodmann), la Ã­nsula anterior y el asco moral propio, el eje cerebro-intestino y la disbiosis inducida por culpa.
+    * **Modelos PsicolÃ³gicos Integrados**: Internal Family Systems (IFS / el crÃ­tico interno silenciado por el EspÃ­ritu) y Terapia de AceptaciÃ³n y Compromiso (ACT / desfusiÃ³n cognitiva espiritual en Col 3:3).
+    * **PÃºlpito & Altar**: MetÃ¡fora del espejo roto, bosquejo de 3 puntos expositivos con lenguaje llano para la congregaciÃ³n, dinÃ¡mica litÃºrgica de renuncia a la culpa y cuestionario de autodiagnÃ³stico de 5 preguntas.
+
+## [2026-11-08] refactor/sermon-3-duologia-interior-exterior | DivisiÃ³n ArquitectÃ³nica de SermÃ³n 3 en DuologÃ­a (Interior vs. Exterior)
+- **Ãreas**: â›ª ministerial
+- **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - Por instrucciÃ³n directa de El SeÃ±or, el tema de **Sanando las Relaciones Rotas** fue bifurcado en dos estudios complementarios de alta profundidad:
+    1. **SermÃ³n 3A: La ReconciliaciÃ³n Interior (Paz Conmigo Mismo y con mi Historia)** en wiki/ministerial/sermon-3a-sanando-relaciones-interior-estudio.md:
+       * ExÃ©gesis de *Katakrima* (Ro 8:1 - fin del juicio penal interior), *SuneidÄ“sis* (Heb 9:14 - conciencia purificada), *Epilanthanomenos* (Flp 3:13 - desengancharse del pasado) y *SÅphronismos* (2 Ti 1:7).
+       * Neurociencia de la autocrÃ­tica destructiva, DMN en autorreproche, vergÃ¼enza tÃ³xica vs. culpa adaptativa (BrenÃ© Brown), desmantelamiento del autoataque biolÃ³gico y autocompasiÃ³n guiada por la justificaciÃ³n en Cristo.
+    2. **SermÃ³n 3B: Puentes hacia el PrÃ³jimo (ReconciliaciÃ³n Persona a Persona)** en wiki/ministerial/sermon-3b-sanando-relaciones-exterior-estudio.md:
+       * ExÃ©gesis de *AphiÄ“mi* (cancelar el pagarÃ©), *Charizomai* (gracia inmerecida), *DiallattÅ* (primer paso de paz) y *Pikria* (veneno que contamina el entorno).
+       * NeurobiologÃ­a interpersonal: modulaciÃ³n prefrontal *top-down*, TeorÃ­a Polivagal (freno vagal y oxitocina), los 4 jinetes del conflicto de John Gottman y protocolo clÃ­nico REACH de Everett Worthington.
+  - Sincronizados wiki/ministerial/serie-jesus-solucion-de-todo-problema.md e wiki/index.md.
+
+## [2026-11-08] feat/sermon-3-neurociencia-psicologia | IntegraciÃ³n de Neurociencia y PsicologÃ­a ClÃ­nica en SermÃ³n 3 (Sanando las Relaciones Rotas)
+- **Ãreas**: â›ª ministerial
+- **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - **AmpliaciÃ³n NeurocientÃ­fica y PsicolÃ³gica del SermÃ³n 3**:
+    * Actualizado wiki/ministerial/sermon-3-sanando-relaciones-rotas-estudio.md incorporando la neurobiologÃ­a del rencor y del perdÃ³n aplicada al pÃºlpito del Pastor-Ingeniero.
+    * **Punto 1 (La Trampa de la Deuda Emocional)**: ActivaciÃ³n de la red DMN y rumia emocional, dolor social somÃ¡tico procesado en dACC e Ã­nsula anterior (estudios de Naomi Eisenberger), secuestro amigdalino y baÃ±o crÃ³nico de cortisol/adrenalina del eje HPA, inflamaciÃ³n por IL-6 y TNF-Î±.
+    * **Punto 2 (Iniciativa de ReconciliaciÃ³n)**: ModulaciÃ³n prefrontal descendente (*top-down*) de vmPFC y dlPFC sobre la amÃ­gdala, activaciÃ³n de neuronas espejo y TeorÃ­a de la Mente, TeorÃ­a Polivagal (Stephen Porges), activaciÃ³n del freno vagal ventral y liberaciÃ³n de oxitocina, desarme de los 4 jinetes del conflicto de John Gottman.
+    * **Punto 3 (Poder de Cristo & Neuroplasticidad)**: Ley de Hebb y poda sinÃ¡ptica (*Neurons that fire together, wire together*), neuroplasticidad autodirigida en Romanos 12:2, reevaluaciÃ³n cognitivo-espiritual (*Cognitive Reappraisal* / modelo de James Gross y GÃ©nesis 50:20), y protocolo clÃ­nico de perdÃ³n REACH de Everett Worthington adaptado pastoralmente.
+
+## [2026-11-07] feat/sermon-3-sanando-relaciones-rotas | Estudio ExegÃ©tico & HomilÃ©tico SermÃ³n 3 (JesÃºs, SoluciÃ³n a Todo Problema)
+- **Ãreas**: â›ª ministerial
+- **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - **ElaboraciÃ³n de Estudio ExegÃ©tico & BÃ­blico Completo**:
+    * Redactado el estudio bÃ­blico y homilÃ©tico exhaustivo para el **SermÃ³n 3: "Sanando las Relaciones Rotas"** en wiki/ministerial/sermon-3-sanando-relaciones-rotas-estudio.md.
+    * **AnÃ¡lisis LingÃ¼Ã­stico (Griego)**: ExÃ©gesis rigurosa de *AphiÄ“mi* (á¼€Ï†Î¯Î·Î¼Î¹ - cancelar la deuda legal), *Charizomai* (Ï‡Î±ÏÎ¯Î¶Î¿Î¼Î±Î¹ - perdonar por gracia inmerecida a la luz de la Cruz), *DiallattÅ* (Î´Î¹Î±Î»Î»Î¬Ï„Ï„Ï‰ - prioridad de la reconciliaciÃ³n antes del culto), *Pikria* (Ï€Î¹ÎºÏÎ¯Î± - raÃ­z y veneno de amargura) y *Endynamounti* (á¼Î½Î´Ï…Î½Î±Î¼Î¿á¿¦Î½Ï„Î¹ - poder sobrenatural de Filipenses 4:13 aplicado a sanar el orgullo y perdonar ofensas profundas).
+    * **Casos BÃ­blicos & TipologÃ­a**: Contraste entre la carne (AbsalÃ³n y el siervo despiadado de Mateo 18) y la gracia redentora (JosÃ© en Egipto, Esteban en Hechos 7 y JesÃºs en la Cruz en Lucas 23:34).
+    * **Estructura HomilÃ©tica de PÃºlpito**: ProposiciÃ³n central, ilustraciÃ³n de la maleta de piedras, 3 puntos expositivos con aplicaciÃ³n para la iglesia, llamado al altar con dinÃ¡mica de soltar el pagarÃ© y 4 preguntas de discipulado/cÃ©lulas.
+  - **SincronizaciÃ³n en el Segundo Cerebro**:
+    * Actualizado el documento maestro de la serie wiki/ministerial/serie-jesus-solucion-de-todo-problema.md.
+    * Actualizado wiki/index.md en la secciÃ³n 4 (Ministerial).
 
 ## [2026-11-07] feat/el-cuadre-pos-sop-licenciamiento-mensual | Auditoría Criptográfica, Soporte de Licencias Mensuales y Herramienta Automatizada para Vendor (US-16)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`, 🛠️ `trabajo`
@@ -324,6 +374,56 @@ Este archivo registra cronológicamente todas las operaciones de Ingesta (`inges
     * Compilación de Backend (`nest build`) y Frontend (`next build`) exitosas con código de salida 0.
     * Commit `c32691d` subido y sincronizado en `origin/main` de `el-cuadre-pos`.
 
+
+## [2026-11-08] feat/sermon-3a-profundizacion-neuroteologica | ProfundizaciÃ³n TeolÃ³gica, ClÃ­nica y NeurobiolÃ³gica en SermÃ³n 3A (La ReconciliaciÃ³n Interior)
+- **Ãreas**: â›ª ministerial
+- **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - AmpliaciÃ³n monumental del estudio para el **SermÃ³n 3A: "La ReconciliaciÃ³n Interior"** en wiki/ministerial/sermon-3a-sanando-relaciones-interior-estudio.md:
+    * **ExÃ©gesis de Choque**: ExposiciÃ³n de la paradoja teolÃ³gica del auto-perdÃ³n como soberbia encubierta (*si Dios ya me absolviÃ³ de todo Katakrima, no tengo derecho legal ni moral a seguir condenÃ¡ndome a mÃ­ mismo*), exÃ©gesis de *SuneidÄ“sis* (Heb 9:14), *Epilanthanomenos* (Flp 3:13) y *Hilasmos* (1 Jn 2:2).
+    * **Casos BÃ­blicos ClÃ­nicos**:
+      1. SimÃ³n Pedro y la reescritura sensorial del trauma (el fuego de brasas *anthrakia* de Jn 18 vs Jn 21).
+      2. El Rey David y la somatizaciÃ³n devastadora de la culpa reprimida (Salmo 32:3-4).
+      3. El profeta ElÃ­as y el colapso del ideal del yo / burnout espiritual (1 Reyes 19).
+    * **NeuroanatomÃ­a del Dolor Moral**: La Corteza Cingulada Anterior Subgenual (sgACC - Ãrea 25 de Brodmann), la Ã­nsula anterior y el asco moral propio, el eje cerebro-intestino y la disbiosis inducida por culpa.
+    * **Modelos PsicolÃ³gicos Integrados**: Internal Family Systems (IFS / el crÃ­tico interno silenciado por el EspÃ­ritu) y Terapia de AceptaciÃ³n y Compromiso (ACT / desfusiÃ³n cognitiva espiritual en Col 3:3).
+    * **PÃºlpito & Altar**: MetÃ¡fora del espejo roto, bosquejo de 3 puntos expositivos con lenguaje llano para la congregaciÃ³n, dinÃ¡mica litÃºrgica de renuncia a la culpa y cuestionario de autodiagnÃ³stico de 5 preguntas.
+
+## [2026-11-08] refactor/sermon-3-duologia-interior-exterior | DivisiÃ³n ArquitectÃ³nica de SermÃ³n 3 en DuologÃ­a (Interior vs. Exterior)
+- **Ãreas**: â›ª ministerial
+- **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - Por instrucciÃ³n directa de El SeÃ±or, el tema de **Sanando las Relaciones Rotas** fue bifurcado en dos estudios complementarios de alta profundidad:
+    1. **SermÃ³n 3A: La ReconciliaciÃ³n Interior (Paz Conmigo Mismo y con mi Historia)** en wiki/ministerial/sermon-3a-sanando-relaciones-interior-estudio.md:
+       * ExÃ©gesis de *Katakrima* (Ro 8:1 - fin del juicio penal interior), *SuneidÄ“sis* (Heb 9:14 - conciencia purificada), *Epilanthanomenos* (Flp 3:13 - desengancharse del pasado) y *SÅphronismos* (2 Ti 1:7).
+       * Neurociencia de la autocrÃ­tica destructiva, DMN en autorreproche, vergÃ¼enza tÃ³xica vs. culpa adaptativa (BrenÃ© Brown), desmantelamiento del autoataque biolÃ³gico y autocompasiÃ³n guiada por la justificaciÃ³n en Cristo.
+    2. **SermÃ³n 3B: Puentes hacia el PrÃ³jimo (ReconciliaciÃ³n Persona a Persona)** en wiki/ministerial/sermon-3b-sanando-relaciones-exterior-estudio.md:
+       * ExÃ©gesis de *AphiÄ“mi* (cancelar el pagarÃ©), *Charizomai* (gracia inmerecida), *DiallattÅ* (primer paso de paz) y *Pikria* (veneno que contamina el entorno).
+       * NeurobiologÃ­a interpersonal: modulaciÃ³n prefrontal *top-down*, TeorÃ­a Polivagal (freno vagal y oxitocina), los 4 jinetes del conflicto de John Gottman y protocolo clÃ­nico REACH de Everett Worthington.
+  - Sincronizados wiki/ministerial/serie-jesus-solucion-de-todo-problema.md e wiki/index.md.
+
+## [2026-11-08] feat/sermon-3-neurociencia-psicologia | IntegraciÃ³n de Neurociencia y PsicologÃ­a ClÃ­nica en SermÃ³n 3 (Sanando las Relaciones Rotas)
+- **Ãreas**: â›ª ministerial
+- **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - **AmpliaciÃ³n NeurocientÃ­fica y PsicolÃ³gica del SermÃ³n 3**:
+    * Actualizado wiki/ministerial/sermon-3-sanando-relaciones-rotas-estudio.md incorporando la neurobiologÃ­a del rencor y del perdÃ³n aplicada al pÃºlpito del Pastor-Ingeniero.
+    * **Punto 1 (La Trampa de la Deuda Emocional)**: ActivaciÃ³n de la red DMN y rumia emocional, dolor social somÃ¡tico procesado en dACC e Ã­nsula anterior (estudios de Naomi Eisenberger), secuestro amigdalino y baÃ±o crÃ³nico de cortisol/adrenalina del eje HPA, inflamaciÃ³n por IL-6 y TNF-Î±.
+    * **Punto 2 (Iniciativa de ReconciliaciÃ³n)**: ModulaciÃ³n prefrontal descendente (*top-down*) de vmPFC y dlPFC sobre la amÃ­gdala, activaciÃ³n de neuronas espejo y TeorÃ­a de la Mente, TeorÃ­a Polivagal (Stephen Porges), activaciÃ³n del freno vagal ventral y liberaciÃ³n de oxitocina, desarme de los 4 jinetes del conflicto de John Gottman.
+    * **Punto 3 (Poder de Cristo & Neuroplasticidad)**: Ley de Hebb y poda sinÃ¡ptica (*Neurons that fire together, wire together*), neuroplasticidad autodirigida en Romanos 12:2, reevaluaciÃ³n cognitivo-espiritual (*Cognitive Reappraisal* / modelo de James Gross y GÃ©nesis 50:20), y protocolo clÃ­nico de perdÃ³n REACH de Everett Worthington adaptado pastoralmente.
+
+## [2026-11-07] feat/sermon-3-sanando-relaciones-rotas | Estudio ExegÃ©tico & HomilÃ©tico SermÃ³n 3 (JesÃºs, SoluciÃ³n a Todo Problema)
+- **Ãreas**: â›ª ministerial
+- **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - **ElaboraciÃ³n de Estudio ExegÃ©tico & BÃ­blico Completo**:
+    * Redactado el estudio bÃ­blico y homilÃ©tico exhaustivo para el **SermÃ³n 3: "Sanando las Relaciones Rotas"** en wiki/ministerial/sermon-3-sanando-relaciones-rotas-estudio.md.
+    * **AnÃ¡lisis LingÃ¼Ã­stico (Griego)**: ExÃ©gesis rigurosa de *AphiÄ“mi* (á¼€Ï†Î¯Î·Î¼Î¹ - cancelar la deuda legal), *Charizomai* (Ï‡Î±ÏÎ¯Î¶Î¿Î¼Î±Î¹ - perdonar por gracia inmerecida a la luz de la Cruz), *DiallattÅ* (Î´Î¹Î±Î»Î»Î¬Ï„Ï„Ï‰ - prioridad de la reconciliaciÃ³n antes del culto), *Pikria* (Ï€Î¹ÎºÏÎ¯Î± - raÃ­z y veneno de amargura) y *Endynamounti* (á¼Î½Î´Ï…Î½Î±Î¼Î¿á¿¦Î½Ï„Î¹ - poder sobrenatural de Filipenses 4:13 aplicado a sanar el orgullo y perdonar ofensas profundas).
+    * **Casos BÃ­blicos & TipologÃ­a**: Contraste entre la carne (AbsalÃ³n y el siervo despiadado de Mateo 18) y la gracia redentora (JosÃ© en Egipto, Esteban en Hechos 7 y JesÃºs en la Cruz en Lucas 23:34).
+    * **Estructura HomilÃ©tica de PÃºlpito**: ProposiciÃ³n central, ilustraciÃ³n de la maleta de piedras, 3 puntos expositivos con aplicaciÃ³n para la iglesia, llamado al altar con dinÃ¡mica de soltar el pagarÃ© y 4 preguntas de discipulado/cÃ©lulas.
+  - **SincronizaciÃ³n en el Segundo Cerebro**:
+    * Actualizado el documento maestro de la serie wiki/ministerial/serie-jesus-solucion-de-todo-problema.md.
+    * Actualizado wiki/index.md en la secciÃ³n 4 (Ministerial).
 
 ## [2026-10-27] feat/el-cuadre-pos-cryptographic-licensing | Motor Criptográfico de Licenciamiento Mensual Offline-First & Protección Anti-Tamper (US-16)
 - **Áreas**: 🚀 `proyectos`, 💻 `programacion`

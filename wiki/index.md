@@ -1,4 +1,4 @@
----
+﻿---
 title: "Índice Maestro del Segundo Cerebro (Wiki Index)"
 type: "index"
 area: "index"

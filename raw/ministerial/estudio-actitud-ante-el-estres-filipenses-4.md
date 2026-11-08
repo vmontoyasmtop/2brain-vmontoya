@@ -1,50 +1,51 @@
-# Estudio Teológico & Pastoral: Actitud Espiritual y Mental ante el Estrés y la Presión Laboral
-
-## Fuentes y Pasajes Clave
-- **Filipenses 4:6-7** (RVR1960 / NVI)
-- **Mateo 6:33-34** (RVR1960)
-- **Filipenses 4:4-9** (Contexto ampliado)
+# Estudio Teológico & Pastoral Profundo: Actitud Espiritual y Mental ante el Estrés y la Presión Laboral
+*Fuentes y Textos Base Ampliados: Filipenses 4:6-9 | Mateo 6:25-34 | Isaías 26:3-4 | Salmo 55:22 | Salmo 94:19 | 1 Pedro 5:7 | 1 Reyes 19:4-8*
 
 ---
 
-## 1. Texto Bíblico Completo
-
-### Filipenses 4:6-7 (RVR1960)
-"Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias. Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús."
-
-### Filipenses 4:6-7 (NVI)
-"No se inquieten por nada; más bien, en toda ocasión, con oración y ruego, presenten sus peticiones a Dios y denle gracias. Y la paz de Dios, que sobrepasa todo entendimiento, cuidará sus corazones y sus pensamientos en Cristo Jesús."
-
-### Mateo 6:33-34 (RVR1960)
-"Mas buscad primeramente el reino de Dios y su justicia, y todas estas cosas os serán añadidas. Así que, no os afanéis por el día de mañana, porque el día de mañana traerá su afán. Basta a cada día su propio mal."
+## 1. Contexto Histórico, Político y Teológico
+- **Filipos como Colonia Pretoriana**: Sujetos al *ius Italicum*, los ciudadanos filipenses vivían bajo la cosmovisión militar romana. Pablo usa deliberadamente la metáfora militar de la guardia pretoriana (*phroureō*) en el v. 7 para conectar con su realidad cotidiana.
+- **Pablo en Roma**: Encadenado (*custodia militaris*) a un legionario romano, con amenaza inminente de ejecución. Desde esa condición imparte el modelo de reposo y victoria.
 
 ---
 
-## 2. Exégesis Teológica
+## 2. Exégesis Filológica y Vocabulario Crítico
 
-### A. La naturaleza del estrés: *Merimnaō* (El afán o ansiedad)
-En el texto griego de Filipenses 4:6, el verbo traducido como «estéis afanosos» o «se inquieten» es **μεριμνᾶτε** (*merimnāte*), derivado de *merimnao* (de *merizō*, dividir, y *noūs*, mente). Literalmente significa **«tener la mente dividida o fragmentada»**.
-El estrés y la presión laboral operan desmenuzando la atención, fracturando la paz interior y proyectando escenarios catastróficos futuros sobre la realidad presente. Pablo no desestima la responsabilidad, sino que desautoriza el estado mental de parálisis o turbación por lo que escapa a nuestro control.
+### A. Diagnóstico de la Ansiedad: *Merimnaō* (Filipenses 4:6)
+- **μεριμνᾶτε** (*merimnāte*): Presente imperativo con negación absoluta (*mēden*).
+- **Etimología**: *Merizō* (dividir, repartir) + *noūs* (mente). Literalmente: mente fragmentada o partida.
+- **Términos del Antiguo Testamento**:
+  - **דְּאָגָה** (*de'agah*, Proverbios 12:25): Ansiedad que abate y oprime el corazón.
+  - **שַׂרְעַפִּים** (*sar'appim*, Salmo 94:19): Pensamientos enredados como ramas espinosas discursivas.
 
-### B. El antídoto triple: Oración (*Proseuchē*), Ruego (*Deēsis*) y Gratitud (*Eucharistia*)
-1. **Oración (*proseuchē*)**: La postura general de devoción y comunión constante con Dios. Significa llevar el trabajo a la presencia divina.
-2. **Ruego (*deēsis*)**: La petición concreta, específica y vulnerable. Nombrar el problema puntual (la tarea urgente, el conflicto o la meta).
-3. **Acción de gracias (*eucharistia*)**: La actitud decisiva. Agradecer **antes** de ver la solución cambia la perspectiva del problema. La gratitud recuerda la fidelidad pasada de Dios.
+### B. El Cuarteto de la Oración (Filipenses 4:6b)
+- **προσευχή** (*proseuchē*): Oración reverente de consagración y adoración.
+- **δέησις** (*deēsis*): Súplica nacida de una necesidad sentida y una insuficiencia personal admitida.
+- **αἰτήματα** (*aitēmata*): Peticiones concretas, catalogadas y detalladas.
+- **εὐχαριστία** (*eucharistia*): Gratitud prematura basada en el carácter inmutable y la fidelidad pasada de Dios.
 
-### C. La guarnición defensiva de Dios: *Phrourēsei* (La Paz que custodia)
-El verbo traducido como «guardará» o «cuidará» en el v. 7 es **φρουρήσει** (*phrourēsei*), un término estrictamente militar.
-- **El corazón (emociones/voluntad)**: Protegido del colapso emocional y el agotamiento (*burnout*).
-- **Los pensamientos (mente/intelecto)**: Protegidos de la obsesión, el insomnio y los bucles de preocupación.
+### C. La Naturaleza de la Paz de Dios (Filipenses 4:7)
+- **εἰρήνη τοῦ θεοῦ** (*eirēnē tou Theou*): Shalom divino objetivo; no un estado de ánimo o técnica humana de relajación.
+- **ὑπερέχουσα πάντα νοῦν** (*hyperechousa panta noun*): Por encima de todo cálculo analítico y cómputo de la razón finita.
+- **φρουρήσει** (*phrourēsei*): Verbo militar activo en tiempo futuro: apostará una guarnición centinela sobre:
+  - *Tas kardias* (el corazón, las emociones, la voluntad, evitando el *burnout*).
+  - *Ta noēmata* (los pensamientos, maquinaciones y rumiaciones ansiosas).
 
-Esta paz **«sobrepasa todo entendimiento»** (*hyperéchousa panta noūn*): una paz sobrenatural que prevalece aun cuando las demandas externas son abrumadoras.
-
-### D. El principio del día presente (Mateo 6:34)
-Jesús enseña a delimitar el tiempo de atención. La mente estresada vive en el "mañana". Cristo llama a administrar exclusivamente el día de hoy con la gracia provista diariamente.
+### D. La Gimnasia Mental Cristiana (Filipenses 4:8)
+- **λογίζεσθε** (*logizesthe*): Imperativo contable/matemático. Llevar la cuenta, computar, reflexionar sistemáticamente en lo verdadero, noble, justo, puro, amable, de buen nombre, virtuoso y digno de alabanza.
 
 ---
 
-## 3. Aplicación Práctica para una Jornada Laboral Demandante
+## 3. Red de Pasajes Bíblicos Paralelos
 
-- **Pausa de Traslado de Cargas (2 minutos)**: Pausa explícita antes de tareas de alta presión entregando el resultado a Dios.
-- **Filtro de Gratitud Prematura**: Interrumpir el bucle de estrés dando gracias por 3 cosas concretas del presente.
-- **Enfoque Monotarea & Día Presente**: Concentrar la energía en el bloque de tiempo actual sin angustiarse por el futuro.
+### Antiguo Testamento
+1. **Isaías 26:3-4**: *«Tú guardarás en completa paz (shalom shalom) a aquel cuyo pensamiento en ti persevera (yetser samuk - mente apuntalada en Dios)...»*.
+2. **Salmo 55:22**: *«Echa (hashlek - arroja enérgicamente) sobre Jehová tu carga (yehabeka), y él te sustentará...»*.
+3. **Salmo 94:19**: *«En la multitud de mis pensamientos enredados (sar'appay) dentro de mí, tus consolaciones alegraban mi alma»*.
+4. **1 Reyes 19:4-8**: La crisis de agotamiento de Elías. Restauración bioespiritual: descanso, hidratación y comida antes de la revelación teológica.
+
+### Nuevo Testamento
+1. **Mateo 6:25-34**: El discurso del Maestro contra *merimna*. Argumento *a fortiori* de las aves y lirios. Ley de delimitación temporal: *«Basta a cada día su propio afán»*.
+2. **1 Pedro 5:7**: *«Echando (epiripsantes - arrojando como una manta sobre una bestia de carga) toda vuestra ansiedad sobre él, porque a él le importa lo que os pasa»*.
+3. **Juan 14:27**: La paz de Cristo vs. la paz del mundo. Reposo en medio de la tormenta.
+4. **2 Corintios 10:5**: Llevando cautivo todo pensamiento a la obediencia a Cristo.

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Serie de Sermones: Jesús, Solución a Todo Problema (Filipenses 4:13)"
 type: "guide"
 area: "ministerial"
@@ -95,7 +95,8 @@ tags:
 ### 🎙️ Sermón 3: Sanando las Relaciones Rotas
 *Viviendo en perdón, reconciliación y amor en un mundo polarizado y herido*
 
-- **Pasaje Base**: Mateo 5:23-24, 38-48 | Juan 13:34-35 | Efesios 4:31-32 | Filipenses 4:2-3, 13
+- **Estudio Exegético Completo**: [[sermon-3-sanando-relaciones-rotas-estudio|Ver Estudio Exegético & Homilético Detallado]]
+- **Pasaje Base**: Mateo 5:23-24, 38-48 | Mateo 18:21-35 | Efesios 4:31-32 | Filipenses 4:2-3, 13
 - **Idea Central**: No podemos cambiar a las personas que nos rodean con nuestras fuerzas, pero el poder de Cristo nos capacita para amar, perdonar y vivir libres del veneno del rencor.
 - **El Problema Humano**: Divisiones familiares, resentimiento acumulado, ofensas en el trabajo o la iglesia, orgullo y soledad relacional.
 - **Cómo Jesús nos enseñó a vivir**:
