@@ -12,6 +12,44 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-11-24] feat/flujo-cero-finanzas-rea | Creación de Proyecto: Flujo Cero & Deconstrucción REA de Chekea
+- **Áreas**: 🚀 proyectos, 💰 finanzas
+- **Agentes Responsables**: ☁️ **Akatsuki Dispatcher**, ☁️ **Pain**, 🖤 **Kakuzu**, 🦈 **Kisame** & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - Creación del informe de reingeniería inversa y análisis competitivo en `wiki/proyectos/benchmarks/analisis-rea-chekea-control-financiero-sin-friccion.md` examinando la app **Chekea (Cheqea)**, identificando su debilidad crítica (fatiga por micro-management manual) y evaluando su modelo de negocio.
+  - Creación formal de la especificación de proyecto en `wiki/proyectos/flujo-cero-finanzas-personales.md` (**Flujo Cero / Zero-Friction Cashflow**).
+  - **Pilares de la Solución**:
+    * **División Inteligente Fijo vs. Dinámico**: Pre-cálculo automático del 70% de la carga fija en quincenas (sueldos fijos, alquiler, diezmo, internet, salud) sin intervención manual.
+    * **Ingesta Cero Fricción**: Registro de gastos e ingresos dinámicos vía notas de voz de 3 segundos o reenvío de SMS bancario/Pago Móvil mediante Bot de Telegram/WhatsApp y ALFRED.
+    * **Arquitectura Akatsuki**: App móvil en Flutter & Dart (Kisame, offline-first a 60 FPS), Backend NestJS + Prisma (Kakuzu), base de datos multimoneda (USD, VES, USDT) con tasa histórica BCV/P2P y diseño minimalista enfocado en margen libre (Konan & Sai).
+  - Actualizado e indexado en `wiki/index.md`.
+
+## [2026-11-23] feat/identidad-reinar-en-vida-amor-propio | Estudio Teológico-Pastoral: Identidad en Cristo, Reinar en Vida y Amor Propio Redimido
+- **Áreas**: ⛪ ministerial
+- **Agentes Responsables**: 🤵 **ALFRED** & ⛪ **Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - Creación del estudio teológico-pastoral en `wiki/ministerial/estudio-identidad-en-cristo-reinar-en-vida-y-amor-propio.md` abordando la ciudadanía celestial, la soberanía sobre el pecado y la culpa, y la teología del amor propio redimido (*Marcos 12:30-31*).
+  - **Ejes Centrales**:
+    * **Desmecanización de la Fe**: La Biblia como organismo vivo (*Hebreos 4:12*) vs. recetarios de autoayuda; los sistemas y disciplinas como odres que disponen el corazón para el mover soberano del Espíritu Santo.
+    * **Reinar en Vida en la Fragilidad Humana**: Paradoja de *Simul Iustus et Peccator* (Lutero); reinar (*Romanos 5:17*) no como ausencia de pecado, sino como destronamiento de la condenación y del dominio del pecado (*Romanos 6:14*, *1 Juan 2:1*).
+    * **Amor Propio Redimido**: Diferenciación tajante entre el narcisismo secular y la mayordomía bíblica de la persona (*Imago Dei* y comprados por precio en *1 Corintios 6:20*). Superación de la trampa del auto-odio y el perfeccionismo neurótico.
+    * **4 Disciplinas Interiores**: Discernimiento entre convicción y acusación, santificación como cultivo orgánico, mayordomía integral (espíritu, alma, cuerpo) y descanso en el veredicto consumado de la cruz (*Filipenses 3:20*).
+  - Indexado en `wiki/index.md` y enlazado con la serie de estudios ministeriales.
+
+## [2026-11-23] feat/teologia-mayordomia-sistemas-estatura | Estudio Teológico-Práctico: Mayordomía, Sistemas y Estatura en Cristo
+- **Áreas**: ⛪ ministerial, 💰 finanzas
+- **Agentes Responsables**: 🤵 **ALFRED** & ⛪ **Pastoral Assistant**
+- **Resumen Ejecutivo**:
+  - Creación del estudio teológico-práctico exhaustivo en `wiki/ministerial/estudio-mayordomia-sistemas-y-estatura-espiritual.md` articulando el pensamiento de *Hábitos Atómicos* (James Clear) y *Los Secretos de la Mente Millonaria* (T. Harv Eker, Archivo #9) con la cosmovisión bíblica y cristocéntrica.
+  - **Puntos Clave Integrados**:
+    * **La Ley del Recipiente**: Exégesis de *Dynamis* en Mateo 25:15 y 3 Juan 1:2 ("así como prospera tu alma"). La capacidad interior y madurez espiritual delimitan la sustentabilidad de la bendición material y de influencia.
+    * **Sistemas sobre Metas**: La fidelidad en lo micro de Lucas 16:10 (*en elachístō*) como el sistema operativo del Reino para gestionar lo macro.
+    * **El Modelo Salomónico**: 1 Reyes 3 (*Lev Shomea*) y la sabiduría como capacidad interna para servir; contraste con la advertencia de 1 Reyes 11 cuando colapsan los sistemas de santidad.
+    * **Trascendencia Cristocéntrica vs. Ego Secular**: Desmantelamiento de la autosuficiencia humanista ("yo soy más grande que el problema") mediante el modelo paulino de Filipenses 4:11-13 (*memýēmai* / suficiencia en Cristo) y 1 Timoteo 6:17-19.
+    * **4 Sistemas Prácticos**: Devocional, Financiero, Intelectual/Vocacional y Somático/Familiar para el Pastor-Ingeniero.
+    * **Bosquejo Homilético**: Estructura de 3 movimientos lista para prédica o taller congregacional de liderazgo y finanzas.
+  - Sincronizado e indexado bidireccionalmente en `wiki/index.md` (Ministerial y Finanzas).
+
 ## [2026-11-08] feat/sermon-3a-profundizacion-neuroteologica | ProfundizaciÃ³n TeolÃ³gica, ClÃ­nica y NeurobiolÃ³gica en SermÃ³n 3A (La ReconciliaciÃ³n Interior)
 - **Ãreas**: â›ª ministerial
 - **Agentes Responsables**: ðŸ¤µ **ALFRED** & â›ª **Subagente Pastoral Assistant**

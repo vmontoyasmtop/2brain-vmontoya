@@ -1,3 +1,7 @@
+## 🚀 Proyectos & Herramientas Vinculadas
+- 📱 [[flujo-cero-finanzas-personales|Proyecto: Flujo Cero (Zero-Friction Cashflow)]]: App móvil y bot de Telegram para automatizar los compromisos fijos y registrar variables por voz sin fricción.
+- 🔍 [[analisis-rea-chekea-control-financiero-sin-friccion|Deconstrucción REA: Chekea (Cheqea)]]: Benchmark competitivo y modelo de flujo de caja automatizado.
+
 ---
 title: "Área Finanzas - Gestión Económica"
 type: "pilar"
@@ -10,6 +14,10 @@ tags:
   - ahorro
   - diezmo
   - ingresos
+## 🚀 Proyectos & Herramientas Vinculadas
+- 📱 [[flujo-cero-finanzas-personales|Proyecto: Flujo Cero (Zero-Friction Cashflow)]]: App móvil y bot de Telegram para automatizar los compromisos fijos y registrar variables por voz sin fricción.
+- 🔍 [[analisis-rea-chekea-control-financiero-sin-friccion|Deconstrucción REA: Chekea (Cheqea)]]: Benchmark competitivo y modelo de flujo de caja automatizado.
+
 ---
 
 # 💰 Área Finanzas — Gestión Económica

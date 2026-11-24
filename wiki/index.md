@@ -83,6 +83,8 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### 🚀 3. Proyectos (Software Independiente)
 - [[pilar-proyectos|Área Proyectos - Software Independiente]]: Índice general de proyectos.
+- [[flujo-cero-finanzas-personales|Proyecto: Flujo Cero (Zero-Friction Cashflow)]]: Ecosistema de control financiero personal y familiar móvil sin fricción (fijos vs. variables, multimoneda USD/VES/USDT y registro por audio/bot).
+  - [[analisis-rea-chekea-control-financiero-sin-friccion|Benchmark REA: Chekea (Cheqea)]]: Deconstrucción de arquitectura y análisis de rentabilidad/mercado de aplicaciones financieras.
 - [[brotapp|Proyecto: Brotapp]]: App móvil en React Native & Expo SDK 57.
 - [[crm-mg|Proyecto: CRM-MG]]: CRM monorepo con NestJS 11, Prisma y OpenAI.
 - [[masterhub-mg-hub|Proyecto: MasterHub (MG-HUB)]]: Plataforma empresarial de microservicios.
@@ -162,6 +164,8 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### ⛪ 4. Ministerial (Pastorado & Teología)
 - [[pilar-ministerial-pastorado|Área Ministerial - Pastorado]]: Índice principal del área pastoral.
+- [[estudio-mayordomia-sistemas-y-estatura-espiritual|Teología de la Mayordomía: Sistemas, Capacidad Interior y Estatura en Cristo]]: Diálogo exegético entre Hábitos Atómicos, Mente Millonaria y el Evangelio (Lucas 16:10, 3 Juan 1:2, Mateo 25:15, Filipenses 4:12-13).
+- [[estudio-identidad-en-cristo-reinar-en-vida-y-amor-propio|Identidad en Cristo, Reinar en Vida y el Amor Propio Redimido]]: Teología de la ciudadanía celestial, gobierno espiritual en la fragilidad (Simul Iustus et Peccator) y reconciliación interior (Romanos 5:17, Marcos 12:30-31, Filipenses 3:20).
 - [[devocional-mente-enfocada-dios-da-la-victoria|Devocional: Mente Enfocada sin Ver Resultados — Dios Da la Victoria]]: Principio teológico de Proverbios 21:31 y 1 Corintios 15:58 sobre fidelidad y soberanía divina.
 - [[estudio-actitud-ante-el-estres-filipenses-4|Actitud Espiritual y Mental ante el Estrés y la Presión (Filipenses 4:6-7)]]: Estudio exegético, antídoto triple y aplicación práctica.
 - [[sistema-productividad-pastor-ingeniero|Sistema de Productividad del Pastor-Ingeniero]]: Sistema 24/7 OS de alta densidad para la gestión del pastor-ingeniero.
@@ -178,6 +182,7 @@ Catálogo central de **2brain** (Optimizado para VS Code + Foam), organizado fí
 
 ### 💰 6. Finanzas (Gestión Económica)
 - [[pilar-finanzas-personales|Área Finanzas - Gestión Económica]]: Índice de presupuesto, ahorro e ingresos.
+- [[estudio-mayordomia-sistemas-y-estatura-espiritual|Teología de la Mayordomía: Sistemas, Capacidad Interior y Estatura en Cristo]]: Marco bíblico-conceptual que une la mayordomía financiera con hábitos diarios y estatura espiritual.
 - [[analisis-gastos-reales-cuaderno|Informe Financiero Auditado: Gastos Reales del Cuaderno & Estrategia de Saneamiento]]: Consolidación de ingresos/egresos en Bs./USD.
 - [[plan-financiero-2026|Plan Financiero Estratégico & Gestión de Presupuesto 2026]]: Plan financiero unificado 2026 ($620 USD/mes reales).
 
