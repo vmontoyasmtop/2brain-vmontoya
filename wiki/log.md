@@ -12,6 +12,17 @@ tags:
 
 Este archivo registra cronológicamente todas las operaciones de Ingesta (`ingest`), Consultas Guardadas (`query`) y Mantenimiento (`lint`) ejecutadas sobre la wiki.
 
+## [2026-11-25] feat/el-cuadre-plan-mobile-telegram | Naming Criollo 'El Cuadre' & Planificación de Desarrollo Akatsuki
+- **Áreas**: 🚀 proyectos, 💰 finanzas
+- **Agentes Responsables**: ☁️ **Akatsuki Dispatcher**, ☁️ **Pain**, 🦈 **Kisame**, 🖤 **Kakuzu**, 🦋 **Konan**, 🎨 **Sai** & 🤵 **ALFRED**
+- **Resumen Ejecutivo**:
+  - Definición oficial del nombre de producto criollo: **El Cuadre (Cashflow)** (*"Lleva tu flujo al día, sin rollos ni micro-management"*).
+  - Actualización de la especificación técnica en `wiki/proyectos/flujo-cero-finanzas-personales.md` con la arquitectura bipartita:
+    1. **App Móvil (Kisame Hoshigaki)**: 100% offline-first con Flutter & Dart y SQLite local (sin dependencia de backend para funcionar en la calle, 60 FPS, ultra-ligera).
+    2. **Bot Multimodal de Ingesta (Kakuzu & ALFRED)**: Extensión de `scripts/telegram_bot.py` para procesar fotos de Pago Móvil con Gemini Vision (OCR estructurado de montos, bancos, referencias) y notas de voz.
+    3. **Diseño & Branding (Konan & Sai)**: Dark Mode minimalista enfocado en una única métrica: *"Margen Libre Disponible"* y selector rápido quincenal.
+  - Sincronización git pull ejecutada en `2brain-MG` (Grandalf-IA-BRAIN actualizado con `origin/main`) y persistencia de memoria lista para continuar en la computadora de la casa.
+
 ## [2026-11-24] feat/flujo-cero-finanzas-rea | Creación de Proyecto: Flujo Cero & Deconstrucción REA de Chekea
 - **Áreas**: 🚀 proyectos, 💰 finanzas
 - **Agentes Responsables**: ☁️ **Akatsuki Dispatcher**, ☁️ **Pain**, 🖤 **Kakuzu**, 🦈 **Kisame** & 🤵 **ALFRED**

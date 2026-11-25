@@ -14,68 +14,72 @@ tags:
   - cashflow
 ---
 
-# 🚀 Proyecto: Flujo Cero (Zero-Friction Cashflow)
+# 🚀 Proyecto: El Cuadre (Control Financiero Criollo & Sin Fricción)
 
 > *"El mejor sistema financiero no es el que te pide registrar cada centavo, sino el que sabe de antemano lo que vas a gastar y solo te consulta lo extraordinario."*
+
+**Nombre del Producto**: **El Cuadre**  
+**Slogan Criollo**: *"Lleva tu flujo al día, sin rollos ni micro-management"*  
+**Plataforma Base**: App Móvil Flutter (Ultra-ligera & 100% Offline-First) + Bot Multimodal Telegram (Gemini Vision OCR & Notas de Voz)  
 
 ---
 
 ## 🎯 1. Visión y Propósito del Proyecto
 
-**Flujo Cero** es un ecosistema financiero personal y familiar diseñado para la realidad de **Don Víctor Montoya** y el contexto multimoneda (USD, VES, USDT), orientado a **eliminar al 100% la fricción del registro diario** de gastos e ingresos.
+**El Cuadre** es un ecosistema financiero personal y familiar diseñado para la realidad de **Don Víctor Montoya** y el contexto multimoneda venezolano (USD, VES, USDT), orientado a **eliminar al 100% la fricción del registro diario** de gastos e ingresos.
 
 Nace a partir de la deconstrucción y benchmarking con **Chekea (Cheqea)** mediante el protocolo **REA (Reverse Engineer Anything)** documentado en [[analisis-rea-chekea-control-financiero-sin-friccion|Análisis REA: Chekea vs. Control Financiero Sin Fricción]].
 
 ### 💥 El Problema Resuelto
-Las aplicaciones existentes fracasan porque obligan al usuario a actuar como un contador manual frente a una pantalla. Flujo Cero adopta el modelo **Proyectado vs. Ejecutado**:
-1. **El 70% de las finanzas son fijas y predecibles:** Sueldos fijos, alquiler, diezmo, internet, pediatra, servicios básicos. **El sistema los pre-calcula automáticamente el día 1 y 15 de cada mes.**
+Las aplicaciones existentes fracasan porque obligan al usuario a actuar como un cajero manual frente a una pantalla. El Cuadre adopta el modelo **Proyectado vs. Ejecutado**:
+1. **El 70% de las finanzas son fijas y predecibles:** Sueldos fijos (Xetux, Pastoral), alquiler, diezmo, internet, pediatra, servicios básicos. **El sistema los pre-calcula automáticamente el día 1 y 15 de cada mes.** No se tipean a mano.
 2. **El 30% restante es dinámico:** Ingresos variables (freelance, software) y gastos dinámicos (repuestos, salidas, compras extraordinarias).
-3. **Registro sin abrir la app:** Ingesta por audio de 3 segundos o reenvío de SMS bancario / Pago Móvil mediante **Bot de Telegram/WhatsApp** o dictado directo a **ALFRED**.
+3. **Registro sin abrir la app (Cero Tipeo):**
+   - **Fotos / Capturas de Pago Móvil:** Reenvío del capture de pantalla (Banesco, BDV, Mercantil) al Bot de Telegram. Gemini Vision extrae monto, banco, referencia y concepto.
+   - **Notas de Voz:** Audio de 3 segundos (*"Gasté 5$ en gasolina"*).
+   - **Modo Móvil Offline (En la calle):** Widget de 1-Tap en Flutter para tipear un número en 2 segundos sin internet.
 
 ---
 
-## 🏗️ 2. Arquitectura del Sistema (Pipeline Akatsuki)
+## 🏗️ 2. Arquitectura Técnica (Akatsuki Pipeline)
 
 ```mermaid
 graph TD
-    subgraph Fuentes_Entrada["🎙️ Canales de Ingesta Sin Fricción"]
-        TG["Bot de Telegram (Audio/Texto/Captura)"]
-        ALF["Asistente Ejecutivo ALFRED (Vía Chat)"]
-        WID["Widget Móvil 1-Tap (Acceso Rápido)"]
+    subgraph Modo_Calle["📵 Modo Calle (100% Offline - Sin Internet)"]
+        WID["Widget 1-Tap Flutter"] --> APP["📱 App Móvil Flutter (Kisame)"]
+        APP --> SQL["💾 SQLite Local (Drift / sqflite)"]
     end
 
-    subgraph Backend_Core["⚙️ Motor Backend (NestJS + Prisma)"]
-        API["API Gateway / Webhook Ingestion"]
-        NLP["Extractor IA (Gemini Flash / Regex)"]
-        FX["Motor de Tasas (BCV / Paralelo / P2P)"]
-        DB[(PostgreSQL / SQLite Local)]
+    subgraph Ingesta_Inteligente["📸 Ingesta Multimodal (Con Conexión)"]
+        PIC["Captura Pago Móvil / Factura"] --> BOT["🤖 Bot Telegram ALFRED (@Alfred_2brain_bot)"]
+        VOI["Nota de Voz de 3 segundos"] --> BOT
+        BOT --> GEM["👁️ Gemini Vision / Flash Multimodal"]
+        GEM --> PARSER["Extractor JSON Contable"]
     end
 
-    subgraph Frontends["📱 Experiencia de Usuario"]
-        MOB["App Móvil Flutter (Kisame - 60 FPS Offline-First)"]
-        DASH["Vista Rápida en 2brain / Web"]
-    end
-
-    TG --> API
-    ALF --> API
-    WID --> MOB
-    MOB <--> API
-    API --> NLP
-    API --> FX
-    API --> DB
-    DB --> MOB
-    DB --> DASH
+    PARSER --> SYNC["Sincronizador Local / Exportable"]
+    SYNC --> SQL
+    SQL --> UI_RESUMEN["📊 Vista Única: 'Margen Disponible Quincenal'"]
 ```
 
-### 👥 Asignación de Roles Akatsuki:
-* ☁️ **Pain (Tendō)**: Planificación de épicas, historias de usuario en Gherkin y sincronización en ClickUp.
-* 🐍 **Orochimaru**: Arquitectura modular Clean Architecture / Event-Driven y despliegue en Docker.
-* 🖤 **Kakuzu**: Modelado de base de datos multimoneda (USD, VES, USDT) con Prisma y endpoints REST.
-* 🦈 **Kisame Hoshigaki**: App móvil multiplataforma en **Flutter & Dart**, con SQLite local (offline-first).
-* 🦋 **Konan** & 🎨 **Sai**: Diseño UI/UX minimalista: vista enfocada en una sola métrica protagonista: **"Margen Libre Disponible Quincenal"**.
-* 💀 **Hidan**: Tests unitarios de cálculo contable y conversión cambiaria con cobertura > 85%.
-* 🔒 **Deidara & Sasori**: Blindaje de webhooks, cifrado de datos financieros y control de accesos.
-* 🤵 **ALFRED**: Integración con el Bot de Telegram existente y asistente de consulta diaria.
+### 👥 Asignación de Responsabilidades Akatsuki:
+* ☁️ **Pain (Tendō)**: Planificación de épicas, historias de usuario en Gherkin y backlog de sprints para la casa.
+* 🦈 **Kisame Hoshigaki**: Construcción de la app móvil en **Flutter & Dart**, Clean Architecture, persistencia SQLite local a 60 FPS, sin lag ni dependencias pesadas.
+* 🖤 **Kakuzu**: Integración del handler de imágenes (`photo`) en [`scripts/telegram_bot.py`](file:///c:/Users/vmontoyaMG/Desktop/2brain/scripts/telegram_bot.py) con Gemini Vision para parseo de comprobantes bancarios venezolanos.
+* 🦋 **Konan** & 🎨 **Sai**: UI/UX ultra-minimalista Dark Mode. Una pantalla, una métrica protagonista: **"Margen Libre Disponible"** y selector rápido de quincena. Identidad y logotipo criollo por Sai.
+* 💀 **Hidan**: Tests de cálculos multimoneda, redondeo y validación de tolerancia a fallos sin internet.
+
+---
+
+## 📋 3. Plan de Ejecución para la Computadora de la Casa
+
+1. **En la PC de la Casa**:
+   - Ejecutar `git pull origin master` para descargar esta especificación y la arquitectura base.
+2. **Frente 1 (Bot Multimodal de Capturas)**:
+   - Activar el handler `message.get("photo")` en `scripts/telegram_bot.py` para procesar comprobantes bancarios mediante Gemini Vision.
+3. **Frente 2 (App Móvil Flutter)**:
+   - Desplegar el proyecto base en Flutter (`apps/el_cuadre_mobile` o carpeta independiente) con arquitectura offline-first.
+
 
 ---
 
